@@ -32,6 +32,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
     var windowStoreCurrent:Int = 1
     var windowCurTab: Int = 0
     var toolbarStyle: Int = 0 //can be change
+    var navBar:UINavigationBar = UINavigationBar()
     
     //Search Engines
     //0: Google, 1: Baidu
@@ -64,6 +65,10 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
+        //make round to the main user interface
+        self.view.layer.cornerRadius = 6
+        self.view.clipsToBounds = true
+        
         addToolBar(urlField)
         
         //setup urlfield style
@@ -80,6 +85,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
         
         //hide navigation bar
         self.navigationController?.navigationBarHidden = true
+        
+        //set new navigation bar
+        setNavBarToTheView()
         
         //user agent string
         let ver:String = "Kapiko/4.0 pipi/" + version()
@@ -102,6 +110,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
         
         backButton.enabled = false
         forwardButton.enabled = false
+    }
+    
+    //set navigation bar style
+    func setNavBarToTheView()
+    {
+        navBar.frame=CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 20)  // Here you can set you Width and Height for your navBar
+        navBar.barTintColor = UIColor(netHex:0xF39C12)
+        self.view.addSubview(navBar)
     }
     
     override func canBecomeFirstResponder() -> Bool {
@@ -129,38 +145,47 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
             //Sun Flower + Orange
             progressView.tintColor = UIColor(netHex:0xF1C40F)
             bar.barTintColor = UIColor(netHex:0xF39C12)
+            navBar.barTintColor = UIColor(netHex:0xF39C12)
         case 1:
             //Peter River + Belize Hole
             progressView.tintColor = UIColor(netHex:0x3498DB)
             bar.barTintColor = UIColor(netHex:0x2980B9)
+            navBar.barTintColor = UIColor(netHex:0x2980B9)
         case 2:
             //Turquoise + Green Sea
             progressView.tintColor = UIColor(netHex:0x1ABC9C)
             bar.barTintColor = UIColor(netHex:0x16A085)
+            navBar.barTintColor = UIColor(netHex:0x16A085)
         case 3:
             //Emerald + Nephritis
             progressView.tintColor = UIColor(netHex:0x2ECC71)
             bar.barTintColor = UIColor(netHex:0x27AE60)
+            navBar.barTintColor = UIColor(netHex:0x27AE60)
         case 4:
             //Carrot + Pumpkin
             progressView.tintColor = UIColor(netHex:0xE67E22)
             bar.barTintColor = UIColor(netHex:0xD35400)
+            navBar.barTintColor = UIColor(netHex:0xD35400)
         case 5:
             //Alizarin + Pomegranate
             progressView.tintColor = UIColor(netHex:0xE74C3C)
             bar.barTintColor = UIColor(netHex:0xC0392B)
+            navBar.barTintColor = UIColor(netHex:0xC0392B)
         case 6:
             //Pink Rose
             progressView.tintColor = UIColor(netHex:0xEC87C0)
             bar.barTintColor = UIColor(netHex:0xD770AD)
+            navBar.barTintColor = UIColor(netHex:0xD770AD)
         case 7:
             //Amethyst + Wisteria
             progressView.tintColor = UIColor(netHex:0x9B59B6)
             bar.barTintColor = UIColor(netHex:0x8E44AD)
+            navBar.barTintColor = UIColor(netHex:0x8E44AD)
         case 8:
             //Concrete + Asbestos
             progressView.tintColor = UIColor(netHex:0x95A5A6)
             bar.barTintColor = UIColor(netHex:0x7F8C8D)
+            navBar.barTintColor = UIColor(netHex:0x7F8C8D)
         default:
             break
         }
@@ -227,6 +252,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
         
         //hide navigation bar
         self.navigationController?.navigationBarHidden = true
+        
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
@@ -273,7 +299,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
     }
     
     //hide status bar
-    override func prefersStatusBarHidden() -> Bool {
+    /*override func prefersStatusBarHidden() -> Bool {
         if statusBar == false {
             return true
         }
@@ -281,7 +307,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
         {
             return false
         }
-    }
+    }*/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
