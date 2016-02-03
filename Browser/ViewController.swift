@@ -21,7 +21,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     @IBOutlet weak var forwardButton: UIBarButtonItem!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var bar: UIToolbar!
-    var statusBar: Bool = false //can be change
     var moveToolbar: Bool = false
     var moveToolbarShown: Bool = false
     var moveToolbarReturn: Bool = false
@@ -114,17 +113,29 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         forwardButton.enabled = false
     }
     
-    //to detect whether webView.scroll is top or not
+    //scroll down to hide status bar, scroll up to show status bar, with animations
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if !scrollDirectionDetermined {
-            let translation = scrollView.panGestureRecognizer.translationInView(self.view)
-            if translation.y > 0 {
-                print("UP")
-                scrollDirectionDetermined = true
-            }
-            else if translation.y < 0 {
-                print("DOWN")
-                scrollDirectionDetermined = true
+            if(moveToolbar == false) {
+                let translation = scrollView.panGestureRecognizer.translationInView(self.view)
+                if translation.y > 0 {
+                    UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Slide)
+                    UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                        self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 20)
+                        }, completion: { finished in
+                            self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 20)
+                    })
+                    scrollDirectionDetermined = true
+                }
+                else if translation.y < 0 {
+                    UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
+                    UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                        self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
+                        }, completion: { finished in
+                            self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
+                    })
+                    scrollDirectionDetermined = true
+                }
             }
         }
         //print(scrollView.isScrolledToEdge(.Top))
@@ -144,6 +155,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         navBar.frame=CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 20)  // Here you can set you Width and Height for your navBar
         navBar.barTintColor = UIColor(netHex:0xF39C12)
         self.view.addSubview(navBar)
+        
+        //auto-hide at the beginning...
+        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
+        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
+            }, completion: { finished in
+                self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
+        })
     }
     
     override func canBecomeFirstResponder() -> Bool {
@@ -294,6 +313,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     
     func keyboardWillShow(sender: NSNotification) {
+        //auto hide statusbar while editing
+        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
+        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
+            }, completion: { finished in
+                self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
+        })
+        
         if(moveToolbar == true) {
             moveToolbarShown = true
             if let userInfo = sender.userInfo {
@@ -323,17 +350,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             }
         }
     }
-    
-    //hide status bar
-    /*override func prefersStatusBarHidden() -> Bool {
-        if statusBar == false {
-            return true
-        }
-        else
-        {
-            return false
-        }
-    }*/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
