@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import AudioToolbox
 
-class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
+class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UIScrollViewDelegate {
     
     var webView: WKWebView
     @IBOutlet weak var barView: UIView!
@@ -32,7 +32,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
     var windowStoreCurrent:Int = 1
     var windowCurTab: Int = 0
     var toolbarStyle: Int = 0 //can be change
-    var navBar:UINavigationBar = UINavigationBar()
+    var navBar: UINavigationBar = UINavigationBar()
+    var scrollDirectionDetermined: Bool = false
     
     //Search Engines
     //0: Google, 1: Baidu
@@ -51,6 +52,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
         
         self.webView.navigationDelegate = self
         self.webView.UIDelegate = self
+        self.webView.scrollView.delegate = self
     }
 
     override func viewDidLoad() {
@@ -66,8 +68,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
         }
         
         //make round to the main user interface
-        self.view.layer.cornerRadius = 6
-        self.view.clipsToBounds = true
+        //self.view.layer.cornerRadius = 6
+        //self.view.clipsToBounds = true
         
         addToolBar(urlField)
         
@@ -110,6 +112,30 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
         
         backButton.enabled = false
         forwardButton.enabled = false
+    }
+    
+    //to detect whether webView.scroll is top or not
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if !scrollDirectionDetermined {
+            let translation = scrollView.panGestureRecognizer.translationInView(self.view)
+            if translation.y > 0 {
+                print("UP")
+                scrollDirectionDetermined = true
+            }
+            else if translation.y < 0 {
+                print("DOWN")
+                scrollDirectionDetermined = true
+            }
+        }
+        //print(scrollView.isScrolledToEdge(.Top))
+    }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        scrollDirectionDetermined = false
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        scrollDirectionDetermined = false
     }
     
     //set navigation bar style
