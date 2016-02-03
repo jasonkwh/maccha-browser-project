@@ -1,0 +1,10 @@
+//
+//  pipi-Bridging-Header.h
+//  pipi-browser-project
+//
+//  Copyright © 2016 Studios Pâtes, Jason Wong (mail: jasonkwh@gmail.com).
+//
+//  Use this file to import your target's public headers that you would like to expose to Swift.
+//
+
+#import "SWRevealViewController.h"
