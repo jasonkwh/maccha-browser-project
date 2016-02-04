@@ -63,7 +63,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         
         self.revealViewController().delegate = self
         if self.revealViewController() != nil {
-            revealViewController().rightViewRevealWidth = 300
+            revealViewController().rightViewRevealWidth = 280
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
