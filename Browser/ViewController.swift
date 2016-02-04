@@ -59,6 +59,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        //use Reach() module to check network connections
+        Reach().monitorReachabilityChanges()
+        
         //register ads filter protocol
         NSURLProtocol.registerClass(FilteredURLProtocol)
         
@@ -391,26 +394,44 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     //function to load webview request
     func loadRequest(inputUrlAddress: String) {
-        //shorten the url by replacing http and https to null
-        let shorten_url = inputUrlAddress.stringByReplacingOccurrencesOfString("https://", withString: "").stringByReplacingOccurrencesOfString("http://", withString: "").stringByReplacingOccurrencesOfString(" ", withString: "+")
         
-        //check if it is URL, else use search engine
-        var contents: String = ""
-        let matches = matchesForRegexInText("(?i)(?:(?:https?):\\/\\/)?(?:\\S+(?::\\S*)?@)?(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))(?::\\d{2,5})?(?:\\/[^\\s]*)?", text: ("http://" + shorten_url))
-        if(matches == []) {
-            if(searchEngines == 0) {
-                contents = "http://www.google.com/search?q=" + shorten_url.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+        if (checkConnectionStatus() == true) {
+            //shorten the url by replacing http and https to null
+            let shorten_url = inputUrlAddress.stringByReplacingOccurrencesOfString("https://", withString: "").stringByReplacingOccurrencesOfString("http://", withString: "").stringByReplacingOccurrencesOfString(" ", withString: "+")
+            
+            //check if it is URL, else use search engine
+            var contents: String = ""
+            let matches = matchesForRegexInText("(?i)(?:(?:https?):\\/\\/)?(?:\\S+(?::\\S*)?@)?(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))(?::\\d{2,5})?(?:\\/[^\\s]*)?", text: ("http://" + shorten_url))
+            if(matches == []) {
+                if(searchEngines == 0) {
+                    contents = "http://www.google.com/search?q=" + shorten_url.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+                }
+                else if(searchEngines == 1) {
+                    contents = "http://www.baidu.com/s?wd=" + shorten_url.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+                }
             }
-            else if(searchEngines == 1) {
-                contents = "http://www.baidu.com/s?wd=" + shorten_url.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+            else {
+                contents = "http://" + shorten_url
             }
+            
+            //load contents by wkwebview
+            webView.loadRequest(NSURLRequest(URL:NSURL(string: contents)!))
         }
         else {
-            contents = "http://" + shorten_url
+            print("No internect connections")
         }
-        
-        //load contents by wkwebview
-        webView.loadRequest(NSURLRequest(URL:NSURL(string: contents)!))
+    }
+    
+    //function to check current network status, powered by Reach() module
+    func checkConnectionStatus() -> Bool {
+        switch Reach().connectionStatus() {
+        case .Unknown, .Offline:
+            return false
+        case .Online(.WWAN):
+            return true
+        case .Online(.WiFi):
+            return true
+        }
     }
     
     //function to check url by regex
@@ -501,7 +522,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     // this handles target=_blank links by opening them in the same view
     func webView(webView: WKWebView, createWebViewWithConfiguration configuration: WKWebViewConfiguration, forNavigationAction navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
         if navigationAction.targetFrame == nil {
-            webView.loadRequest(navigationAction.request)
+            if(checkConnectionStatus() == true) {
+                webView.loadRequest(navigationAction.request)
+            }
+            else {
+                print("No internect connections")
+            }
         }
         return nil
     }
