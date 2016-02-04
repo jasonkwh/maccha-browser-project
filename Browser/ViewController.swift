@@ -33,6 +33,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var toolbarStyle: Int = 0 //can be change
     var navBar: UINavigationBar = UINavigationBar()
     var scrollDirectionDetermined: Bool = false
+    var scrollMakeStatusBarDown: Bool = false
     
     //Search Engines
     //0: Google, 1: Baidu
@@ -158,10 +159,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 if translation.y > 0 {
                     showStatusbar()
                     scrollDirectionDetermined = true
+                    scrollMakeStatusBarDown = true
                 }
                 else if translation.y < 0 {
                     hideStatusbar()
                     scrollDirectionDetermined = true
+                    scrollMakeStatusBarDown = false
                 }
             }
         }
@@ -367,16 +370,16 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             }
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    //function to detect screen orientation change and do some actions
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         barView.frame = CGRect(x: 0, y: 0, width: size.width, height: 30)
+        if(scrollMakeStatusBarDown == true) {
+            showStatusbar()
+        }
     }
     
+    //function to define the actions of urlField.go
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         moveToolbarReturn = true
         urlField.resignFirstResponder()
@@ -571,6 +574,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //function to hide keyboard
     func hideKeyboard() {
         self.view.endEditing(true)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 }
 
