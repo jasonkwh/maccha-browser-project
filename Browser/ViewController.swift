@@ -114,17 +114,32 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         forwardButton.enabled = false
     }
     
+    //function to hide the statusbar
+    func hideStatusbar() {
+        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
+        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
+            }, completion: { finished in
+                self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
+        })
+    }
+    
+    //function to show the statusbar
+    func showStatusbar() {
+        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Slide)
+        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 20)
+            }, completion: { finished in
+                self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 20)
+        })
+    }
+    
     //detect the right reveal view is toggle, and do some actions...
     func revealController(revealController: SWRevealViewController!, willMoveToPosition position: FrontViewPosition) {
         if revealController.frontViewPosition == FrontViewPosition.Left
         {
             hideKeyboard()
-            UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
-            UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
-                }, completion: { finished in
-                    self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
-            })
+            hideStatusbar()
             self.webView.userInteractionEnabled = false
             self.bar.userInteractionEnabled = false
         }
@@ -141,21 +156,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             if(moveToolbar == false) {
                 let translation = scrollView.panGestureRecognizer.translationInView(self.view)
                 if translation.y > 0 {
-                    UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Slide)
-                    UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                        self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 20)
-                        }, completion: { finished in
-                            self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 20)
-                    })
+                    showStatusbar()
                     scrollDirectionDetermined = true
                 }
                 else if translation.y < 0 {
-                    UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
-                    UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                        self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
-                        }, completion: { finished in
-                            self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
-                    })
+                    hideStatusbar()
                     scrollDirectionDetermined = true
                 }
             }
@@ -179,12 +184,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         self.view.addSubview(navBar)
         
         //auto-hide at the beginning...
-        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
-        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-            self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
-            }, completion: { finished in
-                self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
-        })
+        hideStatusbar()
     }
     
     override func canBecomeFirstResponder() -> Bool {
@@ -336,12 +336,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     func keyboardWillShow(sender: NSNotification) {
         //auto hide statusbar while editing
-        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
-        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-            self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
-            }, completion: { finished in
-                self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
-        })
+        hideStatusbar()
         
         if(moveToolbar == true) {
             moveToolbarShown = true
