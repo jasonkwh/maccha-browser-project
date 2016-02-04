@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import AudioToolbox
 
-class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UIScrollViewDelegate {
+class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UIScrollViewDelegate, SWRevealViewControllerDelegate {
     
     var webView: WKWebView
     @IBOutlet weak var barView: UIView!
@@ -61,8 +61,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         //register ads filter protocol
         NSURLProtocol.registerClass(FilteredURLProtocol)
         
+        self.revealViewController().delegate = self
         if self.revealViewController() != nil {
-            revealViewController().rightViewRevealWidth = 220
+            revealViewController().rightViewRevealWidth = 300
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
@@ -111,6 +112,27 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         
         backButton.enabled = false
         forwardButton.enabled = false
+    }
+    
+    //detect the right reveal view is toggle, and do some actions...
+    func revealController(revealController: SWRevealViewController!, willMoveToPosition position: FrontViewPosition) {
+        if revealController.frontViewPosition == FrontViewPosition.Left
+        {
+            hideKeyboard()
+            UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
+            UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
+                }, completion: { finished in
+                    self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
+            })
+            self.webView.userInteractionEnabled = false
+            self.bar.userInteractionEnabled = false
+        }
+        else
+        {
+            self.webView.userInteractionEnabled = true
+            self.bar.userInteractionEnabled = true
+        }
     }
     
     //scroll down to hide status bar, scroll up to show status bar, with animations
