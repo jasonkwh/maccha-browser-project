@@ -336,9 +336,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
-    
+    //auto show toolbar while editing
     func keyboardWillShow(sender: NSNotification) {
-        //auto hide statusbar while editing
         hideStatusbar()
         
         if(moveToolbar == true) {
@@ -354,12 +353,15 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         }
     }
     
+    //auto hide toolbar while editing
     func keyboardWillHide(sender: NSNotification) {
         if(moveToolbar == true) {
             if let userInfo = sender.userInfo {
                 if let keyboardHeight = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue.size.height {
-                    self.view.frame.origin.y += keyboardHeight
-                    UIView.animateWithDuration(0.10, animations: { () -> Void in self.view.layoutIfNeeded() })
+                    if(self.view.frame.origin.y == -keyboardHeight) {
+                        self.view.frame.origin.y += keyboardHeight
+                        UIView.animateWithDuration(0.10, animations: { () -> Void in self.view.layoutIfNeeded() })
+                    }
                 }
             }
             moveToolbar = false
