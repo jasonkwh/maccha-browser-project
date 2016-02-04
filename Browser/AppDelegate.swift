@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         application.setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
         
+        //register protocols
+        NSURLProtocol.registerClass(FilteredURLProtocol)
+        
         return true
     }
 

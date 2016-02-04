@@ -62,9 +62,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         //use Reach() module to check network connections
         Reach().monitorReachabilityChanges()
         
-        //register ads filter protocol
-        NSURLProtocol.registerClass(FilteredURLProtocol)
-        
         self.revealViewController().delegate = self
         if self.revealViewController() != nil {
             revealViewController().rightViewRevealWidth = 280
@@ -477,6 +474,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 //shorten url by replacing http:// and https:// to null
                 let shorten_url = webView.URL?.absoluteString.stringByReplacingOccurrencesOfString("https://", withString: "").stringByReplacingOccurrencesOfString("http://", withString: "")
                 
+                //check this is a app store url or not, if yes, redirect to App Store system app
+                if (shorten_url!.rangeOfString("itunes.apple.com/") != nil) && (shorten_url!.rangeOfString("/app") != nil) && (shorten_url!.rangeOfString("/id") != nil) {
+                    let itms_url = "itms-apps://" + shorten_url!
+                    UIApplication.sharedApplication().openURL(NSURL(string: itms_url)!)
+                }
+
                 //change urlField when the page starts loading
                 //display website title in the url field
                 webTitle = webView.title! //store title into webTitle for efficient use
@@ -524,12 +527,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     // this handles target=_blank links by opening them in the same view
     func webView(webView: WKWebView, createWebViewWithConfiguration configuration: WKWebViewConfiguration, forNavigationAction navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
         if navigationAction.targetFrame == nil {
-            if(checkConnectionStatus() == true) {
-                webView.loadRequest(navigationAction.request)
-            }
-            else {
-                print("No internect connections")
-            }
+            loadRequest((navigationAction.request.URL?.absoluteString)!)
         }
         return nil
     }
