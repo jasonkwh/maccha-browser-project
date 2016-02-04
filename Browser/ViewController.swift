@@ -510,9 +510,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     }
     
     func webView(webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: NSError) {
-        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-        presentViewController(alert, animated: true, completion: nil)
+        if (error.code != NSURLErrorCancelled) {
+            let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
