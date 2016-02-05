@@ -10,7 +10,6 @@
 		3F5055C81C61317F00A85FB8 /* FilteredURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5055C71C61317F00A85FB8 /* FilteredURLProtocol.swift */; };
 		3FC20F451C6007950016F522 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC20F441C6007950016F522 /* SWRevealViewController.m */; };
 		3FDF7E601C61968700C8BD4A /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF7E5F1C61968700C8BD4A /* Reach.swift */; };
-		3FE536991C626A500009EDE9 /* ScrollView-Edges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE536981C626A500009EDE9 /* ScrollView-Edges.swift */; };
 		5F8533701A5BB8C900F14347 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F85336F1A5BB8C900F14347 /* AppDelegate.swift */; };
 		5F8533721A5BB8C900F14347 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8533711A5BB8C900F14347 /* ViewController.swift */; };
 		5F8533751A5BB8C900F14347 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8533731A5BB8C900F14347 /* Main.storyboard */; };
@@ -36,7 +35,6 @@
 		3FC20F431C6007950016F522 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		3FC20F441C6007950016F522 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		3FDF7E5F1C61968700C8BD4A /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
-		3FE536981C626A500009EDE9 /* ScrollView-Edges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScrollView-Edges.swift"; sourceTree = "<group>"; };
 		5F85336A1A5BB8C800F14347 /* pipi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pipi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F85336E1A5BB8C900F14347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F85336F1A5BB8C900F14347 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 			children = (
 				5F85336F1A5BB8C900F14347 /* AppDelegate.swift */,
 				5F8533711A5BB8C900F14347 /* ViewController.swift */,
-				3FE536981C626A500009EDE9 /* ScrollView-Edges.swift */,
 				3F5055C71C61317F00A85FB8 /* FilteredURLProtocol.swift */,
 				3FDF7E5F1C61968700C8BD4A /* Reach.swift */,
 				5F8533731A5BB8C900F14347 /* Main.storyboard */,
@@ -240,7 +237,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FE536991C626A500009EDE9 /* ScrollView-Edges.swift in Sources */,
 				3F5055C81C61317F00A85FB8 /* FilteredURLProtocol.swift in Sources */,
 				5F8533721A5BB8C900F14347 /* ViewController.swift in Sources */,
 				3FDF7E601C61968700C8BD4A /* Reach.swift in Sources */,

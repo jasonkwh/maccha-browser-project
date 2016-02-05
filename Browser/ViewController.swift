@@ -168,7 +168,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 }
             }
         }
-        //print(scrollView.isScrolledToEdge(.Top))
     }
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
