@@ -275,7 +275,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             urlField.frame.size.width = 208
         }
         urlField.autoresizingMask = UIViewAutoresizing.FlexibleWidth
-        urlField.addTarget(self, action: "detectUserTouchUrlField:", forControlEvents: UIControlEvents.TouchDown)
         let crButton = UIButton(type: UIButtonType.System)
         crButton.setImage(UIImage(named: "Clear"), forState: UIControlState.Normal)
         crButton.addTarget(self, action: "clearPressed", forControlEvents: UIControlEvents.TouchUpInside)
@@ -301,21 +300,26 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         refreshStopButton.frame = CGRectMake(0, 0, 30, 30)
     }
     
-    //function to check whether the user touched the urlfield or not
-    func detectUserTouchUrlField(textField: UITextField) {
-        //move toolbar as the keyboard moves
-        moveToolbar = true;
-        
-        //display urls in urlfield
-        if(moveToolbarShown == false) {
-            urlField.textAlignment = .Left
-            urlField.text = webAddress
-            urlField.selectAll(self)
+    //keyboards related
+    //show/hide keyboard reactions
+    func textFieldDidBeginEditing(textField: UITextField) -> Bool {
+        if textField == urlField {
+            //move toolbar as the keyboard moves
+            moveToolbar = true;
+            
+            //display urls in urlfield
+            if(moveToolbarShown == false) {
+                urlField.textAlignment = .Left
+                urlField.text = webAddress
+                urlField.selectAll(self)
+            }
+            return true //urlField
+        }
+        else {
+            return false
         }
     }
     
-    //keyboards related
-    //show/hide keyboard reactions
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
