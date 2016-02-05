@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F5055C81C61317F00A85FB8 /* FilteredURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5055C71C61317F00A85FB8 /* FilteredURLProtocol.swift */; };
+		3F9760E91C651C9C006F2ACB /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9760E81C651C9C006F2ACB /* SlideViewController.swift */; };
 		3FC20F451C6007950016F522 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC20F441C6007950016F522 /* SWRevealViewController.m */; };
 		3FDF7E601C61968700C8BD4A /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF7E5F1C61968700C8BD4A /* Reach.swift */; };
 		5F8533701A5BB8C900F14347 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F85336F1A5BB8C900F14347 /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		3F1EE7D61C5D499700923DF3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		3F5055C71C61317F00A85FB8 /* FilteredURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteredURLProtocol.swift; sourceTree = "<group>"; };
+		3F9760E81C651C9C006F2ACB /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		3FC20F421C6007940016F522 /* pipi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pipi-Bridging-Header.h"; sourceTree = "<group>"; };
 		3FC20F431C6007950016F522 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		3FC20F441C6007950016F522 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				3F5055C71C61317F00A85FB8 /* FilteredURLProtocol.swift */,
 				3FDF7E5F1C61968700C8BD4A /* Reach.swift */,
 				5F8533731A5BB8C900F14347 /* Main.storyboard */,
+				3F9760E81C651C9C006F2ACB /* SlideViewController.swift */,
 				5F8533761A5BB8C900F14347 /* Images.xcassets */,
 				5F8533781A5BB8C900F14347 /* LaunchScreen.xib */,
 				5F85336D1A5BB8C800F14347 /* Supporting Files */,
@@ -239,6 +242,7 @@
 			files = (
 				3F5055C81C61317F00A85FB8 /* FilteredURLProtocol.swift in Sources */,
 				5F8533721A5BB8C900F14347 /* ViewController.swift in Sources */,
+				3F9760E91C651C9C006F2ACB /* SlideViewController.swift in Sources */,
 				3FDF7E601C61968700C8BD4A /* Reach.swift in Sources */,
 				5F8533701A5BB8C900F14347 /* AppDelegate.swift in Sources */,
 				3FC20F451C6007950016F522 /* SWRevealViewController.m in Sources */,

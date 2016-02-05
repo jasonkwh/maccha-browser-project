@@ -359,14 +359,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //auto hide toolbar while editing
     func keyboardWillHide(sender: NSNotification) {
         if(moveToolbar == true) {
-            if let userInfo = sender.userInfo {
-                if let keyboardHeight = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue.size.height {
-                    if(self.view.frame.origin.y == -keyboardHeight) {
-                        self.view.frame.origin.y += keyboardHeight
-                        UIView.animateWithDuration(0.10, animations: { () -> Void in self.view.layoutIfNeeded() })
-                    }
-                }
-            }
+            self.view.frame.origin.y = 0
+            UIView.animateWithDuration(0.10, animations: { () -> Void in self.view.layoutIfNeeded() })
             moveToolbar = false
             moveToolbarShown = false
             if(moveToolbarReturn == false) {
@@ -382,6 +376,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         if(scrollMakeStatusBarDown == true) {
             showStatusbar()
         }
+        hideKeyboard()
     }
     
     //function to define the actions of urlField.go
