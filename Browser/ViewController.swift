@@ -415,7 +415,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             webView.loadRequest(NSURLRequest(URL:NSURL(string: contents)!))
         }
         else {
-            print("No internect connections")
+            let alert = UIAlertController(title: "Error", message: "The Internet connection appears to be offline.", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            presentViewController(alert, animated: true, completion: nil)
         }
     }
     
