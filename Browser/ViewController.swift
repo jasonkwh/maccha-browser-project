@@ -184,6 +184,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     {
         navBar.frame=CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 20)  // Here you can set you Width and Height for your navBar
         navBar.barTintColor = UIColor(netHex:0xF39C12)
+        navBar.translucent = false
         navBar.clipsToBounds = true
         self.view.addSubview(navBar)
         
