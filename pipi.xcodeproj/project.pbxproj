@@ -9,6 +9,28 @@
 /* Begin PBXBuildFile section */
 		3F5055C81C61317F00A85FB8 /* FilteredURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5055C71C61317F00A85FB8 /* FilteredURLProtocol.swift */; };
 		3F9760E91C651C9C006F2ACB /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9760E81C651C9C006F2ACB /* SlideViewController.swift */; };
+		3FB60F421C666D7600DA46BF /* demos in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F2B1C666D7600DA46BF /* demos */; };
+		3FB60F461C666D7600DA46BF /* images in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F2F1C666D7600DA46BF /* images */; };
+		3FB60F471C666D7600DA46BF /* jquery-2.2.0.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F301C666D7600DA46BF /* jquery-2.2.0.min.js */; };
+		3FB60F481C666D7600DA46BF /* jquery.mobile-1.4.5.css in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F311C666D7600DA46BF /* jquery.mobile-1.4.5.css */; };
+		3FB60F491C666D7600DA46BF /* jquery.mobile-1.4.5.js in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F321C666D7600DA46BF /* jquery.mobile-1.4.5.js */; };
+		3FB60F4A1C666D7600DA46BF /* jquery.mobile-1.4.5.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F331C666D7600DA46BF /* jquery.mobile-1.4.5.min.css */; };
+		3FB60F4B1C666D7600DA46BF /* jquery.mobile-1.4.5.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F341C666D7600DA46BF /* jquery.mobile-1.4.5.min.js */; };
+		3FB60F4C1C666D7600DA46BF /* jquery.mobile.external-png-1.4.5.css in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F361C666D7600DA46BF /* jquery.mobile.external-png-1.4.5.css */; };
+		3FB60F4D1C666D7600DA46BF /* jquery.mobile.external-png-1.4.5.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F371C666D7600DA46BF /* jquery.mobile.external-png-1.4.5.min.css */; };
+		3FB60F4E1C666D7600DA46BF /* jquery.mobile.icons-1.4.5.css in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F381C666D7600DA46BF /* jquery.mobile.icons-1.4.5.css */; };
+		3FB60F4F1C666D7600DA46BF /* jquery.mobile.icons-1.4.5.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F391C666D7600DA46BF /* jquery.mobile.icons-1.4.5.min.css */; };
+		3FB60F501C666D7600DA46BF /* jquery.mobile.inline-png-1.4.5.css in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F3A1C666D7600DA46BF /* jquery.mobile.inline-png-1.4.5.css */; };
+		3FB60F511C666D7600DA46BF /* jquery.mobile.inline-png-1.4.5.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F3B1C666D7600DA46BF /* jquery.mobile.inline-png-1.4.5.min.css */; };
+		3FB60F521C666D7600DA46BF /* jquery.mobile.inline-svg-1.4.5.css in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F3C1C666D7600DA46BF /* jquery.mobile.inline-svg-1.4.5.css */; };
+		3FB60F531C666D7600DA46BF /* jquery.mobile.inline-svg-1.4.5.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F3D1C666D7600DA46BF /* jquery.mobile.inline-svg-1.4.5.min.css */; };
+		3FB60F541C666D7600DA46BF /* jquery.mobile.structure-1.4.5.css in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F3E1C666D7600DA46BF /* jquery.mobile.structure-1.4.5.css */; };
+		3FB60F551C666D7600DA46BF /* jquery.mobile.structure-1.4.5.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F3F1C666D7600DA46BF /* jquery.mobile.structure-1.4.5.min.css */; };
+		3FB60F561C666D7600DA46BF /* jquery.mobile.theme-1.4.5.css in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F401C666D7600DA46BF /* jquery.mobile.theme-1.4.5.css */; };
+		3FB60F571C666D7600DA46BF /* jquery.mobile.theme-1.4.5.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F411C666D7600DA46BF /* jquery.mobile.theme-1.4.5.min.css */; };
+		3FB60F691C6676ED00DA46BF /* about_F39C12.css in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F661C6676ED00DA46BF /* about_F39C12.css */; };
+		3FB60F6A1C6676ED00DA46BF /* about_F39C12.html in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F671C6676ED00DA46BF /* about_F39C12.html */; };
+		3FB60F6B1C6676ED00DA46BF /* about.js in Resources */ = {isa = PBXBuildFile; fileRef = 3FB60F681C6676ED00DA46BF /* about.js */; };
 		3FC20F451C6007950016F522 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC20F441C6007950016F522 /* SWRevealViewController.m */; };
 		3FDF7E601C61968700C8BD4A /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF7E5F1C61968700C8BD4A /* Reach.swift */; };
 		5F8533701A5BB8C900F14347 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F85336F1A5BB8C900F14347 /* AppDelegate.swift */; };
@@ -33,6 +55,29 @@
 		3F1EE7D61C5D499700923DF3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		3F5055C71C61317F00A85FB8 /* FilteredURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteredURLProtocol.swift; sourceTree = "<group>"; };
 		3F9760E81C651C9C006F2ACB /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
+		3FB60F2B1C666D7600DA46BF /* demos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = demos; sourceTree = "<group>"; };
+		3FB60F2F1C666D7600DA46BF /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		3FB60F301C666D7600DA46BF /* jquery-2.2.0.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-2.2.0.min.js"; sourceTree = "<group>"; };
+		3FB60F311C666D7600DA46BF /* jquery.mobile-1.4.5.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery.mobile-1.4.5.css"; sourceTree = "<group>"; };
+		3FB60F321C666D7600DA46BF /* jquery.mobile-1.4.5.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery.mobile-1.4.5.js"; sourceTree = "<group>"; };
+		3FB60F331C666D7600DA46BF /* jquery.mobile-1.4.5.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery.mobile-1.4.5.min.css"; sourceTree = "<group>"; };
+		3FB60F341C666D7600DA46BF /* jquery.mobile-1.4.5.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery.mobile-1.4.5.min.js"; sourceTree = "<group>"; };
+		3FB60F351C666D7600DA46BF /* jquery.mobile-1.4.5.min.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = "jquery.mobile-1.4.5.min.map"; sourceTree = "<group>"; };
+		3FB60F361C666D7600DA46BF /* jquery.mobile.external-png-1.4.5.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery.mobile.external-png-1.4.5.css"; sourceTree = "<group>"; };
+		3FB60F371C666D7600DA46BF /* jquery.mobile.external-png-1.4.5.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery.mobile.external-png-1.4.5.min.css"; sourceTree = "<group>"; };
+		3FB60F381C666D7600DA46BF /* jquery.mobile.icons-1.4.5.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery.mobile.icons-1.4.5.css"; sourceTree = "<group>"; };
+		3FB60F391C666D7600DA46BF /* jquery.mobile.icons-1.4.5.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery.mobile.icons-1.4.5.min.css"; sourceTree = "<group>"; };
+		3FB60F3A1C666D7600DA46BF /* jquery.mobile.inline-png-1.4.5.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery.mobile.inline-png-1.4.5.css"; sourceTree = "<group>"; };
+		3FB60F3B1C666D7600DA46BF /* jquery.mobile.inline-png-1.4.5.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery.mobile.inline-png-1.4.5.min.css"; sourceTree = "<group>"; };
+		3FB60F3C1C666D7600DA46BF /* jquery.mobile.inline-svg-1.4.5.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery.mobile.inline-svg-1.4.5.css"; sourceTree = "<group>"; };
+		3FB60F3D1C666D7600DA46BF /* jquery.mobile.inline-svg-1.4.5.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery.mobile.inline-svg-1.4.5.min.css"; sourceTree = "<group>"; };
+		3FB60F3E1C666D7600DA46BF /* jquery.mobile.structure-1.4.5.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery.mobile.structure-1.4.5.css"; sourceTree = "<group>"; };
+		3FB60F3F1C666D7600DA46BF /* jquery.mobile.structure-1.4.5.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery.mobile.structure-1.4.5.min.css"; sourceTree = "<group>"; };
+		3FB60F401C666D7600DA46BF /* jquery.mobile.theme-1.4.5.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery.mobile.theme-1.4.5.css"; sourceTree = "<group>"; };
+		3FB60F411C666D7600DA46BF /* jquery.mobile.theme-1.4.5.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery.mobile.theme-1.4.5.min.css"; sourceTree = "<group>"; };
+		3FB60F661C6676ED00DA46BF /* about_F39C12.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = about_F39C12.css; sourceTree = "<group>"; };
+		3FB60F671C6676ED00DA46BF /* about_F39C12.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about_F39C12.html; sourceTree = "<group>"; };
+		3FB60F681C6676ED00DA46BF /* about.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = about.js; sourceTree = "<group>"; };
 		3FC20F421C6007940016F522 /* pipi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pipi-Bridging-Header.h"; sourceTree = "<group>"; };
 		3FC20F431C6007950016F522 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		3FC20F441C6007950016F522 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -70,6 +115,29 @@
 		3F0654CA1C65CD0200EF4E2D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3FB60F661C6676ED00DA46BF /* about_F39C12.css */,
+				3FB60F671C6676ED00DA46BF /* about_F39C12.html */,
+				3FB60F681C6676ED00DA46BF /* about.js */,
+				3FB60F2B1C666D7600DA46BF /* demos */,
+				3FB60F2F1C666D7600DA46BF /* images */,
+				3FB60F301C666D7600DA46BF /* jquery-2.2.0.min.js */,
+				3FB60F311C666D7600DA46BF /* jquery.mobile-1.4.5.css */,
+				3FB60F321C666D7600DA46BF /* jquery.mobile-1.4.5.js */,
+				3FB60F331C666D7600DA46BF /* jquery.mobile-1.4.5.min.css */,
+				3FB60F341C666D7600DA46BF /* jquery.mobile-1.4.5.min.js */,
+				3FB60F351C666D7600DA46BF /* jquery.mobile-1.4.5.min.map */,
+				3FB60F361C666D7600DA46BF /* jquery.mobile.external-png-1.4.5.css */,
+				3FB60F371C666D7600DA46BF /* jquery.mobile.external-png-1.4.5.min.css */,
+				3FB60F381C666D7600DA46BF /* jquery.mobile.icons-1.4.5.css */,
+				3FB60F391C666D7600DA46BF /* jquery.mobile.icons-1.4.5.min.css */,
+				3FB60F3A1C666D7600DA46BF /* jquery.mobile.inline-png-1.4.5.css */,
+				3FB60F3B1C666D7600DA46BF /* jquery.mobile.inline-png-1.4.5.min.css */,
+				3FB60F3C1C666D7600DA46BF /* jquery.mobile.inline-svg-1.4.5.css */,
+				3FB60F3D1C666D7600DA46BF /* jquery.mobile.inline-svg-1.4.5.min.css */,
+				3FB60F3E1C666D7600DA46BF /* jquery.mobile.structure-1.4.5.css */,
+				3FB60F3F1C666D7600DA46BF /* jquery.mobile.structure-1.4.5.min.css */,
+				3FB60F401C666D7600DA46BF /* jquery.mobile.theme-1.4.5.css */,
+				3FB60F411C666D7600DA46BF /* jquery.mobile.theme-1.4.5.min.css */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -228,9 +296,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FB60F541C666D7600DA46BF /* jquery.mobile.structure-1.4.5.css in Resources */,
+				3FB60F4B1C666D7600DA46BF /* jquery.mobile-1.4.5.min.js in Resources */,
 				5F8533751A5BB8C900F14347 /* Main.storyboard in Resources */,
+				3FB60F4C1C666D7600DA46BF /* jquery.mobile.external-png-1.4.5.css in Resources */,
+				3FB60F4D1C666D7600DA46BF /* jquery.mobile.external-png-1.4.5.min.css in Resources */,
+				3FB60F471C666D7600DA46BF /* jquery-2.2.0.min.js in Resources */,
+				3FB60F6B1C6676ED00DA46BF /* about.js in Resources */,
+				3FB60F6A1C6676ED00DA46BF /* about_F39C12.html in Resources */,
+				3FB60F4E1C666D7600DA46BF /* jquery.mobile.icons-1.4.5.css in Resources */,
+				3FB60F521C666D7600DA46BF /* jquery.mobile.inline-svg-1.4.5.css in Resources */,
+				3FB60F511C666D7600DA46BF /* jquery.mobile.inline-png-1.4.5.min.css in Resources */,
+				3FB60F421C666D7600DA46BF /* demos in Resources */,
+				3FB60F481C666D7600DA46BF /* jquery.mobile-1.4.5.css in Resources */,
+				3FB60F461C666D7600DA46BF /* images in Resources */,
+				3FB60F561C666D7600DA46BF /* jquery.mobile.theme-1.4.5.css in Resources */,
+				3FB60F501C666D7600DA46BF /* jquery.mobile.inline-png-1.4.5.css in Resources */,
+				3FB60F551C666D7600DA46BF /* jquery.mobile.structure-1.4.5.min.css in Resources */,
+				3FB60F531C666D7600DA46BF /* jquery.mobile.inline-svg-1.4.5.min.css in Resources */,
+				3FB60F491C666D7600DA46BF /* jquery.mobile-1.4.5.js in Resources */,
+				3FB60F4A1C666D7600DA46BF /* jquery.mobile-1.4.5.min.css in Resources */,
 				5F85337A1A5BB8C900F14347 /* LaunchScreen.xib in Resources */,
+				3FB60F571C666D7600DA46BF /* jquery.mobile.theme-1.4.5.min.css in Resources */,
+				3FB60F691C6676ED00DA46BF /* about_F39C12.css in Resources */,
 				5F8533771A5BB8C900F14347 /* Images.xcassets in Resources */,
+				3FB60F4F1C666D7600DA46BF /* jquery.mobile.icons-1.4.5.min.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -83,7 +83,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         //display current window number on the window button
         displayCurWindowNum(self.windowStoreCurrent)
         
-        //set toolbar color
+        //set toolbar color and style
+        bar.clipsToBounds = true
         toolbarColor(toolbarStyle)
         
         //hide navigation bar
@@ -183,6 +184,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     {
         navBar.frame=CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 20)  // Here you can set you Width and Height for your navBar
         navBar.barTintColor = UIColor(netHex:0xF39C12)
+        navBar.clipsToBounds = true
         self.view.addSubview(navBar)
         
         //auto-hide at the beginning...
