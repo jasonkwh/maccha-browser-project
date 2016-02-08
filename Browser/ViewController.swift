@@ -722,7 +722,7 @@ public extension UIDevice {
 }
 
 //Hex value color, call by UIColor(netHex:0xF39C12) for orange color #F39C12
-extension UIColor {
+public extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")
         assert(green >= 0 && green <= 255, "Invalid green component")

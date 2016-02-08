@@ -154,8 +154,26 @@
                     <view key="view" contentMode="scaleToFill" id="jAj-ld-J43">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wH7-aq-OYg">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="HAe-xe-FCd"/>
+                                    <barButtonItem title="Item" id="LXM-lT-HcP"/>
+                                    <barButtonItem title="Item" id="kDc-ku-1bB"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wH7-aq-OYg" firstAttribute="bottom" secondItem="bxU-kF-Lhi" secondAttribute="top" id="TC3-2i-t0y"/>
+                            <constraint firstItem="wH7-aq-OYg" firstAttribute="leading" secondItem="jAj-ld-J43" secondAttribute="leading" id="eNy-Jw-VPq"/>
+                            <constraint firstAttribute="trailing" secondItem="wH7-aq-OYg" secondAttribute="trailing" id="hW7-YI-2qQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="toolbar" destination="wH7-aq-OYg" id="eVk-2Y-vex"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mBF-Mm-eY1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
