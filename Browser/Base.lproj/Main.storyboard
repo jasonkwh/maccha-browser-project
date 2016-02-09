@@ -40,7 +40,7 @@
                                         <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Uy5-R3-Tbv">
                                             <rect key="frame" x="72" y="7" width="220" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.12549019607843137" green="0.12549019607843137" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.13725490196078433" green="0.13725490196078433" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="textColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardType="webSearch" keyboardAppearance="alert" returnKeyType="go"/>
@@ -159,9 +159,13 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="HAe-xe-FCd"/>
-                                    <barButtonItem title="Item" id="LXM-lT-HcP"/>
-                                    <barButtonItem title="Item" id="kDc-ku-1bB"/>
+                                    <barButtonItem image="Safari" id="a8O-XM-4nz"/>
+                                    <barButtonItem image="History" id="8QP-nr-P0W"/>
+                                    <barButtonItem image="Bookmark" id="Ma2-3Y-JV7"/>
+                                    <barButtonItem image="Settings" id="LXM-lT-HcP"/>
+                                    <barButtonItem image="About" id="kDc-ku-1bB"/>
                                 </items>
+                                <color key="tintColor" red="0.90980392156862744" green="0.93333333333333335" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -181,7 +185,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="About" width="25" height="25"/>
         <image name="Back" width="25" height="25"/>
+        <image name="Bookmark" width="25" height="25"/>
         <image name="Forward" width="25" height="25"/>
+        <image name="History" width="25" height="25"/>
+        <image name="Safari" width="25" height="25"/>
+        <image name="Settings" width="25" height="25"/>
     </resources>
 </document>
