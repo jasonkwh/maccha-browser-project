@@ -159,18 +159,35 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="HAe-xe-FCd"/>
-                                    <barButtonItem image="Safari" id="a8O-XM-4nz">
-                                        <connections>
-                                            <action selector="safariAction:" destination="Ay8-h7-Adg" id="1tE-tu-UfZ"/>
-                                        </connections>
+                                    <barButtonItem style="plain" id="fs0-wE-O0J">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Skr-kw-S0F">
+                                            <rect key="frame" x="346" y="7" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </button>
                                     </barButtonItem>
-                                    <barButtonItem image="History" id="8QP-nr-P0W"/>
-                                    <barButtonItem image="Bookmark" id="Ma2-3Y-JV7"/>
-                                    <barButtonItem image="Settings" id="LXM-lT-HcP"/>
-                                    <barButtonItem image="About" id="kDc-ku-1bB">
-                                        <connections>
-                                            <action selector="aboutAction:" destination="Ay8-h7-Adg" id="zQ1-eN-D5l"/>
-                                        </connections>
+                                    <barButtonItem style="plain" id="lvn-x6-4mJ">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Stq-pP-azj">
+                                            <rect key="frame" x="402" y="7" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="mOI-Jq-x1E">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3mc-1P-9wt">
+                                            <rect key="frame" x="458" y="7" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="bTB-5o-Hff">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8WR-jM-hhK">
+                                            <rect key="frame" x="514" y="7" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="i7b-uH-m5e">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2ZQ-eX-kqE">
+                                            <rect key="frame" x="570" y="7" width="10" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </button>
                                     </barButtonItem>
                                 </items>
                                 <color key="tintColor" red="0.90980392156862744" green="0.93333333333333335" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
@@ -184,6 +201,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="abButton" destination="2ZQ-eX-kqE" id="KIj-li-Ydk"/>
+                        <outlet property="bkButton" destination="3mc-1P-9wt" id="jm0-s5-2tj"/>
+                        <outlet property="htButton" destination="Stq-pP-azj" id="f0c-bz-h63"/>
+                        <outlet property="sfButton" destination="Skr-kw-S0F" id="ujk-PJ-QTO"/>
+                        <outlet property="sgButton" destination="8WR-jM-hhK" id="XEA-Up-9f7"/>
                         <outlet property="toolbar" destination="wH7-aq-OYg" id="eVk-2Y-vex"/>
                     </connections>
                 </viewController>
@@ -193,12 +215,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="About" width="25" height="25"/>
         <image name="Back" width="25" height="25"/>
-        <image name="Bookmark" width="25" height="25"/>
         <image name="Forward" width="25" height="25"/>
-        <image name="History" width="25" height="25"/>
-        <image name="Safari" width="25" height="25"/>
-        <image name="Settings" width="25" height="25"/>
     </resources>
 </document>
