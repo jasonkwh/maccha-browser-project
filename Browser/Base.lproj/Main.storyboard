@@ -163,7 +163,11 @@
                                     <barButtonItem image="History" id="8QP-nr-P0W"/>
                                     <barButtonItem image="Bookmark" id="Ma2-3Y-JV7"/>
                                     <barButtonItem image="Settings" id="LXM-lT-HcP"/>
-                                    <barButtonItem image="About" id="kDc-ku-1bB"/>
+                                    <barButtonItem image="About" id="kDc-ku-1bB">
+                                        <connections>
+                                            <action selector="aboutAction:" destination="Ay8-h7-Adg" id="zQ1-eN-D5l"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                                 <color key="tintColor" red="0.90980392156862744" green="0.93333333333333335" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>

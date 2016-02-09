@@ -22,6 +22,11 @@ class SlideViewController: UIViewController {
         toolbar.clipsToBounds = true
     }
     
+    @IBAction func aboutAction(sender: AnyObject) {
+        slideViewValue.aboutButton = true
+        revealViewController().rightRevealToggleAnimated(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

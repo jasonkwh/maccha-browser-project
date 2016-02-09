@@ -10,6 +10,10 @@ import UIKit
 import WebKit
 import AudioToolbox
 
+struct slideViewValue {
+    static var aboutButton: Bool = false
+}
+
 class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UIScrollViewDelegate, SWRevealViewControllerDelegate {
     
     var webView: WKWebView
@@ -149,6 +153,10 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         {
             self.webView.userInteractionEnabled = true
             self.bar.userInteractionEnabled = true
+            if(slideViewValue.aboutButton == true) {
+                aboutPressed()
+                slideViewValue.aboutButton = false
+            }
         }
     }
     
@@ -606,6 +614,42 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //function to hide keyboard
     func hideKeyboard() {
         self.view.endEditing(true)
+    }
+    
+    //function when about button is pressed
+    func aboutPressed() {
+        //generate url, thanks to kzy52
+        var path = NSBundle.mainBundle().pathForResource("about_F39C12", ofType: "html")
+        if(toolbarStyle == 0) {
+            path = NSBundle.mainBundle().pathForResource("about_F39C12", ofType: "html")
+        }
+        else if(toolbarStyle == 1) {
+            path = NSBundle.mainBundle().pathForResource("about_2980B9", ofType: "html")
+        }
+        else if(toolbarStyle == 2) {
+            path = NSBundle.mainBundle().pathForResource("about_16A085", ofType: "html")
+        }
+        else if(toolbarStyle == 3) {
+            path = NSBundle.mainBundle().pathForResource("about_27AE60", ofType: "html")
+        }
+        else if(toolbarStyle == 4) {
+            path = NSBundle.mainBundle().pathForResource("about_D35400", ofType: "html")
+        }
+        else if(toolbarStyle == 5) {
+            path = NSBundle.mainBundle().pathForResource("about_C0392B", ofType: "html")
+        }
+        else if(toolbarStyle == 6) {
+            path = NSBundle.mainBundle().pathForResource("about_D770AD", ofType: "html")
+        }
+        else if(toolbarStyle == 7) {
+            path = NSBundle.mainBundle().pathForResource("about_8E44AD", ofType: "html")
+        }
+        else if(toolbarStyle == 8) {
+            path = NSBundle.mainBundle().pathForResource("about_7F8C8D", ofType: "html")
+        }
+        
+        //load url
+        webView.loadRequest(NSURLRequest(URL: NSURL(string: "file://" + path!)!))
     }
     
     override func didReceiveMemoryWarning() {

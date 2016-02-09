@@ -1,0 +1,38 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	font-size: 62.5%;
+	font-family: -apple-system;
+	font-family: '-apple-system','HelveticaNeue';
+}
+
+#icon img {
+	max-width: 25%;
+	margin-top: 36%;
+}
+
+#icon {
+	vertical-align: center;
+	text-align: center;
+	background-color: #2980B9;
+	width: 140%;
+	margin-left: -20%;
+	height: 100vh;
+}
+
+#thank {
+	font-size: 3.5em;
+	margin-right: 18%;
+	margin-left: 18%;
+}
+
+#uas {
+	font-size: 13px;
+	margin-right: 18%;
+	margin-left: 18%;
+}
+
+p {
+	color: #ecf0f1;
+	text-shadow: none;
+}
