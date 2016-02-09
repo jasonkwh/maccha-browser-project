@@ -159,7 +159,11 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="HAe-xe-FCd"/>
-                                    <barButtonItem image="Safari" id="a8O-XM-4nz"/>
+                                    <barButtonItem image="Safari" id="a8O-XM-4nz">
+                                        <connections>
+                                            <action selector="safariAction:" destination="Ay8-h7-Adg" id="1tE-tu-UfZ"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem image="History" id="8QP-nr-P0W"/>
                                     <barButtonItem image="Bookmark" id="Ma2-3Y-JV7"/>
                                     <barButtonItem image="Settings" id="LXM-lT-HcP"/>

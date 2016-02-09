@@ -27,6 +27,11 @@ class SlideViewController: UIViewController {
         revealViewController().rightRevealToggleAnimated(true)
     }
     
+    @IBAction func safariAction(sender: AnyObject) {
+        slideViewValue.safariButton = true
+        revealViewController().rightRevealToggleAnimated(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

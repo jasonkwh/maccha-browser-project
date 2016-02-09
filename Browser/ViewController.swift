@@ -12,6 +12,7 @@ import AudioToolbox
 
 struct slideViewValue {
     static var aboutButton: Bool = false
+    static var safariButton: Bool = false
 }
 
 class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UIScrollViewDelegate, SWRevealViewControllerDelegate {
@@ -156,6 +157,10 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             if(slideViewValue.aboutButton == true) {
                 aboutPressed()
                 slideViewValue.aboutButton = false
+            }
+            if(slideViewValue.safariButton == true) {
+                safariPressed()
+                slideViewValue.safariButton = false
             }
         }
     }
@@ -650,6 +655,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         
         //load url
         webView.loadRequest(NSURLRequest(URL: NSURL(string: "file://" + path!)!))
+    }
+    
+    //function which opens safari to load this url
+    func safariPressed() {
+        UIApplication.sharedApplication().openURL(NSURL(string: windowStoreUrl[windowCurTab])!)
     }
     
     override func didReceiveMemoryWarning() {
