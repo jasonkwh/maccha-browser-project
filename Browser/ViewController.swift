@@ -92,6 +92,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         bar.clipsToBounds = true
         toolbarColor(toolbarStyle)
         
+        //snapshot webview after loading new screens
+        self.webView.snapshotViewAfterScreenUpdates(true)
+        
         //hide navigation bar
         self.navigationController?.navigationBarHidden = true
         

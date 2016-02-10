@@ -192,12 +192,20 @@
                                 </items>
                                 <color key="tintColor" red="0.90980392156862744" green="0.93333333333333335" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PQh-Ph-huz">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PQh-Ph-huz" firstAttribute="bottom" secondItem="wH7-aq-OYg" secondAttribute="top" id="7eM-kW-YnU"/>
+                            <constraint firstItem="PQh-Ph-huz" firstAttribute="trailing" secondItem="wH7-aq-OYg" secondAttribute="trailing" id="NgM-GP-k2J"/>
                             <constraint firstItem="wH7-aq-OYg" firstAttribute="bottom" secondItem="bxU-kF-Lhi" secondAttribute="top" id="TC3-2i-t0y"/>
                             <constraint firstItem="wH7-aq-OYg" firstAttribute="leading" secondItem="jAj-ld-J43" secondAttribute="leading" id="eNy-Jw-VPq"/>
+                            <constraint firstItem="PQh-Ph-huz" firstAttribute="top" secondItem="jAj-ld-J43" secondAttribute="top" id="fjp-uZ-4Nc"/>
                             <constraint firstAttribute="trailing" secondItem="wH7-aq-OYg" secondAttribute="trailing" id="hW7-YI-2qQ"/>
+                            <constraint firstItem="PQh-Ph-huz" firstAttribute="leading" secondItem="wH7-aq-OYg" secondAttribute="leading" id="kDB-6h-QpB"/>
                         </constraints>
                     </view>
                     <connections>
@@ -207,6 +215,7 @@
                         <outlet property="sfButton" destination="Skr-kw-S0F" id="ujk-PJ-QTO"/>
                         <outlet property="sgButton" destination="8WR-jM-hhK" id="XEA-Up-9f7"/>
                         <outlet property="toolbar" destination="wH7-aq-OYg" id="eVk-2Y-vex"/>
+                        <outlet property="windowView" destination="PQh-Ph-huz" id="bkI-Jd-7Np"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mBF-Mm-eY1" userLabel="First Responder" sceneMemberID="firstResponder"/>

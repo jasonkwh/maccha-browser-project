@@ -16,6 +16,7 @@ class SlideViewController: UIViewController {
     @IBOutlet weak var bkButton: UIButton!
     @IBOutlet weak var sgButton: UIButton!
     @IBOutlet weak var abButton: UIButton!
+    @IBOutlet weak var windowView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,10 @@ class SlideViewController: UIViewController {
         self.view.backgroundColor = UIColor(netHex:0x2E2E2E)
         toolbar.barTintColor = UIColor(netHex:0x2E2E2E)
         toolbar.clipsToBounds = true
+        windowView.backgroundColor = UIColor(netHex:0x2E2E2E)
+        windowView.separatorColor = UIColor(netHex:0x2E2E2E)
+        
+        //button displays
         displaySafariButton()
         displayHistoryButton()
         displayBookmarkButton()
