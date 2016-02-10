@@ -229,17 +229,17 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     func toolbarColor(colorID: Int) {
         switch colorID {
         case 0:
-            //Blue
-            progressView.tintColor = UIColor(netHex:0x0153A4)
-            urlField.backgroundColor = UIColor(netHex:0x0153A4)
-            bar.barTintColor = UIColor(netHex:0x499AE7)
-            navBar.barTintColor = UIColor(netHex:0x499AE7)
-        case 1:
             //Green
             progressView.tintColor = UIColor(netHex:0x00882B)
             urlField.backgroundColor = UIColor(netHex:0x00882B)
             bar.barTintColor = UIColor(netHex:0x70BF41)
             navBar.barTintColor = UIColor(netHex:0x70BF41)
+        case 1:
+            //Blue
+            progressView.tintColor = UIColor(netHex:0x0153A4)
+            urlField.backgroundColor = UIColor(netHex:0x0153A4)
+            bar.barTintColor = UIColor(netHex:0x499AE7)
+            navBar.barTintColor = UIColor(netHex:0x499AE7)
         case 2:
             //Yellow
             progressView.tintColor = UIColor(netHex:0xB08316)
@@ -618,12 +618,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //function when about button is pressed
     func aboutPressed() {
         //generate url, thanks to kzy52
-        var path = NSBundle.mainBundle().pathForResource("about_F39C12", ofType: "html")
+        var path = NSBundle.mainBundle().pathForResource("about_2980B9", ofType: "html")
         if(toolbarStyle == 0) {
-            path = NSBundle.mainBundle().pathForResource("about_F39C12", ofType: "html")
+            path = NSBundle.mainBundle().pathForResource("about_2980B9", ofType: "html")
         }
         else if(toolbarStyle == 1) {
-            path = NSBundle.mainBundle().pathForResource("about_2980B9", ofType: "html")
+            path = NSBundle.mainBundle().pathForResource("about_F39C12", ofType: "html")
         }
         else if(toolbarStyle == 2) {
             path = NSBundle.mainBundle().pathForResource("about_16A085", ofType: "html")
