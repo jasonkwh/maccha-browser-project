@@ -43,12 +43,6 @@
 		3FE19F051C6975BD00F7285E /* about_D35400.html in Resources */ = {isa = PBXBuildFile; fileRef = 3FE19F031C6975BD00F7285E /* about_D35400.html */; };
 		3FE19F081C6975F200F7285E /* about_C0392B.css in Resources */ = {isa = PBXBuildFile; fileRef = 3FE19F061C6975F200F7285E /* about_C0392B.css */; };
 		3FE19F091C6975F200F7285E /* about_C0392B.html in Resources */ = {isa = PBXBuildFile; fileRef = 3FE19F071C6975F200F7285E /* about_C0392B.html */; };
-		3FE19F0C1C69761F00F7285E /* about_D770AD.css in Resources */ = {isa = PBXBuildFile; fileRef = 3FE19F0A1C69761F00F7285E /* about_D770AD.css */; };
-		3FE19F0D1C69761F00F7285E /* about_D770AD.html in Resources */ = {isa = PBXBuildFile; fileRef = 3FE19F0B1C69761F00F7285E /* about_D770AD.html */; };
-		3FE19F101C69765A00F7285E /* about_8E44AD.css in Resources */ = {isa = PBXBuildFile; fileRef = 3FE19F0E1C69765A00F7285E /* about_8E44AD.css */; };
-		3FE19F111C69765A00F7285E /* about_8E44AD.html in Resources */ = {isa = PBXBuildFile; fileRef = 3FE19F0F1C69765A00F7285E /* about_8E44AD.html */; };
-		3FE19F141C69768D00F7285E /* about_7F8C8D.css in Resources */ = {isa = PBXBuildFile; fileRef = 3FE19F121C69768D00F7285E /* about_7F8C8D.css */; };
-		3FE19F151C69768D00F7285E /* about_7F8C8D.html in Resources */ = {isa = PBXBuildFile; fileRef = 3FE19F131C69768D00F7285E /* about_7F8C8D.html */; };
 		5F8533701A5BB8C900F14347 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F85336F1A5BB8C900F14347 /* AppDelegate.swift */; };
 		5F8533721A5BB8C900F14347 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8533711A5BB8C900F14347 /* ViewController.swift */; };
 		5F8533751A5BB8C900F14347 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8533731A5BB8C900F14347 /* Main.storyboard */; };
@@ -108,12 +102,6 @@
 		3FE19F031C6975BD00F7285E /* about_D35400.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about_D35400.html; sourceTree = "<group>"; };
 		3FE19F061C6975F200F7285E /* about_C0392B.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = about_C0392B.css; sourceTree = "<group>"; };
 		3FE19F071C6975F200F7285E /* about_C0392B.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about_C0392B.html; sourceTree = "<group>"; };
-		3FE19F0A1C69761F00F7285E /* about_D770AD.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = about_D770AD.css; sourceTree = "<group>"; };
-		3FE19F0B1C69761F00F7285E /* about_D770AD.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about_D770AD.html; sourceTree = "<group>"; };
-		3FE19F0E1C69765A00F7285E /* about_8E44AD.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = about_8E44AD.css; sourceTree = "<group>"; };
-		3FE19F0F1C69765A00F7285E /* about_8E44AD.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about_8E44AD.html; sourceTree = "<group>"; };
-		3FE19F121C69768D00F7285E /* about_7F8C8D.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = about_7F8C8D.css; sourceTree = "<group>"; };
-		3FE19F131C69768D00F7285E /* about_7F8C8D.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about_7F8C8D.html; sourceTree = "<group>"; };
 		5F85336A1A5BB8C800F14347 /* Papi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Papi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F85336E1A5BB8C900F14347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F85336F1A5BB8C900F14347 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -159,12 +147,6 @@
 				3FE19F031C6975BD00F7285E /* about_D35400.html */,
 				3FE19F061C6975F200F7285E /* about_C0392B.css */,
 				3FE19F071C6975F200F7285E /* about_C0392B.html */,
-				3FE19F0A1C69761F00F7285E /* about_D770AD.css */,
-				3FE19F0B1C69761F00F7285E /* about_D770AD.html */,
-				3FE19F0E1C69765A00F7285E /* about_8E44AD.css */,
-				3FE19F0F1C69765A00F7285E /* about_8E44AD.html */,
-				3FE19F121C69768D00F7285E /* about_7F8C8D.css */,
-				3FE19F131C69768D00F7285E /* about_7F8C8D.html */,
 				3FB60F681C6676ED00DA46BF /* about.js */,
 				3FB60F2B1C666D7600DA46BF /* demos */,
 				3FB60F2F1C666D7600DA46BF /* images */,
@@ -356,13 +338,10 @@
 				3FB60F471C666D7600DA46BF /* jquery-2.2.0.min.js in Resources */,
 				3FB60F6B1C6676ED00DA46BF /* about.js in Resources */,
 				3FE19EF81C69744200F7285E /* about_2980B9.css in Resources */,
-				3FE19F111C69765A00F7285E /* about_8E44AD.html in Resources */,
 				3FB60F6A1C6676ED00DA46BF /* about_F39C12.html in Resources */,
 				3FE19EF91C69744200F7285E /* about_2980B9.html in Resources */,
-				3FE19F0D1C69761F00F7285E /* about_D770AD.html in Resources */,
 				3FB60F4E1C666D7600DA46BF /* jquery.mobile.icons-1.4.5.css in Resources */,
 				3FB60F521C666D7600DA46BF /* jquery.mobile.inline-svg-1.4.5.css in Resources */,
-				3FE19F101C69765A00F7285E /* about_8E44AD.css in Resources */,
 				3FB60F511C666D7600DA46BF /* jquery.mobile.inline-png-1.4.5.min.css in Resources */,
 				3FB60F421C666D7600DA46BF /* demos in Resources */,
 				3FB60F481C666D7600DA46BF /* jquery.mobile-1.4.5.css in Resources */,
@@ -375,14 +354,11 @@
 				3FB60F491C666D7600DA46BF /* jquery.mobile-1.4.5.js in Resources */,
 				3FB60F4A1C666D7600DA46BF /* jquery.mobile-1.4.5.min.css in Resources */,
 				3FE19EFC1C69747E00F7285E /* about_16A085.css in Resources */,
-				3FE19F0C1C69761F00F7285E /* about_D770AD.css in Resources */,
 				5F85337A1A5BB8C900F14347 /* LaunchScreen.xib in Resources */,
 				3FB60F571C666D7600DA46BF /* jquery.mobile.theme-1.4.5.min.css in Resources */,
 				3FB60F691C6676ED00DA46BF /* about_F39C12.css in Resources */,
 				3FE19F001C6974AF00F7285E /* about_27AE60.css in Resources */,
-				3FE19F151C69768D00F7285E /* about_7F8C8D.html in Resources */,
 				5F8533771A5BB8C900F14347 /* Images.xcassets in Resources */,
-				3FE19F141C69768D00F7285E /* about_7F8C8D.css in Resources */,
 				3FE19EFD1C69747E00F7285E /* about_16A085.html in Resources */,
 				3FB60F4F1C666D7600DA46BF /* jquery.mobile.icons-1.4.5.min.css in Resources */,
 			);

@@ -198,8 +198,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //set navigation bar style
     func setNavBarToTheView()
     {
-        navBar.frame=CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 20)  // Here you can set you Width and Height for your navBar
-        navBar.barTintColor = UIColor(netHex:0xF39C12)
+        navBar.frame=CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 20)
         navBar.translucent = false
         navBar.clipsToBounds = true
         self.view.addSubview(navBar)
@@ -215,7 +214,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //shake to change toolbar color, phone will vibrate for confirmation
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == .MotionShake {
-            if(toolbarStyle < 8) {
+            if(toolbarStyle < 5) {
                 toolbarStyle++
             }
             else {
@@ -230,50 +229,41 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     func toolbarColor(colorID: Int) {
         switch colorID {
         case 0:
-            //Sun Flower + Orange
-            progressView.tintColor = UIColor(netHex:0xF1C40F)
-            bar.barTintColor = UIColor(netHex:0xF39C12)
-            navBar.barTintColor = UIColor(netHex:0xF39C12)
+            //Blue
+            progressView.tintColor = UIColor(netHex:0x0153A4)
+            urlField.backgroundColor = UIColor(netHex:0x0153A4)
+            bar.barTintColor = UIColor(netHex:0x499AE7)
+            navBar.barTintColor = UIColor(netHex:0x499AE7)
         case 1:
-            //Peter River + Belize Hole
-            progressView.tintColor = UIColor(netHex:0x3498DB)
-            bar.barTintColor = UIColor(netHex:0x2980B9)
-            navBar.barTintColor = UIColor(netHex:0x2980B9)
+            //Green
+            progressView.tintColor = UIColor(netHex:0x00882B)
+            urlField.backgroundColor = UIColor(netHex:0x00882B)
+            bar.barTintColor = UIColor(netHex:0x70BF41)
+            navBar.barTintColor = UIColor(netHex:0x70BF41)
         case 2:
-            //Turquoise + Green Sea
-            progressView.tintColor = UIColor(netHex:0x1ABC9C)
-            bar.barTintColor = UIColor(netHex:0x16A085)
-            navBar.barTintColor = UIColor(netHex:0x16A085)
+            //Yellow
+            progressView.tintColor = UIColor(netHex:0xB08316)
+            urlField.backgroundColor = UIColor(netHex:0xB08316)
+            bar.barTintColor = UIColor(netHex:0xEBC622)
+            navBar.barTintColor = UIColor(netHex:0xEBC622)
         case 3:
-            //Emerald + Nephritis
-            progressView.tintColor = UIColor(netHex:0x2ECC71)
-            bar.barTintColor = UIColor(netHex:0x27AE60)
-            navBar.barTintColor = UIColor(netHex:0x27AE60)
+            //Orange
+            progressView.tintColor = UIColor(netHex:0xAD530D)
+            urlField.backgroundColor = UIColor(netHex:0xAD530D)
+            bar.barTintColor = UIColor(netHex:0xF39019)
+            navBar.barTintColor = UIColor(netHex:0xF39019)
         case 4:
-            //Carrot + Pumpkin
-            progressView.tintColor = UIColor(netHex:0xE67E22)
-            bar.barTintColor = UIColor(netHex:0xD35400)
-            navBar.barTintColor = UIColor(netHex:0xD35400)
+            //Red
+            progressView.tintColor = UIColor(netHex:0xA00F09)
+            urlField.backgroundColor = UIColor(netHex:0xA00F09)
+            bar.barTintColor = UIColor(netHex:0xEC5D57)
+            navBar.barTintColor = UIColor(netHex:0xEC5D57)
         case 5:
-            //Alizarin + Pomegranate
-            progressView.tintColor = UIColor(netHex:0xE74C3C)
-            bar.barTintColor = UIColor(netHex:0xC0392B)
-            navBar.barTintColor = UIColor(netHex:0xC0392B)
-        case 6:
-            //Pink Rose
-            progressView.tintColor = UIColor(netHex:0xEC87C0)
-            bar.barTintColor = UIColor(netHex:0xD770AD)
-            navBar.barTintColor = UIColor(netHex:0xD770AD)
-        case 7:
-            //Amethyst + Wisteria
-            progressView.tintColor = UIColor(netHex:0x9B59B6)
-            bar.barTintColor = UIColor(netHex:0x8E44AD)
-            navBar.barTintColor = UIColor(netHex:0x8E44AD)
-        case 8:
-            //Concrete + Asbestos
-            progressView.tintColor = UIColor(netHex:0x95A5A6)
-            bar.barTintColor = UIColor(netHex:0x7F8C8D)
-            navBar.barTintColor = UIColor(netHex:0x7F8C8D)
+            //Purple
+            progressView.tintColor = UIColor(netHex:0x5F327C)
+            urlField.backgroundColor = UIColor(netHex:0x5F327C)
+            bar.barTintColor = UIColor(netHex:0xB36AE2)
+            navBar.barTintColor = UIColor(netHex:0xB36AE2)
         default:
             break
         }
@@ -646,15 +636,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         }
         else if(toolbarStyle == 5) {
             path = NSBundle.mainBundle().pathForResource("about_C0392B", ofType: "html")
-        }
-        else if(toolbarStyle == 6) {
-            path = NSBundle.mainBundle().pathForResource("about_D770AD", ofType: "html")
-        }
-        else if(toolbarStyle == 7) {
-            path = NSBundle.mainBundle().pathForResource("about_8E44AD", ofType: "html")
-        }
-        else if(toolbarStyle == 8) {
-            path = NSBundle.mainBundle().pathForResource("about_7F8C8D", ofType: "html")
         }
         
         //load url
