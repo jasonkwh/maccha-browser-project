@@ -294,6 +294,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             urlField.frame.size.width = 208
         }
         urlField.autoresizingMask = UIViewAutoresizing.FlexibleWidth
+        urlField.clipsToBounds = true
         let crButton = UIButton(type: UIButtonType.System)
         crButton.setImage(UIImage(named: "Clear"), forState: UIControlState.Normal)
         crButton.addTarget(self, action: "clearPressed", forControlEvents: UIControlEvents.TouchUpInside)
