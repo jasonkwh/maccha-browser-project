@@ -114,14 +114,14 @@
 		3FE19F0F1C69765A00F7285E /* about_8E44AD.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about_8E44AD.html; sourceTree = "<group>"; };
 		3FE19F121C69768D00F7285E /* about_7F8C8D.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = about_7F8C8D.css; sourceTree = "<group>"; };
 		3FE19F131C69768D00F7285E /* about_7F8C8D.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about_7F8C8D.html; sourceTree = "<group>"; };
-		5F85336A1A5BB8C800F14347 /* pipi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pipi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F85336A1A5BB8C800F14347 /* Papi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Papi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F85336E1A5BB8C900F14347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F85336F1A5BB8C900F14347 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F8533711A5BB8C900F14347 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5F8533741A5BB8C900F14347 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F8533761A5BB8C900F14347 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5F8533791A5BB8C900F14347 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		5F85337F1A5BB8C900F14347 /* pipi.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pipi.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F85337F1A5BB8C900F14347 /* Papi.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Papi.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8533841A5BB8C900F14347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F8533851A5BB8C900F14347 /* BrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,8 +213,8 @@
 		5F85336B1A5BB8C800F14347 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5F85336A1A5BB8C800F14347 /* pipi.app */,
-				5F85337F1A5BB8C900F14347 /* pipi.xctest */,
+				5F85336A1A5BB8C800F14347 /* Papi.app */,
+				5F85337F1A5BB8C900F14347 /* Papi.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -264,9 +264,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5F8533691A5BB8C800F14347 /* pipi */ = {
+		5F8533691A5BB8C800F14347 /* Papi */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F8533891A5BB8C900F14347 /* Build configuration list for PBXNativeTarget "pipi" */;
+			buildConfigurationList = 5F8533891A5BB8C900F14347 /* Build configuration list for PBXNativeTarget "Papi" */;
 			buildPhases = (
 				5F8533661A5BB8C800F14347 /* Sources */,
 				5F8533671A5BB8C800F14347 /* Frameworks */,
@@ -276,14 +276,14 @@
 			);
 			dependencies = (
 			);
-			name = pipi;
+			name = Papi;
 			productName = Browser;
-			productReference = 5F85336A1A5BB8C800F14347 /* pipi.app */;
+			productReference = 5F85336A1A5BB8C800F14347 /* Papi.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5F85337E1A5BB8C900F14347 /* pipiTests */ = {
+		5F85337E1A5BB8C900F14347 /* PapiTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F85338C1A5BB8C900F14347 /* Build configuration list for PBXNativeTarget "pipiTests" */;
+			buildConfigurationList = 5F85338C1A5BB8C900F14347 /* Build configuration list for PBXNativeTarget "PapiTests" */;
 			buildPhases = (
 				5F85337B1A5BB8C900F14347 /* Sources */,
 				5F85337C1A5BB8C900F14347 /* Frameworks */,
@@ -294,9 +294,9 @@
 			dependencies = (
 				5F8533811A5BB8C900F14347 /* PBXTargetDependency */,
 			);
-			name = pipiTests;
+			name = PapiTests;
 			productName = BrowserTests;
-			productReference = 5F85337F1A5BB8C900F14347 /* pipi.xctest */;
+			productReference = 5F85337F1A5BB8C900F14347 /* Papi.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -320,7 +320,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5F8533651A5BB8C800F14347 /* Build configuration list for PBXProject "pipi" */;
+			buildConfigurationList = 5F8533651A5BB8C800F14347 /* Build configuration list for PBXProject "Papi" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -333,8 +333,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5F8533691A5BB8C800F14347 /* pipi */,
-				5F85337E1A5BB8C900F14347 /* pipiTests */,
+				5F8533691A5BB8C800F14347 /* Papi */,
+				5F85337E1A5BB8C900F14347 /* PapiTests */,
 			);
 		};
 /* End PBXProject section */
@@ -424,7 +424,7 @@
 /* Begin PBXTargetDependency section */
 		5F8533811A5BB8C900F14347 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5F8533691A5BB8C800F14347 /* pipi */;
+			target = 5F8533691A5BB8C800F14347 /* Papi */;
 			targetProxy = 5F8533801A5BB8C900F14347 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -538,8 +538,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Browser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.studiospates.pipi;
-				PRODUCT_NAME = pipi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.studiospates.papi;
+				PRODUCT_NAME = Papi;
 				SWIFT_OBJC_BRIDGING_HEADER = "pipi-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -553,8 +553,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Browser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.studiospates.pipi;
-				PRODUCT_NAME = pipi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.studiospates.papi;
+				PRODUCT_NAME = Papi;
 				SWIFT_OBJC_BRIDGING_HEADER = "pipi-Bridging-Header.h";
 			};
 			name = Release;
@@ -574,8 +574,8 @@
 				INFOPLIST_FILE = BrowserTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = pipi;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pipi.app/pipi";
+				PRODUCT_NAME = Papi;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Papi.app/Papi";
 			};
 			name = Debug;
 		};
@@ -590,15 +590,15 @@
 				INFOPLIST_FILE = BrowserTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = pipi;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pipi.app/pipi";
+				PRODUCT_NAME = Papi;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Papi.app/Papi";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5F8533651A5BB8C800F14347 /* Build configuration list for PBXProject "pipi" */ = {
+		5F8533651A5BB8C800F14347 /* Build configuration list for PBXProject "Papi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F8533871A5BB8C900F14347 /* Debug */,
@@ -607,7 +607,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F8533891A5BB8C900F14347 /* Build configuration list for PBXNativeTarget "pipi" */ = {
+		5F8533891A5BB8C900F14347 /* Build configuration list for PBXNativeTarget "Papi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F85338A1A5BB8C900F14347 /* Debug */,
@@ -616,7 +616,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F85338C1A5BB8C900F14347 /* Build configuration list for PBXNativeTarget "pipiTests" */ = {
+		5F85338C1A5BB8C900F14347 /* Build configuration list for PBXNativeTarget "PapiTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F85338D1A5BB8C900F14347 /* Debug */,

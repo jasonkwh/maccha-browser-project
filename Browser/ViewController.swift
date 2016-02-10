@@ -102,7 +102,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         setNavBarToTheView()
         
         //user agent string
-        let ver:String = "Kapiko/4.0 pipi/" + version()
+        let ver:String = "Kapiko/4.0 Papi/" + version()
         webView.performSelector("_setApplicationNameForUserAgent:", withObject: ver)
         
         //enable Back & Forward gestures
