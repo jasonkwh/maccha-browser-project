@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SlideViewController: UIViewController {
+class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var sfButton: UIButton!
@@ -16,7 +16,12 @@ class SlideViewController: UIViewController {
     @IBOutlet weak var bkButton: UIButton!
     @IBOutlet weak var sgButton: UIButton!
     @IBOutlet weak var abButton: UIButton!
-    @IBOutlet weak var windowView: UITableView!
+    @IBOutlet weak var windowView: UITableView! {
+        didSet {
+            windowView.dataSource = self
+        }
+    }
+    var testArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +33,9 @@ class SlideViewController: UIViewController {
         toolbar.clipsToBounds = true
         windowView.backgroundColor = UIColor(netHex:0x2E2E2E)
         windowView.separatorColor = UIColor(netHex:0x2E2E2E)
+        windowView.delegate = self
+        windowView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+        windowView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "myCell")
         
         //button displays
         displaySafariButton()
@@ -35,6 +43,28 @@ class SlideViewController: UIViewController {
         displayBookmarkButton()
         displaySettingsButton()
         displayAboutButton()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        windowView.reloadData()
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return slideViewValue.windowStoreTitle.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as UITableViewCell
+        cell.textLabel?.text = slideViewValue.windowStoreTitle[indexPath.row]
+        cell.backgroundColor = UIColor(netHex:0x2E2E2E)
+        cell.textLabel?.textColor = UIColor(netHex: 0xECF0F1)
+        cell.textLabel?.textAlignment = .Right
+        cell.transform = CGAffineTransformMakeRotation(CGFloat(M_PI));
+        return cell
     }
     
     //function to display safari button with the height 30 and width 30

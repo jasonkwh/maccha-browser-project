@@ -13,6 +13,10 @@ import AudioToolbox
 struct slideViewValue {
     static var aboutButton: Bool = false
     static var safariButton: Bool = false
+    static var windowStoreTitle = [String]()
+    static var windowStoreUrl = [String]()
+    static var windowStoreSums:Int = 1
+    static var windowCurTab: Int = 0
 }
 
 class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UIScrollViewDelegate, SWRevealViewControllerDelegate {
@@ -31,10 +35,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var moveToolbarReturn: Bool = false
     var webAddress: String = ""
     var webTitle: String = ""
-    var windowStoreTitle = [String]()
-    var windowStoreUrl = [String]()
-    var windowStoreCurrent:Int = 1
-    var windowCurTab: Int = 0
     var toolbarStyle: Int = 0 //can be change
     var navBar: UINavigationBar = UINavigationBar()
     var scrollDirectionDetermined: Bool = false
@@ -86,7 +86,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         displayRefreshOrStop()
         
         //display current window number on the window button
-        displayCurWindowNum(self.windowStoreCurrent)
+        displayCurWindowNum(slideViewValue.windowStoreSums)
         
         //set toolbar color and style
         bar.clipsToBounds = true
@@ -504,18 +504,18 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 moveToolbarReturn = false
                 
                 //update current window store title and url
-                if(windowStoreTitle.count == 0) {
-                    windowStoreTitle.append(webView.title!)
-                    windowStoreUrl.append((webView.URL?.absoluteString)!)
+                if(slideViewValue.windowStoreTitle.count == 0) {
+                    slideViewValue.windowStoreTitle.append(webView.title!)
+                    slideViewValue.windowStoreUrl.append((webView.URL?.absoluteString)!)
                 }
                 else {
-                    windowStoreTitle[windowCurTab] = webView.title!
-                    windowStoreUrl[windowCurTab] = (webView.URL?.absoluteString)!
+                    slideViewValue.windowStoreTitle[slideViewValue.windowCurTab] = webView.title!
+                    slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] = (webView.URL?.absoluteString)!
                 }
                 
                 //display current window numbers
-                windowStoreCurrent = windowStoreTitle.count
-                windowView.setTitle(String(windowStoreCurrent), forState: UIControlState.Normal)
+                slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
+                windowView.setTitle(String(slideViewValue.windowStoreSums), forState: UIControlState.Normal)
             }
             
             if(Float(webView.estimatedProgress) == 1.0) {
@@ -586,11 +586,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //function to new window
     func newWindow() {
         //store previous window titles and urls
-        windowStoreTitle.append(webView.title!)
-        windowStoreUrl.append((webView.URL?.absoluteString)!)
+        slideViewValue.windowStoreTitle.append(webView.title!)
+        slideViewValue.windowStoreUrl.append((webView.URL?.absoluteString)!)
         
         //set current window as the latest window
-        windowCurTab = windowStoreTitle.count - 1
+        slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
         
         //open urls
         moveToolbarReturn = true
@@ -644,7 +644,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     //function which opens safari to load this url
     func safariPressed() {
-        UIApplication.sharedApplication().openURL(NSURL(string: windowStoreUrl[windowCurTab])!)
+        UIApplication.sharedApplication().openURL(NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!)
     }
     
     override func didReceiveMemoryWarning() {
