@@ -63,7 +63,15 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //design of different cells
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as UITableViewCell
-        cell.textLabel?.text = slideViewValue.windowStoreTitle[indexPath.row]
+        
+        //shorten the website title
+        var siteTitle = slideViewValue.windowStoreTitle[indexPath.row]
+        if(siteTitle.characters.count > 12) {
+            siteTitle = siteTitle.trunc(12)
+        }
+        cell.textLabel?.text = siteTitle
+        
+        //cell design
         cell.backgroundColor = UIColor(netHex:0x2E2E2E)
         cell.textLabel?.textColor = UIColor(netHex: 0xECF0F1)
         cell.textLabel?.textAlignment = .Right
@@ -150,5 +158,16 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+}
+
+//method to shorten strings to ...
+extension String {
+    func trunc(length: Int, trailing: String? = "...") -> String {
+        if self.characters.count > length {
+            return self.substringToIndex(self.startIndex.advancedBy(length)) + (trailing ?? "")
+        } else {
+            return self
+        }
     }
 }
