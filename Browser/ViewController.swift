@@ -175,6 +175,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 slideViewValue.cellActions = false
             }
             if(slideViewValue.newtabButton == true) {
+                //open new tab
                 webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
                 slideViewValue.windowStoreTitle.append(webView.title!)
                 slideViewValue.windowStoreUrl.append((webView.URL?.absoluteString)!)
