@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Papi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quaza" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -146,7 +146,7 @@
         <!--Slide View Controller-->
         <scene sceneID="tQ0-1U-FYM">
             <objects>
-                <viewController id="Ay8-h7-Adg" customClass="SlideViewController" customModule="Papi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ay8-h7-Adg" customClass="SlideViewController" customModule="Quaza" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cfj-PE-egQ"/>
                         <viewControllerLayoutGuide type="bottom" id="bxU-kF-Lhi"/>
@@ -159,34 +159,41 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="HAe-xe-FCd"/>
+                                    <barButtonItem style="plain" id="i7b-uH-m5e">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2ZQ-eX-kqE">
+                                            <rect key="frame" x="290" y="7" width="10" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </button>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" id="fs0-wE-O0J">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Skr-kw-S0F">
-                                            <rect key="frame" x="346" y="7" width="46" height="30"/>
+                                            <rect key="frame" x="310" y="7" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="lvn-x6-4mJ">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Stq-pP-azj">
-                                            <rect key="frame" x="402" y="7" width="46" height="30"/>
+                                            <rect key="frame" x="366" y="7" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="mOI-Jq-x1E">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3mc-1P-9wt">
-                                            <rect key="frame" x="458" y="7" width="46" height="30"/>
+                                            <rect key="frame" x="422" y="7" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="bTB-5o-Hff">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8WR-jM-hhK">
-                                            <rect key="frame" x="514" y="7" width="46" height="30"/>
+                                            <rect key="frame" x="478" y="7" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </button>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" id="i7b-uH-m5e">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2ZQ-eX-kqE">
-                                            <rect key="frame" x="570" y="7" width="10" height="30"/>
+                                    <barButtonItem style="plain" id="WVY-Uu-MDG">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6CK-IT-UwK">
+                                            <rect key="frame" x="534" y="7" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
                                         </button>
                                     </barButtonItem>
                                 </items>
@@ -199,19 +206,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="wH7-aq-OYg" secondAttribute="trailing" id="BOe-yQ-dOO"/>
-                            <constraint firstItem="PQh-Ph-huz" firstAttribute="bottom" secondItem="wH7-aq-OYg" secondAttribute="top" id="LTD-m7-hGI"/>
-                            <constraint firstItem="PQh-Ph-huz" firstAttribute="leading" secondItem="wH7-aq-OYg" secondAttribute="leading" id="Z4x-2k-bz9"/>
-                            <constraint firstItem="wH7-aq-OYg" firstAttribute="bottom" secondItem="bxU-kF-Lhi" secondAttribute="top" id="aLx-q1-xOD"/>
-                            <constraint firstItem="PQh-Ph-huz" firstAttribute="trailing" secondItem="wH7-aq-OYg" secondAttribute="trailing" id="c8Z-kU-64c"/>
-                            <constraint firstItem="wH7-aq-OYg" firstAttribute="leading" secondItem="jAj-ld-J43" secondAttribute="leading" id="fJj-Z7-8IY"/>
-                            <constraint firstItem="PQh-Ph-huz" firstAttribute="top" secondItem="jAj-ld-J43" secondAttribute="top" id="wBX-FU-KCl"/>
+                            <constraint firstItem="PQh-Ph-huz" firstAttribute="trailing" secondItem="wH7-aq-OYg" secondAttribute="trailing" id="6Y6-AI-Mlr"/>
+                            <constraint firstItem="PQh-Ph-huz" firstAttribute="leading" secondItem="wH7-aq-OYg" secondAttribute="leading" id="OMk-C3-RI3"/>
+                            <constraint firstAttribute="trailing" secondItem="wH7-aq-OYg" secondAttribute="trailing" id="QMp-Gp-tIB"/>
+                            <constraint firstItem="wH7-aq-OYg" firstAttribute="bottom" secondItem="bxU-kF-Lhi" secondAttribute="top" id="Uok-SS-ndk"/>
+                            <constraint firstItem="PQh-Ph-huz" firstAttribute="top" secondItem="jAj-ld-J43" secondAttribute="top" id="cHE-Jt-Xk5"/>
+                            <constraint firstItem="wH7-aq-OYg" firstAttribute="leading" secondItem="jAj-ld-J43" secondAttribute="leading" id="erA-1s-O0y"/>
+                            <constraint firstItem="PQh-Ph-huz" firstAttribute="bottom" secondItem="wH7-aq-OYg" secondAttribute="top" id="gTG-tV-nQC"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="abButton" destination="2ZQ-eX-kqE" id="KIj-li-Ydk"/>
                         <outlet property="bkButton" destination="3mc-1P-9wt" id="jm0-s5-2tj"/>
                         <outlet property="htButton" destination="Stq-pP-azj" id="f0c-bz-h63"/>
+                        <outlet property="ntButton" destination="6CK-IT-UwK" id="gH7-9H-gaS"/>
                         <outlet property="sfButton" destination="Skr-kw-S0F" id="ujk-PJ-QTO"/>
                         <outlet property="sgButton" destination="8WR-jM-hhK" id="XEA-Up-9f7"/>
                         <outlet property="toolbar" destination="wH7-aq-OYg" id="eVk-2Y-vex"/>

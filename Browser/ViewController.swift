@@ -11,6 +11,7 @@ import WebKit
 import AudioToolbox
 
 struct slideViewValue {
+    static var newtabButton: Bool = false
     static var aboutButton: Bool = false
     static var safariButton: Bool = false
     static var cellActions: Bool = false
@@ -172,6 +173,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 //open stored urls
                 webView.loadRequest(NSURLRequest(URL:NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!))
                 slideViewValue.cellActions = false
+            }
+            if(slideViewValue.newtabButton == true) {
+                webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
+                slideViewValue.windowStoreTitle.append(webView.title!)
+                slideViewValue.windowStoreUrl.append((webView.URL?.absoluteString)!)
+                slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
+                slideViewValue.windowCurTab = slideViewValue.windowStoreSums - 1
+                slideViewValue.newtabButton = false
             }
         }
     }

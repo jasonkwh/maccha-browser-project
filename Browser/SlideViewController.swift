@@ -9,8 +9,9 @@
 import UIKit
 
 class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+
     @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet weak var ntButton: UIButton!
     @IBOutlet weak var sfButton: UIButton!
     @IBOutlet weak var htButton: UIButton!
     @IBOutlet weak var bkButton: UIButton!
@@ -43,6 +44,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         displayBookmarkButton()
         displaySettingsButton()
         displayAboutButton()
+        displayNewtabButton()
     }
     
     //windows management functions
@@ -74,6 +76,13 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         slideViewValue.windowCurTab = indexPath.row
         slideViewValue.cellActions = true
         revealViewController().rightRevealToggleAnimated(true)
+    }
+    
+    //function to display New tab button with the height 30 and width 30
+    func displayNewtabButton() {
+        ntButton.setImage(UIImage(named: "Newtab"), forState: UIControlState.Normal)
+        ntButton.addTarget(self, action: "newtabAction", forControlEvents: UIControlEvents.TouchUpInside)
+        ntButton.frame = CGRectMake(0, 0, 25, 25)
     }
     
     //function to display safari button with the height 30 and width 30
@@ -109,6 +118,11 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         abButton.setImage(UIImage(named: "About"), forState: UIControlState.Normal)
         abButton.addTarget(self, action: "aboutAction", forControlEvents: UIControlEvents.TouchUpInside)
         abButton.frame = CGRectMake(0, 0, 25, 25)
+    }
+    
+    func newtabAction() {
+        slideViewValue.newtabButton = true
+        revealViewController().rightRevealToggleAnimated(true)
     }
     
     func aboutAction() {
