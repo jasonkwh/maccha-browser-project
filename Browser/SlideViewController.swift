@@ -45,6 +45,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         displayAboutButton()
     }
     
+    //windows management functions
     override func viewDidAppear(animated: Bool) {
         windowView.reloadData()
     }
@@ -57,6 +58,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return slideViewValue.windowStoreTitle.count
     }
     
+    //design of different cells
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as UITableViewCell
         cell.textLabel?.text = slideViewValue.windowStoreTitle[indexPath.row]
@@ -65,6 +67,13 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.textLabel?.textAlignment = .Right
         cell.transform = CGAffineTransformMakeRotation(CGFloat(M_PI));
         return cell
+    }
+    
+    //actions of the cells
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        slideViewValue.windowCurTab = indexPath.row
+        slideViewValue.cellActions = true
+        revealViewController().rightRevealToggleAnimated(true)
     }
     
     //function to display safari button with the height 30 and width 30

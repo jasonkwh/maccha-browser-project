@@ -13,6 +13,7 @@ import AudioToolbox
 struct slideViewValue {
     static var aboutButton: Bool = false
     static var safariButton: Bool = false
+    static var cellActions: Bool = false
     static var windowStoreTitle = [String]()
     static var windowStoreUrl = [String]()
     static var windowStoreSums:Int = 1
@@ -102,7 +103,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         setNavBarToTheView()
         
         //user agent string
-        let ver:String = "Kapiko/4.0 Papi/" + version()
+        let ver:String = "Kapiko/4.0 Quaza/" + version()
         webView.performSelector("_setApplicationNameForUserAgent:", withObject: ver)
         
         //enable Back & Forward gestures
@@ -158,12 +159,19 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             self.webView.userInteractionEnabled = true
             self.bar.userInteractionEnabled = true
             if(slideViewValue.aboutButton == true) {
+                //display about page
                 aboutPressed()
                 slideViewValue.aboutButton = false
             }
             if(slideViewValue.safariButton == true) {
+                //use safari to open
                 safariPressed()
                 slideViewValue.safariButton = false
+            }
+            if(slideViewValue.cellActions == true) {
+                //open stored urls
+                webView.loadRequest(NSURLRequest(URL:NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!))
+                slideViewValue.cellActions = false
             }
         }
     }
