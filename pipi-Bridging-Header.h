@@ -1,6 +1,6 @@
 //
 //  pipi-Bridging-Header.h
-//  pipi-browser-project
+//  quaza-browser-project
 //
 //  Copyright © 2016 Studios Pâtes, Jason Wong (mail: jasonkwh@gmail.com).
 //

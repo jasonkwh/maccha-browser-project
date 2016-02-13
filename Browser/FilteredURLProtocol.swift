@@ -1,6 +1,6 @@
 //
 //  FilteredURLProtocol.swift
-//  pipi-browser-project
+//  quaza-browser-project
 //
 //  Created by Jason Wong on 3/02/2016.
 //  Copyright © 2016 Studios Pâtes, Jason Wong (mail: jasonkwh@gmail.com).
