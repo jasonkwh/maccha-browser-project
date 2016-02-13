@@ -66,8 +66,8 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         //shorten the website title
         var siteTitle = slideViewValue.windowStoreTitle[indexPath.row]
-        if(siteTitle.characters.count > 12) {
-            siteTitle = siteTitle.trunc(12)
+        if(siteTitle.characters.count > 15) {
+            siteTitle = siteTitle.trunc(15)
         }
         cell.textLabel?.text = siteTitle
         

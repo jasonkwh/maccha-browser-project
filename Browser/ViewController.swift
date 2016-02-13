@@ -171,7 +171,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             }
             if(slideViewValue.cellActions == true) {
                 //open stored urls
-                webView.loadRequest(NSURLRequest(URL:NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!))
+                webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 15))
                 slideViewValue.cellActions = false
             }
             if(slideViewValue.newtabButton == true) {
@@ -440,7 +440,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             }
             
             //load contents by wkwebview
-            webView.loadRequest(NSURLRequest(URL:NSURL(string: contents)!))
+            webView.loadRequest(NSURLRequest(URL: NSURL(string: contents)!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 15))
         }
         else {
             let alert = UIAlertController(title: "Error", message: "The Internet connection appears to be offline.", preferredStyle: .Alert)
