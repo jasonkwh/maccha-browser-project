@@ -88,7 +88,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //function to display New tab button with the height 30 and width 30
     func displayNewtabButton() {
-        ntButton.setImage(UIImage(named: "Newtab"), forState: UIControlState.Normal)
+        ntButton.setImage(UIImage(named: "Addtab"), forState: UIControlState.Normal)
         ntButton.addTarget(self, action: "newtabAction", forControlEvents: UIControlEvents.TouchUpInside)
         ntButton.frame = CGRectMake(0, 0, 25, 25)
     }
