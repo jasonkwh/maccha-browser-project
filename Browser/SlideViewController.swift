@@ -66,8 +66,15 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         //shorten the website title
         var siteTitle = slideViewValue.windowStoreTitle[indexPath.row]
-        if(siteTitle.characters.count > 15) {
-            siteTitle = siteTitle.trunc(15)
+        if((siteTitle.containsChineseCharacters == true) || (siteTitle.containsJapHiraganaCharacters == true) || (siteTitle.containsJapKatakanaCharacters == true) || (siteTitle.containsKoreanCharacters == true)) {
+            if(siteTitle.characters.count > 11) {
+                siteTitle = siteTitle.trunc(11)
+            }
+        }
+        else {
+            if(siteTitle.characters.count > 22) {
+                siteTitle = siteTitle.trunc(22)
+            }
         }
         cell.textLabel?.text = siteTitle
         
@@ -161,7 +168,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 }
 
-//method to shorten strings to ...
+//method to shorten strings to ... , and determines non-English full-width characters
 extension String {
     func trunc(length: Int, trailing: String? = "...") -> String {
         if self.characters.count > length {
@@ -169,5 +176,21 @@ extension String {
         } else {
             return self
         }
+    }
+    
+    var containsChineseCharacters: Bool {
+        return self.rangeOfString("\\p{Han}", options: .RegularExpressionSearch) != nil
+    }
+    
+    var containsKoreanCharacters: Bool {
+        return self.rangeOfString("\\p{Hangul}", options: .RegularExpressionSearch) != nil
+    }
+    
+    var containsJapHiraganaCharacters: Bool {
+        return self.rangeOfString("\\p{Hiragana}", options: .RegularExpressionSearch) != nil
+    }
+    
+    var containsJapKatakanaCharacters: Bool {
+        return self.rangeOfString("\\p{Katakana}", options: .RegularExpressionSearch) != nil
     }
 }
