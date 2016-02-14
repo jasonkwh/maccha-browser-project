@@ -21,7 +21,7 @@ struct slideViewValue {
     static var windowCurTab: Int = 0
 }
 
-class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UIScrollViewDelegate, SWRevealViewControllerDelegate {
+class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UIScrollViewDelegate, SWRevealViewControllerDelegate, UIGestureRecognizerDelegate {
     
     var webView: WKWebView
     @IBOutlet weak var barView: UIView!
@@ -41,6 +41,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var navBar: UINavigationBar = UINavigationBar()
     var scrollDirectionDetermined: Bool = false
     var scrollMakeStatusBarDown: Bool = false
+    
+    //remember previous scrolling position~~
+    var scrollPosition = [CGFloat]()
+    let panPressRecognizer = UIPanGestureRecognizer()
+    var scrollPositionRecord: Bool = false
     
     //Search Engines
     //0: Google, 1: Baidu
@@ -103,6 +108,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         //set new navigation bar
         setNavBarToTheView()
         
+        //hook the tap press event
+        panPressRecognizer.delegate = self
+        panPressRecognizer.addTarget(self, action: "onPanPress:")
+        self.webView.scrollView.addGestureRecognizer(panPressRecognizer)
+        
         //user agent string
         let ver:String = "Kapiko/4.0 Quaza/" + version()
         webView.performSelector("_setApplicationNameForUserAgent:", withObject: ver)
@@ -126,6 +136,19 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         forwardButton.enabled = false
     }
     
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    func onPanPress(gestureRecognizer:UIGestureRecognizer){
+        if gestureRecognizer.state == UIGestureRecognizerState.Began {
+            scrollPositionRecord = true
+        }
+        if gestureRecognizer.state == UIGestureRecognizerState.Ended {
+            scrollPositionRecord = false
+        }
+    }
+
     //function to hide the statusbar
     func hideStatusbar() {
         UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
@@ -179,6 +202,10 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
                 slideViewValue.windowStoreTitle.append(webView.title!)
                 slideViewValue.windowStoreUrl.append((webView.URL?.absoluteString)!)
+                
+                //initial y point
+                scrollPosition.append(CGFloat(0.0))
+                
                 slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
                 slideViewValue.windowCurTab = slideViewValue.windowStoreSums - 1
                 slideViewValue.newtabButton = false
@@ -188,6 +215,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     //scroll down to hide status bar, scroll up to show status bar, with animations
     func scrollViewDidScroll(scrollView: UIScrollView) {
+        //store current scroll positions to array
+        if(scrollPositionRecord == true) {
+            scrollPosition[slideViewValue.windowCurTab] = scrollView.contentOffset.y
+        }
+        
         if !scrollDirectionDetermined {
             if(moveToolbar == false) {
                 let translation = scrollView.panGestureRecognizer.translationInView(self.view)
@@ -525,6 +557,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 if(slideViewValue.windowStoreTitle.count == 0) {
                     slideViewValue.windowStoreTitle.append(webView.title!)
                     slideViewValue.windowStoreUrl.append((webView.URL?.absoluteString)!)
+                    
+                    //initial y point
+                    scrollPosition.append(CGFloat(0.0))
                 }
                 else {
                     slideViewValue.windowStoreTitle[slideViewValue.windowCurTab] = webView.title!
@@ -551,7 +586,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     }
     
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
+        self.webView.scrollView.setContentOffset(CGPointMake(0.0, scrollPosition[slideViewValue.windowCurTab]), animated: true)
         progressView.setProgress(0.0, animated: false)
+    }
+    
+    func webView(webView: WKWebView, didCommitNavigation navigation: WKNavigation!) {
+        self.webView.scrollView.setContentOffset(CGPointZero, animated: false)
     }
     
     // this handles target=_blank links by opening them in the same view
@@ -608,6 +648,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         
         //set current window as the latest window
         slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+        
+        //initial y point
+        scrollPosition.append(CGFloat(0.0))
         
         //open urls
         moveToolbarReturn = true
