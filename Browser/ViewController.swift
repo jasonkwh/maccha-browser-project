@@ -45,7 +45,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //remember previous scrolling position~~
     var scrollPosition = [CGFloat]()
     let panPressRecognizer = UIPanGestureRecognizer()
-    var scrollPositionRecord: Bool = false
+    var scrollPositionRecord: Bool = false //user tap, record scroll position
+    var scrollPositionSwitch: Bool = false //switch position scroll when revealViewController is close
     
     //Search Engines
     //0: Google, 1: Baidu
@@ -195,6 +196,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             if(slideViewValue.cellActions == true) {
                 //open stored urls
                 webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+                scrollPositionSwitch = true
                 slideViewValue.cellActions = false
             }
             if(slideViewValue.newtabButton == true) {
@@ -586,7 +588,10 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     }
     
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
-        self.webView.scrollView.setContentOffset(CGPointMake(0.0, scrollPosition[slideViewValue.windowCurTab]), animated: true)
+        if(scrollPositionSwitch == true) {
+            self.webView.scrollView.setContentOffset(CGPointMake(0.0, scrollPosition[slideViewValue.windowCurTab]), animated: true)
+            scrollPositionSwitch = false
+        }
         progressView.setProgress(0.0, animated: false)
     }
     
