@@ -88,8 +88,10 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //actions of the cells
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        slideViewValue.windowCurTab = indexPath.row
-        slideViewValue.cellActions = true
+        if(slideViewValue.windowCurTab != indexPath.row) {
+            slideViewValue.windowCurTab = indexPath.row
+            slideViewValue.cellActions = true
+        }
         revealViewController().rightRevealToggleAnimated(true)
     }
     

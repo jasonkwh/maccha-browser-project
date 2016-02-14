@@ -535,7 +535,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
                 windowView.setTitle(String(slideViewValue.windowStoreSums), forState: UIControlState.Normal)
             }
-            
             if(Float(webView.estimatedProgress) == 1.0) {
                 refreshStopButton.setImage(UIImage(named: "Refresh"), forState: UIControlState.Normal)
                 refreshStopButton.addTarget(self, action: "refreshPressed", forControlEvents: UIControlEvents.TouchUpInside)
