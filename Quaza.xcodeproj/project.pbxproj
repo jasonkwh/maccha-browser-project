@@ -532,6 +532,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.studiospates.quaza;
 				PRODUCT_NAME = Quaza;
 				SWIFT_OBJC_BRIDGING_HEADER = "pipi-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
