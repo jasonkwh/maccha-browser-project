@@ -65,7 +65,11 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as UITableViewCell
         
         //shorten the website title
-        var siteTitle = slideViewValue.windowStoreTitle[indexPath.row]
+        var titleName = slideViewValue.windowStoreTitle[indexPath.row]
+        if(titleName == "") {
+            titleName = "Untitled"
+        }
+        var siteTitle = titleName
         if((siteTitle.containsChineseCharacters == true) || (siteTitle.containsJapHiraganaCharacters == true) || (siteTitle.containsJapKatakanaCharacters == true) || (siteTitle.containsKoreanCharacters == true)) {
             if(siteTitle.characters.count > 11) {
                 siteTitle = siteTitle.trunc(11)
@@ -79,7 +83,12 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.textLabel?.text = siteTitle
         
         //cell design
-        cell.backgroundColor = UIColor(netHex:0x2E2E2E)
+        if(indexPath.row == slideViewValue.windowCurTab) {
+            cell.backgroundColor = slideViewValue.windowCurColour
+        }
+        else {
+            cell.backgroundColor = UIColor(netHex:0x2E2E2E)
+        }
         cell.textLabel?.textColor = UIColor(netHex: 0xECF0F1)
         cell.textLabel?.textAlignment = .Right
         cell.transform = CGAffineTransformMakeRotation(CGFloat(M_PI));

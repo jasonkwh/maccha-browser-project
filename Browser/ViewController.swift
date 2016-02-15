@@ -19,6 +19,7 @@ struct slideViewValue {
     static var windowStoreUrl = [String]()
     static var windowStoreSums:Int = 1
     static var windowCurTab: Int = 0
+    static var windowCurColour: UIColor!
 }
 
 class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UIScrollViewDelegate, SWRevealViewControllerDelegate, UIGestureRecognizerDelegate {
@@ -77,7 +78,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         
         self.revealViewController().delegate = self
         if self.revealViewController() != nil {
-            revealViewController().rightViewRevealWidth = 280
+            revealViewController().rightViewRevealWidth = 260
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
@@ -286,36 +287,42 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             urlField.backgroundColor = UIColor(netHex:0x00882B)
             bar.barTintColor = UIColor(netHex:0x70BF41)
             navBar.barTintColor = UIColor(netHex:0x70BF41)
+            slideViewValue.windowCurColour = UIColor(netHex:0x70BF41)
         case 1:
             //Blue
             progressView.tintColor = UIColor(netHex:0x0153A4)
             urlField.backgroundColor = UIColor(netHex:0x0153A4)
             bar.barTintColor = UIColor(netHex:0x499AE7)
             navBar.barTintColor = UIColor(netHex:0x499AE7)
+            slideViewValue.windowCurColour = UIColor(netHex:0x499AE7)
         case 2:
             //Yellow
             progressView.tintColor = UIColor(netHex:0xB08316)
             urlField.backgroundColor = UIColor(netHex:0xB08316)
             bar.barTintColor = UIColor(netHex:0xEBC622)
             navBar.barTintColor = UIColor(netHex:0xEBC622)
+            slideViewValue.windowCurColour = UIColor(netHex:0xEBC622)
         case 3:
             //Orange
             progressView.tintColor = UIColor(netHex:0xAD530D)
             urlField.backgroundColor = UIColor(netHex:0xAD530D)
             bar.barTintColor = UIColor(netHex:0xF39019)
             navBar.barTintColor = UIColor(netHex:0xF39019)
+            slideViewValue.windowCurColour = UIColor(netHex:0xF39019)
         case 4:
             //Red
             progressView.tintColor = UIColor(netHex:0xA00F09)
             urlField.backgroundColor = UIColor(netHex:0xA00F09)
             bar.barTintColor = UIColor(netHex:0xEC5D57)
             navBar.barTintColor = UIColor(netHex:0xEC5D57)
+            slideViewValue.windowCurColour = UIColor(netHex:0xEC5D57)
         case 5:
             //Purple
             progressView.tintColor = UIColor(netHex:0x5F327C)
             urlField.backgroundColor = UIColor(netHex:0x5F327C)
             bar.barTintColor = UIColor(netHex:0xB36AE2)
             navBar.barTintColor = UIColor(netHex:0xB36AE2)
+            slideViewValue.windowCurColour = UIColor(netHex:0xB36AE2)
         default:
             break
         }
