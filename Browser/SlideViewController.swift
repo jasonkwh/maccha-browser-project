@@ -165,8 +165,20 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func aboutAction() {
-        slideViewValue.aboutButton = true
-        revealViewController().rightRevealToggleAnimated(true)
+        let view = ModalView.instantiateFromNib()
+        let window = UIApplication.sharedApplication().delegate?.window!
+        let modal = PathDynamicModal()
+        modal.showMagnitude = 200.0
+        modal.closeMagnitude = 130.0
+        view.closeButtonHandler = {[weak modal] in
+            modal?.closeWithLeansRandom()
+            return
+        }
+        view.bottomButtonHandler = {[weak modal] in
+            modal?.closeWithLeansRandom()
+            return
+        }
+        modal.show(modalView: view, inView: window!)
     }
     
     func safariAction() {

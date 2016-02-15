@@ -16,7 +16,6 @@ import AudioToolbox
 
 struct slideViewValue {
     static var newtabButton: Bool = false
-    static var aboutButton: Bool = false
     static var safariButton: Bool = false
     static var cellActions: Bool = false
     static var windowStoreTitle = [String]()
@@ -24,6 +23,14 @@ struct slideViewValue {
     static var windowStoreSums:Int = 1
     static var windowCurTab: Int = 0
     static var windowCurColour: UIColor!
+    
+    //get versions information from Xcode Project Setting
+    static func version() -> String {
+        let dictionary = NSBundle.mainBundle().infoDictionary!
+        let version = dictionary["CFBundleShortVersionString"] as! String
+        let build = dictionary["CFBundleVersion"] as! String
+        return "\(version).\(build)"
+    }
 }
 
 class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UIScrollViewDelegate, SWRevealViewControllerDelegate, UIGestureRecognizerDelegate {
@@ -120,7 +127,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         self.webView.scrollView.addGestureRecognizer(panPressRecognizer)
         
         //user agent string
-        let ver:String = "Kapiko/4.0 Quaza/" + version()
+        let ver:String = "Kapiko/4.0 Quaza/" + slideViewValue.version()
         webView.performSelector("_setApplicationNameForUserAgent:", withObject: ver)
         
         //enable Back & Forward gestures
@@ -188,11 +195,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         {
             self.webView.userInteractionEnabled = true
             self.bar.userInteractionEnabled = true
-            if(slideViewValue.aboutButton == true) {
-                //display about page
-                aboutPressed()
-                slideViewValue.aboutButton = false
-            }
             if(slideViewValue.safariButton == true) {
                 //use safari to open
                 safariPressed()
@@ -271,7 +273,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //shake to change toolbar color, phone will vibrate for confirmation
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == .MotionShake {
-            if(toolbarStyle < 5) {
+            if(toolbarStyle < 4) {
                 toolbarStyle++
             }
             else {
@@ -307,20 +309,13 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             navBar.barTintColor = UIColor(netHex:0xEBC622)
             slideViewValue.windowCurColour = UIColor(netHex:0xEBC622)
         case 3:
-            //Orange
-            progressView.tintColor = UIColor(netHex:0xAD530D)
-            urlField.backgroundColor = UIColor(netHex:0xAD530D)
-            bar.barTintColor = UIColor(netHex:0xF39019)
-            navBar.barTintColor = UIColor(netHex:0xF39019)
-            slideViewValue.windowCurColour = UIColor(netHex:0xF39019)
-        case 4:
             //Red
             progressView.tintColor = UIColor(netHex:0xA00F09)
             urlField.backgroundColor = UIColor(netHex:0xA00F09)
             bar.barTintColor = UIColor(netHex:0xEC5D57)
             navBar.barTintColor = UIColor(netHex:0xEC5D57)
             slideViewValue.windowCurColour = UIColor(netHex:0xEC5D57)
-        case 5:
+        case 4:
             //Purple
             progressView.tintColor = UIColor(netHex:0x5F327C)
             urlField.backgroundColor = UIColor(netHex:0x5F327C)
@@ -330,14 +325,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         default:
             break
         }
-    }
-    
-    //get versions information from Xcode Project Setting
-    func version() -> String {
-        let dictionary = NSBundle.mainBundle().infoDictionary!
-        let version = dictionary["CFBundleShortVersionString"] as! String
-        let build = dictionary["CFBundleVersion"] as! String
-        return "\(version).\(build)"
     }
     
     //function which defines the clear button of the urlfield and some characteristics of urlfield
@@ -689,33 +676,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //function to hide keyboard
     func hideKeyboard() {
         self.view.endEditing(true)
-    }
-    
-    //function when about button is pressed
-    func aboutPressed() {
-        //generate url, thanks to kzy52
-        var path = NSBundle.mainBundle().pathForResource("about_2980B9", ofType: "html")
-        if(toolbarStyle == 0) {
-            path = NSBundle.mainBundle().pathForResource("about_2980B9", ofType: "html")
-        }
-        else if(toolbarStyle == 1) {
-            path = NSBundle.mainBundle().pathForResource("about_F39C12", ofType: "html")
-        }
-        else if(toolbarStyle == 2) {
-            path = NSBundle.mainBundle().pathForResource("about_16A085", ofType: "html")
-        }
-        else if(toolbarStyle == 3) {
-            path = NSBundle.mainBundle().pathForResource("about_27AE60", ofType: "html")
-        }
-        else if(toolbarStyle == 4) {
-            path = NSBundle.mainBundle().pathForResource("about_D35400", ofType: "html")
-        }
-        else if(toolbarStyle == 5) {
-            path = NSBundle.mainBundle().pathForResource("about_C0392B", ofType: "html")
-        }
-        
-        //load url
-        webView.loadRequest(NSURLRequest(URL: NSURL(string: "file://" + path!)!))
     }
     
     //function which opens safari to load this url
