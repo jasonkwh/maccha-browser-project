@@ -23,6 +23,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     var testArray = [String]()
+    var scrollCellAction: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,13 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //windows management functions
     override func viewDidAppear(animated: Bool) {
         windowView.reloadData()
+        
+        if(scrollCellAction == false) {
+            //scroll the tableView to display the latest tab
+            let indexPath = NSIndexPath(forRow: windowView.numberOfRowsInSection(windowView.numberOfSections-1)-1, inSection: (windowView.numberOfSections-1))
+            windowView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+        }
+        scrollCellAction = false
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -101,6 +109,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             slideViewValue.windowCurTab = indexPath.row
             slideViewValue.cellActions = true
         }
+        scrollCellAction = true
         revealViewController().rightRevealToggleAnimated(true)
     }
     
