@@ -1,10 +1,14 @@
-//
-//  AppDelegate.swift
-//  quaza-browser-project
-//
-//  Created by Jason Wong on 28/01/2016.
-//  Copyright © 2016 Studios Pâtes, Jason Wong (mail: jasonkwh@gmail.com).
-//
+/*
+*  AppDelegate.swift
+*  quaza-browser-project
+*
+*  This Source Code Form is subject to the terms of the Mozilla Public
+*  License, v. 2.0. If a copy of the MPL was not distributed with this
+*  file, You can obtain one at http://mozilla.org/MPL/2.0/.
+*
+*  Created by Jason Wong on 28/01/2016.
+*  Copyright © 2016 Studios Pâtes, Jason Wong (mail: jasonkwh@gmail.com).
+*/
 
 import UIKit
 
