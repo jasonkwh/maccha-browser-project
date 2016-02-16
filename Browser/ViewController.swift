@@ -539,7 +539,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 //check this is a app store url or not, if yes, redirect to App Store system app
                 if (shorten_url!.rangeOfString("itunes.apple.com/") != nil) && (shorten_url!.rangeOfString("/app") != nil) && (shorten_url!.rangeOfString("/id") != nil) {
                     let itms_url = "itms-apps://" + shorten_url!
-                    loadRequest(homepage) //redirect to the homepage
+                    webView.stopLoading() //stop loading the page or else inifinite open the App Store
                     UIApplication.sharedApplication().openURL(NSURL(string: itms_url)!)
                 }
 
