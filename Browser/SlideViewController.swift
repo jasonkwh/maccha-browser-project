@@ -28,6 +28,9 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     var testArray = [String]()
     var scrollCellAction: Bool = false
+    var sgButtonSwitch: Bool = false
+    var bkButtonSwitch: Bool = false
+    var htButtonSwitch: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -187,15 +190,48 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func historyAction() {
-        print("History pressed!")
+        if(htButtonSwitch == false) {
+            htButton.setImage(UIImage(named: "History-filled"), forState: UIControlState.Normal)
+            htButtonSwitch = true
+            sgButton.setImage(UIImage(named: "Settings"), forState: UIControlState.Normal)
+            sgButtonSwitch = false
+            bkButton.setImage(UIImage(named: "Bookmark"), forState: UIControlState.Normal)
+            bkButtonSwitch = false
+        }
+        else {
+            htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
+            htButtonSwitch = false
+        }
     }
     
     func bookmarkAction() {
-        print("Bookmark pressed!")
+        if(bkButtonSwitch == false) {
+            bkButton.setImage(UIImage(named: "Bookmark-filled"), forState: UIControlState.Normal)
+            bkButtonSwitch = true
+            sgButton.setImage(UIImage(named: "Settings"), forState: UIControlState.Normal)
+            sgButtonSwitch = false
+            htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
+            htButtonSwitch = false
+        }
+        else {
+            bkButton.setImage(UIImage(named: "Bookmark"), forState: UIControlState.Normal)
+            bkButtonSwitch = false
+        }
     }
     
     func settingsAction() {
-        print("Settings pressed!")
+        if(sgButtonSwitch == false) {
+            sgButton.setImage(UIImage(named: "Settings-filled"), forState: UIControlState.Normal)
+            sgButtonSwitch = true
+            bkButton.setImage(UIImage(named: "Bookmark"), forState: UIControlState.Normal)
+            bkButtonSwitch = false
+            htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
+            htButtonSwitch = false
+        }
+        else {
+            sgButton.setImage(UIImage(named: "Settings"), forState: UIControlState.Normal)
+            sgButtonSwitch = false
+        }
     }
     
     override func didReceiveMemoryWarning() {
