@@ -28,7 +28,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     var testArray = [String]()
     var scrollCellAction: Bool = false
-    var sgButtonSwitch: Bool = false
     var bkButtonSwitch: Bool = false
     var htButtonSwitch: Bool = false
     
@@ -193,8 +192,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if(htButtonSwitch == false) {
             htButton.setImage(UIImage(named: "History-filled"), forState: UIControlState.Normal)
             htButtonSwitch = true
-            sgButton.setImage(UIImage(named: "Settings"), forState: UIControlState.Normal)
-            sgButtonSwitch = false
             bkButton.setImage(UIImage(named: "Bookmark"), forState: UIControlState.Normal)
             bkButtonSwitch = false
         }
@@ -208,8 +205,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if(bkButtonSwitch == false) {
             bkButton.setImage(UIImage(named: "Bookmark-filled"), forState: UIControlState.Normal)
             bkButtonSwitch = true
-            sgButton.setImage(UIImage(named: "Settings"), forState: UIControlState.Normal)
-            sgButtonSwitch = false
             htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
             htButtonSwitch = false
         }
@@ -220,18 +215,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func settingsAction() {
-        if(sgButtonSwitch == false) {
-            sgButton.setImage(UIImage(named: "Settings-filled"), forState: UIControlState.Normal)
-            sgButtonSwitch = true
-            bkButton.setImage(UIImage(named: "Bookmark"), forState: UIControlState.Normal)
-            bkButtonSwitch = false
-            htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
-            htButtonSwitch = false
-        }
-        else {
-            sgButton.setImage(UIImage(named: "Settings"), forState: UIControlState.Normal)
-            sgButtonSwitch = false
-        }
+        print("setting pressed")
     }
     
     override func didReceiveMemoryWarning() {
