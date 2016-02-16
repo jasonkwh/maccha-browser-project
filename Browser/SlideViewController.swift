@@ -40,7 +40,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         toolbar.barTintColor = UIColor(netHex:0x2E2E2E)
         toolbar.clipsToBounds = true
         windowView.backgroundColor = UIColor(netHex:0x2E2E2E)
-        windowView.separatorColor = UIColor(netHex:0x2E2E2E)
+        windowView.separatorStyle = .None
         windowView.delegate = self
         windowView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
         windowView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "myCell")
@@ -102,12 +102,21 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         else {
             cell.backgroundColor = UIColor(netHex:0x2E2E2E)
+            //cell.backgroundColor = colorForIndex(indexPath.row)
         }
         cell.textLabel?.textColor = UIColor(netHex: 0xECF0F1)
         cell.textLabel?.textAlignment = .Right
-        cell.transform = CGAffineTransformMakeRotation(CGFloat(M_PI));
+        cell.selectionStyle = .None
+        cell.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
         return cell
     }
+    
+    //Gradient style testing...
+    /*func colorForIndex(index: Int) -> UIColor {
+        let itemCount = slideViewValue.windowStoreTitle.count - 1
+        let val = (CGFloat(index) / CGFloat(itemCount)) * 0.6
+        return UIColor(red: 1-val, green: 1-val, blue: 1-val, alpha: 1.0)
+    }*/
     
     //actions of the cells
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
