@@ -105,7 +105,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return true
         })]
         cell.rightSwipeSettings.transition = MGSwipeTransition.Static
-        cell.rightExpansion.buttonIndex = indexPath.row
+        cell.rightExpansion.buttonIndex = 0
         cell.rightExpansion.fillOnTrigger = true
         
         return cell
