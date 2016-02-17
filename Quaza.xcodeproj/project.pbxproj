@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3F5055C81C61317F00A85FB8 /* FilteredURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5055C71C61317F00A85FB8 /* FilteredURLProtocol.swift */; };
+		3F79A9791C73F47800590F8C /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F79A9781C73F47800590F8C /* MGSwipeTableCell.m */; };
+		3F79A97C1C73F48500590F8C /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F79A97B1C73F48500590F8C /* MGSwipeButton.m */; };
 		3F9760E91C651C9C006F2ACB /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9760E81C651C9C006F2ACB /* SlideViewController.swift */; };
 		3FB279AC1C7244E6007F0416 /* PathDynamicModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB279AB1C7244E6007F0416 /* PathDynamicModal.swift */; };
 		3FB279AF1C72451A007F0416 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB279AD1C72451A007F0416 /* ModalView.swift */; };
@@ -35,11 +37,15 @@
 /* Begin PBXFileReference section */
 		3F1EE7D61C5D499700923DF3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		3F5055C71C61317F00A85FB8 /* FilteredURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteredURLProtocol.swift; sourceTree = "<group>"; };
+		3F79A9771C73F47800590F8C /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
+		3F79A9781C73F47800590F8C /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
+		3F79A97A1C73F48500590F8C /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
+		3F79A97B1C73F48500590F8C /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
 		3F9760E81C651C9C006F2ACB /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		3FB279AB1C7244E6007F0416 /* PathDynamicModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathDynamicModal.swift; sourceTree = "<group>"; };
 		3FB279AD1C72451A007F0416 /* ModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		3FB279AE1C72451A007F0416 /* ModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalView.xib; sourceTree = "<group>"; };
-		3FC20F421C6007940016F522 /* pipi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pipi-Bridging-Header.h"; sourceTree = "<group>"; };
+		3FC20F421C6007940016F522 /* pipi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "pipi-Bridging-Header.h"; path = "../pipi-Bridging-Header.h"; sourceTree = "<group>"; };
 		3FC20F431C6007950016F522 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		3FC20F441C6007950016F522 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		3FDF7E5F1C61968700C8BD4A /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
@@ -80,12 +86,22 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		3F79A9761C73F41100590F8C /* MGSwipeTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				3F79A9771C73F47800590F8C /* MGSwipeTableCell.h */,
+				3F79A9781C73F47800590F8C /* MGSwipeTableCell.m */,
+				3F79A97A1C73F48500590F8C /* MGSwipeButton.h */,
+				3F79A97B1C73F48500590F8C /* MGSwipeButton.m */,
+			);
+			name = MGSwipeTableCell;
+			sourceTree = "<group>";
+		};
 		3FC20F411C6007600016F522 /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
 				3FC20F431C6007950016F522 /* SWRevealViewController.h */,
 				3FC20F441C6007950016F522 /* SWRevealViewController.m */,
-				3FC20F421C6007940016F522 /* pipi-Bridging-Header.h */,
 			);
 			name = SWRevealViewController;
 			sourceTree = "<group>";
@@ -93,6 +109,7 @@
 		5F8533611A5BB8C800F14347 = {
 			isa = PBXGroup;
 			children = (
+				3F79A9761C73F41100590F8C /* MGSwipeTableCell */,
 				3FC20F411C6007600016F522 /* SWRevealViewController */,
 				5F85336C1A5BB8C800F14347 /* Browser */,
 				5F8533821A5BB8C900F14347 /* BrowserTests */,
@@ -122,6 +139,7 @@
 				3FDF7E5F1C61968700C8BD4A /* Reach.swift */,
 				5F8533731A5BB8C900F14347 /* Main.storyboard */,
 				3F9760E81C651C9C006F2ACB /* SlideViewController.swift */,
+				3FC20F421C6007940016F522 /* pipi-Bridging-Header.h */,
 				5F8533761A5BB8C900F14347 /* Images.xcassets */,
 				5F8533781A5BB8C900F14347 /* LaunchScreen.xib */,
 				5F85336D1A5BB8C800F14347 /* Supporting Files */,
@@ -260,11 +278,13 @@
 			files = (
 				3F5055C81C61317F00A85FB8 /* FilteredURLProtocol.swift in Sources */,
 				5F8533721A5BB8C900F14347 /* ViewController.swift in Sources */,
+				3F79A97C1C73F48500590F8C /* MGSwipeButton.m in Sources */,
 				3FB279AF1C72451A007F0416 /* ModalView.swift in Sources */,
 				3F9760E91C651C9C006F2ACB /* SlideViewController.swift in Sources */,
 				3FDF7E601C61968700C8BD4A /* Reach.swift in Sources */,
 				3FB279AC1C7244E6007F0416 /* PathDynamicModal.swift in Sources */,
 				5F8533701A5BB8C900F14347 /* AppDelegate.swift in Sources */,
+				3F79A9791C73F47800590F8C /* MGSwipeTableCell.m in Sources */,
 				3FC20F451C6007950016F522 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

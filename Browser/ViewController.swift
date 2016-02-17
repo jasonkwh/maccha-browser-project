@@ -89,7 +89,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         
         self.revealViewController().delegate = self
         if self.revealViewController() != nil {
-            revealViewController().rightViewRevealWidth = 260
+            revealViewController().rightViewRevealWidth = 240
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
@@ -273,7 +273,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //shake to change toolbar color, phone will vibrate for confirmation
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == .MotionShake {
-            if(toolbarStyle < 4) {
+            if(toolbarStyle < 1) {
                 toolbarStyle++
             }
             else {
@@ -301,27 +301,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             bar.barTintColor = UIColor(netHex:0x499AE7)
             navBar.barTintColor = UIColor(netHex:0x499AE7)
             slideViewValue.windowCurColour = UIColor(netHex:0x499AE7)
-        case 2:
-            //Yellow
-            progressView.tintColor = UIColor(netHex:0xB08316)
-            urlField.backgroundColor = UIColor(netHex:0xB08316)
-            bar.barTintColor = UIColor(netHex:0xEBC622)
-            navBar.barTintColor = UIColor(netHex:0xEBC622)
-            slideViewValue.windowCurColour = UIColor(netHex:0xEBC622)
-        case 3:
-            //Red
-            progressView.tintColor = UIColor(netHex:0xA00F09)
-            urlField.backgroundColor = UIColor(netHex:0xA00F09)
-            bar.barTintColor = UIColor(netHex:0xEC5D57)
-            navBar.barTintColor = UIColor(netHex:0xEC5D57)
-            slideViewValue.windowCurColour = UIColor(netHex:0xEC5D57)
-        case 4:
-            //Purple
-            progressView.tintColor = UIColor(netHex:0x5F327C)
-            urlField.backgroundColor = UIColor(netHex:0x5F327C)
-            bar.barTintColor = UIColor(netHex:0xB36AE2)
-            navBar.barTintColor = UIColor(netHex:0xB36AE2)
-            slideViewValue.windowCurColour = UIColor(netHex:0xB36AE2)
         default:
             break
         }

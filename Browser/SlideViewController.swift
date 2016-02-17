@@ -12,7 +12,7 @@
 
 import UIKit
 
-class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate {
 
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var ntButton: UIButton!
@@ -43,7 +43,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         windowView.separatorStyle = .None
         windowView.delegate = self
         windowView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
-        windowView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "myCell")
         
         //button displays
         displaySafariButton()
@@ -76,25 +75,18 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //design of different cells
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("programmaticCell") as! MGSwipeTableCell!
+        if cell == nil {
+            cell = MGSwipeTableCell(style: .Subtitle, reuseIdentifier: "programmaticCell")
+        }
         
         //shorten the website title
         var titleName = slideViewValue.windowStoreTitle[indexPath.row]
         if(titleName == "") {
             titleName = "Untitled"
         }
-        var siteTitle = titleName
-        if((siteTitle.containsChineseCharacters == true) || (siteTitle.containsJapHiraganaCharacters == true) || (siteTitle.containsJapKatakanaCharacters == true) || (siteTitle.containsKoreanCharacters == true)) {
-            if(siteTitle.characters.count > 11) {
-                siteTitle = siteTitle.trunc(11)
-            }
-        }
-        else {
-            if(siteTitle.characters.count > 22) {
-                siteTitle = siteTitle.trunc(22)
-            }
-        }
-        cell.textLabel?.text = siteTitle
+        cell.textLabel?.text = "                 " + titleName
+        cell.delegate = self
         
         //cell design
         if(indexPath.row == slideViewValue.windowCurTab) {
@@ -102,21 +94,22 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         else {
             cell.backgroundColor = UIColor(netHex:0x2E2E2E)
-            //cell.backgroundColor = colorForIndex(indexPath.row)
         }
         cell.textLabel?.textColor = UIColor(netHex: 0xECF0F1)
-        cell.textLabel?.textAlignment = .Right
-        cell.selectionStyle = .None
         cell.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+        
+        //configure right buttons
+        cell.rightButtons = [MGSwipeButton(title: "Delete", backgroundColor: UIColor(netHex:0xE74C3C), callback: {
+            (sender: MGSwipeTableCell!) -> Bool in
+            print("Delete")
+            return true
+        })]
+        cell.rightSwipeSettings.transition = MGSwipeTransition.Static
+        cell.rightExpansion.buttonIndex = indexPath.row
+        cell.rightExpansion.fillOnTrigger = true
+        
         return cell
     }
-    
-    //Gradient style testing...
-    /*func colorForIndex(index: Int) -> UIColor {
-        let itemCount = slideViewValue.windowStoreTitle.count - 1
-        let val = (CGFloat(index) / CGFloat(itemCount)) * 0.6
-        return UIColor(red: 1-val, green: 1-val, blue: 1-val, alpha: 1.0)
-    }*/
     
     //actions of the cells
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
@@ -230,32 +223,5 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-}
-
-//method to shorten strings to ... , and determines non-English full-width characters
-extension String {
-    func trunc(length: Int, trailing: String? = "...") -> String {
-        if self.characters.count > length {
-            return self.substringToIndex(self.startIndex.advancedBy(length)) + (trailing ?? "")
-        } else {
-            return self
-        }
-    }
-    
-    var containsChineseCharacters: Bool {
-        return self.rangeOfString("\\p{Han}", options: .RegularExpressionSearch) != nil
-    }
-    
-    var containsKoreanCharacters: Bool {
-        return self.rangeOfString("\\p{Hangul}", options: .RegularExpressionSearch) != nil
-    }
-    
-    var containsJapHiraganaCharacters: Bool {
-        return self.rangeOfString("\\p{Hiragana}", options: .RegularExpressionSearch) != nil
-    }
-    
-    var containsJapKatakanaCharacters: Bool {
-        return self.rangeOfString("\\p{Katakana}", options: .RegularExpressionSearch) != nil
     }
 }

@@ -8,3 +8,4 @@
 //
 
 #import "SWRevealViewController.h"
+#import "MGSwipeTableCell.h"
