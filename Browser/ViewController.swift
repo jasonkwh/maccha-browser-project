@@ -15,6 +15,7 @@ import WebKit
 import AudioToolbox
 
 struct slideViewValue {
+    static var scrollCellAction: Bool = false
     static var newtabButton: Bool = false
     static var safariButton: Bool = false
     static var cellActions: Bool = false
@@ -624,6 +625,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     //function to new window
     func newWindow() {
+        //reset scrollCellAction
+        slideViewValue.scrollCellAction = false
+        
         //store previous window titles and urls
         slideViewValue.windowStoreTitle.append(webView.title!)
         slideViewValue.windowStoreUrl.append((webView.URL?.absoluteString)!)
