@@ -25,7 +25,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             windowView.dataSource = self
         }
     }
-    var testArray = [String]()
     var bkButtonSwitch: Bool = false
     var htButtonSwitch: Bool = false
     
@@ -98,7 +97,22 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //configure right buttons
         cell.rightButtons = [MGSwipeButton(title: "Delete", backgroundColor: UIColor(netHex:0xE74C3C), callback: {
             (sender: MGSwipeTableCell!) -> Bool in
-            print("Delete")
+            if((slideViewValue.windowStoreTitle.count > 1) && (slideViewValue.windowCurTab != indexPath.row)) {
+                slideViewValue.windowStoreTitle.removeAtIndex(indexPath.row)
+                slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
+                slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
+                if(indexPath.row < slideViewValue.windowCurTab) {
+                    slideViewValue.windowCurTab--
+                }
+                self.windowView.reloadData()
+            }
+            if(slideViewValue.windowStoreTitle.count == 1) {
+                slideViewValue.windowStoreUrl[0] = "about:blank"
+                slideViewValue.windowStoreTitle[0] = "Untitled"
+                slideViewValue.windowCurTab = 0
+                slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
+                self.windowView.reloadData()
+            }
             return true
         })]
         cell.rightSwipeSettings.transition = MGSwipeTransition.Static

@@ -94,10 +94,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
-        //make round to the main user interface
-        //self.view.layer.cornerRadius = 6
-        //self.view.clipsToBounds = true
-        
         addToolBar(urlField)
         
         //setup urlfield style
@@ -194,6 +190,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         }
         else
         {
+            windowView.setTitle(String(slideViewValue.windowStoreSums), forState: UIControlState.Normal)
             self.webView.userInteractionEnabled = true
             self.bar.userInteractionEnabled = true
             if(slideViewValue.safariButton == true) {
