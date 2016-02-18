@@ -126,6 +126,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 slideViewValue.windowStoreUrl[0] = "about:blank"
                 slideViewValue.windowStoreTitle[0] = ""
                 slideViewValue.deleteTab = true
+                self.revealViewController().rightRevealToggleAnimated(true)
             }
             self.windowView.reloadData()
             return true
