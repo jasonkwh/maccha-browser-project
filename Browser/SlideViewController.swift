@@ -97,22 +97,37 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //configure right buttons
         cell.rightButtons = [MGSwipeButton(title: "Delete", backgroundColor: UIColor(netHex:0xE74C3C), callback: {
             (sender: MGSwipeTableCell!) -> Bool in
-            if((slideViewValue.windowStoreTitle.count > 1) && (slideViewValue.windowCurTab != indexPath.row)) {
-                slideViewValue.windowStoreTitle.removeAtIndex(indexPath.row)
-                slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
-                slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
-                if(indexPath.row < slideViewValue.windowCurTab) {
-                    slideViewValue.windowCurTab--
+            //LOGICs of removing tabs
+            if(slideViewValue.windowStoreTitle.count > 1) {
+                if(slideViewValue.windowCurTab != indexPath.row) {
+                    slideViewValue.windowStoreTitle.removeAtIndex(indexPath.row)
+                    slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
+                    slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
+                    if(indexPath.row < slideViewValue.windowCurTab) {
+                        slideViewValue.windowCurTab--
+                    }
                 }
-                self.windowView.reloadData()
+                else {
+                    if(slideViewValue.windowCurTab == (slideViewValue.windowStoreTitle.count - 1)) {
+                        slideViewValue.windowStoreTitle.removeAtIndex(indexPath.row)
+                        slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
+                        slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
+                        slideViewValue.windowCurTab--
+                    }
+                    else {
+                        slideViewValue.windowStoreTitle.removeAtIndex(indexPath.row)
+                        slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
+                        slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
+                    }
+                    slideViewValue.deleteTab = true
+                }
             }
-            if(slideViewValue.windowStoreTitle.count == 1) {
+            else if(slideViewValue.windowStoreTitle.count == 1) {
                 slideViewValue.windowStoreUrl[0] = "about:blank"
-                slideViewValue.windowStoreTitle[0] = "Untitled"
-                slideViewValue.windowCurTab = 0
-                slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
-                self.windowView.reloadData()
+                slideViewValue.windowStoreTitle[0] = ""
+                slideViewValue.deleteTab = true
             }
+            self.windowView.reloadData()
             return true
         })]
         cell.rightSwipeSettings.transition = MGSwipeTransition.Static

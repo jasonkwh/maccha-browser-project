@@ -19,6 +19,7 @@ struct slideViewValue {
     static var newtabButton: Bool = false
     static var safariButton: Bool = false
     static var cellActions: Bool = false
+    static var deleteTab: Bool = false
     static var windowStoreTitle = [String]()
     static var windowStoreUrl = [String]()
     static var windowStoreSums:Int = 1
@@ -36,6 +37,7 @@ struct slideViewValue {
 
 class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UIScrollViewDelegate, SWRevealViewControllerDelegate, UIGestureRecognizerDelegate {
     
+    @IBOutlet weak var mask: UIView!
     var webView: WKWebView
     @IBOutlet weak var barView: UIView!
     @IBOutlet weak var windowView: UIButton!
@@ -93,6 +95,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             revealViewController().rightViewRevealWidth = 240
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        
+        mask.backgroundColor = UIColor.blackColor()
+        mask.alpha = 0
         
         addToolBar(urlField)
         
@@ -187,12 +192,20 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             hideStatusbar()
             self.webView.userInteractionEnabled = false
             self.bar.userInteractionEnabled = false
+            UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+                self.mask.alpha = 0.6
+                }, completion: { finished in
+            })
         }
         else
         {
             windowView.setTitle(String(slideViewValue.windowStoreSums), forState: UIControlState.Normal)
             self.webView.userInteractionEnabled = true
             self.bar.userInteractionEnabled = true
+            UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                self.mask.alpha = 0
+                }, completion: { finished in
+            })
             if(slideViewValue.safariButton == true) {
                 //use safari to open
                 safariPressed()
@@ -216,6 +229,10 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
                 slideViewValue.windowCurTab = slideViewValue.windowStoreSums - 1
                 slideViewValue.newtabButton = false
+            }
+            if(slideViewValue.deleteTab == true) {
+                webView.loadRequest(NSURLRequest(URL:NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!))
+                slideViewValue.deleteTab = false
             }
         }
     }

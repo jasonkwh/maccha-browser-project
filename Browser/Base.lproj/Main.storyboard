@@ -65,16 +65,24 @@
                                 <color key="tintColor" red="0.90588235294117647" green="0.92549019607843142" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="0.23137254901960785" green="0.52549019607843139" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bon-OU-o9r">
+                                <rect key="frame" x="0.0" y="-65" width="375" height="668"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="NDg-E4-tUJ" secondAttribute="trailing" constant="-28" id="5gW-bZ-UYr"/>
-                            <constraint firstItem="NDg-E4-tUJ" firstAttribute="leading" secondItem="fgE-7C-jVx" secondAttribute="leading" id="Qz2-pl-KzX"/>
-                            <constraint firstAttribute="trailing" secondItem="fgE-7C-jVx" secondAttribute="trailing" id="dBa-wK-hF9"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fgE-7C-jVx" secondAttribute="bottom" id="eCR-pI-AkB"/>
-                            <constraint firstItem="fgE-7C-jVx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kXF-Yt-dzV"/>
-                            <constraint firstItem="NDg-E4-tUJ" firstAttribute="bottom" secondItem="fgE-7C-jVx" secondAttribute="top" id="uhk-DF-4n2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NDg-E4-tUJ" secondAttribute="trailing" constant="-28" id="0Al-Bz-8SR"/>
+                            <constraint firstItem="fgE-7C-jVx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3IE-hW-LrL"/>
+                            <constraint firstItem="fgE-7C-jVx" firstAttribute="top" secondItem="NDg-E4-tUJ" secondAttribute="bottom" id="3hW-3H-c1O"/>
+                            <constraint firstItem="bon-OU-o9r" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-65" id="BZG-Tw-Hvc"/>
+                            <constraint firstItem="NDg-E4-tUJ" firstAttribute="leading" secondItem="fgE-7C-jVx" secondAttribute="leading" id="Fb6-6e-cBW"/>
+                            <constraint firstItem="bon-OU-o9r" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Gw4-Pp-X4O"/>
+                            <constraint firstItem="bon-OU-o9r" firstAttribute="leading" secondItem="NDg-E4-tUJ" secondAttribute="leading" id="I8l-a8-WQO"/>
+                            <constraint firstItem="fgE-7C-jVx" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="K32-gS-zcD"/>
+                            <constraint firstItem="bon-OU-o9r" firstAttribute="trailing" secondItem="fgE-7C-jVx" secondAttribute="trailing" id="a5P-jw-Prr"/>
+                            <constraint firstAttribute="trailing" secondItem="fgE-7C-jVx" secondAttribute="trailing" id="cmv-Ql-XMW"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -93,6 +101,7 @@
                         <outlet property="bar" destination="fgE-7C-jVx" id="2eB-0r-PSs"/>
                         <outlet property="barView" destination="8Kj-dK-dOP" id="QEx-M6-9wF"/>
                         <outlet property="forwardButton" destination="hT8-k0-IjP" id="zBD-8u-JNp"/>
+                        <outlet property="mask" destination="bon-OU-o9r" id="Era-KB-43o"/>
                         <outlet property="progressView" destination="NDg-E4-tUJ" id="WOP-pE-Ph6"/>
                         <outlet property="refreshStopButton" destination="84i-F3-Hdy" id="Kv4-ba-Xdk"/>
                         <outlet property="urlField" destination="Uy5-R3-Tbv" id="8qo-fk-0i9"/>
