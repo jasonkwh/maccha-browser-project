@@ -197,6 +197,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func aboutAction() {
+        slideViewValue.aboutScreen = true
         let view = ModalView.instantiateFromNib()
         let window = UIApplication.sharedApplication().delegate?.window!
         let modal = PathDynamicModal()

@@ -19,7 +19,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>160</string>
+	<string>161</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -41,13 +41,13 @@
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
-			<string>Search</string>
+			<string>Addtab</string>
 			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>Find what you what</string>
+			<string>Open a new blank tab</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Search</string>
+			<string>New Tab</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>$(PRODUCT_BUNDLE_IDENTIFIER).search</string>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).newtab</string>
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>

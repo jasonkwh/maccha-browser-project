@@ -25,6 +25,9 @@ struct slideViewValue {
     static var windowStoreSums:Int = 1
     static var windowCurTab: Int = 0
     static var windowCurColour: UIColor!
+    static var aboutScreen: Bool = false
+    static var alertScreen: Bool = false
+    static var alertContents: String = ""
     
     //get versions information from Xcode Project Setting
     static func version() -> String {
@@ -469,9 +472,33 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             webView.loadRequest(NSURLRequest(URL: NSURL(string: contents)!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
         }
         else {
-            let alert = UIAlertController(title: "Error", message: "The Internet connection appears to be offline.", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-            presentViewController(alert, animated: true, completion: nil)
+            //Popup alert window
+            hideKeyboard()
+            slideViewValue.alertScreen = true
+            slideViewValue.alertContents = "The Internet connection appears to be offline."
+            let view = ModalView.instantiateFromNib()
+            let window = UIApplication.sharedApplication().delegate?.window!
+            let modal = PathDynamicModal()
+            modal.showMagnitude = 200.0
+            modal.closeMagnitude = 130.0
+            view.closeButtonHandler = {[weak modal] in
+                modal?.closeWithLeansRandom()
+                return
+            }
+            view.bottomButtonHandler = {[weak modal] in
+                modal?.closeWithLeansRandom()
+                return
+            }
+            modal.show(modalView: view, inView: window!)
+            
+            //insert a blank page if there's nothing store in the arrays
+            if(slideViewValue.windowStoreTitle.count == 0) {
+                slideViewValue.windowStoreTitle.append("")
+                slideViewValue.windowStoreUrl.append("about:blank")
+                
+                //initial y point
+                scrollPosition.append(CGFloat(0.0))
+            }
         }
     }
     
@@ -524,8 +551,16 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 //set refreshStopButton to stop state
                 refreshStopButton.setImage(UIImage(named: "Stop"), forState: UIControlState.Normal)
                 refreshStopButton.addTarget(self, action: "stopPressed", forControlEvents: UIControlEvents.TouchUpInside)
+                
+                //initialise the initial tabs
+                if(slideViewValue.windowStoreTitle.count == 0) {
+                    slideViewValue.windowStoreTitle.append(webView.title!)
+                    slideViewValue.windowStoreUrl.append((webView.URL?.absoluteString)!)
+                    
+                    //initial y point
+                    scrollPosition.append(CGFloat(0.0))
+                }
             }
-            
             if(Float(webView.estimatedProgress) > 0.1) {
                 //shorten url by replacing http:// and https:// to null
                 let shorten_url = webView.URL?.absoluteString.stringByReplacingOccurrencesOfString("https://", withString: "").stringByReplacingOccurrencesOfString("http://", withString: "")
@@ -548,17 +583,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 moveToolbarReturn = false
                 
                 //update current window store title and url
-                if(slideViewValue.windowStoreTitle.count == 0) {
-                    slideViewValue.windowStoreTitle.append(webView.title!)
-                    slideViewValue.windowStoreUrl.append((webView.URL?.absoluteString)!)
-                    
-                    //initial y point
-                    scrollPosition.append(CGFloat(0.0))
-                }
-                else {
-                    slideViewValue.windowStoreTitle[slideViewValue.windowCurTab] = webView.title!
-                    slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] = (webView.URL?.absoluteString)!
-                }
+                slideViewValue.windowStoreTitle[slideViewValue.windowCurTab] = webView.title!
+                slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] = (webView.URL?.absoluteString)!
                 
                 //display current window numbers
                 slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
@@ -573,9 +599,24 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     func webView(webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: NSError) {
         if (error.code != NSURLErrorCancelled) {
-            let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-            presentViewController(alert, animated: true, completion: nil)
+            //Popup alert window
+            hideKeyboard()
+            slideViewValue.alertScreen = true
+            slideViewValue.alertContents = error.localizedDescription
+            let view = ModalView.instantiateFromNib()
+            let window = UIApplication.sharedApplication().delegate?.window!
+            let modal = PathDynamicModal()
+            modal.showMagnitude = 200.0
+            modal.closeMagnitude = 130.0
+            view.closeButtonHandler = {[weak modal] in
+                modal?.closeWithLeansRandom()
+                return
+            }
+            view.bottomButtonHandler = {[weak modal] in
+                modal?.closeWithLeansRandom()
+                return
+            }
+            modal.show(modalView: view, inView: window!)
         }
     }
     
