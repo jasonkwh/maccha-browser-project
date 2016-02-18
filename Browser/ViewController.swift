@@ -28,6 +28,7 @@ struct slideViewValue {
     static var aboutScreen: Bool = false
     static var alertScreen: Bool = false
     static var alertContents: String = ""
+    static var scrollPosition = [CGFloat]()
     
     //get versions information from Xcode Project Setting
     static func version() -> String {
@@ -61,7 +62,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var scrollMakeStatusBarDown: Bool = false
     
     //remember previous scrolling position~~
-    var scrollPosition = [CGFloat]()
     let panPressRecognizer = UIPanGestureRecognizer()
     var scrollPositionRecord: Bool = false //user tap, record scroll position
     var scrollPositionSwitch: Bool = false //switch position scroll when revealViewController is close
@@ -227,7 +227,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 slideViewValue.windowStoreUrl.append((webView.URL?.absoluteString)!)
                 
                 //initial y point
-                scrollPosition.append(CGFloat(0.0))
+                slideViewValue.scrollPosition.append(CGFloat(0.0))
                 
                 slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
                 slideViewValue.windowCurTab = slideViewValue.windowStoreSums - 1
@@ -235,6 +235,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             }
             if(slideViewValue.deleteTab == true) {
                 webView.loadRequest(NSURLRequest(URL:NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!))
+                scrollPositionSwitch = true
                 slideViewValue.deleteTab = false
             }
         }
@@ -244,7 +245,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     func scrollViewDidScroll(scrollView: UIScrollView) {
         //store current scroll positions to array
         if(scrollPositionRecord == true) {
-            scrollPosition[slideViewValue.windowCurTab] = scrollView.contentOffset.y
+            slideViewValue.scrollPosition[slideViewValue.windowCurTab] = scrollView.contentOffset.y
         }
         
         if !scrollDirectionDetermined {
@@ -497,7 +498,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 slideViewValue.windowStoreUrl.append("about:blank")
                 
                 //initial y point
-                scrollPosition.append(CGFloat(0.0))
+                slideViewValue.scrollPosition.append(CGFloat(0.0))
             }
         }
     }
@@ -558,7 +559,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                     slideViewValue.windowStoreUrl.append((webView.URL?.absoluteString)!)
                     
                     //initial y point
-                    scrollPosition.append(CGFloat(0.0))
+                    slideViewValue.scrollPosition.append(CGFloat(0.0))
                 }
             }
             if(Float(webView.estimatedProgress) > 0.1) {
@@ -622,7 +623,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
         if(scrollPositionSwitch == true) {
-            self.webView.scrollView.setContentOffset(CGPointMake(0.0, scrollPosition[slideViewValue.windowCurTab]), animated: true)
+            self.webView.scrollView.setContentOffset(CGPointMake(0.0, slideViewValue.scrollPosition[slideViewValue.windowCurTab]), animated: true)
             scrollPositionSwitch = false
         }
         progressView.setProgress(0.0, animated: false)
@@ -691,7 +692,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
         
         //initial y point
-        scrollPosition.append(CGFloat(0.0))
+        slideViewValue.scrollPosition.append(CGFloat(0.0))
         
         //open urls
         moveToolbarReturn = true

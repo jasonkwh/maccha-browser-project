@@ -102,6 +102,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 if(slideViewValue.windowCurTab != indexPath.row) {
                     slideViewValue.windowStoreTitle.removeAtIndex(indexPath.row)
                     slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
+                    slideViewValue.scrollPosition.removeAtIndex(indexPath.row)
                     slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
                     if(indexPath.row < slideViewValue.windowCurTab) {
                         slideViewValue.windowCurTab--
@@ -111,12 +112,14 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     if(slideViewValue.windowCurTab == (slideViewValue.windowStoreTitle.count - 1)) {
                         slideViewValue.windowStoreTitle.removeAtIndex(indexPath.row)
                         slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
+                        slideViewValue.scrollPosition.removeAtIndex(indexPath.row)
                         slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
                         slideViewValue.windowCurTab--
                     }
                     else {
                         slideViewValue.windowStoreTitle.removeAtIndex(indexPath.row)
                         slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
+                        slideViewValue.scrollPosition.removeAtIndex(indexPath.row)
                         slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
                     }
                     slideViewValue.deleteTab = true
@@ -125,6 +128,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             else if(slideViewValue.windowStoreTitle.count == 1) {
                 slideViewValue.windowStoreUrl[0] = "about:blank"
                 slideViewValue.windowStoreTitle[0] = ""
+                slideViewValue.scrollPosition[0] = 0.0
                 slideViewValue.deleteTab = true
                 self.revealViewController().rightRevealToggleAnimated(true)
             }
