@@ -155,6 +155,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stack" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yh-FQ-zEn">
+                                <rect key="frame" x="369" y="0.0" width="231" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="231" id="G0M-ZL-XBN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" white="0.21837769968797696" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wH7-aq-OYg">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
@@ -206,13 +215,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PQh-Ph-huz" firstAttribute="trailing" secondItem="wH7-aq-OYg" secondAttribute="trailing" id="6Y6-AI-Mlr"/>
-                            <constraint firstItem="PQh-Ph-huz" firstAttribute="leading" secondItem="wH7-aq-OYg" secondAttribute="leading" id="OMk-C3-RI3"/>
-                            <constraint firstAttribute="trailing" secondItem="wH7-aq-OYg" secondAttribute="trailing" id="QMp-Gp-tIB"/>
-                            <constraint firstItem="wH7-aq-OYg" firstAttribute="bottom" secondItem="bxU-kF-Lhi" secondAttribute="top" id="Uok-SS-ndk"/>
-                            <constraint firstItem="PQh-Ph-huz" firstAttribute="top" secondItem="jAj-ld-J43" secondAttribute="top" id="cHE-Jt-Xk5"/>
-                            <constraint firstItem="wH7-aq-OYg" firstAttribute="leading" secondItem="jAj-ld-J43" secondAttribute="leading" id="erA-1s-O0y"/>
-                            <constraint firstItem="PQh-Ph-huz" firstAttribute="bottom" secondItem="wH7-aq-OYg" secondAttribute="top" id="gTG-tV-nQC"/>
+                            <constraint firstItem="wH7-aq-OYg" firstAttribute="bottom" secondItem="bxU-kF-Lhi" secondAttribute="top" id="B3Z-eg-hxM"/>
+                            <constraint firstItem="PQh-Ph-huz" firstAttribute="leading" secondItem="wH7-aq-OYg" secondAttribute="leading" id="IP0-Ro-cuy"/>
+                            <constraint firstItem="PQh-Ph-huz" firstAttribute="top" secondItem="2yh-FQ-zEn" secondAttribute="top" id="Lpd-fj-eKK"/>
+                            <constraint firstAttribute="trailing" secondItem="wH7-aq-OYg" secondAttribute="trailing" id="Ose-HN-RVc"/>
+                            <constraint firstItem="PQh-Ph-huz" firstAttribute="trailing" secondItem="2yh-FQ-zEn" secondAttribute="trailing" id="PAH-CT-vSZ"/>
+                            <constraint firstItem="PQh-Ph-huz" firstAttribute="top" secondItem="jAj-ld-J43" secondAttribute="top" id="TzT-yV-O28"/>
+                            <constraint firstItem="wH7-aq-OYg" firstAttribute="top" secondItem="PQh-Ph-huz" secondAttribute="bottom" id="UZ4-Rw-h2U"/>
+                            <constraint firstItem="2yh-FQ-zEn" firstAttribute="bottom" secondItem="bxU-kF-Lhi" secondAttribute="top" id="jKU-1d-m9i"/>
+                            <constraint firstItem="PQh-Ph-huz" firstAttribute="trailing" secondItem="wH7-aq-OYg" secondAttribute="trailing" id="keT-wE-1G8"/>
+                            <constraint firstItem="PQh-Ph-huz" firstAttribute="leading" secondItem="jAj-ld-J43" secondAttribute="leading" id="lDL-00-z8S"/>
                         </constraints>
                     </view>
                     <connections>
@@ -228,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mBF-Mm-eY1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-52" y="1336"/>
+            <point key="canvasLocation" x="-72" y="1348"/>
         </scene>
     </scenes>
     <resources>

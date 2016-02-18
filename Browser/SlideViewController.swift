@@ -13,7 +13,6 @@
 import UIKit
 
 class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate {
-
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var ntButton: UIButton!
     @IBOutlet weak var sfButton: UIButton!
@@ -38,7 +37,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.view.backgroundColor = UIColor(netHex:0x2E2E2E)
         toolbar.barTintColor = UIColor(netHex:0x2E2E2E)
         toolbar.clipsToBounds = true
-        windowView.backgroundColor = UIColor(netHex:0x2E2E2E)
+        windowView.backgroundColor = UIColor.clearColor()
         windowView.separatorStyle = .None
         windowView.delegate = self
         windowView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
