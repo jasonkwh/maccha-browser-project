@@ -66,6 +66,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var scrollPositionRecord: Bool = false //user tap, record scroll position
     var scrollPositionSwitch: Bool = false //switch position scroll when revealViewController is close
     
+    //actionsheet
+    var longPressRecognizer = UILongPressGestureRecognizer()
+    var longPressSwitch: Bool = false
+    var longPressAcUrl: String = ""
+    
     //Search Engines
     //0: Google, 1: Baidu
     //International edition, original setting
@@ -131,6 +136,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         panPressRecognizer.addTarget(self, action: "onPanPress:")
         self.webView.scrollView.addGestureRecognizer(panPressRecognizer)
         
+        //long press to show the action sheet
+        longPressRecognizer.delegate = self
+        longPressRecognizer.addTarget(self, action: "onLongPress:")
+        self.webView.scrollView.addGestureRecognizer(longPressRecognizer)
+        
         //user agent string
         let ver:String = "Kapiko/4.0 Quaza/" + slideViewValue.version()
         webView.performSelector("_setApplicationNameForUserAgent:", withObject: ver)
@@ -164,6 +174,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         }
         if gestureRecognizer.state == UIGestureRecognizerState.Ended {
             scrollPositionRecord = false
+        }
+    }
+    
+    func onLongPress(gestureRecognizer:UIGestureRecognizer){
+        if gestureRecognizer.state == UIGestureRecognizerState.Began {
+            longPressSwitch = true
         }
     }
 
@@ -622,6 +638,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     }
     
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
+        //disable the original wkactionsheet
+        webView.evaluateJavaScript("document.body.style.webkitTouchCallout='none';", completionHandler: nil)
         if(scrollPositionSwitch == true) {
             self.webView.scrollView.setContentOffset(CGPointMake(0.0, slideViewValue.scrollPosition[slideViewValue.windowCurTab]), animated: true)
             scrollPositionSwitch = false
@@ -639,6 +657,62 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             loadRequest((navigationAction.request.URL?.absoluteString)!)
         }
         return nil
+    }
+    
+    func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
+        if(navigationAction.navigationType == .LinkActivated) {
+            longPressAcUrl = navigationAction.request.URL!.absoluteString
+            if(longPressSwitch == true) {
+                let ac = actionMenu(self)
+                self.presentViewController(ac, animated: true) {
+                    
+                }
+                decisionHandler(.Cancel)
+                longPressSwitch = false
+            }
+        }
+        decisionHandler(.Allow)
+    }
+    
+    //Rebuild Wkactionsheet
+    func actionMenu(sender: UIViewController) -> UIAlertController {
+        let alertController = UIAlertController(title: "", message: longPressAcUrl, preferredStyle: .ActionSheet)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            
+        }
+        alertController.addAction(cancelAction)
+        let openAction = UIAlertAction(title: "Open", style: .Default) { (action) in
+            self.loadRequest(self.longPressAcUrl)
+        }
+        alertController.addAction(openAction)
+        let opentabAction = UIAlertAction(title: "Open in New Tab", style: .Default) { (action) in
+            //reset scrollCellAction
+            slideViewValue.scrollCellAction = false
+            
+            //store previous window titles and urls
+            slideViewValue.windowStoreTitle.append("")
+            slideViewValue.windowStoreUrl.append(self.longPressAcUrl)
+            
+            //set current window as the latest window
+            slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+            
+            //update windows count
+            slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
+            self.windowView.setTitle(String(slideViewValue.windowStoreSums), forState: UIControlState.Normal)
+            
+            //initial y point
+            slideViewValue.scrollPosition.append(CGFloat(0.0))
+            
+            self.loadRequest(self.longPressAcUrl)
+        }
+        alertController.addAction(opentabAction)
+        let copyurlAction = UIAlertAction(title: "Copy Link URL", style: .Default) { (action) in
+            let pb: UIPasteboard = UIPasteboard.generalPasteboard();
+            pb.string = self.longPressAcUrl
+        }
+        alertController.addAction(copyurlAction)
+        
+        return alertController
     }
     
     //function to refresh
