@@ -685,7 +685,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             self.loadRequest(self.longPressAcUrl)
         }
         alertController.addAction(openAction)
-        let opentabAction = UIAlertAction(title: "Open in New Tab", style: .Default) { (action) in
+        let opentabAction = UIAlertAction(title: "Open In New Tab", style: .Default) { (action) in
             //reset scrollCellAction
             slideViewValue.scrollCellAction = false
             
@@ -706,11 +706,16 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             self.loadRequest(self.longPressAcUrl)
         }
         alertController.addAction(opentabAction)
-        let copyurlAction = UIAlertAction(title: "Copy Link URL", style: .Default) { (action) in
+        let copyurlAction = UIAlertAction(title: "Copy Link", style: .Default) { (action) in
             let pb: UIPasteboard = UIPasteboard.generalPasteboard();
             pb.string = self.longPressAcUrl
         }
         alertController.addAction(copyurlAction)
+        let shareAction = UIAlertAction(title: "Share Link", style: .Default) { (action) in
+            let activityViewController = UIActivityViewController(activityItems: [self.longPressAcUrl as NSString], applicationActivities: nil)
+            self.presentViewController(activityViewController, animated: true, completion: {})
+        }
+        alertController.addAction(shareAction)
         
         return alertController
     }
