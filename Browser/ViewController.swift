@@ -67,9 +67,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var scrollPositionSwitch: Bool = false //switch position scroll when revealViewController is close
     
     //actionsheet
-    var longPressRecognizer = UILongPressGestureRecognizer()
+    /*var longPressRecognizer = UILongPressGestureRecognizer()
     var longPressSwitch: Bool = false
-    var longPressAcUrl: String = ""
+    var longPressAcUrl: String = ""*/
     
     //Search Engines
     //0: Google, 1: Baidu
@@ -137,9 +137,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         self.webView.scrollView.addGestureRecognizer(panPressRecognizer)
         
         //long press to show the action sheet
-        longPressRecognizer.delegate = self
+        /*longPressRecognizer.delegate = self
         longPressRecognizer.addTarget(self, action: "onLongPress:")
-        self.webView.scrollView.addGestureRecognizer(longPressRecognizer)
+        self.webView.scrollView.addGestureRecognizer(longPressRecognizer)*/
         
         //user agent string
         let ver:String = "Kapiko/4.0 Quaza/" + slideViewValue.version()
@@ -177,11 +177,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         }
     }
     
-    func onLongPress(gestureRecognizer:UIGestureRecognizer){
+    /*func onLongPress(gestureRecognizer:UIGestureRecognizer){
         if gestureRecognizer.state == UIGestureRecognizerState.Began {
             longPressSwitch = true
         }
-    }
+    }*/
 
     //function to hide the statusbar
     func hideStatusbar() {
@@ -639,7 +639,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
         //disable the original wkactionsheet
-        webView.evaluateJavaScript("document.body.style.webkitTouchCallout='none';", completionHandler: nil)
+        //webView.evaluateJavaScript("document.body.style.webkitTouchCallout='none';", completionHandler: nil)
         if(scrollPositionSwitch == true) {
             self.webView.scrollView.setContentOffset(CGPointMake(0.0, slideViewValue.scrollPosition[slideViewValue.windowCurTab]), animated: true)
             scrollPositionSwitch = false
@@ -660,7 +660,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     }
     
     func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
-        if(navigationAction.navigationType == .LinkActivated) {
+        /*if(navigationAction.navigationType == .LinkActivated) {
             longPressAcUrl = navigationAction.request.URL!.absoluteString
             if(longPressSwitch == true) {
                 let ac = actionMenu(self)
@@ -670,12 +670,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 decisionHandler(.Cancel)
                 longPressSwitch = false
             }
-        }
+        }*/
         decisionHandler(.Allow)
     }
     
     //Rebuild Wkactionsheet
-    func actionMenu(sender: UIViewController) -> UIAlertController {
+    /*func actionMenu(sender: UIViewController) -> UIAlertController {
         let alertController = UIAlertController(title: "", message: longPressAcUrl, preferredStyle: .ActionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
             
@@ -718,7 +718,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         alertController.addAction(shareAction)
         
         return alertController
-    }
+    }*/
     
     //function to refresh
     func refreshPressed() {
