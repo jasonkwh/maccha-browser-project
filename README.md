@@ -1,6 +1,7 @@
 ## Quaza: A lightweight iOS web browser
 
 [![GitHub license](https://img.shields.io/badge/license-MPL%202.0-70BF41.svg)](https://raw.githubusercontent.com/jasonkwh/quaza-browser-project/master/LICENSE.txt)
+[![Build Status](https://travis-ci.org/jasonkwh/quaza-browser-project.svg?branch=master)](https://travis-ci.org/jasonkwh/quaza-browser-project)
 
 Quaza is intended to revolutionize the web browsing experiences on iOS phablets.
 

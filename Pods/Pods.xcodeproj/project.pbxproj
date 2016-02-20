@@ -239,6 +239,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					4E1263BFF45F6446CF3DE29AE234C893 = {
+						DevelopmentTeam = YJ887TEZ7X;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -293,6 +298,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CF363A561B0F48AFFBCB455966A306CB /* MGSwipeTableCell.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -389,6 +395,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CF363A561B0F48AFFBCB455966A306CB /* MGSwipeTableCell.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
