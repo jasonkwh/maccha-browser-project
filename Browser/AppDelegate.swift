@@ -22,9 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         application.setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
         
-        //register protocols
-        NSURLProtocol.registerClass(FilteredURLProtocol)
-        
         //set url cache setting
         let URLCache = NSURLCache(memoryCapacity: 4 * 1024 * 1024, diskCapacity: 20 * 1024 * 1024, diskPath: nil)
         NSURLCache.setSharedURLCache(URLCache)

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F5055C81C61317F00A85FB8 /* FilteredURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5055C71C61317F00A85FB8 /* FilteredURLProtocol.swift */; };
 		3F9760E91C651C9C006F2ACB /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9760E81C651C9C006F2ACB /* SlideViewController.swift */; };
 		3FB279AC1C7244E6007F0416 /* PathDynamicModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB279AB1C7244E6007F0416 /* PathDynamicModal.swift */; };
 		3FB279AF1C72451A007F0416 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB279AD1C72451A007F0416 /* ModalView.swift */; };
@@ -35,7 +34,6 @@
 
 /* Begin PBXFileReference section */
 		3F1EE7D61C5D499700923DF3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		3F5055C71C61317F00A85FB8 /* FilteredURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteredURLProtocol.swift; sourceTree = "<group>"; };
 		3F9760E81C651C9C006F2ACB /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		3FB279AB1C7244E6007F0416 /* PathDynamicModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathDynamicModal.swift; sourceTree = "<group>"; };
 		3FB279AD1C72451A007F0416 /* ModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 				3FB279AB1C7244E6007F0416 /* PathDynamicModal.swift */,
 				3FB279AD1C72451A007F0416 /* ModalView.swift */,
 				3FB279AE1C72451A007F0416 /* ModalView.xib */,
-				3F5055C71C61317F00A85FB8 /* FilteredURLProtocol.swift */,
 				3FDF7E5F1C61968700C8BD4A /* Reach.swift */,
 				5F8533731A5BB8C900F14347 /* Main.storyboard */,
 				3F9760E81C651C9C006F2ACB /* SlideViewController.swift */,
@@ -333,7 +330,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F5055C81C61317F00A85FB8 /* FilteredURLProtocol.swift in Sources */,
 				5F8533721A5BB8C900F14347 /* ViewController.swift in Sources */,
 				3FB279AF1C72451A007F0416 /* ModalView.swift in Sources */,
 				3F9760E91C651C9C006F2ACB /* SlideViewController.swift in Sources */,
