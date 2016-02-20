@@ -580,13 +580,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             if(Float(webView.estimatedProgress) > 0.1) {
                 //shorten url by replacing http:// and https:// to null
                 let shorten_url = webView.URL?.absoluteString.stringByReplacingOccurrencesOfString("https://", withString: "").stringByReplacingOccurrencesOfString("http://", withString: "")
-                
-                //check this is a app store url or not, if yes, redirect to App Store system app
-                if (shorten_url!.rangeOfString("itunes.apple.com/") != nil) && (shorten_url!.rangeOfString("/app") != nil) && (shorten_url!.rangeOfString("/id") != nil) {
-                    let itms_url = "itms-apps://" + shorten_url!
-                    webView.stopLoading() //stop loading the page or else inifinite open the App Store
-                    UIApplication.sharedApplication().openURL(NSURL(string: itms_url)!)
-                }
 
                 //change urlField when the page starts loading
                 //display website title in the url field
@@ -659,13 +652,20 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     }
     
     func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
-        if let url: String = navigationAction.request.URL!.absoluteString {
+        let url: NSURL = navigationAction.request.URL!
+        let urlString: String = url.absoluteString
+        if (matchesForRegexInText("\\/\\/itunes\\.apple\\.com\\/", text: urlString) != []) {
+            UIApplication.sharedApplication().openURL(url)
+            decisionHandler(.Cancel)
+            return;
+        }
+        else {
             if navigationAction.navigationType == .LinkActivated && longPressSwitch == true {
                 decisionHandler(.Cancel)
-                let ac = actionMenu(self, urlStr: url)
-                    self.presentViewController(ac, animated: true) {}
-                    longPressSwitch = false
-                    return
+                let ac = actionMenu(self, urlStr: urlString)
+                self.presentViewController(ac, animated: true) {}
+                longPressSwitch = false
+                return
             }
         }
         decisionHandler(.Allow)
