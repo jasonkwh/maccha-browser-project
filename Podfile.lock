@@ -1,0 +1,19 @@
+PODS:
+  - MGSwipeTableCell (1.5.3)
+
+DEPENDENCIES:
+  - MGSwipeTableCell (from `https://github.com/MortimerGoro/MGSwipeTableCell.git`)
+
+EXTERNAL SOURCES:
+  MGSwipeTableCell:
+    :git: https://github.com/MortimerGoro/MGSwipeTableCell.git
+
+CHECKOUT OPTIONS:
+  MGSwipeTableCell:
+    :commit: 118d969ff4857db9bad056cd4cc979750b418a15
+    :git: https://github.com/MortimerGoro/MGSwipeTableCell.git
+
+SPEC CHECKSUMS:
+  MGSwipeTableCell: 5ae3b9a15efda26b201adc8676b24040febe6ff6
+
+COCOAPODS: 0.39.0
