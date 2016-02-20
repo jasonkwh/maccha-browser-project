@@ -61,6 +61,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var navBar: UINavigationBar = UINavigationBar()
     var scrollDirectionDetermined: Bool = false
     var scrollMakeStatusBarDown: Bool = false
+    var homepage: String = "https://www.google.com" //can be change
     
     //remember previous scrolling position~~
     let panPressRecognizer = UIPanGestureRecognizer()
@@ -78,9 +79,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     //China edition, original setting
     //var searchEngines:Int = 1
-    
-    //variable to store homepage
-    var homepage: String = "https://www.google.com"
     
     required init?(coder aDecoder: NSCoder) {
         self.webView = WKWebView(frame: CGRectZero)
@@ -161,20 +159,17 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         backButton.enabled = false
         forwardButton.enabled = false
         
+        //set original homepage at index 0 of store array
+        slideViewValue.windowStoreTitle = ["Google"]
+        slideViewValue.windowStoreUrl = [homepage]
+        slideViewValue.scrollPosition = [(CGFloat(0.0))]
+        
         //Determine quick actions...
         if(slideViewValue.shortcutItem == 0) {
-            loadRequest(homepage)
+            loadRequest(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])
         }
         if(slideViewValue.shortcutItem == 1) {
             //Open a new blank tab
-            //initialise the initial tabs if there're no tabs
-            if(slideViewValue.windowStoreTitle.count == 0) {
-                slideViewValue.windowStoreTitle.append(homepage)
-                slideViewValue.windowStoreUrl.append(homepage)
-                
-                //initial y point
-                slideViewValue.scrollPosition.append(CGFloat(0.0))
-            }
             slideViewValue.windowStoreTitle.append("")
             slideViewValue.windowStoreUrl.append("about:blank")
             slideViewValue.scrollPosition.append(CGFloat(0.0))
@@ -185,14 +180,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         }
         else if(slideViewValue.shortcutItem == 2) {
             //Open URL from clipboard
-            //initialise the initial tabs if there're no tabs
-            if(slideViewValue.windowStoreTitle.count == 0) {
-                slideViewValue.windowStoreTitle.append(homepage)
-                slideViewValue.windowStoreUrl.append(homepage)
-                
-                //initial y point
-                slideViewValue.scrollPosition.append(CGFloat(0.0))
-            }
             let pb: UIPasteboard = UIPasteboard.generalPasteboard()
             slideViewValue.windowStoreTitle.append("")
             slideViewValue.windowStoreUrl.append("")
@@ -610,15 +597,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 //set refreshStopButton to stop state
                 refreshStopButton.setImage(UIImage(named: "Stop"), forState: UIControlState.Normal)
                 refreshStopButton.addTarget(self, action: "stopPressed", forControlEvents: UIControlEvents.TouchUpInside)
-                
-                //initialise the initial tabs
-                if(slideViewValue.windowStoreTitle.count == 0) {
-                    slideViewValue.windowStoreTitle.append(webView.title!)
-                    slideViewValue.windowStoreUrl.append((webView.URL?.absoluteString)!)
-                    
-                    //initial y point
-                    slideViewValue.scrollPosition.append(CGFloat(0.0))
-                }
             }
             if(Float(webView.estimatedProgress) > 0.1) {
                 //shorten url by replacing http:// and https:// to null
