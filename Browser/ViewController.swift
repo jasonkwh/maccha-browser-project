@@ -29,6 +29,7 @@ struct slideViewValue {
     static var alertScreen: Bool = false
     static var alertContents: String = ""
     static var scrollPosition = [CGFloat]()
+    static var shortcutItem: Int = 0
     
     //get versions information from Xcode Project Setting
     static func version() -> String {
@@ -79,7 +80,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //var searchEngines:Int = 1
     
     //variable to store homepage
-    var homepage: String = "www.google.com"
+    var homepage: String = "https://www.google.com"
     
     required init?(coder aDecoder: NSCoder) {
         self.webView = WKWebView(frame: CGRectZero)
@@ -157,10 +158,52 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         webView.addObserver(self, forKeyPath: "loading", options: .New, context: nil)
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .New, context: nil)
         
-        loadRequest(homepage)
-        
         backButton.enabled = false
         forwardButton.enabled = false
+        
+        //Determine quick actions...
+        if(slideViewValue.shortcutItem == 0) {
+            loadRequest(homepage)
+        }
+        if(slideViewValue.shortcutItem == 1) {
+            //Open a new blank tab
+            //initialise the initial tabs if there're no tabs
+            if(slideViewValue.windowStoreTitle.count == 0) {
+                slideViewValue.windowStoreTitle.append(homepage)
+                slideViewValue.windowStoreUrl.append(homepage)
+                
+                //initial y point
+                slideViewValue.scrollPosition.append(CGFloat(0.0))
+            }
+            slideViewValue.windowStoreTitle.append("")
+            slideViewValue.windowStoreUrl.append("about:blank")
+            slideViewValue.scrollPosition.append(CGFloat(0.0))
+            slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
+            slideViewValue.windowCurTab = slideViewValue.windowStoreSums - 1
+            windowView.setTitle(String(slideViewValue.windowStoreSums), forState: UIControlState.Normal)
+            webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
+        }
+        else if(slideViewValue.shortcutItem == 2) {
+            //Open URL from clipboard
+            //initialise the initial tabs if there're no tabs
+            if(slideViewValue.windowStoreTitle.count == 0) {
+                slideViewValue.windowStoreTitle.append(homepage)
+                slideViewValue.windowStoreUrl.append(homepage)
+                
+                //initial y point
+                slideViewValue.scrollPosition.append(CGFloat(0.0))
+            }
+            let pb: UIPasteboard = UIPasteboard.generalPasteboard()
+            slideViewValue.windowStoreTitle.append("")
+            slideViewValue.windowStoreUrl.append("")
+            slideViewValue.scrollPosition.append(CGFloat(0.0))
+            slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
+            slideViewValue.windowCurTab = slideViewValue.windowStoreSums - 1
+            windowView.setTitle(String(slideViewValue.windowStoreSums), forState: UIControlState.Normal)
+            loadRequest(pb.string!)
+            slideViewValue.windowStoreTitle[slideViewValue.windowCurTab] = webView.title!
+            slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] = (webView.URL?.absoluteString)!
+        }
     }
     
     func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {

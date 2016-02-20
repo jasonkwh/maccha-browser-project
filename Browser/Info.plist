@@ -19,7 +19,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>168</string>
+	<string>169</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -47,17 +47,7 @@
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>New Tab</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>$(PRODUCT_BUNDLE_IDENTIFIER).newtab</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemIconFile</key>
-			<string>Home</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>Open the homepage</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Homepage</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>$(PRODUCT_BUNDLE_IDENTIFIER).openhomepage</string>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).opennewtab</string>
 		</dict>
 	</array>
 	<key>UILaunchStoryboardName</key>

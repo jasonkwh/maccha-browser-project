@@ -15,10 +15,31 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    enum ShortcutIdentifier: String {
+        case openclipboard
+        case opennewtab
+        
+        init?(fullIdentifier: String) {
+            guard let shortIdentifier = fullIdentifier.componentsSeparatedByString(".").last else {
+                return nil
+            }
+            self.init(rawValue: shortIdentifier)
+        }
+    }
+    
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool{
+        if #available(iOS 9.0, *) {
+            if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsShortcutItemKey] as? UIApplicationShortcutItem {
+                handleShortcut(shortcutItem)
+                return false
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        
         // Override point for customization after application launch.
         application.setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
         
@@ -27,6 +48,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSURLCache.setSharedURLCache(URLCache)
         
         return true
+    }
+    
+    @available(iOS 9.0, *)
+    func application(application: UIApplication,
+        performActionForShortcutItem shortcutItem: UIApplicationShortcutItem,
+        completionHandler: (Bool) -> Void) {
+            
+            completionHandler(handleShortcut(shortcutItem))
+    }
+    
+    @available(iOS 9.0, *)
+    private func handleShortcut(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        let shortcutType = shortcutItem.type
+        guard let shortcutIdentifier = ShortcutIdentifier(fullIdentifier: shortcutType) else {
+            return false
+        }
+        return selectTabBarItemForIdentifier(shortcutIdentifier)
+    }
+    
+    private func selectTabBarItemForIdentifier(identifier: ShortcutIdentifier) -> Bool {
+        
+        switch (identifier) {
+        case .opennewtab:
+            slideViewValue.shortcutItem = 1
+            return true
+        case .openclipboard:
+            slideViewValue.shortcutItem = 2
+            return true
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {
