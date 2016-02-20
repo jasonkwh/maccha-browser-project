@@ -687,7 +687,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             slideViewValue.scrollCellAction = false
             
             //store previous window titles and urls
-            slideViewValue.windowStoreTitle.append("")
+            slideViewValue.windowStoreTitle.append(urlStr)
             slideViewValue.windowStoreUrl.append(urlStr)
             
             //set current window as the latest window
