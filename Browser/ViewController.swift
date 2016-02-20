@@ -67,9 +67,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var scrollPositionSwitch: Bool = false //switch position scroll when revealViewController is close
     
     //actionsheet
-    /*var longPressRecognizer = UILongPressGestureRecognizer()
+    var longPressRecognizer = UILongPressGestureRecognizer()
     var longPressSwitch: Bool = false
-    var longPressAcUrl: String = ""*/
     
     //Search Engines
     //0: Google, 1: Baidu
@@ -137,9 +136,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         self.webView.scrollView.addGestureRecognizer(panPressRecognizer)
         
         //long press to show the action sheet
-        /*longPressRecognizer.delegate = self
+        longPressRecognizer.delegate = self
         longPressRecognizer.addTarget(self, action: "onLongPress:")
-        self.webView.scrollView.addGestureRecognizer(longPressRecognizer)*/
+        self.webView.scrollView.addGestureRecognizer(longPressRecognizer)
         
         //user agent string
         let ver:String = "Kapiko/4.0 Quaza/" + slideViewValue.version()
@@ -164,6 +163,10 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         forwardButton.enabled = false
     }
     
+    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
@@ -177,11 +180,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         }
     }
     
-    /*func onLongPress(gestureRecognizer:UIGestureRecognizer){
-        if gestureRecognizer.state == UIGestureRecognizerState.Began {
-            longPressSwitch = true
-        }
-    }*/
+    func onLongPress(gestureRecognizer:UIGestureRecognizer){
+        longPressSwitch = true
+    }
 
     //function to hide the statusbar
     func hideStatusbar() {
@@ -189,8 +190,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
             }, completion: { finished in
-                self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
-        })
+            })
     }
     
     //function to show the statusbar
@@ -199,8 +199,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 20)
             }, completion: { finished in
-                self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 20)
-        })
+            })
     }
     
     //detect the right reveal view is toggle, and do some actions...
@@ -639,7 +638,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
         //disable the original wkactionsheet
-        //webView.evaluateJavaScript("document.body.style.webkitTouchCallout='none';", completionHandler: nil)
+        webView.evaluateJavaScript("document.body.style.webkitTouchCallout='none';", completionHandler: nil)
         if(scrollPositionSwitch == true) {
             self.webView.scrollView.setContentOffset(CGPointMake(0.0, slideViewValue.scrollPosition[slideViewValue.windowCurTab]), animated: true)
             scrollPositionSwitch = false
@@ -660,29 +659,27 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     }
     
     func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
-        /*if(navigationAction.navigationType == .LinkActivated) {
-            longPressAcUrl = navigationAction.request.URL!.absoluteString
-            if(longPressSwitch == true) {
-                let ac = actionMenu(self)
-                self.presentViewController(ac, animated: true) {
-                    
-                }
+        if let url: String = navigationAction.request.URL!.absoluteString {
+            if navigationAction.navigationType == .LinkActivated && longPressSwitch == true {
                 decisionHandler(.Cancel)
-                longPressSwitch = false
+                let ac = actionMenu(self, urlStr: url)
+                    self.presentViewController(ac, animated: true) {}
+                    longPressSwitch = false
+                    return
             }
-        }*/
+        }
         decisionHandler(.Allow)
     }
-    
+
     //Rebuild Wkactionsheet
-    /*func actionMenu(sender: UIViewController) -> UIAlertController {
-        let alertController = UIAlertController(title: "", message: longPressAcUrl, preferredStyle: .ActionSheet)
+    func actionMenu(sender: UIViewController, urlStr: String) -> UIAlertController {
+        let alertController = UIAlertController(title: "", message: urlStr, preferredStyle: .ActionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
             
         }
         alertController.addAction(cancelAction)
         let openAction = UIAlertAction(title: "Open", style: .Default) { (action) in
-            self.loadRequest(self.longPressAcUrl)
+            self.loadRequest(urlStr)
         }
         alertController.addAction(openAction)
         let opentabAction = UIAlertAction(title: "Open In New Tab", style: .Default) { (action) in
@@ -691,7 +688,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             
             //store previous window titles and urls
             slideViewValue.windowStoreTitle.append("")
-            slideViewValue.windowStoreUrl.append(self.longPressAcUrl)
+            slideViewValue.windowStoreUrl.append(urlStr)
             
             //set current window as the latest window
             slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
@@ -703,22 +700,22 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             //initial y point
             slideViewValue.scrollPosition.append(CGFloat(0.0))
             
-            self.loadRequest(self.longPressAcUrl)
+            self.loadRequest(urlStr)
         }
         alertController.addAction(opentabAction)
         let copyurlAction = UIAlertAction(title: "Copy Link", style: .Default) { (action) in
             let pb: UIPasteboard = UIPasteboard.generalPasteboard();
-            pb.string = self.longPressAcUrl
+            pb.string = urlStr
         }
         alertController.addAction(copyurlAction)
         let shareAction = UIAlertAction(title: "Share Link", style: .Default) { (action) in
-            let activityViewController = UIActivityViewController(activityItems: [self.longPressAcUrl as NSString], applicationActivities: nil)
+            let activityViewController = UIActivityViewController(activityItems: [urlStr as NSString], applicationActivities: nil)
             self.presentViewController(activityViewController, animated: true, completion: {})
         }
         alertController.addAction(shareAction)
         
         return alertController
-    }*/
+    }
     
     //function to refresh
     func refreshPressed() {
