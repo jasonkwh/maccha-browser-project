@@ -4,7 +4,7 @@
 
 Quaza is intended to revolutionize the web browsing experiences on iOS phablets.
 
-# Setting up with CocoaPods
+## Setting up with CocoaPods
 
 We used CocoaPods to integrate our projects and third-party libraries. [CocoaPods](https://cocoapods.org/) is a dependency manager for Swift and Objective-C Cocoa projects.
 
