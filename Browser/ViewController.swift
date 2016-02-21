@@ -436,8 +436,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     //auto show toolbar while editing
     func keyboardWillShow(sender: NSNotification) {
-        hideStatusbar()
-        
         if(moveToolbar == true) {
             moveToolbarShown = true
             if let userInfo = sender.userInfo {
