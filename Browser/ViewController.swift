@@ -20,15 +20,14 @@ struct slideViewValue {
     static var safariButton: Bool = false
     static var cellActions: Bool = false
     static var deleteTab: Bool = false
-    static var windowStoreTitle = [String]()
-    static var windowStoreUrl = [String]()
-    static var windowStoreSums:Int = 1
-    static var windowCurTab: Int = 0
-    static var windowCurColour: UIColor!
+    static var windowStoreTitle = [String]() //can be change
+    static var windowStoreUrl = [String]() //can be change
+    static var windowCurTab: Int = 0 //can be change
+    static var windowCurColour: UIColor! //can be change
     static var aboutScreen: Bool = false
     static var alertScreen: Bool = false
     static var alertContents: String = ""
-    static var scrollPosition = [CGFloat]()
+    static var scrollPosition = [CGFloat]() //can be change
     static var shortcutItem: Int = 0
     
     //get versions information from Xcode Project Setting
@@ -113,8 +112,13 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         //display refresh or change to stop while loading...
         displayRefreshOrStop()
         
+        //set original homepage at index 0 of store array
+        slideViewValue.windowStoreTitle = ["Google"]
+        slideViewValue.windowStoreUrl = [homepage]
+        slideViewValue.scrollPosition = [(CGFloat(0.0))]
+        
         //display current window number on the window button
-        displayCurWindowNum(slideViewValue.windowStoreSums)
+        displayCurWindowNum(slideViewValue.windowStoreTitle.count)
         
         //set toolbar color and style
         bar.clipsToBounds = true
@@ -159,37 +163,26 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         backButton.enabled = false
         forwardButton.enabled = false
         
-        //set original homepage at index 0 of store array
-        slideViewValue.windowStoreTitle = ["Google"]
-        slideViewValue.windowStoreUrl = [homepage]
-        slideViewValue.scrollPosition = [(CGFloat(0.0))]
-        
         //Determine quick actions...
         if(slideViewValue.shortcutItem == 0) {
             loadRequest(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])
         }
-        if(slideViewValue.shortcutItem == 1) {
-            //Open a new blank tab
+        else {
             slideViewValue.windowStoreTitle.append("")
             slideViewValue.windowStoreUrl.append("about:blank")
             slideViewValue.scrollPosition.append(CGFloat(0.0))
-            slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
-            slideViewValue.windowCurTab = slideViewValue.windowStoreSums - 1
-            windowView.setTitle(String(slideViewValue.windowStoreSums), forState: UIControlState.Normal)
-            webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
-        }
-        else if(slideViewValue.shortcutItem == 2) {
-            //Open URL from clipboard
-            let pb: UIPasteboard = UIPasteboard.generalPasteboard()
-            slideViewValue.windowStoreTitle.append("")
-            slideViewValue.windowStoreUrl.append("")
-            slideViewValue.scrollPosition.append(CGFloat(0.0))
-            slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
-            slideViewValue.windowCurTab = slideViewValue.windowStoreSums - 1
-            windowView.setTitle(String(slideViewValue.windowStoreSums), forState: UIControlState.Normal)
-            loadRequest(pb.string!)
-            slideViewValue.windowStoreTitle[slideViewValue.windowCurTab] = webView.title!
-            slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] = (webView.URL?.absoluteString)!
+            slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+            windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
+            if(slideViewValue.shortcutItem == 1) {
+                webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
+            }
+            else if(slideViewValue.shortcutItem == 2) {
+                //Open URL from clipboard
+                let pb: UIPasteboard = UIPasteboard.generalPasteboard()
+                loadRequest(pb.string!)
+                slideViewValue.windowStoreTitle[slideViewValue.windowCurTab] = webView.title!
+                slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] = (webView.URL?.absoluteString)!
+            }
         }
     }
     
@@ -247,7 +240,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         }
         else
         {
-            windowView.setTitle(String(slideViewValue.windowStoreSums), forState: UIControlState.Normal)
+            windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
             self.webView.userInteractionEnabled = true
             self.bar.userInteractionEnabled = true
             UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
@@ -274,8 +267,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 //initial y point
                 slideViewValue.scrollPosition.append(CGFloat(0.0))
                 
-                slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
-                slideViewValue.windowCurTab = slideViewValue.windowStoreSums - 1
+                slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
                 slideViewValue.newtabButton = false
             }
             if(slideViewValue.deleteTab == true) {
@@ -617,8 +609,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] = (webView.URL?.absoluteString)!
                 
                 //display current window numbers
-                slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
-                windowView.setTitle(String(slideViewValue.windowStoreSums), forState: UIControlState.Normal)
+                windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
             }
             if(Float(webView.estimatedProgress) == 1.0) {
                 refreshStopButton.setImage(UIImage(named: "Refresh"), forState: UIControlState.Normal)

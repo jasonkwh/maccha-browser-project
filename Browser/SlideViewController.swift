@@ -103,7 +103,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     slideViewValue.windowStoreTitle.removeAtIndex(indexPath.row)
                     slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
                     slideViewValue.scrollPosition.removeAtIndex(indexPath.row)
-                    slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
                     if(indexPath.row < slideViewValue.windowCurTab) {
                         slideViewValue.windowCurTab--
                     }
@@ -113,14 +112,12 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         slideViewValue.windowStoreTitle.removeAtIndex(indexPath.row)
                         slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
                         slideViewValue.scrollPosition.removeAtIndex(indexPath.row)
-                        slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
                         slideViewValue.windowCurTab--
                     }
                     else {
                         slideViewValue.windowStoreTitle.removeAtIndex(indexPath.row)
                         slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
                         slideViewValue.scrollPosition.removeAtIndex(indexPath.row)
-                        slideViewValue.windowStoreSums = slideViewValue.windowStoreTitle.count
                     }
                     slideViewValue.deleteTab = true
                 }
