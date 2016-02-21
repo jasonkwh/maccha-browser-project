@@ -37,6 +37,31 @@ struct slideViewValue {
         let build = dictionary["CFBundleVersion"] as! String
         return "\(version).\(build)"
     }
+    
+    //alert popups (for about and alert message popups)
+    static func alertPopup(alertType: Bool, message: String) {
+        if(alertType == true) {
+            slideViewValue.alertScreen = true
+            slideViewValue.alertContents = message
+        }
+        else {
+            slideViewValue.aboutScreen = true
+        }
+        let view = ModalView.instantiateFromNib()
+        let window = UIApplication.sharedApplication().delegate?.window!
+        let modal = PathDynamicModal()
+        modal.showMagnitude = 200.0
+        modal.closeMagnitude = 130.0
+        view.closeButtonHandler = {[weak modal] in
+            modal?.closeWithLeansRandom()
+            return
+        }
+        view.bottomButtonHandler = {[weak modal] in
+            modal?.closeWithLeansRandom()
+            return
+        }
+        modal.show(modalView: view, inView: window!)
+    }
 }
 
 class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UIScrollViewDelegate, SWRevealViewControllerDelegate, UIGestureRecognizerDelegate {
@@ -186,6 +211,10 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         }
     }
     
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
     func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
@@ -331,6 +360,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         if motion == .MotionShake {
             if(toolbarStyle < 1) {
                 toolbarStyle++
+                print(toolbarStyle)
             }
             else {
                 toolbarStyle = 0
@@ -510,22 +540,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         else {
             //Popup alert window
             hideKeyboard()
-            slideViewValue.alertScreen = true
-            slideViewValue.alertContents = "The Internet connection appears to be offline."
-            let view = ModalView.instantiateFromNib()
-            let window = UIApplication.sharedApplication().delegate?.window!
-            let modal = PathDynamicModal()
-            modal.showMagnitude = 200.0
-            modal.closeMagnitude = 130.0
-            view.closeButtonHandler = {[weak modal] in
-                modal?.closeWithLeansRandom()
-                return
-            }
-            view.bottomButtonHandler = {[weak modal] in
-                modal?.closeWithLeansRandom()
-                return
-            }
-            modal.show(modalView: view, inView: window!)
+            slideViewValue.alertPopup(true, message: "The Internet connection appears to be offline.")
             
             //insert a blank page if there's nothing store in the arrays
             if(slideViewValue.windowStoreTitle.count == 0) {
@@ -620,22 +635,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         if (error.code != NSURLErrorCancelled) {
             //Popup alert window
             hideKeyboard()
-            slideViewValue.alertScreen = true
-            slideViewValue.alertContents = error.localizedDescription
-            let view = ModalView.instantiateFromNib()
-            let window = UIApplication.sharedApplication().delegate?.window!
-            let modal = PathDynamicModal()
-            modal.showMagnitude = 200.0
-            modal.closeMagnitude = 130.0
-            view.closeButtonHandler = {[weak modal] in
-                modal?.closeWithLeansRandom()
-                return
-            }
-            view.bottomButtonHandler = {[weak modal] in
-                modal?.closeWithLeansRandom()
-                return
-            }
-            modal.show(modalView: view, inView: window!)
+            slideViewValue.alertPopup(true, message: error.localizedDescription)
         }
     }
     
@@ -787,7 +787,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         loadRequest(urlField.text!)
     }
     
-    //function to reload the page
+    //function to load Google search
     func homePressed() {
         loadRequest(homepage)
         hideKeyboard()
@@ -854,7 +854,7 @@ extension UIViewController: UITextFieldDelegate{
         
         //refresh button
         let rButton = UIButton(type: UIButtonType.System)
-        rButton.setImage(UIImage(named: "Home"), forState: UIControlState.Normal)
+        rButton.setImage(UIImage(named: "Google"), forState: UIControlState.Normal)
         rButton.addTarget(self, action: "homePressed", forControlEvents: UIControlEvents.TouchUpInside)
         rButton.frame = CGRectMake(0, 0, 30, 30)
         let refreshButton = UIBarButtonItem(customView: rButton)

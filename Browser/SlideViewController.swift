@@ -11,6 +11,7 @@
 */
 
 import UIKit
+import LocalAuthentication
 
 class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate {
     @IBOutlet weak var toolbar: UIToolbar!
@@ -25,8 +26,10 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             windowView.dataSource = self
         }
     }
-    var bkButtonSwitch: Bool = false
-    var htButtonSwitch: Bool = false
+    var bkButtonSwitch: Bool = false //functions
+    var htButtonSwitch: Bool = false //functions
+    var sgButtonSwitch: Bool = false //functions, can be changed
+    var touchid = LAContext() //touchid authentications
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -179,7 +182,12 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //function to display Settings button with the height 30 and width 30
     func displaySettingsButton() {
-        sgButton.setImage(UIImage(named: "Settings"), forState: UIControlState.Normal)
+        if(sgButtonSwitch == false) {
+            sgButton.setImage(UIImage(named: "Fingerprint"), forState: UIControlState.Normal)
+        }
+        else {
+            sgButton.setImage(UIImage(named: "Fingerprint-filled"), forState: UIControlState.Normal)
+        }
         sgButton.addTarget(self, action: "settingsAction", forControlEvents: UIControlEvents.TouchUpInside)
         sgButton.frame = CGRectMake(0, 0, 25, 25)
     }
@@ -198,21 +206,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func aboutAction() {
-        slideViewValue.aboutScreen = true
-        let view = ModalView.instantiateFromNib()
-        let window = UIApplication.sharedApplication().delegate?.window!
-        let modal = PathDynamicModal()
-        modal.showMagnitude = 200.0
-        modal.closeMagnitude = 130.0
-        view.closeButtonHandler = {[weak modal] in
-            modal?.closeWithLeansRandom()
-            return
-        }
-        view.bottomButtonHandler = {[weak modal] in
-            modal?.closeWithLeansRandom()
-            return
-        }
-        modal.show(modalView: view, inView: window!)
+        slideViewValue.alertPopup(false, message: "") //show about message popup
     }
     
     func safariAction() {
@@ -246,8 +240,59 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+    func touchIdVerification() {
+        var message : String = ""
+        if touchid.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error:nil) {
+            touchid.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics,
+                localizedReason: "Authentication is needed for Touch ID Protection",
+                reply: { (success : Bool, error : NSError? ) -> Void in
+                    dispatch_async(dispatch_get_main_queue(), {
+                        if success {
+                            //success actions
+                            if(self.sgButtonSwitch == false) {
+                                self.sgButton.setImage(UIImage(named: "Fingerprint-filled"), forState: UIControlState.Normal)
+                                self.sgButtonSwitch = true
+                            }
+                            else {
+                                self.sgButton.setImage(UIImage(named: "Fingerprint"), forState: UIControlState.Normal)
+                                self.sgButtonSwitch = false
+                            }
+                        }
+                        if error != nil {
+                            var showAlert : Bool = false
+                            
+                            switch(error!.code) {
+                            case LAError.SystemCancel.rawValue:
+                                message = "Authentication was cancelled by the system"
+                                showAlert = true
+                                break;
+                            case LAError.UserCancel.rawValue:
+                                message = "Authentication was cancelled by the user"
+                                showAlert = true
+                                break;
+                            case LAError.UserFallback.rawValue:
+                                message = "Authentication by password is not supported"
+                                showAlert = true
+                                break;
+                            default:
+                                message = "Authentication failed"
+                                showAlert = true
+                                break;
+                            }
+                            if showAlert {
+                                slideViewValue.alertPopup(true, message: message)
+                            }
+                        }
+                    })
+            })
+        } else {
+            message = "Touch ID not available"
+            slideViewValue.alertPopup(true, message: message)
+        }
+    }
+    
     func settingsAction() {
-        print("setting pressed")
+        touchIdVerification()
     }
     
     override func didReceiveMemoryWarning() {
