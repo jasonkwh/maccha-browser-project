@@ -9,13 +9,13 @@ Quaza is intended to revolutionize the web browsing experiences on iOS phablets.
 
 We used CocoaPods to integrate our projects and third-party libraries. [CocoaPods](https://cocoapods.org/) is a dependency manager for Swift and Objective-C Cocoa projects.
 
-You have to install CocoaPods with [RubyGems](https://rubygems.org/) using the following command:
+You can install CocoaPods with [RubyGems](https://rubygems.org/) using the following command:
 
 ```bash
 $ sudo gem install cocoapods
 ```
 
-Navigate your directory by cd / mkdir commands, then use the following commands:
+Navigate to your directory by cd / mkdir commands, then use the following commands:
 
 ```bash
 $ git clone https://github.com/jasonkwh/quaza-browser-project
