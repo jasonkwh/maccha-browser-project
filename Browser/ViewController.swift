@@ -82,7 +82,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var webAddress: String = ""
     var webTitle: String = ""
     var toolbarStyle: Int = 0 //can be change
-    var navBar: UINavigationBar = UINavigationBar()
     var scrollDirectionDetermined: Bool = false
     var scrollMakeStatusBarDown: Bool = false
     var homepage: String = "https://www.google.com" //can be change
@@ -148,15 +147,13 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         //set toolbar color and style
         bar.clipsToBounds = true
         toolbarColor(toolbarStyle)
+        hideStatusbar()
         
         //snapshot webview after loading new screens
         self.webView.snapshotViewAfterScreenUpdates(true)
         
         //hide navigation bar
         self.navigationController?.navigationBarHidden = true
-        
-        //set new navigation bar
-        setNavBarToTheView()
         
         //hook the tap press event
         panPressRecognizer.delegate = self
@@ -239,19 +236,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //function to hide the statusbar
     func hideStatusbar() {
         UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
-        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-            self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 0)
-            }, completion: { finished in
-            })
     }
     
     //function to show the statusbar
     func showStatusbar() {
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Slide)
-        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-            self.navBar.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 20)
-            }, completion: { finished in
-            })
     }
     
     //detect the right reveal view is toggle, and do some actions...
@@ -339,18 +328,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         scrollDirectionDetermined = false
     }
     
-    //set navigation bar style
-    func setNavBarToTheView()
-    {
-        navBar.frame=CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 20)
-        navBar.translucent = false
-        navBar.clipsToBounds = true
-        self.view.addSubview(navBar)
-        
-        //auto-hide at the beginning...
-        hideStatusbar()
-    }
-    
     override func canResignFirstResponder() -> Bool {
         return true
     }
@@ -378,14 +355,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             progressView.tintColor = UIColor(netHex:0x00882B)
             urlField.backgroundColor = UIColor(netHex:0x00882B)
             bar.barTintColor = UIColor(netHex:0x70BF41)
-            navBar.barTintColor = UIColor(netHex:0x70BF41)
             slideViewValue.windowCurColour = UIColor(netHex:0x70BF41)
         case 1:
             //Blue
             progressView.tintColor = UIColor(netHex:0x0153A4)
             urlField.backgroundColor = UIColor(netHex:0x0153A4)
             bar.barTintColor = UIColor(netHex:0x499AE7)
-            navBar.barTintColor = UIColor(netHex:0x499AE7)
             slideViewValue.windowCurColour = UIColor(netHex:0x499AE7)
         default:
             break
