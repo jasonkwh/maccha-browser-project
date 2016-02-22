@@ -15,19 +15,21 @@ import WebKit
 import AudioToolbox
 
 struct slideViewValue {
-    static var scrollCellAction: Bool = false
+    static var scrollCellAction: Bool = false //false to scroll to latest tab, else do not
     static var newtabButton: Bool = false
     static var safariButton: Bool = false
     static var cellActions: Bool = false
     static var deleteTab: Bool = false
-    static var windowStoreTitle = [String]() //can be change
-    static var windowStoreUrl = [String]() //can be change
-    static var windowCurTab: Int = 0 //can be change
-    static var windowCurColour: UIColor! //can be change
+    static var windowStoreTitle = [String]() //save
+    static var windowStoreUrl = [String]() //save
+    static var windowCurTab: Int = 0 //save
+    static var windowCurColour: UIColor! //save
     static var aboutScreen: Bool = false
     static var alertScreen: Bool = false
+    static var doneScreen: Bool = false
+    static var searchScreen: Bool = false
     static var alertContents: String = ""
-    static var scrollPosition = [CGFloat]() //can be change
+    static var scrollPosition = [CGFloat]() //save
     static var shortcutItem: Int = 0
     
     //get versions information from Xcode Project Setting
@@ -39,13 +41,21 @@ struct slideViewValue {
     }
     
     //alert popups (for about and alert message popups)
-    static func alertPopup(alertType: Bool, message: String) {
-        if(alertType == true) {
+    static func alertPopup(alertType: Int, message: String) {
+        if(alertType == 0) {
             slideViewValue.alertScreen = true
             slideViewValue.alertContents = message
         }
-        else {
+        else if(alertType == 1) {
             slideViewValue.aboutScreen = true
+        }
+        else if(alertType == 2) {
+            slideViewValue.doneScreen = true
+            slideViewValue.alertContents = message
+        }
+        else if(alertType == 3) {
+            slideViewValue.searchScreen = true
+            slideViewValue.alertContents = message
         }
         let view = ModalView.instantiateFromNib()
         let window = UIApplication.sharedApplication().delegate?.window!
@@ -81,15 +91,15 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var moveToolbarReturn: Bool = false
     var webAddress: String = ""
     var webTitle: String = ""
-    var toolbarStyle: Int = 0 //can be change
+    var toolbarStyle: Int = 0 //save
     var scrollDirectionDetermined: Bool = false
     var scrollMakeStatusBarDown: Bool = false
-    var homepage: String = "https://www.google.com" //can be change
+    var homepage: String = "https://www.google.com"
     
     //remember previous scrolling position~~
     let panPressRecognizer = UIPanGestureRecognizer()
     var scrollPositionRecord: Bool = false //user tap, record scroll position
-    var scrollPositionSwitch: Bool = false //switch position scroll when revealViewController is close
+    var scrollPositionSwitch: Bool = false //switch position scroll when revealViewController is close, true is scroll back to user view, false is not
     
     //actionsheet
     //var longPressRecognizer = UILongPressGestureRecognizer()
@@ -97,11 +107,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     //Search Engines
     //0: Google, 1: Baidu
-    //International edition, original setting
-    var searchEngines:Int = 0
-    
-    //China edition, original setting
-    //var searchEngines:Int = 1
+    var searchEngines:Int = 0 //save
     
     required init?(coder aDecoder: NSCoder) {
         self.webView = WKWebView(frame: CGRectZero)
@@ -515,7 +521,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         else {
             //Popup alert window
             hideKeyboard()
-            slideViewValue.alertPopup(true, message: "The Internet connection appears to be offline.")
+            slideViewValue.alertPopup(0, message: "The Internet connection appears to be offline.")
             
             //insert a blank page if there's nothing store in the arrays
             if(slideViewValue.windowStoreTitle.count == 0) {
@@ -610,7 +616,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         if (error.code != NSURLErrorCancelled) {
             //Popup alert window
             hideKeyboard()
-            slideViewValue.alertPopup(true, message: error.localizedDescription)
+            slideViewValue.alertPopup(0, message: error.localizedDescription)
         }
     }
     
@@ -763,8 +769,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     }
     
     //function to load Google search
-    func homePressed() {
-        loadRequest(homepage)
+    func searchPressed() {
+        if(searchEngines == 0) {
+            searchEngines = 1
+            slideViewValue.alertPopup(3, message: "Your search engine was changed to Baidu")
+        } else {
+            searchEngines = 0
+            slideViewValue.alertPopup(3, message: "Your search engine was changed to Google")
+        }
         hideKeyboard()
     }
     
@@ -829,8 +841,8 @@ extension UIViewController: UITextFieldDelegate{
         
         //refresh button
         let rButton = UIButton(type: UIButtonType.System)
-        rButton.setImage(UIImage(named: "Google"), forState: UIControlState.Normal)
-        rButton.addTarget(self, action: "homePressed", forControlEvents: UIControlEvents.TouchUpInside)
+        rButton.setImage(UIImage(named: "Search"), forState: UIControlState.Normal)
+        rButton.addTarget(self, action: "searchPressed", forControlEvents: UIControlEvents.TouchUpInside)
         rButton.frame = CGRectMake(0, 0, 30, 30)
         let refreshButton = UIBarButtonItem(customView: rButton)
         

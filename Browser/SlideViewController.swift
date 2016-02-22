@@ -206,7 +206,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func aboutAction() {
-        slideViewValue.alertPopup(false, message: "") //show about message popup
+        slideViewValue.alertPopup(1, message: "") //show about message popup
     }
     
     func safariAction() {
@@ -251,10 +251,14 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                             //success actions
                             if(self.sgButtonSwitch == false) {
                                 self.sgButton.setImage(UIImage(named: "Fingerprint-filled"), forState: UIControlState.Normal)
+                                message = "Touch ID Protection enabled"
+                                slideViewValue.alertPopup(2, message: message)
                                 self.sgButtonSwitch = true
                             }
                             else {
                                 self.sgButton.setImage(UIImage(named: "Fingerprint"), forState: UIControlState.Normal)
+                                message = "Touch ID Protection disabled"
+                                slideViewValue.alertPopup(0, message: message)
                                 self.sgButtonSwitch = false
                             }
                         }
@@ -280,14 +284,14 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                                 break;
                             }
                             if showAlert {
-                                slideViewValue.alertPopup(true, message: message)
+                                slideViewValue.alertPopup(0, message: message)
                             }
                         }
                     })
             })
         } else {
             message = "Touch ID not available"
-            slideViewValue.alertPopup(true, message: message)
+            slideViewValue.alertPopup(0, message: message)
         }
     }
     
