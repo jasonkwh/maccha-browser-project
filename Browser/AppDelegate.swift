@@ -51,7 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication,
         performActionForShortcutItem shortcutItem: UIApplicationShortcutItem,
         completionHandler: (Bool) -> Void) {
-            
             completionHandler(handleShortcut(shortcutItem))
     }
     
@@ -65,7 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func selectTabBarItemForIdentifier(identifier: ShortcutIdentifier) -> Bool {
-        
         switch (identifier) {
         case .opennewtab:
             slideViewValue.shortcutItem = 1

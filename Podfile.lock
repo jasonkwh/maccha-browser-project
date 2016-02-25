@@ -1,21 +1,30 @@
 PODS:
+  - 1PasswordExtension (1.8)
   - MGSwipeTableCell (1.5.3)
 
 DEPENDENCIES:
+  - 1PasswordExtension (from `https://github.com/AgileBits/onepassword-app-extension.git`, branch `master`)
   - MGSwipeTableCell (from `https://github.com/MortimerGoro/MGSwipeTableCell.git`)
 
 EXTERNAL SOURCES:
+  1PasswordExtension:
+    :branch: master
+    :git: https://github.com/AgileBits/onepassword-app-extension.git
   MGSwipeTableCell:
     :git: https://github.com/MortimerGoro/MGSwipeTableCell.git
 
 CHECKOUT OPTIONS:
+  1PasswordExtension:
+    :commit: 0c2f0a2085906277386a02e158ddb6a285b5963f
+    :git: https://github.com/AgileBits/onepassword-app-extension.git
   MGSwipeTableCell:
     :commit: 118d969ff4857db9bad056cd4cc979750b418a15
     :git: https://github.com/MortimerGoro/MGSwipeTableCell.git
 
 SPEC CHECKSUMS:
+  1PasswordExtension: 627d5aecf210c7636968faf5a4c3546c9531385b
   MGSwipeTableCell: 5ae3b9a15efda26b201adc8676b24040febe6ff6
 
-PODFILE CHECKSUM: 4718effdb33324e59b04d7efeaf29d40027bee67
+PODFILE CHECKSUM: 14b54e1f57bdf15198b60b2d2e79764b50a83e60
 
 COCOAPODS: 1.0.0.beta.3

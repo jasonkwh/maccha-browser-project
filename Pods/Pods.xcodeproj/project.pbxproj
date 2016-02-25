@@ -7,20 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B7E5FB6B6C679B883A0478A6371F8D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3997E5D2953ECDF377B85B234FDF550D /* Foundation.framework */; };
-		1D54E6EC43B2B4250E1FE53B0C0A6662 /* MGSwipeTableCell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 06E4B0468CAF70FAD9072EB33D4C175B /* MGSwipeTableCell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		569D057F4C7A6F69AEA4AB0BD6D9900E /* MGSwipeTableCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E8273024386753F400AF92AEF7F002 /* MGSwipeTableCell-dummy.m */; };
-		63DC27806C23AFFC9B7115E5EEAB9CBF /* MGSwipeButton.h in Headers */ = {isa = PBXBuildFile; fileRef = EE754AF5AE8D4060E0B4FB4634BAE8D9 /* MGSwipeButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		67558B72295110F846C2420C9540A52A /* MGSwipeTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = F876F08589CAD0D794C44610DAE935CA /* MGSwipeTableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E895A6E7FF0FA2DD07DCCF5546C005D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3997E5D2953ECDF377B85B234FDF550D /* Foundation.framework */; };
-		95E41293E05A8ABB9866D6F3AED0CA10 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6A77DF14E03AE3EEEDFF9A8E2EC61 /* MGSwipeTableCell.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		ACF8DC351A78E09D8B4339262D735421 /* Pods-Quaza-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C970C76D6BC73576B1EE52A1C2AC104 /* Pods-Quaza-dummy.m */; };
-		B6EAAE8302B7B442B3885D1953880E10 /* Pods-Quaza-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CA99D88647BBC1D6AB2B7240389E4E2 /* Pods-Quaza-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8FD669C32DE47E548CBB0153988C1E2 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA79C6C3C088EAFC308EB3639EC534DF /* MGSwipeButton.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		0D9E41C1440396013CF4BEEE845ABDEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FFC4E1CD114394C9DF771A6C7DB8C2 /* Foundation.framework */; };
+		18DD322A484830AA0335D6AD48197408 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71DF9792E0ACD8F86D4713D84D8E4793 /* UIKit.framework */; };
+		1B7E5FB6B6C679B883A0478A6371F8D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FFC4E1CD114394C9DF771A6C7DB8C2 /* Foundation.framework */; };
+		1D54E6EC43B2B4250E1FE53B0C0A6662 /* MGSwipeTableCell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CB948FC1C71E1DCD31A25BFF049D1BE /* MGSwipeTableCell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		32E7DF620B9120866A607BF42708E5E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FFC4E1CD114394C9DF771A6C7DB8C2 /* Foundation.framework */; };
+		330BFB702A29CF28E5DC59002AF555DE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F7CA7406A2CA732E0DFE0A7FE8B119 /* MobileCoreServices.framework */; };
+		340AABE2C23B29EFE857F6172820401C /* OnePasswordExtensionResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE6BDDBA5820B39C151E248741D25519 /* OnePasswordExtensionResources.bundle */; };
+		569D057F4C7A6F69AEA4AB0BD6D9900E /* MGSwipeTableCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1D9C45DE57085EF085F91353CFA049 /* MGSwipeTableCell-dummy.m */; };
+		5F79A2B347E50A216D3C3AC38BA3FF07 /* OnePasswordExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 056361EB18970BDCF9C2D65A9EC1F636 /* OnePasswordExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63DC27806C23AFFC9B7115E5EEAB9CBF /* MGSwipeButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BBAA71C03B7AB5B3BF44EE6445E1CC /* MGSwipeButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65894E5CCB4249567D09DC1CE20DC5C8 /* 1Password.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0310775FC7E833CDF9BE2CA36BFDABC9 /* 1Password.xcassets */; };
+		67558B72295110F846C2420C9540A52A /* MGSwipeTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FB539869EC4021D4E355674AD937BE2 /* MGSwipeTableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C695C8012EC045E11FB407873D7B037 /* 1PasswordExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9A4C139DF00DD7828249B229D3901D6 /* 1PasswordExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7476086003E76D303542DB66F67B9963 /* 1PasswordExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A6BDFA63A85648EEA927D76F72E1C50D /* 1PasswordExtension-dummy.m */; };
+		8ACAB1B426A7314FCA4BF5FC13E4BE13 /* Pods-Quaza-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CA99D88647BBC1D6AB2B7240389E4E2 /* Pods-Quaza-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95E41293E05A8ABB9866D6F3AED0CA10 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78722F2B7E81E1769B3AE6FF5064CB46 /* MGSwipeTableCell.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		B472070FFA861A5AE89EE943A445B561 /* Pods-Quaza-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C970C76D6BC73576B1EE52A1C2AC104 /* Pods-Quaza-dummy.m */; };
+		C8FD669C32DE47E548CBB0153988C1E2 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7681AB3794C81C0DF29BEF3CF8804B59 /* MGSwipeButton.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		DD80DA28BB127E7D45654AE18F0C67A6 /* OnePasswordExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C12D691EE3A692F6602EF2E0B2D75252 /* OnePasswordExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		15E8AC6FF7BB0090C145A23ED09EF3E8 /* PBXContainerItemProxy */ = {
+		7FB01B50D1D0F494A9E2A63F3307059C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E366E93B9D54B1CF40B26EC2B3C8407A;
+			remoteInfo = 1PasswordExtension;
+		};
+		88E74769879C9CF03B6448CE6C3739F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D6122103C9D36D99793C6B3DF6EAB959;
+			remoteInfo = "1PasswordExtension-OnePasswordExtensionResources";
+		};
+		D58CDB161155E5F5C013A52AAEE2204E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -30,38 +53,62 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06E4B0468CAF70FAD9072EB33D4C175B /* MGSwipeTableCell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MGSwipeTableCell-umbrella.h"; sourceTree = "<group>"; };
-		145DD94E3E01779520825959901AE57D /* MGSwipeTableCell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MGSwipeTableCell.modulemap; sourceTree = "<group>"; };
-		1CF6A77DF14E03AE3EEEDFF9A8E2EC61 /* MGSwipeTableCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MGSwipeTableCell.m; path = MGSwipeTableCell/MGSwipeTableCell.m; sourceTree = "<group>"; };
+		0310775FC7E833CDF9BE2CA36BFDABC9 /* 1Password.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = 1Password.xcassets; sourceTree = "<group>"; };
+		056361EB18970BDCF9C2D65A9EC1F636 /* OnePasswordExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OnePasswordExtension.h; sourceTree = "<group>"; };
 		1E1AE9BBC0C5022635415FD0289A555C /* Pods-Quaza-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Quaza-frameworks.sh"; sourceTree = "<group>"; };
-		34E8273024386753F400AF92AEF7F002 /* MGSwipeTableCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MGSwipeTableCell-dummy.m"; sourceTree = "<group>"; };
-		3997E5D2953ECDF377B85B234FDF550D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		2115AF71D6FC93482EAA3CCE0CD81151 /* MGSwipeTableCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MGSwipeTableCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CB948FC1C71E1DCD31A25BFF049D1BE /* MGSwipeTableCell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MGSwipeTableCell-umbrella.h"; sourceTree = "<group>"; };
 		44D3B8AE8B34A6649D48B0ECC70A42BB /* Pods-Quaza-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Quaza-acknowledgements.markdown"; sourceTree = "<group>"; };
-		46F22C2BCB04D2D6B53E33CF69E026C5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B1D9C45DE57085EF085F91353CFA049 /* MGSwipeTableCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MGSwipeTableCell-dummy.m"; sourceTree = "<group>"; };
 		576CABA9C358D234FCDDF34909647DC2 /* Pods-Quaza-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Quaza-acknowledgements.plist"; sourceTree = "<group>"; };
-		5D9845A119A940E1447A383846988EE5 /* MGSwipeTableCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MGSwipeTableCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60FFC4E1CD114394C9DF771A6C7DB8C2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		65337EDCBBEE5EDDDAA6AC28FCA3698C /* 1PasswordExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = 1PasswordExtension.modulemap; sourceTree = "<group>"; };
+		67BBAA71C03B7AB5B3BF44EE6445E1CC /* MGSwipeButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGSwipeButton.h; path = MGSwipeTableCell/MGSwipeButton.h; sourceTree = "<group>"; };
+		6CC3744A002415867AD1F4CA2C4723A7 /* MGSwipeTableCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MGSwipeTableCell-prefix.pch"; sourceTree = "<group>"; };
+		71DF9792E0ACD8F86D4713D84D8E4793 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		724B310EF48D94C30ABF089F67584391 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7681AB3794C81C0DF29BEF3CF8804B59 /* MGSwipeButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MGSwipeButton.m; path = MGSwipeTableCell/MGSwipeButton.m; sourceTree = "<group>"; };
+		78722F2B7E81E1769B3AE6FF5064CB46 /* MGSwipeTableCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MGSwipeTableCell.m; path = MGSwipeTableCell/MGSwipeTableCell.m; sourceTree = "<group>"; };
 		7AE8FA14E491EF23DD1C10B02BBDCADB /* Pods-Quaza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Quaza.debug.xcconfig"; sourceTree = "<group>"; };
 		8C059852BB7782CAE885578B23353EFD /* Pods-Quaza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Quaza.release.xcconfig"; sourceTree = "<group>"; };
 		8C970C76D6BC73576B1EE52A1C2AC104 /* Pods-Quaza-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Quaza-dummy.m"; sourceTree = "<group>"; };
 		8CA99D88647BBC1D6AB2B7240389E4E2 /* Pods-Quaza-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Quaza-umbrella.h"; sourceTree = "<group>"; };
-		92CDF56E837124095187739A091CCC0F /* Pods_Quaza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quaza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FB539869EC4021D4E355674AD937BE2 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGSwipeTableCell.h; path = MGSwipeTableCell/MGSwipeTableCell.h; sourceTree = "<group>"; };
+		A6BDFA63A85648EEA927D76F72E1C50D /* 1PasswordExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "1PasswordExtension-dummy.m"; sourceTree = "<group>"; };
+		AAAFD7DB7469328A60CFD55F2B3F3B36 /* 1PasswordExtension-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "1PasswordExtension-prefix.pch"; sourceTree = "<group>"; };
+		B1D071358BFDB5B598549CEAE52396D3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B37829686FE2082EF6AD120D964A46CA /* OnePasswordExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OnePasswordExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BE6BDDBA5820B39C151E248741D25519 /* OnePasswordExtensionResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnePasswordExtensionResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		C12D691EE3A692F6602EF2E0B2D75252 /* OnePasswordExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OnePasswordExtension.m; sourceTree = "<group>"; };
+		C234252FFA0DF1FA53A10868071AD7A7 /* ResourceBundle-OnePasswordExtensionResources-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-OnePasswordExtensionResources-Info.plist"; sourceTree = "<group>"; };
+		C65F170FEF3D149411BC0C669EEDB3F5 /* 1PasswordExtension.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = 1PasswordExtension.xcconfig; sourceTree = "<group>"; };
 		CB2774D0E6B93A5FD4293914B067468E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF363A561B0F48AFFBCB455966A306CB /* MGSwipeTableCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MGSwipeTableCell.xcconfig; sourceTree = "<group>"; };
-		D105DA5E33C0C315D08BE038EA6E8473 /* MGSwipeTableCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MGSwipeTableCell-prefix.pch"; sourceTree = "<group>"; };
-		EE754AF5AE8D4060E0B4FB4634BAE8D9 /* MGSwipeButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGSwipeButton.h; path = MGSwipeTableCell/MGSwipeButton.h; sourceTree = "<group>"; };
+		D0AA441494FEEF1CA59AD11BE0261D42 /* Pods_Quaza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quaza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0F34C6BA6C93A6F8F0DDAECCE4378B3 /* MGSwipeTableCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MGSwipeTableCell.xcconfig; sourceTree = "<group>"; };
+		DB962FCED096B4BCB4FBD59A8BE219C5 /* MGSwipeTableCell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MGSwipeTableCell.modulemap; sourceTree = "<group>"; };
+		E5F7CA7406A2CA732E0DFE0A7FE8B119 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		F52B06A21B5FD167F756ADD1D723B23A /* Pods-Quaza-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Quaza-resources.sh"; sourceTree = "<group>"; };
-		F876F08589CAD0D794C44610DAE935CA /* MGSwipeTableCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGSwipeTableCell.h; path = MGSwipeTableCell/MGSwipeTableCell.h; sourceTree = "<group>"; };
-		FA79C6C3C088EAFC308EB3639EC534DF /* MGSwipeButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MGSwipeButton.m; path = MGSwipeTableCell/MGSwipeButton.m; sourceTree = "<group>"; };
+		F9A4C139DF00DD7828249B229D3901D6 /* 1PasswordExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "1PasswordExtension-umbrella.h"; sourceTree = "<group>"; };
 		FD381C41A15A76253D3CC2FC4829786F /* Pods-Quaza.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Quaza.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4B44482B5B459B96F24D94F18D005FFE /* Frameworks */ = {
+		46259089E40A08936211A8F66EA0B175 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E895A6E7FF0FA2DD07DCCF5546C005D /* Foundation.framework in Frameworks */,
+				0D9E41C1440396013CF4BEEE845ABDEB /* Foundation.framework in Frameworks */,
+				330BFB702A29CF28E5DC59002AF555DE /* MobileCoreServices.framework in Frameworks */,
+				18DD322A484830AA0335D6AD48197408 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5501CA56767C44B6D196A583BFAB71B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32E7DF620B9120866A607BF42708E5E7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,47 +120,111 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B590857022EFCCD3810695DACE6DC5E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		112C7921E3A497328D11F4930CBBC9CA /* iOS */ = {
+		066B1F9D4210FB88D2AE0404A4AF142A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3997E5D2953ECDF377B85B234FDF550D /* Foundation.framework */,
+				2115AF71D6FC93482EAA3CCE0CD81151 /* MGSwipeTableCell.framework */,
+				B37829686FE2082EF6AD120D964A46CA /* OnePasswordExtension.framework */,
+				BE6BDDBA5820B39C151E248741D25519 /* OnePasswordExtensionResources.bundle */,
+				D0AA441494FEEF1CA59AD11BE0261D42 /* Pods_Quaza.framework */,
 			);
-			name = iOS;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		6AE2D8EBA44A565F40C6D4EC87D6CC30 /* MGSwipeTableCell */ = {
+		07AB6906E876A199D4AA76C93DFC97E0 /* 1PasswordExtension */ = {
 			isa = PBXGroup;
 			children = (
-				EE754AF5AE8D4060E0B4FB4634BAE8D9 /* MGSwipeButton.h */,
-				FA79C6C3C088EAFC308EB3639EC534DF /* MGSwipeButton.m */,
-				F876F08589CAD0D794C44610DAE935CA /* MGSwipeTableCell.h */,
-				1CF6A77DF14E03AE3EEEDFF9A8E2EC61 /* MGSwipeTableCell.m */,
-				D23E9C8AA0B13D7279E69F142F32A72B /* Support Files */,
+				056361EB18970BDCF9C2D65A9EC1F636 /* OnePasswordExtension.h */,
+				C12D691EE3A692F6602EF2E0B2D75252 /* OnePasswordExtension.m */,
+				634DB66F9069B5785A4B143FEFBCEEF8 /* Resources */,
+				4B2A5EF2EC05C507658F27986603094E /* Support Files */,
 			);
-			path = MGSwipeTableCell;
+			path = 1PasswordExtension;
+			sourceTree = "<group>";
+		};
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9651F78EEBBD3532BE61A2056FC18C67 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3B602DCCE12AA288A153C5B77B605EF5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B1D071358BFDB5B598549CEAE52396D3 /* Info.plist */,
+				DB962FCED096B4BCB4FBD59A8BE219C5 /* MGSwipeTableCell.modulemap */,
+				D0F34C6BA6C93A6F8F0DDAECCE4378B3 /* MGSwipeTableCell.xcconfig */,
+				4B1D9C45DE57085EF085F91353CFA049 /* MGSwipeTableCell-dummy.m */,
+				6CC3744A002415867AD1F4CA2C4723A7 /* MGSwipeTableCell-prefix.pch */,
+				2CB948FC1C71E1DCD31A25BFF049D1BE /* MGSwipeTableCell-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MGSwipeTableCell";
+			sourceTree = "<group>";
+		};
+		4B2A5EF2EC05C507658F27986603094E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				65337EDCBBEE5EDDDAA6AC28FCA3698C /* 1PasswordExtension.modulemap */,
+				C65F170FEF3D149411BC0C669EEDB3F5 /* 1PasswordExtension.xcconfig */,
+				A6BDFA63A85648EEA927D76F72E1C50D /* 1PasswordExtension-dummy.m */,
+				AAAFD7DB7469328A60CFD55F2B3F3B36 /* 1PasswordExtension-prefix.pch */,
+				F9A4C139DF00DD7828249B229D3901D6 /* 1PasswordExtension-umbrella.h */,
+				724B310EF48D94C30ABF089F67584391 /* Info.plist */,
+				C234252FFA0DF1FA53A10868071AD7A7 /* ResourceBundle-OnePasswordExtensionResources-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/1PasswordExtension";
+			sourceTree = "<group>";
+		};
+		526D08F1BC7A5E5869E7C819F8B9CEDE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				07AB6906E876A199D4AA76C93DFC97E0 /* 1PasswordExtension */,
+				ECE61C2FFFFAABC55EF1B9F52D110DF7 /* MGSwipeTableCell */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		634DB66F9069B5785A4B143FEFBCEEF8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0310775FC7E833CDF9BE2CA36BFDABC9 /* 1Password.xcassets */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				EDEF8146E41CB40591E3EE21384C8AC6 /* Pods */,
-				9235BF20B04270FD852BDC808A8F0B84 /* Products */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				526D08F1BC7A5E5869E7C819F8B9CEDE /* Pods */,
+				066B1F9D4210FB88D2AE0404A4AF142A /* Products */,
 				E4BFD2D911B85EED9650416EBF534D67 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		9235BF20B04270FD852BDC808A8F0B84 /* Products */ = {
+		9651F78EEBBD3532BE61A2056FC18C67 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				5D9845A119A940E1447A383846988EE5 /* MGSwipeTableCell.framework */,
-				92CDF56E837124095187739A091CCC0F /* Pods_Quaza.framework */,
+				60FFC4E1CD114394C9DF771A6C7DB8C2 /* Foundation.framework */,
+				E5F7CA7406A2CA732E0DFE0A7FE8B119 /* MobileCoreServices.framework */,
+				71DF9792E0ACD8F86D4713D84D8E4793 /* UIKit.framework */,
 			);
-			name = Products;
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		A0EAC09745A91DF4C5F7A91085BBD4EB /* Pods-Quaza */ = {
@@ -134,28 +245,6 @@
 			path = "Target Support Files/Pods-Quaza";
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				112C7921E3A497328D11F4930CBBC9CA /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D23E9C8AA0B13D7279E69F142F32A72B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				46F22C2BCB04D2D6B53E33CF69E026C5 /* Info.plist */,
-				145DD94E3E01779520825959901AE57D /* MGSwipeTableCell.modulemap */,
-				CF363A561B0F48AFFBCB455966A306CB /* MGSwipeTableCell.xcconfig */,
-				34E8273024386753F400AF92AEF7F002 /* MGSwipeTableCell-dummy.m */,
-				D105DA5E33C0C315D08BE038EA6E8473 /* MGSwipeTableCell-prefix.pch */,
-				06E4B0468CAF70FAD9072EB33D4C175B /* MGSwipeTableCell-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MGSwipeTableCell";
-			sourceTree = "<group>";
-		};
 		E4BFD2D911B85EED9650416EBF534D67 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,12 +253,16 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		EDEF8146E41CB40591E3EE21384C8AC6 /* Pods */ = {
+		ECE61C2FFFFAABC55EF1B9F52D110DF7 /* MGSwipeTableCell */ = {
 			isa = PBXGroup;
 			children = (
-				6AE2D8EBA44A565F40C6D4EC87D6CC30 /* MGSwipeTableCell */,
+				67BBAA71C03B7AB5B3BF44EE6445E1CC /* MGSwipeButton.h */,
+				7681AB3794C81C0DF29BEF3CF8804B59 /* MGSwipeButton.m */,
+				8FB539869EC4021D4E355674AD937BE2 /* MGSwipeTableCell.h */,
+				78722F2B7E81E1769B3AE6FF5064CB46 /* MGSwipeTableCell.m */,
+				3B602DCCE12AA288A153C5B77B605EF5 /* Support Files */,
 			);
-			name = Pods;
+			path = MGSwipeTableCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,11 +278,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4B8FD4A6236E97FC3D2496303DD9ACF7 /* Headers */ = {
+		D428246FDEC740BBDE1B27848E7BE85D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6EAAE8302B7B442B3885D1953880E10 /* Pods-Quaza-umbrella.h in Headers */,
+				8ACAB1B426A7314FCA4BF5FC13E4BE13 /* Pods-Quaza-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9BD235C40AF7BA7F4BD7E96586BB6C5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C695C8012EC045E11FB407873D7B037 /* 1PasswordExtension-umbrella.h in Headers */,
+				5F79A2B347E50A216D3C3AC38BA3FF07 /* OnePasswordExtension.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,25 +312,62 @@
 			);
 			name = MGSwipeTableCell;
 			productName = MGSwipeTableCell;
-			productReference = 5D9845A119A940E1447A383846988EE5 /* MGSwipeTableCell.framework */;
+			productReference = 2115AF71D6FC93482EAA3CCE0CD81151 /* MGSwipeTableCell.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		53B5FC7F506B2EFF4CDD3F9C5295704F /* Pods-Quaza */ = {
+		D6122103C9D36D99793C6B3DF6EAB959 /* 1PasswordExtension-OnePasswordExtensionResources */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 503AF0D115186F827B6270DCDB9A87C1 /* Build configuration list for PBXNativeTarget "Pods-Quaza" */;
+			buildConfigurationList = A7D2C79CF66FE8574AAD47094F69E620 /* Build configuration list for PBXNativeTarget "1PasswordExtension-OnePasswordExtensionResources" */;
 			buildPhases = (
-				80F4F123CC3D74F6031B2B6091E2AAF2 /* Sources */,
-				4B44482B5B459B96F24D94F18D005FFE /* Frameworks */,
-				4B8FD4A6236E97FC3D2496303DD9ACF7 /* Headers */,
+				D456875D980FE3F6706B78E27B56ECA8 /* Sources */,
+				B590857022EFCCD3810695DACE6DC5E1 /* Frameworks */,
+				7009D0ADE9A0FB5ED4D0EBDCC7FA8D7B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D21927B3E1D41684B5BEAB6508AB33A2 /* PBXTargetDependency */,
+			);
+			name = "1PasswordExtension-OnePasswordExtensionResources";
+			productName = "1PasswordExtension-OnePasswordExtensionResources";
+			productReference = BE6BDDBA5820B39C151E248741D25519 /* OnePasswordExtensionResources.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		E366E93B9D54B1CF40B26EC2B3C8407A /* 1PasswordExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A59A7F43A3DDA09934FA7C38A121B5B /* Build configuration list for PBXNativeTarget "1PasswordExtension" */;
+			buildPhases = (
+				A75566F805D88785DBF07FD38C95A098 /* Sources */,
+				46259089E40A08936211A8F66EA0B175 /* Frameworks */,
+				0964C6FCE39C7E88421BC8A89A20801A /* Resources */,
+				E9BD235C40AF7BA7F4BD7E96586BB6C5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0DF3C01950417E7558BEA5B923C433B5 /* PBXTargetDependency */,
+			);
+			name = 1PasswordExtension;
+			productName = 1PasswordExtension;
+			productReference = B37829686FE2082EF6AD120D964A46CA /* OnePasswordExtension.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FBFCC41CCF7244BBAB598C5C55D4063E /* Pods-Quaza */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8089967A8FED9F07EB185D0BF2E5998 /* Build configuration list for PBXNativeTarget "Pods-Quaza" */;
+			buildPhases = (
+				C2F81069C8E715E33E7F0A1502C11B08 /* Sources */,
+				5501CA56767C44B6D196A583BFAB71B6 /* Frameworks */,
+				D428246FDEC740BBDE1B27848E7BE85D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24F24D575BB07EBDC9808B5B8C75DEA3 /* PBXTargetDependency */,
+				0E1536FE4D1E111AF930BCF0D81DC52C /* PBXTargetDependency */,
 			);
 			name = "Pods-Quaza";
 			productName = "Pods-Quaza";
-			productReference = 92CDF56E837124095187739A091CCC0F /* Pods_Quaza.framework */;
+			productReference = D0AA441494FEEF1CA59AD11BE0261D42 /* Pods_Quaza.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -248,22 +387,52 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 9235BF20B04270FD852BDC808A8F0B84 /* Products */;
+			productRefGroup = 066B1F9D4210FB88D2AE0404A4AF142A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				E366E93B9D54B1CF40B26EC2B3C8407A /* 1PasswordExtension */,
+				D6122103C9D36D99793C6B3DF6EAB959 /* 1PasswordExtension-OnePasswordExtensionResources */,
 				4E1263BFF45F6446CF3DE29AE234C893 /* MGSwipeTableCell */,
-				53B5FC7F506B2EFF4CDD3F9C5295704F /* Pods-Quaza */,
+				FBFCC41CCF7244BBAB598C5C55D4063E /* Pods-Quaza */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		0964C6FCE39C7E88421BC8A89A20801A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				340AABE2C23B29EFE857F6172820401C /* OnePasswordExtensionResources.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7009D0ADE9A0FB5ED4D0EBDCC7FA8D7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65894E5CCB4249567D09DC1CE20DC5C8 /* 1Password.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		80F4F123CC3D74F6031B2B6091E2AAF2 /* Sources */ = {
+		A75566F805D88785DBF07FD38C95A098 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACF8DC351A78E09D8B4339262D735421 /* Pods-Quaza-dummy.m in Sources */,
+				7476086003E76D303542DB66F67B9963 /* 1PasswordExtension-dummy.m in Sources */,
+				DD80DA28BB127E7D45654AE18F0C67A6 /* OnePasswordExtension.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2F81069C8E715E33E7F0A1502C11B08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B472070FFA861A5AE89EE943A445B561 /* Pods-Quaza-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,14 +446,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D456875D980FE3F6706B78E27B56ECA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D21927B3E1D41684B5BEAB6508AB33A2 /* PBXTargetDependency */ = {
+		0DF3C01950417E7558BEA5B923C433B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "1PasswordExtension-OnePasswordExtensionResources";
+			target = D6122103C9D36D99793C6B3DF6EAB959 /* 1PasswordExtension-OnePasswordExtensionResources */;
+			targetProxy = 88E74769879C9CF03B6448CE6C3739F8 /* PBXContainerItemProxy */;
+		};
+		0E1536FE4D1E111AF930BCF0D81DC52C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MGSwipeTableCell;
 			target = 4E1263BFF45F6446CF3DE29AE234C893 /* MGSwipeTableCell */;
-			targetProxy = 15E8AC6FF7BB0090C145A23ED09EF3E8 /* PBXContainerItemProxy */;
+			targetProxy = D58CDB161155E5F5C013A52AAEE2204E /* PBXContainerItemProxy */;
+		};
+		24F24D575BB07EBDC9808B5B8C75DEA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = 1PasswordExtension;
+			target = E366E93B9D54B1CF40B26EC2B3C8407A /* 1PasswordExtension */;
+			targetProxy = 7FB01B50D1D0F494A9E2A63F3307059C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -326,7 +514,52 @@
 			};
 			name = Release;
 		};
-		26DA7AF0CF0A70860D356F716A28D45C /* Debug */ = {
+		0324A903716FC7D70CB45722779C337A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C65F170FEF3D149411BC0C669EEDB3F5 /* 1PasswordExtension.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/1PasswordExtension/ResourceBundle-OnePasswordExtensionResources-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = OnePasswordExtensionResources;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		21D90BC4BBD4ED63A777A243D218E130 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C65F170FEF3D149411BC0C669EEDB3F5 /* 1PasswordExtension.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/1PasswordExtension/1PasswordExtension-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/1PasswordExtension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/1PasswordExtension/1PasswordExtension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = OnePasswordExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4C3BADB2FF2440AF62E516D0A4B9FEE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7AE8FA14E491EF23DD1C10B02BBDCADB /* Pods-Quaza.debug.xcconfig */;
 			buildSettings = {
@@ -361,7 +594,7 @@
 		};
 		5670F5018932B50D3C486E33DF48CDE4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF363A561B0F48AFFBCB455966A306CB /* MGSwipeTableCell.xcconfig */;
+			baseConfigurationReference = D0F34C6BA6C93A6F8F0DDAECCE4378B3 /* MGSwipeTableCell.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -380,6 +613,51 @@
 				MODULEMAP_FILE = "Target Support Files/MGSwipeTableCell/MGSwipeTableCell.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = MGSwipeTableCell;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8448FB7B63CE8AB0E72F8F700B2604C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C65F170FEF3D149411BC0C669EEDB3F5 /* 1PasswordExtension.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/1PasswordExtension/ResourceBundle-OnePasswordExtensionResources-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = OnePasswordExtensionResources;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		9B2317DE14133A972D03AE2830D6B821 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C65F170FEF3D149411BC0C669EEDB3F5 /* 1PasswordExtension.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/1PasswordExtension/1PasswordExtension-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/1PasswordExtension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/1PasswordExtension/1PasswordExtension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = OnePasswordExtension;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -429,7 +707,7 @@
 			};
 			name = Debug;
 		};
-		B97F762DF8871685E76F76BDF2F7991A /* Release */ = {
+		B13ABC62F6BDC5E66FC7411C9A3AC48E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8C059852BB7782CAE885578B23353EFD /* Pods-Quaza.release.xcconfig */;
 			buildSettings = {
@@ -464,7 +742,7 @@
 		};
 		F30C15F9C5ABC29F826EB0BF627A0FA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF363A561B0F48AFFBCB455966A306CB /* MGSwipeTableCell.xcconfig */;
+			baseConfigurationReference = D0F34C6BA6C93A6F8F0DDAECCE4378B3 /* MGSwipeTableCell.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -494,6 +772,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1A59A7F43A3DDA09934FA7C38A121B5B /* Build configuration list for PBXNativeTarget "1PasswordExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21D90BC4BBD4ED63A777A243D218E130 /* Debug */,
+				9B2317DE14133A972D03AE2830D6B821 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -503,20 +790,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		503AF0D115186F827B6270DCDB9A87C1 /* Build configuration list for PBXNativeTarget "Pods-Quaza" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				26DA7AF0CF0A70860D356F716A28D45C /* Debug */,
-				B97F762DF8871685E76F76BDF2F7991A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		7B05C24F339BF84D6E16E6538A947C90 /* Build configuration list for PBXNativeTarget "MGSwipeTableCell" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F30C15F9C5ABC29F826EB0BF627A0FA4 /* Debug */,
 				5670F5018932B50D3C486E33DF48CDE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7D2C79CF66FE8574AAD47094F69E620 /* Build configuration list for PBXNativeTarget "1PasswordExtension-OnePasswordExtensionResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0324A903716FC7D70CB45722779C337A /* Debug */,
+				8448FB7B63CE8AB0E72F8F700B2604C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8089967A8FED9F07EB185D0BF2E5998 /* Build configuration list for PBXNativeTarget "Pods-Quaza" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C3BADB2FF2440AF62E516D0A4B9FEE4 /* Debug */,
+				B13ABC62F6BDC5E66FC7411C9A3AC48E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

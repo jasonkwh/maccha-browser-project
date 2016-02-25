@@ -125,6 +125,10 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         //use Reach() module to check network connections
         Reach().monitorReachabilityChanges()
         
+        //register observer for willEnterForeground / willEnterBackground state
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterBackground:", name: UIApplicationDidEnterBackgroundNotification, object: nil)
+        
         self.revealViewController().delegate = self
         if self.revealViewController() != nil {
             revealViewController().rightViewRevealWidth = 240
@@ -191,27 +195,47 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         backButton.enabled = false
         forwardButton.enabled = false
         
-        //Determine quick actions...
         if(slideViewValue.shortcutItem == 0) {
             loadRequest(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])
         }
         else {
-            slideViewValue.windowStoreTitle.append("")
-            slideViewValue.windowStoreUrl.append("about:blank")
-            slideViewValue.scrollPosition.append(CGFloat(0.0))
-            slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
-            windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
-            if(slideViewValue.shortcutItem == 1) {
-                webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
-            }
-            else if(slideViewValue.shortcutItem == 2) {
-                //Open URL from clipboard
-                let pb: UIPasteboard = UIPasteboard.generalPasteboard()
-                loadRequest(pb.string!)
-                slideViewValue.windowStoreTitle[slideViewValue.windowCurTab] = webView.title!
-                slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] = (webView.URL?.absoluteString)!
-            }
+            openShortcutItem()
         }
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    //Determine quick actions...
+    func openShortcutItem() {
+        slideViewValue.windowStoreTitle.append("")
+        slideViewValue.windowStoreUrl.append("about:blank")
+        slideViewValue.scrollPosition.append(CGFloat(0.0))
+        slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+        windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
+        if(slideViewValue.shortcutItem == 1) {
+            webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
+        }
+        else if(slideViewValue.shortcutItem == 2) {
+            //Open URL from clipboard
+            let pb: UIPasteboard = UIPasteboard.generalPasteboard()
+            loadRequest(pb.string!)
+            slideViewValue.windowStoreTitle[slideViewValue.windowCurTab] = webView.title!
+            slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] = (webView.URL?.absoluteString)!
+        }
+        slideViewValue.shortcutItem = 0
+    }
+    
+    func applicationWillEnterForeground(notification: NSNotification) {
+        print("did enter foreground")
+        if(slideViewValue.shortcutItem != 0){
+            openShortcutItem()
+        }
+    }
+    
+    func applicationWillEnterBackground(notification: NSNotification) {
+        print("did enter background")
     }
     
     override func canBecomeFirstResponder() -> Bool {
@@ -746,26 +770,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         urlField.text = pb.string
     }
     
-    //function to new window
-    func newWindow() {
-        //reset scrollCellAction
-        slideViewValue.scrollCellAction = false
-        
-        //store previous window titles and urls
-        slideViewValue.windowStoreTitle.append(webView.title!)
-        slideViewValue.windowStoreUrl.append((webView.URL?.absoluteString)!)
-        
-        //set current window as the latest window
-        slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
-        
-        //initial y point
-        slideViewValue.scrollPosition.append(CGFloat(0.0))
-        
-        //open urls
-        moveToolbarReturn = true
-        urlField.resignFirstResponder()
-        
-        loadRequest(urlField.text!)
+    //fill webView by 1Password Extension
+    func pwPressed(sender: AnyObject) {
+        hideKeyboard()
+        OnePasswordExtension.sharedExtension().fillItemIntoWebView(self.webView, forViewController: self, sender: sender, showOnlyLogins: false) { (success, error) -> Void in
+            if success == false {
+                slideViewValue.alertPopup(0, message: "1Password failed to fill into webview.")
+            }
+        }
     }
     
     //function to load Google search
@@ -834,8 +846,8 @@ extension UIViewController: UITextFieldDelegate{
         
         //new tab button
         let nButton = UIButton(type: UIButtonType.System)
-        nButton.setImage(UIImage(named: "Newtab"), forState: UIControlState.Normal)
-        nButton.addTarget(self, action: "newWindow", forControlEvents: UIControlEvents.TouchUpInside)
+        nButton.setImage(UIImage(named: "Password"), forState: UIControlState.Normal)
+        nButton.addTarget(self, action: Selector("pwPressed:"), forControlEvents: UIControlEvents.TouchUpInside)
         nButton.frame = CGRectMake(0, 0, 30, 30)
         let plusButton = UIBarButtonItem(customView: nButton)
         
@@ -862,7 +874,7 @@ extension UIViewController: UITextFieldDelegate{
         
         //add some space
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
-        toolBar.setItems([cutButton, copyButton, pasteButton, spaceButton, hideButton, spaceButton, slashButton, refreshButton, plusButton], animated: false)
+        toolBar.setItems([cutButton, copyButton, pasteButton, spaceButton, hideButton, spaceButton, slashButton, plusButton, refreshButton], animated: false)
         toolBar.userInteractionEnabled = true
         toolBar.sizeToFit()
         
