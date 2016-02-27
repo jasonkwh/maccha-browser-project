@@ -106,7 +106,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //var longPressSwitch: Bool = false
     
     //Search Engines
-    //0: Google, 1: Baidu
+    //0: Google, 1: Bing
     var searchEngines:Int = 0 //save
     
     required init?(coder aDecoder: NSCoder) {
@@ -532,7 +532,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                     contents = "http://www.google.com/search?q=" + shorten_url.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
                 }
                 else if(searchEngines == 1) {
-                    contents = "http://www.baidu.com/s?wd=" + shorten_url.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+                    contents = "http://www.bing.com/search?q=" + shorten_url.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
                 }
             }
             else {
@@ -784,7 +784,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     func searchPressed() {
         if(searchEngines == 0) {
             searchEngines = 1
-            slideViewValue.alertPopup(3, message: "Your search engine was changed to Baidu")
+            slideViewValue.alertPopup(3, message: "Your search engine was changed to Bing")
         } else {
             searchEngines = 0
             slideViewValue.alertPopup(3, message: "Your search engine was changed to Google")
