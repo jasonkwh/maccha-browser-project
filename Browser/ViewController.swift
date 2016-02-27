@@ -126,7 +126,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         Reach().monitorReachabilityChanges()
         
         //register observer for willEnterForeground / willEnterBackground state
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationDidBecomeActiveNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterBackground:", name: UIApplicationDidEnterBackgroundNotification, object: nil)
         
         self.revealViewController().delegate = self
@@ -227,13 +228,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         slideViewValue.shortcutItem = 0
     }
     
+    //actions those the app going to do when the app enters foreground
     func applicationWillEnterForeground(notification: NSNotification) {
-        print("did enter foreground")
         if(slideViewValue.shortcutItem != 0){
             openShortcutItem()
         }
     }
     
+    //actions those the app going to do when the app enters background
     func applicationWillEnterBackground(notification: NSNotification) {
         print("did enter background")
     }
@@ -674,15 +676,15 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             decisionHandler(.Cancel)
             return;
         }
-        else {
-            /*if navigationAction.navigationType == .LinkActivated && longPressSwitch == true {
+        /*else {
+            if navigationAction.navigationType == .LinkActivated && longPressSwitch == true {
                 decisionHandler(.Cancel)
                 let ac = actionMenu(self, urlStr: urlString)
                 self.presentViewController(ac, animated: true) {}
                 longPressSwitch = false
                 return
-            }*/
-        }
+            }
+        }*/
         decisionHandler(.Allow)
     }
 

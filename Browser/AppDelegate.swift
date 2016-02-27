@@ -12,66 +12,50 @@
 
 import UIKit
 
+@available(iOS 9.0, *)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    enum ShortcutIdentifier: String {
-        case openclipboard
-        case opennewtab
-        
-        init?(fullIdentifier: String) {
-            guard let shortIdentifier = fullIdentifier.componentsSeparatedByString(".").last else {
-                return nil
-            }
-            self.init(rawValue: shortIdentifier)
-        }
-    }
-    
     var window: UIWindow?
+    var shortcutItem: UIApplicationShortcutItem?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool{
-        if #available(iOS 9.0, *) {
-            if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsShortcutItemKey] as? UIApplicationShortcutItem {
-                handleShortcut(shortcutItem)
-                return false
-            }
-        } else {
-            // Fallback on earlier versions
+        var performShortcutDelegate = true
+        
+        if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsShortcutItemKey] as? UIApplicationShortcutItem {
+            self.shortcutItem = shortcutItem
+            performShortcutDelegate = false
         }
         
         //set url cache setting
         let URLCache = NSURLCache(memoryCapacity: 4 * 1024 * 1024, diskCapacity: 20 * 1024 * 1024, diskPath: nil)
         NSURLCache.setSharedURLCache(URLCache)
         
-        return true
+        return performShortcutDelegate
     }
     
-    @available(iOS 9.0, *)
-    func application(application: UIApplication,
-        performActionForShortcutItem shortcutItem: UIApplicationShortcutItem,
-        completionHandler: (Bool) -> Void) {
-            completionHandler(handleShortcut(shortcutItem))
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        completionHandler(handleShortcut(shortcutItem))
     }
     
-    @available(iOS 9.0, *)
-    private func handleShortcut(shortcutItem: UIApplicationShortcutItem) -> Bool {
-        let shortcutType = shortcutItem.type
-        guard let shortcutIdentifier = ShortcutIdentifier(fullIdentifier: shortcutType) else {
-            return false
-        }
-        return selectTabBarItemForIdentifier(shortcutIdentifier)
-    }
-    
-    private func selectTabBarItemForIdentifier(identifier: ShortcutIdentifier) -> Bool {
-        switch (identifier) {
-        case .opennewtab:
-            slideViewValue.shortcutItem = 1
-            return true
-        case .openclipboard:
+    func handleShortcut(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        var succeeded = false
+        if(shortcutItem.type == "com.studiospates.quaza.openclipboard") {
             slideViewValue.shortcutItem = 2
-            return true
+            succeeded = true
         }
+        else if(shortcutItem.type == "com.studiospates.quaza.opennewtab") {
+            slideViewValue.shortcutItem = 1
+            succeeded = true
+        }
+        return succeeded
+    }
+    
+    func applicationDidBecomeActive(application: UIApplication) {
+        guard let shortcut = shortcutItem else { return }
+        handleShortcut(shortcut)
+        self.shortcutItem = nil
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -86,10 +70,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    }
-
-    func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
     func applicationWillTerminate(application: UIApplication) {
