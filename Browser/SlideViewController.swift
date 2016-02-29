@@ -55,7 +55,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //windows management functions
     override func viewDidAppear(animated: Bool) {
-        windowView.reloadData()
+        windowView.reloadDataAnimateWithWave(.LeftToRightWaveAnimation)
         
         if(slideViewValue.scrollCellAction == false) {
             //scroll the tableView to display the latest tab

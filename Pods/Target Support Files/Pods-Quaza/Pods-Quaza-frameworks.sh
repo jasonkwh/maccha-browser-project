@@ -84,10 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-Quaza/OnePasswordExtension.framework"
-  install_framework "Pods-Quaza/MGSwipeTableCell.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/1PasswordExtension/OnePasswordExtension.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/MGSwipeTableCell/MGSwipeTableCell.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-Quaza/OnePasswordExtension.framework"
-  install_framework "Pods-Quaza/MGSwipeTableCell.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/1PasswordExtension/OnePasswordExtension.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/MGSwipeTableCell/MGSwipeTableCell.framework"
 fi

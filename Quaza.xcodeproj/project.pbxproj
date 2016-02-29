@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F1631CB1C84700400B19120 /* UITableView+Wave.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1631CA1C84700400B19120 /* UITableView+Wave.m */; };
 		3F9760E91C651C9C006F2ACB /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9760E81C651C9C006F2ACB /* SlideViewController.swift */; };
 		3FB279AC1C7244E6007F0416 /* PathDynamicModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB279AB1C7244E6007F0416 /* PathDynamicModal.swift */; };
 		3FB279AF1C72451A007F0416 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB279AD1C72451A007F0416 /* ModalView.swift */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F1631C91C84700400B19120 /* UITableView+Wave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableView+Wave.h"; path = "Wave/UITableView+Wave.h"; sourceTree = "<group>"; };
+		3F1631CA1C84700400B19120 /* UITableView+Wave.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+Wave.m"; path = "Wave/UITableView+Wave.m"; sourceTree = "<group>"; };
 		3F1EE7D61C5D499700923DF3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		3F6683511C782F0400288B95 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		3F9760E81C651C9C006F2ACB /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +86,15 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		3F1631C81C846FF500B19120 /* Wave */ = {
+			isa = PBXGroup;
+			children = (
+				3F1631C91C84700400B19120 /* UITableView+Wave.h */,
+				3F1631CA1C84700400B19120 /* UITableView+Wave.m */,
+			);
+			name = Wave;
+			sourceTree = "<group>";
+		};
 		3FC20F411C6007600016F522 /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				3F6683511C782F0400288B95 /* Header.h */,
+				3F1631C81C846FF500B19120 /* Wave */,
 				3FC20F411C6007600016F522 /* SWRevealViewController */,
 				5F85336C1A5BB8C800F14347 /* Browser */,
 				5F8533821A5BB8C900F14347 /* BrowserTests */,
@@ -334,6 +347,7 @@
 				3FB279AF1C72451A007F0416 /* ModalView.swift in Sources */,
 				3F9760E91C651C9C006F2ACB /* SlideViewController.swift in Sources */,
 				3FDF7E601C61968700C8BD4A /* Reach.swift in Sources */,
+				3F1631CB1C84700400B19120 /* UITableView+Wave.m in Sources */,
 				3FB279AC1C7244E6007F0416 /* PathDynamicModal.swift in Sources */,
 				5F8533701A5BB8C900F14347 /* AppDelegate.swift in Sources */,
 				3FC20F451C6007950016F522 /* SWRevealViewController.m in Sources */,
