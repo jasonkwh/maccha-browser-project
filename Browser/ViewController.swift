@@ -730,25 +730,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         }
         else {
             if navigationAction.navigationType == .LinkActivated && longPressSwitch == true {
-                //get link title via JavaScript
-                let script = "function findLink() {" +
-                    "var els = document.getElementsByTagName('a');" +
-                    "for (var i = 0, l = els.length; i < l; i++) {" +
-                    "var el = els[i];" +
-                    "if (el.href === '\(navigationAction.request.URL!.absoluteString)') {" +
-                    "return el.innerHTML;" +
-                    "}" +
-                    "}" +
-                    "return null;" +
-                    "}" +
-                "findLink();";
-                webView.evaluateJavaScript(script) { (result, error) -> Void in
-                    if let result = result {
-                        //pass link title to action menu and display it
-                        let ac = self.actionMenu(self, urlStr: urlString, urlTitle: result as! String)
-                        self.presentViewController(ac, animated: true) {}
-                    }
-                }
+                let ac = self.actionMenu(self, urlStr: urlString)
+                self.presentViewController(ac, animated: true) {}
                 decisionHandler(.Cancel)
                 longPressSwitch = false
                 return
@@ -763,8 +746,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     }
 
     //Rebuild Wkactionsheet
-    func actionMenu(sender: UIViewController, urlStr: String, urlTitle: String) -> UIAlertController {
-        let alertController = UIAlertController(title: urlTitle.stringByReplacingOccurrencesOfString("<strong>", withString: "").stringByReplacingOccurrencesOfString("</strong>", withString: ""), message: urlStr, preferredStyle: .ActionSheet)
+    func actionMenu(sender: UIViewController, urlStr: String) -> UIAlertController {
+        let alertController = UIAlertController(title: "", message: urlStr, preferredStyle: .ActionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
             
         }
