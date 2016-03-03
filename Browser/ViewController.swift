@@ -97,7 +97,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var scrollDirectionDetermined: Bool = false
     var scrollMakeStatusBarDown: Bool = false
     var google: String = "https://www.google.com"
-    var bing: String = "https://www.bing.com"
     var tempUrl: String = ""
     
     //remember previous scrolling position~~
@@ -316,12 +315,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             if(slideViewValue.newtabButton == true) {
                 slideViewValue.readActions = false //disable readbility
                 //open new tab
-                if(searchEngines == 0) {
-                    webView.loadRequest(NSURLRequest(URL: NSURL(string: google)!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
-                }
-                else {
-                    webView.loadRequest(NSURLRequest(URL: NSURL(string: bing)!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
-                }
+                webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
                 slideViewValue.windowStoreTitle.append(webView.title!)
                 slideViewValue.windowStoreUrl.append((webView.URL?.absoluteString)!)
                 
