@@ -164,7 +164,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stack" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yh-FQ-zEn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yh-FQ-zEn">
                                 <rect key="frame" x="369" y="0.0" width="231" height="600"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="231" id="G0M-ZL-XBN"/>
@@ -238,6 +238,7 @@
                     </view>
                     <connections>
                         <outlet property="abButton" destination="2ZQ-eX-kqE" id="KIj-li-Ydk"/>
+                        <outlet property="bgText" destination="2yh-FQ-zEn" id="RnC-2j-ML0"/>
                         <outlet property="bkButton" destination="3mc-1P-9wt" id="jm0-s5-2tj"/>
                         <outlet property="htButton" destination="Stq-pP-azj" id="f0c-bz-h63"/>
                         <outlet property="ntButton" destination="6CK-IT-UwK" id="gH7-9H-gaS"/>

@@ -134,8 +134,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //use Reach() module to check network connections
-        Reach().monitorReachabilityChanges()
+        Reach().monitorReachabilityChanges() //use Reach() module to check network connections
         
         //register observer for willEnterForeground / willEnterBackground state
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
@@ -150,14 +149,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         
         mask.backgroundColor = UIColor.blackColor()
         mask.alpha = 0
+        view.layer.cornerRadius = 5 //set corner radius of uiview
+        view.layer.masksToBounds = true
         
         addToolBar(urlField)
-        
-        //setup urlfield style
-        definesUrlfield()
-        
-        //display refresh or change to stop while loading...
-        displayRefreshOrStop()
+        definesUrlfield() //setup urlfield style
+        displayRefreshOrStop() //display refresh or change to stop while loading...
         
         //set original homepage at index 0 of store array
         slideViewValue.windowStoreTitle = ["Google"]
@@ -172,11 +169,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         toolbarColor(toolbarStyle)
         hideStatusbar()
         
-        //snapshot webview after loading new screens
-        self.webView.snapshotViewAfterScreenUpdates(true)
-        
-        //hide navigation bar
-        self.navigationController?.navigationBarHidden = true
+        self.webView.snapshotViewAfterScreenUpdates(true) //snapshot webview after loading new screens
+        self.navigationController?.navigationBarHidden = true //hide navigation bar
         
         //hook the tap press event
         panPressRecognizer.delegate = self
@@ -192,9 +186,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         let ver:String = "Kapiko/4.0 Quaza/" + slideViewValue.version()
         webView.performSelector("_setApplicationNameForUserAgent:", withObject: ver)
         
-        //enable Back & Forward gestures
-        webView.allowsBackForwardNavigationGestures = true
-        
+        webView.allowsBackForwardNavigationGestures = true //enable Back & Forward gestures
         barView.frame = CGRect(x:0, y: 0, width: view.frame.width, height: 30)
         view.insertSubview(webView, belowSubview: progressView)
         webView.translatesAutoresizingMaskIntoConstraints = false
@@ -486,8 +478,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //show/hide keyboard reactions
     func textFieldDidBeginEditing(textField: UITextField) -> Bool {
         if textField == urlField {
-            //move toolbar as the keyboard moves
-            moveToolbar = true;
+            moveToolbar = true; //move toolbar as the keyboard moves
             
             //display urls in urlfield
             if(moveToolbarShown == false) {
@@ -510,18 +501,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        //hide navigation bar
-        self.navigationController?.navigationBarHidden = true
-        
+        self.navigationController?.navigationBarHidden = true //hide navigation bar
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        //hide navigation bar
-        self.navigationController?.navigationBarHidden = true
-        
+        self.navigationController?.navigationBarHidden = true //hide navigation bar
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
@@ -777,7 +764,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
 
     //Rebuild Wkactionsheet
     func actionMenu(sender: UIViewController, urlStr: String, urlTitle: String) -> UIAlertController {
-        let alertController = UIAlertController(title: urlTitle, message: urlStr, preferredStyle: .ActionSheet)
+        let alertController = UIAlertController(title: urlTitle.stringByReplacingOccurrencesOfString("<strong>", withString: "").stringByReplacingOccurrencesOfString("</strong>", withString: ""), message: urlStr, preferredStyle: .ActionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
             
         }
@@ -826,8 +813,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             webView.loadRequest(NSURLRequest(URL:NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!))
         }
         else if(slideViewValue.readActions == true) {
-            //load contents by wkwebview
-            loadRequest(tempUrl)
+            loadRequest(tempUrl) //load contents by wkwebview
         }
         scrollPositionSwitch = false
     }

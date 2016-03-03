@@ -13,6 +13,7 @@
 import UIKit
 
 class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate {
+    @IBOutlet weak var bgText: UILabel!
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var ntButton: UIButton!
     @IBOutlet weak var sfButton: UIButton!
@@ -52,6 +53,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //windows management functions
     override func viewDidAppear(animated: Bool) {
+        bgText.text = "Quaza"
         windowView.reloadDataAnimateWithWave(.LeftToRightWaveAnimation)
         
         if(slideViewValue.scrollCellAction == false) {
