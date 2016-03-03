@@ -11,7 +11,6 @@
 */
 
 import UIKit
-import LocalAuthentication
 
 class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate {
     @IBOutlet weak var toolbar: UIToolbar!
@@ -28,8 +27,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     var bkButtonSwitch: Bool = false //functions
     var htButtonSwitch: Bool = false //functions
-    var sgButtonSwitch: Bool = false //functions, can be changed
-    var touchid = LAContext() //touchid authentications
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +59,13 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let indexPath = NSIndexPath(forRow: windowView.numberOfRowsInSection(windowView.numberOfSections-1)-1, inSection: (windowView.numberOfSections-1))
             windowView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
         }
+        //set up readbility button style each time when the view appears
+        if(slideViewValue.readActions == false) {
+            sgButton.setImage(UIImage(named: "Read"), forState: UIControlState.Normal)
+        }
+        else if(slideViewValue.readActions == true) {
+            sgButton.setImage(UIImage(named: "Read-filled"), forState: UIControlState.Normal)
+        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -92,13 +96,13 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.backgroundColor = slideViewValue.windowCurColour
         }
         else {
-            cell.backgroundColor = UIColor(netHex:0x2E2E2E)
+            cell.backgroundColor = UIColor(netHex:0x333333)
         }
         cell.textLabel?.textColor = UIColor(netHex: 0xECF0F1)
         cell.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
         
         //configure right buttons
-        cell.rightButtons = [MGSwipeButton(title: "Delete", backgroundColor: UIColor(netHex:0xE74C3C), callback: {
+        cell.rightButtons = [MGSwipeButton(title: "Close", backgroundColor: UIColor(netHex:0xE74C3C), callback: {
             (sender: MGSwipeTableCell!) -> Bool in
             //LOGICs of removing tabs
             if(slideViewValue.windowStoreTitle.count > 1) {
@@ -182,12 +186,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //function to display Settings button with the height 30 and width 30
     func displaySettingsButton() {
-        if(sgButtonSwitch == false) {
-            sgButton.setImage(UIImage(named: "Fingerprint"), forState: UIControlState.Normal)
-        }
-        else {
-            sgButton.setImage(UIImage(named: "Fingerprint-filled"), forState: UIControlState.Normal)
-        }
         sgButton.addTarget(self, action: "settingsAction", forControlEvents: UIControlEvents.TouchUpInside)
         sgButton.frame = CGRectMake(0, 0, 25, 25)
     }
@@ -240,63 +238,16 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    func touchIdVerification() {
-        var message : String = ""
-        if touchid.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error:nil) {
-            touchid.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics,
-                localizedReason: "Authentication is needed for Touch ID Protection",
-                reply: { (success : Bool, error : NSError? ) -> Void in
-                    dispatch_async(dispatch_get_main_queue(), {
-                        if success {
-                            //success actions
-                            if(self.sgButtonSwitch == false) {
-                                self.sgButton.setImage(UIImage(named: "Fingerprint-filled"), forState: UIControlState.Normal)
-                                message = "Touch ID Protection enabled"
-                                slideViewValue.alertPopup(2, message: message)
-                                self.sgButtonSwitch = true
-                            }
-                            else {
-                                self.sgButton.setImage(UIImage(named: "Fingerprint"), forState: UIControlState.Normal)
-                                message = "Touch ID Protection disabled"
-                                slideViewValue.alertPopup(0, message: message)
-                                self.sgButtonSwitch = false
-                            }
-                        }
-                        if error != nil {
-                            var showAlert : Bool = false
-                            
-                            switch(error!.code) {
-                            case LAError.SystemCancel.rawValue:
-                                message = "Authentication was cancelled by the system"
-                                showAlert = true
-                                break;
-                            case LAError.UserCancel.rawValue:
-                                message = "Authentication was cancelled by the user"
-                                showAlert = true
-                                break;
-                            case LAError.UserFallback.rawValue:
-                                message = "Authentication by password is not supported"
-                                showAlert = true
-                                break;
-                            default:
-                                message = "Authentication failed"
-                                showAlert = true
-                                break;
-                            }
-                            if showAlert {
-                                slideViewValue.alertPopup(0, message: message)
-                            }
-                        }
-                    })
-            })
-        } else {
-            message = "Touch ID not available"
-            slideViewValue.alertPopup(0, message: message)
-        }
-    }
-    
     func settingsAction() {
-        touchIdVerification()
+        if(slideViewValue.readActions == false) {
+            sgButton.setImage(UIImage(named: "Read-filled"), forState: UIControlState.Normal)
+            slideViewValue.readActions = true
+        }
+        else if(slideViewValue.readActions == true) {
+            sgButton.setImage(UIImage(named: "Read"), forState: UIControlState.Normal)
+            slideViewValue.readRecover = true
+        }
+        revealViewController().rightRevealToggleAnimated(true)
     }
     
     override func didReceiveMemoryWarning() {

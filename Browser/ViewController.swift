@@ -20,6 +20,8 @@ struct slideViewValue {
     static var safariButton: Bool = false
     static var cellActions: Bool = false
     static var deleteTab: Bool = false
+    static var readActions: Bool = false
+    static var readRecover: Bool = false
     static var windowStoreTitle = [String]() //save
     static var windowStoreUrl = [String]() //save
     static var windowCurTab: Int = 0 //save
@@ -94,7 +96,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var toolbarStyle: Int = 0 //save
     var scrollDirectionDetermined: Bool = false
     var scrollMakeStatusBarDown: Bool = false
-    var homepage: String = "https://www.google.com"
+    var google: String = "https://www.google.com"
+    var bing: String = "https://www.bing.com"
+    var tempUrl: String = ""
     
     //remember previous scrolling position~~
     let panPressRecognizer = UIPanGestureRecognizer()
@@ -110,7 +114,15 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var searchEngines:Int = 0 //save
     
     required init?(coder aDecoder: NSCoder) {
-        self.webView = WKWebView(frame: CGRectZero)
+        //Inject safari-reader.js
+        let path_reader = NSBundle.mainBundle().pathForResource("safari-reader", ofType: "js")
+        let script = try! String(contentsOfFile: path_reader!, encoding: NSUTF8StringEncoding)
+        let userScript = WKUserScript(source: script, injectionTime: .AtDocumentEnd, forMainFrameOnly: false)
+        let userContentController = WKUserContentController()
+        userContentController.addUserScript(userScript)
+        let configuration = WKWebViewConfiguration()
+        configuration.userContentController = userContentController
+        self.webView = WKWebView(frame: CGRectZero, configuration: configuration)
         super.init(coder: aDecoder)
         
         self.webView.navigationDelegate = self
@@ -149,7 +161,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         
         //set original homepage at index 0 of store array
         slideViewValue.windowStoreTitle = ["Google"]
-        slideViewValue.windowStoreUrl = [homepage]
+        slideViewValue.windowStoreUrl = [google]
         slideViewValue.scrollPosition = [(CGFloat(0.0))]
         
         //display current window number on the window button
@@ -306,11 +318,18 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 //open stored urls
                 webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
                 scrollPositionSwitch = true
+                slideViewValue.readActions = false //disable readbility
                 slideViewValue.cellActions = false
             }
             if(slideViewValue.newtabButton == true) {
+                slideViewValue.readActions = false //disable readbility
                 //open new tab
-                webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
+                if(searchEngines == 0) {
+                    webView.loadRequest(NSURLRequest(URL: NSURL(string: google)!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+                }
+                else {
+                    webView.loadRequest(NSURLRequest(URL: NSURL(string: bing)!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+                }
                 slideViewValue.windowStoreTitle.append(webView.title!)
                 slideViewValue.windowStoreUrl.append((webView.URL?.absoluteString)!)
                 
@@ -321,9 +340,40 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 slideViewValue.newtabButton = false
             }
             if(slideViewValue.deleteTab == true) {
+                slideViewValue.readActions = false //disable readbility
                 webView.loadRequest(NSURLRequest(URL:NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!))
                 scrollPositionSwitch = true
                 slideViewValue.deleteTab = false
+            }
+            if((slideViewValue.readActions == true) && (slideViewValue.readRecover == false)) {
+                tempUrl = webAddress
+                webView.evaluateJavaScript("var ReaderArticleFinderJS = new ReaderArticleFinder(document);") { (obj, error) -> Void in
+                }
+                webView.evaluateJavaScript("var article = ReaderArticleFinderJS.findArticle();") { (html, error) -> Void in
+                }
+                webView.evaluateJavaScript("article.element.innerText") { (res, error) -> Void in
+                    //if let html = res as? String {
+                        //self.webView.loadHTMLString(html, baseURL: nil)
+                    //}
+                }
+                webView.evaluateJavaScript("article.element.outerHTML") { (res, error) -> Void in
+                    if let html = res as? String {
+                        self.webView.loadHTMLString("<body style='font-family: -apple-system; font-family: '-apple-system','HelveticaNeue';'><meta name = 'viewport' content = 'user-scalable=no, width=device-width'>" + html, baseURL: nil)
+                    }
+                }
+                webView.evaluateJavaScript("ReaderArticleFinderJS.isReaderModeAvailable();") { (html, error) -> Void in
+                    if(String(html) == "Optional(0)") {
+                        slideViewValue.alertPopup(0, message: "Reader mode is not available for this page")
+                        slideViewValue.readActions = false //disable readbility
+                    }
+                }
+                webView.evaluateJavaScript("ReaderArticleFinderJS.prepareToTransitionToReader();") { (html, error) -> Void in
+                }
+            }
+            if((slideViewValue.readActions == true) && (slideViewValue.readRecover == true)) {
+                //load contents by wkwebview
+                loadRequest(tempUrl)
+                slideViewValue.readRecover = false
             }
         }
     }
@@ -442,7 +492,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             //display urls in urlfield
             if(moveToolbarShown == false) {
                 urlField.textAlignment = .Left
-                urlField.text = webAddress
+                if(slideViewValue.readActions == true) {
+                    urlField.text = tempUrl
+                }
+                else {
+                    urlField.text = webAddress
+                }
                 urlField.selectAll(self)
             }
             return true //urlField
@@ -495,7 +550,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             moveToolbarShown = false
             if(moveToolbarReturn == false) {
                 urlField.textAlignment = .Center
-                urlField.text = webTitle
+                if(slideViewValue.readActions == true) {
+                    urlField.text = "Reader mode"
+                } else {
+                    urlField.text = webTitle
+                }
             }
         }
     }
@@ -523,6 +582,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     func loadRequest(inputUrlAddress: String) {
         
         if (checkConnectionStatus() == true) {
+            slideViewValue.readActions = false //disable readbility
+            
             //shorten the url by replacing http and https to null
             let shorten_url = inputUrlAddress.stringByReplacingOccurrencesOfString("https://", withString: "").stringByReplacingOccurrencesOfString("http://", withString: "").stringByReplacingOccurrencesOfString(" ", withString: "+")
             
@@ -588,12 +649,10 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     @IBAction func back(sender: UIBarButtonItem) {
         webView.goBack()
-        hideKeyboard()
     }
     
     @IBAction func forward(sender: UIBarButtonItem) {
         webView.goForward()
-        hideKeyboard()
     }
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<()>) {
@@ -620,13 +679,19 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 webAddress = shorten_url! //store address into webAddress for efficient use
                 if(moveToolbar == false) {
                     urlField.textAlignment = .Center
-                    urlField.text = webTitle
+                    if(slideViewValue.readActions == true) {
+                        urlField.text = "Reader mode"
+                    } else {
+                        urlField.text = webTitle
+                    }
                 }
                 moveToolbarReturn = false
                 
                 //update current window store title and url
-                slideViewValue.windowStoreTitle[slideViewValue.windowCurTab] = webView.title!
-                slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] = (webView.URL?.absoluteString)!
+                if(slideViewValue.readActions == false) {
+                    slideViewValue.windowStoreTitle[slideViewValue.windowCurTab] = webView.title!
+                    slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] = (webView.URL?.absoluteString)!
+                }
                 
                 //display current window numbers
                 windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
@@ -701,6 +766,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 longPressSwitch = false
                 return
             }
+            if navigationAction.navigationType == .BackForward {
+                //handles the actions when the webview instance is backward or forward
+                slideViewValue.readActions = false //disable readbility
+                hideKeyboard()
+            }
         }
         decisionHandler(.Allow)
     }
@@ -752,9 +822,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     //function to refresh
     func refreshPressed() {
-        if (webView.loading == false) {
-            webView.reload()
+        if(slideViewValue.readActions == false) {
+            webView.loadRequest(NSURLRequest(URL:NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!))
         }
+        else if(slideViewValue.readActions == true) {
+            //load contents by wkwebview
+            loadRequest(tempUrl)
+        }
+        scrollPositionSwitch = false
     }
     
     //function to stop page loading
