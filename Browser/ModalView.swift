@@ -56,13 +56,13 @@ class ModalView: UIView {
             self.contentView.backgroundColor = slideViewValue.windowCurColour
             slideViewValue.doneScreen = false
         }
-        if(slideViewValue.searchScreen == true) {
+        /*if(slideViewValue.searchScreen == true) {
             alertPic.image = UIImage(named: "Search-popup")
             self.version.text = "Hmmmm..."
             self.contents.text = slideViewValue.alertContents
             self.contentView.backgroundColor = slideViewValue.windowCurColour
             slideViewValue.searchScreen = false
-        }
+        }*/
         self.contentView.layer.cornerRadius = 5.0
         self.closeButton.layer.cornerRadius = CGRectGetHeight(self.closeButton.bounds) / 2.0
         self.closeButton.layer.shadowColor = UIColor.blackColor().CGColor

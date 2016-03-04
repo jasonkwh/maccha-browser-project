@@ -55,10 +55,10 @@ struct slideViewValue {
             slideViewValue.doneScreen = true
             slideViewValue.alertContents = message
         }
-        else if(alertType == 3) {
+        /*else if(alertType == 3) {
             slideViewValue.searchScreen = true
             slideViewValue.alertContents = message
-        }
+        }*/
         let view = ModalView.instantiateFromNib()
         let window = UIApplication.sharedApplication().delegate?.window!
         let modal = PathDynamicModal()
@@ -415,7 +415,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         if motion == .MotionShake {
             if(toolbarStyle < 1) {
                 toolbarStyle++
-                print(toolbarStyle)
             }
             else {
                 toolbarStyle = 0
@@ -850,12 +849,13 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     func searchPressed() {
         if(searchEngines == 0) {
             searchEngines = 1
-            slideViewValue.alertPopup(3, message: "Your search engine was changed to Bing")
+            //slideViewValue.alertPopup(3, message: "Your search engine was changed to Bing")
+            self.view.makeToast("Search engine was changed to Bing", duration: 0.6, position: .Bottom)
         } else {
             searchEngines = 0
-            slideViewValue.alertPopup(3, message: "Your search engine was changed to Google")
+            //slideViewValue.alertPopup(3, message: "Your search engine was changed to Google")
+            self.view.makeToast("Search engine was changed to Google", duration: 0.6, position: .Bottom)
         }
-        hideKeyboard()
     }
     
     //add slash to urlfield
