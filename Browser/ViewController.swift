@@ -98,6 +98,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var scrollMakeStatusBarDown: Bool = false
     var google: String = "https://www.google.com"
     var tempUrl: String = ""
+    var readActionsCheck: Bool = false
     
     //remember previous scrolling position~~
     let panPressRecognizer = UIPanGestureRecognizer()
@@ -332,7 +333,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 slideViewValue.deleteTab = false
             }
             if((slideViewValue.readActions == true) && (slideViewValue.readRecover == false)) {
-                tempUrl = webAddress
+                if(self.readActionsCheck == false) {
+                    tempUrl = webAddress //tempUrl updates only once...
+                }
                 webView.evaluateJavaScript("var ReaderArticleFinderJS = new ReaderArticleFinder(document);") { (obj, error) -> Void in
                 }
                 webView.evaluateJavaScript("var article = ReaderArticleFinderJS.findArticle();") { (html, error) -> Void in
@@ -349,8 +352,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 }
                 webView.evaluateJavaScript("ReaderArticleFinderJS.isReaderModeAvailable();") { (html, error) -> Void in
                     if(String(html) == "Optional(0)") {
-                        slideViewValue.alertPopup(0, message: "Reader mode is not available for this page")
-                        slideViewValue.readActions = false //disable readbility
+                        if(self.readActionsCheck == false) {
+                            //this avoids alert popups while hiding the slideViewController (although the user did not press the read button)
+                            slideViewValue.alertPopup(0, message: "Reader mode is not available for this page")
+                            slideViewValue.readActions = false //disable readbility
+                        }
+                    }
+                    else {
+                        self.readActionsCheck = true //turns on the boolean switch on to avoid alert popups
                     }
                 }
                 webView.evaluateJavaScript("ReaderArticleFinderJS.prepareToTransitionToReader();") { (html, error) -> Void in
@@ -359,6 +368,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             if((slideViewValue.readActions == true) && (slideViewValue.readRecover == true)) {
                 //load contents by wkwebview
                 loadRequest(tempUrl)
+                self.readActionsCheck = false //reset
                 slideViewValue.readRecover = false
             }
         }
