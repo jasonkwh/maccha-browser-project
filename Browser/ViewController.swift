@@ -169,6 +169,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         toolbarColor(toolbarStyle)
         hideStatusbar()
         
+        //set Toast alert style
+        var style = ToastStyle()
+        style.messageColor = UIColor(netHex: 0xECF0F1)
+        style.backgroundColor = UIColor(netHex:0x444444)
+        ToastManager.shared.style = style
+        
         self.webView.snapshotViewAfterScreenUpdates(true) //snapshot webview after loading new screens
         self.navigationController?.navigationBarHidden = true //hide navigation bar
         
@@ -850,11 +856,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         if(searchEngines == 0) {
             searchEngines = 1
             //slideViewValue.alertPopup(3, message: "Your search engine was changed to Bing")
-            self.view.makeToast("Search engine was changed to Bing", duration: 0.6, position: .Bottom)
+            self.view.makeToast("Bing It On!", duration: 1.5, position: CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height-70))
         } else {
             searchEngines = 0
             //slideViewValue.alertPopup(3, message: "Your search engine was changed to Google")
-            self.view.makeToast("Search engine was changed to Google", duration: 0.6, position: .Bottom)
+            self.view.makeToast("Let's Google it!", duration: 1.5, position: CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height-70))
         }
     }
     
