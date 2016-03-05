@@ -498,7 +498,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 else {
                     urlField.text = webAddress
                 }
-                urlField.selectAll(self)
             }
             return true //urlField
         }
