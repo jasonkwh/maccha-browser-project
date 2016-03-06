@@ -569,6 +569,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         urlField.resignFirstResponder()
         
         loadRequest(urlField.text!)
+        self.readActionsCheck = false
         
         return false
     }
@@ -807,6 +808,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             loadRequest(tempUrl) //load contents by wkwebview
         }
         scrollPositionSwitch = false
+        self.readActionsCheck = false
     }
     
     //function to stop page loading
