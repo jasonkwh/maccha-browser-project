@@ -1,10 +1,26 @@
 PODS:
   - 1PasswordExtension (1.8)
+  - AFNetworking (3.0.4):
+    - AFNetworking/NSURLSession (= 3.0.4)
+    - AFNetworking/Reachability (= 3.0.4)
+    - AFNetworking/Security (= 3.0.4)
+    - AFNetworking/Serialization (= 3.0.4)
+    - AFNetworking/UIKit (= 3.0.4)
+  - AFNetworking/NSURLSession (3.0.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.0.4)
+  - AFNetworking/Security (3.0.4)
+  - AFNetworking/Serialization (3.0.4)
+  - AFNetworking/UIKit (3.0.4):
+    - AFNetworking/NSURLSession
   - MGSwipeTableCell (1.5.3)
   - Toast-Swift (1.0.0)
 
 DEPENDENCIES:
   - 1PasswordExtension (from `https://github.com/AgileBits/onepassword-app-extension.git`, branch `master`)
+  - AFNetworking (~> 3.0)
   - MGSwipeTableCell (from `https://github.com/MortimerGoro/MGSwipeTableCell.git`)
   - Toast-Swift (~> 1.0.0)
 
@@ -25,9 +41,10 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   1PasswordExtension: 627d5aecf210c7636968faf5a4c3546c9531385b
+  AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   MGSwipeTableCell: 5ae3b9a15efda26b201adc8676b24040febe6ff6
   Toast-Swift: 709908e9f9a96dfd72438f9301ae28e3e98c16bb
 
-PODFILE CHECKSUM: 0a5148ef93d5f8359b9ce9d1c35add655928df1e
+PODFILE CHECKSUM: 50f7c0db61a6cb990724de2b0e23e665910cd407
 
 COCOAPODS: 1.0.0.beta.4

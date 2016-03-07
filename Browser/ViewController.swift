@@ -114,7 +114,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var searchEngines:Int = 0 //save
     
     required init?(coder aDecoder: NSCoder) {
-        //Inject safari-reader.js
+        //Inject safari-reader.js, and initialise the wkwebview
         let path_reader = NSBundle.mainBundle().pathForResource("safari-reader", ofType: "js")
         let script = try! String(contentsOfFile: path_reader!, encoding: NSUTF8StringEncoding)
         let userScript = WKUserScript(source: script, injectionTime: .AtDocumentEnd, forMainFrameOnly: false)
@@ -128,6 +128,10 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         self.webView.navigationDelegate = self
         self.webView.UIDelegate = self
         self.webView.scrollView.delegate = self
+        
+        //use AFNetworking module to set NSURLCache
+        let manager = AFHTTPSessionManager()
+        manager.requestSerializer.cachePolicy = NSURLRequestCachePolicy.ReturnCacheDataElseLoad
     }
 
     override func viewDidLoad() {
@@ -314,7 +318,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             }
             if(slideViewValue.cellActions == true) {
                 //open stored urls
-                webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+                webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30))
                 scrollPositionSwitch = true
                 slideViewValue.readActions = false //disable readbility
                 slideViewValue.cellActions = false
@@ -599,7 +603,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             }
             
             //load contents by wkwebview
-            webView.loadRequest(NSURLRequest(URL: NSURL(string: contents)!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+            webView.loadRequest(NSURLRequest(URL: NSURL(string: contents)!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30))
         }
         else {
             //Popup alert window
@@ -802,7 +806,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //function to refresh
     func refreshPressed() {
         if(slideViewValue.readActions == false) {
-            webView.loadRequest(NSURLRequest(URL:NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!))
+            loadRequest(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])
         }
         else if(slideViewValue.readActions == true) {
             loadRequest(tempUrl) //load contents by wkwebview

@@ -7,41 +7,95 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C2D06E1C99D5C2ED0EAC58ECB17DAA8 /* Toast-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C3564B0A5610F985FBC3D89B094F1F41 /* Toast-Swift-dummy.m */; };
-		0D9E41C1440396013CF4BEEE845ABDEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9282F9D0AC7DDA23A934D18297E796A1 /* Foundation.framework */; };
-		18DD322A484830AA0335D6AD48197408 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59F294236B5997EE6B1E59048776272 /* UIKit.framework */; };
-		1B7E5FB6B6C679B883A0478A6371F8D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9282F9D0AC7DDA23A934D18297E796A1 /* Foundation.framework */; };
-		1D54E6EC43B2B4250E1FE53B0C0A6662 /* MGSwipeTableCell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 649C2FBAF8D4DA0B6EE1D0FFEE3A9E29 /* MGSwipeTableCell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		330BFB702A29CF28E5DC59002AF555DE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ECDF657B553E992E5285349708BB161 /* MobileCoreServices.framework */; };
-		340AABE2C23B29EFE857F6172820401C /* OnePasswordExtensionResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3CE2B91CCB68694DD3E7FCCEE559C1FD /* OnePasswordExtensionResources.bundle */; };
-		569D057F4C7A6F69AEA4AB0BD6D9900E /* MGSwipeTableCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A703B1E6A8BA7654EF745F3B5E01B85 /* MGSwipeTableCell-dummy.m */; };
-		5F79A2B347E50A216D3C3AC38BA3FF07 /* OnePasswordExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = B4E58B6AE137A60972C69B2A82925FB2 /* OnePasswordExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		63DC27806C23AFFC9B7115E5EEAB9CBF /* MGSwipeButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 54E374C91433DDF9865677FD6E5305A0 /* MGSwipeButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65894E5CCB4249567D09DC1CE20DC5C8 /* 1Password.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73E34695311F56295EDCF3D90DCCCCFD /* 1Password.xcassets */; };
-		67558B72295110F846C2420C9540A52A /* MGSwipeTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B63B0EC4276227EB70C6CF10A63B60B /* MGSwipeTableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		684DE57A223F276BBB365BD42BE1EEC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9282F9D0AC7DDA23A934D18297E796A1 /* Foundation.framework */; };
-		6AA0D7A23744201F60A2C816089CB902 /* Toast-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 97A9C5B3B0A0994FD3D2DB56535B5165 /* Toast-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6C695C8012EC045E11FB407873D7B037 /* 1PasswordExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B1372E7DA1C49ADA97427AE523DD905 /* 1PasswordExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7476086003E76D303542DB66F67B9963 /* 1PasswordExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A520607B335FDBFD6096576204C2918 /* 1PasswordExtension-dummy.m */; };
-		91C0B9B6014A196FE971EE4FA414DCFF /* Pods-Quaza-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C970C76D6BC73576B1EE52A1C2AC104 /* Pods-Quaza-dummy.m */; };
-		95C91EAD52831B586EB462A03F907504 /* Pods-Quaza-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CA99D88647BBC1D6AB2B7240389E4E2 /* Pods-Quaza-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95E41293E05A8ABB9866D6F3AED0CA10 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD1B34857D5BFFD887D7A911B92A582 /* MGSwipeTableCell.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		9DE122AE457AB568108E164B0D0842A8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E0983E9EB08610BFE452CFD51C4E80 /* QuartzCore.framework */; };
-		AC704CDA168D784B95F2ABCDF7D7C00E /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84992A7B2E945CECFDB8D5BC2C408D3F /* Toast.swift */; };
-		C8FD669C32DE47E548CBB0153988C1E2 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E8015094D233D3965EB7A151AEAA4C /* MGSwipeButton.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		DD80DA28BB127E7D45654AE18F0C67A6 /* OnePasswordExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6BD8BC44D0D17BFE2798F88E523A1E /* OnePasswordExtension.m */; };
-		E8EDF2893A938BD651FBF9EED0FE1185 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9282F9D0AC7DDA23A934D18297E796A1 /* Foundation.framework */; };
+		0D9E41C1440396013CF4BEEE845ABDEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0390E0DB6234E811734A33E3DB1A62C2 /* Foundation.framework */; };
+		1480F4923DBBF217F60572EEECB4027C /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 04296B179F72E4A4092A54D7E17208F7 /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		174202BD6AE0E4A41F5CE66E975EAE52 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 7596948669BB71AE9FA3DF671C4BA6F7 /* UIRefreshControl+AFNetworking.m */; };
+		17DCED6CAADB149D749BC9CF08DA99D0 /* Pods-Quaza-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C970C76D6BC73576B1EE52A1C2AC104 /* Pods-Quaza-dummy.m */; };
+		18DD322A484830AA0335D6AD48197408 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1AA26981B573A6960751E3D5904CDF /* UIKit.framework */; };
+		1B7E5FB6B6C679B883A0478A6371F8D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0390E0DB6234E811734A33E3DB1A62C2 /* Foundation.framework */; };
+		1D54E6EC43B2B4250E1FE53B0C0A6662 /* MGSwipeTableCell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F367ED41033EDC541F226E18DFA015A /* MGSwipeTableCell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1E5B8F12ED7CC40ECDB9B1F755F387E5 /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EAA8054E75DB40E79F3D3CF9B336FEF /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20607BE2B1E5F31765026E5AC64DB27D /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = D61112FE224913061B90977AD99F3FA3 /* AFSecurityPolicy.m */; };
+		20EE8030FCF2402DAC7F1C9B9DDAEF79 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 151F46AC671BB2192CC2C0C6F5893E99 /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		254A0FE70B70FE015FBD7539ACAE1C2A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917F8B3A42E89AA60263ED2268C3FC24 /* CoreGraphics.framework */; };
+		299E9DD0F4332D9DB6311B6E60C5832C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2F5A34B276895E69BEC3A2F0F45FBA /* SystemConfiguration.framework */; };
+		2DDDD8D7EF03822C87D78692D9AB5C2A /* Toast-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 612967E52414FF16A5463B88C1DA6ED7 /* Toast-Swift-dummy.m */; };
+		2E8A32ED46194EDBE22146271F6D26DE /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4129EC3C9C73C3FD75C2A47694CE4FA9 /* UIImageView+AFNetworking.m */; };
+		330BFB702A29CF28E5DC59002AF555DE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1162B7E6EF1AC4E365FFB9913BFCB5B9 /* MobileCoreServices.framework */; };
+		340AABE2C23B29EFE857F6172820401C /* OnePasswordExtensionResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0C15EB79636F671D8BF339FE018719C1 /* OnePasswordExtensionResources.bundle */; };
+		3D2789FC760A97301909F0B1201626CD /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CB140CA8A5885575CC26CA7FCBDA6 /* AFNetworking-dummy.m */; };
+		3F1BC9BAFFEEABB1ABC7614DF0FC97D5 /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 753946E4C415CDF8553EC1E68476F045 /* AFAutoPurgingImageCache.m */; };
+		42FB9D7874ABE7570A30B012FB46CCC1 /* Pods-Quaza-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CA99D88647BBC1D6AB2B7240389E4E2 /* Pods-Quaza-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54AF62ACF67074BA98574325C3093D1F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82D0598703FD1BAEAEF12025BD7288B3 /* Security.framework */; };
+		560698A4D707DCBCC1C8F98BC9B89B23 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD149E93E71778E3F69DD6500736B89 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		569D057F4C7A6F69AEA4AB0BD6D9900E /* MGSwipeTableCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A0317F785EEF76C08B9FE44DDEBFFCB1 /* MGSwipeTableCell-dummy.m */; };
+		5808B477EFF509D810B5CDCFDC944F80 /* AFImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = FDF48B11E57AC5462EE61D13C77D072F /* AFImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F79A2B347E50A216D3C3AC38BA3FF07 /* OnePasswordExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 68761249FAD95FD01FFD7A9B180B6CCF /* OnePasswordExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FF6453E55785669885F626B853FD2AA /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3965A7B4AA105C30CC759FE4D04336F9 /* UIProgressView+AFNetworking.m */; };
+		60E3009342BEE96D32C546BE2DB60052 /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DAA94239AB55E4C850422C48F8F7B70 /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63DC27806C23AFFC9B7115E5EEAB9CBF /* MGSwipeButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 011D79F5CE7218A8CAE40269CACCE1A1 /* MGSwipeButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65894E5CCB4249567D09DC1CE20DC5C8 /* 1Password.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4BE20494F330E4466DE4E993E7EE6DF /* 1Password.xcassets */; };
+		659960F7E28E993E08CCC1E8A383E710 /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = D3C2F3B27BC5F919244DD47F15942EB5 /* UIKit+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67558B72295110F846C2420C9540A52A /* MGSwipeTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = B81B82B2CA1D92E6DA0FB7FC78735D76 /* MGSwipeTableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68152D921ABF6A423C192C04FDF94F0F /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 415AC4ADA7F17D325538068FA04E06C9 /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68A38977EBAE334DC3C22386D00D2622 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B31752AE42D3D590019B380FD36C7D /* AFNetworkReachabilityManager.m */; };
+		6C695C8012EC045E11FB407873D7B037 /* 1PasswordExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 983B4689F7A53565468B6E542585E6B9 /* 1PasswordExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6ED4ABEE8A5F51F5ECB59FA1781D29C6 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CD297765FEF66994286C05914537A2CD /* UIActivityIndicatorView+AFNetworking.m */; };
+		707B1A7541C8DBDDE8C27896A61370BE /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2FCAA8B83C56CE51535BF2F8B7769 /* AFURLSessionManager.m */; };
+		7332F15718920917F544F35CE2C038AA /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = CDA960396C30AFD331473D7CDB76142F /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7476086003E76D303542DB66F67B9963 /* 1PasswordExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 558A64A754907C77258F493D8B37D202 /* 1PasswordExtension-dummy.m */; };
+		7BFDC1072F48E8956B0A529F14BC2303 /* Toast-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E7A8D6D265A58CA6A650AD51D81A33D /* Toast-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F3C1115B98C9EDC116054B60A38440E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 162707165EB57BE51B3B016D1BB0F2AC /* QuartzCore.framework */; };
+		81B617F8D26BB10C5726D75E85D21EB7 /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B13046A17A441DC50283BA0C3ABA2DF /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88984310730C796969EBEA62880CD8BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0390E0DB6234E811734A33E3DB1A62C2 /* Foundation.framework */; };
+		95E41293E05A8ABB9866D6F3AED0CA10 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9A07E23CC9EBE838C22F433EBAE7B4 /* MGSwipeTableCell.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		9E1723E2FE89DC9BD907271B23B585F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0390E0DB6234E811734A33E3DB1A62C2 /* Foundation.framework */; };
+		9E1E90DED74B73ECE53C9AD76DE53E2D /* UIImage+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CEC1B153FA2620EC473B97EBA03B189 /* UIImage+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A462945883F7729B185B64B679A6BFBE /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3928550D6643E0DD8F729111DAA0C39F /* UIWebView+AFNetworking.m */; };
+		A6C6019D45BE62C61210A9CC619368EF /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 547AC8E0D02553CB627E6F8A9E39C548 /* AFNetworkActivityIndicatorManager.m */; };
+		AB39AC9746E7575D7449700475E41B0B /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D87B4C48DF3CA77A2DF7E36EB2A470DC /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE2A07407FB50BA249984DC0620E84C0 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C108F4A2B0A441D15EA686250866831 /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AF03C11A1FAC8132AD3749D8F541701A /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 673791F79E844AD1C1859892C8E8F1FD /* UIButton+AFNetworking.m */; };
+		B5852322ADE88AAD56EE042B80BA81E4 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3CA3DE381526892655394F10738D78 /* AFURLResponseSerialization.m */; };
+		C2DD28375E1F0B1D0D1D2E4E607C499F /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = EDA09E6DBC3EDA5F7C406258B3F967ED /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6354FEC7728A4C86DAD8092509BA7D4 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BB5F59B0B7E8607622C9A16E6239E39 /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C8FD669C32DE47E548CBB0153988C1E2 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE2ACFE561D7362C1C10D1DA197E5BB /* MGSwipeButton.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		CAC483EF637FB4A2C2E2FC75BA631B87 /* AFAutoPurgingImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B508D2B33F538FA3813EFF6F1EC3516 /* AFAutoPurgingImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFA8D6B529A0EBFF0316F2629AB2556E /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF5A79E45F9A09DAF35EBA6B764C92 /* AFImageDownloader.m */; };
+		D7EA9750466B477D4BD0263C2C84EA89 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA16B989DDDAC1E7765B9BDAE408738 /* Toast.swift */; };
+		D9F4E833E37B611B432F6B5D7072DDA2 /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 31D79A9C9B05659249F357352ADEFEA3 /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD80DA28BB127E7D45654AE18F0C67A6 /* OnePasswordExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDDFA244685BBE7457DEF9B312AD621 /* OnePasswordExtension.m */; };
+		DFFA215EEAA8DDBD540076927535275C /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A372B660A68FFC5DCAEB9968A72DF662 /* AFURLRequestSerialization.m */; };
+		E0D4045AC4C1B41917FCA23A042D18B2 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FDFBDD12E2EFC1CAA932EA4112620C2 /* AFHTTPSessionManager.m */; };
+		E7988678C81F7CCB95D239375FC6986D /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 85D234A8350BC813CB61293B6F5DE904 /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC7CADE416A78A1CD6936018A6695126 /* AFNetworking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2115611C14F810DD17F84A67CF70866B /* AFNetworking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F65411E9EF00A9BB39D6BD1521A4F3FD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1162B7E6EF1AC4E365FFB9913BFCB5B9 /* MobileCoreServices.framework */; };
+		FFBE6A50B9EB736606D83654C93A9B50 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0390E0DB6234E811734A33E3DB1A62C2 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3DB3DA8152EEABBBA4647852718BE53D /* PBXContainerItemProxy */ = {
+		0EA3D9336AFDAFE06123666D4DAD65A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E366E93B9D54B1CF40B26EC2B3C8407A;
 			remoteInfo = 1PasswordExtension;
 		};
-		817F84EA218B676A769B407B8F10D438 /* PBXContainerItemProxy */ = {
+		1F43BF28CADB1680FB038D2E5117C076 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C3436CEA5C3D39764C5F54374794ECB;
+			remoteInfo = AFNetworking;
+		};
+		2F6D6E2105CAF9685EBE85B93E47B23F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B7DD5BC31A9EF3A77383874A078095B;
+			remoteInfo = "Toast-Swift";
+		};
+		4C426CA20B1C70AB3CEF28E9F25C67D4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -55,83 +109,102 @@
 			remoteGlobalIDString = D6122103C9D36D99793C6B3DF6EAB959;
 			remoteInfo = "1PasswordExtension-OnePasswordExtensionResources";
 		};
-		8C84BBB303A4D034C3052792512477D8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FAE0605F27F7D7234E138EDF0DE17C9B;
-			remoteInfo = "Toast-Swift";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A703B1E6A8BA7654EF745F3B5E01B85 /* MGSwipeTableCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MGSwipeTableCell-dummy.m"; sourceTree = "<group>"; };
-		0CAD7AB3CF2FF5899D9E479868BED572 /* 1PasswordExtension-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "1PasswordExtension-prefix.pch"; sourceTree = "<group>"; };
-		0CCBD15C9EEFD65E864BBBB7ECCCC3BA /* MGSwipeTableCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MGSwipeTableCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0FD1B34857D5BFFD887D7A911B92A582 /* MGSwipeTableCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MGSwipeTableCell.m; path = MGSwipeTableCell/MGSwipeTableCell.m; sourceTree = "<group>"; };
-		1A44D2593C19F18D0BB283F1587B74E2 /* Toast-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Toast-Swift.modulemap"; sourceTree = "<group>"; };
-		1A520607B335FDBFD6096576204C2918 /* 1PasswordExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "1PasswordExtension-dummy.m"; sourceTree = "<group>"; };
-		1B1372E7DA1C49ADA97427AE523DD905 /* 1PasswordExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "1PasswordExtension-umbrella.h"; sourceTree = "<group>"; };
-		1B63B0EC4276227EB70C6CF10A63B60B /* MGSwipeTableCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGSwipeTableCell.h; path = MGSwipeTableCell/MGSwipeTableCell.h; sourceTree = "<group>"; };
+		011D79F5CE7218A8CAE40269CACCE1A1 /* MGSwipeButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGSwipeButton.h; path = MGSwipeTableCell/MGSwipeButton.h; sourceTree = "<group>"; };
+		0390E0DB6234E811734A33E3DB1A62C2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		04296B179F72E4A4092A54D7E17208F7 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
+		07D98F6C3ED836CEEE57A62A86686FD3 /* AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AFNetworking.modulemap; sourceTree = "<group>"; };
+		0A22944675F84F062289002B84D1D123 /* ResourceBundle-OnePasswordExtensionResources-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-OnePasswordExtensionResources-Info.plist"; sourceTree = "<group>"; };
+		0A509B1EAF40309484EA391EA25BC6DE /* AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.xcconfig; sourceTree = "<group>"; };
+		0BB924EF680328DF8004DCEB1BE5DF11 /* Toast-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Toast-Swift.modulemap"; sourceTree = "<group>"; };
+		0C15EB79636F671D8BF339FE018719C1 /* OnePasswordExtensionResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnePasswordExtensionResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F367ED41033EDC541F226E18DFA015A /* MGSwipeTableCell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MGSwipeTableCell-umbrella.h"; sourceTree = "<group>"; };
+		1162B7E6EF1AC4E365FFB9913BFCB5B9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		151F46AC671BB2192CC2C0C6F5893E99 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		162707165EB57BE51B3B016D1BB0F2AC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		1C2F5A34B276895E69BEC3A2F0F45FBA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		1DAA94239AB55E4C850422C48F8F7B70 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		1E1AE9BBC0C5022635415FD0289A555C /* Pods-Quaza-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Quaza-frameworks.sh"; sourceTree = "<group>"; };
-		2D89FF467BB325BB4F2C3E4D635B82F3 /* Toast-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.xcconfig"; sourceTree = "<group>"; };
-		3A46AED7CBA50F7E4F9D3870BBB2A035 /* ResourceBundle-OnePasswordExtensionResources-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-OnePasswordExtensionResources-Info.plist"; sourceTree = "<group>"; };
-		3CE2B91CCB68694DD3E7FCCEE559C1FD /* OnePasswordExtensionResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnePasswordExtensionResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		441B4567ACA4D5DF421451A47F30D168 /* OnePasswordExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OnePasswordExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F1AA26981B573A6960751E3D5904CDF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		2115611C14F810DD17F84A67CF70866B /* AFNetworking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-umbrella.h"; sourceTree = "<group>"; };
+		23149447A7D4C6969829F35CA3353DE1 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FDFBDD12E2EFC1CAA932EA4112620C2 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		31D79A9C9B05659249F357352ADEFEA3 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		3928550D6643E0DD8F729111DAA0C39F /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		3965A7B4AA105C30CC759FE4D04336F9 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
+		3C54948846FD44AB31121981D7B0FDF3 /* Toast-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-prefix.pch"; sourceTree = "<group>"; };
+		3CEC1B153FA2620EC473B97EBA03B189 /* UIImage+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+AFNetworking.h"; path = "UIKit+AFNetworking/UIImage+AFNetworking.h"; sourceTree = "<group>"; };
+		3E7A8D6D265A58CA6A650AD51D81A33D /* Toast-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-umbrella.h"; sourceTree = "<group>"; };
+		4129EC3C9C73C3FD75C2A47694CE4FA9 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		415AC4ADA7F17D325538068FA04E06C9 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
 		44D3B8AE8B34A6649D48B0ECC70A42BB /* Pods-Quaza-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Quaza-acknowledgements.markdown"; sourceTree = "<group>"; };
-		54E374C91433DDF9865677FD6E5305A0 /* MGSwipeButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGSwipeButton.h; path = MGSwipeTableCell/MGSwipeButton.h; sourceTree = "<group>"; };
+		5120A640D0206BC5B3CA4D079C5D36D4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		547AC8E0D02553CB627E6F8A9E39C548 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
+		558A64A754907C77258F493D8B37D202 /* 1PasswordExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "1PasswordExtension-dummy.m"; sourceTree = "<group>"; };
+		56F80534155D82A47A50FCC27D905A79 /* 1PasswordExtension-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "1PasswordExtension-prefix.pch"; sourceTree = "<group>"; };
 		576CABA9C358D234FCDDF34909647DC2 /* Pods-Quaza-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Quaza-acknowledgements.plist"; sourceTree = "<group>"; };
-		634B3760ED47025223A6F61015A77F87 /* Pods_Quaza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quaza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		649C2FBAF8D4DA0B6EE1D0FFEE3A9E29 /* MGSwipeTableCell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MGSwipeTableCell-umbrella.h"; sourceTree = "<group>"; };
-		67E0983E9EB08610BFE452CFD51C4E80 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		6A5F4C65A7B38BBC6DA2767DD0CDD9C2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6ECDF657B553E992E5285349708BB161 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		73E34695311F56295EDCF3D90DCCCCFD /* 1Password.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = 1Password.xcassets; sourceTree = "<group>"; };
-		786A431239C449CF0319C80C62C05EB0 /* Toast_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toast_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		578159D23F95C0E9DFE4EC162A6001E8 /* Toast-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.xcconfig"; sourceTree = "<group>"; };
+		582985B6D5F25B65AA2772EF39B0D37A /* OnePasswordExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OnePasswordExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		612967E52414FF16A5463B88C1DA6ED7 /* Toast-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toast-Swift-dummy.m"; sourceTree = "<group>"; };
+		673791F79E844AD1C1859892C8E8F1FD /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
+		68761249FAD95FD01FFD7A9B180B6CCF /* OnePasswordExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OnePasswordExtension.h; sourceTree = "<group>"; };
+		6B508D2B33F538FA3813EFF6F1EC3516 /* AFAutoPurgingImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFAutoPurgingImageCache.h; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.h"; sourceTree = "<group>"; };
+		6CDDCF44B5BC8A25F7B9181F4E9ED16C /* Pods_Quaza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quaza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EBBDA57C548E8876E977127B0435F9A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EF2FCAA8B83C56CE51535BF2F8B7769 /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
+		753946E4C415CDF8553EC1E68476F045 /* AFAutoPurgingImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFAutoPurgingImageCache.m; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.m"; sourceTree = "<group>"; };
+		7596948669BB71AE9FA3DF671C4BA6F7 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
+		7943D6EE5E9FF273C8245F9E3426D29F /* 1PasswordExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = 1PasswordExtension.modulemap; sourceTree = "<group>"; };
 		7AE8FA14E491EF23DD1C10B02BBDCADB /* Pods-Quaza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Quaza.debug.xcconfig"; sourceTree = "<group>"; };
-		84992A7B2E945CECFDB8D5BC2C408D3F /* Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = Toast/Toast.swift; sourceTree = "<group>"; };
+		7BF955D355B23B21AF1E31C2DD227185 /* MGSwipeTableCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MGSwipeTableCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C108F4A2B0A441D15EA686250866831 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		82D0598703FD1BAEAEF12025BD7288B3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		84BF5A79E45F9A09DAF35EBA6B764C92 /* AFImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFImageDownloader.m; path = "UIKit+AFNetworking/AFImageDownloader.m"; sourceTree = "<group>"; };
+		85D234A8350BC813CB61293B6F5DE904 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
+		8BB5F59B0B7E8607622C9A16E6239E39 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
 		8C059852BB7782CAE885578B23353EFD /* Pods-Quaza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Quaza.release.xcconfig"; sourceTree = "<group>"; };
 		8C970C76D6BC73576B1EE52A1C2AC104 /* Pods-Quaza-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Quaza-dummy.m"; sourceTree = "<group>"; };
 		8CA99D88647BBC1D6AB2B7240389E4E2 /* Pods-Quaza-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Quaza-umbrella.h"; sourceTree = "<group>"; };
-		91444656EBBEBD753F2CC84DC7DA179A /* MGSwipeTableCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MGSwipeTableCell.xcconfig; sourceTree = "<group>"; };
-		9282F9D0AC7DDA23A934D18297E796A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		978415DCCD4DFEE703597D2CA64E11F1 /* 1PasswordExtension.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = 1PasswordExtension.xcconfig; sourceTree = "<group>"; };
-		97A9C5B3B0A0994FD3D2DB56535B5165 /* Toast-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-umbrella.h"; sourceTree = "<group>"; };
-		A6ADC4D113031852531BDDBDB0E437B5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7AC24F654DAA88AE8978881FEE84512 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B4E58B6AE137A60972C69B2A82925FB2 /* OnePasswordExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OnePasswordExtension.h; sourceTree = "<group>"; };
+		8E9CB140CA8A5885575CC26CA7FCBDA6 /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
+		8EAA8054E75DB40E79F3D3CF9B336FEF /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		917F8B3A42E89AA60263ED2268C3FC24 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		983B4689F7A53565468B6E542585E6B9 /* 1PasswordExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "1PasswordExtension-umbrella.h"; sourceTree = "<group>"; };
+		9959F5151543C0FE6337735DF1D45AD0 /* Toast_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toast_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B13046A17A441DC50283BA0C3ABA2DF /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		A0317F785EEF76C08B9FE44DDEBFFCB1 /* MGSwipeTableCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MGSwipeTableCell-dummy.m"; sourceTree = "<group>"; };
+		A0E1D21A7C37AB561BB1EB90E2685DE0 /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
+		A1A98C35C20703404701517891A0E263 /* MGSwipeTableCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MGSwipeTableCell.xcconfig; sourceTree = "<group>"; };
+		A372B660A68FFC5DCAEB9968A72DF662 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		B4BE20494F330E4466DE4E993E7EE6DF /* 1Password.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = 1Password.xcassets; sourceTree = "<group>"; };
+		B81B82B2CA1D92E6DA0FB7FC78735D76 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGSwipeTableCell.h; path = MGSwipeTableCell/MGSwipeTableCell.h; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C3564B0A5610F985FBC3D89B094F1F41 /* Toast-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toast-Swift-dummy.m"; sourceTree = "<group>"; };
+		BB9A07E23CC9EBE838C22F433EBAE7B4 /* MGSwipeTableCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MGSwipeTableCell.m; path = MGSwipeTableCell/MGSwipeTableCell.m; sourceTree = "<group>"; };
+		BC3CA3DE381526892655394F10738D78 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		C4F29B12F4EF15CDCDE82A180D35892A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB2774D0E6B93A5FD4293914B067468E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D59F294236B5997EE6B1E59048776272 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		D5E8015094D233D3965EB7A151AEAA4C /* MGSwipeButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MGSwipeButton.m; path = MGSwipeTableCell/MGSwipeButton.m; sourceTree = "<group>"; };
-		DE9142870E9C49CEE2B7A404BDE76454 /* MGSwipeTableCell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MGSwipeTableCell.modulemap; sourceTree = "<group>"; };
-		E3317F8F3AEA836229AFEE45C9E732E0 /* 1PasswordExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = 1PasswordExtension.modulemap; sourceTree = "<group>"; };
-		E34981457CF998314CC333747B62CB3F /* Toast-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-prefix.pch"; sourceTree = "<group>"; };
-		EA6BD8BC44D0D17BFE2798F88E523A1E /* OnePasswordExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OnePasswordExtension.m; sourceTree = "<group>"; };
-		EB73D4AC1DE02E1126D0BE8F0DD75E75 /* MGSwipeTableCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MGSwipeTableCell-prefix.pch"; sourceTree = "<group>"; };
+		CCDDFA244685BBE7457DEF9B312AD621 /* OnePasswordExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OnePasswordExtension.m; sourceTree = "<group>"; };
+		CD297765FEF66994286C05914537A2CD /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		CDA960396C30AFD331473D7CDB76142F /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		D199ABE45745A968570439CB9DD9D068 /* MGSwipeTableCell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MGSwipeTableCell.modulemap; sourceTree = "<group>"; };
+		D3C2F3B27BC5F919244DD47F15942EB5 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		D61112FE224913061B90977AD99F3FA3 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
+		D87B4C48DF3CA77A2DF7E36EB2A470DC /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		DCD149E93E71778E3F69DD6500736B89 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
+		DDE2ACFE561D7362C1C10D1DA197E5BB /* MGSwipeButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MGSwipeButton.m; path = MGSwipeTableCell/MGSwipeButton.m; sourceTree = "<group>"; };
+		E2B31752AE42D3D590019B380FD36C7D /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		E359DF7F4C9006E8202DBFC7D0B51F49 /* 1PasswordExtension.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = 1PasswordExtension.xcconfig; sourceTree = "<group>"; };
+		EAA16B989DDDAC1E7765B9BDAE408738 /* Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = Toast/Toast.swift; sourceTree = "<group>"; };
+		EDA09E6DBC3EDA5F7C406258B3F967ED /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
+		F441A4A2CE35393152B991E212890732 /* MGSwipeTableCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MGSwipeTableCell-prefix.pch"; sourceTree = "<group>"; };
+		F5277FE7C88DC37221D477D4A1E8C25A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F52B06A21B5FD167F756ADD1D723B23A /* Pods-Quaza-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Quaza-resources.sh"; sourceTree = "<group>"; };
 		FD381C41A15A76253D3CC2FC4829786F /* Pods-Quaza.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Quaza.modulemap"; sourceTree = "<group>"; };
+		FDF48B11E57AC5462EE61D13C77D072F /* AFImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFImageDownloader.h; path = "UIKit+AFNetworking/AFImageDownloader.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0A4FD3B4ABB0D7B677CE1871CA057863 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E8EDF2893A938BD651FBF9EED0FE1185 /* Foundation.framework in Frameworks */,
-				9DE122AE457AB568108E164B0D0842A8 /* QuartzCore.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3FA81EC123D56731BB0B4497F4B008AA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				684DE57A223F276BBB365BD42BE1EEC6 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		46259089E40A08936211A8F66EA0B175 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -139,6 +212,15 @@
 				0D9E41C1440396013CF4BEEE845ABDEB /* Foundation.framework in Frameworks */,
 				330BFB702A29CF28E5DC59002AF555DE /* MobileCoreServices.framework in Frameworks */,
 				18DD322A484830AA0335D6AD48197408 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		633130182EB212F3ACC91954A55D692E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88984310730C796969EBEA62880CD8BE /* Foundation.framework in Frameworks */,
+				7F3C1115B98C9EDC116054B60A38440E /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,128 +239,170 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C151364F15F39F7CC60CBF9A3AB49B44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				254A0FE70B70FE015FBD7539ACAE1C2A /* CoreGraphics.framework in Frameworks */,
+				9E1723E2FE89DC9BD907271B23B585F2 /* Foundation.framework in Frameworks */,
+				F65411E9EF00A9BB39D6BD1521A4F3FD /* MobileCoreServices.framework in Frameworks */,
+				54AF62ACF67074BA98574325C3093D1F /* Security.framework in Frameworks */,
+				299E9DD0F4332D9DB6311B6E60C5832C /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC125758DBDFE0B5595B30F20E729485 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFBE6A50B9EB736606D83654C93A9B50 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
+		116AE573B5F72300DB5736F2F2A395FC /* Toast-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				33526EE78E5618B827227DFBD27A6C9A /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		262B3B750E2D4FFF4EDF6E701F29D7E9 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E3317F8F3AEA836229AFEE45C9E732E0 /* 1PasswordExtension.modulemap */,
-				978415DCCD4DFEE703597D2CA64E11F1 /* 1PasswordExtension.xcconfig */,
-				1A520607B335FDBFD6096576204C2918 /* 1PasswordExtension-dummy.m */,
-				0CAD7AB3CF2FF5899D9E479868BED572 /* 1PasswordExtension-prefix.pch */,
-				1B1372E7DA1C49ADA97427AE523DD905 /* 1PasswordExtension-umbrella.h */,
-				A7AC24F654DAA88AE8978881FEE84512 /* Info.plist */,
-				3A46AED7CBA50F7E4F9D3870BBB2A035 /* ResourceBundle-OnePasswordExtensionResources-Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/1PasswordExtension";
-			sourceTree = "<group>";
-		};
-		2AD0E9C15BFC287CD8409ADF3B12B5CB /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				73E34695311F56295EDCF3D90DCCCCFD /* 1Password.xcassets */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		33526EE78E5618B827227DFBD27A6C9A /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				9282F9D0AC7DDA23A934D18297E796A1 /* Foundation.framework */,
-				6ECDF657B553E992E5285349708BB161 /* MobileCoreServices.framework */,
-				67E0983E9EB08610BFE452CFD51C4E80 /* QuartzCore.framework */,
-				D59F294236B5997EE6B1E59048776272 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		4041819E41B71B4794562B2A7949C168 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0CCBD15C9EEFD65E864BBBB7ECCCC3BA /* MGSwipeTableCell.framework */,
-				441B4567ACA4D5DF421451A47F30D168 /* OnePasswordExtension.framework */,
-				3CE2B91CCB68694DD3E7FCCEE559C1FD /* OnePasswordExtensionResources.bundle */,
-				634B3760ED47025223A6F61015A77F87 /* Pods_Quaza.framework */,
-				786A431239C449CF0319C80C62C05EB0 /* Toast_Swift.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		593C59E188973B5642EF19C3E084A97A /* Toast-Swift */ = {
-			isa = PBXGroup;
-			children = (
-				84992A7B2E945CECFDB8D5BC2C408D3F /* Toast.swift */,
-				5C24ABD3601F5C179BCA95EA69A5CC8C /* Support Files */,
+				EAA16B989DDDAC1E7765B9BDAE408738 /* Toast.swift */,
+				2A7D0F2CCF393674A6C76BC47593BE86 /* Support Files */,
 			);
 			path = "Toast-Swift";
 			sourceTree = "<group>";
 		};
-		5C24ABD3601F5C179BCA95EA69A5CC8C /* Support Files */ = {
+		1687EF26F8F18EFFE276E153E1E9153D /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				A6ADC4D113031852531BDDBDB0E437B5 /* Info.plist */,
-				1A44D2593C19F18D0BB283F1587B74E2 /* Toast-Swift.modulemap */,
-				2D89FF467BB325BB4F2C3E4D635B82F3 /* Toast-Swift.xcconfig */,
-				C3564B0A5610F985FBC3D89B094F1F41 /* Toast-Swift-dummy.m */,
-				E34981457CF998314CC333747B62CB3F /* Toast-Swift-prefix.pch */,
-				97A9C5B3B0A0994FD3D2DB56535B5165 /* Toast-Swift-umbrella.h */,
+				917F8B3A42E89AA60263ED2268C3FC24 /* CoreGraphics.framework */,
+				0390E0DB6234E811734A33E3DB1A62C2 /* Foundation.framework */,
+				1162B7E6EF1AC4E365FFB9913BFCB5B9 /* MobileCoreServices.framework */,
+				162707165EB57BE51B3B016D1BB0F2AC /* QuartzCore.framework */,
+				82D0598703FD1BAEAEF12025BD7288B3 /* Security.framework */,
+				1C2F5A34B276895E69BEC3A2F0F45FBA /* SystemConfiguration.framework */,
+				1F1AA26981B573A6960751E3D5904CDF /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		2A7D0F2CCF393674A6C76BC47593BE86 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C4F29B12F4EF15CDCDE82A180D35892A /* Info.plist */,
+				0BB924EF680328DF8004DCEB1BE5DF11 /* Toast-Swift.modulemap */,
+				578159D23F95C0E9DFE4EC162A6001E8 /* Toast-Swift.xcconfig */,
+				612967E52414FF16A5463B88C1DA6ED7 /* Toast-Swift-dummy.m */,
+				3C54948846FD44AB31121981D7B0FDF3 /* Toast-Swift-prefix.pch */,
+				3E7A8D6D265A58CA6A650AD51D81A33D /* Toast-Swift-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Toast-Swift";
+			sourceTree = "<group>";
+		};
+		4B06C7F3E9794D782145CC0F6A678C06 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F5277FE7C88DC37221D477D4A1E8C25A /* Info.plist */,
+				D199ABE45745A968570439CB9DD9D068 /* MGSwipeTableCell.modulemap */,
+				A1A98C35C20703404701517891A0E263 /* MGSwipeTableCell.xcconfig */,
+				A0317F785EEF76C08B9FE44DDEBFFCB1 /* MGSwipeTableCell-dummy.m */,
+				F441A4A2CE35393152B991E212890732 /* MGSwipeTableCell-prefix.pch */,
+				0F367ED41033EDC541F226E18DFA015A /* MGSwipeTableCell-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MGSwipeTableCell";
+			sourceTree = "<group>";
+		};
+		57B3C80DF17037643E6E7EF950F242FF /* MGSwipeTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				011D79F5CE7218A8CAE40269CACCE1A1 /* MGSwipeButton.h */,
+				DDE2ACFE561D7362C1C10D1DA197E5BB /* MGSwipeButton.m */,
+				B81B82B2CA1D92E6DA0FB7FC78735D76 /* MGSwipeTableCell.h */,
+				BB9A07E23CC9EBE838C22F433EBAE7B4 /* MGSwipeTableCell.m */,
+				4B06C7F3E9794D782145CC0F6A678C06 /* Support Files */,
+			);
+			path = MGSwipeTableCell;
+			sourceTree = "<group>";
+		};
+		5F2A8D37E6EDA32DCA28B3A0EE770FD0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B4BE20494F330E4466DE4E993E7EE6DF /* 1Password.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6FB3BF8EEA2AA00E2EC904A7B50CB28C /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				6B508D2B33F538FA3813EFF6F1EC3516 /* AFAutoPurgingImageCache.h */,
+				753946E4C415CDF8553EC1E68476F045 /* AFAutoPurgingImageCache.m */,
+				FDF48B11E57AC5462EE61D13C77D072F /* AFImageDownloader.h */,
+				84BF5A79E45F9A09DAF35EBA6B764C92 /* AFImageDownloader.m */,
+				04296B179F72E4A4092A54D7E17208F7 /* AFNetworkActivityIndicatorManager.h */,
+				547AC8E0D02553CB627E6F8A9E39C548 /* AFNetworkActivityIndicatorManager.m */,
+				8EAA8054E75DB40E79F3D3CF9B336FEF /* UIActivityIndicatorView+AFNetworking.h */,
+				CD297765FEF66994286C05914537A2CD /* UIActivityIndicatorView+AFNetworking.m */,
+				9B13046A17A441DC50283BA0C3ABA2DF /* UIButton+AFNetworking.h */,
+				673791F79E844AD1C1859892C8E8F1FD /* UIButton+AFNetworking.m */,
+				3CEC1B153FA2620EC473B97EBA03B189 /* UIImage+AFNetworking.h */,
+				1DAA94239AB55E4C850422C48F8F7B70 /* UIImageView+AFNetworking.h */,
+				4129EC3C9C73C3FD75C2A47694CE4FA9 /* UIImageView+AFNetworking.m */,
+				D3C2F3B27BC5F919244DD47F15942EB5 /* UIKit+AFNetworking.h */,
+				31D79A9C9B05659249F357352ADEFEA3 /* UIProgressView+AFNetworking.h */,
+				3965A7B4AA105C30CC759FE4D04336F9 /* UIProgressView+AFNetworking.m */,
+				8BB5F59B0B7E8607622C9A16E6239E39 /* UIRefreshControl+AFNetworking.h */,
+				7596948669BB71AE9FA3DF671C4BA6F7 /* UIRefreshControl+AFNetworking.m */,
+				7C108F4A2B0A441D15EA686250866831 /* UIWebView+AFNetworking.h */,
+				3928550D6643E0DD8F729111DAA0C39F /* UIWebView+AFNetworking.m */,
+			);
+			name = UIKit;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
-				7F7078A2A330BA570CAF6D25CBF9B723 /* Pods */,
-				4041819E41B71B4794562B2A7949C168 /* Products */,
+				F4CDA5FA9197A41E0081E84F932906EB /* Frameworks */,
+				FD3E19D5AC228F2AE31CD51E2EDE2073 /* Pods */,
+				A3BD66386C4D41CE5105F546339CB751 /* Products */,
 				E4BFD2D911B85EED9650416EBF534D67 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		7F7078A2A330BA570CAF6D25CBF9B723 /* Pods */ = {
+		8076CF78123688A44D3D402FD66F6196 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				83F2DC99A848618D19D951DDFFC7099B /* 1PasswordExtension */,
-				85AE63863A8F04639FB8D07BB281BD20 /* MGSwipeTableCell */,
-				593C59E188973B5642EF19C3E084A97A /* Toast-Swift */,
+				07D98F6C3ED836CEEE57A62A86686FD3 /* AFNetworking.modulemap */,
+				0A509B1EAF40309484EA391EA25BC6DE /* AFNetworking.xcconfig */,
+				8E9CB140CA8A5885575CC26CA7FCBDA6 /* AFNetworking-dummy.m */,
+				A0E1D21A7C37AB561BB1EB90E2685DE0 /* AFNetworking-prefix.pch */,
+				2115611C14F810DD17F84A67CF70866B /* AFNetworking-umbrella.h */,
+				5120A640D0206BC5B3CA4D079C5D36D4 /* Info.plist */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/AFNetworking";
 			sourceTree = "<group>";
 		};
-		83F2DC99A848618D19D951DDFFC7099B /* 1PasswordExtension */ = {
+		9CDDD59F4B846AEA0AA016A78863479E /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				B4E58B6AE137A60972C69B2A82925FB2 /* OnePasswordExtension.h */,
-				EA6BD8BC44D0D17BFE2798F88E523A1E /* OnePasswordExtension.m */,
-				2AD0E9C15BFC287CD8409ADF3B12B5CB /* Resources */,
-				262B3B750E2D4FFF4EDF6E701F29D7E9 /* Support Files */,
+				415AC4ADA7F17D325538068FA04E06C9 /* AFNetworkReachabilityManager.h */,
+				E2B31752AE42D3D590019B380FD36C7D /* AFNetworkReachabilityManager.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+		9EA1B50077E18980634AA29A161739C9 /* 1PasswordExtension */ = {
+			isa = PBXGroup;
+			children = (
+				68761249FAD95FD01FFD7A9B180B6CCF /* OnePasswordExtension.h */,
+				CCDDFA244685BBE7457DEF9B312AD621 /* OnePasswordExtension.m */,
+				5F2A8D37E6EDA32DCA28B3A0EE770FD0 /* Resources */,
+				CCFECAFBA6697D601E2C3F9C63F81780 /* Support Files */,
 			);
 			path = 1PasswordExtension;
-			sourceTree = "<group>";
-		};
-		85AE63863A8F04639FB8D07BB281BD20 /* MGSwipeTableCell */ = {
-			isa = PBXGroup;
-			children = (
-				54E374C91433DDF9865677FD6E5305A0 /* MGSwipeButton.h */,
-				D5E8015094D233D3965EB7A151AEAA4C /* MGSwipeButton.m */,
-				1B63B0EC4276227EB70C6CF10A63B60B /* MGSwipeTableCell.h */,
-				0FD1B34857D5BFFD887D7A911B92A582 /* MGSwipeTableCell.m */,
-				D761CB74A5649E2E2FEFCCC56633AC4F /* Support Files */,
-			);
-			path = MGSwipeTableCell;
 			sourceTree = "<group>";
 		};
 		A0EAC09745A91DF4C5F7A91085BBD4EB /* Pods-Quaza */ = {
@@ -299,18 +423,63 @@
 			path = "Target Support Files/Pods-Quaza";
 			sourceTree = "<group>";
 		};
-		D761CB74A5649E2E2FEFCCC56633AC4F /* Support Files */ = {
+		A1D70B8C27F5A3E38AA9CD2A7D42AF72 /* Serialization */ = {
 			isa = PBXGroup;
 			children = (
-				6A5F4C65A7B38BBC6DA2767DD0CDD9C2 /* Info.plist */,
-				DE9142870E9C49CEE2B7A404BDE76454 /* MGSwipeTableCell.modulemap */,
-				91444656EBBEBD753F2CC84DC7DA179A /* MGSwipeTableCell.xcconfig */,
-				0A703B1E6A8BA7654EF745F3B5E01B85 /* MGSwipeTableCell-dummy.m */,
-				EB73D4AC1DE02E1126D0BE8F0DD75E75 /* MGSwipeTableCell-prefix.pch */,
-				649C2FBAF8D4DA0B6EE1D0FFEE3A9E29 /* MGSwipeTableCell-umbrella.h */,
+				151F46AC671BB2192CC2C0C6F5893E99 /* AFURLRequestSerialization.h */,
+				A372B660A68FFC5DCAEB9968A72DF662 /* AFURLRequestSerialization.m */,
+				CDA960396C30AFD331473D7CDB76142F /* AFURLResponseSerialization.h */,
+				BC3CA3DE381526892655394F10738D78 /* AFURLResponseSerialization.m */,
+			);
+			name = Serialization;
+			sourceTree = "<group>";
+		};
+		A218441971210BC1A4972A892F741749 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				EDA09E6DBC3EDA5F7C406258B3F967ED /* AFSecurityPolicy.h */,
+				D61112FE224913061B90977AD99F3FA3 /* AFSecurityPolicy.m */,
+			);
+			name = Security;
+			sourceTree = "<group>";
+		};
+		A3BD66386C4D41CE5105F546339CB751 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				23149447A7D4C6969829F35CA3353DE1 /* AFNetworking.framework */,
+				7BF955D355B23B21AF1E31C2DD227185 /* MGSwipeTableCell.framework */,
+				582985B6D5F25B65AA2772EF39B0D37A /* OnePasswordExtension.framework */,
+				0C15EB79636F671D8BF339FE018719C1 /* OnePasswordExtensionResources.bundle */,
+				6CDDCF44B5BC8A25F7B9181F4E9ED16C /* Pods_Quaza.framework */,
+				9959F5151543C0FE6337735DF1D45AD0 /* Toast_Swift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B1FE90FD937B2BC3ACCB89868786F231 /* NSURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				D87B4C48DF3CA77A2DF7E36EB2A470DC /* AFHTTPSessionManager.h */,
+				2FDFBDD12E2EFC1CAA932EA4112620C2 /* AFHTTPSessionManager.m */,
+				DCD149E93E71778E3F69DD6500736B89 /* AFURLSessionManager.h */,
+				6EF2FCAA8B83C56CE51535BF2F8B7769 /* AFURLSessionManager.m */,
+			);
+			name = NSURLSession;
+			sourceTree = "<group>";
+		};
+		CCFECAFBA6697D601E2C3F9C63F81780 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7943D6EE5E9FF273C8245F9E3426D29F /* 1PasswordExtension.modulemap */,
+				E359DF7F4C9006E8202DBFC7D0B51F49 /* 1PasswordExtension.xcconfig */,
+				558A64A754907C77258F493D8B37D202 /* 1PasswordExtension-dummy.m */,
+				56F80534155D82A47A50FCC27D905A79 /* 1PasswordExtension-prefix.pch */,
+				983B4689F7A53565468B6E542585E6B9 /* 1PasswordExtension-umbrella.h */,
+				6EBBDA57C548E8876E977127B0435F9A /* Info.plist */,
+				0A22944675F84F062289002B84D1D123 /* ResourceBundle-OnePasswordExtensionResources-Info.plist */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/MGSwipeTableCell";
+			path = "../Target Support Files/1PasswordExtension";
 			sourceTree = "<group>";
 		};
 		E4BFD2D911B85EED9650416EBF534D67 /* Targets Support Files */ = {
@@ -321,9 +490,50 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		F4CDA5FA9197A41E0081E84F932906EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1687EF26F8F18EFFE276E153E1E9153D /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F54C791C4F27B0D11F57806ECFCCE9E2 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				85D234A8350BC813CB61293B6F5DE904 /* AFNetworking.h */,
+				B1FE90FD937B2BC3ACCB89868786F231 /* NSURLSession */,
+				9CDDD59F4B846AEA0AA016A78863479E /* Reachability */,
+				A218441971210BC1A4972A892F741749 /* Security */,
+				A1D70B8C27F5A3E38AA9CD2A7D42AF72 /* Serialization */,
+				8076CF78123688A44D3D402FD66F6196 /* Support Files */,
+				6FB3BF8EEA2AA00E2EC904A7B50CB28C /* UIKit */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		FD3E19D5AC228F2AE31CD51E2EDE2073 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9EA1B50077E18980634AA29A161739C9 /* 1PasswordExtension */,
+				F54C791C4F27B0D11F57806ECFCCE9E2 /* AFNetworking */,
+				57B3C80DF17037643E6E7EF950F242FF /* MGSwipeTableCell */,
+				116AE573B5F72300DB5736F2F2A395FC /* Toast-Swift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		0406406A4AB0B329ED04D4A8B7331592 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42FB9D7874ABE7570A30B012FB46CCC1 /* Pods-Quaza-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1E754E9D399930F33BC210A07296168D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -334,19 +544,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		54D97C11CC0DA17638EB2DD21DF92D74 /* Headers */ = {
+		7C6A0D99A9CC32A19A92A62F8A941139 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95C91EAD52831B586EB462A03F907504 /* Pods-Quaza-umbrella.h in Headers */,
+				CAC483EF637FB4A2C2E2FC75BA631B87 /* AFAutoPurgingImageCache.h in Headers */,
+				AB39AC9746E7575D7449700475E41B0B /* AFHTTPSessionManager.h in Headers */,
+				5808B477EFF509D810B5CDCFDC944F80 /* AFImageDownloader.h in Headers */,
+				1480F4923DBBF217F60572EEECB4027C /* AFNetworkActivityIndicatorManager.h in Headers */,
+				EC7CADE416A78A1CD6936018A6695126 /* AFNetworking-umbrella.h in Headers */,
+				E7988678C81F7CCB95D239375FC6986D /* AFNetworking.h in Headers */,
+				68152D921ABF6A423C192C04FDF94F0F /* AFNetworkReachabilityManager.h in Headers */,
+				C2DD28375E1F0B1D0D1D2E4E607C499F /* AFSecurityPolicy.h in Headers */,
+				20EE8030FCF2402DAC7F1C9B9DDAEF79 /* AFURLRequestSerialization.h in Headers */,
+				7332F15718920917F544F35CE2C038AA /* AFURLResponseSerialization.h in Headers */,
+				560698A4D707DCBCC1C8F98BC9B89B23 /* AFURLSessionManager.h in Headers */,
+				1E5B8F12ED7CC40ECDB9B1F755F387E5 /* UIActivityIndicatorView+AFNetworking.h in Headers */,
+				81B617F8D26BB10C5726D75E85D21EB7 /* UIButton+AFNetworking.h in Headers */,
+				9E1E90DED74B73ECE53C9AD76DE53E2D /* UIImage+AFNetworking.h in Headers */,
+				60E3009342BEE96D32C546BE2DB60052 /* UIImageView+AFNetworking.h in Headers */,
+				659960F7E28E993E08CCC1E8A383E710 /* UIKit+AFNetworking.h in Headers */,
+				D9F4E833E37B611B432F6B5D7072DDA2 /* UIProgressView+AFNetworking.h in Headers */,
+				C6354FEC7728A4C86DAD8092509BA7D4 /* UIRefreshControl+AFNetworking.h in Headers */,
+				AE2A07407FB50BA249984DC0620E84C0 /* UIWebView+AFNetworking.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5AFD7B2FC22DEB80732C50C392F8ED19 /* Headers */ = {
+		C12D57D0A9C2850815C3EE486F6BBD7A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AA0D7A23744201F60A2C816089CB902 /* Toast-Swift-umbrella.h in Headers */,
+				7BFDC1072F48E8956B0A529F14BC2303 /* Toast-Swift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +590,40 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		1C3436CEA5C3D39764C5F54374794ECB /* AFNetworking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57800A0D1724774333EF09E83030AA81 /* Build configuration list for PBXNativeTarget "AFNetworking" */;
+			buildPhases = (
+				1F17F426378DF5EC8DFB10304B8C4BA4 /* Sources */,
+				C151364F15F39F7CC60CBF9A3AB49B44 /* Frameworks */,
+				7C6A0D99A9CC32A19A92A62F8A941139 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AFNetworking;
+			productName = AFNetworking;
+			productReference = 23149447A7D4C6969829F35CA3353DE1 /* AFNetworking.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4B7DD5BC31A9EF3A77383874A078095B /* Toast-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0629521A243BEC5842078F242D2FEBC7 /* Build configuration list for PBXNativeTarget "Toast-Swift" */;
+			buildPhases = (
+				6FB81FB085AA5C91463C6E7173CB8C98 /* Sources */,
+				633130182EB212F3ACC91954A55D692E /* Frameworks */,
+				C12D57D0A9C2850815C3EE486F6BBD7A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Toast-Swift";
+			productName = "Toast-Swift";
+			productReference = 9959F5151543C0FE6337735DF1D45AD0 /* Toast_Swift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		4E1263BFF45F6446CF3DE29AE234C893 /* MGSwipeTableCell */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B05C24F339BF84D6E16E6538A947C90 /* Build configuration list for PBXNativeTarget "MGSwipeTableCell" */;
@@ -376,27 +638,28 @@
 			);
 			name = MGSwipeTableCell;
 			productName = MGSwipeTableCell;
-			productReference = 0CCBD15C9EEFD65E864BBBB7ECCCC3BA /* MGSwipeTableCell.framework */;
+			productReference = 7BF955D355B23B21AF1E31C2DD227185 /* MGSwipeTableCell.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		7677079DF550910F8D78F4DAA099428C /* Pods-Quaza */ = {
+		CB37318927092F1483BD08D01A8B1EF2 /* Pods-Quaza */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D2411C2916DE763490A407CB6ED10AD2 /* Build configuration list for PBXNativeTarget "Pods-Quaza" */;
+			buildConfigurationList = 15DAEFDD80194E1253F43EA3351AF578 /* Build configuration list for PBXNativeTarget "Pods-Quaza" */;
 			buildPhases = (
-				3C6C375F82C7738148BAAED6AED044E4 /* Sources */,
-				3FA81EC123D56731BB0B4497F4B008AA /* Frameworks */,
-				54D97C11CC0DA17638EB2DD21DF92D74 /* Headers */,
+				0137581F0C9436D2A261C7E2173D634B /* Sources */,
+				EC125758DBDFE0B5595B30F20E729485 /* Frameworks */,
+				0406406A4AB0B329ED04D4A8B7331592 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8296B936BDF54149C71BA97F830345B0 /* PBXTargetDependency */,
-				E1EC5446481EDF44EE8EC9C81E895C1D /* PBXTargetDependency */,
-				0BFD916927327E7CD87D56CF1DF88CC1 /* PBXTargetDependency */,
+				AD7DDF2E11C6BC33EE66FD1CA7254CB8 /* PBXTargetDependency */,
+				0BC7C8E246437B09B3EB766044F915DF /* PBXTargetDependency */,
+				8AC630E60ABAED2FBB358ACEF9A0DEBB /* PBXTargetDependency */,
+				D8F9CA2A28CFD07452835F53FB2A594E /* PBXTargetDependency */,
 			);
 			name = "Pods-Quaza";
 			productName = "Pods-Quaza";
-			productReference = 634B3760ED47025223A6F61015A77F87 /* Pods_Quaza.framework */;
+			productReference = 6CDDCF44B5BC8A25F7B9181F4E9ED16C /* Pods_Quaza.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D6122103C9D36D99793C6B3DF6EAB959 /* 1PasswordExtension-OnePasswordExtensionResources */ = {
@@ -413,7 +676,7 @@
 			);
 			name = "1PasswordExtension-OnePasswordExtensionResources";
 			productName = "1PasswordExtension-OnePasswordExtensionResources";
-			productReference = 3CE2B91CCB68694DD3E7FCCEE559C1FD /* OnePasswordExtensionResources.bundle */;
+			productReference = 0C15EB79636F671D8BF339FE018719C1 /* OnePasswordExtensionResources.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		E366E93B9D54B1CF40B26EC2B3C8407A /* 1PasswordExtension */ = {
@@ -432,24 +695,7 @@
 			);
 			name = 1PasswordExtension;
 			productName = 1PasswordExtension;
-			productReference = 441B4567ACA4D5DF421451A47F30D168 /* OnePasswordExtension.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		FAE0605F27F7D7234E138EDF0DE17C9B /* Toast-Swift */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D3195CDA923D5DA60D176808778B5A92 /* Build configuration list for PBXNativeTarget "Toast-Swift" */;
-			buildPhases = (
-				8D17F25D416BABB5D83E253B65BCC7EC /* Sources */,
-				0A4FD3B4ABB0D7B677CE1871CA057863 /* Frameworks */,
-				5AFD7B2FC22DEB80732C50C392F8ED19 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Toast-Swift";
-			productName = "Toast-Swift";
-			productReference = 786A431239C449CF0319C80C62C05EB0 /* Toast_Swift.framework */;
+			productReference = 582985B6D5F25B65AA2772EF39B0D37A /* OnePasswordExtension.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -469,15 +715,16 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 4041819E41B71B4794562B2A7949C168 /* Products */;
+			productRefGroup = A3BD66386C4D41CE5105F546339CB751 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				E366E93B9D54B1CF40B26EC2B3C8407A /* 1PasswordExtension */,
 				D6122103C9D36D99793C6B3DF6EAB959 /* 1PasswordExtension-OnePasswordExtensionResources */,
+				1C3436CEA5C3D39764C5F54374794ECB /* AFNetworking */,
 				4E1263BFF45F6446CF3DE29AE234C893 /* MGSwipeTableCell */,
-				7677079DF550910F8D78F4DAA099428C /* Pods-Quaza */,
-				FAE0605F27F7D7234E138EDF0DE17C9B /* Toast-Swift */,
+				CB37318927092F1483BD08D01A8B1EF2 /* Pods-Quaza */,
+				4B7DD5BC31A9EF3A77383874A078095B /* Toast-Swift */,
 			);
 		};
 /* End PBXProject section */
@@ -502,20 +749,43 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3C6C375F82C7738148BAAED6AED044E4 /* Sources */ = {
+		0137581F0C9436D2A261C7E2173D634B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91C0B9B6014A196FE971EE4FA414DCFF /* Pods-Quaza-dummy.m in Sources */,
+				17DCED6CAADB149D749BC9CF08DA99D0 /* Pods-Quaza-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D17F25D416BABB5D83E253B65BCC7EC /* Sources */ = {
+		1F17F426378DF5EC8DFB10304B8C4BA4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C2D06E1C99D5C2ED0EAC58ECB17DAA8 /* Toast-Swift-dummy.m in Sources */,
-				AC704CDA168D784B95F2ABCDF7D7C00E /* Toast.swift in Sources */,
+				3F1BC9BAFFEEABB1ABC7614DF0FC97D5 /* AFAutoPurgingImageCache.m in Sources */,
+				E0D4045AC4C1B41917FCA23A042D18B2 /* AFHTTPSessionManager.m in Sources */,
+				CFA8D6B529A0EBFF0316F2629AB2556E /* AFImageDownloader.m in Sources */,
+				A6C6019D45BE62C61210A9CC619368EF /* AFNetworkActivityIndicatorManager.m in Sources */,
+				3D2789FC760A97301909F0B1201626CD /* AFNetworking-dummy.m in Sources */,
+				68A38977EBAE334DC3C22386D00D2622 /* AFNetworkReachabilityManager.m in Sources */,
+				20607BE2B1E5F31765026E5AC64DB27D /* AFSecurityPolicy.m in Sources */,
+				DFFA215EEAA8DDBD540076927535275C /* AFURLRequestSerialization.m in Sources */,
+				B5852322ADE88AAD56EE042B80BA81E4 /* AFURLResponseSerialization.m in Sources */,
+				707B1A7541C8DBDDE8C27896A61370BE /* AFURLSessionManager.m in Sources */,
+				6ED4ABEE8A5F51F5ECB59FA1781D29C6 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				AF03C11A1FAC8132AD3749D8F541701A /* UIButton+AFNetworking.m in Sources */,
+				2E8A32ED46194EDBE22146271F6D26DE /* UIImageView+AFNetworking.m in Sources */,
+				5FF6453E55785669885F626B853FD2AA /* UIProgressView+AFNetworking.m in Sources */,
+				174202BD6AE0E4A41F5CE66E975EAE52 /* UIRefreshControl+AFNetworking.m in Sources */,
+				A462945883F7729B185B64B679A6BFBE /* UIWebView+AFNetworking.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FB81FB085AA5C91463C6E7173CB8C98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DDDD8D7EF03822C87D78692D9AB5C2A /* Toast-Swift-dummy.m in Sources */,
+				D7EA9750466B477D4BD0263C2C84EA89 /* Toast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,11 +818,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0BFD916927327E7CD87D56CF1DF88CC1 /* PBXTargetDependency */ = {
+		0BC7C8E246437B09B3EB766044F915DF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Toast-Swift";
-			target = FAE0605F27F7D7234E138EDF0DE17C9B /* Toast-Swift */;
-			targetProxy = 8C84BBB303A4D034C3052792512477D8 /* PBXContainerItemProxy */;
+			name = AFNetworking;
+			target = 1C3436CEA5C3D39764C5F54374794ECB /* AFNetworking */;
+			targetProxy = 1F43BF28CADB1680FB038D2E5117C076 /* PBXContainerItemProxy */;
 		};
 		0DF3C01950417E7558BEA5B923C433B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -560,22 +830,193 @@
 			target = D6122103C9D36D99793C6B3DF6EAB959 /* 1PasswordExtension-OnePasswordExtensionResources */;
 			targetProxy = 88E74769879C9CF03B6448CE6C3739F8 /* PBXContainerItemProxy */;
 		};
-		8296B936BDF54149C71BA97F830345B0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = 1PasswordExtension;
-			target = E366E93B9D54B1CF40B26EC2B3C8407A /* 1PasswordExtension */;
-			targetProxy = 3DB3DA8152EEABBBA4647852718BE53D /* PBXContainerItemProxy */;
-		};
-		E1EC5446481EDF44EE8EC9C81E895C1D /* PBXTargetDependency */ = {
+		8AC630E60ABAED2FBB358ACEF9A0DEBB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MGSwipeTableCell;
 			target = 4E1263BFF45F6446CF3DE29AE234C893 /* MGSwipeTableCell */;
-			targetProxy = 817F84EA218B676A769B407B8F10D438 /* PBXContainerItemProxy */;
+			targetProxy = 4C426CA20B1C70AB3CEF28E9F25C67D4 /* PBXContainerItemProxy */;
+		};
+		AD7DDF2E11C6BC33EE66FD1CA7254CB8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = 1PasswordExtension;
+			target = E366E93B9D54B1CF40B26EC2B3C8407A /* 1PasswordExtension */;
+			targetProxy = 0EA3D9336AFDAFE06123666D4DAD65A0 /* PBXContainerItemProxy */;
+		};
+		D8F9CA2A28CFD07452835F53FB2A594E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Toast-Swift";
+			target = 4B7DD5BC31A9EF3A77383874A078095B /* Toast-Swift */;
+			targetProxy = 2F6D6E2105CAF9685EBE85B93E47B23F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		01B0525C3AAA04F1D10E2C934631B736 /* Release */ = {
+		0324A903716FC7D70CB45722779C337A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E359DF7F4C9006E8202DBFC7D0B51F49 /* 1PasswordExtension.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/1PasswordExtension/ResourceBundle-OnePasswordExtensionResources-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = OnePasswordExtensionResources;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		21D90BC4BBD4ED63A777A243D218E130 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E359DF7F4C9006E8202DBFC7D0B51F49 /* 1PasswordExtension.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/1PasswordExtension/1PasswordExtension-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/1PasswordExtension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/1PasswordExtension/1PasswordExtension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = OnePasswordExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2952B3C6909CF79419E899529474B8A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A509B1EAF40309484EA391EA25BC6DE /* AFNetworking.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		504CB04FC9D21811996496E40F777BA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 578159D23F95C0E9DFE4EC162A6001E8 /* Toast-Swift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Toast-Swift/Toast-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Toast-Swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Toast-Swift/Toast-Swift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Toast_Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5670F5018932B50D3C486E33DF48CDE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1A98C35C20703404701517891A0E263 /* MGSwipeTableCell.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MGSwipeTableCell/MGSwipeTableCell-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MGSwipeTableCell/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MGSwipeTableCell/MGSwipeTableCell.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MGSwipeTableCell;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		71A1A441BDE7F82DF7CF20E15151C019 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C059852BB7782CAE885578B23353EFD /* Pods-Quaza.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Quaza/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Quaza/Pods-Quaza.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Quaza;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		811519CB8F683AC06F9C98B55AC40F11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -605,154 +1046,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		0324A903716FC7D70CB45722779C337A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 978415DCCD4DFEE703597D2CA64E11F1 /* 1PasswordExtension.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/1PasswordExtension/ResourceBundle-OnePasswordExtensionResources-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = OnePasswordExtensionResources;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		1370466606B0CC70EA610BB4EB7BB3B5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D89FF467BB325BB4F2C3E4D635B82F3 /* Toast-Swift.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Toast-Swift/Toast-Swift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Toast-Swift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Toast-Swift/Toast-Swift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Toast_Swift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		21D90BC4BBD4ED63A777A243D218E130 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 978415DCCD4DFEE703597D2CA64E11F1 /* 1PasswordExtension.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/1PasswordExtension/1PasswordExtension-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/1PasswordExtension/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/1PasswordExtension/1PasswordExtension.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = OnePasswordExtension;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		3DC60AC36DE3FE042A3D0D18326C27C9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AE8FA14E491EF23DD1C10B02BBDCADB /* Pods-Quaza.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Quaza/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Quaza/Pods-Quaza.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Quaza;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		5670F5018932B50D3C486E33DF48CDE4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91444656EBBEBD753F2CC84DC7DA179A /* MGSwipeTableCell.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MGSwipeTableCell/MGSwipeTableCell-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MGSwipeTableCell/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MGSwipeTableCell/MGSwipeTableCell.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = MGSwipeTableCell;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		8448FB7B63CE8AB0E72F8F700B2604C1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 978415DCCD4DFEE703597D2CA64E11F1 /* 1PasswordExtension.xcconfig */;
+			baseConfigurationReference = E359DF7F4C9006E8202DBFC7D0B51F49 /* 1PasswordExtension.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -766,36 +1069,7 @@
 			};
 			name = Release;
 		};
-		9B2317DE14133A972D03AE2830D6B821 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 978415DCCD4DFEE703597D2CA64E11F1 /* 1PasswordExtension.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/1PasswordExtension/1PasswordExtension-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/1PasswordExtension/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/1PasswordExtension/1PasswordExtension.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = OnePasswordExtension;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A37822B79A6217169456B6E4E5834FD9 /* Debug */ = {
+		882EB4391EC2E701934974DA86F7343F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -829,16 +1103,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		AC4BBB3BE1D6EE9D071D14E196F6D8FB /* Release */ = {
+		9B2317DE14133A972D03AE2830D6B821 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C059852BB7782CAE885578B23353EFD /* Pods-Quaza.release.xcconfig */;
+			baseConfigurationReference = E359DF7F4C9006E8202DBFC7D0B51F49 /* 1PasswordExtension.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -849,18 +1123,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Quaza/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/1PasswordExtension/1PasswordExtension-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/1PasswordExtension/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Quaza/Pods-Quaza.modulemap";
+				MODULEMAP_FILE = "Target Support Files/1PasswordExtension/1PasswordExtension.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Quaza;
+				PRODUCT_NAME = OnePasswordExtension;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -869,13 +1139,13 @@
 			};
 			name = Release;
 		};
-		E2C2750372AA8335638CA2A61F2C6E40 /* Release */ = {
+		A28BF3772D00C2674945C6C3113F42EA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D89FF467BB325BB4F2C3E4D635B82F3 /* Toast-Swift.xcconfig */;
+			baseConfigurationReference = 578159D23F95C0E9DFE4EC162A6001E8 /* Toast-Swift.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -888,19 +1158,83 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Toast-Swift/Toast-Swift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = Toast_Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AC044B65E2FB02CB420DF9AE625B92F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A509B1EAF40309484EA391EA25BC6DE /* AFNetworking.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = AFNetworking;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
+		};
+		EBD1DDD699D4EE0EFC0C4BA625DFC656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AE8FA14E491EF23DD1C10B02BBDCADB /* Pods-Quaza.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Quaza/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Quaza/Pods-Quaza.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Quaza;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		F30C15F9C5ABC29F826EB0BF627A0FA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91444656EBBEBD753F2CC84DC7DA179A /* MGSwipeTableCell.xcconfig */;
+			baseConfigurationReference = A1A98C35C20703404701517891A0E263 /* MGSwipeTableCell.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -930,6 +1264,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0629521A243BEC5842078F242D2FEBC7 /* Build configuration list for PBXNativeTarget "Toast-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A28BF3772D00C2674945C6C3113F42EA /* Debug */,
+				504CB04FC9D21811996496E40F777BA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15DAEFDD80194E1253F43EA3351AF578 /* Build configuration list for PBXNativeTarget "Pods-Quaza" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBD1DDD699D4EE0EFC0C4BA625DFC656 /* Debug */,
+				71A1A441BDE7F82DF7CF20E15151C019 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1A59A7F43A3DDA09934FA7C38A121B5B /* Build configuration list for PBXNativeTarget "1PasswordExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -942,8 +1294,17 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A37822B79A6217169456B6E4E5834FD9 /* Debug */,
-				01B0525C3AAA04F1D10E2C934631B736 /* Release */,
+				882EB4391EC2E701934974DA86F7343F /* Debug */,
+				811519CB8F683AC06F9C98B55AC40F11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57800A0D1724774333EF09E83030AA81 /* Build configuration list for PBXNativeTarget "AFNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC044B65E2FB02CB420DF9AE625B92F2 /* Debug */,
+				2952B3C6909CF79419E899529474B8A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -962,24 +1323,6 @@
 			buildConfigurations = (
 				0324A903716FC7D70CB45722779C337A /* Debug */,
 				8448FB7B63CE8AB0E72F8F700B2604C1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D2411C2916DE763490A407CB6ED10AD2 /* Build configuration list for PBXNativeTarget "Pods-Quaza" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3DC60AC36DE3FE042A3D0D18326C27C9 /* Debug */,
-				AC4BBB3BE1D6EE9D071D14E196F6D8FB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D3195CDA923D5DA60D176808778B5A92 /* Build configuration list for PBXNativeTarget "Toast-Swift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1370466606B0CC70EA610BB4EB7BB3B5 /* Debug */,
-				E2C2750372AA8335638CA2A61F2C6E40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
