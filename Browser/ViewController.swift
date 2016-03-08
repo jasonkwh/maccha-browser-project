@@ -423,13 +423,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //shake to change toolbar color, phone will vibrate for confirmation
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == .MotionShake {
-            if(toolbarStyle < 1) {
+            /*if(toolbarStyle < 1) {
                 toolbarStyle++
             }
             else {
                 toolbarStyle = 0
             }
-            toolbarColor(toolbarStyle)
+            toolbarColor(toolbarStyle)*/
+            refreshPressed()
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         }
     }

@@ -29,9 +29,15 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var bkButtonSwitch: Bool = false //functions
     var htButtonSwitch: Bool = false //functions
     
+    //Temporary store array
+    var tempArray_title = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //get value from struct variable
+        tempArray_title = slideViewValue.windowStoreTitle
         
         //define basic style of slide view
         self.view.backgroundColor = UIColor(netHex:0x2E2E2E)
@@ -53,6 +59,10 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //windows management functions
     override func viewDidAppear(animated: Bool) {
+        
+        //get value from struct variable
+        tempArray_title = slideViewValue.windowStoreTitle
+        
         bgText.text = "Quaza"
         windowView.reloadDataAnimateWithWave(.LeftToRightWaveAnimation)
         
@@ -75,7 +85,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return slideViewValue.windowStoreTitle.count
+        return tempArray_title.count
     }
     
     //design of different cells
@@ -86,7 +96,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         //shorten the website title
-        var titleName = slideViewValue.windowStoreTitle[indexPath.row]
+        var titleName = tempArray_title[indexPath.row]
         if(titleName == "") {
             titleName = "Untitled"
         }
@@ -107,33 +117,36 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.rightButtons = [MGSwipeButton(title: "Close", backgroundColor: UIColor(netHex:0xE74C3C), callback: {
             (sender: MGSwipeTableCell!) -> Bool in
             //LOGICs of removing tabs
-            if(slideViewValue.windowStoreTitle.count > 1) {
+            if(self.tempArray_title.count > 1) {
                 if(slideViewValue.windowCurTab != indexPath.row) {
-                    slideViewValue.windowStoreTitle.removeAtIndex(indexPath.row)
+                    self.tempArray_title.removeAtIndex(indexPath.row)
                     slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
                     slideViewValue.scrollPosition.removeAtIndex(indexPath.row)
                     if(indexPath.row < slideViewValue.windowCurTab) {
                         slideViewValue.windowCurTab--
                     }
+                    slideViewValue.windowStoreTitle = self.tempArray_title
                 }
                 else {
-                    if(slideViewValue.windowCurTab == (slideViewValue.windowStoreTitle.count - 1)) {
-                        slideViewValue.windowStoreTitle.removeAtIndex(indexPath.row)
+                    if(slideViewValue.windowCurTab == (self.tempArray_title.count - 1)) {
+                        self.tempArray_title.removeAtIndex(indexPath.row)
                         slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
                         slideViewValue.scrollPosition.removeAtIndex(indexPath.row)
                         slideViewValue.windowCurTab--
                     }
                     else {
-                        slideViewValue.windowStoreTitle.removeAtIndex(indexPath.row)
+                        self.tempArray_title.removeAtIndex(indexPath.row)
                         slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
                         slideViewValue.scrollPosition.removeAtIndex(indexPath.row)
                     }
+                    slideViewValue.windowStoreTitle = self.tempArray_title
                     slideViewValue.deleteTab = true
                 }
             }
-            else if(slideViewValue.windowStoreTitle.count == 1) {
+            else if(self.tempArray_title.count == 1) {
                 slideViewValue.windowStoreUrl[0] = "about:blank"
-                slideViewValue.windowStoreTitle[0] = ""
+                self.tempArray_title[0] = ""
+                slideViewValue.windowStoreTitle = self.tempArray_title
                 slideViewValue.scrollPosition[0] = 0.0
                 slideViewValue.deleteTab = true
                 self.revealViewController().rightRevealToggleAnimated(true)
