@@ -338,7 +338,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             }
             if(slideViewValue.deleteTab == true) {
                 slideViewValue.readActions = false //disable readbility
-                webView.loadRequest(NSURLRequest(URL:NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!))
+                webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30))
                 scrollPositionSwitch = true
                 slideViewValue.deleteTab = false
             }
