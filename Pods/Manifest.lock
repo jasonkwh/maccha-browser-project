@@ -16,12 +16,14 @@ PODS:
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
   - MGSwipeTableCell (1.5.3)
+  - PulsingHalo (0.0.6)
   - Toast-Swift (1.0.0)
 
 DEPENDENCIES:
   - 1PasswordExtension (from `https://github.com/AgileBits/onepassword-app-extension.git`, branch `master`)
   - AFNetworking (~> 3.0)
   - MGSwipeTableCell (from `https://github.com/MortimerGoro/MGSwipeTableCell.git`)
+  - PulsingHalo (from `https://github.com/shu223/PulsingHalo.git`)
   - Toast-Swift (~> 1.0.0)
 
 EXTERNAL SOURCES:
@@ -30,6 +32,8 @@ EXTERNAL SOURCES:
     :git: https://github.com/AgileBits/onepassword-app-extension.git
   MGSwipeTableCell:
     :git: https://github.com/MortimerGoro/MGSwipeTableCell.git
+  PulsingHalo:
+    :git: https://github.com/shu223/PulsingHalo.git
 
 CHECKOUT OPTIONS:
   1PasswordExtension:
@@ -38,13 +42,17 @@ CHECKOUT OPTIONS:
   MGSwipeTableCell:
     :commit: 118d969ff4857db9bad056cd4cc979750b418a15
     :git: https://github.com/MortimerGoro/MGSwipeTableCell.git
+  PulsingHalo:
+    :commit: bf4545080189b51851747ec319a5d441835d009f
+    :git: https://github.com/shu223/PulsingHalo.git
 
 SPEC CHECKSUMS:
   1PasswordExtension: 627d5aecf210c7636968faf5a4c3546c9531385b
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   MGSwipeTableCell: 5ae3b9a15efda26b201adc8676b24040febe6ff6
+  PulsingHalo: aa37bd6d8fc964eda1987513665d960628ff719b
   Toast-Swift: 709908e9f9a96dfd72438f9301ae28e3e98c16bb
 
-PODFILE CHECKSUM: 50f7c0db61a6cb990724de2b0e23e665910cd407
+PODFILE CHECKSUM: 44532ab1156a42f2a4512a048c4965d4591538c5
 
 COCOAPODS: 1.0.0.beta.4

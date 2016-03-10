@@ -12,7 +12,7 @@
 
 import UIKit
 
-class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate {
+class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate, UIGestureRecognizerDelegate {
     @IBOutlet weak var bgText: UILabel!
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var ntButton: UIButton!
@@ -27,9 +27,8 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     var bkButtonSwitch: Bool = false //functions
-    
-    //Temporary store array
-    var tempArray_title = [String]()
+    var tempArray_title = [String]() //Temporary store array
+    var tapPressRecognizer = UITapGestureRecognizer() //gesture for touch animation
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +42,11 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         windowView.separatorStyle = .None
         windowView.delegate = self
         windowView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+        
+        //tap press to show touch click aniamtion
+        tapPressRecognizer.delegate = self
+        tapPressRecognizer.addTarget(self, action: "onTapPress:")
+        self.view.addGestureRecognizer(tapPressRecognizer)
         
         //button displays
         displaySafariButton()
@@ -75,6 +79,36 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //reset history button
         htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
         slideViewValue.htButtonSwitch = false
+    }
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+        if touch.view == windowView {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    func onTapPress(gestureRecognizer:UIGestureRecognizer){
+        let when = dispatch_time(DISPATCH_TIME_NOW, Int64(0.6 * Double(NSEC_PER_SEC)))
+        let queue = dispatch_get_main_queue()
+        
+        //PulsingHalo settings
+        let halo = PulsingHaloLayer()
+        halo.backgroundColor = slideViewValue.windowCurColour.CGColor
+        halo.animationDuration = 1
+        halo.radius = 50
+        halo.position = gestureRecognizer.locationInView(windowView)
+        windowView.layer.addSublayer(halo)
+        
+        //remove halo layer after 0.6 seconds
+        dispatch_after(when, queue) {
+            halo.removeFromSuperlayer()
+        }
     }
     
     func scrollLastestTab(animate: Bool) {
