@@ -18,7 +18,7 @@ $ sudo gem install cocoapods
 Navigate to your directory by cd / mkdir commands, then use the following commands:
 
 ```bash
-$ git clone https://github.com/jasonkwh/quaza-browser-project
+$ git clone https://github.com/jasonkwh/maccha-browser-project
 $ cd maccha-browser-project
 $ pod install
 ```
