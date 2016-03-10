@@ -198,7 +198,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         self.webView.scrollView.addGestureRecognizer(longPressRecognizer)
         
         //user agent string
-        let ver:String = "Kapiko/4.0 Quaza/" + slideViewValue.version()
+        let ver:String = "Kapiko/4.0 Maccha/" + slideViewValue.version()
         webView.performSelector("_setApplicationNameForUserAgent:", withObject: ver)
         
         webView.allowsBackForwardNavigationGestures = true //enable Back & Forward gestures

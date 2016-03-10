@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5F8533691A5BB8C800F14347"
-               BuildableName = "Quaza.app"
-               BlueprintName = "Quaza"
-               ReferencedContainer = "container:Quaza.xcodeproj">
+               BuildableName = "maccha.app"
+               BlueprintName = "maccha"
+               ReferencedContainer = "container:maccha.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,24 +28,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5F85337E1A5BB8C900F14347"
-               BuildableName = "Quaza.xctest"
-               BlueprintName = "QuazaTests"
-               ReferencedContainer = "container:Quaza.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5F8533691A5BB8C800F14347"
-            BuildableName = "Quaza.app"
-            BlueprintName = "Quaza"
-            ReferencedContainer = "container:Quaza.xcodeproj">
+            BuildableName = "maccha.app"
+            BlueprintName = "maccha"
+            ReferencedContainer = "container:maccha.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5F8533691A5BB8C800F14347"
-            BuildableName = "Quaza.app"
-            BlueprintName = "Quaza"
-            ReferencedContainer = "container:Quaza.xcodeproj">
+            BuildableName = "maccha.app"
+            BlueprintName = "maccha"
+            ReferencedContainer = "container:maccha.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5F8533691A5BB8C800F14347"
-            BuildableName = "Quaza.app"
-            BlueprintName = "Quaza"
-            ReferencedContainer = "container:Quaza.xcodeproj">
+            BuildableName = "maccha.app"
+            BlueprintName = "maccha"
+            ReferencedContainer = "container:maccha.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

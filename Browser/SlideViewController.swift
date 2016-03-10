@@ -62,7 +62,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //get value from struct variable
         tempArray_title = slideViewValue.windowStoreTitle
         
-        bgText.text = "Quaza"
+        bgText.text = "maccha"
         windowView.reloadData()
         
         if(slideViewValue.scrollCellAction == false) {
@@ -135,7 +135,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //shorten the website title
         var titleName = tempArray_title[indexPath.row]
         if(titleName == "") {
-            titleName = "Untitled"
+            titleName = "untitled"
         }
         cell.textLabel?.text = "                 " + titleName
         cell.delegate = self
@@ -276,7 +276,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             slideViewValue.htButtonSwitch = true
             bkButton.setImage(UIImage(named: "Bookmark"), forState: UIControlState.Normal)
             bkButtonSwitch = false
-            bgText.text = "History"
+            bgText.text = "history"
             tempArray_title = slideViewValue.historyTitle
             windowView.reloadData()
             scrollLastestTab(true)
@@ -284,7 +284,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         else {
             htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
             slideViewValue.htButtonSwitch = false
-            bgText.text = "Quaza"
+            bgText.text = "maccha"
             tempArray_title = slideViewValue.windowStoreTitle
             windowView.reloadData()
         }

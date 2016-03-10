@@ -7,33 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		053FA995C456B65197E52B371CFBCB44 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 162707165EB57BE51B3B016D1BB0F2AC /* QuartzCore.framework */; };
-		09C9DAA076CE0E0C9EC6DE9D88FEDED5 /* Toast-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5144CE953E01705FE7C7D5FDD2DC9640 /* Toast-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0C1955B39B7FD6551ED4932E18AAD9D0 /* Pods-Quaza-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C970C76D6BC73576B1EE52A1C2AC104 /* Pods-Quaza-dummy.m */; };
-		0CA4714A7641211F134224953756AAB6 /* Pods-Quaza-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CA99D88647BBC1D6AB2B7240389E4E2 /* Pods-Quaza-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0123477442F9E109771F108F4D5191A7 /* Pods-maccha-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB72FE7F0F2FC6D60D1605599B71B63 /* Pods-maccha-dummy.m */; };
+		0BB4E80074D2A3DB57A758E12A352534 /* Toast-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5144CE953E01705FE7C7D5FDD2DC9640 /* Toast-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0D9E41C1440396013CF4BEEE845ABDEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0390E0DB6234E811734A33E3DB1A62C2 /* Foundation.framework */; };
 		1480F4923DBBF217F60572EEECB4027C /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 824AA7B903FA51F6D13AA37ED6946C2D /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		174202BD6AE0E4A41F5CE66E975EAE52 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F1270765A6AEC613EE186549018A8F1F /* UIRefreshControl+AFNetworking.m */; };
 		18DD322A484830AA0335D6AD48197408 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1AA26981B573A6960751E3D5904CDF /* UIKit.framework */; };
 		1B7E5FB6B6C679B883A0478A6371F8D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0390E0DB6234E811734A33E3DB1A62C2 /* Foundation.framework */; };
+		1BBEDB68AA7E7B3EFB12F18126D88BDC /* PulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DC36594C14725B5A3F1A27E30A0ABCD6 /* PulsingHaloLayer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		1D54E6EC43B2B4250E1FE53B0C0A6662 /* MGSwipeTableCell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EFC61444FFD575F7CCD12802DE52BE1 /* MGSwipeTableCell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E5B8F12ED7CC40ECDB9B1F755F387E5 /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FC066A87EFB5FDBA4FEF5BA61BE2AD5 /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20607BE2B1E5F31765026E5AC64DB27D /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = F61A0568D79A3D5EE3971C5115B4424C /* AFSecurityPolicy.m */; };
 		20EE8030FCF2402DAC7F1C9B9DDAEF79 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 862FD1DF33F88B43A155F7637D2F6CEE /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		254A0FE70B70FE015FBD7539ACAE1C2A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917F8B3A42E89AA60263ED2268C3FC24 /* CoreGraphics.framework */; };
-		26071237A283020C0C2F783999F1B734 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0390E0DB6234E811734A33E3DB1A62C2 /* Foundation.framework */; };
 		299E9DD0F4332D9DB6311B6E60C5832C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2F5A34B276895E69BEC3A2F0F45FBA /* SystemConfiguration.framework */; };
 		2E8A32ED46194EDBE22146271F6D26DE /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A127ECC41652731D7AFA7568F12DA4D0 /* UIImageView+AFNetworking.m */; };
 		330BFB702A29CF28E5DC59002AF555DE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1162B7E6EF1AC4E365FFB9913BFCB5B9 /* MobileCoreServices.framework */; };
-		340AABE2C23B29EFE857F6172820401C /* OnePasswordExtensionResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5D5B2E4B5F82BA3717556FA33EAEE4E6 /* OnePasswordExtensionResources.bundle */; };
+		332A1EDD738DA944EFE59C575158C46E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0390E0DB6234E811734A33E3DB1A62C2 /* Foundation.framework */; };
+		340AABE2C23B29EFE857F6172820401C /* OnePasswordExtensionResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 851879E5201CF85FD804BE74D190BF06 /* OnePasswordExtensionResources.bundle */; };
+		3A97751C2E3B1CAD4C9D6B52AC34D2C8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 162707165EB57BE51B3B016D1BB0F2AC /* QuartzCore.framework */; };
 		3D2789FC760A97301909F0B1201626CD /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B12D2E8D560F5E189DF1CB5745CF2D6 /* AFNetworking-dummy.m */; };
 		3F1BC9BAFFEEABB1ABC7614DF0FC97D5 /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 32798E4CD00EE2DAB9F1345F5596D9EC /* AFAutoPurgingImageCache.m */; };
-		495725F3F12AFBD5D8ABB992EC3EE041 /* PulsingHalo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999F6983D172FD6F174EE13198160D2 /* PulsingHalo-dummy.m */; };
+		4287607C1DFC7C3F3087D4706DE9D58A /* PulsingHaloLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = F647D9AF83D398DB10BBFC113341AE48 /* PulsingHaloLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		42CEBE6C8D920D7E6FC04C1FD3E2AA47 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 162707165EB57BE51B3B016D1BB0F2AC /* QuartzCore.framework */; };
+		536D5CC29DE676483CE940857A1723E6 /* PulsingHalo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF78626B0DF6B9F42136D42B2C2358F /* PulsingHalo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54AF62ACF67074BA98574325C3093D1F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82D0598703FD1BAEAEF12025BD7288B3 /* Security.framework */; };
 		560698A4D707DCBCC1C8F98BC9B89B23 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B9A783721F76A0476504DBAD953EF02A /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		569D057F4C7A6F69AEA4AB0BD6D9900E /* MGSwipeTableCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B6456D4D2C6F4D7D3BD1A7300D1C031 /* MGSwipeTableCell-dummy.m */; };
 		5808B477EFF509D810B5CDCFDC944F80 /* AFImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 038FA33D490A1FBC217778651C0FA5C8 /* AFImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5F405D36EF0FBEBEB4C1EC3786CBF6B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0390E0DB6234E811734A33E3DB1A62C2 /* Foundation.framework */; };
+		597F6B5731FBDAF7061560CBF6ABBAEE /* Pods-maccha-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 391ECCC7B043D2FE0C85784D9218B01E /* Pods-maccha-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F79A2B347E50A216D3C3AC38BA3FF07 /* OnePasswordExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A1932AB47B7AD819AA341290C137735 /* OnePasswordExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FF6453E55785669885F626B853FD2AA /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD02C23182E42F8FA9680F4CA906A71 /* UIProgressView+AFNetworking.m */; };
 		60E3009342BEE96D32C546BE2DB60052 /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 41AC7E5C8DB04B041218B58225ED1D9B /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -48,58 +50,56 @@
 		707B1A7541C8DBDDE8C27896A61370BE /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F48CAD4896DD67814DF87688DB32A7A1 /* AFURLSessionManager.m */; };
 		7332F15718920917F544F35CE2C038AA /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = B1393BB9EC15D2B81FA764423F4FEECB /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7476086003E76D303542DB66F67B9963 /* 1PasswordExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2AD3BDD468E0838EBE950DCE8DCDD7 /* 1PasswordExtension-dummy.m */; };
-		7C1D399FA4BB18C1FA37DE00A65B368D /* PulsingHaloLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = F647D9AF83D398DB10BBFC113341AE48 /* PulsingHaloLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7DB0083342CE04A7DD1EABC38AF622F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 162707165EB57BE51B3B016D1BB0F2AC /* QuartzCore.framework */; };
 		81B617F8D26BB10C5726D75E85D21EB7 /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C328FFA25C4E5CDF396780707E6B91 /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8FEDA00F427E60090004389CA9D2BB90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0390E0DB6234E811734A33E3DB1A62C2 /* Foundation.framework */; };
+		8F8304BDEA713ACE10642F1CF5CFA27B /* Toast-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C07C56348627E1EC255FF8598037B3C /* Toast-Swift-dummy.m */; };
 		95E41293E05A8ABB9866D6F3AED0CA10 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A03BB27F87C12AE8AA42FAC4397A9A15 /* MGSwipeTableCell.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		9C148933BD1F95EB9AE7AE950C519954 /* PulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DC36594C14725B5A3F1A27E30A0ABCD6 /* PulsingHaloLayer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		96BAC44ACBBE5957CEED02F6A4B6741E /* PulsingHalo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999F6983D172FD6F174EE13198160D2 /* PulsingHalo-dummy.m */; };
 		9E1723E2FE89DC9BD907271B23B585F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0390E0DB6234E811734A33E3DB1A62C2 /* Foundation.framework */; };
 		9E1E90DED74B73ECE53C9AD76DE53E2D /* UIImage+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 78D1E3B0EE4BDD39C33C82059071B241 /* UIImage+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3741E58FB3D9CB1A33B573719A950D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0390E0DB6234E811734A33E3DB1A62C2 /* Foundation.framework */; };
 		A462945883F7729B185B64B679A6BFBE /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE3FFCBAEF5BEE5989C78A0D7F8156 /* UIWebView+AFNetworking.m */; };
 		A6C6019D45BE62C61210A9CC619368EF /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 693A6E63C2010A79FC55CE6FC8AE2A44 /* AFNetworkActivityIndicatorManager.m */; };
 		AB39AC9746E7575D7449700475E41B0B /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CD33182831570691F18C4C4F879CD8E /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE2A07407FB50BA249984DC0620E84C0 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D8535802949EBB604D788D4E718E8FD /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AF03C11A1FAC8132AD3749D8F541701A /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2E6B29A23BF9F8BC741C349B9708A1 /* UIButton+AFNetworking.m */; };
 		B5852322ADE88AAD56EE042B80BA81E4 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA57AAA8D73716B22BBE1CFF3F8D61 /* AFURLResponseSerialization.m */; };
-		BEBB4E8A5C6DA4C0B0E26429956321B1 /* Toast-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C07C56348627E1EC255FF8598037B3C /* Toast-Swift-dummy.m */; };
 		C2DD28375E1F0B1D0D1D2E4E607C499F /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 32545CD30FEFB81BA6747A514FFF4F1F /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C6354FEC7728A4C86DAD8092509BA7D4 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F5B2E151CFC8606D2E143FC047503D0 /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8FD669C32DE47E548CBB0153988C1E2 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6F0412F3184B5A428F911F0811CF7B /* MGSwipeButton.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		CAC483EF637FB4A2C2E2FC75BA631B87 /* AFAutoPurgingImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 16A97F3C98B8A30A9C5C0257D303B07D /* AFAutoPurgingImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CFA8D6B529A0EBFF0316F2629AB2556E /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E59CC04E20216AEAFC6863FD2896ED /* AFImageDownloader.m */; };
-		D203A44FF4661F7DB9FEFD683DBCEC50 /* PulsingHalo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF78626B0DF6B9F42136D42B2C2358F /* PulsingHalo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D9F4E833E37B611B432F6B5D7072DDA2 /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F363F74059E88932AD8233A2F0367CC /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD80DA28BB127E7D45654AE18F0C67A6 /* OnePasswordExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A9CCEA2B037924DC3D5E8FF4CECC62 /* OnePasswordExtension.m */; };
+		DED7EBE83F62AE6CD95C7523B4534839 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36823E199020BAAB771637E4127D5477 /* Toast.swift */; };
 		DFFA215EEAA8DDBD540076927535275C /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 16743909A18CC6C4D13EBFD9C615DF9E /* AFURLRequestSerialization.m */; };
 		E0D4045AC4C1B41917FCA23A042D18B2 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D927C29D40AA567ABA961A221717718 /* AFHTTPSessionManager.m */; };
-		E322DE0D11A183B4A99E645C6E6FFF13 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36823E199020BAAB771637E4127D5477 /* Toast.swift */; };
 		E7988678C81F7CCB95D239375FC6986D /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = F4C2962C93857EA87507163E66AAEF6F /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC7CADE416A78A1CD6936018A6695126 /* AFNetworking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 955AE898FCF1183D2214B354C6F491FB /* AFNetworking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F65411E9EF00A9BB39D6BD1521A4F3FD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1162B7E6EF1AC4E365FFB9913BFCB5B9 /* MobileCoreServices.framework */; };
+		F883C1A20EAEB93DAD710E1B070BBDA6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0390E0DB6234E811734A33E3DB1A62C2 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1478E21B1A65708DB3AD8A1C5D829E92 /* PBXContainerItemProxy */ = {
+		3B9E16D6107F951D0B4CC05F2B098C73 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E366E93B9D54B1CF40B26EC2B3C8407A;
-			remoteInfo = 1PasswordExtension;
+			remoteGlobalIDString = 1C3436CEA5C3D39764C5F54374794ECB;
+			remoteInfo = AFNetworking;
 		};
-		53AA023049C3F65D9DF24ECA1812A417 /* PBXContainerItemProxy */ = {
+		483295439F2B1E79CAEED13643BA3C13 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E4246DA555486C9AD566C05B582B14F1;
+			remoteGlobalIDString = 37DB06CCFF53A5DD47618DFF13AA2823;
+			remoteInfo = PulsingHalo;
+		};
+		88E55B811511E90DA95B93BA68DA46C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B8405695994642735DB605DF58FB2D63;
 			remoteInfo = "Toast-Swift";
-		};
-		5E44A2AE9DC6F7450124BEB7D3FDD5F3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4E1263BFF45F6446CF3DE29AE234C893;
-			remoteInfo = MGSwipeTableCell;
 		};
 		88E74769879C9CF03B6448CE6C3739F8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -108,19 +108,19 @@
 			remoteGlobalIDString = D6122103C9D36D99793C6B3DF6EAB959;
 			remoteInfo = "1PasswordExtension-OnePasswordExtensionResources";
 		};
-		BBE8E1411E705E5C070BFF673D449304 /* PBXContainerItemProxy */ = {
+		89F0CCEBCCDDE4FA600C58C7E6E26433 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 43B8EECCB465B76C62440614F2F16888;
-			remoteInfo = PulsingHalo;
+			remoteGlobalIDString = 4E1263BFF45F6446CF3DE29AE234C893;
+			remoteInfo = MGSwipeTableCell;
 		};
-		FB77E9075A606CC8F62D2554E1F66C0E /* PBXContainerItemProxy */ = {
+		FA1949CD3648F1EA611C1294AA97F3A4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1C3436CEA5C3D39764C5F54374794ECB;
-			remoteInfo = AFNetworking;
+			remoteGlobalIDString = E366E93B9D54B1CF40B26EC2B3C8407A;
+			remoteInfo = 1PasswordExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -128,15 +128,18 @@
 		038FA33D490A1FBC217778651C0FA5C8 /* AFImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFImageDownloader.h; path = "UIKit+AFNetworking/AFImageDownloader.h"; sourceTree = "<group>"; };
 		0390E0DB6234E811734A33E3DB1A62C2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		06FB3F5B264345A1C546E4B2A705331E /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
+		09E64448E4AB8991D77784E48B4B60EC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B12D2E8D560F5E189DF1CB5745CF2D6 /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
 		0B6456D4D2C6F4D7D3BD1A7300D1C031 /* MGSwipeTableCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MGSwipeTableCell-dummy.m"; sourceTree = "<group>"; };
 		1162B7E6EF1AC4E365FFB9913BFCB5B9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		160072C30DAC2AE728A6D485FD41799D /* Pods-maccha-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-maccha-resources.sh"; sourceTree = "<group>"; };
 		162707165EB57BE51B3B016D1BB0F2AC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		16743909A18CC6C4D13EBFD9C615DF9E /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
 		16A97F3C98B8A30A9C5C0257D303B07D /* AFAutoPurgingImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFAutoPurgingImageCache.h; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.h"; sourceTree = "<group>"; };
 		1B2E6B29A23BF9F8BC741C349B9708A1 /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
 		1C2F5A34B276895E69BEC3A2F0F45FBA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		1E1AE9BBC0C5022635415FD0289A555C /* Pods-Quaza-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Quaza-frameworks.sh"; sourceTree = "<group>"; };
+		1C9B7BC2564D83FCA2284B1C8B240F69 /* Pods-maccha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-maccha.debug.xcconfig"; sourceTree = "<group>"; };
+		1DB72FE7F0F2FC6D60D1605599B71B63 /* Pods-maccha-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-maccha-dummy.m"; sourceTree = "<group>"; };
 		1E2E69051559AA92C0DA1A79BA0A53CC /* MGSwipeButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGSwipeButton.h; path = MGSwipeTableCell/MGSwipeButton.h; sourceTree = "<group>"; };
 		1F1AA26981B573A6960751E3D5904CDF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		22009528D91DD9C4E2F1FAA29FC5D1E1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -149,48 +152,47 @@
 		32545CD30FEFB81BA6747A514FFF4F1F /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
 		32798E4CD00EE2DAB9F1345F5596D9EC /* AFAutoPurgingImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFAutoPurgingImageCache.m; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.m"; sourceTree = "<group>"; };
 		36823E199020BAAB771637E4127D5477 /* Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = Toast/Toast.swift; sourceTree = "<group>"; };
+		391ECCC7B043D2FE0C85784D9218B01E /* Pods-maccha-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-maccha-umbrella.h"; sourceTree = "<group>"; };
 		3AD2F20CD94266178EE01362890BD559 /* 1PasswordExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = 1PasswordExtension.modulemap; sourceTree = "<group>"; };
+		3E079D955F80919CF10DAE961BCEF301 /* Pods-maccha-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-maccha-acknowledgements.plist"; sourceTree = "<group>"; };
 		405BBDE22B4DF6AD8E501DEFEFF47A36 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
 		4161005B56D2DAC70FDC6498DF1FCB6D /* AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.xcconfig; sourceTree = "<group>"; };
 		41AC7E5C8DB04B041218B58225ED1D9B /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		4350936E685A081D3A507F67A3592939 /* MGSwipeTableCell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MGSwipeTableCell.modulemap; sourceTree = "<group>"; };
-		43ECE147B1A2A806AEF59CFDEFFF6DF8 /* MGSwipeTableCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MGSwipeTableCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		44D3B8AE8B34A6649D48B0ECC70A42BB /* Pods-Quaza-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Quaza-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4D927C29D40AA567ABA961A221717718 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		5144CE953E01705FE7C7D5FDD2DC9640 /* Toast-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-umbrella.h"; sourceTree = "<group>"; };
-		576CABA9C358D234FCDDF34909647DC2 /* Pods-Quaza-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Quaza-acknowledgements.plist"; sourceTree = "<group>"; };
 		595C1E56BD81C3DF07AFA5DECDC10788 /* PulsingHalo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PulsingHalo.modulemap; sourceTree = "<group>"; };
-		5A39442D1CBA46EF9C2F0633E1AE0885 /* Toast_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toast_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C07C56348627E1EC255FF8598037B3C /* Toast-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toast-Swift-dummy.m"; sourceTree = "<group>"; };
-		5D5B2E4B5F82BA3717556FA33EAEE4E6 /* OnePasswordExtensionResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnePasswordExtensionResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D989F4E70D4033372B174CDD615117E /* Toast_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toast_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D761124975EA877C63220FD2CE8A2B /* 1Password.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = 1Password.xcassets; sourceTree = "<group>"; };
 		67FA7228E515546A498D76277D3ECB69 /* PulsingHalo-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PulsingHalo-prefix.pch"; sourceTree = "<group>"; };
 		693A6E63C2010A79FC55CE6FC8AE2A44 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
 		6D67E805DF5CEFCF6F0F9B1B104557DB /* 1PasswordExtension-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "1PasswordExtension-prefix.pch"; sourceTree = "<group>"; };
-		6DFD2CF4310EB5C4C11BDDC2C9593B17 /* OnePasswordExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OnePasswordExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F5B2E151CFC8606D2E143FC047503D0 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
 		70D6004EBFF4DC89199F85E48A9324E0 /* MGSwipeTableCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MGSwipeTableCell-prefix.pch"; sourceTree = "<group>"; };
 		766AF736DCCF0142A0785B9647974927 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
 		76E59CC04E20216AEAFC6863FD2896ED /* AFImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFImageDownloader.m; path = "UIKit+AFNetworking/AFImageDownloader.m"; sourceTree = "<group>"; };
 		78D1E3B0EE4BDD39C33C82059071B241 /* UIImage+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+AFNetworking.h"; path = "UIKit+AFNetworking/UIImage+AFNetworking.h"; sourceTree = "<group>"; };
-		7AE8FA14E491EF23DD1C10B02BBDCADB /* Pods-Quaza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Quaza.debug.xcconfig"; sourceTree = "<group>"; };
+		7CDF9265190B21F2CFE0169DC952C19C /* Pods_maccha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_maccha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FC066A87EFB5FDBA4FEF5BA61BE2AD5 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
 		824AA7B903FA51F6D13AA37ED6946C2D /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
 		82D0598703FD1BAEAEF12025BD7288B3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		830B10462D23BA9B416C3AA080CA0C95 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		851879E5201CF85FD804BE74D190BF06 /* OnePasswordExtensionResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnePasswordExtensionResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		85ACDC8F6F77E0650825603C1197A1B6 /* MGSwipeTableCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MGSwipeTableCell.xcconfig; sourceTree = "<group>"; };
 		862FD1DF33F88B43A155F7637D2F6CEE /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
 		87709DE3FB1E1C676630ADB6FE23F0AD /* AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AFNetworking.modulemap; sourceTree = "<group>"; };
-		8C059852BB7782CAE885578B23353EFD /* Pods-Quaza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Quaza.release.xcconfig"; sourceTree = "<group>"; };
-		8C970C76D6BC73576B1EE52A1C2AC104 /* Pods-Quaza-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Quaza-dummy.m"; sourceTree = "<group>"; };
-		8CA99D88647BBC1D6AB2B7240389E4E2 /* Pods-Quaza-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Quaza-umbrella.h"; sourceTree = "<group>"; };
+		88E667DD4C5C350FCA26DE4E7D5ECC76 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFA57AAA8D73716B22BBE1CFF3F8D61 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		8D4C9F258AB6917CA7475DE2A0D7E340 /* 1PasswordExtension.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = 1PasswordExtension.xcconfig; sourceTree = "<group>"; };
 		8D8535802949EBB604D788D4E718E8FD /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		9100D2C823E2219CEF0AF7B193360B58 /* Pods-maccha-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-maccha-frameworks.sh"; sourceTree = "<group>"; };
 		917F8B3A42E89AA60263ED2268C3FC24 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9417BBCEF0318F81752383865A969138 /* ResourceBundle-OnePasswordExtensionResources-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-OnePasswordExtensionResources-Info.plist"; sourceTree = "<group>"; };
 		955AE898FCF1183D2214B354C6F491FB /* AFNetworking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-umbrella.h"; sourceTree = "<group>"; };
 		9A1932AB47B7AD819AA341290C137735 /* OnePasswordExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OnePasswordExtension.h; sourceTree = "<group>"; };
+		9C0316D2B9BD0C5DA82082730F093028 /* PulsingHalo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PulsingHalo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD33182831570691F18C4C4F879CD8E /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		9D365CE35297826D151D23A27CB9D602 /* PulsingHalo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PulsingHalo.xcconfig; sourceTree = "<group>"; };
 		9EFC61444FFD575F7CCD12802DE52BE1 /* MGSwipeTableCell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MGSwipeTableCell-umbrella.h"; sourceTree = "<group>"; };
@@ -202,31 +204,47 @@
 		B1393BB9EC15D2B81FA764423F4FEECB /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
 		B5C328FFA25C4E5CDF396780707E6B91 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
 		B9A783721F76A0476504DBAD953EF02A /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
-		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BA9CBE6C1643396AD2821CEA405F59CE /* Toast-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.xcconfig"; sourceTree = "<group>"; };
-		CB2774D0E6B93A5FD4293914B067468E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBF78626B0DF6B9F42136D42B2C2358F /* PulsingHalo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PulsingHalo-umbrella.h"; sourceTree = "<group>"; };
+		D1CE617272B695A8E9627BC82FA94BE5 /* MGSwipeTableCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MGSwipeTableCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2FEA6B42A3C4DBCD185F6AB51628C0A /* Pods-maccha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-maccha.release.xcconfig"; sourceTree = "<group>"; };
 		D62C00B9BBD42B144E9CD1135B0A4F68 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
 		DB6F0412F3184B5A428F911F0811CF7B /* MGSwipeButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MGSwipeButton.m; path = MGSwipeTableCell/MGSwipeButton.m; sourceTree = "<group>"; };
 		DC36594C14725B5A3F1A27E30A0ABCD6 /* PulsingHaloLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PulsingHaloLayer.m; path = PulsingHalo/PulsingHaloLayer.m; sourceTree = "<group>"; };
-		DDB226439F27E1E3F43A74A13688D0B2 /* PulsingHalo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PulsingHalo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E20F83391AEEE17C324E0C881AE4ECA4 /* Toast-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-prefix.pch"; sourceTree = "<group>"; };
 		E2A9CCEA2B037924DC3D5E8FF4CECC62 /* OnePasswordExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OnePasswordExtension.m; sourceTree = "<group>"; };
-		EB1F2C10D546B2D7BF51D47D63EFAA74 /* Pods_Quaza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quaza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4C52F2E5A565C69B609EEE132121C59 /* Pods-maccha-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-maccha-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E5DAC0A404B253E1D0D43FB3665ED2B8 /* Pods-maccha.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-maccha.modulemap"; sourceTree = "<group>"; };
 		F1270765A6AEC613EE186549018A8F1F /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		F48CAD4896DD67814DF87688DB32A7A1 /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
 		F4C2962C93857EA87507163E66AAEF6F /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
-		F52B06A21B5FD167F756ADD1D723B23A /* Pods-Quaza-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Quaza-resources.sh"; sourceTree = "<group>"; };
+		F4DADA5D951F8532AA67D021A916B823 /* OnePasswordExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OnePasswordExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F59A2316708E784FC259D079FF5B7D50 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F61A0568D79A3D5EE3971C5115B4424C /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
 		F647D9AF83D398DB10BBFC113341AE48 /* PulsingHaloLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PulsingHaloLayer.h; path = PulsingHalo/PulsingHaloLayer.h; sourceTree = "<group>"; };
 		FB5031FF2E47BA32B0D192DD41D20B34 /* 1PasswordExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "1PasswordExtension-umbrella.h"; sourceTree = "<group>"; };
-		FBCBC0ACB8ABEFF9B7F89E4778D76510 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC2AD3BDD468E0838EBE950DCE8DCDD7 /* 1PasswordExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "1PasswordExtension-dummy.m"; sourceTree = "<group>"; };
-		FD381C41A15A76253D3CC2FC4829786F /* Pods-Quaza.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Quaza.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3556E6326E3C850E9E7C242750051E72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				332A1EDD738DA944EFE59C575158C46E /* Foundation.framework in Frameworks */,
+				3A97751C2E3B1CAD4C9D6B52AC34D2C8 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42199BD2835780B0049424F278080C3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3741E58FB3D9CB1A33B573719A950D3 /* Foundation.framework in Frameworks */,
+				42CEBE6C8D920D7E6FC04C1FD3E2AA47 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46259089E40A08936211A8F66EA0B175 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -237,21 +255,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		51210AFAEF12DA04C27584E99702A37B /* Frameworks */ = {
+		48986D6AADE30F0464031289CAA78EB1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F405D36EF0FBEBEB4C1EC3786CBF6B8 /* Foundation.framework in Frameworks */,
-				7DB0083342CE04A7DD1EABC38AF622F9 /* QuartzCore.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6AE3FDEB34A9DFCC30DF2AE0FC864ACC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8FEDA00F427E60090004389CA9D2BB90 /* Foundation.framework in Frameworks */,
-				053FA995C456B65197E52B371CFBCB44 /* QuartzCore.framework in Frameworks */,
+				F883C1A20EAEB93DAD710E1B070BBDA6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,17 +290,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EB8C67690331753CC11A761571063B7E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				26071237A283020C0C2F783999F1B734 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03F9A00F9BC9B2C92AEC327AB5D1AA1C /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				ADAD06315112AA7DD446A9C788A1BC4D /* Pods-maccha */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		1115DF45AD9D810D7349C2209F0C6E42 /* PulsingHalo */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,20 +351,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/PulsingHalo";
-			sourceTree = "<group>";
-		};
-		23F611B77D84F6730D87EC7174467D6D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FBCBC0ACB8ABEFF9B7F89E4778D76510 /* AFNetworking.framework */,
-				43ECE147B1A2A806AEF59CFDEFFF6DF8 /* MGSwipeTableCell.framework */,
-				6DFD2CF4310EB5C4C11BDDC2C9593B17 /* OnePasswordExtension.framework */,
-				5D5B2E4B5F82BA3717556FA33EAEE4E6 /* OnePasswordExtensionResources.bundle */,
-				EB1F2C10D546B2D7BF51D47D63EFAA74 /* Pods_Quaza.framework */,
-				DDB226439F27E1E3F43A74A13688D0B2 /* PulsingHalo.framework */,
-				5A39442D1CBA46EF9C2F0633E1AE0885 /* Toast_Swift.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		6634BA6399E285E32785A888A1B7FFF7 /* Serialization */ = {
@@ -413,11 +407,11 @@
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
-				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				F4CDA5FA9197A41E0081E84F932906EB /* Frameworks */,
 				9385DBB1265D4144D17902E16D65AD3A /* Pods */,
-				23F611B77D84F6730D87EC7174467D6D /* Products */,
-				E4BFD2D911B85EED9650416EBF534D67 /* Targets Support Files */,
+				D20166E10490DA9A74F55F62F1BBD81B /* Products */,
+				03F9A00F9BC9B2C92AEC327AB5D1AA1C /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -516,22 +510,22 @@
 			name = UIKit;
 			sourceTree = "<group>";
 		};
-		A0EAC09745A91DF4C5F7A91085BBD4EB /* Pods-Quaza */ = {
+		ADAD06315112AA7DD446A9C788A1BC4D /* Pods-maccha */ = {
 			isa = PBXGroup;
 			children = (
-				CB2774D0E6B93A5FD4293914B067468E /* Info.plist */,
-				FD381C41A15A76253D3CC2FC4829786F /* Pods-Quaza.modulemap */,
-				44D3B8AE8B34A6649D48B0ECC70A42BB /* Pods-Quaza-acknowledgements.markdown */,
-				576CABA9C358D234FCDDF34909647DC2 /* Pods-Quaza-acknowledgements.plist */,
-				8C970C76D6BC73576B1EE52A1C2AC104 /* Pods-Quaza-dummy.m */,
-				1E1AE9BBC0C5022635415FD0289A555C /* Pods-Quaza-frameworks.sh */,
-				F52B06A21B5FD167F756ADD1D723B23A /* Pods-Quaza-resources.sh */,
-				8CA99D88647BBC1D6AB2B7240389E4E2 /* Pods-Quaza-umbrella.h */,
-				7AE8FA14E491EF23DD1C10B02BBDCADB /* Pods-Quaza.debug.xcconfig */,
-				8C059852BB7782CAE885578B23353EFD /* Pods-Quaza.release.xcconfig */,
+				09E64448E4AB8991D77784E48B4B60EC /* Info.plist */,
+				E5DAC0A404B253E1D0D43FB3665ED2B8 /* Pods-maccha.modulemap */,
+				E4C52F2E5A565C69B609EEE132121C59 /* Pods-maccha-acknowledgements.markdown */,
+				3E079D955F80919CF10DAE961BCEF301 /* Pods-maccha-acknowledgements.plist */,
+				1DB72FE7F0F2FC6D60D1605599B71B63 /* Pods-maccha-dummy.m */,
+				9100D2C823E2219CEF0AF7B193360B58 /* Pods-maccha-frameworks.sh */,
+				160072C30DAC2AE728A6D485FD41799D /* Pods-maccha-resources.sh */,
+				391ECCC7B043D2FE0C85784D9218B01E /* Pods-maccha-umbrella.h */,
+				1C9B7BC2564D83FCA2284B1C8B240F69 /* Pods-maccha.debug.xcconfig */,
+				D2FEA6B42A3C4DBCD185F6AB51628C0A /* Pods-maccha.release.xcconfig */,
 			);
-			name = "Pods-Quaza";
-			path = "Target Support Files/Pods-Quaza";
+			name = "Pods-maccha";
+			path = "Target Support Files/Pods-maccha";
 			sourceTree = "<group>";
 		};
 		C255803F1810CD434ECA9867B9E0B6D9 /* MGSwipeTableCell */ = {
@@ -555,12 +549,18 @@
 			name = Reachability;
 			sourceTree = "<group>";
 		};
-		E4BFD2D911B85EED9650416EBF534D67 /* Targets Support Files */ = {
+		D20166E10490DA9A74F55F62F1BBD81B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A0EAC09745A91DF4C5F7A91085BBD4EB /* Pods-Quaza */,
+				88E667DD4C5C350FCA26DE4E7D5ECC76 /* AFNetworking.framework */,
+				D1CE617272B695A8E9627BC82FA94BE5 /* MGSwipeTableCell.framework */,
+				F4DADA5D951F8532AA67D021A916B823 /* OnePasswordExtension.framework */,
+				851879E5201CF85FD804BE74D190BF06 /* OnePasswordExtensionResources.bundle */,
+				7CDF9265190B21F2CFE0169DC952C19C /* Pods_maccha.framework */,
+				9C0316D2B9BD0C5DA82082730F093028 /* PulsingHalo.framework */,
+				5D989F4E70D4033372B174CDD615117E /* Toast_Swift.framework */,
 			);
-			name = "Targets Support Files";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		F4CDA5FA9197A41E0081E84F932906EB /* Frameworks */ = {
@@ -583,14 +583,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0926DF8B0CF7FFFD1CAD83363FD5A308 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				09C9DAA076CE0E0C9EC6DE9D88FEDED5 /* Toast-Swift-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1E754E9D399930F33BC210A07296168D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -598,14 +590,6 @@
 				63DC27806C23AFFC9B7115E5EEAB9CBF /* MGSwipeButton.h in Headers */,
 				1D54E6EC43B2B4250E1FE53B0C0A6662 /* MGSwipeTableCell-umbrella.h in Headers */,
 				67558B72295110F846C2420C9540A52A /* MGSwipeTableCell.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		778F8A9789AE7B14B2805FFB62811C26 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0CA4714A7641211F134224953756AAB6 /* Pods-Quaza-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,12 +619,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		973F5721B4C90C85DFE549DC4D84088A /* Headers */ = {
+		8687D4A931BFE31E6B2C56ED52C51239 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D203A44FF4661F7DB9FEFD683DBCEC50 /* PulsingHalo-umbrella.h in Headers */,
-				7C1D399FA4BB18C1FA37DE00A65B368D /* PulsingHaloLayer.h in Headers */,
+				536D5CC29DE676483CE940857A1723E6 /* PulsingHalo-umbrella.h in Headers */,
+				4287607C1DFC7C3F3087D4706DE9D58A /* PulsingHaloLayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E999DAC4002E3FC6A16632FD4DE792AD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				597F6B5731FBDAF7061560CBF6ABBAEE /* Pods-maccha-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,6 +642,14 @@
 			files = (
 				6C695C8012EC045E11FB407873D7B037 /* 1PasswordExtension-umbrella.h in Headers */,
 				5F79A2B347E50A216D3C3AC38BA3FF07 /* OnePasswordExtension.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC4BEB727535DFF18CC90990E9257F89 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BB4E80074D2A3DB57A758E12A352534 /* Toast-Swift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,16 +670,16 @@
 			);
 			name = AFNetworking;
 			productName = AFNetworking;
-			productReference = FBCBC0ACB8ABEFF9B7F89E4778D76510 /* AFNetworking.framework */;
+			productReference = 88E667DD4C5C350FCA26DE4E7D5ECC76 /* AFNetworking.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		43B8EECCB465B76C62440614F2F16888 /* PulsingHalo */ = {
+		37DB06CCFF53A5DD47618DFF13AA2823 /* PulsingHalo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A0FF2DA45F17E6F56A25E147DA684A24 /* Build configuration list for PBXNativeTarget "PulsingHalo" */;
+			buildConfigurationList = 0E2C247AF8382D04D64B1ED533C66CF8 /* Build configuration list for PBXNativeTarget "PulsingHalo" */;
 			buildPhases = (
-				E55214DB2E2BB35E9924E5CE8CC8007B /* Sources */,
-				6AE3FDEB34A9DFCC30DF2AE0FC864ACC /* Frameworks */,
-				973F5721B4C90C85DFE549DC4D84088A /* Headers */,
+				C3507B7B83AFE46C392CED579DC1EA41 /* Sources */,
+				42199BD2835780B0049424F278080C3C /* Frameworks */,
+				8687D4A931BFE31E6B2C56ED52C51239 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -687,7 +687,29 @@
 			);
 			name = PulsingHalo;
 			productName = PulsingHalo;
-			productReference = DDB226439F27E1E3F43A74A13688D0B2 /* PulsingHalo.framework */;
+			productReference = 9C0316D2B9BD0C5DA82082730F093028 /* PulsingHalo.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		402C4AA061411336BAD2329E8970BF17 /* Pods-maccha */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0DE990E7E3C74D86837A3C553CAFC27F /* Build configuration list for PBXNativeTarget "Pods-maccha" */;
+			buildPhases = (
+				18F632F234D99683A4FD4A5246B986AE /* Sources */,
+				48986D6AADE30F0464031289CAA78EB1 /* Frameworks */,
+				E999DAC4002E3FC6A16632FD4DE792AD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB79D0A4DB901D280D24ADB8C7A6E995 /* PBXTargetDependency */,
+				2FFF1D7F9D00E2674A01F2FC7F4A0E71 /* PBXTargetDependency */,
+				0E4844F74982DA876B40534CF4A2FBBC /* PBXTargetDependency */,
+				FBE359DDDC2ADCFC7F227031660D8747 /* PBXTargetDependency */,
+				A8186DF9E9B30E106273FAC276B4F2B9 /* PBXTargetDependency */,
+			);
+			name = "Pods-maccha";
+			productName = "Pods-maccha";
+			productReference = 7CDF9265190B21F2CFE0169DC952C19C /* Pods_maccha.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		4E1263BFF45F6446CF3DE29AE234C893 /* MGSwipeTableCell */ = {
@@ -704,29 +726,24 @@
 			);
 			name = MGSwipeTableCell;
 			productName = MGSwipeTableCell;
-			productReference = 43ECE147B1A2A806AEF59CFDEFFF6DF8 /* MGSwipeTableCell.framework */;
+			productReference = D1CE617272B695A8E9627BC82FA94BE5 /* MGSwipeTableCell.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8F71FD288F006C7DA7B106E88B6B45FA /* Pods-Quaza */ = {
+		B8405695994642735DB605DF58FB2D63 /* Toast-Swift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3450E45A8F9D7BD41688DDAAF1656009 /* Build configuration list for PBXNativeTarget "Pods-Quaza" */;
+			buildConfigurationList = 40C3269BAB0B3E6B7F7A3EA0F308EF5C /* Build configuration list for PBXNativeTarget "Toast-Swift" */;
 			buildPhases = (
-				18FF14E089771EAD8F58BCB3203FFDE0 /* Sources */,
-				EB8C67690331753CC11A761571063B7E /* Frameworks */,
-				778F8A9789AE7B14B2805FFB62811C26 /* Headers */,
+				14B1610814884EC3B4185E873DE74821 /* Sources */,
+				3556E6326E3C850E9E7C242750051E72 /* Frameworks */,
+				EC4BEB727535DFF18CC90990E9257F89 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AA30828BF98F2AFDB1597BBB442235A6 /* PBXTargetDependency */,
-				215097D9BCE7809EB1E85C000BB5ECA5 /* PBXTargetDependency */,
-				E0E2B5D24C86D363FD91F23BC7FC77E5 /* PBXTargetDependency */,
-				423DB93E8845D38EE44495CE5A01A526 /* PBXTargetDependency */,
-				E88C6E93B7B97CE4155C64E2E5A81FFE /* PBXTargetDependency */,
 			);
-			name = "Pods-Quaza";
-			productName = "Pods-Quaza";
-			productReference = EB1F2C10D546B2D7BF51D47D63EFAA74 /* Pods_Quaza.framework */;
+			name = "Toast-Swift";
+			productName = "Toast-Swift";
+			productReference = 5D989F4E70D4033372B174CDD615117E /* Toast_Swift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D6122103C9D36D99793C6B3DF6EAB959 /* 1PasswordExtension-OnePasswordExtensionResources */ = {
@@ -743,7 +760,7 @@
 			);
 			name = "1PasswordExtension-OnePasswordExtensionResources";
 			productName = "1PasswordExtension-OnePasswordExtensionResources";
-			productReference = 5D5B2E4B5F82BA3717556FA33EAEE4E6 /* OnePasswordExtensionResources.bundle */;
+			productReference = 851879E5201CF85FD804BE74D190BF06 /* OnePasswordExtensionResources.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		E366E93B9D54B1CF40B26EC2B3C8407A /* 1PasswordExtension */ = {
@@ -762,24 +779,7 @@
 			);
 			name = 1PasswordExtension;
 			productName = 1PasswordExtension;
-			productReference = 6DFD2CF4310EB5C4C11BDDC2C9593B17 /* OnePasswordExtension.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		E4246DA555486C9AD566C05B582B14F1 /* Toast-Swift */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D457CC22976B16B7912FB500113DE7DA /* Build configuration list for PBXNativeTarget "Toast-Swift" */;
-			buildPhases = (
-				F9054A43A90FE7A679BDE7DB2057D827 /* Sources */,
-				51210AFAEF12DA04C27584E99702A37B /* Frameworks */,
-				0926DF8B0CF7FFFD1CAD83363FD5A308 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Toast-Swift";
-			productName = "Toast-Swift";
-			productReference = 5A39442D1CBA46EF9C2F0633E1AE0885 /* Toast_Swift.framework */;
+			productReference = F4DADA5D951F8532AA67D021A916B823 /* OnePasswordExtension.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -799,7 +799,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 23F611B77D84F6730D87EC7174467D6D /* Products */;
+			productRefGroup = D20166E10490DA9A74F55F62F1BBD81B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -807,9 +807,9 @@
 				D6122103C9D36D99793C6B3DF6EAB959 /* 1PasswordExtension-OnePasswordExtensionResources */,
 				1C3436CEA5C3D39764C5F54374794ECB /* AFNetworking */,
 				4E1263BFF45F6446CF3DE29AE234C893 /* MGSwipeTableCell */,
-				8F71FD288F006C7DA7B106E88B6B45FA /* Pods-Quaza */,
-				43B8EECCB465B76C62440614F2F16888 /* PulsingHalo */,
-				E4246DA555486C9AD566C05B582B14F1 /* Toast-Swift */,
+				402C4AA061411336BAD2329E8970BF17 /* Pods-maccha */,
+				37DB06CCFF53A5DD47618DFF13AA2823 /* PulsingHalo */,
+				B8405695994642735DB605DF58FB2D63 /* Toast-Swift */,
 			);
 		};
 /* End PBXProject section */
@@ -834,11 +834,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		18FF14E089771EAD8F58BCB3203FFDE0 /* Sources */ = {
+		14B1610814884EC3B4185E873DE74821 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C1955B39B7FD6551ED4932E18AAD9D0 /* Pods-Quaza-dummy.m in Sources */,
+				8F8304BDEA713ACE10642F1CF5CFA27B /* Toast-Swift-dummy.m in Sources */,
+				DED7EBE83F62AE6CD95C7523B4534839 /* Toast.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18F632F234D99683A4FD4A5246B986AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0123477442F9E109771F108F4D5191A7 /* Pods-maccha-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -874,6 +883,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C3507B7B83AFE46C392CED579DC1EA41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96BAC44ACBBE5957CEED02F6A4B6741E /* PulsingHalo-dummy.m in Sources */,
+				1BBEDB68AA7E7B3EFB12F18126D88BDC /* PulsingHaloLayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8C13026DC462129E945B064D7D89D95 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -891,24 +909,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E55214DB2E2BB35E9924E5CE8CC8007B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				495725F3F12AFBD5D8ABB992EC3EE041 /* PulsingHalo-dummy.m in Sources */,
-				9C148933BD1F95EB9AE7AE950C519954 /* PulsingHaloLayer.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F9054A43A90FE7A679BDE7DB2057D827 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BEBB4E8A5C6DA4C0B0E26429956321B1 /* Toast-Swift-dummy.m in Sources */,
-				E322DE0D11A183B4A99E645C6E6FFF13 /* Toast.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -918,72 +918,39 @@
 			target = D6122103C9D36D99793C6B3DF6EAB959 /* 1PasswordExtension-OnePasswordExtensionResources */;
 			targetProxy = 88E74769879C9CF03B6448CE6C3739F8 /* PBXContainerItemProxy */;
 		};
-		215097D9BCE7809EB1E85C000BB5ECA5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AFNetworking;
-			target = 1C3436CEA5C3D39764C5F54374794ECB /* AFNetworking */;
-			targetProxy = FB77E9075A606CC8F62D2554E1F66C0E /* PBXContainerItemProxy */;
-		};
-		423DB93E8845D38EE44495CE5A01A526 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = PulsingHalo;
-			target = 43B8EECCB465B76C62440614F2F16888 /* PulsingHalo */;
-			targetProxy = BBE8E1411E705E5C070BFF673D449304 /* PBXContainerItemProxy */;
-		};
-		AA30828BF98F2AFDB1597BBB442235A6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = 1PasswordExtension;
-			target = E366E93B9D54B1CF40B26EC2B3C8407A /* 1PasswordExtension */;
-			targetProxy = 1478E21B1A65708DB3AD8A1C5D829E92 /* PBXContainerItemProxy */;
-		};
-		E0E2B5D24C86D363FD91F23BC7FC77E5 /* PBXTargetDependency */ = {
+		0E4844F74982DA876B40534CF4A2FBBC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MGSwipeTableCell;
 			target = 4E1263BFF45F6446CF3DE29AE234C893 /* MGSwipeTableCell */;
-			targetProxy = 5E44A2AE9DC6F7450124BEB7D3FDD5F3 /* PBXContainerItemProxy */;
+			targetProxy = 89F0CCEBCCDDE4FA600C58C7E6E26433 /* PBXContainerItemProxy */;
 		};
-		E88C6E93B7B97CE4155C64E2E5A81FFE /* PBXTargetDependency */ = {
+		2FFF1D7F9D00E2674A01F2FC7F4A0E71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AFNetworking;
+			target = 1C3436CEA5C3D39764C5F54374794ECB /* AFNetworking */;
+			targetProxy = 3B9E16D6107F951D0B4CC05F2B098C73 /* PBXContainerItemProxy */;
+		};
+		A8186DF9E9B30E106273FAC276B4F2B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Toast-Swift";
-			target = E4246DA555486C9AD566C05B582B14F1 /* Toast-Swift */;
-			targetProxy = 53AA023049C3F65D9DF24ECA1812A417 /* PBXContainerItemProxy */;
+			target = B8405695994642735DB605DF58FB2D63 /* Toast-Swift */;
+			targetProxy = 88E55B811511E90DA95B93BA68DA46C2 /* PBXContainerItemProxy */;
+		};
+		DB79D0A4DB901D280D24ADB8C7A6E995 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = 1PasswordExtension;
+			target = E366E93B9D54B1CF40B26EC2B3C8407A /* 1PasswordExtension */;
+			targetProxy = FA1949CD3648F1EA611C1294AA97F3A4 /* PBXContainerItemProxy */;
+		};
+		FBE359DDDC2ADCFC7F227031660D8747 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PulsingHalo;
+			target = 37DB06CCFF53A5DD47618DFF13AA2823 /* PulsingHalo */;
+			targetProxy = 483295439F2B1E79CAEED13643BA3C13 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		00002CF011FCCC892F28A231AF7ACBA8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C059852BB7782CAE885578B23353EFD /* Pods-Quaza.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Quaza/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Quaza/Pods-Quaza.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Quaza;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		0324A903716FC7D70CB45722779C337A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8D4C9F258AB6917CA7475DE2A0D7E340 /* 1PasswordExtension.xcconfig */;
@@ -1087,6 +1054,35 @@
 			};
 			name = Release;
 		};
+		590D3930C6A1922DE742D83ECF61BA31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA9CBE6C1643396AD2821CEA405F59CE /* Toast-Swift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Toast-Swift/Toast-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Toast-Swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Toast-Swift/Toast-Swift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Toast_Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		811519CB8F683AC06F9C98B55AC40F11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1181,9 +1177,9 @@
 			};
 			name = Debug;
 		};
-		9B2317DE14133A972D03AE2830D6B821 /* Release */ = {
+		8916DD7209EEB2FA4AF48E4D84F69258 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D4C9F258AB6917CA7475DE2A0D7E340 /* 1PasswordExtension.xcconfig */;
+			baseConfigurationReference = D2FEA6B42A3C4DBCD185F6AB51628C0A /* Pods-maccha.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1194,14 +1190,18 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/1PasswordExtension/1PasswordExtension-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/1PasswordExtension/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-maccha/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/1PasswordExtension/1PasswordExtension.modulemap";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-maccha/Pods-maccha.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = OnePasswordExtension;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_maccha;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1210,7 +1210,7 @@
 			};
 			name = Release;
 		};
-		A07ABF00CA979E724C295FBD239F1660 /* Debug */ = {
+		8E142C81A7B95640E72B4A55071DE1F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BA9CBE6C1643396AD2821CEA405F59CE /* Toast-Swift.xcconfig */;
 			buildSettings = {
@@ -1239,6 +1239,64 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		91040C55D4EBF9BA5AFC5C2030594A0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D365CE35297826D151D23A27CB9D602 /* PulsingHalo.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PulsingHalo/PulsingHalo-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PulsingHalo/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PulsingHalo/PulsingHalo.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = PulsingHalo;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9B2317DE14133A972D03AE2830D6B821 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D4C9F258AB6917CA7475DE2A0D7E340 /* 1PasswordExtension.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/1PasswordExtension/1PasswordExtension-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/1PasswordExtension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/1PasswordExtension/1PasswordExtension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = OnePasswordExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		AC044B65E2FB02CB420DF9AE625B92F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1269,9 +1327,9 @@
 			};
 			name = Debug;
 		};
-		C734B331E7912642DCD1812A5B59AF87 /* Debug */ = {
+		C9FDE96A0918CC91553F2CE8A53FD6D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D365CE35297826D151D23A27CB9D602 /* PulsingHalo.xcconfig */;
+			baseConfigurationReference = 1C9B7BC2564D83FCA2284B1C8B240F69 /* Pods-maccha.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1282,79 +1340,26 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PulsingHalo/PulsingHalo-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PulsingHalo/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-maccha/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PulsingHalo/PulsingHalo.modulemap";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-maccha/Pods-maccha.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = PulsingHalo;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_maccha;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		D993C714FCBD0D4307B9D71EF1FA8B1D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D365CE35297826D151D23A27CB9D602 /* PulsingHalo.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PulsingHalo/PulsingHalo-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PulsingHalo/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PulsingHalo/PulsingHalo.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = PulsingHalo;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		EE6A7D5D026FD45981C0ACB71C931891 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA9CBE6C1643396AD2821CEA405F59CE /* Toast-Swift.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Toast-Swift/Toast-Swift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Toast-Swift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Toast-Swift/Toast-Swift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Toast_Swift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		F30C15F9C5ABC29F826EB0BF627A0FA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1385,9 +1390,9 @@
 			};
 			name = Debug;
 		};
-		FEE3006ACDC2BC57D565A287BA72212F /* Debug */ = {
+		FDAAAAD48902B7FE24518CB0E6A0A4E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AE8FA14E491EF23DD1C10B02BBDCADB /* Pods-Quaza.debug.xcconfig */;
+			baseConfigurationReference = 9D365CE35297826D151D23A27CB9D602 /* PulsingHalo.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1398,21 +1403,16 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Quaza/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/PulsingHalo/PulsingHalo-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PulsingHalo/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Quaza/Pods-Quaza.modulemap";
+				MODULEMAP_FILE = "Target Support Files/PulsingHalo/PulsingHalo.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Quaza;
+				PRODUCT_NAME = PulsingHalo;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1422,6 +1422,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0DE990E7E3C74D86837A3C553CAFC27F /* Build configuration list for PBXNativeTarget "Pods-maccha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9FDE96A0918CC91553F2CE8A53FD6D1 /* Debug */,
+				8916DD7209EEB2FA4AF48E4D84F69258 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E2C247AF8382D04D64B1ED533C66CF8 /* Build configuration list for PBXNativeTarget "PulsingHalo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDAAAAD48902B7FE24518CB0E6A0A4E8 /* Debug */,
+				91040C55D4EBF9BA5AFC5C2030594A0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1A59A7F43A3DDA09934FA7C38A121B5B /* Build configuration list for PBXNativeTarget "1PasswordExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1440,11 +1458,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3450E45A8F9D7BD41688DDAAF1656009 /* Build configuration list for PBXNativeTarget "Pods-Quaza" */ = {
+		40C3269BAB0B3E6B7F7A3EA0F308EF5C /* Build configuration list for PBXNativeTarget "Toast-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FEE3006ACDC2BC57D565A287BA72212F /* Debug */,
-				00002CF011FCCC892F28A231AF7ACBA8 /* Release */,
+				8E142C81A7B95640E72B4A55071DE1F2 /* Debug */,
+				590D3930C6A1922DE742D83ECF61BA31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1467,29 +1485,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A0FF2DA45F17E6F56A25E147DA684A24 /* Build configuration list for PBXNativeTarget "PulsingHalo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C734B331E7912642DCD1812A5B59AF87 /* Debug */,
-				D993C714FCBD0D4307B9D71EF1FA8B1D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		A7D2C79CF66FE8574AAD47094F69E620 /* Build configuration list for PBXNativeTarget "1PasswordExtension-OnePasswordExtensionResources" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0324A903716FC7D70CB45722779C337A /* Debug */,
 				8448FB7B63CE8AB0E72F8F700B2604C1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D457CC22976B16B7912FB500113DE7DA /* Build configuration list for PBXNativeTarget "Toast-Swift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A07ABF00CA979E724C295FBD239F1660 /* Debug */,
-				EE6A7D5D026FD45981C0ACB71C931891 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34453A5F26BFE6C15E8C5916 /* Pods_maccha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAEBA95640F8ADD14723F212 /* Pods_maccha.framework */; };
 		3F568AFA1C85D7B800771303 /* safari-reader.js in Resources */ = {isa = PBXBuildFile; fileRef = 3F568AF91C85D7B800771303 /* safari-reader.js */; };
 		3F9760E91C651C9C006F2ACB /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9760E81C651C9C006F2ACB /* SlideViewController.swift */; };
 		3FB279AC1C7244E6007F0416 /* PathDynamicModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB279AB1C7244E6007F0416 /* PathDynamicModal.swift */; };
@@ -21,7 +22,6 @@
 		5F8533771A5BB8C900F14347 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F8533761A5BB8C900F14347 /* Images.xcassets */; };
 		5F85337A1A5BB8C900F14347 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F8533781A5BB8C900F14347 /* LaunchScreen.xib */; };
 		5F8533861A5BB8C900F14347 /* BrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8533851A5BB8C900F14347 /* BrowserTests.swift */; };
-		8838B0C70CEFF4E70A116ED8 /* Pods_Quaza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94517985E2978FEEF00440DC /* Pods_Quaza.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,19 +46,19 @@
 		3FC20F441C6007950016F522 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		3FC579C91C89F12400654FF3 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = "../Pods/Toast-Swift/Toast/Toast.swift"; sourceTree = "<group>"; };
 		3FDF7E5F1C61968700C8BD4A /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
-		53B708F14E1A0B1EF8CD4C61 /* Pods-Quaza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quaza.release.xcconfig"; path = "Pods/Target Support Files/Pods-Quaza/Pods-Quaza.release.xcconfig"; sourceTree = "<group>"; };
-		579521913F78C5950AE77B36 /* Pods-Quaza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quaza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quaza/Pods-Quaza.debug.xcconfig"; sourceTree = "<group>"; };
-		5F85336A1A5BB8C800F14347 /* Quaza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quaza.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F85336A1A5BB8C800F14347 /* maccha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = maccha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F85336E1A5BB8C900F14347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F85336F1A5BB8C900F14347 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F8533711A5BB8C900F14347 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5F8533741A5BB8C900F14347 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F8533761A5BB8C900F14347 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5F8533791A5BB8C900F14347 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		5F85337F1A5BB8C900F14347 /* Quaza.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Quaza.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F85337F1A5BB8C900F14347 /* maccha.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = maccha.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8533841A5BB8C900F14347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F8533851A5BB8C900F14347 /* BrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTests.swift; sourceTree = "<group>"; };
-		94517985E2978FEEF00440DC /* Pods_Quaza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quaza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAEBA95640F8ADD14723F212 /* Pods_maccha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_maccha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD5DC14AAC37E58FBF3338C1 /* Pods-maccha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maccha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-maccha/Pods-maccha.debug.xcconfig"; sourceTree = "<group>"; };
+		D1EAD61CD63158E8A7EF0CF2 /* Pods-maccha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maccha.release.xcconfig"; path = "Pods/Target Support Files/Pods-maccha/Pods-maccha.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8838B0C70CEFF4E70A116ED8 /* Pods_Quaza.framework in Frameworks */,
+				34453A5F26BFE6C15E8C5916 /* Pods_maccha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,8 +113,8 @@
 		5F85336B1A5BB8C800F14347 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5F85336A1A5BB8C800F14347 /* Quaza.app */,
-				5F85337F1A5BB8C900F14347 /* Quaza.xctest */,
+				5F85336A1A5BB8C800F14347 /* maccha.app */,
+				5F85337F1A5BB8C900F14347 /* maccha.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,8 +167,8 @@
 		902C2CAF7A7440AEF829FBCB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				579521913F78C5950AE77B36 /* Pods-Quaza.debug.xcconfig */,
-				53B708F14E1A0B1EF8CD4C61 /* Pods-Quaza.release.xcconfig */,
+				CD5DC14AAC37E58FBF3338C1 /* Pods-maccha.debug.xcconfig */,
+				D1EAD61CD63158E8A7EF0CF2 /* Pods-maccha.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -176,7 +176,7 @@
 		9A1FD1053E16DE2691CC5A72 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				94517985E2978FEEF00440DC /* Pods_Quaza.framework */,
+				AAEBA95640F8ADD14723F212 /* Pods_maccha.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -184,29 +184,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5F8533691A5BB8C800F14347 /* Quaza */ = {
+		5F8533691A5BB8C800F14347 /* maccha */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F8533891A5BB8C900F14347 /* Build configuration list for PBXNativeTarget "Quaza" */;
+			buildConfigurationList = 5F8533891A5BB8C900F14347 /* Build configuration list for PBXNativeTarget "maccha" */;
 			buildPhases = (
-				D538FE4780AE0EEC87C5AC35 /* Check Pods Manifest.lock */,
+				D538FE4780AE0EEC87C5AC35 /* 📦 Check Pods Manifest.lock */,
 				5F8533661A5BB8C800F14347 /* Sources */,
 				5F8533671A5BB8C800F14347 /* Frameworks */,
 				5F8533681A5BB8C800F14347 /* Resources */,
-				DD430A4C18128C728D88C6F3 /* Embed Pods Frameworks */,
-				C1C68A8DBAED103FEC8C8A3F /* Copy Pods Resources */,
+				DD430A4C18128C728D88C6F3 /* 📦 Embed Pods Frameworks */,
+				C1C68A8DBAED103FEC8C8A3F /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Quaza;
+			name = maccha;
 			productName = Browser;
-			productReference = 5F85336A1A5BB8C800F14347 /* Quaza.app */;
+			productReference = 5F85336A1A5BB8C800F14347 /* maccha.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5F85337E1A5BB8C900F14347 /* QuazaTests */ = {
+		5F85337E1A5BB8C900F14347 /* macchaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F85338C1A5BB8C900F14347 /* Build configuration list for PBXNativeTarget "QuazaTests" */;
+			buildConfigurationList = 5F85338C1A5BB8C900F14347 /* Build configuration list for PBXNativeTarget "macchaTests" */;
 			buildPhases = (
 				5F85337B1A5BB8C900F14347 /* Sources */,
 				5F85337C1A5BB8C900F14347 /* Frameworks */,
@@ -217,9 +217,9 @@
 			dependencies = (
 				5F8533811A5BB8C900F14347 /* PBXTargetDependency */,
 			);
-			name = QuazaTests;
+			name = macchaTests;
 			productName = BrowserTests;
-			productReference = 5F85337F1A5BB8C900F14347 /* Quaza.xctest */;
+			productReference = 5F85337F1A5BB8C900F14347 /* maccha.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -243,7 +243,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5F8533651A5BB8C800F14347 /* Build configuration list for PBXProject "Quaza" */;
+			buildConfigurationList = 5F8533651A5BB8C800F14347 /* Build configuration list for PBXProject "maccha" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -256,8 +256,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5F8533691A5BB8C800F14347 /* Quaza */,
-				5F85337E1A5BB8C900F14347 /* QuazaTests */,
+				5F8533691A5BB8C800F14347 /* maccha */,
+				5F85337E1A5BB8C900F14347 /* macchaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -285,29 +285,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C1C68A8DBAED103FEC8C8A3F /* Copy Pods Resources */ = {
+		C1C68A8DBAED103FEC8C8A3F /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quaza/Pods-Quaza-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-maccha/Pods-maccha-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D538FE4780AE0EEC87C5AC35 /* Check Pods Manifest.lock */ = {
+		D538FE4780AE0EEC87C5AC35 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,19 +315,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		DD430A4C18128C728D88C6F3 /* Embed Pods Frameworks */ = {
+		DD430A4C18128C728D88C6F3 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quaza/Pods-Quaza-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-maccha/Pods-maccha-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -361,7 +361,7 @@
 /* Begin PBXTargetDependency section */
 		5F8533811A5BB8C900F14347 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5F8533691A5BB8C800F14347 /* Quaza */;
+			target = 5F8533691A5BB8C800F14347 /* maccha */;
 			targetProxy = 5F8533801A5BB8C900F14347 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -469,15 +469,15 @@
 		};
 		5F85338A1A5BB8C900F14347 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 579521913F78C5950AE77B36 /* Pods-Quaza.debug.xcconfig */;
+			baseConfigurationReference = CD5DC14AAC37E58FBF3338C1 /* Pods-maccha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Browser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.studiospates.quaza;
-				PRODUCT_NAME = Quaza;
+				PRODUCT_BUNDLE_IDENTIFIER = com.studiospates.maccha;
+				PRODUCT_NAME = maccha;
 				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -485,15 +485,15 @@
 		};
 		5F85338B1A5BB8C900F14347 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53B708F14E1A0B1EF8CD4C61 /* Pods-Quaza.release.xcconfig */;
+			baseConfigurationReference = D1EAD61CD63158E8A7EF0CF2 /* Pods-maccha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Browser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.studiospates.quaza;
-				PRODUCT_NAME = Quaza;
+				PRODUCT_BUNDLE_IDENTIFIER = com.studiospates.maccha;
+				PRODUCT_NAME = maccha;
 				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
@@ -514,8 +514,8 @@
 				INFOPLIST_FILE = BrowserTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = Quaza;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quaza.app/Quaza";
+				PRODUCT_NAME = maccha;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/maccha.app/maccha";
 			};
 			name = Debug;
 		};
@@ -530,15 +530,15 @@
 				INFOPLIST_FILE = BrowserTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = Quaza;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quaza.app/Quaza";
+				PRODUCT_NAME = maccha;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/maccha.app/maccha";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5F8533651A5BB8C800F14347 /* Build configuration list for PBXProject "Quaza" */ = {
+		5F8533651A5BB8C800F14347 /* Build configuration list for PBXProject "maccha" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F8533871A5BB8C900F14347 /* Debug */,
@@ -547,7 +547,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F8533891A5BB8C900F14347 /* Build configuration list for PBXNativeTarget "Quaza" */ = {
+		5F8533891A5BB8C900F14347 /* Build configuration list for PBXNativeTarget "maccha" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F85338A1A5BB8C900F14347 /* Debug */,
@@ -556,7 +556,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F85338C1A5BB8C900F14347 /* Build configuration list for PBXNativeTarget "QuazaTests" */ = {
+		5F85338C1A5BB8C900F14347 /* Build configuration list for PBXNativeTarget "macchaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F85338D1A5BB8C900F14347 /* Debug */,

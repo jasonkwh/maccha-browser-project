@@ -1,4 +1,4 @@
-target 'Quaza' do
+target 'maccha' do
   source 'https://github.com/CocoaPods/Specs.git'
   platform :ios, '8.0'
   pod 'MGSwipeTableCell', :git => 'https://github.com/MortimerGoro/MGSwipeTableCell.git'
