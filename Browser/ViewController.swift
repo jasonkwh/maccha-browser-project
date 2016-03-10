@@ -33,6 +33,10 @@ struct slideViewValue {
     static var alertContents: String = ""
     static var scrollPosition = [CGFloat]() //save
     static var shortcutItem: Int = 0
+    static var historyTitle = [String]() //save, for history
+    static var historyUrl = [String]() //save, for history
+    static var htButtonSwitch: Bool = false
+    static var htButtonIndex: Int = 0
     
     //get versions information from Xcode Project Setting
     static func version() -> String {
@@ -99,6 +103,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var google: String = "https://www.google.com"
     var tempUrl: String = ""
     var readActionsCheck: Bool = false
+    var pbString: String = ""
     
     //remember previous scrolling position~~
     let panPressRecognizer = UIPanGestureRecognizer()
@@ -211,10 +216,22 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         forwardButton.enabled = false
         
         if(slideViewValue.shortcutItem == 0) {
-            loadRequest(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])
+            loadRequest(slideViewValue.windowStoreUrl[slideViewValue.windowStoreTitle.count-1])
         }
         else {
-            openShortcutItem()
+            let pb: UIPasteboard = UIPasteboard.generalPasteboard()
+            if(pb.string == nil) {
+                pbString = ""
+            } else {
+                pbString = pb.string!
+            }
+            if((slideViewValue.shortcutItem == 1) || ((slideViewValue.shortcutItem == 2) && (pbString != ""))){
+                openShortcutItem()
+            }
+            if((slideViewValue.shortcutItem == 2) && (pbString == "")) {
+                loadRequest(slideViewValue.windowStoreUrl[slideViewValue.windowStoreTitle.count-1])
+                slideViewValue.alertPopup(0, message: "Clipboard is empty")
+            }
         }
     }
     
@@ -234,8 +251,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         }
         else if(slideViewValue.shortcutItem == 2) {
             //Open URL from clipboard
-            let pb: UIPasteboard = UIPasteboard.generalPasteboard()
-            loadRequest(pb.string!)
+            loadRequest(pbString)
             slideViewValue.windowStoreTitle[slideViewValue.windowCurTab] = webView.title!
             slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] = (webView.URL?.absoluteString)!
         }
@@ -244,8 +260,17 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     //actions those the app going to do when the app enters foreground
     func applicationWillEnterForeground(notification: NSNotification) {
-        if(slideViewValue.shortcutItem != 0){
+        let pb: UIPasteboard = UIPasteboard.generalPasteboard()
+        if(pb.string == nil) {
+            pbString = ""
+        } else {
+            pbString = pb.string!
+        }
+        if((slideViewValue.shortcutItem == 1) || ((slideViewValue.shortcutItem == 2) && (pbString != ""))){
             openShortcutItem()
+        }
+        if((slideViewValue.shortcutItem == 2) && (pbString == "")) {
+            slideViewValue.alertPopup(0, message: "Clipboard is empty")
         }
     }
     
@@ -698,8 +723,16 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
             }
             if(Float(webView.estimatedProgress) == 1.0) {
+                //set refresh button style
                 refreshStopButton.setImage(UIImage(named: "Refresh"), forState: UIControlState.Normal)
                 refreshStopButton.addTarget(self, action: "refreshPressed", forControlEvents: UIControlEvents.TouchUpInside)
+                
+                
+                //Store value for History feature
+                if webTitle != "" && webAddress != "about:blank" {
+                    slideViewValue.historyTitle.append(webTitle)
+                    slideViewValue.historyUrl.append(webAddress)
+                }
             }
         }
     }

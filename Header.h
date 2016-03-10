@@ -15,7 +15,6 @@
 #import "SWRevealViewController.h"
 #import "Pods/MGSwipeTableCell/MGSwipeTableCell/MGSwipeTableCell.h"
 #import "Pods/1PasswordExtension/OnePasswordExtension.h"
-#import "Wave/UITableView+Wave.h"
 #import "Pods/AFNetworking/AFNetworking/AFNetworking.h"
 
 

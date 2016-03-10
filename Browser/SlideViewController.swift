@@ -27,7 +27,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     var bkButtonSwitch: Bool = false //functions
-    var htButtonSwitch: Bool = false //functions
     
     //Temporary store array
     var tempArray_title = [String]()
@@ -35,9 +34,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        //get value from struct variable
-        tempArray_title = slideViewValue.windowStoreTitle
         
         //define basic style of slide view
         self.view.backgroundColor = UIColor(netHex:0x2E2E2E)
@@ -59,17 +55,14 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //windows management functions
     override func viewDidAppear(animated: Bool) {
-        
         //get value from struct variable
         tempArray_title = slideViewValue.windowStoreTitle
         
         bgText.text = "Quaza"
-        windowView.reloadDataAnimateWithWave(.LeftToRightWaveAnimation)
+        windowView.reloadData()
         
         if(slideViewValue.scrollCellAction == false) {
-            //scroll the tableView to display the latest tab
-            let indexPath = NSIndexPath(forRow: windowView.numberOfRowsInSection(windowView.numberOfSections-1)-1, inSection: (windowView.numberOfSections-1))
-            windowView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+            scrollLastestTab(true)
         }
         //set up readbility button style each time when the view appears
         if(slideViewValue.readActions == false) {
@@ -78,6 +71,16 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         else if(slideViewValue.readActions == true) {
             sgButton.setImage(UIImage(named: "Read-filled"), forState: UIControlState.Normal)
         }
+        
+        //reset history button
+        htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
+        slideViewValue.htButtonSwitch = false
+    }
+    
+    func scrollLastestTab(animate: Bool) {
+        //scroll the tableView to display the latest tab
+        let indexPath = NSIndexPath(forRow: windowView.numberOfRowsInSection(windowView.numberOfSections-1)-1, inSection: (windowView.numberOfSections-1))
+        windowView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: animate)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -104,7 +107,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.delegate = self
         
         //cell design
-        if(indexPath.row == slideViewValue.windowCurTab) {
+        if(indexPath.row == slideViewValue.windowCurTab) && (slideViewValue.htButtonSwitch == false) {
             cell.backgroundColor = slideViewValue.windowCurColour
         }
         else {
@@ -163,11 +166,17 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //actions of the cells
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        if(slideViewValue.windowCurTab != indexPath.row) {
-            slideViewValue.windowCurTab = indexPath.row
-            slideViewValue.cellActions = true
+        if(slideViewValue.htButtonSwitch == false) { //normal changing tabs
+            if(slideViewValue.windowCurTab != indexPath.row) { //open link if user not touch current tab, else not loading
+                slideViewValue.windowCurTab = indexPath.row
+                slideViewValue.cellActions = true
+            }
+            slideViewValue.scrollCellAction = true
+        } else if(slideViewValue.htButtonSwitch == true) { //use History feature
+            slideViewValue.htButtonIndex = indexPath.row //pass row value to struct variable
+            //slideViewValue.cellActions = true
+            slideViewValue.scrollCellAction = false
         }
-        slideViewValue.scrollCellAction = true
         revealViewController().rightRevealToggleAnimated(true)
     }
     
@@ -228,15 +237,22 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func historyAction() {
-        if(htButtonSwitch == false) {
+        if(slideViewValue.htButtonSwitch == false) {
             htButton.setImage(UIImage(named: "History-filled"), forState: UIControlState.Normal)
-            htButtonSwitch = true
+            slideViewValue.htButtonSwitch = true
             bkButton.setImage(UIImage(named: "Bookmark"), forState: UIControlState.Normal)
             bkButtonSwitch = false
+            bgText.text = "History"
+            tempArray_title = slideViewValue.historyTitle
+            windowView.reloadData()
+            scrollLastestTab(true)
         }
         else {
             htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
-            htButtonSwitch = false
+            slideViewValue.htButtonSwitch = false
+            bgText.text = "Quaza"
+            tempArray_title = slideViewValue.windowStoreTitle
+            windowView.reloadData()
         }
     }
     
@@ -245,7 +261,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             bkButton.setImage(UIImage(named: "Bookmark-filled"), forState: UIControlState.Normal)
             bkButtonSwitch = true
             htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
-            htButtonSwitch = false
+            slideViewValue.htButtonSwitch = false
         }
         else {
             bkButton.setImage(UIImage(named: "Bookmark"), forState: UIControlState.Normal)
