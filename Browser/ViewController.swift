@@ -343,8 +343,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             }
             if(slideViewValue.cellActions == true) {
                 //open stored urls
-                webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30))
-                scrollPositionSwitch = true
+                if(slideViewValue.htButtonSwitch == false) {
+                    webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30))
+                    scrollPositionSwitch = true
+                }
+                else if(slideViewValue.htButtonSwitch == true) {
+                    loadRequest(slideViewValue.historyUrl[slideViewValue.htButtonIndex])
+                    scrollPositionSwitch = false
+                }
                 slideViewValue.readActions = false //disable readbility
                 slideViewValue.cellActions = false
             }

@@ -174,7 +174,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             slideViewValue.scrollCellAction = true
         } else if(slideViewValue.htButtonSwitch == true) { //use History feature
             slideViewValue.htButtonIndex = indexPath.row //pass row value to struct variable
-            //slideViewValue.cellActions = true
+            slideViewValue.cellActions = true
             slideViewValue.scrollCellAction = false
         }
         revealViewController().rightRevealToggleAnimated(true)
