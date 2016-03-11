@@ -48,6 +48,12 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tapPressRecognizer.addTarget(self, action: "onTapPress:")
         self.view.addGestureRecognizer(tapPressRecognizer)
         
+        //set Toast alert style
+        var style = ToastStyle()
+        style.messageColor = UIColor(netHex: 0x2E2E2E)
+        style.backgroundColor = UIColor(netHex:0xECF0F1)
+        ToastManager.shared.style = style
+        
         //button displays
         displaySafariButton()
         displayHistoryButton()
@@ -154,41 +160,48 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.rightButtons = [MGSwipeButton(title: "Close", backgroundColor: UIColor(netHex:0xE74C3C), callback: {
             (sender: MGSwipeTableCell!) -> Bool in
             //LOGICs of removing tabs
-            if(self.tempArray_title.count > 1) {
-                if(slideViewValue.windowCurTab != indexPath.row) {
-                    self.tempArray_title.removeAtIndex(indexPath.row)
-                    slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
-                    slideViewValue.scrollPosition.removeAtIndex(indexPath.row)
-                    if(indexPath.row < slideViewValue.windowCurTab) {
-                        slideViewValue.windowCurTab--
-                    }
-                    slideViewValue.windowStoreTitle = self.tempArray_title
-                }
-                else {
-                    if(slideViewValue.windowCurTab == (self.tempArray_title.count - 1)) {
+            if(slideViewValue.htButtonSwitch == false) { //normal mode
+                if(self.tempArray_title.count > 1) {
+                    if(slideViewValue.windowCurTab != indexPath.row) {
                         self.tempArray_title.removeAtIndex(indexPath.row)
                         slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
                         slideViewValue.scrollPosition.removeAtIndex(indexPath.row)
-                        slideViewValue.windowCurTab--
+                        if(indexPath.row < slideViewValue.windowCurTab) {
+                            slideViewValue.windowCurTab--
+                        }
+                        slideViewValue.windowStoreTitle = self.tempArray_title
                     }
                     else {
-                        self.tempArray_title.removeAtIndex(indexPath.row)
-                        slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
-                        slideViewValue.scrollPosition.removeAtIndex(indexPath.row)
+                        if(slideViewValue.windowCurTab == (self.tempArray_title.count - 1)) {
+                            self.tempArray_title.removeAtIndex(indexPath.row)
+                            slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
+                            slideViewValue.scrollPosition.removeAtIndex(indexPath.row)
+                            slideViewValue.windowCurTab--
+                        }
+                        else {
+                            self.tempArray_title.removeAtIndex(indexPath.row)
+                            slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
+                            slideViewValue.scrollPosition.removeAtIndex(indexPath.row)
+                        }
+                        slideViewValue.windowStoreTitle = self.tempArray_title
+                        slideViewValue.deleteTab = true
                     }
+                }
+                else if(self.tempArray_title.count == 1) {
+                    slideViewValue.windowStoreUrl[0] = "about:blank"
+                    self.tempArray_title[0] = ""
                     slideViewValue.windowStoreTitle = self.tempArray_title
+                    slideViewValue.scrollPosition[0] = 0.0
                     slideViewValue.deleteTab = true
+                    self.revealViewController().rightRevealToggleAnimated(true)
                 }
             }
-            else if(self.tempArray_title.count == 1) {
-                slideViewValue.windowStoreUrl[0] = "about:blank"
-                self.tempArray_title[0] = ""
-                slideViewValue.windowStoreTitle = self.tempArray_title
-                slideViewValue.scrollPosition[0] = 0.0
-                slideViewValue.deleteTab = true
-                self.revealViewController().rightRevealToggleAnimated(true)
+            else if(slideViewValue.htButtonSwitch == true) { //"history" mode
+                self.tempArray_title.removeAtIndex(indexPath.row)
+                slideViewValue.historyUrl.removeAtIndex(indexPath.row)
+                slideViewValue.historyTitle = self.tempArray_title
             }
-            self.windowView.reloadData()
+            self.windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, self.windowView.numberOfSections)), withRowAnimation: .Automatic)
             return true
         })]
         cell.rightSwipeSettings.transition = MGSwipeTransition.Static
@@ -278,7 +291,8 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             bkButtonSwitch = false
             bgText.text = "history"
             tempArray_title = slideViewValue.historyTitle
-            windowView.reloadData()
+            windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, windowView.numberOfSections)), withRowAnimation: .Automatic)
+            self.view.makeToast("History", duration: 0.8, position: CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height-70))
             scrollLastestTab(true)
         }
         else {
@@ -286,7 +300,8 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             slideViewValue.htButtonSwitch = false
             bgText.text = "maccha"
             tempArray_title = slideViewValue.windowStoreTitle
-            windowView.reloadData()
+            windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, windowView.numberOfSections)), withRowAnimation: .Automatic)
+            self.view.makeToast("Tabs", duration: 0.8, position: CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height-70))
         }
     }
     
