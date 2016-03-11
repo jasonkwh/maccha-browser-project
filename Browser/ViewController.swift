@@ -897,11 +897,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         if(searchEngines == 0) {
             searchEngines = 1
             //slideViewValue.alertPopup(3, message: "Your search engine was changed to Bing")
-            self.view.makeToast("Bing It On!", duration: 1.5, position: CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height-70))
+            self.view.makeToast("Bing It On!", duration: 0.8, position: CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height-70))
         } else {
             searchEngines = 0
             //slideViewValue.alertPopup(3, message: "Your search engine was changed to Google")
-            self.view.makeToast("Let's Google it!", duration: 1.5, position: CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height-70))
+            self.view.makeToast("Let's Google it!", duration: 0.8, position: CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height-70))
         }
     }
     
