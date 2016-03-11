@@ -36,7 +36,7 @@ class ModalView: UIView {
     
     private func configure() {
         if(slideViewValue.aboutScreen == true) {
-            alertPic.image = UIImage(named: "icon_face")
+            alertPic.image = UIImage(named: "Tea")
             self.version.text = "Maccha " + slideViewValue.version()
             self.contents.text = "You can never get a cup of tea large enough to suit me."
             self.contentView.backgroundColor = slideViewValue.windowCurColour
