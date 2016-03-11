@@ -29,6 +29,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var bkButtonSwitch: Bool = false //functions
     var tempArray_title = [String]() //Temporary store array
     var tapPressRecognizer = UITapGestureRecognizer() //gesture for touch animation
+    var style = ToastStyle() //initialise toast
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,12 +49,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tapPressRecognizer.addTarget(self, action: "onTapPress:")
         self.view.addGestureRecognizer(tapPressRecognizer)
         
-        //set Toast alert style
-        var style = ToastStyle()
-        style.messageColor = UIColor(netHex: 0x2E2E2E)
-        style.backgroundColor = UIColor(netHex:0xECF0F1)
-        ToastManager.shared.style = style
-        
         //button displays
         displaySafariButton()
         displayHistoryButton()
@@ -65,6 +60,11 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //windows management functions
     override func viewDidAppear(animated: Bool) {
+        //set Toast alert style
+        style.messageColor = UIColor(netHex: 0x2E2E2E)
+        style.backgroundColor = UIColor(netHex:0xECF0F1)
+        ToastManager.shared.style = style
+        
         //get value from struct variable
         tempArray_title = slideViewValue.windowStoreTitle
         
@@ -85,6 +85,13 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //reset history button
         htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
         slideViewValue.htButtonSwitch = false
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        //reset to original Toast alert style
+        style.messageColor = UIColor(netHex: 0xECF0F1)
+        style.backgroundColor = UIColor(netHex:0x444444)
+        ToastManager.shared.style = style
     }
     
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
