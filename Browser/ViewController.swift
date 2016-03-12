@@ -344,7 +344,15 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                     scrollPositionSwitch = true
                 }
                 else if(slideViewValue.htButtonSwitch == true) {
+                    //open history entry
                     loadRequest(slideViewValue.historyUrl[slideViewValue.htButtonIndex])
+                    slideViewValue.windowStoreTitle.append(webView.title!)
+                    slideViewValue.windowStoreUrl.append((webView.URL?.absoluteString)!)
+                    
+                    //initial y point
+                    slideViewValue.scrollPosition.append(CGFloat(0.0))
+                    
+                    slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
                     scrollPositionSwitch = false
                 }
                 slideViewValue.readActions = false //disable readbility
