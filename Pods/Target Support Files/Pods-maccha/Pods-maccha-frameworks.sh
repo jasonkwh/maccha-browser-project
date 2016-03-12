@@ -87,13 +87,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$CONFIGURATION_BUILD_DIR/1PasswordExtension/OnePasswordExtension.framework"
   install_framework "$CONFIGURATION_BUILD_DIR/AFNetworking/AFNetworking.framework"
   install_framework "$CONFIGURATION_BUILD_DIR/MGSwipeTableCell/MGSwipeTableCell.framework"
-  install_framework "$CONFIGURATION_BUILD_DIR/PulsingHalo/PulsingHalo.framework"
   install_framework "$CONFIGURATION_BUILD_DIR/Toast-Swift/Toast_Swift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$CONFIGURATION_BUILD_DIR/1PasswordExtension/OnePasswordExtension.framework"
   install_framework "$CONFIGURATION_BUILD_DIR/AFNetworking/AFNetworking.framework"
   install_framework "$CONFIGURATION_BUILD_DIR/MGSwipeTableCell/MGSwipeTableCell.framework"
-  install_framework "$CONFIGURATION_BUILD_DIR/PulsingHalo/PulsingHalo.framework"
   install_framework "$CONFIGURATION_BUILD_DIR/Toast-Swift/Toast_Swift.framework"
 fi

@@ -16,7 +16,6 @@
 #import "Pods/MGSwipeTableCell/MGSwipeTableCell/MGSwipeTableCell.h"
 #import "Pods/1PasswordExtension/OnePasswordExtension.h"
 #import "Pods/AFNetworking/AFNetworking/AFNetworking.h"
-#import "Pods/PulsingHalo/PulsingHalo/PulsingHaloLayer.h"
 
 
 #endif /* Header_h */

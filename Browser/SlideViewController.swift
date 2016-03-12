@@ -28,7 +28,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     var bkButtonSwitch: Bool = false //functions
     var tempArray_title = [String]() //Temporary store array
-    var tapPressRecognizer = UITapGestureRecognizer() //gesture for touch animation
     var style = ToastStyle() //initialise toast
     
     override func viewDidLoad() {
@@ -43,11 +42,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         windowView.separatorStyle = .None
         windowView.delegate = self
         windowView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
-        
-        //tap press to show touch click aniamtion
-        tapPressRecognizer.delegate = self
-        tapPressRecognizer.addTarget(self, action: "onTapPress:")
-        self.view.addGestureRecognizer(tapPressRecognizer)
         
         //button displays
         displaySafariButton()
@@ -92,36 +86,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         style.messageColor = UIColor(netHex: 0xECF0F1)
         style.backgroundColor = UIColor(netHex:0x444444)
         ToastManager.shared.style = style
-    }
-    
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
-        if touch.view == windowView {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
-    }
-    
-    func onTapPress(gestureRecognizer:UIGestureRecognizer){
-        let when = dispatch_time(DISPATCH_TIME_NOW, Int64(0.6 * Double(NSEC_PER_SEC)))
-        let queue = dispatch_get_main_queue()
-        
-        //PulsingHalo settings
-        let halo = PulsingHaloLayer()
-        halo.backgroundColor = slideViewValue.windowCurColour.CGColor
-        halo.animationDuration = 1
-        halo.radius = 50
-        halo.position = gestureRecognizer.locationInView(windowView)
-        windowView.layer.addSublayer(halo)
-        
-        //remove halo layer after 0.6 seconds
-        dispatch_after(when, queue) {
-            halo.removeFromSuperlayer()
-        }
     }
     
     func scrollLastestTab(animate: Bool) {
@@ -207,6 +171,10 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 self.tempArray_title.removeAtIndex(indexPath.row)
                 slideViewValue.historyUrl.removeAtIndex(indexPath.row)
                 slideViewValue.historyTitle = self.tempArray_title
+                if(self.tempArray_title.count == 0) { //switch off history while history is empty
+                    self.historyBackToNormal()
+                    self.view.makeToast("History is empty...", duration: 0.8, position: CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height-70)) //alert user
+                }
             }
             self.windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, self.windowView.numberOfSections)), withRowAnimation: .Automatic)
             return true
@@ -292,24 +260,32 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func historyAction() {
         if(slideViewValue.htButtonSwitch == false) {
-            htButton.setImage(UIImage(named: "History-filled"), forState: UIControlState.Normal)
-            slideViewValue.htButtonSwitch = true
-            bkButton.setImage(UIImage(named: "Bookmark"), forState: UIControlState.Normal)
-            bkButtonSwitch = false
-            bgText.text = "history"
-            tempArray_title = slideViewValue.historyTitle
-            windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, windowView.numberOfSections)), withRowAnimation: .Automatic)
-            self.view.makeToast("History", duration: 0.8, position: CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height-70))
-            scrollLastestTab(true)
+            if(slideViewValue.historyTitle.count > 0) { //avoid size < 0 bug crash
+                htButton.setImage(UIImage(named: "History-filled"), forState: UIControlState.Normal)
+                slideViewValue.htButtonSwitch = true
+                bkButton.setImage(UIImage(named: "Bookmark"), forState: UIControlState.Normal)
+                bkButtonSwitch = false
+                bgText.text = "history"
+                tempArray_title = slideViewValue.historyTitle
+                windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, windowView.numberOfSections)), withRowAnimation: .Automatic)
+                self.view.makeToast("History", duration: 0.8, position: CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height-70))
+                scrollLastestTab(true)
+            } else {
+                self.view.makeToast("History is empty...", duration: 0.8, position: CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height-70)) //alert user instead of switching to History
+            }
         }
         else {
-            htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
-            slideViewValue.htButtonSwitch = false
-            bgText.text = "maccha"
-            tempArray_title = slideViewValue.windowStoreTitle
-            windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, windowView.numberOfSections)), withRowAnimation: .Automatic)
+            historyBackToNormal()
             self.view.makeToast("Tabs", duration: 0.8, position: CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height-70))
         }
+    }
+    
+    func historyBackToNormal() { //switch History feature off
+        htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
+        slideViewValue.htButtonSwitch = false
+        bgText.text = "maccha"
+        tempArray_title = slideViewValue.windowStoreTitle
+        windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, windowView.numberOfSections)), withRowAnimation: .Automatic)
     }
     
     func bookmarkAction() {
