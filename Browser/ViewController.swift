@@ -731,9 +731,18 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 
                 
                 //Store value for History feature
-                if webTitle != "" && webAddress != "about:blank" {
-                    slideViewValue.historyTitle.append(webTitle)
-                    slideViewValue.historyUrl.append(webAddress)
+                if webAddress != "about:blank" {
+                    if (slideViewValue.historyUrl.count == 0) { //while history is empty...
+                        slideViewValue.historyTitle.append(webTitle)
+                        slideViewValue.historyUrl.append(webAddress)
+                    }
+                    if (slideViewValue.historyUrl.count > 0) { //while history has entries...
+                        //check if this address is familer with the one before, if no, insert entry
+                        if webAddress != slideViewValue.historyUrl[slideViewValue.historyUrl.count-1] {
+                            slideViewValue.historyTitle.append(webTitle)
+                            slideViewValue.historyUrl.append(webAddress)
+                        }
+                    }
                 }
             }
         }
