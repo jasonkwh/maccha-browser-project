@@ -18,7 +18,6 @@ struct slideViewValue {
     static var newtabButton: Bool = false
     static var safariButton: Bool = false
     static var cellActions: Bool = false
-    static var deleteTab: Bool = false
     static var readActions: Bool = false
     static var readRecover: Bool = false
     static var windowStoreTitle = [String]() //save
@@ -36,6 +35,7 @@ struct slideViewValue {
     static var historyUrl = [String]() //save, for history
     static var htButtonSwitch: Bool = false
     static var htButtonIndex: Int = 0
+    static var scrollPositionSwitch: Bool = false //true is scroll back to user view, false is not
     
     //get versions information from Xcode Project Setting
     static func version() -> String {
@@ -106,7 +106,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //remember previous scrolling position~~
     let panPressRecognizer = UIPanGestureRecognizer()
     var scrollPositionRecord: Bool = false //user tap, record scroll position
-    var scrollPositionSwitch: Bool = false //switch position scroll when revealViewController is close, true is scroll back to user view, false is not
     
     //actionsheet
     var longPressRecognizer = UILongPressGestureRecognizer()
@@ -339,7 +338,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 //open stored urls
                 if(slideViewValue.htButtonSwitch == false) {
                     WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30))
-                    scrollPositionSwitch = true
+                    slideViewValue.scrollPositionSwitch = true
                 }
                 else if(slideViewValue.htButtonSwitch == true) {
                     //open history entry
@@ -351,7 +350,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                     slideViewValue.scrollPosition.append(CGFloat(0.0))
                     
                     slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
-                    scrollPositionSwitch = false
+                    slideViewValue.scrollPositionSwitch = false
                 }
                 slideViewValue.readActions = false //disable readbility
                 slideViewValue.cellActions = false
@@ -368,10 +367,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 
                 slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
                 slideViewValue.newtabButton = false
-            }
-            if(slideViewValue.deleteTab == true) {
-                scrollPositionSwitch = true
-                slideViewValue.deleteTab = false
             }
             if((slideViewValue.readActions == true) && (slideViewValue.readRecover == false)) {
                 if(self.readActionsCheck == false) {
@@ -763,9 +758,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
         //disable the original wkactionsheet
         webView.evaluateJavaScript("document.body.style.webkitTouchCallout='none';", completionHandler: nil)
-        if(scrollPositionSwitch == true) {
+        if(slideViewValue.scrollPositionSwitch == true) {
             WKWebviewFactory.sharedInstance.webView.scrollView.setContentOffset(CGPointMake(0.0, slideViewValue.scrollPosition[slideViewValue.windowCurTab]), animated: true)
-            scrollPositionSwitch = false
+            slideViewValue.scrollPositionSwitch = false
         }
         progressView.setProgress(0.0, animated: false)
     }
@@ -860,7 +855,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         else if(slideViewValue.readActions == true) {
             loadRequest(tempUrl) //load contents by wkwebview
         }
-        scrollPositionSwitch = false
+        slideViewValue.scrollPositionSwitch = false
         self.readActionsCheck = false
     }
     

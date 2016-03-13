@@ -161,7 +161,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         //open tabs in background
                         slideViewValue.readActions = false //disable readbility
                         WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30))
-                        slideViewValue.deleteTab = true
+                        slideViewValue.scrollPositionSwitch = true
                     }
                 }
                 else if(self.tempArray_title.count == 1) {
@@ -173,7 +173,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     //open tabs in background
                     slideViewValue.readActions = false //disable readbility
                     WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30))
-                    slideViewValue.deleteTab = true
+                    slideViewValue.scrollPositionSwitch = true
                     self.revealViewController().rightRevealToggleAnimated(true)
                 }
             }
