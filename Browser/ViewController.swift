@@ -83,7 +83,6 @@ struct slideViewValue {
 class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UIScrollViewDelegate, SWRevealViewControllerDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var mask: UIView!
-    var webView: WKWebView
     @IBOutlet weak var barView: UIView!
     @IBOutlet weak var windowView: UIButton!
     @IBOutlet weak var refreshStopButton: UIButton!
@@ -127,12 +126,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         userContentController.addUserScript(userScript)
         let configuration = WKWebViewConfiguration()
         configuration.userContentController = userContentController
-        self.webView = WKWebView(frame: CGRectZero, configuration: configuration)
+        WKWebviewFactory.sharedInstance.webView = WKWebView(frame: CGRectZero, configuration: configuration)
         super.init(coder: aDecoder)
         
-        self.webView.navigationDelegate = self
-        self.webView.UIDelegate = self
-        self.webView.scrollView.delegate = self
+        WKWebviewFactory.sharedInstance.webView.navigationDelegate = self
+        WKWebviewFactory.sharedInstance.webView.UIDelegate = self
+        WKWebviewFactory.sharedInstance.webView.scrollView.delegate = self
         
         //use AFNetworking module to set NSURLCache
         let manager = AFHTTPSessionManager()
@@ -184,33 +183,33 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         style.backgroundColor = UIColor(netHex:0x444444)
         ToastManager.shared.style = style
         
-        self.webView.snapshotViewAfterScreenUpdates(true) //snapshot webview after loading new screens
+        WKWebviewFactory.sharedInstance.webView.snapshotViewAfterScreenUpdates(true) //snapshot webview after loading new screens
         self.navigationController?.navigationBarHidden = true //hide navigation bar
         
         //hook the tap press event
         panPressRecognizer.delegate = self
         panPressRecognizer.addTarget(self, action: "onPanPress:")
-        self.webView.scrollView.addGestureRecognizer(panPressRecognizer)
+        WKWebviewFactory.sharedInstance.webView.scrollView.addGestureRecognizer(panPressRecognizer)
         
         //long press to show the action sheet
         longPressRecognizer.delegate = self
         longPressRecognizer.addTarget(self, action: "onLongPress:")
-        self.webView.scrollView.addGestureRecognizer(longPressRecognizer)
+        WKWebviewFactory.sharedInstance.webView.scrollView.addGestureRecognizer(longPressRecognizer)
         
         //user agent string
         let ver:String = "Kapiko/4.0 Maccha/" + slideViewValue.version()
-        webView.performSelector("_setApplicationNameForUserAgent:", withObject: ver)
+        WKWebviewFactory.sharedInstance.webView.performSelector("_setApplicationNameForUserAgent:", withObject: ver)
         
-        webView.allowsBackForwardNavigationGestures = true //enable Back & Forward gestures
+        WKWebviewFactory.sharedInstance.webView.allowsBackForwardNavigationGestures = true //enable Back & Forward gestures
         barView.frame = CGRect(x:0, y: 0, width: view.frame.width, height: 30)
-        view.insertSubview(webView, belowSubview: progressView)
-        webView.translatesAutoresizingMaskIntoConstraints = false
-        let height = NSLayoutConstraint(item: webView, attribute: .Height, relatedBy: .Equal, toItem: view, attribute: .Height, multiplier: 1, constant: -44)
-        let width = NSLayoutConstraint(item: webView, attribute: .Width, relatedBy: .Equal, toItem: view, attribute: .Width, multiplier: 1, constant: 0)
+        view.insertSubview(WKWebviewFactory.sharedInstance.webView, belowSubview: progressView)
+        WKWebviewFactory.sharedInstance.webView.translatesAutoresizingMaskIntoConstraints = false
+        let height = NSLayoutConstraint(item: WKWebviewFactory.sharedInstance.webView, attribute: .Height, relatedBy: .Equal, toItem: view, attribute: .Height, multiplier: 1, constant: -44)
+        let width = NSLayoutConstraint(item: WKWebviewFactory.sharedInstance.webView, attribute: .Width, relatedBy: .Equal, toItem: view, attribute: .Width, multiplier: 1, constant: 0)
         view.addConstraints([height, width])
         
-        webView.addObserver(self, forKeyPath: "loading", options: .New, context: nil)
-        webView.addObserver(self, forKeyPath: "estimatedProgress", options: .New, context: nil)
+        WKWebviewFactory.sharedInstance.webView.addObserver(self, forKeyPath: "loading", options: .New, context: nil)
+        WKWebviewFactory.sharedInstance.webView.addObserver(self, forKeyPath: "estimatedProgress", options: .New, context: nil)
         
         backButton.enabled = false
         forwardButton.enabled = false
@@ -247,13 +246,13 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
         windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
         if(slideViewValue.shortcutItem == 1) {
-            webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
+            WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
         }
         else if(slideViewValue.shortcutItem == 2) {
             //Open URL from clipboard
             loadRequest(pbString)
-            slideViewValue.windowStoreTitle[slideViewValue.windowCurTab] = webView.title!
-            slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] = (webView.URL?.absoluteString)!
+            slideViewValue.windowStoreTitle[slideViewValue.windowCurTab] = WKWebviewFactory.sharedInstance.webView.title!
+            slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] = (WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!
         }
         slideViewValue.shortcutItem = 0
     }
@@ -316,7 +315,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         {
             hideKeyboard()
             hideStatusbar()
-            self.webView.userInteractionEnabled = false
+            WKWebviewFactory.sharedInstance.webView.userInteractionEnabled = false
             self.bar.userInteractionEnabled = false
             UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
                 self.mask.alpha = 0.6
@@ -326,7 +325,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         else
         {
             windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
-            self.webView.userInteractionEnabled = true
+            WKWebviewFactory.sharedInstance.webView.userInteractionEnabled = true
             self.bar.userInteractionEnabled = true
             UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
                 self.mask.alpha = 0
@@ -340,14 +339,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             if(slideViewValue.cellActions == true) {
                 //open stored urls
                 if(slideViewValue.htButtonSwitch == false) {
-                    webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30))
+                    WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30))
                     scrollPositionSwitch = true
                 }
                 else if(slideViewValue.htButtonSwitch == true) {
                     //open history entry
                     loadRequest(slideViewValue.historyUrl[slideViewValue.htButtonIndex])
-                    slideViewValue.windowStoreTitle.append(webView.title!)
-                    slideViewValue.windowStoreUrl.append((webView.URL?.absoluteString)!)
+                    slideViewValue.windowStoreTitle.append(WKWebviewFactory.sharedInstance.webView.title!)
+                    slideViewValue.windowStoreUrl.append((WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!)
                     
                     //initial y point
                     slideViewValue.scrollPosition.append(CGFloat(0.0))
@@ -361,9 +360,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             if(slideViewValue.newtabButton == true) {
                 slideViewValue.readActions = false //disable readbility
                 //open new tab
-                webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
-                slideViewValue.windowStoreTitle.append(webView.title!)
-                slideViewValue.windowStoreUrl.append((webView.URL?.absoluteString)!)
+                WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
+                slideViewValue.windowStoreTitle.append(WKWebviewFactory.sharedInstance.webView.title!)
+                slideViewValue.windowStoreUrl.append((WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!)
                 
                 //initial y point
                 slideViewValue.scrollPosition.append(CGFloat(0.0))
@@ -372,8 +371,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 slideViewValue.newtabButton = false
             }
             if(slideViewValue.deleteTab == true) {
-                slideViewValue.readActions = false //disable readbility
-                webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30))
                 scrollPositionSwitch = true
                 slideViewValue.deleteTab = false
             }
@@ -381,21 +378,21 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 if(self.readActionsCheck == false) {
                     tempUrl = webAddress //tempUrl updates only once...
                 }
-                webView.evaluateJavaScript("var ReaderArticleFinderJS = new ReaderArticleFinder(document);") { (obj, error) -> Void in
+                WKWebviewFactory.sharedInstance.webView.evaluateJavaScript("var ReaderArticleFinderJS = new ReaderArticleFinder(document);") { (obj, error) -> Void in
                 }
-                webView.evaluateJavaScript("var article = ReaderArticleFinderJS.findArticle();") { (html, error) -> Void in
+                WKWebviewFactory.sharedInstance.webView.evaluateJavaScript("var article = ReaderArticleFinderJS.findArticle();") { (html, error) -> Void in
                 }
-                webView.evaluateJavaScript("article.element.innerText") { (res, error) -> Void in
+                WKWebviewFactory.sharedInstance.webView.evaluateJavaScript("article.element.innerText") { (res, error) -> Void in
                     //if let html = res as? String {
                         //self.webView.loadHTMLString(html, baseURL: nil)
                     //}
                 }
-                webView.evaluateJavaScript("article.element.outerHTML") { (res, error) -> Void in
+                WKWebviewFactory.sharedInstance.webView.evaluateJavaScript("article.element.outerHTML") { (res, error) -> Void in
                     if let html = res as? String {
-                        self.webView.loadHTMLString("<body style='font-family: -apple-system; font-family: '-apple-system','HelveticaNeue';'><meta name = 'viewport' content = 'user-scalable=no, width=device-width'>" + html, baseURL: nil)
+                        WKWebviewFactory.sharedInstance.webView.loadHTMLString("<body style='font-family: -apple-system; font-family: '-apple-system','HelveticaNeue';'><meta name = 'viewport' content = 'user-scalable=no, width=device-width'>" + html, baseURL: nil)
                     }
                 }
-                webView.evaluateJavaScript("ReaderArticleFinderJS.isReaderModeAvailable();") { (html, error) -> Void in
+                WKWebviewFactory.sharedInstance.webView.evaluateJavaScript("ReaderArticleFinderJS.isReaderModeAvailable();") { (html, error) -> Void in
                     if(String(html) == "Optional(0)") {
                         if(self.readActionsCheck == false) {
                             //this avoids alert popups while hiding the slideViewController (although the user did not press the read button)
@@ -407,7 +404,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                         self.readActionsCheck = true //turns on the boolean switch on to avoid alert popups
                     }
                 }
-                webView.evaluateJavaScript("ReaderArticleFinderJS.prepareToTransitionToReader();") { (html, error) -> Void in
+                WKWebviewFactory.sharedInstance.webView.evaluateJavaScript("ReaderArticleFinderJS.prepareToTransitionToReader();") { (html, error) -> Void in
                 }
             }
             if((slideViewValue.readActions == true) && (slideViewValue.readRecover == true)) {
@@ -639,7 +636,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             }
             
             //load contents by wkwebview
-            webView.loadRequest(NSURLRequest(URL: NSURL(string: contents)!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30))
+            WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: contents)!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30))
         }
         else {
             //Popup alert window
@@ -684,34 +681,34 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     }
     
     @IBAction func back(sender: UIBarButtonItem) {
-        webView.goBack()
+        WKWebviewFactory.sharedInstance.webView.goBack()
     }
     
     @IBAction func forward(sender: UIBarButtonItem) {
-        webView.goForward()
+        WKWebviewFactory.sharedInstance.webView.goForward()
     }
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<()>) {
         if (keyPath == "loading") {
-            backButton.enabled = webView.canGoBack
-            forwardButton.enabled = webView.canGoForward
+            backButton.enabled = WKWebviewFactory.sharedInstance.webView.canGoBack
+            forwardButton.enabled = WKWebviewFactory.sharedInstance.webView.canGoForward
         }
         if (keyPath == "estimatedProgress") {
-            progressView.hidden = webView.estimatedProgress == 1
-            progressView.setProgress(Float(webView.estimatedProgress), animated: true)
+            progressView.hidden = WKWebviewFactory.sharedInstance.webView.estimatedProgress == 1
+            progressView.setProgress(Float(WKWebviewFactory.sharedInstance.webView.estimatedProgress), animated: true)
             
-            if(Float(webView.estimatedProgress) > 0.0) {
+            if(Float(WKWebviewFactory.sharedInstance.webView.estimatedProgress) > 0.0) {
                 //set refreshStopButton to stop state
                 refreshStopButton.setImage(UIImage(named: "Stop"), forState: UIControlState.Normal)
                 refreshStopButton.addTarget(self, action: "stopPressed", forControlEvents: UIControlEvents.TouchUpInside)
             }
-            if(Float(webView.estimatedProgress) > 0.1) {
+            if(Float(WKWebviewFactory.sharedInstance.webView.estimatedProgress) > 0.1) {
                 //shorten url by replacing http:// and https:// to null
-                let shorten_url = webView.URL?.absoluteString.stringByReplacingOccurrencesOfString("https://", withString: "").stringByReplacingOccurrencesOfString("http://", withString: "")
+                let shorten_url = WKWebviewFactory.sharedInstance.webView.URL?.absoluteString.stringByReplacingOccurrencesOfString("https://", withString: "").stringByReplacingOccurrencesOfString("http://", withString: "")
 
                 //change urlField when the page starts loading
                 //display website title in the url field
-                webTitle = webView.title! //store title into webTitle for efficient use
+                webTitle = WKWebviewFactory.sharedInstance.webView.title! //store title into webTitle for efficient use
                 webAddress = shorten_url! //store address into webAddress for efficient use
                 if(moveToolbar == false) {
                     urlField.textAlignment = .Center
@@ -725,14 +722,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 
                 //update current window store title and url
                 if(slideViewValue.readActions == false) {
-                    slideViewValue.windowStoreTitle[slideViewValue.windowCurTab] = webView.title!
-                    slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] = (webView.URL?.absoluteString)!
+                    slideViewValue.windowStoreTitle[slideViewValue.windowCurTab] = WKWebviewFactory.sharedInstance.webView.title!
+                    slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] = (WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!
                 }
                 
                 //display current window numbers
                 windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
             }
-            if(Float(webView.estimatedProgress) == 1.0) {
+            if(Float(WKWebviewFactory.sharedInstance.webView.estimatedProgress) == 1.0) {
                 //set refresh button style
                 refreshStopButton.setImage(UIImage(named: "Refresh"), forState: UIControlState.Normal)
                 refreshStopButton.addTarget(self, action: "refreshPressed", forControlEvents: UIControlEvents.TouchUpInside)
@@ -768,14 +765,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         //disable the original wkactionsheet
         webView.evaluateJavaScript("document.body.style.webkitTouchCallout='none';", completionHandler: nil)
         if(scrollPositionSwitch == true) {
-            self.webView.scrollView.setContentOffset(CGPointMake(0.0, slideViewValue.scrollPosition[slideViewValue.windowCurTab]), animated: true)
+            WKWebviewFactory.sharedInstance.webView.scrollView.setContentOffset(CGPointMake(0.0, slideViewValue.scrollPosition[slideViewValue.windowCurTab]), animated: true)
             scrollPositionSwitch = false
         }
         progressView.setProgress(0.0, animated: false)
     }
     
     func webView(webView: WKWebView, didCommitNavigation navigation: WKNavigation!) {
-        self.webView.scrollView.setContentOffset(CGPointZero, animated: false)
+        WKWebviewFactory.sharedInstance.webView.scrollView.setContentOffset(CGPointZero, animated: false)
     }
     
     // this handles target=_blank links by opening them in the same view
@@ -870,8 +867,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     //function to stop page loading
     func stopPressed() {
-        if webView.loading {
-            webView.stopLoading()
+        if WKWebviewFactory.sharedInstance.webView.loading {
+            WKWebviewFactory.sharedInstance.webView.stopLoading()
         }
     }
     
@@ -902,7 +899,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //fill webView by 1Password Extension
     func pwPressed(sender: AnyObject) {
         hideKeyboard()
-        OnePasswordExtension.sharedExtension().fillItemIntoWebView(self.webView, forViewController: self, sender: sender, showOnlyLogins: false) { (success, error) -> Void in
+        OnePasswordExtension.sharedExtension().fillItemIntoWebView(WKWebviewFactory.sharedInstance.webView, forViewController: self, sender: sender, showOnlyLogins: false) { (success, error) -> Void in
             if success == false {
                 slideViewValue.alertPopup(0, message: "1Password failed to fill into webview.")
             }

@@ -38,6 +38,8 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.view.backgroundColor = UIColor(netHex:0x2E2E2E)
         toolbar.barTintColor = UIColor(netHex:0x2E2E2E)
         toolbar.clipsToBounds = true
+        view.layer.cornerRadius = 5 //set corner radius of uiview
+        view.layer.masksToBounds = true
         windowView.backgroundColor = UIColor.clearColor()
         windowView.separatorStyle = .None
         windowView.delegate = self
@@ -155,6 +157,10 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                             slideViewValue.scrollPosition.removeAtIndex(indexPath.row)
                         }
                         slideViewValue.windowStoreTitle = self.tempArray_title
+                        
+                        //open tabs in background
+                        slideViewValue.readActions = false //disable readbility
+                        WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30))
                         slideViewValue.deleteTab = true
                     }
                 }
@@ -163,6 +169,10 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     self.tempArray_title[0] = ""
                     slideViewValue.windowStoreTitle = self.tempArray_title
                     slideViewValue.scrollPosition[0] = 0.0
+                    
+                    //open tabs in background
+                    slideViewValue.readActions = false //disable readbility
+                    WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30))
                     slideViewValue.deleteTab = true
                     self.revealViewController().rightRevealToggleAnimated(true)
                 }
