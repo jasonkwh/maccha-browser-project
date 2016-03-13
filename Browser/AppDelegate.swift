@@ -41,11 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func handleShortcut(shortcutItem: UIApplicationShortcutItem) -> Bool {
         var succeeded = false
-        if(shortcutItem.type == "com.studiospates.quaza.openclipboard") {
+        if(shortcutItem.type == "com.studiospates.maccha.openclipboard") {
             slideViewValue.shortcutItem = 2
             succeeded = true
         }
-        else if(shortcutItem.type == "com.studiospates.quaza.opennewtab") {
+        else if(shortcutItem.type == "com.studiospates.maccha.opennewtab") {
             slideViewValue.shortcutItem = 1
             succeeded = true
         }
