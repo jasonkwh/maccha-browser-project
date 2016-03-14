@@ -102,7 +102,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var tempUrl: String = ""
     var readActionsCheck: Bool = false
     var pbString: String = ""
-    var activity:NSUserActivity = NSUserActivity(activityType: "com.studiospates.maccha.handsoff") //handsoff
+    var activity:NSUserActivity = NSUserActivity(activityType: "com.studiospates.maccha.handsoff") //handoff
     
     //remember previous scrolling position~~
     let panPressRecognizer = UIPanGestureRecognizer()
@@ -769,10 +769,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         }
         progressView.setProgress(0.0, animated: false)
         
-        //update handsoff
+        //update handoff
         if(webAddress != "about:blank") {
-            self.activity.webpageURL = NSURL(string: "http://" + webAddress)
-            self.activity.title = "Maccha"
+            self.activity.webpageURL = WKWebviewFactory.sharedInstance.webView.URL
             self.activity.becomeCurrent()
         }
     }
