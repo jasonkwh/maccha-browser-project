@@ -532,7 +532,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                     urlField.text = tempUrl
                 }
                 else {
-                    urlField.text = webAddress
+                    if(webAddress != "about:blank") {
+                        urlField.text = webAddress
+                    } else {
+                        urlField.text = "" //display blank while "about:blank"
+                    }
                 }
             }
             return true //urlField
