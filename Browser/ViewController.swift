@@ -524,6 +524,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     func textFieldDidBeginEditing(textField: UITextField) -> Bool {
         if textField == urlField {
             moveToolbar = true; //move toolbar as the keyboard moves
+            urlField.text = "" //reset urlField.text
             
             //display urls in urlfield
             if(moveToolbarShown == false) {
@@ -534,8 +535,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 else {
                     if(webAddress != "about:blank") {
                         urlField.text = webAddress
-                    } else {
-                        urlField.text = "" //display blank while "about:blank"
                     }
                 }
             }
