@@ -95,13 +95,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var moveToolbarReturn: Bool = false
     var webAddress: String = ""
     var webTitle: String = ""
-    var toolbarStyle: Int = 0 //save
+    var toolbarStyle: Int = 0
     var scrollDirectionDetermined: Bool = false
     var scrollMakeStatusBarDown: Bool = false
     var google: String = "https://www.google.com"
     var tempUrl: String = ""
     var readActionsCheck: Bool = false
     var pbString: String = ""
+    var activity:NSUserActivity = NSUserActivity(activityType: "com.studiospates.maccha.handsoff") //handsoff
     
     //remember previous scrolling position~~
     let panPressRecognizer = UIPanGestureRecognizer()
@@ -767,6 +768,13 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             slideViewValue.scrollPositionSwitch = false
         }
         progressView.setProgress(0.0, animated: false)
+        
+        //update handsoff
+        if(webAddress != "about:blank") {
+            self.activity.webpageURL = NSURL(string: "http://" + webAddress)
+            self.activity.title = "Maccha"
+            self.activity.becomeCurrent()
+        }
     }
     
     func webView(webView: WKWebView, didCommitNavigation navigation: WKNavigation!) {
