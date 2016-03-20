@@ -11,6 +11,9 @@
 */
 
 import UIKit
+import RealmSwift
+
+let realm_maccha = try! Realm()
 
 @available(iOS 9.0, *)
 @UIApplicationMain
@@ -74,6 +77,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        try! realm_maccha.write { //save data to Realm database
+            let gdata = GlobalData()
+            gdata.current_tab = slideViewValue.windowCurTab
+            gdata.search = slideViewValue.searchEngines
+            realm_maccha.add(gdata)
+            let htdata = HistoryData()
+            htdata.history_url = slideViewValue.historyUrl
+            htdata.history_title = slideViewValue.historyTitle
+            realm_maccha.add(gdata)
+            realm_maccha.add(htdata)
+        }
     }
 
 

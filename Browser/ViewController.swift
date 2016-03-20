@@ -12,6 +12,7 @@
 
 import UIKit
 import AudioToolbox
+import RealmSwift
 
 struct slideViewValue {
     static var scrollCellAction: Bool = false //false to scroll to latest tab, else do not
@@ -23,7 +24,7 @@ struct slideViewValue {
     static var windowStoreTitle = [String]() //save
     static var windowStoreUrl = [String]() //save
     static var windowCurTab: Int = 0 //save
-    static var windowCurColour: UIColor! //save
+    static var windowCurColour: UIColor!
     static var aboutScreen: Bool = false
     static var alertScreen: Bool = false
     static var doneScreen: Bool = false
@@ -36,6 +37,11 @@ struct slideViewValue {
     static var htButtonSwitch: Bool = false
     static var htButtonIndex: Int = 0
     static var scrollPositionSwitch: Bool = false //true is scroll back to user view, false is not
+    
+    
+    //Search Engines
+    //0: Google, 1: Bing
+    static var searchEngines:Int = 0 //save
     
     //get versions information from Xcode Project Setting
     static func version() -> String {
@@ -112,10 +118,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var longPressRecognizer = UILongPressGestureRecognizer()
     var longPressSwitch: Bool = false
     
-    //Search Engines
-    //0: Google, 1: Bing
-    var searchEngines:Int = 0 //save
-    
     required init?(coder aDecoder: NSCoder) {
         //Inject safari-reader.js, and initialise the wkwebview
         let path_reader = NSBundle.mainBundle().pathForResource("safari-reader", ofType: "js")
@@ -162,6 +164,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         addToolBar(urlField)
         definesUrlfield() //setup urlfield style
         displayRefreshOrStop() //display refresh or change to stop while loading...
+        loadRealmData()
         
         //set original homepage at index 0 of store array
         slideViewValue.windowStoreTitle = ["Google"]
@@ -237,6 +240,17 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
+    //Load data from Realm database
+    func loadRealmData() {
+        for gdata in realm_maccha.objects(GlobalData) {
+            slideViewValue.searchEngines = gdata.search
+        }
+        for htdata in realm_maccha.objects(HistoryData) {
+            slideViewValue.historyTitle = htdata.history_title
+            slideViewValue.historyUrl = htdata.history_url
+        }
+    }
+    
     //Determine quick actions...
     func openShortcutItem() {
         slideViewValue.windowStoreTitle.append("")
@@ -274,7 +288,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     //actions those the app going to do when the app enters background
     func applicationWillEnterBackground(notification: NSNotification) {
-        print("did enter background")
+        
     }
     
     override func canBecomeFirstResponder() -> Bool {
@@ -626,10 +640,10 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             var contents: String = ""
             let matches = matchesForRegexInText("(?i)(?:(?:https?):\\/\\/)?(?:\\S+(?::\\S*)?@)?(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))(?::\\d{2,5})?(?:\\/[^\\s]*)?", text: ("http://" + shorten_url))
             if(matches == []) {
-                if(searchEngines == 0) {
+                if(slideViewValue.searchEngines == 0) {
                     contents = "http://www.google.com/search?q=" + shorten_url.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
                 }
-                else if(searchEngines == 1) {
+                else if(slideViewValue.searchEngines == 1) {
                     contents = "http://www.bing.com/search?q=" + shorten_url.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
                 }
             }
@@ -916,12 +930,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     //function to load Google search
     func searchPressed() {
-        if(searchEngines == 0) {
-            searchEngines = 1
+        if(slideViewValue.searchEngines == 0) {
+            slideViewValue.searchEngines = 1
             //slideViewValue.alertPopup(3, message: "Your search engine was changed to Bing")
             self.view.makeToast("Bing It On!", duration: 0.8, position: CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height-70))
         } else {
-            searchEngines = 0
+            slideViewValue.searchEngines = 0
             //slideViewValue.alertPopup(3, message: "Your search engine was changed to Google")
             self.view.makeToast("Let's Google it!", duration: 0.8, position: CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height-70))
         }

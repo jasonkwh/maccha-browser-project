@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		34453A5F26BFE6C15E8C5916 /* Pods_maccha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAEBA95640F8ADD14723F212 /* Pods_maccha.framework */; };
 		3F10AC6F1C9585F900CAF0B7 /* WKWebviewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F10AC6E1C9585F900CAF0B7 /* WKWebviewFactory.swift */; };
+		3F198FF61C9832C40012A685 /* WkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F198FF51C9832C40012A685 /* WkData.swift */; };
+		3F198FF81C98330F0012A685 /* HistoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F198FF71C98330F0012A685 /* HistoryData.swift */; };
+		3F198FFA1C98333E0012A685 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F198FF91C98333E0012A685 /* GlobalData.swift */; };
 		3F568AFA1C85D7B800771303 /* safari-reader.js in Resources */ = {isa = PBXBuildFile; fileRef = 3F568AF91C85D7B800771303 /* safari-reader.js */; };
 		3F9760E91C651C9C006F2ACB /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9760E81C651C9C006F2ACB /* SlideViewController.swift */; };
 		3FB279AC1C7244E6007F0416 /* PathDynamicModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB279AB1C7244E6007F0416 /* PathDynamicModal.swift */; };
@@ -16,6 +19,7 @@
 		3FB279B01C72451A007F0416 /* ModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB279AE1C72451A007F0416 /* ModalView.xib */; };
 		3FC20F451C6007950016F522 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC20F441C6007950016F522 /* SWRevealViewController.m */; };
 		3FC579CA1C89F12400654FF3 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC579C91C89F12400654FF3 /* Toast.swift */; };
+		3FD6A25B1C9F09CC005E79EC /* WkString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6A25A1C9F09CC005E79EC /* WkString.swift */; };
 		3FDF7E601C61968700C8BD4A /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF7E5F1C61968700C8BD4A /* Reach.swift */; };
 		3FE8C9001C98269100120237 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE8C8FC1C98267900120237 /* Realm.framework */; };
 		3FE8C9011C98269100120237 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE8C8FC1C98267900120237 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -56,6 +60,9 @@
 
 /* Begin PBXFileReference section */
 		3F10AC6E1C9585F900CAF0B7 /* WKWebviewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebviewFactory.swift; sourceTree = "<group>"; };
+		3F198FF51C9832C40012A685 /* WkData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WkData.swift; path = BrowserData/WkData.swift; sourceTree = "<group>"; };
+		3F198FF71C98330F0012A685 /* HistoryData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryData.swift; path = BrowserData/HistoryData.swift; sourceTree = "<group>"; };
+		3F198FF91C98333E0012A685 /* GlobalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalData.swift; path = BrowserData/GlobalData.swift; sourceTree = "<group>"; };
 		3F1EE7D61C5D499700923DF3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		3F568AF91C85D7B800771303 /* safari-reader.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "safari-reader.js"; sourceTree = "<group>"; };
 		3F6683511C782F0400288B95 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
@@ -66,6 +73,7 @@
 		3FC20F431C6007950016F522 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		3FC20F441C6007950016F522 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		3FC579C91C89F12400654FF3 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = "../Pods/Toast-Swift/Toast/Toast.swift"; sourceTree = "<group>"; };
+		3FD6A25A1C9F09CC005E79EC /* WkString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WkString.swift; path = BrowserData/WkString.swift; sourceTree = "<group>"; };
 		3FDF7E5F1C61968700C8BD4A /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
 		3FE8C8FC1C98267900120237 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Realm/Realm.framework; sourceTree = "<group>"; };
 		3FE8C8FD1C98267900120237 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Realm/RealmSwift.framework; sourceTree = "<group>"; };
@@ -113,6 +121,17 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		3F198FF41C9830D30012A685 /* BrowserData */ = {
+			isa = PBXGroup;
+			children = (
+				3FD6A25A1C9F09CC005E79EC /* WkString.swift */,
+				3F198FF51C9832C40012A685 /* WkData.swift */,
+				3F198FF71C98330F0012A685 /* HistoryData.swift */,
+				3F198FF91C98333E0012A685 /* GlobalData.swift */,
+			);
+			name = BrowserData;
+			sourceTree = "<group>";
+		};
 		3FC20F411C6007600016F522 /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,13 +139,14 @@
 				3FC20F441C6007950016F522 /* SWRevealViewController.m */,
 			);
 			name = SWRevealViewController;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		5F8533611A5BB8C800F14347 = {
 			isa = PBXGroup;
 			children = (
 				3F6683511C782F0400288B95 /* Header.h */,
-				3FC20F411C6007600016F522 /* SWRevealViewController */,
+				3F198FF41C9830D30012A685 /* BrowserData */,
 				5F85336C1A5BB8C800F14347 /* Browser */,
 				5F8533821A5BB8C900F14347 /* BrowserTests */,
 				5F85336B1A5BB8C800F14347 /* Products */,
@@ -147,6 +167,7 @@
 		5F85336C1A5BB8C800F14347 /* Browser */ = {
 			isa = PBXGroup;
 			children = (
+				3FC20F411C6007600016F522 /* SWRevealViewController */,
 				3F0654CA1C65CD0200EF4E2D /* Resources */,
 				5F85336F1A5BB8C900F14347 /* AppDelegate.swift */,
 				5F8533711A5BB8C900F14347 /* ViewController.swift */,
@@ -386,10 +407,14 @@
 				3F9760E91C651C9C006F2ACB /* SlideViewController.swift in Sources */,
 				3FDF7E601C61968700C8BD4A /* Reach.swift in Sources */,
 				3F10AC6F1C9585F900CAF0B7 /* WKWebviewFactory.swift in Sources */,
+				3F198FF61C9832C40012A685 /* WkData.swift in Sources */,
+				3F198FFA1C98333E0012A685 /* GlobalData.swift in Sources */,
 				3FB279AC1C7244E6007F0416 /* PathDynamicModal.swift in Sources */,
+				3FD6A25B1C9F09CC005E79EC /* WkString.swift in Sources */,
 				5F8533701A5BB8C900F14347 /* AppDelegate.swift in Sources */,
 				3FC579CA1C89F12400654FF3 /* Toast.swift in Sources */,
 				3FC20F451C6007950016F522 /* SWRevealViewController.m in Sources */,
+				3F198FF81C98330F0012A685 /* HistoryData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
