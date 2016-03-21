@@ -223,8 +223,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             if(slideViewValue.newUser == 0) {
                 loadRequest(slideViewValue.windowStoreUrl[0])
             } else {
-                if((slideViewValue.windowStoreTitle.count == 1) && (slideViewValue.windowStoreUrl[0] == "about:blank")) {
-                    WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
+                if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] == "about:blank") {
+                    loadRequest("about:blank")
                 } else {
                     slideViewValue.scrollPositionSwitch = true
                     loadRequest(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])
@@ -278,7 +278,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
         windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
         if(slideViewValue.shortcutItem == 1) {
-            WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
+            loadRequest("about:blank")
         }
         else if(slideViewValue.shortcutItem == 2) {
             //Open URL from clipboard
@@ -396,7 +396,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             if(slideViewValue.newtabButton == true) {
                 slideViewValue.readActions = false //disable readbility
                 //open new tab
-                WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
+                loadRequest("about:blank")
                 slideViewValue.windowStoreTitle.append(WKWebviewFactory.sharedInstance.webView.title!)
                 slideViewValue.windowStoreUrl.append((WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!)
                 
@@ -649,42 +649,46 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //function to load webview request
     func loadRequest(inputUrlAddress: String) {
         
-        if (checkConnectionStatus() == true) {
-            slideViewValue.readActions = false //disable readbility
-            
-            //shorten the url by replacing http and https to null
-            let shorten_url = inputUrlAddress.stringByReplacingOccurrencesOfString("https://", withString: "").stringByReplacingOccurrencesOfString("http://", withString: "").stringByReplacingOccurrencesOfString(" ", withString: "+")
-            
-            //check if it is URL, else use search engine
-            var contents: String = ""
-            let matches = matchesForRegexInText("(?i)(?:(?:https?):\\/\\/)?(?:\\S+(?::\\S*)?@)?(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))(?::\\d{2,5})?(?:\\/[^\\s]*)?", text: ("http://" + shorten_url))
-            if(matches == []) {
-                if(slideViewValue.searchEngines == 0) {
-                    contents = "http://www.google.com/search?q=" + shorten_url.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+        if(inputUrlAddress == "about:blank") {
+            WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
+        } else {
+            if (checkConnectionStatus() == true) {
+                slideViewValue.readActions = false //disable readbility
+                
+                //shorten the url by replacing http and https to null
+                let shorten_url = inputUrlAddress.stringByReplacingOccurrencesOfString("https://", withString: "").stringByReplacingOccurrencesOfString("http://", withString: "").stringByReplacingOccurrencesOfString(" ", withString: "+")
+                
+                //check if it is URL, else use search engine
+                var contents: String = ""
+                let matches = matchesForRegexInText("(?i)(?:(?:https?):\\/\\/)?(?:\\S+(?::\\S*)?@)?(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))(?::\\d{2,5})?(?:\\/[^\\s]*)?", text: ("http://" + shorten_url))
+                if(matches == []) {
+                    if(slideViewValue.searchEngines == 0) {
+                        contents = "http://www.google.com/search?q=" + shorten_url.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+                    }
+                    else if(slideViewValue.searchEngines == 1) {
+                        contents = "http://www.bing.com/search?q=" + shorten_url.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+                    }
                 }
-                else if(slideViewValue.searchEngines == 1) {
-                    contents = "http://www.bing.com/search?q=" + shorten_url.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+                else {
+                    contents = "http://" + shorten_url
                 }
+                
+                //load contents by wkwebview
+                WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: contents)!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30))
             }
             else {
-                contents = "http://" + shorten_url
-            }
-            
-            //load contents by wkwebview
-            WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: contents)!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30))
-        }
-        else {
-            //Popup alert window
-            hideKeyboard()
-            slideViewValue.alertPopup(0, message: "The Internet connection appears to be offline.")
-            
-            //insert a blank page if there's nothing store in the arrays
-            if(slideViewValue.windowStoreTitle.count == 0) {
-                slideViewValue.windowStoreTitle.append("")
-                slideViewValue.windowStoreUrl.append("about:blank")
+                //Popup alert window
+                hideKeyboard()
+                slideViewValue.alertPopup(0, message: "The Internet connection appears to be offline.")
                 
-                //initial y point
-                slideViewValue.scrollPosition.append("0.0")
+                //insert a blank page if there's nothing store in the arrays
+                if(slideViewValue.windowStoreTitle.count == 0) {
+                    slideViewValue.windowStoreTitle.append("")
+                    slideViewValue.windowStoreUrl.append("about:blank")
+                    
+                    //initial y point
+                    slideViewValue.scrollPosition.append("0.0")
+                }
             }
         }
     }
