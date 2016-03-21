@@ -15,36 +15,49 @@ PODS:
   - AFNetworking/Serialization (3.0.4)
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
-  - MGSwipeTableCell (1.5.3)
+  - MGSwipeTableCell (1.5.4)
   - Toast-Swift (1.0.0)
 
 DEPENDENCIES:
   - 1PasswordExtension (from `https://github.com/AgileBits/onepassword-app-extension.git`, branch `master`)
-  - AFNetworking (~> 3.0)
-  - MGSwipeTableCell (from `https://github.com/MortimerGoro/MGSwipeTableCell.git`)
-  - Toast-Swift (~> 1.0.0)
+  - AFNetworking (from `https://github.com/AFNetworking/AFNetworking.git`, branch `master`)
+  - MGSwipeTableCell (from `https://github.com/MortimerGoro/MGSwipeTableCell.git`, branch `master`)
+  - Toast-Swift (from `https://github.com/scalessec/Toast-Swift.git`, branch `master`)
 
 EXTERNAL SOURCES:
   1PasswordExtension:
     :branch: master
     :git: https://github.com/AgileBits/onepassword-app-extension.git
+  AFNetworking:
+    :branch: master
+    :git: https://github.com/AFNetworking/AFNetworking.git
   MGSwipeTableCell:
+    :branch: master
     :git: https://github.com/MortimerGoro/MGSwipeTableCell.git
+  Toast-Swift:
+    :branch: master
+    :git: https://github.com/scalessec/Toast-Swift.git
 
 CHECKOUT OPTIONS:
   1PasswordExtension:
     :commit: 0c2f0a2085906277386a02e158ddb6a285b5963f
     :git: https://github.com/AgileBits/onepassword-app-extension.git
+  AFNetworking:
+    :commit: 32cf30a2451917c25d853fccb9e112b64415595e
+    :git: https://github.com/AFNetworking/AFNetworking.git
   MGSwipeTableCell:
-    :commit: 118d969ff4857db9bad056cd4cc979750b418a15
+    :commit: 49e697a3b8ebcdb3ddb09a39e59bf9463e5f5de6
     :git: https://github.com/MortimerGoro/MGSwipeTableCell.git
+  Toast-Swift:
+    :commit: 9d6a55661590a1ede0c77c970cf10ca31cb4cad9
+    :git: https://github.com/scalessec/Toast-Swift.git
 
 SPEC CHECKSUMS:
   1PasswordExtension: 627d5aecf210c7636968faf5a4c3546c9531385b
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
-  MGSwipeTableCell: 5ae3b9a15efda26b201adc8676b24040febe6ff6
+  MGSwipeTableCell: cffd3378af74eb991911f132c5f3911261fda860
   Toast-Swift: 709908e9f9a96dfd72438f9301ae28e3e98c16bb
 
-PODFILE CHECKSUM: 6e74119b75f74eb8f6553fca773c7629e23d6304
+PODFILE CHECKSUM: 4105c5505709c752a72040ac4a947fb50120189a
 
 COCOAPODS: 1.0.0.beta.6
