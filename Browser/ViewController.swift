@@ -30,14 +30,14 @@ struct slideViewValue {
     static var doneScreen: Bool = false
     static var searchScreen: Bool = false
     static var alertContents: String = ""
-    static var scrollPosition = [CGFloat]() //save
+    static var scrollPosition = [String]() //save
     static var shortcutItem: Int = 0
     static var historyTitle = [String]() //save, for history
     static var historyUrl = [String]() //save, for history
     static var htButtonSwitch: Bool = false
     static var htButtonIndex: Int = 0
     static var scrollPositionSwitch: Bool = false //true is scroll back to user view, false is not
-    
+    static var newUser: Int = 0
     
     //Search Engines
     //0: Google, 1: Bing
@@ -166,10 +166,13 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         displayRefreshOrStop() //display refresh or change to stop while loading...
         loadRealmData()
         
-        //set original homepage at index 0 of store array
-        slideViewValue.windowStoreTitle = ["Google"]
-        slideViewValue.windowStoreUrl = [google]
-        slideViewValue.scrollPosition = [(CGFloat(0.0))]
+        if(slideViewValue.newUser == 0) {
+            //set original homepage at index 0 of store array
+            slideViewValue.windowStoreTitle = ["Google"]
+            slideViewValue.windowStoreUrl = [google]
+            slideViewValue.scrollPosition = ["0.0"]
+            slideViewValue.newUser = 1
+        }
         
         //display current window number on the window button
         displayCurWindowNum(slideViewValue.windowStoreTitle.count)
@@ -217,7 +220,16 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         forwardButton.enabled = false
         
         if(slideViewValue.shortcutItem == 0) {
-            loadRequest(slideViewValue.windowStoreUrl[slideViewValue.windowStoreTitle.count-1])
+            if(slideViewValue.newUser == 0) {
+                loadRequest(slideViewValue.windowStoreUrl[0])
+            } else {
+                if((slideViewValue.windowStoreTitle.count == 1) && (slideViewValue.windowStoreUrl[0] == "about:blank")) {
+                    WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
+                } else {
+                    slideViewValue.scrollPositionSwitch = true
+                    loadRequest(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])
+                }
+            }
         }
         else {
             let pb: UIPasteboard = UIPasteboard.generalPasteboard()
@@ -242,8 +254,15 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     //Load data from Realm database
     func loadRealmData() {
+        for wdata in realm_maccha.objects(WkData) {
+            slideViewValue.windowStoreTitle = wdata.wk_title
+            slideViewValue.windowStoreUrl = wdata.wk_url
+            slideViewValue.scrollPosition = wdata.wk_scrollPosition
+        }
         for gdata in realm_maccha.objects(GlobalData) {
             slideViewValue.searchEngines = gdata.search
+            slideViewValue.windowCurTab = gdata.current_tab
+            slideViewValue.newUser = gdata.new_user
         }
         for htdata in realm_maccha.objects(HistoryData) {
             slideViewValue.historyTitle = htdata.history_title
@@ -255,7 +274,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     func openShortcutItem() {
         slideViewValue.windowStoreTitle.append("")
         slideViewValue.windowStoreUrl.append("about:blank")
-        slideViewValue.scrollPosition.append(CGFloat(0.0))
+        slideViewValue.scrollPosition.append("0.0")
         slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
         windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
         if(slideViewValue.shortcutItem == 1) {
@@ -365,7 +384,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                         slideViewValue.windowStoreUrl.append((WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!)
                         
                         //initial y point
-                        slideViewValue.scrollPosition.append(CGFloat(0.0))
+                        slideViewValue.scrollPosition.append("0.0")
                         
                         slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
                     }
@@ -382,7 +401,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 slideViewValue.windowStoreUrl.append((WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!)
                 
                 //initial y point
-                slideViewValue.scrollPosition.append(CGFloat(0.0))
+                slideViewValue.scrollPosition.append("0.0")
                 
                 slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
                 slideViewValue.newtabButton = false
@@ -433,7 +452,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     func scrollViewDidScroll(scrollView: UIScrollView) {
         //store current scroll positions to array
         if(scrollPositionRecord == true) {
-            slideViewValue.scrollPosition[slideViewValue.windowCurTab] = scrollView.contentOffset.y
+            slideViewValue.scrollPosition[slideViewValue.windowCurTab] = scrollView.contentOffset.y.description
         }
         
         if !scrollDirectionDetermined {
@@ -665,7 +684,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 slideViewValue.windowStoreUrl.append("about:blank")
                 
                 //initial y point
-                slideViewValue.scrollPosition.append(CGFloat(0.0))
+                slideViewValue.scrollPosition.append("0.0")
             }
         }
     }
@@ -781,7 +800,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         //disable the original wkactionsheet
         webView.evaluateJavaScript("document.body.style.webkitTouchCallout='none';", completionHandler: nil)
         if(slideViewValue.scrollPositionSwitch == true) {
-            WKWebviewFactory.sharedInstance.webView.scrollView.setContentOffset(CGPointMake(0.0, slideViewValue.scrollPosition[slideViewValue.windowCurTab]), animated: true)
+            WKWebviewFactory.sharedInstance.webView.scrollView.setContentOffset(CGPointMake(0.0, CGFloat(NSNumberFormatter().numberFromString(slideViewValue.scrollPosition[slideViewValue.windowCurTab])!)), animated: true)
             slideViewValue.scrollPositionSwitch = false
         }
         progressView.setProgress(0.0, animated: false)
@@ -856,7 +875,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             self.windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
             
             //initial y point
-            slideViewValue.scrollPosition.append(CGFloat(0.0))
+            slideViewValue.scrollPosition.append("0.0")
             
             self.loadRequest(urlStr)
         }

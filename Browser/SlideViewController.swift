@@ -168,7 +168,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     slideViewValue.windowStoreUrl[0] = "about:blank"
                     self.tempArray_title[0] = ""
                     slideViewValue.windowStoreTitle = self.tempArray_title
-                    slideViewValue.scrollPosition[0] = 0.0
+                    slideViewValue.scrollPosition[0] = "0.0"
                     
                     //open tabs in background
                     slideViewValue.readActions = false //disable readbility

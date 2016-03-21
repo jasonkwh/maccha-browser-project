@@ -17,6 +17,7 @@ class GlobalData: Object {
     
     dynamic var search: Int = 0
     dynamic var current_tab: Int = 0
+    dynamic var new_user: Int = 0
     
 // Specify properties to ignore (Realm won't persist these)
     

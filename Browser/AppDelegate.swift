@@ -77,14 +77,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        try! realm_maccha.write { //save data to Realm database
+        try! realm_maccha.write {
+            //save data to Realm database
             let gdata = GlobalData()
             gdata.current_tab = slideViewValue.windowCurTab
             gdata.search = slideViewValue.searchEngines
+            gdata.new_user = slideViewValue.newUser
             realm_maccha.add(gdata)
             let htdata = HistoryData()
             htdata.history_url = slideViewValue.historyUrl
             htdata.history_title = slideViewValue.historyTitle
+            let wdata = WkData()
+            wdata.wk_url = slideViewValue.windowStoreUrl
+            wdata.wk_title = slideViewValue.windowStoreTitle
+            wdata.wk_scrollPosition = slideViewValue.scrollPosition
+            realm_maccha.add(wdata)
             realm_maccha.add(gdata)
             realm_maccha.add(htdata)
         }

@@ -43,9 +43,23 @@ class WkData: Object {
     }
     let _backingWkTitle = List<WkString>()
     
+    //store scroll position
+    var wk_scrollPosition: [String] {
+        get {
+            return _backingWkPosition.map {
+                $0.stringValue
+            }
+        }
+        set {
+            _backingWkPosition.removeAll()
+            _backingWkPosition.appendContentsOf(newValue.map({WkString(value: [$0]) }))
+        }
+    }
+    let _backingWkPosition = List<WkString>()
+    
 // Specify properties to ignore (Realm won't persist these)
     
     override static func ignoredProperties() -> [String] {
-        return ["wk_url", "wk_title"]
+        return ["wk_url", "wk_title", "wk_scrollPosition"]
     }
 }
