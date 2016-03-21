@@ -1,4 +1,3 @@
-//
 /*
 *  WKWebviewFactory.swift
 *  Maccha Browser
