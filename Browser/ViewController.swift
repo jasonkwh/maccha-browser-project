@@ -522,9 +522,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //function which defines the clear button of the urlfield and some characteristics of urlfield
     func definesUrlfield() {
         //changes scales exclusively for iPhone 6 Plus or iPhone 6s Plus
-        if((UIDevice.currentDevice().modelName == "iPhone 6 Plus") || (UIDevice.currentDevice().modelName == "iPhone 6s Plus") || (UIDevice.currentDevice().modelName == "Simulator")) {
+        /*if((UIDevice.currentDevice().modelName == "iPhone 6 Plus") || (UIDevice.currentDevice().modelName == "iPhone 6s Plus") || (UIDevice.currentDevice().modelName == "Simulator")) {
             urlField.frame.size.width = 208
-        }
+        }*/
         urlField.autoresizingMask = UIViewAutoresizing.FlexibleWidth
         urlField.clipsToBounds = true
         let crButton = UIButton(type: UIButtonType.System)

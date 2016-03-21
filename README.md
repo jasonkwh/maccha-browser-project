@@ -4,6 +4,7 @@
 [![Build Status](https://travis-ci.org/jasonkwh/maccha-browser-project.svg?branch=master)](https://travis-ci.org/jasonkwh/maccha-browser-project)
 
 Maccha is intended to revolutionize the web browsing experiences on iOS phablets.
+[Click to try Maccha](https://appetize.io/app/3gc3duuhjd9hg5pwnygvuatgtg)
 
 ## Setting up with CocoaPods
 
