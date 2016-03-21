@@ -22,7 +22,6 @@
 		2B874A2BCED407956E4571D4841DC454 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 162707165EB57BE51B3B016D1BB0F2AC /* QuartzCore.framework */; };
 		2E8A32ED46194EDBE22146271F6D26DE /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4129EC3C9C73C3FD75C2A47694CE4FA9 /* UIImageView+AFNetworking.m */; };
 		330BFB702A29CF28E5DC59002AF555DE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1162B7E6EF1AC4E365FFB9913BFCB5B9 /* MobileCoreServices.framework */; };
-		340AABE2C23B29EFE857F6172820401C /* OnePasswordExtensionResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 054782D7C204F6C14385858E77A3BDE0 /* OnePasswordExtensionResources.bundle */; };
 		3D2789FC760A97301909F0B1201626CD /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CB140CA8A5885575CC26CA7FCBDA6 /* AFNetworking-dummy.m */; };
 		3F1BC9BAFFEEABB1ABC7614DF0FC97D5 /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 753946E4C415CDF8553EC1E68476F045 /* AFAutoPurgingImageCache.m */; };
 		436FAC2B642D5CE0D69AF3E66305707A /* Pods-maccha-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB72FE7F0F2FC6D60D1605599B71B63 /* Pods-maccha-dummy.m */; };
@@ -734,7 +733,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				340AABE2C23B29EFE857F6172820401C /* OnePasswordExtensionResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
