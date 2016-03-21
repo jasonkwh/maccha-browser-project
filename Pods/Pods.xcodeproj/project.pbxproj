@@ -851,10 +851,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0324A903716FC7D70CB45722779C337A /* Debug */ = {
+		04ACA67E936F1BC0531DCE2DD7F2B95B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E359DF7F4C9006E8202DBFC7D0B51F49 /* 1PasswordExtension.xcconfig */;
 			buildSettings = {
+				CONFIGURATION_BUILD_DIR = $CONFIGURATION_BUILD_DIR/1PasswordExtension;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/1PasswordExtension/ResourceBundle-OnePasswordExtensionResources-Info.plist";
@@ -1020,22 +1021,6 @@
 			};
 			name = Release;
 		};
-		8448FB7B63CE8AB0E72F8F700B2604C1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E359DF7F4C9006E8202DBFC7D0B51F49 /* 1PasswordExtension.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/1PasswordExtension/ResourceBundle-OnePasswordExtensionResources-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = OnePasswordExtensionResources;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		882EB4391EC2E701934974DA86F7343F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1198,6 +1183,23 @@
 			};
 			name = Release;
 		};
+		ECB4F7EC388C2CF112E808CC5B40F318 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E359DF7F4C9006E8202DBFC7D0B51F49 /* 1PasswordExtension.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = $CONFIGURATION_BUILD_DIR/1PasswordExtension;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/1PasswordExtension/ResourceBundle-OnePasswordExtensionResources-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = OnePasswordExtensionResources;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		F30C15F9C5ABC29F826EB0BF627A0FA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A1A98C35C20703404701517891A0E263 /* MGSwipeTableCell.xcconfig */;
@@ -1321,8 +1323,8 @@
 		A7D2C79CF66FE8574AAD47094F69E620 /* Build configuration list for PBXNativeTarget "1PasswordExtension-OnePasswordExtensionResources" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0324A903716FC7D70CB45722779C337A /* Debug */,
-				8448FB7B63CE8AB0E72F8F700B2604C1 /* Release */,
+				04ACA67E936F1BC0531DCE2DD7F2B95B /* Debug */,
+				ECB4F7EC388C2CF112E808CC5B40F318 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
