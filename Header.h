@@ -12,7 +12,7 @@
 
 #ifndef Header_h
 #define Header_h
-#import "SWRevealViewController.h"
+#import "SWRevealViewController/SWRevealViewController.h"
 #import "Pods/MGSwipeTableCell/MGSwipeTableCell/MGSwipeTableCell.h"
 #import "Pods/1PasswordExtension/OnePasswordExtension.h"
 #import "Pods/AFNetworking/AFNetworking/AFNetworking.h"
