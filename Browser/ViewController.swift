@@ -147,8 +147,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         
         //register observer for willEnterForeground / willEnterBackground state
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationDidBecomeActiveNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterBackground:", name: UIApplicationDidEnterBackgroundNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UIApplicationDelegate.applicationWillEnterForeground(_:)), name: UIApplicationDidBecomeActiveNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.applicationWillEnterBackground(_:)), name: UIApplicationDidEnterBackgroundNotification, object: nil)
         
         self.revealViewController().delegate = self
         if self.revealViewController() != nil {
@@ -193,17 +193,17 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         
         //hook the tap press event
         panPressRecognizer.delegate = self
-        panPressRecognizer.addTarget(self, action: "onPanPress:")
+        panPressRecognizer.addTarget(self, action: #selector(ViewController.onPanPress(_:)))
         WKWebviewFactory.sharedInstance.webView.scrollView.addGestureRecognizer(panPressRecognizer)
         
         //long press to show the action sheet
         longPressRecognizer.delegate = self
-        longPressRecognizer.addTarget(self, action: "onLongPress:")
+        longPressRecognizer.addTarget(self, action: #selector(ViewController.onLongPress(_:)))
         WKWebviewFactory.sharedInstance.webView.scrollView.addGestureRecognizer(longPressRecognizer)
         
         //user agent string
         let ver:String = "Kapiko/4.0 Maccha/" + slideViewValue.version()
-        WKWebviewFactory.sharedInstance.webView.performSelector("_setApplicationNameForUserAgent:", withObject: ver)
+        WKWebviewFactory.sharedInstance.webView.performSelector(Selector("_setApplicationNameForUserAgent:"), withObject: ver)
         
         WKWebviewFactory.sharedInstance.webView.allowsBackForwardNavigationGestures = true //enable Back & Forward gestures
         barView.frame = CGRect(x:0, y: 0, width: view.frame.width, height: 30)
@@ -529,7 +529,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         urlField.clipsToBounds = true
         let crButton = UIButton(type: UIButtonType.System)
         crButton.setImage(UIImage(named: "Clear"), forState: UIControlState.Normal)
-        crButton.addTarget(self, action: "clearPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        crButton.addTarget(self, action: #selector(ViewController.clearPressed), forControlEvents: UIControlEvents.TouchUpInside)
         crButton.imageEdgeInsets = UIEdgeInsetsMake(0, -5, 0, 5)
         crButton.frame = CGRectMake(0, 0, 15, 15)
         urlField.rightViewMode = .WhileEditing
@@ -540,14 +540,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     func displayCurWindowNum(currentNum: Int) {
         windowView.setBackgroundImage(UIImage(named: "Window"), forState: UIControlState.Normal)
         windowView.setTitle(String(currentNum), forState: UIControlState.Normal)
-        windowView.addTarget(revealViewController(), action: "rightRevealToggle:", forControlEvents: UIControlEvents.TouchUpInside)
+        windowView.addTarget(revealViewController(), action: #selector(SWRevealViewController.rightRevealToggle(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         windowView.frame = CGRectMake(0, 0, 30, 30)
     }
     
     //function to display refresh or change to stop while loading...
     func displayRefreshOrStop() {
         refreshStopButton.setImage(UIImage(named: "Refresh"), forState: UIControlState.Normal)
-        refreshStopButton.addTarget(self, action: "refreshPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        refreshStopButton.addTarget(self, action: #selector(ViewController.refreshPressed), forControlEvents: UIControlEvents.TouchUpInside)
         refreshStopButton.imageEdgeInsets = UIEdgeInsetsMake(0, -13, 0, -15)
         refreshStopButton.frame = CGRectMake(0, 0, 30, 30)
     }
@@ -589,8 +589,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         super.viewWillAppear(animated)
         
         self.navigationController?.navigationBarHidden = true //hide navigation bar
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(ViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(ViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     //auto show toolbar while editing
@@ -739,7 +739,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             if(Float(WKWebviewFactory.sharedInstance.webView.estimatedProgress) > 0.0) {
                 //set refreshStopButton to stop state
                 refreshStopButton.setImage(UIImage(named: "Stop"), forState: UIControlState.Normal)
-                refreshStopButton.addTarget(self, action: "stopPressed", forControlEvents: UIControlEvents.TouchUpInside)
+                refreshStopButton.addTarget(self, action: #selector(ViewController.stopPressed), forControlEvents: UIControlEvents.TouchUpInside)
             }
             if(Float(WKWebviewFactory.sharedInstance.webView.estimatedProgress) > 0.1) {
                 //shorten url by replacing http:// and https:// to null
@@ -771,7 +771,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             if(Float(WKWebviewFactory.sharedInstance.webView.estimatedProgress) == 1.0) {
                 //set refresh button style
                 refreshStopButton.setImage(UIImage(named: "Refresh"), forState: UIControlState.Normal)
-                refreshStopButton.addTarget(self, action: "refreshPressed", forControlEvents: UIControlEvents.TouchUpInside)
+                refreshStopButton.addTarget(self, action: #selector(ViewController.refreshPressed), forControlEvents: UIControlEvents.TouchUpInside)
                 
                 
                 //Store value for History feature
@@ -998,49 +998,49 @@ extension UIViewController: UITextFieldDelegate{
         //cut button
         let cButton = UIButton(type: UIButtonType.System)
         cButton.setImage(UIImage(named: "Cut"), forState: UIControlState.Normal)
-        cButton.addTarget(self, action: "cutPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        cButton.addTarget(self, action: #selector(ViewController.cutPressed), forControlEvents: UIControlEvents.TouchUpInside)
         cButton.frame = CGRectMake(0, 0, 30, 30)
         let cutButton = UIBarButtonItem(customView: cButton)
         
         //copy button
         let cpButton = UIButton(type: UIButtonType.System)
         cpButton.setImage(UIImage(named: "Copy"), forState: UIControlState.Normal)
-        cpButton.addTarget(self, action: "copyPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        cpButton.addTarget(self, action: #selector(ViewController.copyPressed), forControlEvents: UIControlEvents.TouchUpInside)
         cpButton.frame = CGRectMake(0, 0, 30, 30)
         let copyButton = UIBarButtonItem(customView: cpButton)
         
         //paste button
         let pButton = UIButton(type: UIButtonType.System)
         pButton.setImage(UIImage(named: "Paste"), forState: UIControlState.Normal)
-        pButton.addTarget(self, action: "pastePressed", forControlEvents: UIControlEvents.TouchUpInside)
+        pButton.addTarget(self, action: #selector(ViewController.pastePressed), forControlEvents: UIControlEvents.TouchUpInside)
         pButton.frame = CGRectMake(0, 0, 30, 30)
         let pasteButton = UIBarButtonItem(customView: pButton)
         
         //new tab button
         let nButton = UIButton(type: UIButtonType.System)
         nButton.setImage(UIImage(named: "Password"), forState: UIControlState.Normal)
-        nButton.addTarget(self, action: Selector("pwPressed:"), forControlEvents: UIControlEvents.TouchUpInside)
+        nButton.addTarget(self, action: #selector(ViewController.pwPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         nButton.frame = CGRectMake(0, 0, 30, 30)
         let plusButton = UIBarButtonItem(customView: nButton)
         
         //refresh button
         let rButton = UIButton(type: UIButtonType.System)
         rButton.setImage(UIImage(named: "Search"), forState: UIControlState.Normal)
-        rButton.addTarget(self, action: "searchPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        rButton.addTarget(self, action: #selector(ViewController.searchPressed), forControlEvents: UIControlEvents.TouchUpInside)
         rButton.frame = CGRectMake(0, 0, 30, 30)
         let refreshButton = UIBarButtonItem(customView: rButton)
         
         //slash button
         let sButton = UIButton(type: UIButtonType.System)
         sButton.setImage(UIImage(named: "Slash"), forState: UIControlState.Normal)
-        sButton.addTarget(self, action: "addSlash", forControlEvents: UIControlEvents.TouchUpInside)
+        sButton.addTarget(self, action: #selector(ViewController.addSlash), forControlEvents: UIControlEvents.TouchUpInside)
         sButton.frame = CGRectMake(0, 0, 30, 30)
         let slashButton = UIBarButtonItem(customView: sButton)
         
         //hide keyboard button
         let hkButton = UIButton(type: UIButtonType.System)
         hkButton.setImage(UIImage(named: "Hide"), forState: UIControlState.Normal)
-        hkButton.addTarget(self, action: "hideKeyboard", forControlEvents: UIControlEvents.TouchUpInside)
+        hkButton.addTarget(self, action: #selector(ViewController.hideKeyboard), forControlEvents: UIControlEvents.TouchUpInside)
         hkButton.frame = CGRectMake(0, 0, 30, 30)
         let hideButton = UIBarButtonItem(customView: hkButton)
         

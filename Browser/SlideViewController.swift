@@ -140,7 +140,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
                         slideViewValue.scrollPosition.removeAtIndex(indexPath.row)
                         if(indexPath.row < slideViewValue.windowCurTab) {
-                            slideViewValue.windowCurTab--
+                            slideViewValue.windowCurTab -= 1
                         }
                         slideViewValue.windowStoreTitle = self.tempArray_title
                     }
@@ -149,12 +149,14 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                             self.tempArray_title.removeAtIndex(indexPath.row)
                             slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
                             slideViewValue.scrollPosition.removeAtIndex(indexPath.row)
-                            slideViewValue.windowCurTab--
                         }
                         else {
                             self.tempArray_title.removeAtIndex(indexPath.row)
                             slideViewValue.windowStoreUrl.removeAtIndex(indexPath.row)
                             slideViewValue.scrollPosition.removeAtIndex(indexPath.row)
+                        }
+                        if(slideViewValue.windowCurTab != 0) {
+                            slideViewValue.windowCurTab -= 1
                         }
                         slideViewValue.windowStoreTitle = self.tempArray_title
                         
@@ -215,41 +217,41 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //function to display New tab button with the height 30 and width 30
     func displayNewtabButton() {
         ntButton.setImage(UIImage(named: "Addtab"), forState: UIControlState.Normal)
-        ntButton.addTarget(self, action: "newtabAction", forControlEvents: UIControlEvents.TouchUpInside)
+        ntButton.addTarget(self, action: #selector(SlideViewController.newtabAction), forControlEvents: UIControlEvents.TouchUpInside)
         ntButton.frame = CGRectMake(0, 0, 25, 25)
     }
     
     //function to display safari button with the height 30 and width 30
     func displaySafariButton() {
         sfButton.setImage(UIImage(named: "Safari"), forState: UIControlState.Normal)
-        sfButton.addTarget(self, action: "safariAction", forControlEvents: UIControlEvents.TouchUpInside)
+        sfButton.addTarget(self, action: #selector(SlideViewController.safariAction), forControlEvents: UIControlEvents.TouchUpInside)
         sfButton.frame = CGRectMake(0, 0, 25, 25)
     }
     
     //function to display history button with the height 30 and width 30
     func displayHistoryButton() {
         htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
-        htButton.addTarget(self, action: "historyAction", forControlEvents: UIControlEvents.TouchUpInside)
+        htButton.addTarget(self, action: #selector(SlideViewController.historyAction), forControlEvents: UIControlEvents.TouchUpInside)
         htButton.frame = CGRectMake(0, 0, 25, 25)
     }
     
     //function to display Bookmark button with the height 30 and width 30
     func displayBookmarkButton() {
         bkButton.setImage(UIImage(named: "Bookmark"), forState: UIControlState.Normal)
-        bkButton.addTarget(self, action: "bookmarkAction", forControlEvents: UIControlEvents.TouchUpInside)
+        bkButton.addTarget(self, action: #selector(SlideViewController.bookmarkAction), forControlEvents: UIControlEvents.TouchUpInside)
         bkButton.frame = CGRectMake(0, 0, 25, 25)
     }
     
     //function to display Settings button with the height 30 and width 30
     func displaySettingsButton() {
-        sgButton.addTarget(self, action: "settingsAction", forControlEvents: UIControlEvents.TouchUpInside)
+        sgButton.addTarget(self, action: #selector(SlideViewController.settingsAction), forControlEvents: UIControlEvents.TouchUpInside)
         sgButton.frame = CGRectMake(0, 0, 25, 25)
     }
     
     //function to display About button with the height 30 and width 30
     func displayAboutButton() {
         abButton.setImage(UIImage(named: "About"), forState: UIControlState.Normal)
-        abButton.addTarget(self, action: "aboutAction", forControlEvents: UIControlEvents.TouchUpInside)
+        abButton.addTarget(self, action: #selector(SlideViewController.aboutAction), forControlEvents: UIControlEvents.TouchUpInside)
         abButton.frame = CGRectMake(0, 0, 25, 25)
     }
     

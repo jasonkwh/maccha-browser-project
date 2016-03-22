@@ -89,10 +89,10 @@ class PathDynamicModal: NSObject, UIGestureRecognizerDelegate {
     private func setup() {
         self.animator = UIDynamicAnimator(referenceView: self.backgroundView)
         
-        self.tap = UITapGestureRecognizer(target: self, action: "handleBackgroundView:")
+        self.tap = UITapGestureRecognizer(target: self, action: #selector(PathDynamicModal.handleBackgroundView(_:)))
         self.tap.delegate = self
         
-        self.pan = UIPanGestureRecognizer(target: self, action: "panBackgroundView:")
+        self.pan = UIPanGestureRecognizer(target: self, action: #selector(PathDynamicModal.panBackgroundView(_:)))
         
         self.backgroundView.frame = UIScreen.mainScreen().bounds
         self.backgroundView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.7)
