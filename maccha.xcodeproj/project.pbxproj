@@ -13,6 +13,7 @@
 		3F198FF81C98330F0012A685 /* HistoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F198FF71C98330F0012A685 /* HistoryData.swift */; };
 		3F198FFA1C98333E0012A685 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F198FF91C98333E0012A685 /* GlobalData.swift */; };
 		3F568AFA1C85D7B800771303 /* safari-reader.js in Resources */ = {isa = PBXBuildFile; fileRef = 3F568AF91C85D7B800771303 /* safari-reader.js */; };
+		3F936E781CA2CC3900F81CEE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F936E771CA2CC3900F81CEE /* Extensions.swift */; };
 		3F9760E91C651C9C006F2ACB /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9760E81C651C9C006F2ACB /* SlideViewController.swift */; };
 		3FB279AC1C7244E6007F0416 /* PathDynamicModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB279AB1C7244E6007F0416 /* PathDynamicModal.swift */; };
 		3FB279AF1C72451A007F0416 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB279AD1C72451A007F0416 /* ModalView.swift */; };
@@ -66,6 +67,7 @@
 		3F1EE7D61C5D499700923DF3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		3F568AF91C85D7B800771303 /* safari-reader.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "safari-reader.js"; sourceTree = "<group>"; };
 		3F6683511C782F0400288B95 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		3F936E771CA2CC3900F81CEE /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3F9760E81C651C9C006F2ACB /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		3FB279AB1C7244E6007F0416 /* PathDynamicModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathDynamicModal.swift; sourceTree = "<group>"; };
 		3FB279AD1C72451A007F0416 /* ModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				5F85336F1A5BB8C900F14347 /* AppDelegate.swift */,
 				5F8533711A5BB8C900F14347 /* ViewController.swift */,
 				3F9760E81C651C9C006F2ACB /* SlideViewController.swift */,
+				3F936E771CA2CC3900F81CEE /* Extensions.swift */,
 				3F10AC6E1C9585F900CAF0B7 /* WKWebviewFactory.swift */,
 				3FB279AD1C72451A007F0416 /* ModalView.swift */,
 				3FB279AB1C7244E6007F0416 /* PathDynamicModal.swift */,
@@ -415,6 +418,7 @@
 				5F8533701A5BB8C900F14347 /* AppDelegate.swift in Sources */,
 				3FC579CA1C89F12400654FF3 /* Toast.swift in Sources */,
 				3F198FF81C98330F0012A685 /* HistoryData.swift in Sources */,
+				3F936E781CA2CC3900F81CEE /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

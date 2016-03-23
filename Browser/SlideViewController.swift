@@ -162,7 +162,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         
                         //open tabs in background
                         slideViewValue.readActions = false //disable readbility
-                        WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30))
+                        WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
                         slideViewValue.scrollPositionSwitch = true
                     }
                 }
@@ -174,7 +174,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     
                     //open tabs in background
                     slideViewValue.readActions = false //disable readbility
-                    WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 30))
+                    WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
                     slideViewValue.scrollPositionSwitch = true
                     self.revealViewController().rightRevealToggleAnimated(true)
                 }
@@ -185,7 +185,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 slideViewValue.historyTitle = self.tempArray_title
                 if(self.tempArray_title.count == 0) { //switch off history while history is empty
                     self.historyBackToNormal()
-                    self.view.makeToast("History is empty...", duration: 0.8, position: CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height-70)) //alert user
+                    self.view.makeToast("History is empty...", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70)) //alert user
                 }
             }
             self.windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, self.windowView.numberOfSections)), withRowAnimation: .Automatic)
@@ -280,15 +280,15 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 bgText.text = "history"
                 tempArray_title = slideViewValue.historyTitle
                 windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, windowView.numberOfSections)), withRowAnimation: .Automatic)
-                self.view.makeToast("History", duration: 0.8, position: CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height-70))
+                self.view.makeToast("History", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70))
                 scrollLastestTab(true)
             } else {
-                self.view.makeToast("History is empty...", duration: 0.8, position: CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height-70)) //alert user instead of switching to History
+                self.view.makeToast("History is empty...", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70)) //alert user instead of switching to History
             }
         }
         else {
             historyBackToNormal()
-            self.view.makeToast("Tabs", duration: 0.8, position: CGPoint(x: UIScreen.mainScreen().bounds.width/2, y: UIScreen.mainScreen().bounds.height-70))
+            self.view.makeToast("Tabs", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70))
         }
     }
     
