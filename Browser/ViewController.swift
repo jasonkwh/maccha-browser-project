@@ -14,7 +14,7 @@ import UIKit
 import AudioToolbox
 import RealmSwift
 
-class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UIScrollViewDelegate, SWRevealViewControllerDelegate, UIGestureRecognizerDelegate {
+class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UIScrollViewDelegate, SWRevealViewControllerDelegate, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate {
     
     @IBOutlet weak var mask: UIView!
     @IBOutlet weak var barView: UIView!
@@ -38,6 +38,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var readActionsCheck: Bool = false
     var pbString: String = ""
     var activity:NSUserActivity = NSUserActivity(activityType: "com.studiospates.maccha.handsoff") //handoff
+    var touchPoint: CGPoint = CGPointZero
     
     //remember previous scrolling position~~
     let panPressRecognizer = UIPanGestureRecognizer()
@@ -257,6 +258,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     }
     
     func onLongPress(gestureRecognizer:UIGestureRecognizer){
+        touchPoint = gestureRecognizer.locationInView(self.view)
         longPressSwitch = true
     }
 
@@ -773,8 +775,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         }
         else {
             if navigationAction.navigationType == .LinkActivated && longPressSwitch == true {
-                let ac = self.actionMenu(self, urlStr: urlString)
-                self.presentViewController(ac, animated: true) {}
+                self.actionMenu(self, urlStr: urlString)
                 decisionHandler(.Cancel)
                 longPressSwitch = false
                 return
@@ -789,7 +790,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     }
 
     //Rebuild Wkactionsheet
-    func actionMenu(sender: UIViewController, urlStr: String) -> UIAlertController {
+    func actionMenu(sender: UIViewController, urlStr: String) {
         let alertController = UIAlertController(title: "", message: urlStr, preferredStyle: .ActionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
             
@@ -830,7 +831,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         }
         alertController.addAction(shareAction)
         
-        return alertController
+        /* iPad support */
+        alertController.popoverPresentationController?.sourceView = self.view
+        alertController.popoverPresentationController?.sourceRect = CGRectMake(touchPoint.x, touchPoint.y, 1.0, 1.0)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     //function to refresh
