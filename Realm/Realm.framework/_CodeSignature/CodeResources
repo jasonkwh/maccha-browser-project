@@ -6,7 +6,7 @@
 	<dict>
 		<key>CHANGELOG.md</key>
 		<data>
-		rhX442DfL6+of3ZuBDQ2H9HLyPw=
+		GXhv1QDYUR/DDn6bIE4qLiNXUBA=
 		</data>
 		<key>Headers/RLMArray.h</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Headers/RLMObjectBase.h</key>
 		<data>
-		fXWWphrRK0lge69TTsBoTRfLIfM=
+		ZRJ45nrVDR9/8JDSc7BgqHS36Tw=
 		</data>
 		<key>Headers/RLMObjectBase_Dynamic.h</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>PrivateHeaders/RLMObject_Private.h</key>
 		<data>
-		gohElc8a9YwnkPlPojtt7dO9tq4=
+		YWUfVY17f1pi21EU/Ac/orFcPEA=
 		</data>
 		<key>PrivateHeaders/RLMOptionalBase.h</key>
 		<data>
@@ -155,11 +155,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rhX442DfL6+of3ZuBDQ2H9HLyPw=
+			GXhv1QDYUR/DDn6bIE4qLiNXUBA=
 			</data>
 			<key>hash2</key>
 			<data>
-			liLKyqdMzGVJxLNBwxHos+DC1hFy1/B4AOBa2sWfgYs=
+			F8/A0rcrBECpDW5BgwqR7nOEDv+zkiipbMC8+AyFWSY=
 			</data>
 		</dict>
 		<key>Headers/RLMArray.h</key>
@@ -232,11 +232,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fXWWphrRK0lge69TTsBoTRfLIfM=
+			ZRJ45nrVDR9/8JDSc7BgqHS36Tw=
 			</data>
 			<key>hash2</key>
 			<data>
-			u+XcMcac6LckajZoSnqOFuDeqMd77Dd3FamI2Cdbqf0=
+			OION2KLApT7RooffwQRRioDrKBberTM9PmAEU3Z89VE=
 			</data>
 		</dict>
 		<key>Headers/RLMObjectBase_Dynamic.h</key>
@@ -441,11 +441,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			gohElc8a9YwnkPlPojtt7dO9tq4=
+			YWUfVY17f1pi21EU/Ac/orFcPEA=
 			</data>
 			<key>hash2</key>
 			<data>
-			aXYcPafNTJLRjV8+oEkiIciFbqptKdylspnyG19qyUw=
+			PQkXyjwYXgOw5iRLRQ8KHZxrODIhjtpf+m96ygNOohE=
 			</data>
 		</dict>
 		<key>PrivateHeaders/RLMOptionalBase.h</key>

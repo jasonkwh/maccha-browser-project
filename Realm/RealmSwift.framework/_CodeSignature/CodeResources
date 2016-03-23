@@ -18,7 +18,7 @@
 		</data>
 		<key>Modules/RealmSwift.swiftmodule/arm.swiftmodule</key>
 		<data>
-		Noqaa8PyuFt+Empm0zzCTJK9xC8=
+		6Ab1FzMgbEsgR1wl1KajCR+bfSE=
 		</data>
 		<key>Modules/RealmSwift.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/RealmSwift.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		h42OfbVK+ZE7Z+iSwMHb1+OvktE=
+		1KjTYun1nixtYOUZjEHgSTK0K6U=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -61,11 +61,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Noqaa8PyuFt+Empm0zzCTJK9xC8=
+			6Ab1FzMgbEsgR1wl1KajCR+bfSE=
 			</data>
 			<key>hash2</key>
 			<data>
-			snYENZHgczD8zxyhb34oK89A9+RIT/LC2p7DM4D3IXk=
+			sDW/hDpvp2wYKCplaiWPBooj3LGy30B5yyhZZkSQG8o=
 			</data>
 		</dict>
 		<key>Modules/RealmSwift.swiftmodule/arm64.swiftdoc</key>
@@ -83,11 +83,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			h42OfbVK+ZE7Z+iSwMHb1+OvktE=
+			1KjTYun1nixtYOUZjEHgSTK0K6U=
 			</data>
 			<key>hash2</key>
 			<data>
-			lUDb+I7h7T1zSkWyUqhRWaVSxacclkuJeh64zWAt9To=
+			CIeB6AnSN3SNaPSmHqudKMxrVJG4ydDMPEeUKa7L27g=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
