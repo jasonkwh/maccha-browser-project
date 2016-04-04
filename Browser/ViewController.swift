@@ -37,7 +37,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var tempUrl: String = ""
     var readActionsCheck: Bool = false
     var pbString: String = ""
-    var activity:NSUserActivity = NSUserActivity(activityType: "com.studiospates.maccha.handsoff") //handoff
+    var activity:NSUserActivity = NSUserActivity(activityType: "com.studiospates.maccha.handsoff") //handoff listener
     var touchPoint: CGPoint = CGPointZero
     
     //remember previous scrolling position~~
@@ -115,7 +115,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         //set toolbar color and style
         bar.clipsToBounds = true
         toolbarColor(toolbarStyle)
-        hideStatusbar()
         
         //set Toast alert style
         var style = ToastStyle()
@@ -538,7 +537,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             moveToolbarShown = true
             if let userInfo = sender.userInfo {
                 if let keyboardHeight = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue.origin.y {
-                    self.view.frame.origin.y = (keyboardHeight-self.view.frame.size.height)
+                    let keyboardHeight2 = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue.size.height
+                    var keyHeight = keyboardHeight-self.view.frame.size.height
+                    if(((keyboardHeight-self.view.frame.size.height) > (-keyboardHeight2!)) && ((UIDevice.currentDevice().modelName.containsString("iPhone")) || (UIDevice.currentDevice().modelName.containsString("iPod")))) {
+                        keyHeight = -keyboardHeight2!
+                    }
+                    self.view.frame.origin.y = keyHeight
                     UIView.animateWithDuration(0.10, animations: { () -> Void in
                         self.view.layoutIfNeeded()
                     })

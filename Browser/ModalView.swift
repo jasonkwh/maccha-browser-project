@@ -38,7 +38,7 @@ class ModalView: UIView {
         if(slideViewValue.aboutScreen == true) {
             alertPic.image = UIImage(named: "Tea")
             self.version.text = "Maccha " + slideViewValue.version()
-            self.contents.text = "Developed by jasonkwh, does it taste good?"
+            self.contents.text = "Brewed by Jason Wong, does it taste good?"
             self.contentView.backgroundColor = slideViewValue.windowCurColour
             slideViewValue.aboutScreen = false
         }
