@@ -70,6 +70,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if(slideViewValue.scrollCellAction == false) {
             scrollLastestTab(true)
         }
+        
         //set up readbility button style each time when the view appears
         if(slideViewValue.readActions == false) {
             sgButton.setImage(UIImage(named: "Read"), forState: UIControlState.Normal)
@@ -160,8 +161,13 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         }
                         slideViewValue.windowStoreTitle = self.tempArray_title
                         
+                        //reset readActions
+                        slideViewValue.readActions = false
+                        slideViewValue.readRecover = false
+                        slideViewValue.readActionsCheck = false
+                        self.sgButton.setImage(UIImage(named: "Read"), forState: UIControlState.Normal)
+                        
                         //open tabs in background
-                        slideViewValue.readActions = false //disable readbility
                         WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
                         slideViewValue.scrollPositionSwitch = true
                     }
@@ -172,8 +178,13 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     slideViewValue.windowStoreTitle = self.tempArray_title
                     slideViewValue.scrollPosition[0] = "0.0"
                     
+                    //reset readActions
+                    slideViewValue.readActions = false
+                    slideViewValue.readRecover = false
+                    slideViewValue.readActionsCheck = false
+                    self.sgButton.setImage(UIImage(named: "Read"), forState: UIControlState.Normal)
+                    
                     //open tabs in background
-                    slideViewValue.readActions = false //disable readbility
                     WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
                     slideViewValue.scrollPositionSwitch = true
                     self.revealViewController().rightRevealToggleAnimated(true)
