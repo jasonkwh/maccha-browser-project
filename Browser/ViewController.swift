@@ -213,7 +213,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         slideViewValue.windowStoreTitle.append("")
         slideViewValue.windowStoreUrl.append("about:blank")
         slideViewValue.scrollPosition.append("0.0")
-        slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
+        slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
         windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
         if(slideViewValue.shortcutItem == 1) {
             loadRequest("about:blank")
@@ -325,7 +325,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                         //initial y point
                         slideViewValue.scrollPosition.append("0.0")
                         
-                        slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
+                        slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
                     }
                     slideViewValue.scrollPositionSwitch = false
                 }
@@ -345,7 +345,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 //initial y point
                 slideViewValue.scrollPosition.append("0.0")
                 
-                slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
+                slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
                 slideViewValue.newtabButton = false
             }
             if((slideViewValue.readActions == true) && (slideViewValue.readRecover == false)) {
@@ -825,7 +825,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             slideViewValue.windowStoreUrl.append(urlStr)
             
             //set current window as the latest window
-            slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
+            slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
             
             //update windows count
             self.windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
