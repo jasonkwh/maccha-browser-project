@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var shortcutItem: UIApplicationShortcutItem?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool{
         var performShortcutDelegate = true
         

@@ -72,6 +72,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
+        //Splash Screen
+        let splashView: CBZSplashView = CBZSplashView(icon: UIImage(named: "Tea"), backgroundColor: UIColor(netHex:0x70BF41))
+        self.view.addSubview(splashView)
+        splashView.startAnimation()
         
         Reach().monitorReachabilityChanges() //use Reach() module to check network connections
         

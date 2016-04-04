@@ -16,6 +16,7 @@
 #import "Pods/MGSwipeTableCell/MGSwipeTableCell/MGSwipeTableCell.h"
 #import "Pods/1PasswordExtension/OnePasswordExtension.h"
 #import "Pods/AFNetworking/AFNetworking/AFNetworking.h"
+#import "Pods/CBZSplashView/Pod/Classes/CBZSplashView.h"
 
 
 #endif /* Header_h */
