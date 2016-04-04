@@ -37,6 +37,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return performShortcutDelegate
     }
     
+    func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
+        //handoff between iOS apps
+        
+        //reset readActions
+        slideViewValue.readActions = false
+        slideViewValue.readRecover = false
+        slideViewValue.readActionsCheck = false
+        slideViewValue.windowStoreTitle.append("")
+        slideViewValue.windowStoreUrl.append("about:blank")
+        slideViewValue.scrollPosition.append("0.0")
+        slideViewValue.scrollPositionSwitch = false
+        slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
+        WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: userActivity.webpageURL!))
+        return true
+    }
+    
     func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
         completionHandler(handleShortcut(shortcutItem))
     }

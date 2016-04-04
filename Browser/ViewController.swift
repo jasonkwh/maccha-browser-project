@@ -35,9 +35,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var scrollMakeStatusBarDown: Bool = false
     var google: String = "https://www.google.com"
     var tempUrl: String = ""
-    var readActionsCheck: Bool = false
     var pbString: String = ""
     var activity:NSUserActivity = NSUserActivity(activityType: "com.studiospates.maccha.handsoff") //handoff listener
+    var continuedActivity: NSUserActivity?
     var touchPoint: CGPoint = CGPointZero
     
     //remember previous scrolling position~~
@@ -160,7 +160,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] == "about:blank") {
                     loadRequest("about:blank")
                 } else {
-                    slideViewValue.scrollPositionSwitch = true
+                    slideViewValue.scrollPositionSwitch = false
                     loadRequest(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])
                 }
             }
@@ -206,10 +206,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     //Determine quick actions...
     func openShortcutItem() {
+        //reset readActions
+        slideViewValue.readActions = false
+        slideViewValue.readRecover = false
+        slideViewValue.readActionsCheck = false
         slideViewValue.windowStoreTitle.append("")
         slideViewValue.windowStoreUrl.append("about:blank")
         slideViewValue.scrollPosition.append("0.0")
-        slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+        slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
         windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
         if(slideViewValue.shortcutItem == 1) {
             loadRequest("about:blank")
@@ -321,11 +325,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                         //initial y point
                         slideViewValue.scrollPosition.append("0.0")
                         
-                        slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+                        slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
                     }
                     slideViewValue.scrollPositionSwitch = false
                 }
-                slideViewValue.readActions = false //disable readbility
+                //reset readActions
+                slideViewValue.readActions = false
+                slideViewValue.readRecover = false
+                slideViewValue.readActionsCheck = false
                 slideViewValue.cellActions = false
             }
             if(slideViewValue.newtabButton == true) {
@@ -338,11 +345,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 //initial y point
                 slideViewValue.scrollPosition.append("0.0")
                 
-                slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+                slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
                 slideViewValue.newtabButton = false
             }
             if((slideViewValue.readActions == true) && (slideViewValue.readRecover == false)) {
-                if(self.readActionsCheck == false) {
+                if(slideViewValue.readActionsCheck == false) {
                     tempUrl = webAddress //tempUrl updates only once...
                 }
                 WKWebviewFactory.sharedInstance.webView.evaluateJavaScript("var ReaderArticleFinderJS = new ReaderArticleFinder(document);") { (obj, error) -> Void in
@@ -356,21 +363,21 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 }
                 WKWebviewFactory.sharedInstance.webView.evaluateJavaScript("article.element.outerHTML") { (res, error) -> Void in
                     if let html = res as? String {
-                        if(self.readActionsCheck == false) {
+                        if(slideViewValue.readActionsCheck == false) {
                             WKWebviewFactory.sharedInstance.webView.loadHTMLString("<body style='font-family: -apple-system; font-family: '-apple-system','HelveticaNeue';'><meta name = 'viewport' content = 'user-scalable=no, width=device-width'>" + html, baseURL: nil)
                         }
                     }
                 }
                 WKWebviewFactory.sharedInstance.webView.evaluateJavaScript("ReaderArticleFinderJS.isReaderModeAvailable();") { (html, error) -> Void in
                     if(String(html) == "Optional(0)") {
-                        if(self.readActionsCheck == false) {
+                        if(slideViewValue.readActionsCheck == false) {
                             //this avoids alert popups while hiding the slideViewController (although the user did not press the read button)
                             slideViewValue.alertPopup(0, message: "Reader mode is not available for this page")
                             slideViewValue.readActions = false //disable readbility
                         }
                     }
                     else {
-                        self.readActionsCheck = true //turns on the boolean switch on to avoid alert popups
+                        slideViewValue.readActionsCheck = true //turns on the boolean switch on to avoid alert popups
                     }
                 }
                 WKWebviewFactory.sharedInstance.webView.evaluateJavaScript("ReaderArticleFinderJS.prepareToTransitionToReader();") { (html, error) -> Void in
@@ -379,7 +386,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             if((slideViewValue.readActions == true) && (slideViewValue.readRecover == true)) {
                 //load contents by wkwebview
                 loadRequest(tempUrl)
-                self.readActionsCheck = false //reset
+                slideViewValue.readActionsCheck = false //reset
                 slideViewValue.readRecover = false
             }
         }
@@ -584,7 +591,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         urlField.resignFirstResponder()
         
         loadRequest(urlField.text!)
-        self.readActionsCheck = false
+        slideViewValue.readActionsCheck = false
         
         return false
     }
@@ -818,7 +825,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             slideViewValue.windowStoreUrl.append(urlStr)
             
             //set current window as the latest window
-            slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+            slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
             
             //update windows count
             self.windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
@@ -856,7 +863,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             loadRequest(tempUrl) //load contents by wkwebview
         }
         slideViewValue.scrollPositionSwitch = false
-        self.readActionsCheck = false
+        slideViewValue.readActionsCheck = false
     }
     
     //function to stop page loading

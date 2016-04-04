@@ -34,6 +34,7 @@ struct slideViewValue {
     static var htButtonIndex: Int = 0
     static var scrollPositionSwitch: Bool = false //true is scroll back to user view, false is not
     static var newUser: Int = 0 //save
+    static var readActionsCheck: Bool = false
     
     //Search Engines
     //0: Google, 1: Bing
