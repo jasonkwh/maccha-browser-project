@@ -78,8 +78,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         self.view.addSubview(splashView)
         splashView.startAnimation()
         
-        Reach().monitorReachabilityChanges() //use Reach() module to check network connections
-        
         //register observer for willEnterForeground / willEnterBackground state
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UIApplicationDelegate.applicationWillEnterForeground(_:)), name: UIApplicationDidBecomeActiveNotification, object: nil)
@@ -602,7 +600,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         if(inputUrlAddress == "about:blank") {
             WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
         } else {
-            if (checkConnectionStatus() == true) {
+            if (AFNetworkReachabilityManager.sharedManager().reachable == false) {
                 slideViewValue.readActions = false //disable readbility
                 
                 //shorten the url by replacing http and https to null
@@ -640,18 +638,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                     slideViewValue.scrollPosition.append("0.0")
                 }
             }
-        }
-    }
-    
-    //function to check current network status, powered by Reach() module
-    func checkConnectionStatus() -> Bool {
-        switch Reach().connectionStatus() {
-        case .Unknown, .Offline:
-            return false
-        case .Online(.WWAN):
-            return true
-        case .Online(.WiFi):
-            return true
         }
     }
     

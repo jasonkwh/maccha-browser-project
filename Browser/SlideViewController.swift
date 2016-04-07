@@ -80,7 +80,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         windowView.delegate = self
         windowView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
         navBar.translucent = false
-        navBar.barTintColor = UIColor(netHex:0x333333)
+        navBar.barTintColor = UIColor(netHex:0x2E2E2E)
         navBar.clipsToBounds = true
         navBar.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
         

@@ -25,7 +25,6 @@
 		3FB2BAB21CA180B8002DCB03 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2BAB11CA180B8002DCB03 /* SWRevealViewController.m */; };
 		3FC579CA1C89F12400654FF3 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC579C91C89F12400654FF3 /* Toast.swift */; };
 		3FD6A25B1C9F09CC005E79EC /* WkString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6A25A1C9F09CC005E79EC /* WkString.swift */; };
-		3FDF7E601C61968700C8BD4A /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF7E5F1C61968700C8BD4A /* Reach.swift */; };
 		5F8533701A5BB8C900F14347 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F85336F1A5BB8C900F14347 /* AppDelegate.swift */; };
 		5F8533721A5BB8C900F14347 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8533711A5BB8C900F14347 /* ViewController.swift */; };
 		5F8533751A5BB8C900F14347 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8533731A5BB8C900F14347 /* Main.storyboard */; };
@@ -78,7 +77,6 @@
 		3FB2BAB11CA180B8002DCB03 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 		3FC579C91C89F12400654FF3 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = "../Pods/Toast-Swift/Toast/Toast.swift"; sourceTree = "<group>"; };
 		3FD6A25A1C9F09CC005E79EC /* WkString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WkString.swift; path = BrowserData/WkString.swift; sourceTree = "<group>"; };
-		3FDF7E5F1C61968700C8BD4A /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
 		5F85336A1A5BB8C800F14347 /* maccha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = maccha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F85336E1A5BB8C900F14347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F85336F1A5BB8C900F14347 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 				3F10AC6E1C9585F900CAF0B7 /* WKWebviewFactory.swift */,
 				3FB279AD1C72451A007F0416 /* ModalView.swift */,
 				3FB279AB1C7244E6007F0416 /* PathDynamicModal.swift */,
-				3FDF7E5F1C61968700C8BD4A /* Reach.swift */,
 				3FC579C91C89F12400654FF3 /* Toast.swift */,
 				3FB279AE1C72451A007F0416 /* ModalView.xib */,
 				5F8533731A5BB8C900F14347 /* Main.storyboard */,
@@ -409,7 +406,6 @@
 				5F8533721A5BB8C900F14347 /* ViewController.swift in Sources */,
 				3FB279AF1C72451A007F0416 /* ModalView.swift in Sources */,
 				3F9760E91C651C9C006F2ACB /* SlideViewController.swift in Sources */,
-				3FDF7E601C61968700C8BD4A /* Reach.swift in Sources */,
 				3F10AC6F1C9585F900CAF0B7 /* WKWebviewFactory.swift in Sources */,
 				3F198FF61C9832C40012A685 /* WkData.swift in Sources */,
 				3F198FFA1C98333E0012A685 /* GlobalData.swift in Sources */,
