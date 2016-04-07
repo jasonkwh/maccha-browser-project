@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -225,12 +226,20 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <items>
                                         <navigationItem id="Zrt-4u-vWd">
-                                            <barButtonItem key="rightBarButtonItem" image="Trash" id="mR4-cU-WEp">
-                                                <color key="tintColor" red="0.90588235294117647" green="0.92549019607843142" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-                                                <connections>
-                                                    <action selector="deleteAllTab:" destination="Ay8-h7-Adg" id="oi5-Ie-lQs"/>
-                                                </connections>
-                                            </barButtonItem>
+                                            <rightBarButtonItems>
+                                                <barButtonItem image="Okay" id="bwT-Oh-cVT">
+                                                    <color key="tintColor" red="0.90588235289999997" green="0.92549019610000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="deleteAllTabCheck:" destination="Ay8-h7-Adg" id="nMC-mS-6kG"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                                <barButtonItem image="Trash" id="mR4-cU-WEp">
+                                                    <color key="tintColor" red="0.90588235294117647" green="0.92549019607843142" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="deleteAllTab:" destination="Ay8-h7-Adg" id="oi5-Ie-lQs"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </rightBarButtonItems>
                                         </navigationItem>
                                     </items>
                                 </navigationBar>
@@ -271,6 +280,7 @@
     <resources>
         <image name="Back" width="25" height="25"/>
         <image name="Forward" width="25" height="25"/>
+        <image name="Okay" width="25" height="25"/>
         <image name="Trash" width="25" height="25"/>
     </resources>
 </document>

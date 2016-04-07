@@ -13,37 +13,52 @@
 import UIKit
 
 class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate {
-    @IBAction func deleteAllTab(sender: AnyObject) {
+    @IBAction func deleteAllTabCheck(sender: AnyObject) {
         //function to define tab deletion
         if(mainView == false) {
-            //remove all history records
-            slideViewValue.historyUrl.removeAll()
-            slideViewValue.historyTitle.removeAll()
-            slideViewValue.htButtonSwitch = false
-            
-            //back to original tab
-            historyBackToNormal()
-            self.view.makeToast("Tabs", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70))
+         //remove all history records
+         slideViewValue.historyUrl.removeAll()
+         slideViewValue.historyTitle.removeAll()
+         slideViewValue.htButtonSwitch = false
+         
+         //back to original tab
+         historyBackToNormal()
+         self.view.makeToast("Tabs", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70))
+         } else {
+         //reset main arrays
+         slideViewValue.windowStoreTitle.removeAll()
+         slideViewValue.windowStoreTitle.append("")
+         slideViewValue.windowStoreUrl.removeAll()
+         slideViewValue.windowStoreUrl.append("about:blank")
+         slideViewValue.scrollPosition.removeAll()
+         slideViewValue.scrollPosition.append("0.0")
+         slideViewValue.windowCurTab = 0
+         
+         //reset readActions
+         slideViewValue.readActions = false
+         slideViewValue.readRecover = false
+         slideViewValue.readActionsCheck = false
+         self.sgButton.setImage(UIImage(named: "Read"), forState: UIControlState.Normal)
+         
+         //open tabs in background
+         WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL:NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!))
+         slideViewValue.scrollPositionSwitch = true
+         self.revealViewController().rightRevealToggleAnimated(true)
+         }
+    }
+    @IBAction func deleteAllTab(sender: AnyObject) {
+        if(trashButton == false) {
+            UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+                self.navBar.frame.origin.x = 0
+                }, completion: { finished in
+            })
+            trashButton = true
         } else {
-            //reset main arrays
-            slideViewValue.windowStoreTitle.removeAll()
-            slideViewValue.windowStoreTitle.append("")
-            slideViewValue.windowStoreUrl.removeAll()
-            slideViewValue.windowStoreUrl.append("about:blank")
-            slideViewValue.scrollPosition.removeAll()
-            slideViewValue.scrollPosition.append("0.0")
-            slideViewValue.windowCurTab = 0
-            
-            //reset readActions
-            slideViewValue.readActions = false
-            slideViewValue.readRecover = false
-            slideViewValue.readActionsCheck = false
-            self.sgButton.setImage(UIImage(named: "Read"), forState: UIControlState.Normal)
-            
-            //open tabs in background
-            WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL:NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!))
-            slideViewValue.scrollPositionSwitch = true
-            self.revealViewController().rightRevealToggleAnimated(true)
+            UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                self.navBar.frame.origin.x = -60
+                }, completion: { finished in
+            })
+            trashButton = false
         }
     }
     @IBOutlet weak var navBar: UINavigationBar!
@@ -64,6 +79,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var tempArray_title = [String]() //Temporary store array
     var style = ToastStyle() //initialise toast
     var mainView: Bool = false
+    var trashButton: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,6 +111,8 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //windows management functions
     override func viewDidAppear(animated: Bool) {
+        navBar.frame.origin.x = -60
+        
         //set Toast alert style
         style.messageColor = UIColor(netHex: 0x2E2E2E)
         style.backgroundColor = UIColor(netHex:0xECF0F1)
@@ -323,6 +341,10 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func historyAction() {
         if(slideViewValue.htButtonSwitch == false) {
+            UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                self.navBar.frame.origin.x = -60
+                }, completion: { finished in
+            })
             if(slideViewValue.historyTitle.count > 0) { //avoid size < 0 bug crash
                 htButton.setImage(UIImage(named: "History-filled"), forState: UIControlState.Normal)
                 slideViewValue.htButtonSwitch = true
@@ -346,6 +368,10 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func historyBackToNormal() { //switch History feature off
         htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
+        UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.navBar.frame.origin.x = -60
+            }, completion: { finished in
+        })
         slideViewValue.htButtonSwitch = false
         bgText.text = "maccha"
         tempArray_title = slideViewValue.windowStoreTitle
