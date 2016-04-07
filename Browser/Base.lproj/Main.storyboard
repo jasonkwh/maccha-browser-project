@@ -220,6 +220,20 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PQh-Ph-huz">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <navigationBar key="tableFooterView" contentMode="scaleToFill" id="8Pd-4v-IeD">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <items>
+                                        <navigationItem id="Zrt-4u-vWd">
+                                            <barButtonItem key="rightBarButtonItem" image="Trash" id="mR4-cU-WEp">
+                                                <color key="tintColor" red="0.90588235294117647" green="0.92549019607843142" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="deleteAllTab:" destination="Ay8-h7-Adg" id="oi5-Ie-lQs"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </navigationItem>
+                                    </items>
+                                </navigationBar>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -241,6 +255,7 @@
                         <outlet property="bgText" destination="2yh-FQ-zEn" id="RnC-2j-ML0"/>
                         <outlet property="bkButton" destination="3mc-1P-9wt" id="jm0-s5-2tj"/>
                         <outlet property="htButton" destination="Stq-pP-azj" id="f0c-bz-h63"/>
+                        <outlet property="navBar" destination="8Pd-4v-IeD" id="Q1k-qb-lDb"/>
                         <outlet property="ntButton" destination="6CK-IT-UwK" id="gH7-9H-gaS"/>
                         <outlet property="sfButton" destination="Skr-kw-S0F" id="ujk-PJ-QTO"/>
                         <outlet property="sgButton" destination="8WR-jM-hhK" id="XEA-Up-9f7"/>
@@ -256,5 +271,6 @@
     <resources>
         <image name="Back" width="25" height="25"/>
         <image name="Forward" width="25" height="25"/>
+        <image name="Trash" width="25" height="25"/>
     </resources>
 </document>

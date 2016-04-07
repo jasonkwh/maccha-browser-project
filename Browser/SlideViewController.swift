@@ -12,7 +12,41 @@
 
 import UIKit
 
-class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate, UIGestureRecognizerDelegate {
+class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate {
+    @IBAction func deleteAllTab(sender: AnyObject) {
+        //function to define tab deletion
+        if(mainView == false) {
+            //remove all history records
+            slideViewValue.historyUrl.removeAll()
+            slideViewValue.historyTitle.removeAll()
+            slideViewValue.htButtonSwitch = false
+            
+            //back to original tab
+            historyBackToNormal()
+            self.view.makeToast("Tabs", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70))
+        } else {
+            //reset main arrays
+            slideViewValue.windowStoreTitle.removeAll()
+            slideViewValue.windowStoreTitle.append("")
+            slideViewValue.windowStoreUrl.removeAll()
+            slideViewValue.windowStoreUrl.append("about:blank")
+            slideViewValue.scrollPosition.removeAll()
+            slideViewValue.scrollPosition.append("0.0")
+            slideViewValue.windowCurTab = 0
+            
+            //reset readActions
+            slideViewValue.readActions = false
+            slideViewValue.readRecover = false
+            slideViewValue.readActionsCheck = false
+            self.sgButton.setImage(UIImage(named: "Read"), forState: UIControlState.Normal)
+            
+            //open tabs in background
+            WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL:NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!))
+            slideViewValue.scrollPositionSwitch = true
+            self.revealViewController().rightRevealToggleAnimated(true)
+        }
+    }
+    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var bgText: UILabel!
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var ntButton: UIButton!
@@ -29,6 +63,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var bkButtonSwitch: Bool = false //functions
     var tempArray_title = [String]() //Temporary store array
     var style = ToastStyle() //initialise toast
+    var mainView: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +79,10 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         windowView.separatorStyle = .None
         windowView.delegate = self
         windowView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+        navBar.translucent = false
+        navBar.barTintColor = UIColor(netHex:0x333333)
+        navBar.clipsToBounds = true
+        navBar.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
         
         //button displays
         displaySafariButton()
@@ -63,6 +102,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         //get value from struct variable
         tempArray_title = slideViewValue.windowStoreTitle
+        mainView = true
         
         bgText.text = "maccha"
         windowView.reloadData()
@@ -290,6 +330,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 bkButtonSwitch = false
                 bgText.text = "history"
                 tempArray_title = slideViewValue.historyTitle
+                mainView = false
                 windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, windowView.numberOfSections)), withRowAnimation: .Automatic)
                 self.view.makeToast("History", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70))
                 scrollLastestTab(true)
@@ -308,6 +349,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         slideViewValue.htButtonSwitch = false
         bgText.text = "maccha"
         tempArray_title = slideViewValue.windowStoreTitle
+        mainView = true
         windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, windowView.numberOfSections)), withRowAnimation: .Automatic)
     }
     
