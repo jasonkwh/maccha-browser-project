@@ -6,7 +6,7 @@
 	<dict>
 		<key>CHANGELOG.md</key>
 		<data>
-		RMRgkpC2GmDNBwomJaWmst8Xnm8=
+		I8X8DA+GAWE+SY8w9TJzH/McVM0=
 		</data>
 		<key>Headers/RLMArray.h</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Headers/RLMRealm.h</key>
 		<data>
-		yI37+etIOP1lbiMx47ZNHZitOQQ=
+		/0c5+v5YXglZYozWh23UQVpC4pU=
 		</data>
 		<key>Headers/RLMRealmConfiguration.h</key>
 		<data>
@@ -155,11 +155,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			RMRgkpC2GmDNBwomJaWmst8Xnm8=
+			I8X8DA+GAWE+SY8w9TJzH/McVM0=
 			</data>
 			<key>hash2</key>
 			<data>
-			pFe3jK7L5tIrZ1WcyHpG21+LWfzQ9jGgJ99o1SwaukQ=
+			QhfSHZYPt4VGrbZHkXpZYOzHWX3wLoXTZiOaY7zODqo=
 			</data>
 		</dict>
 		<key>Headers/RLMArray.h</key>
@@ -287,11 +287,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			yI37+etIOP1lbiMx47ZNHZitOQQ=
+			/0c5+v5YXglZYozWh23UQVpC4pU=
 			</data>
 			<key>hash2</key>
 			<data>
-			3cFVEget/p71Svz8XWQARerUmpIC6xOsrPQBNPc8AbQ=
+			B18azTIWANghi6W1AnJJdUY5HXXt55vTellQKSI6ruQ=
 			</data>
 		</dict>
 		<key>Headers/RLMRealmConfiguration.h</key>
