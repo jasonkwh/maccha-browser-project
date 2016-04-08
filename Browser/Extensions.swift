@@ -11,7 +11,6 @@
  */
 
 struct slideViewValue {
-    static var scrollCellAction: Bool = false //false to scroll to latest tab, else do not
     static var newtabButton: Bool = false
     static var safariButton: Bool = false
     static var cellActions: Bool = false

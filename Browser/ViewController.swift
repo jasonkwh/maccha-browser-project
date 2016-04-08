@@ -803,9 +803,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         }
         alertController.addAction(openAction)
         let opentabAction = UIAlertAction(title: "Open In New Tab", style: .Default) { (action) in
-            //reset scrollCellAction
-            slideViewValue.scrollCellAction = false
-            
             //store previous window titles and urls
             slideViewValue.windowStoreTitle.append(urlStr)
             slideViewValue.windowStoreUrl.append(urlStr)

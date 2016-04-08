@@ -125,9 +125,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         bgText.text = "maccha"
         windowView.reloadData()
         
-        if(slideViewValue.scrollCellAction == false) {
-            scrollLastestTab(true)
-        }
+        scrollLastestTab(true)
         
         //set up readbility button style each time when the view appears
         if(slideViewValue.readActions == false) {
@@ -151,7 +149,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func scrollLastestTab(animate: Bool) {
         //scroll the tableView to display the latest tab
-        let indexPath = NSIndexPath(forRow: windowView.numberOfRowsInSection(windowView.numberOfSections-1)-1, inSection: (windowView.numberOfSections-1))
+        let indexPath = NSIndexPath(forRow: slideViewValue.windowCurTab, inSection: (windowView.numberOfSections-1))
         windowView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: animate)
     }
     
@@ -275,11 +273,9 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 slideViewValue.windowCurTab = indexPath.row
                 slideViewValue.cellActions = true
             }
-            slideViewValue.scrollCellAction = true
         } else if(slideViewValue.htButtonSwitch == true) { //use History feature
             slideViewValue.htButtonIndex = indexPath.row //pass row value to struct variable
             slideViewValue.cellActions = true
-            slideViewValue.scrollCellAction = false
         }
         revealViewController().rightRevealToggleAnimated(true)
     }
@@ -327,7 +323,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func newtabAction() {
         slideViewValue.newtabButton = true
-        slideViewValue.scrollCellAction = false
         revealViewController().rightRevealToggleAnimated(true)
     }
     
