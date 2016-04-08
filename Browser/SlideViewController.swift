@@ -55,7 +55,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             trashButton = true
         } else {
             UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                self.navBar.frame.origin.x = -60
+                self.navBar.frame.origin.x = -55
                 }, completion: { finished in
             })
             trashButton = false
@@ -111,7 +111,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //windows management functions
     override func viewDidAppear(animated: Bool) {
-        navBar.frame.origin.x = -60
+        navBar.frame.origin.x = -55
         
         //set Toast alert style
         style.messageColor = UIColor(netHex: 0x2E2E2E)
@@ -176,6 +176,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             titleName = "untitled"
         }
         cell.textLabel?.text = "                 " + titleName
+        cell.textLabel?.font = UIFont.systemFontOfSize(15.0)
         cell.delegate = self
         
         //cell design
@@ -342,7 +343,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func historyAction() {
         if(slideViewValue.htButtonSwitch == false) {
             UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                self.navBar.frame.origin.x = -60
+                self.navBar.frame.origin.x = -55
                 }, completion: { finished in
             })
             if(slideViewValue.historyTitle.count > 0) { //avoid size < 0 bug crash
@@ -369,7 +370,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func historyBackToNormal() { //switch History feature off
         htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
         UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-            self.navBar.frame.origin.x = -60
+            self.navBar.frame.origin.x = -55
             }, completion: { finished in
         })
         slideViewValue.htButtonSwitch = false
