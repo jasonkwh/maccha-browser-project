@@ -176,7 +176,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             titleName = "untitled"
         }
         cell.textLabel?.text = "                 " + titleName
-        cell.textLabel?.font = UIFont.systemFontOfSize(15.0)
+        cell.textLabel?.font = UIFont.systemFontOfSize(16.0)
         cell.delegate = self
         
         //cell design
