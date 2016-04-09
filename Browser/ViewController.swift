@@ -818,7 +818,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         alertController.addAction(copyurlAction)
         let shareAction = UIAlertAction(title: "Share Link", style: .Default) { (action) in
             let activityViewController = UIActivityViewController(activityItems: [urlStr as NSString], applicationActivities: nil)
-            self.presentViewController(activityViewController, animated: true, completion: {})
+            if let vcpopController = activityViewController.popoverPresentationController {
+                vcpopController.sourceView = self.view
+                vcpopController.sourceRect = CGRectMake(self.touchPoint.x, self.touchPoint.y, 1.0, 1.0)
+            }
+            self.presentViewController(activityViewController, animated: true, completion: nil)
         }
         alertController.addAction(shareAction)
         
