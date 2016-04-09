@@ -34,8 +34,29 @@ class ModalView: UIView {
         self.configure()
     }
     
+    func openGithub() {
+        //reset readActions
+        slideViewValue.readActions = false
+        slideViewValue.readRecover = false
+        slideViewValue.readActionsCheck = false
+        
+        //addition window
+        slideViewValue.windowStoreTitle.append("")
+        slideViewValue.windowStoreUrl.append("https://github.com/jasonkwh/maccha-browser-project")
+        slideViewValue.scrollPosition.append("0.0")
+        slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+        
+        WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL:NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!))
+        self.closeButtonHandler?()
+        NSNotificationCenter.defaultCenter().postNotificationName("tableReloadNotify", object: nil)
+    }
+    
     private func configure() {
         if(slideViewValue.aboutScreen == true) {
+            let tapGestureRecognizr:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ModalView.openGithub))
+            tapGestureRecognizr.numberOfTapsRequired = 1
+            self.contents.addGestureRecognizer(tapGestureRecognizr)
+            self.contents.userInteractionEnabled = true
             alertPic.image = UIImage(named: "Tea")
             self.version.text = "Maccha " + slideViewValue.version()
             self.contents.text = "Brewed by Jason Wong, does it taste good?"

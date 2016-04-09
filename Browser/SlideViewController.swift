@@ -111,7 +111,10 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //windows management functions
     override func viewDidAppear(animated: Bool) {
-        navBar.frame.origin.x = -55
+        //added observer for showing about screen
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SlideViewController.reloadTable(_:)), name: "tableReloadNotify", object: nil)
+        
+        navBar.frame.origin.x = -55 //set original navigation bar origin
         
         //set Toast alert style
         style.messageColor = UIColor(netHex: 0x2E2E2E)
@@ -141,10 +144,16 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewDidDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        
         //reset to original Toast alert style
         style.messageColor = UIColor(netHex: 0xECF0F1)
         style.backgroundColor = UIColor(netHex:0x444444)
         ToastManager.shared.style = style
+    }
+    
+    func reloadTable(notification: NSNotification) {
+        self.revealViewController().rightRevealToggleAnimated(true)
     }
     
     func scrollLastestTab(animate: Bool) {

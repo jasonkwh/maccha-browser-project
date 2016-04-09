@@ -32,6 +32,9 @@
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="190" translatesAutoresizingMaskIntoConstraints="NO" id="gnB-dK-HPG">
                             <rect key="frame" x="8" y="155" width="263" height="61"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <accessibilityTraits key="traits" link="YES" staticText="YES"/>
+                            </accessibility>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="0.70000000000000007" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
