@@ -3,79 +3,79 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "icons_29@2x.png",
+      "filename" : "maccha_29x2.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "icons_29@3x.png",
+      "filename" : "maccha_29x3.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "icons_40@2x.png",
+      "filename" : "maccha_40x2.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "icons_40@3x.png",
+      "filename" : "maccha_40x3.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "icons_60@2x.png",
+      "filename" : "maccha_60x2.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "icons_60@3x.png",
+      "filename" : "maccha_60x3.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "icons_29@1x.png",
+      "filename" : "maccha_29x1.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "icons_29@2x-1.png",
+      "filename" : "maccha_29x2-1.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "icons_40@1x.png",
+      "filename" : "maccha_40x1.png",
       "scale" : "1x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "icons_40@2x-1.png",
+      "filename" : "maccha_40x2-1.png",
       "scale" : "2x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "icons_76@1x.png",
+      "filename" : "maccha_76x1.png",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "icons_76@2x.png",
+      "filename" : "maccha_76x2.png",
       "scale" : "2x"
     },
     {
       "size" : "83.5x83.5",
       "idiom" : "ipad",
-      "filename" : "icons_83.5@2x.png",
+      "filename" : "maccha_83.5x2.png",
       "scale" : "2x"
     }
   ],
