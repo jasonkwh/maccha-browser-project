@@ -781,6 +781,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         }
         alertController.addAction(cancelAction)
         let openAction = UIAlertAction(title: "Open", style: .Default) { (action) in
+            //reset readActions
+            slideViewValue.readActions = false
+            slideViewValue.readRecover = false
+            slideViewValue.readActionsCheck = false
+            
             self.loadRequest(urlStr)
         }
         alertController.addAction(openAction)
@@ -797,6 +802,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             
             //initial y point
             slideViewValue.scrollPosition.append("0.0")
+            
+            //reset readActions
+            slideViewValue.readActions = false
+            slideViewValue.readRecover = false
+            slideViewValue.readActionsCheck = false
             
             self.loadRequest(urlStr)
         }
