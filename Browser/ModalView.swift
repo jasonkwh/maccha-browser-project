@@ -46,7 +46,7 @@ class ModalView: UIView {
         slideViewValue.scrollPosition.append("0.0")
         slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
         
-        WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL:NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!))
+        WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
         self.closeButtonHandler?()
         NSNotificationCenter.defaultCenter().postNotificationName("tableReloadNotify", object: nil)
     }

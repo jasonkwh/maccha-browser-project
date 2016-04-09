@@ -331,7 +331,19 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func newtabAction() {
-        slideViewValue.newtabButton = true
+        //reset readActions
+        slideViewValue.readActions = false
+        slideViewValue.readRecover = false
+        slideViewValue.readActionsCheck = false
+        
+        //open new tab
+        slideViewValue.windowStoreTitle.append("")
+        slideViewValue.windowStoreUrl.append("about:blank")
+        slideViewValue.scrollPosition.append("0.0")
+        slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+        
+        WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL:NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!))
+        
         revealViewController().rightRevealToggleAnimated(true)
     }
     
@@ -340,7 +352,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func safariAction() {
-        slideViewValue.safariButton = true
+        UIApplication.sharedApplication().openURL(NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!)
         revealViewController().rightRevealToggleAnimated(true)
     }
     

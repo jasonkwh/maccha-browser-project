@@ -300,11 +300,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 self.mask.alpha = 0
                 }, completion: { finished in
             })
-            if(slideViewValue.safariButton == true) {
-                //use safari to open
-                safariPressed()
-                slideViewValue.safariButton = false
-            }
             if(slideViewValue.cellActions == true) {
                 //open stored urls
                 if(slideViewValue.htButtonSwitch == false) {
@@ -332,19 +327,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 slideViewValue.readRecover = false
                 slideViewValue.readActionsCheck = false
                 slideViewValue.cellActions = false
-            }
-            if(slideViewValue.newtabButton == true) {
-                slideViewValue.readActions = false //disable readbility
-                //open new tab
-                loadRequest("about:blank")
-                slideViewValue.windowStoreTitle.append(WKWebviewFactory.sharedInstance.webView.title!)
-                slideViewValue.windowStoreUrl.append((WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!)
-                
-                //initial y point
-                slideViewValue.scrollPosition.append("0.0")
-                
-                slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
-                slideViewValue.newtabButton = false
             }
             if((slideViewValue.readActions == true) && (slideViewValue.readRecover == false)) {
                 if(slideViewValue.readActionsCheck == false) {
@@ -911,11 +893,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //function to hide keyboard
     func hideKeyboard() {
         self.view.endEditing(true)
-    }
-    
-    //function which opens safari to load this url
-    func safariPressed() {
-        UIApplication.sharedApplication().openURL(NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!)
     }
     
     override func didReceiveMemoryWarning() {

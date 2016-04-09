@@ -11,8 +11,6 @@
  */
 
 struct slideViewValue {
-    static var newtabButton: Bool = false
-    static var safariButton: Bool = false
     static var cellActions: Bool = false
     static var readActions: Bool = false
     static var readRecover: Bool = false
