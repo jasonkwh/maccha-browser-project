@@ -148,7 +148,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func scrollLastestTab(animate: Bool) {
-        //scroll the tableView to display the latest tab
+        //scroll the tableView to display the current tab
         let indexPath = NSIndexPath(forRow: slideViewValue.windowCurTab, inSection: (windowView.numberOfSections-1))
         windowView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: animate)
     }
@@ -351,7 +351,10 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 mainView = false
                 windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, windowView.numberOfSections)), withRowAnimation: .Automatic)
                 self.view.makeToast("History", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70))
-                scrollLastestTab(true)
+                
+                //scroll the tableView to display the latest tab
+                let indexPath = NSIndexPath(forRow: windowView.numberOfRowsInSection(windowView.numberOfSections-1)-1, inSection: (windowView.numberOfSections-1))
+                windowView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
             } else {
                 self.view.makeToast("History is empty...", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70)) //alert user instead of switching to History
             }
@@ -373,6 +376,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tempArray_title = slideViewValue.windowStoreTitle
         mainView = true
         windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, windowView.numberOfSections)), withRowAnimation: .Automatic)
+        scrollLastestTab(true)
     }
     
     func bookmarkAction() {
