@@ -37,7 +37,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var tempUrl: String = ""
     var pbString: String = ""
     var activity:NSUserActivity = NSUserActivity(activityType: "com.studiospates.maccha.handsoff") //handoff listener
-    var continuedActivity: NSUserActivity?
     var touchPoint: CGPoint = CGPointZero
     
     //remember previous scrolling position~~

@@ -44,12 +44,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         slideViewValue.readActions = false
         slideViewValue.readRecover = false
         slideViewValue.readActionsCheck = false
-        slideViewValue.windowStoreTitle.append("")
-        slideViewValue.windowStoreUrl.append("about:blank")
-        slideViewValue.scrollPosition.append("0.0")
         slideViewValue.scrollPositionSwitch = false
-        slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
-        WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: userActivity.webpageURL!))
+        if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] != "about:blank") {
+            slideViewValue.windowStoreTitle.append("")
+            slideViewValue.windowStoreUrl.append("about:blank")
+            slideViewValue.scrollPosition.append("0.0")
+            slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+        }
+        WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: userActivity.webpageURL!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
         return true
     }
     
