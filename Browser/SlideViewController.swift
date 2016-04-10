@@ -15,35 +15,44 @@ import UIKit
 class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate {
     @IBAction func deleteAllTabCheck(sender: AnyObject) {
         //function to define tab deletion
-        if(mainView == false) {
-         //remove all history records
-         slideViewValue.historyUrl.removeAll()
-         slideViewValue.historyTitle.removeAll()
-         slideViewValue.htButtonSwitch = false
-         
-         //back to original tab
-         historyBackToNormal()
-         self.view.makeToast("Tabs", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70))
-         } else {
-         //reset main arrays
-         slideViewValue.windowStoreTitle.removeAll()
-         slideViewValue.windowStoreTitle.append("")
-         slideViewValue.windowStoreUrl.removeAll()
-         slideViewValue.windowStoreUrl.append("about:blank")
-         slideViewValue.scrollPosition.removeAll()
-         slideViewValue.scrollPosition.append("0.0")
-         slideViewValue.windowCurTab = 0
-         
-         //reset readActions
-         slideViewValue.readActions = false
-         slideViewValue.readRecover = false
-         slideViewValue.readActionsCheck = false
-         self.sgButton.setImage(UIImage(named: "Read"), forState: UIControlState.Normal)
-         
-         //open tabs in background
-         WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL:NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!))
-         slideViewValue.scrollPositionSwitch = true
-         self.revealViewController().rightRevealToggleAnimated(true)
+        if(mainView == 0) {
+            //remove all history records
+            slideViewValue.historyUrl.removeAll()
+            slideViewValue.historyTitle.removeAll()
+            slideViewValue.htButtonSwitch = false
+            
+            //back to original tab
+            historyBackToNormal()
+            self.view.makeToast("Tabs", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70))
+        } else if(mainView == 2) {
+            //remove all history records
+            slideViewValue.likesUrl.removeAll()
+            slideViewValue.likesTitle.removeAll()
+            slideViewValue.bkButtonSwitch = false
+            
+            //back to original tab
+            bookmarkBackToNormal()
+            self.view.makeToast("Tabs", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70))
+        } else if(mainView == 1) {
+            //reset main arrays
+            slideViewValue.windowStoreTitle.removeAll()
+            slideViewValue.windowStoreTitle.append("")
+            slideViewValue.windowStoreUrl.removeAll()
+            slideViewValue.windowStoreUrl.append("about:blank")
+            slideViewValue.scrollPosition.removeAll()
+            slideViewValue.scrollPosition.append("0.0")
+            slideViewValue.windowCurTab = 0
+            
+            //reset readActions
+            slideViewValue.readActions = false
+            slideViewValue.readRecover = false
+            slideViewValue.readActionsCheck = false
+            self.sgButton.setImage(UIImage(named: "Read"), forState: UIControlState.Normal)
+            
+            //open tabs in background
+            WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL:NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!))
+            slideViewValue.scrollPositionSwitch = true
+            self.revealViewController().rightRevealToggleAnimated(true)
          }
     }
     @IBAction func deleteAllTab(sender: AnyObject) {
@@ -77,7 +86,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     var tempArray_title = [String]() //Temporary store array
     var style = ToastStyle() //initialise toast
-    var mainView: Bool = false
+    var mainView: Int = 0
     var trashButton: Bool = false
     var likeText: String = ""
     
@@ -124,7 +133,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         //get value from struct variable
         tempArray_title = slideViewValue.windowStoreTitle
-        mainView = true
+        mainView = 1
         
         bgText.text = "maccha"
         windowView.reloadData()
@@ -379,7 +388,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 slideViewValue.bkButtonSwitch = false
                 bgText.text = "history"
                 tempArray_title = slideViewValue.historyTitle
-                mainView = false
+                mainView = 0
                 windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, windowView.numberOfSections)), withRowAnimation: .Automatic)
                 self.view.makeToast("History", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70))
                 
@@ -405,7 +414,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         slideViewValue.htButtonSwitch = false
         bgText.text = "maccha"
         tempArray_title = slideViewValue.windowStoreTitle
-        mainView = true
+        mainView = 1
         windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, windowView.numberOfSections)), withRowAnimation: .Automatic)
         scrollLastestTab(true)
     }
@@ -418,22 +427,40 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             })
             if(slideViewValue.likesTitle.count > 0) { //avoid size < 0 bug crash
                 bkButton.setImage(UIImage(named: "Bookmark-filled"), forState: UIControlState.Normal)
+                slideViewValue.bkButtonSwitch = true
                 htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
                 slideViewValue.htButtonSwitch = false
-                
-                //Toast popup
+                bgText.text = "likes"
+                tempArray_title = slideViewValue.likesTitle
+                mainView = 2
+                windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, windowView.numberOfSections)), withRowAnimation: .Automatic)
                 self.view.makeToast("Likes", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70))
                 
-                slideViewValue.bkButtonSwitch = true
+                //scroll the tableView to display the latest tab
+                let indexPath = NSIndexPath(forRow: windowView.numberOfRowsInSection(windowView.numberOfSections-1)-1, inSection: (windowView.numberOfSections-1))
+                windowView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
             } else {
                 self.view.makeToast("You didn't like any...", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70)) //alert user instead of switching to History
             }
         }
         else {
-            bkButton.setImage(UIImage(named: "Bookmark"), forState: UIControlState.Normal)
+            bookmarkBackToNormal()
             self.view.makeToast("Tabs", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70))
-            slideViewValue.bkButtonSwitch = false
         }
+    }
+    
+    func bookmarkBackToNormal() { //switch Bookmark feature off
+        bkButton.setImage(UIImage(named: "Bookmark"), forState: UIControlState.Normal)
+        UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.navBar.frame.origin.x = -55
+            }, completion: { finished in
+        })
+        slideViewValue.bkButtonSwitch = false
+        bgText.text = "maccha"
+        tempArray_title = slideViewValue.windowStoreTitle
+        mainView = 1
+        windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, windowView.numberOfSections)), withRowAnimation: .Automatic)
+        scrollLastestTab(true)
     }
     
     func settingsAction() {
