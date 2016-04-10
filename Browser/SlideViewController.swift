@@ -95,7 +95,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         windowView.separatorStyle = .None
         windowView.delegate = self
         windowView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
-        windowView.rowHeight = UITableViewAutomaticDimension
+        windowView.rowHeight = 45.0
         navBar.translucent = false
         navBar.barTintColor = UIColor(netHex:0x2E2E2E)
         navBar.clipsToBounds = true
@@ -184,11 +184,11 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if(titleName == "") {
             titleName = "untitled"
         }
-        cell.textLabel?.text = "                 " + titleName
+        cell.textLabel?.text = "                " + titleName
         if(slideViewValue.htButtonSwitch == false) {
-            cell.detailTextLabel?.text = "                     " + slideViewValue.windowStoreUrl[indexPath.row]
+            cell.detailTextLabel?.text = "                    " + slideViewValue.windowStoreUrl[indexPath.row]
         } else {
-            cell.detailTextLabel?.text = "                     " + slideViewValue.historyUrl[indexPath.row]
+            cell.detailTextLabel?.text = "                    " + slideViewValue.historyUrl[indexPath.row]
         }
         cell.textLabel?.font = UIFont.systemFontOfSize(16.0)
         cell.detailTextLabel!.font = UIFont.systemFontOfSize(12.0)
