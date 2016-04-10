@@ -702,13 +702,13 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 if webAddress != "about:blank" {
                     if (slideViewValue.historyUrl.count == 0) { //while history is empty...
                         slideViewValue.historyTitle.append(webTitle)
-                        slideViewValue.historyUrl.append(webAddress)
+                        slideViewValue.historyUrl.append((WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!)
                     }
                     if (slideViewValue.historyUrl.count > 0) { //while history has entries...
                         //check if this address is familer with the one before, if no, insert entry
                         if webAddress != slideViewValue.historyUrl[slideViewValue.historyUrl.count-1] {
                             slideViewValue.historyTitle.append(webTitle)
-                            slideViewValue.historyUrl.append(webAddress)
+                            slideViewValue.historyUrl.append((WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!)
                         }
                     }
                 }
