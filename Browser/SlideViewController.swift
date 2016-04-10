@@ -302,18 +302,32 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //actions of the cells
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        if((slideViewValue.htButtonSwitch == false) || (slideViewValue.bkButtonSwitch == false)) { //normal changing tabs
+        //reset readActions
+        slideViewValue.readActions = false
+        slideViewValue.readRecover = false
+        slideViewValue.readActionsCheck = false
+        if(slideViewValue.htButtonSwitch == false) { //normal changing tabs
             if(slideViewValue.windowCurTab != indexPath.row) { //open link if user not touch current tab, else not loading
+                slideViewValue.scrollPositionSwitch = true
                 slideViewValue.windowCurTab = indexPath.row
+                //open stored urls
+                WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
             }
         }
         if(slideViewValue.htButtonSwitch == true) { //use History feature
-            slideViewValue.htButtonIndex = indexPath.row //pass row value to struct variable
+            if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] != "about:blank") {
+                slideViewValue.scrollPosition.append("0.0")
+                slideViewValue.windowStoreTitle.append(slideViewValue.historyTitle[indexPath.row])
+                slideViewValue.windowStoreUrl.append(slideViewValue.historyUrl[indexPath.row])
+                slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+                //open stored urls
+                WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+            }
+            else {
+                //open stored urls
+                WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.historyUrl[indexPath.row])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+            }
         }
-        if(slideViewValue.bkButtonSwitch == true) { //use Bookmark feature
-            slideViewValue.bkButtonIndex = indexPath.row //pass row value to struct variable
-        }
-        slideViewValue.cellActions = true
         revealViewController().rightRevealToggleAnimated(true)
     }
     

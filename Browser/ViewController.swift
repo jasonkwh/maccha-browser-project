@@ -312,34 +312,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 self.mask.alpha = 0
                 }, completion: { finished in
             })
-            if(slideViewValue.cellActions == true) {
-                if(slideViewValue.htButtonSwitch == true) {
-                    //open history entry
-                    if(webAddress == "about:blank") {
-                        loadRequest(slideViewValue.historyUrl[slideViewValue.htButtonIndex])
-                    } else {
-                        loadRequest(slideViewValue.historyUrl[slideViewValue.htButtonIndex])
-                        slideViewValue.windowStoreTitle.append(WKWebviewFactory.sharedInstance.webView.title!)
-                        slideViewValue.windowStoreUrl.append((WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!)
-                        
-                        //initial y point
-                        slideViewValue.scrollPosition.append("0.0")
-                        
-                        slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
-                    }
-                    slideViewValue.scrollPositionSwitch = false
-                } else {
-                    //open stored urls
-                    loadRequest(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])
-                    slideViewValue.scrollPositionSwitch = true
-                }
-                
-                //reset readActions
-                slideViewValue.readActions = false
-                slideViewValue.readRecover = false
-                slideViewValue.readActionsCheck = false
-                slideViewValue.cellActions = false
-            }
             if((slideViewValue.readActions == true) && (slideViewValue.readRecover == false)) {
                 if(slideViewValue.readActionsCheck == false) {
                     tempUrl = webAddress //tempUrl updates only once...

@@ -11,7 +11,6 @@
  */
 
 struct slideViewValue {
-    static var cellActions: Bool = false
     static var readActions: Bool = false
     static var readRecover: Bool = false
     static var windowStoreTitle = [String]() //save
@@ -28,14 +27,12 @@ struct slideViewValue {
     static var historyTitle = [String]() //save, for history
     static var historyUrl = [String]() //save, for history
     static var htButtonSwitch: Bool = false
-    static var htButtonIndex: Int = 0
     static var scrollPositionSwitch: Bool = false //true is scroll back to user view, false is not
     static var newUser: Int = 0 //save
     static var readActionsCheck: Bool = false
     static var likesTitle = [String]() //save, for bookmarks
     static var likesUrl = [String]() //save, for bookmarks
     static var bkButtonSwitch: Bool = false
-    static var bkButtonIndex: Int = 0
     
     //Search Engines
     //0: Google, 1: Bing
