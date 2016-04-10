@@ -152,6 +152,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         ToastManager.shared.style = style
     }
     
+    //function to toggle reveal controller from another class
     func reloadTable(notification: NSNotification) {
         self.revealViewController().rightRevealToggleAnimated(true)
     }
@@ -210,6 +211,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                             slideViewValue.windowCurTab -= 1
                         }
                         slideViewValue.windowStoreTitle = self.tempArray_title
+                        NSNotificationCenter.defaultCenter().postNotificationName("updateWindow", object: nil)
                     }
                     else {
                         if(slideViewValue.windowCurTab == (self.tempArray_title.count - 1)) {

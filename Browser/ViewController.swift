@@ -82,6 +82,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UIApplicationDelegate.applicationWillEnterForeground(_:)), name: UIApplicationDidBecomeActiveNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.applicationWillEnterBackground(_:)), name: UIApplicationDidEnterBackgroundNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.windowUpdate(_:)), name: "updateWindow", object: nil)
         
         self.revealViewController().delegate = self
         if self.revealViewController() != nil {
@@ -223,6 +224,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] = (WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!
         }
         slideViewValue.shortcutItem = 0
+    }
+    
+    //function to update windows count from another class
+    func windowUpdate(notification: NSNotification) {
+        windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
     }
     
     //actions those the app going to do when the app enters foreground
@@ -658,6 +664,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 //set refreshStopButton to stop state
                 refreshStopButton.setImage(UIImage(named: "Stop"), forState: UIControlState.Normal)
                 refreshStopButton.addTarget(self, action: #selector(ViewController.stopPressed), forControlEvents: UIControlEvents.TouchUpInside)
+                
+                //display current window numbers
+                windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
             }
             if(Float(WKWebviewFactory.sharedInstance.webView.estimatedProgress) > 0.1) {
                 //shorten url by replacing http:// and https:// to null
@@ -682,9 +691,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                     slideViewValue.windowStoreTitle[slideViewValue.windowCurTab] = WKWebviewFactory.sharedInstance.webView.title!
                     slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] = (WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!
                 }
-                
-                //display current window numbers
-                windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
             }
             if(Float(WKWebviewFactory.sharedInstance.webView.estimatedProgress) == 1.0) {
                 //set refresh button style
