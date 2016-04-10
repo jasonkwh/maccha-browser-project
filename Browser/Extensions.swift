@@ -35,6 +35,7 @@ struct slideViewValue {
     static var likesTitle = [String]() //save, for bookmarks
     static var likesUrl = [String]() //save, for bookmarks
     static var bkButtonSwitch: Bool = false
+    static var bkButtonIndex: Int = 0
     
     //Search Engines
     //0: Google, 1: Bing

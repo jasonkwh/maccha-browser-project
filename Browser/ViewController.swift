@@ -311,12 +311,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 }, completion: { finished in
             })
             if(slideViewValue.cellActions == true) {
-                //open stored urls
-                if(slideViewValue.htButtonSwitch == false) {
-                    loadRequest(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])
-                    slideViewValue.scrollPositionSwitch = true
-                }
-                else if(slideViewValue.htButtonSwitch == true) {
+                if(slideViewValue.htButtonSwitch == true) {
                     //open history entry
                     if(webAddress == "about:blank") {
                         loadRequest(slideViewValue.historyUrl[slideViewValue.htButtonIndex])
@@ -331,7 +326,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                         slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
                     }
                     slideViewValue.scrollPositionSwitch = false
+                } else {
+                    //open stored urls
+                    loadRequest(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])
+                    slideViewValue.scrollPositionSwitch = true
                 }
+                
                 //reset readActions
                 slideViewValue.readActions = false
                 slideViewValue.readRecover = false

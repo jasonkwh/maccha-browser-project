@@ -133,6 +133,8 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         //get value from struct variable
         tempArray_title = slideViewValue.windowStoreTitle
+        
+        //reset mainView variable for deleting all feature
         mainView = 1
         
         bgText.text = "maccha"
@@ -151,6 +153,10 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //reset history button
         htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
         slideViewValue.htButtonSwitch = false
+        
+        //reset bookmark button
+        bkButton.setImage(UIImage(named: "Bookmark"), forState: UIControlState.Normal)
+        slideViewValue.bkButtonSwitch = false
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -296,15 +302,18 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //actions of the cells
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        if(slideViewValue.htButtonSwitch == false) { //normal changing tabs
+        if((slideViewValue.htButtonSwitch == false) || (slideViewValue.bkButtonSwitch == false)) { //normal changing tabs
             if(slideViewValue.windowCurTab != indexPath.row) { //open link if user not touch current tab, else not loading
                 slideViewValue.windowCurTab = indexPath.row
-                slideViewValue.cellActions = true
             }
-        } else if(slideViewValue.htButtonSwitch == true) { //use History feature
-            slideViewValue.htButtonIndex = indexPath.row //pass row value to struct variable
-            slideViewValue.cellActions = true
         }
+        if(slideViewValue.htButtonSwitch == true) { //use History feature
+            slideViewValue.htButtonIndex = indexPath.row //pass row value to struct variable
+        }
+        if(slideViewValue.bkButtonSwitch == true) { //use Bookmark feature
+            slideViewValue.bkButtonIndex = indexPath.row //pass row value to struct variable
+        }
+        slideViewValue.cellActions = true
         revealViewController().rightRevealToggleAnimated(true)
     }
     

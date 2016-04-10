@@ -22,6 +22,7 @@ class ModalView: UIView {
     @IBOutlet private weak var bottomButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var contents: UILabel!
+    let githubAddress: String = "https://github.com/jasonkwh/maccha-browser-project"
     
     class func instantiateFromNib() -> ModalView {
         let view = UINib(nibName: "ModalView", bundle: nil).instantiateWithOwner(nil, options: nil).first as! ModalView
@@ -40,13 +41,14 @@ class ModalView: UIView {
         slideViewValue.readRecover = false
         slideViewValue.readActionsCheck = false
         
-        //addition window
-        slideViewValue.windowStoreTitle.append("")
-        slideViewValue.windowStoreUrl.append("https://github.com/jasonkwh/maccha-browser-project")
-        slideViewValue.scrollPosition.append("0.0")
-        slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
-        
-        WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+        if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] != "about:blank") {
+            //addition window
+            slideViewValue.windowStoreTitle.append("")
+            slideViewValue.windowStoreUrl.append(githubAddress)
+            slideViewValue.scrollPosition.append("0.0")
+            slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+        }
+        WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: githubAddress)!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
         self.closeButtonHandler?()
         NSNotificationCenter.defaultCenter().postNotificationName("tableReloadNotify", object: nil)
     }
