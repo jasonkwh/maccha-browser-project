@@ -152,16 +152,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         backButton.enabled = false
         forwardButton.enabled = false
         
+        slideViewValue.scrollPositionSwitch = true
         if(slideViewValue.shortcutItem == 0) {
             if(slideViewValue.newUser == 0) {
                 loadRequest(slideViewValue.windowStoreUrl[0])
             } else {
-                if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] == "about:blank") {
-                    loadRequest("about:blank")
-                } else {
-                    slideViewValue.scrollPositionSwitch = false
-                    loadRequest(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])
-                }
+                loadRequest(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])
             }
         }
         else {
@@ -175,7 +171,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 openShortcutItem()
             }
             if((slideViewValue.shortcutItem == 2) && (pbString == "")) {
-                loadRequest(slideViewValue.windowStoreUrl[slideViewValue.windowStoreTitle.count-1])
+                loadRequest(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])
                 slideViewValue.alertPopup(0, message: "Clipboard is empty")
             }
         }
@@ -213,15 +209,21 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         slideViewValue.readActions = false
         slideViewValue.readRecover = false
         slideViewValue.readActionsCheck = false
-        slideViewValue.windowStoreTitle.append("")
-        slideViewValue.windowStoreUrl.append("about:blank")
-        slideViewValue.scrollPosition.append("0.0")
-        slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
         windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
         if(slideViewValue.shortcutItem == 1) {
+            slideViewValue.windowStoreTitle.append("")
+            slideViewValue.windowStoreUrl.append("about:blank")
+            slideViewValue.scrollPosition.append("0.0")
+            slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
             loadRequest("about:blank")
         }
         else if(slideViewValue.shortcutItem == 2) {
+            if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] != "about:blank") {
+                slideViewValue.windowStoreTitle.append("")
+                slideViewValue.windowStoreUrl.append("about:blank")
+                slideViewValue.scrollPosition.append("0.0")
+                slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+            }
             //Open URL from clipboard
             loadRequest(pbString)
             slideViewValue.windowStoreTitle[slideViewValue.windowCurTab] = WKWebviewFactory.sharedInstance.webView.title!
