@@ -34,6 +34,7 @@ struct slideViewValue {
     static var readActionsCheck: Bool = false
     static var likesTitle = [String]() //save, for bookmarks
     static var likesUrl = [String]() //save, for bookmarks
+    static var bkButtonSwitch: Bool = false
     
     //Search Engines
     //0: Google, 1: Bing

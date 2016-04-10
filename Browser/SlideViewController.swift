@@ -75,7 +75,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             windowView.dataSource = self
         }
     }
-    var bkButtonSwitch: Bool = false //functions
     var tempArray_title = [String]() //Temporary store array
     var style = ToastStyle() //initialise toast
     var mainView: Bool = false
@@ -377,7 +376,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 htButton.setImage(UIImage(named: "History-filled"), forState: UIControlState.Normal)
                 slideViewValue.htButtonSwitch = true
                 bkButton.setImage(UIImage(named: "Bookmark"), forState: UIControlState.Normal)
-                bkButtonSwitch = false
+                slideViewValue.bkButtonSwitch = false
                 bgText.text = "history"
                 tempArray_title = slideViewValue.historyTitle
                 mainView = false
@@ -412,20 +411,28 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func bookmarkAction() {
-        if(bkButtonSwitch == false) {
-            bkButton.setImage(UIImage(named: "Bookmark-filled"), forState: UIControlState.Normal)
-            htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
-            slideViewValue.htButtonSwitch = false
-            
-            //Toast popup
-            self.view.makeToast("Likes", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70))
-            
-            bkButtonSwitch = true
+        if(slideViewValue.bkButtonSwitch == false) {
+            UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                self.navBar.frame.origin.x = -55
+                }, completion: { finished in
+            })
+            if(slideViewValue.likesTitle.count > 0) { //avoid size < 0 bug crash
+                bkButton.setImage(UIImage(named: "Bookmark-filled"), forState: UIControlState.Normal)
+                htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
+                slideViewValue.htButtonSwitch = false
+                
+                //Toast popup
+                self.view.makeToast("Likes", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70))
+                
+                slideViewValue.bkButtonSwitch = true
+            } else {
+                self.view.makeToast("You didn't like any...", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70)) //alert user instead of switching to History
+            }
         }
         else {
             bkButton.setImage(UIImage(named: "Bookmark"), forState: UIControlState.Normal)
             self.view.makeToast("Tabs", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70))
-            bkButtonSwitch = false
+            slideViewValue.bkButtonSwitch = false
         }
     }
     
