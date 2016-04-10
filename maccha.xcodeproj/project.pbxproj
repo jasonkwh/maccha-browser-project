@@ -12,6 +12,7 @@
 		3F198FF61C9832C40012A685 /* WkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F198FF51C9832C40012A685 /* WkData.swift */; };
 		3F198FF81C98330F0012A685 /* HistoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F198FF71C98330F0012A685 /* HistoryData.swift */; };
 		3F198FFA1C98333E0012A685 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F198FF91C98333E0012A685 /* GlobalData.swift */; };
+		3F5678431CBA69A1006B2502 /* BookmarkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5678421CBA69A1006B2502 /* BookmarkData.swift */; };
 		3F568AFA1C85D7B800771303 /* safari-reader.js in Resources */ = {isa = PBXBuildFile; fileRef = 3F568AF91C85D7B800771303 /* safari-reader.js */; };
 		3F936E781CA2CC3900F81CEE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F936E771CA2CC3900F81CEE /* Extensions.swift */; };
 		3F9760E91C651C9C006F2ACB /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9760E81C651C9C006F2ACB /* SlideViewController.swift */; };
@@ -64,6 +65,7 @@
 		3F198FF71C98330F0012A685 /* HistoryData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryData.swift; path = BrowserData/HistoryData.swift; sourceTree = "<group>"; };
 		3F198FF91C98333E0012A685 /* GlobalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalData.swift; path = BrowserData/GlobalData.swift; sourceTree = "<group>"; };
 		3F1EE7D61C5D499700923DF3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		3F5678421CBA69A1006B2502 /* BookmarkData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookmarkData.swift; path = BrowserData/BookmarkData.swift; sourceTree = "<group>"; };
 		3F568AF91C85D7B800771303 /* safari-reader.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "safari-reader.js"; sourceTree = "<group>"; };
 		3F6683511C782F0400288B95 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		3F936E771CA2CC3900F81CEE /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				3FD6A25A1C9F09CC005E79EC /* WkString.swift */,
 				3F198FF51C9832C40012A685 /* WkData.swift */,
 				3F198FF71C98330F0012A685 /* HistoryData.swift */,
+				3F5678421CBA69A1006B2502 /* BookmarkData.swift */,
 				3F198FF91C98333E0012A685 /* GlobalData.swift */,
 			);
 			name = BrowserData;
@@ -403,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FB2BAB21CA180B8002DCB03 /* SWRevealViewController.m in Sources */,
+				3F5678431CBA69A1006B2502 /* BookmarkData.swift in Sources */,
 				5F8533721A5BB8C900F14347 /* ViewController.swift in Sources */,
 				3FB279AF1C72451A007F0416 /* ModalView.swift in Sources */,
 				3F9760E91C651C9C006F2ACB /* SlideViewController.swift in Sources */,

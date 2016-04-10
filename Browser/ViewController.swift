@@ -201,6 +201,10 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             slideViewValue.historyTitle = htdata.history_title
             slideViewValue.historyUrl = htdata.history_url
         }
+        for bkdata in realm_maccha.objects(BookmarkData) {
+            slideViewValue.likesTitle = bkdata.like_title
+            slideViewValue.likesUrl = bkdata.like_url
+        }
     }
     
     //Determine quick actions...

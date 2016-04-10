@@ -93,9 +93,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             wdata.wk_url = slideViewValue.windowStoreUrl
             wdata.wk_title = slideViewValue.windowStoreTitle
             wdata.wk_scrollPosition = slideViewValue.scrollPosition
+            let bkdata = BookmarkData()
+            bkdata.like_title = slideViewValue.likesTitle
+            bkdata.like_url = slideViewValue.likesUrl
             realm_maccha.add(wdata)
             realm_maccha.add(gdata)
             realm_maccha.add(htdata)
+            realm_maccha.add(bkdata)
         }
     }
 
@@ -112,6 +116,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
-

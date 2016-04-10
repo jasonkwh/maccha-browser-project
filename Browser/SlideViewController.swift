@@ -80,6 +80,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var style = ToastStyle() //initialise toast
     var mainView: Bool = false
     var trashButton: Bool = false
+    var likeText: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -413,12 +414,17 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func bookmarkAction() {
         if(bkButtonSwitch == false) {
             bkButton.setImage(UIImage(named: "Bookmark-filled"), forState: UIControlState.Normal)
-            bkButtonSwitch = true
             htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
             slideViewValue.htButtonSwitch = false
+            
+            //Toast popup
+            self.view.makeToast("Likes", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70))
+            
+            bkButtonSwitch = true
         }
         else {
             bkButton.setImage(UIImage(named: "Bookmark"), forState: UIControlState.Normal)
+            self.view.makeToast("Tabs", duration: 0.8, position: CGPoint(x: self.view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70))
             bkButtonSwitch = false
         }
     }
