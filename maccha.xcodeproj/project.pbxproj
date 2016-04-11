@@ -12,6 +12,7 @@
 		3F198FF61C9832C40012A685 /* WkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F198FF51C9832C40012A685 /* WkData.swift */; };
 		3F198FF81C98330F0012A685 /* HistoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F198FF71C98330F0012A685 /* HistoryData.swift */; };
 		3F198FFA1C98333E0012A685 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F198FF91C98333E0012A685 /* GlobalData.swift */; };
+		3F1F17D51CBC234E007B63DB /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F17D41CBC234E007B63DB /* Toast.swift */; };
 		3F5678431CBA69A1006B2502 /* BookmarkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5678421CBA69A1006B2502 /* BookmarkData.swift */; };
 		3F568AFA1C85D7B800771303 /* safari-reader.js in Resources */ = {isa = PBXBuildFile; fileRef = 3F568AF91C85D7B800771303 /* safari-reader.js */; };
 		3F936E781CA2CC3900F81CEE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F936E771CA2CC3900F81CEE /* Extensions.swift */; };
@@ -19,13 +20,12 @@
 		3FB279AC1C7244E6007F0416 /* PathDynamicModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB279AB1C7244E6007F0416 /* PathDynamicModal.swift */; };
 		3FB279AF1C72451A007F0416 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB279AD1C72451A007F0416 /* ModalView.swift */; };
 		3FB279B01C72451A007F0416 /* ModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB279AE1C72451A007F0416 /* ModalView.xib */; };
-		3FB2BAAB1CA18030002DCB03 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB2BAA71CA18026002DCB03 /* Realm.framework */; };
-		3FB2BAAC1CA18030002DCB03 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB2BAA71CA18026002DCB03 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3FB2BAAD1CA18030002DCB03 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB2BAA81CA18026002DCB03 /* RealmSwift.framework */; };
-		3FB2BAAE1CA18030002DCB03 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB2BAA81CA18026002DCB03 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3FB2BAB21CA180B8002DCB03 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2BAB11CA180B8002DCB03 /* SWRevealViewController.m */; };
-		3FC579CA1C89F12400654FF3 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC579C91C89F12400654FF3 /* Toast.swift */; };
 		3FD6A25B1C9F09CC005E79EC /* WkString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6A25A1C9F09CC005E79EC /* WkString.swift */; };
+		3FE42CF01CBC1D0A00AF43FE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE42CEE1CBC1D0A00AF43FE /* Realm.framework */; };
+		3FE42CF11CBC1D0A00AF43FE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE42CEF1CBC1D0A00AF43FE /* RealmSwift.framework */; };
+		3FE42CF31CBC1D1300AF43FE /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE42CEE1CBC1D0A00AF43FE /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3FE42CF51CBC1D1300AF43FE /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE42CEF1CBC1D0A00AF43FE /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F8533701A5BB8C900F14347 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F85336F1A5BB8C900F14347 /* AppDelegate.swift */; };
 		5F8533721A5BB8C900F14347 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8533711A5BB8C900F14347 /* ViewController.swift */; };
 		5F8533751A5BB8C900F14347 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8533731A5BB8C900F14347 /* Main.storyboard */; };
@@ -45,14 +45,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		3FB2BAAF1CA18030002DCB03 /* Embed Frameworks */ = {
+		3FE42CF61CBC1D1300AF43FE /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3FB2BAAE1CA18030002DCB03 /* RealmSwift.framework in Embed Frameworks */,
-				3FB2BAAC1CA18030002DCB03 /* Realm.framework in Embed Frameworks */,
+				3FE42CF51CBC1D1300AF43FE /* RealmSwift.framework in Embed Frameworks */,
+				3FE42CF31CBC1D1300AF43FE /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +65,7 @@
 		3F198FF71C98330F0012A685 /* HistoryData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryData.swift; path = BrowserData/HistoryData.swift; sourceTree = "<group>"; };
 		3F198FF91C98333E0012A685 /* GlobalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalData.swift; path = BrowserData/GlobalData.swift; sourceTree = "<group>"; };
 		3F1EE7D61C5D499700923DF3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		3F1F17D41CBC234E007B63DB /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		3F5678421CBA69A1006B2502 /* BookmarkData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookmarkData.swift; path = BrowserData/BookmarkData.swift; sourceTree = "<group>"; };
 		3F568AF91C85D7B800771303 /* safari-reader.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "safari-reader.js"; sourceTree = "<group>"; };
 		3F6683511C782F0400288B95 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
@@ -73,12 +74,11 @@
 		3FB279AB1C7244E6007F0416 /* PathDynamicModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathDynamicModal.swift; sourceTree = "<group>"; };
 		3FB279AD1C72451A007F0416 /* ModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		3FB279AE1C72451A007F0416 /* ModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalView.xib; sourceTree = "<group>"; };
-		3FB2BAA71CA18026002DCB03 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Realm/Realm.framework; sourceTree = "<group>"; };
-		3FB2BAA81CA18026002DCB03 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Realm/RealmSwift.framework; sourceTree = "<group>"; };
 		3FB2BAB01CA180B8002DCB03 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
 		3FB2BAB11CA180B8002DCB03 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
-		3FC579C91C89F12400654FF3 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = "../Pods/Toast-Swift/Toast/Toast.swift"; sourceTree = "<group>"; };
 		3FD6A25A1C9F09CC005E79EC /* WkString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WkString.swift; path = BrowserData/WkString.swift; sourceTree = "<group>"; };
+		3FE42CEE1CBC1D0A00AF43FE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Realm/Realm.framework; sourceTree = "<group>"; };
+		3FE42CEF1CBC1D0A00AF43FE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Realm/RealmSwift.framework; sourceTree = "<group>"; };
 		5F85336A1A5BB8C800F14347 /* maccha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = maccha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F85336E1A5BB8C900F14347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F85336F1A5BB8C900F14347 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,9 +99,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FB2BAAB1CA18030002DCB03 /* Realm.framework in Frameworks */,
+				3FE42CF01CBC1D0A00AF43FE /* Realm.framework in Frameworks */,
 				34453A5F26BFE6C15E8C5916 /* Pods_maccha.framework in Frameworks */,
-				3FB2BAAD1CA18030002DCB03 /* RealmSwift.framework in Frameworks */,
+				3FE42CF11CBC1D0A00AF43FE /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,7 +179,7 @@
 				3F10AC6E1C9585F900CAF0B7 /* WKWebviewFactory.swift */,
 				3FB279AD1C72451A007F0416 /* ModalView.swift */,
 				3FB279AB1C7244E6007F0416 /* PathDynamicModal.swift */,
-				3FC579C91C89F12400654FF3 /* Toast.swift */,
+				3F1F17D41CBC234E007B63DB /* Toast.swift */,
 				3FB279AE1C72451A007F0416 /* ModalView.xib */,
 				5F8533731A5BB8C900F14347 /* Main.storyboard */,
 				5F8533761A5BB8C900F14347 /* Images.xcassets */,
@@ -226,9 +226,9 @@
 		9A1FD1053E16DE2691CC5A72 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3FB2BAA71CA18026002DCB03 /* Realm.framework */,
-				3FB2BAA81CA18026002DCB03 /* RealmSwift.framework */,
 				AAEBA95640F8ADD14723F212 /* Pods_maccha.framework */,
+				3FE42CEE1CBC1D0A00AF43FE /* Realm.framework */,
+				3FE42CEF1CBC1D0A00AF43FE /* RealmSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -247,7 +247,7 @@
 				DD430A4C18128C728D88C6F3 /* 📦 Embed Pods Frameworks */,
 				C1C68A8DBAED103FEC8C8A3F /* 📦 Copy Pods Resources */,
 				3FE8C9051C9826F300120237 /* Strip Framework Architectures */,
-				3FB2BAAF1CA18030002DCB03 /* Embed Frameworks */,
+				3FE42CF61CBC1D1300AF43FE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -351,7 +351,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Realm/Realm.framework/strip-frameworks.sh\"";
+			shellScript = "bash \"${SRCROOT}/Realm/Realm.framework/strip-frameworks.sh\"";
 		};
 		C1C68A8DBAED103FEC8C8A3F /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -416,9 +416,9 @@
 				3FB279AC1C7244E6007F0416 /* PathDynamicModal.swift in Sources */,
 				3FD6A25B1C9F09CC005E79EC /* WkString.swift in Sources */,
 				5F8533701A5BB8C900F14347 /* AppDelegate.swift in Sources */,
-				3FC579CA1C89F12400654FF3 /* Toast.swift in Sources */,
 				3F198FF81C98330F0012A685 /* HistoryData.swift in Sources */,
 				3F936E781CA2CC3900F81CEE /* Extensions.swift in Sources */,
+				3F1F17D51CBC234E007B63DB /* Toast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,10 +556,23 @@
 				);
 				INFOPLIST_FILE = Browser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"CBZSplashView\"",
+					"-framework",
+					"\"MGSwipeTableCell\"",
+					"-framework",
+					"\"OnePasswordExtension\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.studiospates.maccha;
 				PRODUCT_NAME = maccha;
 				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -577,10 +590,23 @@
 				);
 				INFOPLIST_FILE = Browser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"CBZSplashView\"",
+					"-framework",
+					"\"MGSwipeTableCell\"",
+					"-framework",
+					"\"OnePasswordExtension\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.studiospates.maccha;
 				PRODUCT_NAME = maccha;
 				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};

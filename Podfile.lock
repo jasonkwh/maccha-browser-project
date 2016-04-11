@@ -1,30 +1,28 @@
 PODS:
   - 1PasswordExtension (1.8)
-  - AFNetworking (3.0.4):
-    - AFNetworking/NSURLSession (= 3.0.4)
-    - AFNetworking/Reachability (= 3.0.4)
-    - AFNetworking/Security (= 3.0.4)
-    - AFNetworking/Serialization (= 3.0.4)
-    - AFNetworking/UIKit (= 3.0.4)
-  - AFNetworking/NSURLSession (3.0.4):
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.0.4)
-  - AFNetworking/Security (3.0.4)
-  - AFNetworking/Serialization (3.0.4)
-  - AFNetworking/UIKit (3.0.4):
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - CBZSplashView (1.0.0)
-  - MGSwipeTableCell (1.5.4)
-  - Toast-Swift (1.0.0)
+  - MGSwipeTableCell (1.5.5)
 
 DEPENDENCIES:
   - 1PasswordExtension (from `https://github.com/AgileBits/onepassword-app-extension.git`, branch `master`)
   - AFNetworking (from `https://github.com/AFNetworking/AFNetworking.git`, branch `master`)
   - CBZSplashView (~> 1.0.0)
   - MGSwipeTableCell (from `https://github.com/MortimerGoro/MGSwipeTableCell.git`, branch `master`)
-  - Toast-Swift (from `https://github.com/scalessec/Toast-Swift.git`, branch `master`)
 
 EXTERNAL SOURCES:
   1PasswordExtension:
@@ -36,31 +34,24 @@ EXTERNAL SOURCES:
   MGSwipeTableCell:
     :branch: master
     :git: https://github.com/MortimerGoro/MGSwipeTableCell.git
-  Toast-Swift:
-    :branch: master
-    :git: https://github.com/scalessec/Toast-Swift.git
 
 CHECKOUT OPTIONS:
   1PasswordExtension:
-    :commit: 0c2f0a2085906277386a02e158ddb6a285b5963f
+    :commit: 38aa7521f857af820165eae359aa79d341a53657
     :git: https://github.com/AgileBits/onepassword-app-extension.git
   AFNetworking:
-    :commit: 32cf30a2451917c25d853fccb9e112b64415595e
+    :commit: ba3bb8e5d79459f7f5a78d13a5066c561aa0777a
     :git: https://github.com/AFNetworking/AFNetworking.git
   MGSwipeTableCell:
-    :commit: 49e697a3b8ebcdb3ddb09a39e59bf9463e5f5de6
+    :commit: fa0aa7e12095559a9b66d69558d007239753c231
     :git: https://github.com/MortimerGoro/MGSwipeTableCell.git
-  Toast-Swift:
-    :commit: 9d6a55661590a1ede0c77c970cf10ca31cb4cad9
-    :git: https://github.com/scalessec/Toast-Swift.git
 
 SPEC CHECKSUMS:
   1PasswordExtension: 627d5aecf210c7636968faf5a4c3546c9531385b
-  AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   CBZSplashView: 9ce4cba22024476ff4a97d6433e7347da6376016
-  MGSwipeTableCell: cffd3378af74eb991911f132c5f3911261fda860
-  Toast-Swift: 709908e9f9a96dfd72438f9301ae28e3e98c16bb
+  MGSwipeTableCell: bafeb5f351124544c9364ecbdf24c7b06a37d340
 
-PODFILE CHECKSUM: 36015b986526c41408f01338482c2c58750896b7
+PODFILE CHECKSUM: b849d8f4aab8b1690597ca051432309741ac9df3
 
 COCOAPODS: 1.0.0.beta.6

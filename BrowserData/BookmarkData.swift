@@ -15,7 +15,7 @@ import RealmSwift
 
 class BookmarkData: Object {
     
-    //store browser history url
+    //store browser bookmark url
     var like_url: [String] {
         get {
             return _backingBkUrl.map {
@@ -29,7 +29,7 @@ class BookmarkData: Object {
     }
     let _backingBkUrl = List<WkString>()
     
-    //store browser history title
+    //store browser bookmark title
     var like_title: [String] {
         get {
             return _backingBkTitle.map {
@@ -43,7 +43,7 @@ class BookmarkData: Object {
     }
     let _backingBkTitle = List<WkString>()
     
-// Specify properties to ignore (Realm won't persist these)
+    // Specify properties to ignore (Realm won't persist these)
     
     override static func ignoredProperties() -> [String] {
         return ["like_url", "like_title"]

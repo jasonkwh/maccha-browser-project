@@ -30,7 +30,7 @@ RLM_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly, getter = isInvalidated) BOOL invalidated;
 
-- (instancetype)init NS_DESIGNATED_INITIALIZER;
+- (instancetype)init;
 
 + (NSString *)className;
 
