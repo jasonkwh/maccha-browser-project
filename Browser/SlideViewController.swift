@@ -88,7 +88,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var style = ToastStyle() //initialise toast
     var mainView: Int = 0 //0: History view, 1: Main view, 2: Likes view
     var trashButton: Bool = false
-    var likeText: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -221,31 +220,15 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.textLabel?.textColor = UIColor(netHex: 0xECF0F1)
         cell.detailTextLabel?.textColor = UIColor(netHex: 0xECF0F1)
         cell.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
-        
-        //Set likeText if user did like
-        if mainView == 1 {
-            if slideViewValue.likesUrl.contains(slideViewValue.windowStoreUrl[indexPath.row]) {
-                likeText = "Unlike"
-            } else {
-                likeText = "Like"
-            }
-        }
-        if mainView == 0 {
-            if slideViewValue.likesUrl.contains(slideViewValue.historyUrl[indexPath.row]) {
-                likeText = "Unlike"
-            } else {
-                likeText = "Like"
-            }
-        }
     
         //configure right buttons
         if (mainView == 0) || (mainView == 1) {
-            cell.rightButtons = [MGSwipeButton(title: "Close", backgroundColor: UIColor(netHex:0xE74C3C), callback: {
+            cell.rightButtons = [MGSwipeButton(title: "close", backgroundColor: UIColor(netHex:0xE74C3C), callback: {
                 (sender: MGSwipeTableCell!) -> Bool in
                 self.tabDeleteActions(indexPath.row)
-            }), MGSwipeButton(title: likeText, backgroundColor: UIColor(netHex:0xF1C40F), callback: {
+            }), MGSwipeButton(title: setLikesText(indexPath.row), backgroundColor: UIColor(netHex:0xF1C40F), callback: {
                 (sender: MGSwipeTableCell!) -> Bool in
-                self.tabLikeActions(indexPath.row, likes: self.likeText)
+                self.tabLikeActions(indexPath.row, likes: self.setLikesText(indexPath.row))
             })]
         } else {
             cell.rightButtons = [MGSwipeButton(title: "Close", backgroundColor: UIColor(netHex:0xE74C3C), callback: {
@@ -258,6 +241,28 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.rightExpansion.fillOnTrigger = true
         
         return cell
+    }
+    
+    //function to set likeText if user did like
+    func setLikesText(cell_row: Int) -> String {
+        var likeText: String = ""
+        
+        if mainView == 1 {
+            if slideViewValue.likesUrl.contains(slideViewValue.windowStoreUrl[cell_row]) {
+                likeText = "Unlike"
+            } else {
+                likeText = "Like"
+            }
+        }
+        if mainView == 0 {
+            if slideViewValue.likesUrl.contains(slideViewValue.historyUrl[cell_row]) {
+                likeText = "Unlike"
+            } else {
+                likeText = "Like"
+            }
+        }
+        
+        return likeText
     }
     
     //actions of the cells
