@@ -223,7 +223,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
         //configure right buttons
         if (mainView == 0) || (mainView == 1) {
-            cell.rightButtons = [MGSwipeButton(title: "close", backgroundColor: UIColor(netHex:0xE74C3C), callback: {
+            cell.rightButtons = [MGSwipeButton(title: "Close", backgroundColor: UIColor(netHex:0xE74C3C), callback: {
                 (sender: MGSwipeTableCell!) -> Bool in
                 self.tabDeleteActions(indexPath.row)
             }), MGSwipeButton(title: setLikesText(indexPath.row), backgroundColor: UIColor(netHex:0xF1C40F), callback: {
