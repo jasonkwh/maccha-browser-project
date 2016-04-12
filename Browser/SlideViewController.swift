@@ -122,6 +122,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidAppear(animated: Bool) {
         //added observer for showing about screen
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SlideViewController.reloadTable(_:)), name: "tableReloadNotify", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SlideViewController.reloadWindowView(_:)), name: "windowViewReload", object: nil)
         
         navBar.frame.origin.x = -55 //set original navigation bar origin
         
@@ -165,6 +166,14 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         style.messageColor = UIColor(netHex: 0xECF0F1)
         style.backgroundColor = UIColor(netHex:0x444444)
         ToastManager.shared.style = style
+    }
+    
+    //function to reload the table content from another class
+    func reloadWindowView(notification: NSNotification) {
+        if mainView == 1 {
+            tempArray_title = slideViewValue.windowStoreTitle
+            windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, windowView.numberOfSections)), withRowAnimation: .None)
+        }
     }
     
     //function to toggle reveal controller from another class
@@ -282,10 +291,10 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         if mainView == 0 { //use History feature
             if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] != "about:blank") {
-                slideViewValue.scrollPosition.append("0.0")
-                slideViewValue.windowStoreTitle.append(slideViewValue.historyTitle[indexPath.row])
-                slideViewValue.windowStoreUrl.append(slideViewValue.historyUrl[indexPath.row])
-                slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+                slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
+                slideViewValue.windowStoreTitle.insert(slideViewValue.historyTitle[indexPath.row], atIndex: slideViewValue.windowCurTab)
+                slideViewValue.windowStoreUrl.insert(slideViewValue.historyUrl[indexPath.row], atIndex: slideViewValue.windowCurTab)
+                slideViewValue.scrollPosition.insert("0.0", atIndex: slideViewValue.windowCurTab)
                 //open stored urls
                 WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
             }
@@ -296,10 +305,10 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         if mainView == 2 { //use Bookmark feature
             if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] != "about:blank") {
-                slideViewValue.scrollPosition.append("0.0")
-                slideViewValue.windowStoreTitle.append(slideViewValue.likesTitle[indexPath.row])
-                slideViewValue.windowStoreUrl.append(slideViewValue.likesUrl[indexPath.row])
-                slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+                slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
+                slideViewValue.windowStoreTitle.insert(slideViewValue.likesTitle[indexPath.row], atIndex: slideViewValue.windowCurTab)
+                slideViewValue.windowStoreUrl.insert(slideViewValue.likesUrl[indexPath.row], atIndex: slideViewValue.windowCurTab)
+                slideViewValue.scrollPosition.insert("0.0", atIndex: slideViewValue.windowCurTab)
                 //open stored urls
                 WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
             }
@@ -469,10 +478,10 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         slideViewValue.readActionsCheck = false
         
         //open new tab
-        slideViewValue.windowStoreTitle.append("")
-        slideViewValue.windowStoreUrl.append("about:blank")
-        slideViewValue.scrollPosition.append("0.0")
-        slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+        slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
+        slideViewValue.windowStoreTitle.insert("", atIndex: slideViewValue.windowCurTab)
+        slideViewValue.windowStoreUrl.insert("about:blank", atIndex: slideViewValue.windowCurTab)
+        slideViewValue.scrollPosition.insert("0.0", atIndex: slideViewValue.windowCurTab)
         
         WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL:NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!))
         

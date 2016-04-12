@@ -210,18 +210,18 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         slideViewValue.readActionsCheck = false
         windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
         if(slideViewValue.shortcutItem == 1) {
-            slideViewValue.windowStoreTitle.append("")
-            slideViewValue.windowStoreUrl.append("about:blank")
-            slideViewValue.scrollPosition.append("0.0")
-            slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+            slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
+            slideViewValue.windowStoreTitle.insert("", atIndex: slideViewValue.windowCurTab)
+            slideViewValue.windowStoreUrl.insert("about:blank", atIndex: slideViewValue.windowCurTab)
+            slideViewValue.scrollPosition.insert("0.0", atIndex: slideViewValue.windowCurTab)
             loadRequest("about:blank")
         }
         else if(slideViewValue.shortcutItem == 2) {
             if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] != "about:blank") {
-                slideViewValue.windowStoreTitle.append("")
-                slideViewValue.windowStoreUrl.append("about:blank")
-                slideViewValue.scrollPosition.append("0.0")
-                slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+                slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
+                slideViewValue.windowStoreTitle.insert("", atIndex: slideViewValue.windowCurTab)
+                slideViewValue.windowStoreUrl.insert("about:blank", atIndex: slideViewValue.windowCurTab)
+                slideViewValue.scrollPosition.insert("0.0", atIndex: slideViewValue.windowCurTab)
             }
             //Open URL from clipboard
             loadRequest(pbString)
@@ -667,6 +667,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 if(slideViewValue.readActions == false) {
                     slideViewValue.windowStoreTitle[slideViewValue.windowCurTab] = WKWebviewFactory.sharedInstance.webView.title!
                     slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] = (WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!
+                    NSNotificationCenter.defaultCenter().postNotificationName("windowViewReload", object: nil)
                 }
             }
             if(Float(WKWebviewFactory.sharedInstance.webView.estimatedProgress) == 1.0) {
@@ -773,18 +774,13 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         }
         alertController.addAction(openAction)
         let opentabAction = UIAlertAction(title: "Open In New Tab", style: .Default) { (action) in
-            //store previous window titles and urls
-            slideViewValue.windowStoreTitle.append(urlStr)
-            slideViewValue.windowStoreUrl.append(urlStr)
-            
-            //set current window as the latest window
-            slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+            slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
+            slideViewValue.windowStoreTitle.insert(urlStr, atIndex: slideViewValue.windowCurTab)
+            slideViewValue.windowStoreUrl.insert(urlStr, atIndex: slideViewValue.windowCurTab)
+            slideViewValue.scrollPosition.insert("0.0", atIndex: slideViewValue.windowCurTab)
             
             //update windows count
             self.windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
-            
-            //initial y point
-            slideViewValue.scrollPosition.append("0.0")
             
             //reset readActions
             slideViewValue.readActions = false

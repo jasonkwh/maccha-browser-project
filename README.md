@@ -6,7 +6,7 @@
 
 Maccha is intended to revolutionize the web browsing experiences on iOS phablets.
 
-[Try the Free Demo (based on Build 203)](https://appetize.io/app/3gc3duuhjd9hg5pwnygvuatgtg)
+[Try the Free Demo (based on Build 214)](https://appetize.io/app/amcmazzeb0vk3vk8p8ahp4t4n0)
 
 ## Setting up with CocoaPods
 
@@ -23,6 +23,7 @@ Navigate to your directory by cd / mkdir commands, then use the following comman
 ```bash
 $ git clone https://github.com/jasonkwh/maccha-browser-project
 $ cd maccha-browser-project
+$ pod repo update
 $ pod install
 ```
 

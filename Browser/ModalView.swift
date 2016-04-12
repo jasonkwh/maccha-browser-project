@@ -43,10 +43,10 @@ class ModalView: UIView {
         
         if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] != "about:blank") {
             //addition window
-            slideViewValue.windowStoreTitle.append("")
-            slideViewValue.windowStoreUrl.append(githubAddress)
-            slideViewValue.scrollPosition.append("0.0")
-            slideViewValue.windowCurTab = slideViewValue.windowStoreTitle.count - 1
+            slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
+            slideViewValue.windowStoreTitle.insert("", atIndex: slideViewValue.windowCurTab)
+            slideViewValue.windowStoreUrl.insert(githubAddress, atIndex: slideViewValue.windowCurTab)
+            slideViewValue.scrollPosition.insert("0.0", atIndex: slideViewValue.windowCurTab)
         }
         WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: githubAddress)!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
         self.closeButtonHandler?()
