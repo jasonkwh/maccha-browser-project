@@ -88,6 +88,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var style = ToastStyle() //initialise toast
     var mainView: Int = 0 //0: History view, 1: Main view, 2: Likes view
     var trashButton: Bool = false
+    var slideUpdate: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,6 +126,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SlideViewController.reloadWindowView(_:)), name: "windowViewReload", object: nil)
         
         navBar.frame.origin.x = -55 //set original navigation bar origin
+        slideUpdate = false
         
         //set Toast alert style
         style.messageColor = UIColor(netHex: 0x2E2E2E)
@@ -170,7 +172,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //function to reload the table content from another class
     func reloadWindowView(notification: NSNotification) {
-        if mainView == 1 {
+        if (mainView == 1) && (slideUpdate == false) {
             tempArray_title = slideViewValue.windowStoreTitle
             windowView.reloadData()
         }
@@ -250,6 +252,16 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.rightExpansion.fillOnTrigger = true
         
         return cell
+    }
+    
+    func swipeTableCellWillBeginSwiping(cell: MGSwipeTableCell!) {
+        slideUpdate = true
+    }
+    
+    func swipeTableCellWillEndSwiping(cell: MGSwipeTableCell!) {
+        slideUpdate = false
+        tempArray_title = slideViewValue.windowStoreTitle
+        windowView.reloadData()
     }
     
     //function to set likeText if user did like
