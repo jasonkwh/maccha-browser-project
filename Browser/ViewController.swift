@@ -667,7 +667,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 if(slideViewValue.readActions == false) {
                     slideViewValue.windowStoreTitle[slideViewValue.windowCurTab] = WKWebviewFactory.sharedInstance.webView.title!
                     slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] = (WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!
-                    NSNotificationCenter.defaultCenter().postNotificationName("windowViewReload", object: nil)
                 }
             }
             if(Float(WKWebviewFactory.sharedInstance.webView.estimatedProgress) == 1.0) {
@@ -713,6 +712,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             slideViewValue.scrollPositionSwitch = false
         }
         progressView.setProgress(0.0, animated: false)
+        NSNotificationCenter.defaultCenter().postNotificationName("windowViewReload", object: nil)
         
         //update handoff
         if(webAddress != "about:blank") {

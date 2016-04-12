@@ -88,7 +88,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var style = ToastStyle() //initialise toast
     var mainView: Int = 0 //0: History view, 1: Main view, 2: Likes view
     var trashButton: Bool = false
-    var slideUpdate = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,7 +125,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SlideViewController.reloadWindowView(_:)), name: "windowViewReload", object: nil)
         
         navBar.frame.origin.x = -55 //set original navigation bar origin
-        slideUpdate = false
         
         //set Toast alert style
         style.messageColor = UIColor(netHex: 0x2E2E2E)
@@ -172,9 +170,9 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //function to reload the table content from another class
     func reloadWindowView(notification: NSNotification) {
-        if (mainView == 1) && (slideUpdate == false) {
+        if mainView == 1 {
             tempArray_title = slideViewValue.windowStoreTitle
-            windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, windowView.numberOfSections)), withRowAnimation: .None)
+            windowView.reloadData()
         }
     }
     
@@ -252,17 +250,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.rightExpansion.fillOnTrigger = true
         
         return cell
-    }
-    
-    //controls observer which updates the table dynamically
-    func swipeTableCellWillBeginSwiping(cell: MGSwipeTableCell!) {
-        slideUpdate = true
-    }
-    
-    func swipeTableCellWillEndSwiping(cell: MGSwipeTableCell!) {
-        slideUpdate = false
-        tempArray_title = slideViewValue.windowStoreTitle
-        windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, windowView.numberOfSections)), withRowAnimation: .None)
     }
     
     //function to set likeText if user did like
