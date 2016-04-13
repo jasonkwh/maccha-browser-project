@@ -36,10 +36,11 @@ class ModalView: UIView {
     }
     
     func openGithub() {
-        //reset readActions
+        //reset readActions & stopLoading
         slideViewValue.readActions = false
         slideViewValue.readRecover = false
         slideViewValue.readActionsCheck = false
+        WKWebviewFactory.sharedInstance.webView.stopLoading()
         
         if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] != "about:blank") {
             //addition window

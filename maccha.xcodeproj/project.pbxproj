@@ -15,6 +15,7 @@
 		3F1F17D51CBC234E007B63DB /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F17D41CBC234E007B63DB /* Toast.swift */; };
 		3F5678431CBA69A1006B2502 /* BookmarkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5678421CBA69A1006B2502 /* BookmarkData.swift */; };
 		3F568AFA1C85D7B800771303 /* safari-reader.js in Resources */ = {isa = PBXBuildFile; fileRef = 3F568AF91C85D7B800771303 /* safari-reader.js */; };
+		3F7D8F351CBE3F0400472D5F /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D8F341CBE3F0400472D5F /* Reach.swift */; };
 		3F936E781CA2CC3900F81CEE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F936E771CA2CC3900F81CEE /* Extensions.swift */; };
 		3F9760E91C651C9C006F2ACB /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9760E81C651C9C006F2ACB /* SlideViewController.swift */; };
 		3FB279AC1C7244E6007F0416 /* PathDynamicModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB279AB1C7244E6007F0416 /* PathDynamicModal.swift */; };
@@ -69,13 +70,14 @@
 		3F5678421CBA69A1006B2502 /* BookmarkData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookmarkData.swift; path = BrowserData/BookmarkData.swift; sourceTree = "<group>"; };
 		3F568AF91C85D7B800771303 /* safari-reader.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "safari-reader.js"; sourceTree = "<group>"; };
 		3F6683511C782F0400288B95 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		3F7D8F341CBE3F0400472D5F /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
 		3F936E771CA2CC3900F81CEE /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3F9760E81C651C9C006F2ACB /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		3FB279AB1C7244E6007F0416 /* PathDynamicModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathDynamicModal.swift; sourceTree = "<group>"; };
 		3FB279AD1C72451A007F0416 /* ModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		3FB279AE1C72451A007F0416 /* ModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalView.xib; sourceTree = "<group>"; };
-		3FB2BAB01CA180B8002DCB03 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
-		3FB2BAB11CA180B8002DCB03 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
+		3FB2BAB01CA180B8002DCB03 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
+		3FB2BAB11CA180B8002DCB03 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 		3FD6A25A1C9F09CC005E79EC /* WkString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WkString.swift; path = BrowserData/WkString.swift; sourceTree = "<group>"; };
 		3FE42CEE1CBC1D0A00AF43FE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Realm/Realm.framework; sourceTree = "<group>"; };
 		3FE42CEF1CBC1D0A00AF43FE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Realm/RealmSwift.framework; sourceTree = "<group>"; };
@@ -135,14 +137,16 @@
 			name = BrowserData;
 			sourceTree = "<group>";
 		};
-		3FC20F411C6007600016F522 /* SWRevealViewController */ = {
+		3F7D8F331CBE396D00472D5F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				3FB2BAB01CA180B8002DCB03 /* SWRevealViewController.h */,
 				3FB2BAB11CA180B8002DCB03 /* SWRevealViewController.m */,
+				3FB279AB1C7244E6007F0416 /* PathDynamicModal.swift */,
+				3F1F17D41CBC234E007B63DB /* Toast.swift */,
+				3F7D8F341CBE3F0400472D5F /* Reach.swift */,
 			);
-			name = SWRevealViewController;
-			path = ..;
+			name = Modules;
 			sourceTree = "<group>";
 		};
 		5F8533611A5BB8C800F14347 = {
@@ -170,7 +174,7 @@
 		5F85336C1A5BB8C800F14347 /* Browser */ = {
 			isa = PBXGroup;
 			children = (
-				3FC20F411C6007600016F522 /* SWRevealViewController */,
+				3F7D8F331CBE396D00472D5F /* Modules */,
 				3F0654CA1C65CD0200EF4E2D /* Resources */,
 				5F85336F1A5BB8C900F14347 /* AppDelegate.swift */,
 				5F8533711A5BB8C900F14347 /* ViewController.swift */,
@@ -178,8 +182,6 @@
 				3F936E771CA2CC3900F81CEE /* Extensions.swift */,
 				3F10AC6E1C9585F900CAF0B7 /* WKWebviewFactory.swift */,
 				3FB279AD1C72451A007F0416 /* ModalView.swift */,
-				3FB279AB1C7244E6007F0416 /* PathDynamicModal.swift */,
-				3F1F17D41CBC234E007B63DB /* Toast.swift */,
 				3FB279AE1C72451A007F0416 /* ModalView.xib */,
 				5F8533731A5BB8C900F14347 /* Main.storyboard */,
 				5F8533761A5BB8C900F14347 /* Images.xcassets */,
@@ -426,6 +428,7 @@
 				3F9760E91C651C9C006F2ACB /* SlideViewController.swift in Sources */,
 				3F10AC6F1C9585F900CAF0B7 /* WKWebviewFactory.swift in Sources */,
 				3F198FF61C9832C40012A685 /* WkData.swift in Sources */,
+				3F7D8F351CBE3F0400472D5F /* Reach.swift in Sources */,
 				3F198FFA1C98333E0012A685 /* GlobalData.swift in Sources */,
 				3FB279AC1C7244E6007F0416 /* PathDynamicModal.swift in Sources */,
 				3FD6A25B1C9F09CC005E79EC /* WkString.swift in Sources */,

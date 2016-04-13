@@ -6,7 +6,7 @@
 
 Maccha is intended to revolutionize the web browsing experiences on iOS phablets.
 
-[Try the Free Demo (based on Build 216)](https://appetize.io/app/caht3pw52dw5vwccz6pxppqmjg)
+[Try the Free Demo (based on Build 217)](https://appetize.io/app/w6n6gwzxrnmqwp1urp71b2ktn4)
 
 ## Setting up with CocoaPods
 

@@ -38,6 +38,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var pbString: String = ""
     var activity:NSUserActivity = NSUserActivity(activityType: "com.studiospates.maccha.handsoff") //handoff listener
     var touchPoint: CGPoint = CGPointZero
+    let imageFormats: String = "\\.jpg$|\\.jpeg$|\\.svg$|\\.png$|\\.gif$|\\.bmp$|\\.tiff$"
     
     //remember previous scrolling position~~
     let panPressRecognizer = UIPanGestureRecognizer()
@@ -76,6 +77,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         let splashView: CBZSplashView = CBZSplashView(icon: UIImage(named: "Tea"), backgroundColor: UIColor(netHex:0x70BF41))
         self.view.addSubview(splashView)
         splashView.startAnimation()
+        
+        Reach().monitorReachabilityChanges() //use Reach() module to check network connections
         
         //register observer for willEnterForeground / willEnterBackground state
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
@@ -166,12 +169,17 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             } else {
                 pbString = pb.string!
             }
-            if((slideViewValue.shortcutItem == 1) || ((slideViewValue.shortcutItem == 2) && (pbString != ""))){
+            if((slideViewValue.shortcutItem == 1) || ((slideViewValue.shortcutItem == 2) && (pbString != "") && (checkConnectionStatus() == true))){
                 openShortcutItem()
             }
             if((slideViewValue.shortcutItem == 2) && (pbString == "")) {
                 loadRequest(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])
                 slideViewValue.alertPopup(0, message: "Clipboard is empty")
+            }
+            if((slideViewValue.shortcutItem == 2) && (checkConnectionStatus() == false)) {
+                //Popup alert window
+                hideKeyboard()
+                slideViewValue.alertPopup(0, message: "The Internet connection appears to be offline.")
             }
         }
     }
@@ -204,10 +212,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     //Determine quick actions...
     func openShortcutItem() {
-        //reset readActions
+        //reset readActions & stopLoading
         slideViewValue.readActions = false
         slideViewValue.readRecover = false
         slideViewValue.readActionsCheck = false
+        WKWebviewFactory.sharedInstance.webView.stopLoading()
         windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
         if(slideViewValue.shortcutItem == 1) {
             slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
@@ -276,6 +285,10 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     func onLongPress(gestureRecognizer:UIGestureRecognizer){
         touchPoint = gestureRecognizer.locationInView(self.view)
+        if(matchesForRegexInText(imageFormats, text: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab]) == []) {
+            //disable the original wkactionsheet
+            WKWebviewFactory.sharedInstance.webView.evaluateJavaScript("document.body.style.webkitTouchCallout='none';", completionHandler: nil)
+        }
         longPressSwitch = true
     }
 
@@ -565,8 +578,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         if(inputUrlAddress == "about:blank") {
             WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL:NSURL(string: "about:blank")!))
         } else {
-            if (AFNetworkReachabilityManager.sharedManager().reachable == false) {
-                slideViewValue.readActions = false //disable readbility
+            if (checkConnectionStatus() == true) {
+                //reset readActions
+                slideViewValue.readActions = false
+                slideViewValue.readRecover = false
+                slideViewValue.readActionsCheck = false
                 
                 //shorten the url by replacing http and https to null
                 let shorten_url = inputUrlAddress.stringByReplacingOccurrencesOfString("https://", withString: "").stringByReplacingOccurrencesOfString("http://", withString: "").stringByReplacingOccurrencesOfString(" ", withString: "+")
@@ -603,6 +619,18 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                     slideViewValue.scrollPosition.append("0.0")
                 }
             }
+        }
+    }
+    
+    //function to check current network status, powered by Reach() module
+    func checkConnectionStatus() -> Bool {
+        switch Reach().connectionStatus() {
+        case .Unknown, .Offline:
+            return false
+        case .Online(.WWAN):
+            return true
+        case .Online(.WiFi):
+            return true
         }
     }
     
@@ -699,19 +727,23 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             hideKeyboard()
             slideViewValue.alertPopup(0, message: error.localizedDescription)
             if (error.code == NSURLErrorTimedOut) {
+                slideViewValue.scrollPositionSwitch = false //set don't scroll
                 loadRequest("about:blank")
             }
         }
     }
     
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
-        //disable the original wkactionsheet
-        webView.evaluateJavaScript("document.body.style.webkitTouchCallout='none';", completionHandler: nil)
+        if(matchesForRegexInText(imageFormats, text: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab]) == []) {
+            //disable the original wkactionsheet
+            webView.evaluateJavaScript("document.body.style.webkitTouchCallout='none';", completionHandler: nil)
+        }
         if(slideViewValue.scrollPositionSwitch == true) {
             WKWebviewFactory.sharedInstance.webView.scrollView.setContentOffset(CGPointMake(0.0, CGFloat(NSNumberFormatter().numberFromString(slideViewValue.scrollPosition[slideViewValue.windowCurTab])!)), animated: true)
             slideViewValue.scrollPositionSwitch = false
         }
         progressView.setProgress(0.0, animated: false)
+        updateLikes()
         NSNotificationCenter.defaultCenter().postNotificationName("windowViewReload", object: nil)
         
         //update handoff
@@ -736,6 +768,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
         let url: NSURL = navigationAction.request.URL!
         let urlString: String = url.absoluteString
+        var checkImage: Bool = false
         if (matchesForRegexInText("\\/\\/itunes\\.apple\\.com\\/", text: urlString) != []) {
             UIApplication.sharedApplication().openURL(url)
             decisionHandler(.Cancel)
@@ -743,14 +776,22 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         }
         else {
             if navigationAction.navigationType == .LinkActivated && longPressSwitch == true {
-                self.actionMenu(self, urlStr: urlString)
+                if(matchesForRegexInText(imageFormats, text: urlString) == []) {
+                    checkImage = false
+                } else {
+                    checkImage = true
+                }
+                self.actionMenu(self, urlStr: urlString, imageCheck: checkImage)
                 decisionHandler(.Cancel)
                 longPressSwitch = false
                 return
             }
             if navigationAction.navigationType == .BackForward {
                 //handles the actions when the webview instance is backward or forward
-                slideViewValue.readActions = false //disable readbility
+                //reset readActions
+                slideViewValue.readActions = false
+                slideViewValue.readRecover = false
+                slideViewValue.readActionsCheck = false
                 hideKeyboard()
             }
         }
@@ -758,21 +799,22 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     }
 
     //Rebuild Wkactionsheet
-    func actionMenu(sender: UIViewController, urlStr: String) {
+    func actionMenu(sender: UIViewController, urlStr: String, imageCheck: Bool) {
         let alertController = UIAlertController(title: "", message: urlStr, preferredStyle: .ActionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
             
         }
         alertController.addAction(cancelAction)
-        let openAction = UIAlertAction(title: "Open", style: .Default) { (action) in
-            //reset readActions
+        /*let openAction = UIAlertAction(title: "Open", style: .Default) { (action) in
+            //reset readActions & stopLoading
             slideViewValue.readActions = false
             slideViewValue.readRecover = false
             slideViewValue.readActionsCheck = false
+            WKWebviewFactory.sharedInstance.webView.stopLoading()
             
             self.loadRequest(urlStr)
         }
-        alertController.addAction(openAction)
+        alertController.addAction(openAction)*/
         let opentabAction = UIAlertAction(title: "Open In New Tab", style: .Default) { (action) in
             slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
             slideViewValue.windowStoreTitle.insert(urlStr, atIndex: slideViewValue.windowCurTab)
@@ -782,10 +824,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             //update windows count
             self.windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
             
-            //reset readActions
+            //reset readActions & stopLoading
             slideViewValue.readActions = false
             slideViewValue.readRecover = false
             slideViewValue.readActionsCheck = false
+            WKWebviewFactory.sharedInstance.webView.stopLoading()
             
             self.loadRequest(urlStr)
         }
@@ -804,12 +847,40 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             self.presentViewController(activityViewController, animated: true, completion: nil)
         }
         alertController.addAction(shareAction)
+        var likeAction = UIAlertAction()
+        if slideViewValue.likesUrl.contains(urlStr) {
+            likeAction = UIAlertAction(title: "Dislike Link", style: .Destructive) { (action) in
+                if let i = slideViewValue.likesUrl.indexOf(urlStr) {
+                    slideViewValue.likesTitle.removeAtIndex(i)
+                    slideViewValue.likesUrl.removeAtIndex(i)
+                }
+            }
+        } else {
+            likeAction = UIAlertAction(title: "Like Link", style: .Default) { (action) in
+                slideViewValue.likesTitle.append(urlStr)
+                slideViewValue.likesUrl.append(urlStr)
+            }
+        }
+        alertController.addAction(likeAction)
+        /*if imageCheck == true {
+            let imageAction = UIAlertAction(title: "Save Image", style: .Default) { (action) in
+                
+            }
+            alertController.addAction(imageAction)
+        }*/
         
         /* iPad support */
         alertController.popoverPresentationController?.sourceView = self.view
         alertController.popoverPresentationController?.sourceRect = CGRectMake(touchPoint.x, touchPoint.y, 1.0, 1.0)
         
         self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    //function to update titles in bookmarks
+    func updateLikes() {
+        if(slideViewValue.likesUrl.contains(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])) {
+            slideViewValue.likesTitle[slideViewValue.likesUrl.indexOf(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!] = slideViewValue.windowStoreTitle[slideViewValue.windowCurTab]
+        } //update corresponding likes title to current tab title
     }
     
     //function to refresh
