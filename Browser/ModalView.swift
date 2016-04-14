@@ -40,7 +40,6 @@ class ModalView: UIView {
         slideViewValue.readActions = false
         slideViewValue.readRecover = false
         slideViewValue.readActionsCheck = false
-        WKWebviewFactory.sharedInstance.webView.stopLoading()
         
         if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] != "about:blank") {
             //addition window

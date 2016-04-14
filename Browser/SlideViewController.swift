@@ -43,11 +43,11 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             slideViewValue.scrollPosition.append("0.0")
             slideViewValue.windowCurTab = 0
             
-            //reset readActions & stopLoading
+            //reset readActions
             slideViewValue.readActions = false
             slideViewValue.readRecover = false
             slideViewValue.readActionsCheck = false
-            WKWebviewFactory.sharedInstance.webView.stopLoading()
+            
             sgButton.setImage(UIImage(named: "Read"), forState: UIControlState.Normal)
             
             //open tabs in background
@@ -297,11 +297,10 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //actions of the cells
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        //reset readActions & stopLoading
+        //reset readActions
         slideViewValue.readActions = false
         slideViewValue.readRecover = false
         slideViewValue.readActionsCheck = false
-        WKWebviewFactory.sharedInstance.webView.stopLoading()
         
         if mainView == 1 { //normal changing tabs
             if(slideViewValue.windowCurTab != indexPath.row) { //open link if user not touch current tab, else not loading
@@ -401,11 +400,11 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     }
                     slideViewValue.windowStoreTitle = tempArray_title
                     
-                    //reset readActions & stopLoading
+                    //reset readActions
                     slideViewValue.readActions = false
                     slideViewValue.readRecover = false
                     slideViewValue.readActionsCheck = false
-                    WKWebviewFactory.sharedInstance.webView.stopLoading()
+                    
                     sgButton.setImage(UIImage(named: "Read"), forState: UIControlState.Normal)
                     
                     //open tabs in background
@@ -419,11 +418,11 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 slideViewValue.windowStoreTitle = tempArray_title
                 slideViewValue.scrollPosition[0] = "0.0"
                 
-                //reset readActions & stopLoading
+                //reset readActions
                 slideViewValue.readActions = false
                 slideViewValue.readRecover = false
                 slideViewValue.readActionsCheck = false
-                WKWebviewFactory.sharedInstance.webView.stopLoading()
+                
                 sgButton.setImage(UIImage(named: "Read"), forState: UIControlState.Normal)
                 
                 //open tabs in background
@@ -496,11 +495,10 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func newtabAction() {
-        //reset readActions & stopLoading
+        //reset readActions
         slideViewValue.readActions = false
         slideViewValue.readRecover = false
         slideViewValue.readActionsCheck = false
-        WKWebviewFactory.sharedInstance.webView.stopLoading()
         
         //open new tab
         slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1

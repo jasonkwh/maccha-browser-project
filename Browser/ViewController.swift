@@ -212,11 +212,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     //Determine quick actions...
     func openShortcutItem() {
-        //reset readActions & stopLoading
+        //reset readActions
         slideViewValue.readActions = false
         slideViewValue.readRecover = false
         slideViewValue.readActionsCheck = false
-        WKWebviewFactory.sharedInstance.webView.stopLoading()
+        
         windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
         if(slideViewValue.shortcutItem == 1) {
             slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
@@ -806,11 +806,10 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         }
         alertController.addAction(cancelAction)
         /*let openAction = UIAlertAction(title: "Open", style: .Default) { (action) in
-            //reset readActions & stopLoading
+            //reset readActions
             slideViewValue.readActions = false
             slideViewValue.readRecover = false
             slideViewValue.readActionsCheck = false
-            WKWebviewFactory.sharedInstance.webView.stopLoading()
             
             self.loadRequest(urlStr)
         }
@@ -824,11 +823,10 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             //update windows count
             self.windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
             
-            //reset readActions & stopLoading
+            //reset readActions
             slideViewValue.readActions = false
             slideViewValue.readRecover = false
             slideViewValue.readActionsCheck = false
-            WKWebviewFactory.sharedInstance.webView.stopLoading()
             
             self.loadRequest(urlStr)
         }
