@@ -36,7 +36,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var google: String = "https://www.google.com"
     var tempUrl: String = ""
     var pbString: String = ""
-    var activity:NSUserActivity = NSUserActivity(activityType: "com.studiospates.maccha.handsoff") //handoff listener
     var touchPoint: CGPoint = CGPointZero
     let imageFormats: String = "\\.jpg$|\\.jpeg$|\\.svg$|\\.png$|\\.gif$|\\.bmp$|\\.tiff$"
     
@@ -150,6 +149,11 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         
         WKWebviewFactory.sharedInstance.webView.addObserver(self, forKeyPath: "loading", options: .New, context: nil)
         WKWebviewFactory.sharedInstance.webView.addObserver(self, forKeyPath: "estimatedProgress", options: .New, context: nil)
+        
+        //Create Handoff instance
+        let activity:NSUserActivity = NSUserActivity(activityType: "com.studiospates.maccha.handsoff") //handoff listener
+        self.userActivity = activity
+        self.userActivity?.becomeCurrent()
         
         backButton.enabled = false
         forwardButton.enabled = false
@@ -745,12 +749,15 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         progressView.setProgress(0.0, animated: false)
         updateLikes()
         NSNotificationCenter.defaultCenter().postNotificationName("windowViewReload", object: nil)
-        
-        //update handoff
-        if(webAddress != "about:blank") {
-            self.activity.webpageURL = WKWebviewFactory.sharedInstance.webView.URL
-            self.activity.becomeCurrent()
+        updateUserActivityState(self.userActivity!) //update userActivity
+    }
+    
+    //function to update Handoff userActivity
+    override func updateUserActivityState(activity: NSUserActivity) {
+        if(WKWebviewFactory.sharedInstance.webView.URL?.absoluteString != "about:blank") {
+            activity.webpageURL = WKWebviewFactory.sharedInstance.webView.URL
         }
+        super.updateUserActivityState(activity)
     }
     
     func webView(webView: WKWebView, didCommitNavigation navigation: WKNavigation!) {
