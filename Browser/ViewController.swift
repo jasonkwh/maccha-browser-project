@@ -289,10 +289,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     func onLongPress(gestureRecognizer:UIGestureRecognizer){
         touchPoint = gestureRecognizer.locationInView(self.view)
-        if(matchesForRegexInText(imageFormats, text: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab]) == []) {
-            //disable the original wkactionsheet
-            WKWebviewFactory.sharedInstance.webView.evaluateJavaScript("document.body.style.webkitTouchCallout='none';", completionHandler: nil)
-        }
+        //disable the original wkactionsheet
+        WKWebviewFactory.sharedInstance.webView.evaluateJavaScript("document.body.style.webkitTouchCallout='none';", completionHandler: nil)
         longPressSwitch = true
     }
 
@@ -738,10 +736,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     }
     
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
-        if(matchesForRegexInText(imageFormats, text: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab]) == []) {
-            //disable the original wkactionsheet
-            webView.evaluateJavaScript("document.body.style.webkitTouchCallout='none';", completionHandler: nil)
-        }
+        //disable the original wkactionsheet
+        webView.evaluateJavaScript("document.body.style.webkitTouchCallout='none';", completionHandler: nil)
         if(slideViewValue.scrollPositionSwitch == true) {
             WKWebviewFactory.sharedInstance.webView.scrollView.setContentOffset(CGPointMake(0.0, CGFloat(NSNumberFormatter().numberFromString(slideViewValue.scrollPosition[slideViewValue.windowCurTab])!)), animated: true)
             slideViewValue.scrollPositionSwitch = false
@@ -791,6 +787,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 self.actionMenu(self, urlStr: urlString, imageCheck: checkImage)
                 decisionHandler(.Cancel)
                 longPressSwitch = false
+                checkImage = false
                 return
             }
             if navigationAction.navigationType == .BackForward {
@@ -867,12 +864,23 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             }
         }
         alertController.addAction(likeAction)
-        /*if imageCheck == true {
+        if imageCheck == true {
             let imageAction = UIAlertAction(title: "Save Image", style: .Default) { (action) in
-                
+                //Data object to fetch image data
+                do {
+                    let imageData = try NSData(contentsOfURL: NSURL(string: urlStr)!, options: NSDataReadingOptions())
+                    if let webimage = UIImage(data: imageData){
+                        UIImageWriteToSavedPhotosAlbum(webimage, nil, nil, nil)
+                        slideViewValue.alertPopup(2, message: "Image saved to Camera Roll.") //popup image saved
+                    } else {
+                        slideViewValue.alertPopup(0, message: "This is not a valid image to download.") //popup warning
+                    }
+                } catch {
+                    print(error)
+                }
             }
             alertController.addAction(imageAction)
-        }*/
+        }
         
         /* iPad support */
         alertController.popoverPresentationController?.sourceView = self.view
