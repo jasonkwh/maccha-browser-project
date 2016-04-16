@@ -289,6 +289,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     func onLongPress(gestureRecognizer:UIGestureRecognizer){
         touchPoint = gestureRecognizer.locationInView(self.view)
+        //disable the original wkactionsheet
+        WKWebviewFactory.sharedInstance.webView.evaluateJavaScript("document.body.style.webkitTouchCallout='none';", completionHandler: nil)
         longPressSwitch = true
     }
 
@@ -370,9 +372,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     //scroll down to hide status bar, scroll up to show status bar, with animations
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        //disable the original wkactionsheet
-        WKWebviewFactory.sharedInstance.webView.evaluateJavaScript("document.body.style.webkitTouchCallout='none';", completionHandler: nil)
-        
         //store current scroll positions to array
         if(scrollPositionRecord == true) {
             slideViewValue.scrollPosition[slideViewValue.windowCurTab] = scrollView.contentOffset.y.description
