@@ -6,7 +6,7 @@
 	<dict>
 		<key>CHANGELOG.md</key>
 		<data>
-		ITzch5xw9HT+qCF2kFm9jnfI9/0=
+		7f3TTExkG7a+0FHnjmndi4SuvlE=
 		</data>
 		<key>Headers/RLMArray.h</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Headers/RLMObject.h</key>
 		<data>
-		fscotHX2wNSSis/Q/u6wXc44x98=
+		PvIkoqlJVQouD+CAo4Ngf94tXEo=
 		</data>
 		<key>Headers/RLMObjectBase.h</key>
 		<data>
-		fXWWphrRK0lge69TTsBoTRfLIfM=
+		ZRJ45nrVDR9/8JDSc7BgqHS36Tw=
 		</data>
 		<key>Headers/RLMObjectBase_Dynamic.h</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		mRwcapvCGt+TKwdtuiaY5I3zUSc=
+		fWbZpN5VFRjDUjlMeFx7B7f/+lI=
 		</data>
 		<key>LICENSE</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>PrivateHeaders/RLMObject_Private.h</key>
 		<data>
-		gohElc8a9YwnkPlPojtt7dO9tq4=
+		YWUfVY17f1pi21EU/Ac/orFcPEA=
 		</data>
 		<key>PrivateHeaders/RLMOptionalBase.h</key>
 		<data>
@@ -155,11 +155,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ITzch5xw9HT+qCF2kFm9jnfI9/0=
+			7f3TTExkG7a+0FHnjmndi4SuvlE=
 			</data>
 			<key>hash2</key>
 			<data>
-			Dl3shQKgMH93SV5ZcmDpg6QKt50fqdzPLHLsDr1u5f8=
+			azILGjei6AHMGbAjh4Ow1qOpUFTU+xkG5qgkjgA+IWk=
 			</data>
 		</dict>
 		<key>Headers/RLMArray.h</key>
@@ -221,22 +221,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fscotHX2wNSSis/Q/u6wXc44x98=
+			PvIkoqlJVQouD+CAo4Ngf94tXEo=
 			</data>
 			<key>hash2</key>
 			<data>
-			yQ+TzXopwSeIkz4+4QJQ+l5vdH7LGi9XI+1g/7d31lg=
+			GPnlgeuOLzKgTOs6rYmWTtlscuUD29YRGXSUaGKwKHg=
 			</data>
 		</dict>
 		<key>Headers/RLMObjectBase.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			fXWWphrRK0lge69TTsBoTRfLIfM=
+			ZRJ45nrVDR9/8JDSc7BgqHS36Tw=
 			</data>
 			<key>hash2</key>
 			<data>
-			u+XcMcac6LckajZoSnqOFuDeqMd77Dd3FamI2Cdbqf0=
+			OION2KLApT7RooffwQRRioDrKBberTM9PmAEU3Z89VE=
 			</data>
 		</dict>
 		<key>Headers/RLMObjectBase_Dynamic.h</key>
@@ -441,11 +441,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			gohElc8a9YwnkPlPojtt7dO9tq4=
+			YWUfVY17f1pi21EU/Ac/orFcPEA=
 			</data>
 			<key>hash2</key>
 			<data>
-			aXYcPafNTJLRjV8+oEkiIciFbqptKdylspnyG19qyUw=
+			PQkXyjwYXgOw5iRLRQ8KHZxrODIhjtpf+m96ygNOohE=
 			</data>
 		</dict>
 		<key>PrivateHeaders/RLMOptionalBase.h</key>
