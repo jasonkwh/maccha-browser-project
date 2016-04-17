@@ -26,6 +26,7 @@ struct slideViewValue {
     static var shortcutItem: Int = 0
     static var historyTitle = [String]() //save, for history
     static var historyUrl = [String]() //save, for history
+    static var historyDate = [String]() //save, for history
     static var htButtonSwitch: Bool = false
     static var scrollPositionSwitch: Bool = false //true is scroll back to user view, false is not
     static var newUser: Int = 0 //save

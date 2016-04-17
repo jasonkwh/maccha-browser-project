@@ -207,6 +207,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         for htdata in realm_maccha.objects(HistoryData) {
             slideViewValue.historyTitle = htdata.history_title
             slideViewValue.historyUrl = htdata.history_url
+            slideViewValue.historyDate = htdata.history_date
         }
         for bkdata in realm_maccha.objects(BookmarkData) {
             slideViewValue.likesTitle = bkdata.like_title
@@ -704,12 +705,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 refreshStopButton.setImage(UIImage(named: "Refresh"), forState: UIControlState.Normal)
                 refreshStopButton.addTarget(self, action: #selector(ViewController.refreshPressed), forControlEvents: UIControlEvents.TouchUpInside)
                 
-                
                 //Store value for History feature
                 if webAddress != "about:blank" {
                     if (slideViewValue.historyUrl.count == 0) { //while history is empty...
                         slideViewValue.historyTitle.append(webTitle)
                         slideViewValue.historyUrl.append((WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!)
+                        slideViewValue.historyDate.append(getCurrentDate())
                     }
                     if (slideViewValue.historyUrl.count > 0) { //while history has entries...
                         //check if this address was exist or not, if yes, delete then append the new, else, append.
@@ -719,14 +720,27 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                             slideViewValue.historyUrl.append((WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!)
                             slideViewValue.historyTitle.removeAtIndex(i!)
                             slideViewValue.historyTitle.append(webTitle)
+                            slideViewValue.historyDate.removeAtIndex(i!)
+                            slideViewValue.historyDate.append(getCurrentDate())
                         } else {
                             slideViewValue.historyTitle.append(webTitle)
                             slideViewValue.historyUrl.append((WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!)
+                            slideViewValue.historyDate.append(getCurrentDate())
                         }
                     }
                 }
             }
         }
+    }
+    
+    func getCurrentDate() -> String {
+        //get system date
+        let date = NSDate()
+        
+        //date formatter
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "MMM dd, yyyy"
+        return formatter.stringFromDate(date)
     }
     
     func webView(webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: NSError) {

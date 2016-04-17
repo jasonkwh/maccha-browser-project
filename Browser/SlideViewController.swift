@@ -19,6 +19,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             //remove all history records
             slideViewValue.historyUrl.removeAll()
             slideViewValue.historyTitle.removeAll()
+            slideViewValue.historyDate.removeAll()
             slideViewValue.htButtonSwitch = false
             
             //back to original tab
@@ -434,6 +435,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         else if(mainView == 0) { //"history" mode
             tempArray_title.removeAtIndex(cell_row)
             slideViewValue.historyUrl.removeAtIndex(cell_row)
+            slideViewValue.historyDate.removeAtIndex(cell_row)
             slideViewValue.historyTitle = tempArray_title
             if(tempArray_title.count == 0) { //switch off history while history is empty
                 historyBackToNormal()

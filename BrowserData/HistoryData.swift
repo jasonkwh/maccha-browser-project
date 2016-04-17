@@ -43,9 +43,23 @@ class HistoryData: Object {
     }
     let _backingHtTitle = List<WkString>()
     
+    //store browser history date
+    var history_date: [String] {
+        get {
+            return _backingHtDate.map {
+                $0.stringValue
+            }
+        }
+        set {
+            _backingHtDate.removeAll()
+            _backingHtDate.appendContentsOf(newValue.map({WkString(value: [$0]) }))
+        }
+    }
+    let _backingHtDate = List<WkString>()
+    
 // Specify properties to ignore (Realm won't persist these)
     
     override static func ignoredProperties() -> [String] {
-        return ["history_url", "history_title"]
+        return ["history_url", "history_title", "history_date"]
     }
 }

@@ -91,6 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let htdata = HistoryData()
             htdata.history_url = slideViewValue.historyUrl
             htdata.history_title = slideViewValue.historyTitle
+            htdata.history_date = slideViewValue.historyDate
             let wdata = WkData()
             wdata.wk_url = slideViewValue.windowStoreUrl
             wdata.wk_title = slideViewValue.windowStoreTitle
