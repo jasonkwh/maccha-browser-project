@@ -712,8 +712,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                         slideViewValue.historyUrl.append((WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!)
                     }
                     if (slideViewValue.historyUrl.count > 0) { //while history has entries...
-                        //check if this address is familer with the one before, if no, insert entry
-                        if webAddress != slideViewValue.historyUrl[slideViewValue.historyUrl.count-1] {
+                        //check if this address was exist or not, if yes, delete then append the new, else, append.
+                        if slideViewValue.historyUrl.contains((WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!) {
+                            let i = slideViewValue.historyUrl.indexOf((WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!)
+                            slideViewValue.historyUrl.removeAtIndex(i!)
+                            slideViewValue.historyUrl.append((WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!)
+                            slideViewValue.historyTitle.removeAtIndex(i!)
+                            slideViewValue.historyTitle.append(webTitle)
+                        } else {
                             slideViewValue.historyTitle.append(webTitle)
                             slideViewValue.historyUrl.append((WKWebviewFactory.sharedInstance.webView.URL?.absoluteString)!)
                         }
