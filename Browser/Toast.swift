@@ -174,8 +174,7 @@ public extension UIView {
             self.showToast(toast, duration: duration, position: position, completion: completion)
         } /*catch ToastError.InsufficientData {
             print("Error: message, title, and image are all nil")
-        }*/ catch {
-        }
+        }*/ catch {}
     }
     
     /**
@@ -507,7 +506,9 @@ public extension UIView {
             let maxMessageSize = CGSize(width: (self.bounds.size.width * style.maxWidthPercentage) - imageRect.size.width, height: self.bounds.size.height * style.maxHeightPercentage)
             let messageSize = messageLabel?.sizeThatFits(maxMessageSize)
             if let messageSize = messageSize {
-                messageLabel?.frame = CGRect(x: 0.0, y: 0.0, width: messageSize.width, height: messageSize.height)
+                let actualWidth = min(messageSize.width, maxMessageSize.width)
+                let actualHeight = min(messageSize.height, maxMessageSize.height)
+                messageLabel?.frame = CGRect(x: 0.0, y: 0.0, width: actualWidth, height: actualHeight)
             }
         }
   
@@ -582,10 +583,6 @@ public extension UIView {
  methods.
 */
 public struct ToastStyle {
-    
-    public init() {
-        // allow creating style object
-    }
 
     /**
      The background color. Default is `UIColor.blackColor()` at 80% opacity.
