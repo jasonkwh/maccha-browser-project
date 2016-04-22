@@ -810,7 +810,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 checkImage = false
                 return
             }
-            if navigationAction.navigationType == .BackForward {
+            if navigationAction.navigationType == .BackForward || navigationAction.navigationType == .LinkActivated {
                 //handles the actions when the webview instance is backward or forward
                 //reset readActions
                 slideViewValue.readActions = false
