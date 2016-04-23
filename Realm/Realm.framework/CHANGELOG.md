@@ -1,3 +1,53 @@
+0.99.0 Release notes (2016-04-22)
+=============================================================
+
+### API breaking changes
+
+* Deprecate properties of type `id`/`AnyObject`. This type was rarely used,
+  rarely useful and unsupported in every other Realm binding.
+* The block for `-[RLMArray addNotificationBlock:]` and
+  `-[RLMResults addNotificationBlock:]` now takes another parameter.
+* The following Objective-C APIs have been deprecated in favor of newer or preferred versions:
+
+| Deprecated API                                         | New API                                               |
+|:-------------------------------------------------------|:------------------------------------------------------|
+| `-[RLMRealm removeNotification:]`                      | `-[RLMNotificationToken stop]`                        |
+| `RLMRealmConfiguration.path`                           | `RLMRealmConfiguration.fileURL`                       |
+| `RLMRealm.path`                                        | `RLMRealmConfiguration.fileURL`                       |
+| `RLMRealm.readOnly`                                    | `RLMRealmConfiguration.readOnly`                      |
+| `+[RLMRealm realmWithPath:]`                           | `+[RLMRealm realmWithURL:]`                           |
+| `+[RLMRealm writeCopyToPath:error:]`                   | `+[RLMRealm writeCopyToURL:encryptionKey:error:]`     |
+| `+[RLMRealm writeCopyToPath:encryptionKey:error:]`     | `+[RLMRealm writeCopyToURL:encryptionKey:error:]`     |
+| `+[RLMRealm schemaVersionAtPath:error:]`               | `+[RLMRealm schemaVersionAtURL:encryptionKey:error:]` |
+| `+[RLMRealm schemaVersionAtPath:encryptionKey:error:]` | `+[RLMRealm schemaVersionAtURL:encryptionKey:error:]` |
+
+* The following Swift APIs have been deprecated in favor of newer or preferred versions:
+
+| Deprecated API                                | New API                                  |
+|:----------------------------------------------|:-----------------------------------------|
+| `Realm.removeNotification(_:)`                | `NotificationToken.stop()`               |
+| `Realm.Configuration.path`                    | `Realm.Configuration.fileURL`            |
+| `Realm.path`                                  | `Realm.Configuration.fileURL`            |
+| `Realm.readOnly`                              | `Realm.Configuration.readOnly`           |
+| `Realm.writeCopyToPath(_:encryptionKey:)`     | `Realm.writeCopyToURL(_:encryptionKey:)` |
+| `schemaVersionAtPath(_:encryptionKey:error:)` | `schemaVersionAtURL(_:encryptionKey:)`   |
+
+### Enhancements
+
+* Add information about what rows were added, removed, or modified to the
+  notifications sent to the Realm collections.
+* Improve error when illegally appending to an `RLMArray` / `List` property from a default value
+  or the standalone initializer (`init()`) before the schema is ready.
+
+### Bugfixes
+
+* Fix a use-after-free when an associated object's dealloc method is used to
+  remove observers from an RLMObject.
+* Fix a small memory leak each time a Realm file is opened.
+* Return a recoverable `RLMErrorAddressSpaceExhausted` error rather than
+  crash when there is insufficient available address space on Realm
+  initialization or write commit.
+
 0.98.8 Release notes (2016-04-15)
 =============================================================
 
