@@ -15,7 +15,6 @@ import AudioToolbox
 import RealmSwift
 
 class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UIScrollViewDelegate, SWRevealViewControllerDelegate, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate {
-    
     @IBOutlet weak var mask: UIView!
     @IBOutlet weak var barView: UIView!
     @IBOutlet weak var windowView: UIButton!
@@ -321,6 +320,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         else
         {
             windowView.setTitle(String(slideViewValue.windowStoreTitle.count), forState: UIControlState.Normal)
+            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
             WKWebviewFactory.sharedInstance.webView.userInteractionEnabled = true
             self.bar.userInteractionEnabled = true
             UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
@@ -866,7 +866,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 vcpopController.sourceView = self.view
                 vcpopController.sourceRect = CGRectMake(self.touchPoint.x, self.touchPoint.y, 1.0, 1.0)
             }
-            self.presentViewController(activityViewController, animated: true, completion: nil)
+            if self.presentedViewController == nil {
+                self.presentViewController(activityViewController, animated: true, completion: nil)
+            }
         }
         alertController.addAction(shareAction)
         var likeAction = UIAlertAction()
@@ -906,7 +908,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         alertController.popoverPresentationController?.sourceView = self.view
         alertController.popoverPresentationController?.sourceRect = CGRectMake(touchPoint.x, touchPoint.y, 1.0, 1.0)
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        if self.presentedViewController == nil {
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
     
     //function to update titles in bookmarks
@@ -997,73 +1001,5 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         // Dispose of any resources that can be recreated.
         
         NSURLCache.sharedURLCache().removeAllCachedResponses()
-    }
-}
-
-//extend toolbar of textfield keyboard
-extension UIViewController: UITextFieldDelegate{
-    func addToolBar(textField: UITextField){
-        let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.Black
-        toolBar.translucent = true
-        toolBar.tintColor = UIColor(red: 236/255, green: 240/255, blue: 241/255, alpha: 1)
-        
-        //cut button
-        let cButton = UIButton(type: UIButtonType.System)
-        cButton.setImage(UIImage(named: "Cut"), forState: UIControlState.Normal)
-        cButton.addTarget(self, action: #selector(ViewController.cutPressed), forControlEvents: UIControlEvents.TouchUpInside)
-        cButton.frame = CGRectMake(0, 0, 30, 30)
-        let cutButton = UIBarButtonItem(customView: cButton)
-        
-        //copy button
-        let cpButton = UIButton(type: UIButtonType.System)
-        cpButton.setImage(UIImage(named: "Copy"), forState: UIControlState.Normal)
-        cpButton.addTarget(self, action: #selector(ViewController.copyPressed), forControlEvents: UIControlEvents.TouchUpInside)
-        cpButton.frame = CGRectMake(0, 0, 30, 30)
-        let copyButton = UIBarButtonItem(customView: cpButton)
-        
-        //paste button
-        let pButton = UIButton(type: UIButtonType.System)
-        pButton.setImage(UIImage(named: "Paste"), forState: UIControlState.Normal)
-        pButton.addTarget(self, action: #selector(ViewController.pastePressed), forControlEvents: UIControlEvents.TouchUpInside)
-        pButton.frame = CGRectMake(0, 0, 30, 30)
-        let pasteButton = UIBarButtonItem(customView: pButton)
-        
-        //new tab button
-        let nButton = UIButton(type: UIButtonType.System)
-        nButton.setImage(UIImage(named: "Password"), forState: UIControlState.Normal)
-        nButton.addTarget(self, action: #selector(ViewController.pwPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        nButton.frame = CGRectMake(0, 0, 30, 30)
-        let plusButton = UIBarButtonItem(customView: nButton)
-        
-        //refresh button
-        let rButton = UIButton(type: UIButtonType.System)
-        rButton.setImage(UIImage(named: "Search"), forState: UIControlState.Normal)
-        rButton.addTarget(self, action: #selector(ViewController.searchPressed), forControlEvents: UIControlEvents.TouchUpInside)
-        rButton.frame = CGRectMake(0, 0, 30, 30)
-        let refreshButton = UIBarButtonItem(customView: rButton)
-        
-        //slash button
-        let sButton = UIButton(type: UIButtonType.System)
-        sButton.setImage(UIImage(named: "Slash"), forState: UIControlState.Normal)
-        sButton.addTarget(self, action: #selector(ViewController.addSlash), forControlEvents: UIControlEvents.TouchUpInside)
-        sButton.frame = CGRectMake(0, 0, 30, 30)
-        let slashButton = UIBarButtonItem(customView: sButton)
-        
-        //hide keyboard button
-        let hkButton = UIButton(type: UIButtonType.System)
-        hkButton.setImage(UIImage(named: "Hide"), forState: UIControlState.Normal)
-        hkButton.addTarget(self, action: #selector(ViewController.hideKeyboard), forControlEvents: UIControlEvents.TouchUpInside)
-        hkButton.frame = CGRectMake(0, 0, 30, 30)
-        let hideButton = UIBarButtonItem(customView: hkButton)
-        
-        //add some space
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
-        toolBar.setItems([cutButton, copyButton, pasteButton, spaceButton, hideButton, spaceButton, slashButton, plusButton, refreshButton], animated: false)
-        toolBar.userInteractionEnabled = true
-        toolBar.sizeToFit()
-        
-        textField.delegate = self
-        textField.inputAccessoryView = toolBar
     }
 }

@@ -12,7 +12,8 @@
 
 import UIKit
 
-class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate {
+class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchControllerDelegate, MGSwipeTableCellDelegate {
+    @IBOutlet weak var searchContainer: UINavigationBar!
     @IBAction func deleteAllTabCheck(sender: AnyObject) {
         //function to define tab deletion
         if(mainView == 0) {
@@ -91,6 +92,9 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var mainView: Int = 0 //0: History view, 1: Main view, 2: Likes view
     var trashButton: Bool = false
     var slideUpdate: Bool = false
+    var filteredTableData = [String]()
+    var resultSearchController = UISearchController()
+    let searchFrame = CGRect(x: 6, y: 0, width: 228, height: 44)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,6 +115,37 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         navBar.barTintColor = UIColor(netHex:0x2E2E2E)
         navBar.clipsToBounds = true
         navBar.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+        searchContainer.clipsToBounds = true
+        searchContainer.translucent = false
+        searchContainer.barTintColor = UIColor(netHex:0x2E2E2E)
+        definesPresentationContext = true
+        
+        //set search bar and search controller
+        if #available(iOS 9.0, *) {
+            self.resultSearchController.loadViewIfNeeded()// iOS 9
+        } else {
+            // Fallback on earlier versions
+            let _ = self.resultSearchController.view // iOS 8
+        }
+        //search controller & search bar settings and designs
+        self.resultSearchController = ({
+            let controller = UISearchController(searchResultsController: nil)
+            controller.delegate = self
+            controller.searchResultsUpdater = self
+            controller.dimsBackgroundDuringPresentation = false
+            controller.searchBar.frame = searchFrame
+            controller.searchBar.backgroundColor = UIColor(netHex:0x2E2E2E)
+            controller.searchBar.placeholder = "search                                  "
+            
+            //searchbar textfield design
+            let textFieldInsideSearchBar = controller.searchBar.valueForKey("searchField") as? UITextField
+            textFieldInsideSearchBar?.backgroundColor = UIColor(netHex:0x2E2E2E)
+            textFieldInsideSearchBar?.textColor = UIColor(netHex:0xECF0F1)
+            textFieldInsideSearchBar?.font = UIFont.systemFontOfSize(16.0)
+            textFieldInsideSearchBar?.keyboardAppearance = .Dark
+            return controller
+        })()
+        searchContainer.addSubview(resultSearchController.searchBar)
         
         //button displays
         displaySafariButton()
@@ -119,6 +154,13 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         displaySettingsButton()
         displayAboutButton()
         displayNewtabButton()
+    }
+    
+    deinit{
+        if let superView = resultSearchController.view.superview
+        {
+            superView.removeFromSuperview()
+        }
     }
     
     //windows management functions
@@ -170,6 +212,15 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         style.messageColor = UIColor(netHex: 0xECF0F1)
         style.backgroundColor = UIColor(netHex:0x444444)
         ToastManager.shared.style = style
+    }
+    
+    func didPresentSearchController(searchController: UISearchController) {
+        searchController.searchBar.showsCancelButton = false
+        searchController.searchBar.frame = searchFrame
+    }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        windowView.reloadData()
     }
     
     //function to reload the table content from another class

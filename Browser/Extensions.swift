@@ -136,3 +136,71 @@ public extension UIColor {
         self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
     }
 }
+
+//extend toolbar of textfield keyboard
+extension UIViewController: UITextFieldDelegate{
+    func addToolBar(textField: UITextField){
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.Black
+        toolBar.translucent = true
+        toolBar.tintColor = UIColor(red: 236/255, green: 240/255, blue: 241/255, alpha: 1)
+        
+        //cut button
+        let cButton = UIButton(type: UIButtonType.System)
+        cButton.setImage(UIImage(named: "Cut"), forState: UIControlState.Normal)
+        cButton.addTarget(self, action: #selector(ViewController.cutPressed), forControlEvents: UIControlEvents.TouchUpInside)
+        cButton.frame = CGRectMake(0, 0, 30, 30)
+        let cutButton = UIBarButtonItem(customView: cButton)
+        
+        //copy button
+        let cpButton = UIButton(type: UIButtonType.System)
+        cpButton.setImage(UIImage(named: "Copy"), forState: UIControlState.Normal)
+        cpButton.addTarget(self, action: #selector(ViewController.copyPressed), forControlEvents: UIControlEvents.TouchUpInside)
+        cpButton.frame = CGRectMake(0, 0, 30, 30)
+        let copyButton = UIBarButtonItem(customView: cpButton)
+        
+        //paste button
+        let pButton = UIButton(type: UIButtonType.System)
+        pButton.setImage(UIImage(named: "Paste"), forState: UIControlState.Normal)
+        pButton.addTarget(self, action: #selector(ViewController.pastePressed), forControlEvents: UIControlEvents.TouchUpInside)
+        pButton.frame = CGRectMake(0, 0, 30, 30)
+        let pasteButton = UIBarButtonItem(customView: pButton)
+        
+        //new tab button
+        let nButton = UIButton(type: UIButtonType.System)
+        nButton.setImage(UIImage(named: "Password"), forState: UIControlState.Normal)
+        nButton.addTarget(self, action: #selector(ViewController.pwPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        nButton.frame = CGRectMake(0, 0, 30, 30)
+        let plusButton = UIBarButtonItem(customView: nButton)
+        
+        //refresh button
+        let rButton = UIButton(type: UIButtonType.System)
+        rButton.setImage(UIImage(named: "Search"), forState: UIControlState.Normal)
+        rButton.addTarget(self, action: #selector(ViewController.searchPressed), forControlEvents: UIControlEvents.TouchUpInside)
+        rButton.frame = CGRectMake(0, 0, 30, 30)
+        let refreshButton = UIBarButtonItem(customView: rButton)
+        
+        //slash button
+        let sButton = UIButton(type: UIButtonType.System)
+        sButton.setImage(UIImage(named: "Slash"), forState: UIControlState.Normal)
+        sButton.addTarget(self, action: #selector(ViewController.addSlash), forControlEvents: UIControlEvents.TouchUpInside)
+        sButton.frame = CGRectMake(0, 0, 30, 30)
+        let slashButton = UIBarButtonItem(customView: sButton)
+        
+        //hide keyboard button
+        let hkButton = UIButton(type: UIButtonType.System)
+        hkButton.setImage(UIImage(named: "Hide"), forState: UIControlState.Normal)
+        hkButton.addTarget(self, action: #selector(ViewController.hideKeyboard), forControlEvents: UIControlEvents.TouchUpInside)
+        hkButton.frame = CGRectMake(0, 0, 30, 30)
+        let hideButton = UIBarButtonItem(customView: hkButton)
+        
+        //add some space
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        toolBar.setItems([cutButton, copyButton, pasteButton, spaceButton, hideButton, spaceButton, slashButton, plusButton, refreshButton], animated: false)
+        toolBar.userInteractionEnabled = true
+        toolBar.sizeToFit()
+        
+        textField.delegate = self
+        textField.inputAccessoryView = toolBar
+    }
+}
