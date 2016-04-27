@@ -12,9 +12,11 @@
 
 import UIKit
 
-class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchControllerDelegate, MGSwipeTableCellDelegate {
+class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchControllerDelegate, UIGestureRecognizerDelegate, MGSwipeTableCellDelegate {
     @IBOutlet weak var searchContainer: UINavigationBar!
     @IBAction func deleteAllTabCheck(sender: AnyObject) {
+        resultSearchController.searchBar.endEditing(true)
+        
         //function to define tab deletion
         if(mainView == 0) {
             //remove all history records
@@ -59,6 +61,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
          }
     }
     @IBAction func deleteAllTab(sender: AnyObject) {
+        resultSearchController.searchBar.endEditing(true)
         if(trashButton == false) {
             UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
                 self.navBar.frame.origin.x = 0
@@ -95,6 +98,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var filteredTableData = [String]()
     var resultSearchController = UISearchController()
     let searchFrame = CGRect(x: 6, y: 0, width: 228, height: 44)
+    var tapPressRecognizer = UITapGestureRecognizer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,6 +123,11 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         searchContainer.translucent = false
         searchContainer.barTintColor = UIColor(netHex:0x2E2E2E)
         definesPresentationContext = true
+        
+        //long press to show the action sheet
+        tapPressRecognizer.delegate = self
+        tapPressRecognizer.addTarget(self, action: #selector(SlideViewController.onTapPress(_:)))
+        windowView.addGestureRecognizer(tapPressRecognizer)
         
         //set search bar and search controller
         if #available(iOS 9.0, *) {
@@ -212,6 +221,18 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         style.messageColor = UIColor(netHex: 0xECF0F1)
         style.backgroundColor = UIColor(netHex:0x444444)
         ToastManager.shared.style = style
+    }
+    
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    func onTapPress(gestureRecognizer:UIGestureRecognizer){
+        resultSearchController.searchBar.endEditing(true)
     }
     
     func didPresentSearchController(searchController: UISearchController) {
@@ -312,6 +333,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func swipeTableCellWillBeginSwiping(cell: MGSwipeTableCell!) {
         slideUpdate = true
+        resultSearchController.searchBar.endEditing(true)
     }
     
     func swipeTableCellWillEndSwiping(cell: MGSwipeTableCell!) {
@@ -323,6 +345,10 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             tempArray_title = slideViewValue.likesTitle
             windowView.reloadData()
         }
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        resultSearchController.searchBar.endEditing(true)
     }
     
     //function to set likeText if user did like
