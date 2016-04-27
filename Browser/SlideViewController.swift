@@ -231,6 +231,15 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return true
     }
     
+    //recognize tap gesture recognizer when touch is not at index path of window view
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+        if gestureRecognizer is UITapGestureRecognizer {
+            let location = touch.locationInView(windowView)
+            return (windowView.indexPathForRowAtPoint(location) == nil)
+        }
+        return true
+    }
+    
     func onTapPress(gestureRecognizer:UIGestureRecognizer){
         resultSearchController.searchBar.endEditing(true)
     }
