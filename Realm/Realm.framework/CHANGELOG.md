@@ -1,3 +1,20 @@
+0.99.1 Release notes (2016-04-26)
+=============================================================
+
+### API breaking changes
+
+* None.
+
+### Enhancements
+
+* None.
+
+### Bugfixes
+
+* Fix a scenario that could lead to the assertion failure
+  "m_advancer_sg->get_version_of_current_transaction() ==
+  new_notifiers.front()->version()".
+
 0.99.0 Release notes (2016-04-22)
 =============================================================
 
