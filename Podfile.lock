@@ -37,7 +37,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   1PasswordExtension:
-    :commit: 8593621d8001ee79122b87cfb6b2ef2b11c9139a
+    :commit: 3b41e65c247548b89b328b9345d739bd300190ac
     :git: https://github.com/AgileBits/onepassword-app-extension.git
   AFNetworking:
     :commit: b7073e4990b93ccdd1f16a5ebbb5443a193b002d
