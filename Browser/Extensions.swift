@@ -34,6 +34,7 @@ struct slideViewValue {
     static var likesTitle = [String]() //save, for bookmarks
     static var likesUrl = [String]() //save, for bookmarks
     static var bkButtonSwitch: Bool = false
+    static var toolbarStyle: Int = 0 //save, for changing colour
     
     //Search Engines
     //0: Google, 1: Bing

@@ -87,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             gdata.current_tab = slideViewValue.windowCurTab
             gdata.search = slideViewValue.searchEngines
             gdata.new_user = slideViewValue.newUser
-            realm_maccha.add(gdata)
+            gdata.toolbarColor = slideViewValue.toolbarStyle
             let htdata = HistoryData()
             htdata.history_url = slideViewValue.historyUrl
             htdata.history_title = slideViewValue.historyTitle

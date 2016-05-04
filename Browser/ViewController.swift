@@ -29,7 +29,6 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     var moveToolbarReturn: Bool = false
     var webAddress: String = ""
     var webTitle: String = ""
-    var toolbarStyle: Int = 0
     var scrollDirectionDetermined: Bool = false
     var scrollMakeStatusBarDown: Bool = false
     var google: String = "https://www.google.com"
@@ -98,6 +97,29 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         addToolBar(urlField)
         definesUrlfield() //setup urlfield style
         displayRefreshOrStop() //display refresh or change to stop while loading...
+        
+        let config = Realm.Configuration(
+            // Set the new schema version. This must be greater than the previously used
+            // version (if you've never set a schema version before, the version is 0).
+            schemaVersion: 1,
+            
+            // Set the block which will be called automatically when opening a Realm with
+            // a schema version lower than the one set above
+            migrationBlock: { migration, oldSchemaVersion in
+                // We haven’t migrated anything yet, so oldSchemaVersion == 0
+                switch oldSchemaVersion {
+                case 1:
+                    break
+                default:
+                    // Nothing to do!
+                    // Realm will automatically detect new properties and removed properties
+                    // And will update the schema on disk automatically
+                    self.zeroToOne(migration)
+                }
+        })
+        
+        _ = try! Realm(configuration: config) // Invoke migration block if needed
+        
         loadRealmData()
         
         if(slideViewValue.newUser == 0) {
@@ -113,7 +135,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         
         //set toolbar color and style
         bar.clipsToBounds = true
-        toolbarColor(toolbarStyle)
+        toolbarColor(slideViewValue.toolbarStyle)
         
         //set Toast alert style
         var style = ToastStyle()
@@ -191,6 +213,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
+    //Realm migration
+    func zeroToOne(migration: Migration) {
+        migration.enumerate(GlobalData.className()) {
+            oldObject, newObject in
+            newObject!["toolbarColor"] = slideViewValue.toolbarStyle
+        }
+    }
+    
     //Load data from Realm database
     func loadRealmData() {
         for wdata in realm_maccha.objects(WkData) {
@@ -202,6 +232,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             slideViewValue.searchEngines = gdata.search
             slideViewValue.windowCurTab = gdata.current_tab
             slideViewValue.newUser = gdata.new_user
+            slideViewValue.toolbarStyle = gdata.toolbarColor
         }
         for htdata in realm_maccha.objects(HistoryData) {
             slideViewValue.historyTitle = htdata.history_title
@@ -410,14 +441,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     //shake to change toolbar color, phone will vibrate for confirmation
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == .MotionShake {
-            /*if(toolbarStyle < 1) {
-                toolbarStyle++
+            if(slideViewValue.toolbarStyle < 1) {
+                slideViewValue.toolbarStyle += 1
             }
             else {
-                toolbarStyle = 0
+                slideViewValue.toolbarStyle = 0
             }
-            toolbarColor(toolbarStyle)*/
-            refreshPressed()
+            toolbarColor(slideViewValue.toolbarStyle)
+            //refreshPressed()
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         }
     }

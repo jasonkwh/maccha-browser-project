@@ -346,11 +346,18 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.delegate = self
         
         //cell design
-        if(indexPath.row == slideViewValue.windowCurTab) && (mainView == 1) {
-            cell.backgroundColor = slideViewValue.windowCurColour
-        }
-        else {
-            cell.backgroundColor = UIColor(netHex:0x333333)
+        if(resultSearchController.active) {
+            if(slideViewValue.windowCurTab == tempArray_title.indexOf(titleName)) && (mainView == 1) {
+                cell.backgroundColor = slideViewValue.windowCurColour
+            } else {
+                cell.backgroundColor = UIColor(netHex:0x333333)
+            }
+        } else {
+            if(indexPath.row == slideViewValue.windowCurTab) && (mainView == 1) {
+                cell.backgroundColor = slideViewValue.windowCurColour
+            } else {
+                cell.backgroundColor = UIColor(netHex:0x333333)
+            }
         }
         cell.textLabel?.textColor = UIColor(netHex: 0xECF0F1)
         cell.detailTextLabel?.textColor = UIColor(netHex: 0xECF0F1)
