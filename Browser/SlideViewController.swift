@@ -12,11 +12,10 @@
 
 import UIKit
 
-class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchControllerDelegate, UIGestureRecognizerDelegate, MGSwipeTableCellDelegate {
+class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchControllerDelegate, UISearchBarDelegate, UIGestureRecognizerDelegate, MGSwipeTableCellDelegate {
+    @IBOutlet weak var trashBut: UIBarButtonItem!
     @IBOutlet weak var searchContainer: UINavigationBar!
     @IBAction func deleteAllTabCheck(sender: AnyObject) {
-        resultSearchController.searchBar.endEditing(true)
-        
         //function to define tab deletion
         if(mainView == 0) {
             //remove all history records
@@ -61,7 +60,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
          }
     }
     @IBAction func deleteAllTab(sender: AnyObject) {
-        resultSearchController.searchBar.endEditing(true)
         if(trashButton == false) {
             UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
                 self.navBar.frame.origin.x = 0
@@ -142,6 +140,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             controller.delegate = self
             controller.searchResultsUpdater = self
             controller.dimsBackgroundDuringPresentation = false
+            controller.searchBar.delegate = self
             controller.searchBar.frame = searchFrame
             controller.searchBar.backgroundColor = UIColor(netHex:0x2E2E2E)
             controller.searchBar.placeholder = "search                                  "
@@ -179,6 +178,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SlideViewController.reloadWindowView(_:)), name: "windowViewReload", object: nil)
         
         navBar.frame.origin.x = -55 //set original navigation bar origin
+        trashButton = false
         slideUpdate = false
         
         //set Toast alert style
@@ -215,6 +215,8 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewDidDisappear(animated: Bool) {
+        resultSearchController.active = false
+        trashBut.enabled = true
         NSNotificationCenter.defaultCenter().removeObserver(self)
         
         //reset to original Toast alert style
@@ -249,8 +251,31 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         searchController.searchBar.frame = searchFrame
     }
     
+    //filter user input
     func updateSearchResultsForSearchController(searchController: UISearchController) {
-        windowView.reloadData()
+        filteredTableData.removeAll(keepCapacity: false)
+        
+        //hide navBar
+        UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.navBar.frame.origin.x = -55
+            }, completion: { finished in
+        })
+        trashButton = false
+        
+        trashBut.enabled = false
+        
+        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
+        let array = (tempArray_title as NSArray).filteredArrayUsingPredicate(searchPredicate)
+        filteredTableData = array as! [String]
+        
+        windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, windowView.numberOfSections)), withRowAnimation: .Fade)
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        if(searchBar.text == "") { //redisplay table data if search bar is nil
+            resultSearchController.active = false
+            trashBut.enabled = true
+        }
     }
     
     //function to reload the table content from another class
@@ -280,7 +305,11 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tempArray_title.count
+        if(resultSearchController.active) {
+            return filteredTableData.count
+        } else {
+            return tempArray_title.count
+        }
     }
     
     //design of different cells
@@ -291,7 +320,12 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         //shorten the website title
-        var titleName = tempArray_title[indexPath.row]
+        var titleName = ""
+        if(resultSearchController.active) {
+            titleName = filteredTableData[indexPath.row]
+        } else {
+            titleName = tempArray_title[indexPath.row]
+        }
         if(titleName == "") {
             titleName = "untitled"
         }
@@ -609,11 +643,15 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func historyAction() {
+        resultSearchController.active = false
+        trashBut.enabled = true
+        UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.navBar.frame.origin.x = -55
+            }, completion: { finished in
+        })
+        trashButton = false
+        
         if(slideViewValue.htButtonSwitch == false) {
-            UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                self.navBar.frame.origin.x = -55
-                }, completion: { finished in
-            })
             if(slideViewValue.historyTitle.count > 0) { //avoid size < 0 bug crash
                 htButton.setImage(UIImage(named: "History-filled"), forState: UIControlState.Normal)
                 slideViewValue.htButtonSwitch = true
@@ -640,10 +678,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func historyBackToNormal() { //switch History feature off
         htButton.setImage(UIImage(named: "History"), forState: UIControlState.Normal)
-        UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-            self.navBar.frame.origin.x = -55
-            }, completion: { finished in
-        })
         slideViewValue.htButtonSwitch = false
         bgText.text = "maccha"
         tempArray_title = slideViewValue.windowStoreTitle
@@ -653,11 +687,15 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func bookmarkAction() {
+        resultSearchController.active = false
+        trashBut.enabled = true
+        UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.navBar.frame.origin.x = -55
+            }, completion: { finished in
+        })
+        trashButton = false
+        
         if(slideViewValue.bkButtonSwitch == false) {
-            UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                self.navBar.frame.origin.x = -55
-                }, completion: { finished in
-            })
             if(slideViewValue.likesTitle.count > 0) { //avoid size < 0 bug crash
                 bkButton.setImage(UIImage(named: "Bookmark-filled"), forState: UIControlState.Normal)
                 slideViewValue.bkButtonSwitch = true
@@ -684,10 +722,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func bookmarkBackToNormal() { //switch Bookmark feature off
         bkButton.setImage(UIImage(named: "Bookmark"), forState: UIControlState.Normal)
-        UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-            self.navBar.frame.origin.x = -55
-            }, completion: { finished in
-        })
         slideViewValue.bkButtonSwitch = false
         bgText.text = "maccha"
         tempArray_title = slideViewValue.windowStoreTitle

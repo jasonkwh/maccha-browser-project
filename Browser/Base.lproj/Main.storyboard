@@ -278,6 +278,7 @@
                         <outlet property="sfButton" destination="Skr-kw-S0F" id="ujk-PJ-QTO"/>
                         <outlet property="sgButton" destination="8WR-jM-hhK" id="XEA-Up-9f7"/>
                         <outlet property="toolbar" destination="wH7-aq-OYg" id="eVk-2Y-vex"/>
+                        <outlet property="trashBut" destination="mR4-cU-WEp" id="5pJ-0S-7vF"/>
                         <outlet property="windowView" destination="PQh-Ph-huz" id="bkI-Jd-7Np"/>
                     </connections>
                 </viewController>
