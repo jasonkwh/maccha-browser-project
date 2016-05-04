@@ -204,3 +204,19 @@ extension UIViewController: UITextFieldDelegate{
         textField.inputAccessoryView = toolBar
     }
 }
+
+extension Array where Element: Equatable {
+    func secondIndexOf(element: Element) -> Int? {
+        guard let index = indexOf(element) else { return nil }
+        return suffixFrom(index.successor()).indexOf(element)
+    }
+    func indexesOf(element: Element) -> [Int] {
+        guard let index = indexOf(element) else { return [] }
+        var indexes = [index]
+        while let lastIndexSucessor = indexes.last?.successor(),
+            newIndex = suffixFrom(lastIndexSucessor).indexOf(element)  {
+                indexes.append(newIndex)
+        }
+        return indexes
+    }
+}

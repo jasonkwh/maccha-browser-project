@@ -97,6 +97,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var resultSearchController = UISearchController()
     let searchFrame = CGRect(x: 6, y: 0, width: 228, height: 44)
     var tapPressRecognizer = UITapGestureRecognizer()
+    var tempArray_url = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -254,6 +255,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //filter user input
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         filteredTableData.removeAll(keepCapacity: false)
+        tempArray_url.removeAll(keepCapacity: false)
         
         //hide navBar
         UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
@@ -323,20 +325,22 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         var titleName = ""
         if(resultSearchController.active) {
             titleName = filteredTableData[indexPath.row]
+            gettingSearchUrl(mainView, userinput: titleName)
+            cell.detailTextLabel?.text = "                    " + tempArray_url[indexPath.row]
         } else {
             titleName = tempArray_title[indexPath.row]
+            if mainView == 0 {
+                cell.detailTextLabel?.text = "                    " + slideViewValue.historyUrl[indexPath.row]
+            } else if mainView == 2 {
+                cell.detailTextLabel?.text = "                    " + slideViewValue.likesUrl[indexPath.row]
+            } else if mainView == 1 {
+                cell.detailTextLabel?.text = "                    " + slideViewValue.windowStoreUrl[indexPath.row]
+            }
         }
         if(titleName == "") {
             titleName = "untitled"
         }
         cell.textLabel?.text = "                " + titleName
-        if mainView == 0 {
-            cell.detailTextLabel?.text = "                    " + slideViewValue.historyUrl[indexPath.row]
-        } else if mainView == 2 {
-            cell.detailTextLabel?.text = "                    " + slideViewValue.likesUrl[indexPath.row]
-        } else if mainView == 1 {
-            cell.detailTextLabel?.text = "                    " + slideViewValue.windowStoreUrl[indexPath.row]
-        }
         cell.textLabel?.font = UIFont.systemFontOfSize(16.0)
         cell.detailTextLabel!.font = UIFont.systemFontOfSize(12.0)
         cell.delegate = self
@@ -372,6 +376,22 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.rightExpansion.fillOnTrigger = true
         
         return cell
+    }
+    
+    func gettingSearchUrl(view: Int, userinput: String) {
+        if mainView == 0 {
+            for i in 0..<(tempArray_title.indexesOf(userinput).count) {
+                tempArray_url.append(slideViewValue.historyUrl[tempArray_title.indexesOf(userinput)[i]])
+            }
+        } else if mainView == 2 {
+            for i in 0..<(tempArray_title.indexesOf(userinput).count) {
+                tempArray_url.append(slideViewValue.likesUrl[tempArray_title.indexesOf(userinput)[i]])
+            }
+        } else if mainView == 1 {
+            for i in 0..<(tempArray_title.indexesOf(userinput).count) {
+                tempArray_url.append(slideViewValue.windowStoreUrl[tempArray_title.indexesOf(userinput)[i]])
+            }
+        }
     }
     
     func swipeTableCellWillBeginSwiping(cell: MGSwipeTableCell!) {
