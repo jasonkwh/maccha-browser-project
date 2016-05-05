@@ -347,7 +347,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         //cell design
         if(resultSearchController.active) {
-            if(slideViewValue.windowCurTab == tempArray_title.indexOf(titleName)) && (mainView == 1) {
+            if(indexPath.row == tempArray_title.indexesOf(titleName).indexOf(slideViewValue.windowCurTab)) && (mainView == 1) {
                 cell.backgroundColor = slideViewValue.windowCurColour
             } else {
                 cell.backgroundColor = UIColor(netHex:0x333333)
