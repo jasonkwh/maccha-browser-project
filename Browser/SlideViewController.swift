@@ -98,6 +98,8 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     let searchFrame = CGRect(x: 6, y: 0, width: 228, height: 44)
     var tapPressRecognizer = UITapGestureRecognizer()
     var tempArray_url = [String]()
+    var tempIndexes = [Int]()
+    var tempCurTab: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -256,6 +258,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         filteredTableData.removeAll(keepCapacity: false)
         tempArray_url.removeAll(keepCapacity: false)
+        tempIndexes.removeAll(keepCapacity: false)
         
         windowView.transform = CGAffineTransformMakeRotation(0)
         navBar.transform = CGAffineTransformMakeRotation(0)
@@ -337,19 +340,15 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             gettingSearchUrl(mainView, userinput: titleName)
             cell.detailTextLabel?.text = "                    " + tempArray_url[indexPath.row]
             cell.transform = CGAffineTransformMakeRotation(CGFloat(0)) //rotate cell text
-            /*var tempIndexes:Int = 0
-            if tempArray_title.indexesOf(titleName).indexOf(slideViewValue.windowCurTab) != nil {
-                tempIndexes = tempArray_title.indexesOf(titleName).indexOf(slideViewValue.windowCurTab)!
-            } else {
-                tempIndexes = 0
-            }
+            tempArray_title.enumerate().forEach { if $0.element == titleName { tempIndexes += [$0.index] } }
             
             //cell design
-            if(indexPath.row == tempIndexes + tempArray_title.indexesOf(titleName).indexOf(slideViewValue.windowCurTab)) && (mainView == 1) {
+            if(indexPath.row == tempIndexes.indexOf(slideViewValue.windowCurTab)) && (mainView == 1) {
                 cell.backgroundColor = slideViewValue.windowCurColour
+                tempCurTab = indexPath.row
             } else {
                 cell.backgroundColor = UIColor(netHex:0x333333)
-            }*/
+            }
         } else {
             titleName = tempArray_title[indexPath.row]
             if mainView == 0 {
@@ -360,6 +359,12 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 cell.detailTextLabel?.text = "                    " + slideViewValue.windowStoreUrl[indexPath.row]
             }
             cell.transform = CGAffineTransformMakeRotation(CGFloat(M_PI)) //rotate cell text
+            //cell design
+            if(indexPath.row == slideViewValue.windowCurTab) && (mainView == 1) && (resultSearchController.active == false) {
+                cell.backgroundColor = slideViewValue.windowCurColour
+            } else {
+                cell.backgroundColor = UIColor(netHex:0x333333)
+            }
         }
         if(titleName == "") {
             titleName = "untitled"
@@ -368,12 +373,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.textLabel?.font = UIFont.systemFontOfSize(16.0)
         cell.detailTextLabel!.font = UIFont.systemFontOfSize(12.0)
         cell.delegate = self
-        //cell design
-        if(indexPath.row == slideViewValue.windowCurTab) && (mainView == 1) && (resultSearchController.active == false) {
-            cell.backgroundColor = slideViewValue.windowCurColour
-        } else {
-            cell.backgroundColor = UIColor(netHex:0x333333)
-        }
         cell.textLabel?.textColor = UIColor(netHex: 0xECF0F1)
         cell.detailTextLabel?.textColor = UIColor(netHex: 0xECF0F1)
     
@@ -465,7 +464,24 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         slideViewValue.readActionsCheck = false
         
         if(resultSearchController.active) {
-            if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] != tempArray_url[indexPath.row]) {
+            if mainView == 1 { //tab interface
+                //changing tab in search controller
+                var openAction: Bool = false
+                if tempIndexes.unique.indexOf(slideViewValue.windowCurTab) != nil {
+                    if tempIndexes.unique[indexPath.row] != slideViewValue.windowCurTab {
+                        openAction = true
+                    }
+                } else {
+                    openAction = true
+                }
+                if(openAction) {
+                    slideViewValue.scrollPositionSwitch = true
+                    slideViewValue.windowCurTab = tempIndexes.unique[indexPath.row]
+                    //open stored urls
+                    WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+                    
+                }
+            } else { //both history & bookmark
                 if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] != "about:blank") {
                     slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
                     slideViewValue.windowStoreTitle.insert(filteredTableData[indexPath.row], atIndex: slideViewValue.windowCurTab)
