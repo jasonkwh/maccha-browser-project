@@ -112,12 +112,10 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         windowView.backgroundColor = UIColor.clearColor()
         windowView.separatorStyle = .None
         windowView.delegate = self
-        windowView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
         windowView.rowHeight = 45.0
         navBar.translucent = false
         navBar.barTintColor = UIColor(netHex:0x2E2E2E)
         navBar.clipsToBounds = true
-        navBar.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
         searchContainer.clipsToBounds = true
         searchContainer.translucent = false
         searchContainer.barTintColor = UIColor(netHex:0x2E2E2E)
@@ -178,6 +176,9 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SlideViewController.reloadTable(_:)), name: "tableReloadNotify", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SlideViewController.reloadWindowView(_:)), name: "windowViewReload", object: nil)
         
+        trashBut.enabled = true
+        windowView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+        navBar.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
         navBar.frame.origin.x = -55 //set original navigation bar origin
         trashButton = false
         slideUpdate = false
@@ -217,7 +218,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidDisappear(animated: Bool) {
         resultSearchController.active = false
-        trashBut.enabled = true
         NSNotificationCenter.defaultCenter().removeObserver(self)
         
         //reset to original Toast alert style
@@ -257,9 +257,12 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         filteredTableData.removeAll(keepCapacity: false)
         tempArray_url.removeAll(keepCapacity: false)
         
+        windowView.transform = CGAffineTransformMakeRotation(0)
+        navBar.transform = CGAffineTransformMakeRotation(0)
+        
         //hide navBar
         UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-            self.navBar.frame.origin.x = -55
+            self.navBar.frame.origin.x = 55
             }, completion: { finished in
         })
         trashButton = false
@@ -277,6 +280,12 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if(searchBar.text == "") { //redisplay table data if search bar is nil
             resultSearchController.active = false
             trashBut.enabled = true
+            windowView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+            navBar.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+            UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                self.navBar.frame.origin.x = -55
+                }, completion: { finished in
+            })
         }
     }
     
@@ -327,6 +336,14 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             titleName = filteredTableData[indexPath.row]
             gettingSearchUrl(mainView, userinput: titleName)
             cell.detailTextLabel?.text = "                    " + tempArray_url[indexPath.row]
+            cell.transform = CGAffineTransformMakeRotation(CGFloat(0)) //rotate cell text
+            
+            //cell design
+            if(indexPath.row == tempArray_title.indexesOf(titleName).indexOf(slideViewValue.windowCurTab)) && (mainView == 1) {
+                cell.backgroundColor = slideViewValue.windowCurColour
+            } else {
+                cell.backgroundColor = UIColor(netHex:0x333333)
+            }
         } else {
             titleName = tempArray_title[indexPath.row]
             if mainView == 0 {
@@ -336,6 +353,14 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             } else if mainView == 1 {
                 cell.detailTextLabel?.text = "                    " + slideViewValue.windowStoreUrl[indexPath.row]
             }
+            cell.transform = CGAffineTransformMakeRotation(CGFloat(M_PI)) //rotate cell text
+            
+            //cell design
+            if(indexPath.row == slideViewValue.windowCurTab) && (mainView == 1) {
+                cell.backgroundColor = slideViewValue.windowCurColour
+            } else {
+                cell.backgroundColor = UIColor(netHex:0x333333)
+            }
         }
         if(titleName == "") {
             titleName = "untitled"
@@ -344,24 +369,8 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.textLabel?.font = UIFont.systemFontOfSize(16.0)
         cell.detailTextLabel!.font = UIFont.systemFontOfSize(12.0)
         cell.delegate = self
-        
-        //cell design
-        if(resultSearchController.active) {
-            if(indexPath.row == tempArray_title.indexesOf(titleName).indexOf(slideViewValue.windowCurTab)) && (mainView == 1) {
-                cell.backgroundColor = slideViewValue.windowCurColour
-            } else {
-                cell.backgroundColor = UIColor(netHex:0x333333)
-            }
-        } else {
-            if(indexPath.row == slideViewValue.windowCurTab) && (mainView == 1) {
-                cell.backgroundColor = slideViewValue.windowCurColour
-            } else {
-                cell.backgroundColor = UIColor(netHex:0x333333)
-            }
-        }
         cell.textLabel?.textColor = UIColor(netHex: 0xECF0F1)
         cell.detailTextLabel?.textColor = UIColor(netHex: 0xECF0F1)
-        cell.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
     
         //configure right buttons
         if (mainView == 0) || (mainView == 1) {
@@ -672,6 +681,8 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func historyAction() {
         resultSearchController.active = false
         trashBut.enabled = true
+        windowView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+        navBar.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
         UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             self.navBar.frame.origin.x = -55
             }, completion: { finished in
@@ -716,6 +727,8 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func bookmarkAction() {
         resultSearchController.active = false
         trashBut.enabled = true
+        windowView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+        navBar.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
         UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             self.navBar.frame.origin.x = -55
             }, completion: { finished in
