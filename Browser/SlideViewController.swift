@@ -288,6 +288,17 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 self.navBar.frame.origin.x = -55
                 }, completion: { finished in
             })
+            if(mainView == 0) {
+                if(tempArray_title.count == 0) { //switch off history while history is empty
+                    historyBackToNormal()
+                    view.makeToast("History is empty...", duration: 0.8, position: CGPoint(x: view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70)) //alert user
+                }
+            } else if(mainView == 2) {
+                if(tempArray_title.count == 0) { //switch off likes while bookmark is empty
+                    bookmarkBackToNormal()
+                    view.makeToast("You didn't like any...", duration: 0.8, position: CGPoint(x: view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70)) //alert user instead of switching to bookmarks
+                }
+            }
         }
     }
     
@@ -473,8 +484,9 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             if mainView == 1 { //tab interface
                 //changing tab in search controller
                 var openAction: Bool = false
-                if tempIndexes.unique.indexOf(slideViewValue.windowCurTab) != nil {
-                    if tempIndexes.unique[indexPath.row] != slideViewValue.windowCurTab {
+                tempIndexes = tempIndexes.unique
+                if tempIndexes.indexOf(slideViewValue.windowCurTab) != nil {
+                    if tempIndexes[indexPath.row] != slideViewValue.windowCurTab {
                         openAction = true
                     }
                 } else {
@@ -482,7 +494,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
                 if(openAction) {
                     slideViewValue.scrollPositionSwitch = true
-                    slideViewValue.windowCurTab = tempIndexes.unique[indexPath.row]
+                    slideViewValue.windowCurTab = tempIndexes[indexPath.row]
                     //open stored urls
                     WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
                     
@@ -654,12 +666,22 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
         else if(mainView == 2) { //"likes" mode
-            tempArray_title.removeAtIndex(cell_row)
-            slideViewValue.likesUrl.removeAtIndex(cell_row)
-            slideViewValue.likesTitle = tempArray_title
-            if(tempArray_title.count == 0) { //switch off likes while bookmark is empty
-                bookmarkBackToNormal()
-                view.makeToast("You didn't like any...", duration: 0.8, position: CGPoint(x: view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70)) //alert user instead of switching to bookmarks
+            if(resultSearchController.active) { //while search controller opens in likes mode
+                tempIndexes = tempIndexes.unique
+                filteredTableData.removeAtIndex(cell_row)
+                tempArray_url.removeAtIndex(cell_row)
+                tempArray_title.removeAtIndex(tempIndexes[cell_row])
+                slideViewValue.likesUrl.removeAtIndex(tempIndexes[cell_row])
+                tempIndexes.removeAtIndex(cell_row)
+                slideViewValue.likesTitle = tempArray_title
+            } else {
+                tempArray_title.removeAtIndex(cell_row)
+                slideViewValue.likesUrl.removeAtIndex(cell_row)
+                slideViewValue.likesTitle = tempArray_title
+                if(tempArray_title.count == 0) { //switch off likes while bookmark is empty
+                    bookmarkBackToNormal()
+                    view.makeToast("You didn't like any...", duration: 0.8, position: CGPoint(x: view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70)) //alert user instead of switching to bookmarks
+                }
             }
         }
         windowView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, windowView.numberOfSections)), withRowAnimation: .Fade)
