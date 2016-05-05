@@ -1,6 +1,8 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$CONFIGURATION_BUILD_DIR/1PasswordExtension" "$CONFIGURATION_BUILD_DIR/AFNetworking" "$CONFIGURATION_BUILD_DIR/CBZSplashView" "$CONFIGURATION_BUILD_DIR/MGSwipeTableCell"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/1PasswordExtension" "$PODS_CONFIGURATION_BUILD_DIR/AFNetworking" "$PODS_CONFIGURATION_BUILD_DIR/CBZSplashView" "$PODS_CONFIGURATION_BUILD_DIR/MGSwipeTableCell"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/1PasswordExtension/OnePasswordExtension.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/AFNetworking/AFNetworking.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/CBZSplashView/CBZSplashView.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/MGSwipeTableCell/MGSwipeTableCell.framework/Headers"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/1PasswordExtension/OnePasswordExtension.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/AFNetworking/AFNetworking.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/CBZSplashView/CBZSplashView.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/MGSwipeTableCell/MGSwipeTableCell.framework/Headers"
 OTHER_LDFLAGS = $(inherited) -framework "AFNetworking" -framework "CBZSplashView" -framework "MGSwipeTableCell" -framework "OnePasswordExtension"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}/Pods
