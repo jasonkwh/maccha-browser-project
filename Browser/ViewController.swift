@@ -448,6 +448,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
                 slideViewValue.toolbarStyle = 0
             }
             toolbarColor(slideViewValue.toolbarStyle)
+            NSNotificationCenter.defaultCenter().postNotificationName("windowViewReload", object: nil)
             //refreshPressed()
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         }

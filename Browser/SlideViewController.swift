@@ -337,13 +337,19 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             gettingSearchUrl(mainView, userinput: titleName)
             cell.detailTextLabel?.text = "                    " + tempArray_url[indexPath.row]
             cell.transform = CGAffineTransformMakeRotation(CGFloat(0)) //rotate cell text
+            /*var tempIndexes:Int = 0
+            if tempArray_title.indexesOf(titleName).indexOf(slideViewValue.windowCurTab) != nil {
+                tempIndexes = tempArray_title.indexesOf(titleName).indexOf(slideViewValue.windowCurTab)!
+            } else {
+                tempIndexes = 0
+            }
             
             //cell design
-            if(indexPath.row == tempArray_title.indexesOf(titleName).indexOf(slideViewValue.windowCurTab)) && (mainView == 1) {
+            if(indexPath.row == tempIndexes + tempArray_title.indexesOf(titleName).indexOf(slideViewValue.windowCurTab)) && (mainView == 1) {
                 cell.backgroundColor = slideViewValue.windowCurColour
             } else {
                 cell.backgroundColor = UIColor(netHex:0x333333)
-            }
+            }*/
         } else {
             titleName = tempArray_title[indexPath.row]
             if mainView == 0 {
@@ -354,13 +360,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 cell.detailTextLabel?.text = "                    " + slideViewValue.windowStoreUrl[indexPath.row]
             }
             cell.transform = CGAffineTransformMakeRotation(CGFloat(M_PI)) //rotate cell text
-            
-            //cell design
-            if(indexPath.row == slideViewValue.windowCurTab) && (mainView == 1) {
-                cell.backgroundColor = slideViewValue.windowCurColour
-            } else {
-                cell.backgroundColor = UIColor(netHex:0x333333)
-            }
         }
         if(titleName == "") {
             titleName = "untitled"
@@ -369,6 +368,12 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.textLabel?.font = UIFont.systemFontOfSize(16.0)
         cell.detailTextLabel!.font = UIFont.systemFontOfSize(12.0)
         cell.delegate = self
+        //cell design
+        if(indexPath.row == slideViewValue.windowCurTab) && (mainView == 1) && (resultSearchController.active == false) {
+            cell.backgroundColor = slideViewValue.windowCurColour
+        } else {
+            cell.backgroundColor = UIColor(netHex:0x333333)
+        }
         cell.textLabel?.textColor = UIColor(netHex: 0xECF0F1)
         cell.detailTextLabel?.textColor = UIColor(netHex: 0xECF0F1)
     
@@ -459,40 +464,56 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         slideViewValue.readRecover = false
         slideViewValue.readActionsCheck = false
         
-        if mainView == 1 { //normal changing tabs
-            if(slideViewValue.windowCurTab != indexPath.row) { //open link if user not touch current tab, else not loading
-                slideViewValue.scrollPositionSwitch = true
-                slideViewValue.windowCurTab = indexPath.row
-                //open stored urls
-                WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+        if(resultSearchController.active) {
+            if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] != tempArray_url[indexPath.row]) {
+                if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] != "about:blank") {
+                    slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
+                    slideViewValue.windowStoreTitle.insert(filteredTableData[indexPath.row], atIndex: slideViewValue.windowCurTab)
+                    slideViewValue.windowStoreUrl.insert(tempArray_url[indexPath.row], atIndex: slideViewValue.windowCurTab)
+                    slideViewValue.scrollPosition.insert("0.0", atIndex: slideViewValue.windowCurTab)
+                    //open stored urls
+                    WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: tempArray_url[indexPath.row])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+                } else {
+                    //open stored urls
+                    WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: tempArray_url[indexPath.row])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+                }
             }
-        }
-        if mainView == 0 { //use History feature
-            if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] != "about:blank") {
-                slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
-                slideViewValue.windowStoreTitle.insert(slideViewValue.historyTitle[indexPath.row], atIndex: slideViewValue.windowCurTab)
-                slideViewValue.windowStoreUrl.insert(slideViewValue.historyUrl[indexPath.row], atIndex: slideViewValue.windowCurTab)
-                slideViewValue.scrollPosition.insert("0.0", atIndex: slideViewValue.windowCurTab)
-                //open stored urls
-                WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+        } else {
+            if mainView == 1 { //normal changing tabs
+                if(slideViewValue.windowCurTab != indexPath.row) { //open link if user not touch current tab, else not loading
+                    slideViewValue.scrollPositionSwitch = true
+                    slideViewValue.windowCurTab = indexPath.row
+                    //open stored urls
+                    WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+                }
             }
-            else {
-                //open stored urls
-                WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.historyUrl[indexPath.row])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+            if mainView == 0 { //use History feature
+                if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] != "about:blank") {
+                    slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
+                    slideViewValue.windowStoreTitle.insert(slideViewValue.historyTitle[indexPath.row], atIndex: slideViewValue.windowCurTab)
+                    slideViewValue.windowStoreUrl.insert(slideViewValue.historyUrl[indexPath.row], atIndex: slideViewValue.windowCurTab)
+                    slideViewValue.scrollPosition.insert("0.0", atIndex: slideViewValue.windowCurTab)
+                    //open stored urls
+                    WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+                }
+                else {
+                    //open stored urls
+                    WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.historyUrl[indexPath.row])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+                }
             }
-        }
-        if mainView == 2 { //use Bookmark feature
-            if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] != "about:blank") {
-                slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
-                slideViewValue.windowStoreTitle.insert(slideViewValue.likesTitle[indexPath.row], atIndex: slideViewValue.windowCurTab)
-                slideViewValue.windowStoreUrl.insert(slideViewValue.likesUrl[indexPath.row], atIndex: slideViewValue.windowCurTab)
-                slideViewValue.scrollPosition.insert("0.0", atIndex: slideViewValue.windowCurTab)
-                //open stored urls
-                WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
-            }
-            else {
-                //open stored urls
-                WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.likesUrl[indexPath.row])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+            if mainView == 2 { //use Bookmark feature
+                if(slideViewValue.windowStoreUrl[slideViewValue.windowCurTab] != "about:blank") {
+                    slideViewValue.windowCurTab = slideViewValue.windowCurTab + 1
+                    slideViewValue.windowStoreTitle.insert(slideViewValue.likesTitle[indexPath.row], atIndex: slideViewValue.windowCurTab)
+                    slideViewValue.windowStoreUrl.insert(slideViewValue.likesUrl[indexPath.row], atIndex: slideViewValue.windowCurTab)
+                    slideViewValue.scrollPosition.insert("0.0", atIndex: slideViewValue.windowCurTab)
+                    //open stored urls
+                    WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+                }
+                else {
+                    //open stored urls
+                    WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.likesUrl[indexPath.row])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+                }
             }
         }
         revealViewController().rightRevealToggleAnimated(true)

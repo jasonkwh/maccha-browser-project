@@ -62,7 +62,7 @@ class ModalView: UIView {
             alertPic.image = UIImage(named: "Tea")
             self.version.text = "Maccha " + slideViewValue.version()
             self.contents.text = "Brewed by Jason Wong, does it taste good?"
-            self.contentView.backgroundColor = slideViewValue.windowCurColour
+            self.contentView.backgroundColor = UIColor(netHex:0x70BF41)
             slideViewValue.aboutScreen = false
         }
         if(slideViewValue.alertScreen == true) {
@@ -76,7 +76,7 @@ class ModalView: UIView {
             alertPic.image = UIImage(named: "Success")
             self.version.text = "Success!"
             self.contents.text = slideViewValue.alertContents
-            self.contentView.backgroundColor = slideViewValue.windowCurColour
+            self.contentView.backgroundColor = UIColor(netHex:0x70BF41)
             slideViewValue.doneScreen = false
         }
         /*if(slideViewValue.searchScreen == true) {
