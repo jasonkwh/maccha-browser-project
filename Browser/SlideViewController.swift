@@ -248,16 +248,20 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         resultSearchController.searchBar.endEditing(true)
     }
     
+    func didDismissSearchController(searchController: UISearchController) {
+        windowView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+        navBar.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+        UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.navBar.frame.origin.x = -55
+            }, completion: { finished in
+        })
+        trashButton = false
+        trashBut.enabled = true
+    }
+    
     func didPresentSearchController(searchController: UISearchController) {
         searchController.searchBar.showsCancelButton = false
         searchController.searchBar.frame = searchFrame
-    }
-    
-    //filter user input
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        filteredTableData.removeAll(keepCapacity: false)
-        tempArray_url.removeAll(keepCapacity: false)
-        tempIndexes.removeAll(keepCapacity: false)
         
         windowView.transform = CGAffineTransformMakeRotation(0)
         navBar.transform = CGAffineTransformMakeRotation(0)
@@ -270,6 +274,13 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         trashButton = false
         
         trashBut.enabled = false
+    }
+    
+    //filter user input
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        filteredTableData.removeAll(keepCapacity: false)
+        tempArray_url.removeAll(keepCapacity: false)
+        tempIndexes.removeAll(keepCapacity: false)
         
         let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
         let array = (tempArray_title as NSArray).filteredArrayUsingPredicate(searchPredicate)
@@ -281,24 +292,24 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
         if(searchBar.text == "") { //redisplay table data if search bar is nil
             resultSearchController.active = false
-            trashBut.enabled = true
-            windowView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
-            navBar.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
-            UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                self.navBar.frame.origin.x = -55
-                }, completion: { finished in
-            })
-            if(mainView == 0) {
-                if(tempArray_title.count == 0) { //switch off history while history is empty
+            
+            /*if(mainView == 1) {
+                scrollLastestTab(true)
+            } else {
+                if(tempArray_title.count > 0) {
+                    //scroll the tableView to display the latest tab
+                    let indexPath = NSIndexPath(forRow: windowView.numberOfRowsInSection(windowView.numberOfSections-1)-1, inSection: (windowView.numberOfSections-1))
+                    windowView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+                }*/
+                if(tempArray_title.count == 0) && (mainView == 0) { //switch off history while history is empty
                     historyBackToNormal()
                     view.makeToast("History is empty...", duration: 0.8, position: CGPoint(x: view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70)) //alert user
                 }
-            } else if(mainView == 2) {
-                if(tempArray_title.count == 0) { //switch off likes while bookmark is empty
+                if(tempArray_title.count == 0) && (mainView == 2) { //switch off likes while bookmark is empty
                     bookmarkBackToNormal()
                     view.makeToast("You didn't like any...", duration: 0.8, position: CGPoint(x: view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70)) //alert user instead of switching to bookmarks
                 }
-            }
+            //}
         }
     }
     
@@ -440,7 +451,9 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        resultSearchController.searchBar.endEditing(true)
+        if(resultSearchController.active) {
+            resultSearchController.searchBar.endEditing(true)
+        }
     }
     
     //function to set likeText if user did like
@@ -656,13 +669,24 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
         else if(mainView == 0) { //"history" mode
-            tempArray_title.removeAtIndex(cell_row)
-            slideViewValue.historyUrl.removeAtIndex(cell_row)
-            slideViewValue.historyDate.removeAtIndex(cell_row)
-            slideViewValue.historyTitle = tempArray_title
-            if(tempArray_title.count == 0) { //switch off history while history is empty
-                historyBackToNormal()
-                view.makeToast("History is empty...", duration: 0.8, position: CGPoint(x: view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70)) //alert user
+            if(resultSearchController.active) { //while search controller opens in history mode
+                tempIndexes = tempIndexes.unique
+                filteredTableData.removeAtIndex(cell_row)
+                tempArray_url.removeAtIndex(cell_row)
+                tempArray_title.removeAtIndex(tempIndexes[cell_row])
+                slideViewValue.historyUrl.removeAtIndex(tempIndexes[cell_row])
+                slideViewValue.historyDate.removeAtIndex(tempIndexes[cell_row])
+                tempIndexes.removeAtIndex(cell_row)
+                slideViewValue.historyTitle = tempArray_title
+            } else {
+                tempArray_title.removeAtIndex(cell_row)
+                slideViewValue.historyUrl.removeAtIndex(cell_row)
+                slideViewValue.historyDate.removeAtIndex(cell_row)
+                slideViewValue.historyTitle = tempArray_title
+                if(tempArray_title.count == 0) { //switch off history while history is empty
+                    historyBackToNormal()
+                    view.makeToast("History is empty...", duration: 0.8, position: CGPoint(x: view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70)) //alert user
+                }
             }
         }
         else if(mainView == 2) { //"likes" mode
