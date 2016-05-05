@@ -99,7 +99,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var tapPressRecognizer = UITapGestureRecognizer()
     var tempArray_url = [String]()
     var tempIndexes = [Int]()
-    var tempCurTab: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -345,7 +344,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             //cell design
             if(indexPath.row == tempIndexes.indexOf(slideViewValue.windowCurTab)) && (mainView == 1) {
                 cell.backgroundColor = slideViewValue.windowCurColour
-                tempCurTab = indexPath.row
             } else {
                 cell.backgroundColor = UIColor(netHex:0x333333)
             }
@@ -438,18 +436,26 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func setLikesText(cell_row: Int) -> String {
         var likeText: String = ""
         
-        if mainView == 1 {
-            if slideViewValue.likesUrl.contains(slideViewValue.windowStoreUrl[cell_row]) {
+        if(resultSearchController.active) {
+            if slideViewValue.likesUrl.contains(tempArray_url[cell_row]) {
                 likeText = "Unlike"
             } else {
                 likeText = "Like"
             }
-        }
-        if mainView == 0 {
-            if slideViewValue.likesUrl.contains(slideViewValue.historyUrl[cell_row]) {
-                likeText = "Unlike"
-            } else {
-                likeText = "Like"
+        } else {
+            if mainView == 1 {
+                if slideViewValue.likesUrl.contains(slideViewValue.windowStoreUrl[cell_row]) {
+                    likeText = "Unlike"
+                } else {
+                    likeText = "Like"
+                }
+            }
+            if mainView == 0 {
+                if slideViewValue.likesUrl.contains(slideViewValue.historyUrl[cell_row]) {
+                    likeText = "Unlike"
+                } else {
+                    likeText = "Like"
+                }
             }
         }
         
@@ -538,24 +544,36 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //function to like tabs
     func tabLikeActions(cell_row: Int, likes: String) -> Bool {
         if(likes == "Like") {
-            if mainView == 1 {
-                slideViewValue.likesTitle.append(slideViewValue.windowStoreTitle[cell_row])
-                slideViewValue.likesUrl.append(slideViewValue.windowStoreUrl[cell_row])
-            } else if mainView == 0 {
-                slideViewValue.likesTitle.append(slideViewValue.historyTitle[cell_row])
-                slideViewValue.likesUrl.append(slideViewValue.historyUrl[cell_row])
+            if(resultSearchController.active) {
+                slideViewValue.likesTitle.append(filteredTableData[cell_row])
+                slideViewValue.likesUrl.append(tempArray_url[cell_row])
+            } else {
+                if mainView == 1 {
+                    slideViewValue.likesTitle.append(slideViewValue.windowStoreTitle[cell_row])
+                    slideViewValue.likesUrl.append(slideViewValue.windowStoreUrl[cell_row])
+                } else if mainView == 0 {
+                    slideViewValue.likesTitle.append(slideViewValue.historyTitle[cell_row])
+                    slideViewValue.likesUrl.append(slideViewValue.historyUrl[cell_row])
+                }
             }
         } else if(likes == "Unlike") {
             //Unlike; Get index first, then remove...
-            if mainView == 1 {
-                if let i = slideViewValue.likesUrl.indexOf(slideViewValue.windowStoreUrl[cell_row]) {
+            if(resultSearchController.active) {
+                if let i = slideViewValue.likesUrl.indexOf(tempArray_url[cell_row]) {
                     slideViewValue.likesTitle.removeAtIndex(i)
                     slideViewValue.likesUrl.removeAtIndex(i)
                 }
-            } else if mainView == 0 {
-                if let i = slideViewValue.likesUrl.indexOf(slideViewValue.historyUrl[cell_row]) {
-                    slideViewValue.likesTitle.removeAtIndex(i)
-                    slideViewValue.likesUrl.removeAtIndex(i)
+            } else {
+                if mainView == 1 {
+                    if let i = slideViewValue.likesUrl.indexOf(slideViewValue.windowStoreUrl[cell_row]) {
+                        slideViewValue.likesTitle.removeAtIndex(i)
+                        slideViewValue.likesUrl.removeAtIndex(i)
+                    }
+                } else if mainView == 0 {
+                    if let i = slideViewValue.likesUrl.indexOf(slideViewValue.historyUrl[cell_row]) {
+                        slideViewValue.likesTitle.removeAtIndex(i)
+                        slideViewValue.likesUrl.removeAtIndex(i)
+                    }
                 }
             }
         }
