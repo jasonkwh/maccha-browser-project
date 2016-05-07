@@ -248,6 +248,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         resultSearchController.searchBar.endEditing(true)
     }
     
+    //actions while user close search controller
     func didDismissSearchController(searchController: UISearchController) {
         windowView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
         navBar.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
@@ -257,6 +258,13 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         })
         trashButton = false
         trashBut.enabled = true
+        if(tempArray_title.count == 0) && (mainView == 0) { //switch off history while history is empty
+            historyBackToNormal()
+            view.makeToast("History is empty...", duration: 0.8, position: CGPoint(x: view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70)) //alert user
+        } else if (tempArray_title.count == 0) && (mainView == 2) { //switch off likes while bookmark is empty
+            bookmarkBackToNormal()
+            view.makeToast("You didn't like any...", duration: 0.8, position: CGPoint(x: view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70)) //alert user instead of switching to bookmarks
+        }
     }
     
     func didPresentSearchController(searchController: UISearchController) {
@@ -272,7 +280,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }, completion: { finished in
         })
         trashButton = false
-        
         trashBut.enabled = false
     }
     
@@ -290,7 +297,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-        if(searchBar.text == "") { //redisplay table data if search bar is nil
+        if(filteredTableData.count == 0) { //redisplay table data if search bar is nil
             resultSearchController.active = false
             
             /*if(mainView == 1) {
@@ -678,6 +685,9 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 slideViewValue.historyDate.removeAtIndex(tempIndexes[cell_row])
                 tempIndexes.removeAtIndex(cell_row)
                 slideViewValue.historyTitle = tempArray_title
+                if(filteredTableData.count == 0) {
+                    resultSearchController.active = false
+                }
             } else {
                 tempArray_title.removeAtIndex(cell_row)
                 slideViewValue.historyUrl.removeAtIndex(cell_row)
@@ -698,6 +708,9 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 slideViewValue.likesUrl.removeAtIndex(tempIndexes[cell_row])
                 tempIndexes.removeAtIndex(cell_row)
                 slideViewValue.likesTitle = tempArray_title
+                if(filteredTableData.count == 0) {
+                    resultSearchController.active = false
+                }
             } else {
                 tempArray_title.removeAtIndex(cell_row)
                 slideViewValue.likesUrl.removeAtIndex(cell_row)
