@@ -616,49 +616,61 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //function to delete tabs
     func tabDeleteActions(cell_row: Int) -> Bool {
         tempIndexes = tempIndexes.unique
+        var singleTab: Bool = false
         
         //LOGICs of removing tabs
         if(mainView == 1) { //normal mode
-            if(tempArray_title.count > 1) {
-                if(slideViewValue.windowCurTab != cell_row) {
-                    tempArray_title.removeAtIndex(cell_row)
-                    slideViewValue.windowStoreUrl.removeAtIndex(cell_row)
-                    slideViewValue.scrollPosition.removeAtIndex(cell_row)
-                    if(cell_row < slideViewValue.windowCurTab) {
-                        slideViewValue.windowCurTab -= 1
-                    }
-                    slideViewValue.windowStoreTitle = tempArray_title
-                    NSNotificationCenter.defaultCenter().postNotificationName("updateWindow", object: nil)
+            if(resultSearchController.active) {
+                if(tempArray_title.count == 1) {
+                    singleTab = true
+                } else if(tempArray_title.count > 1) {
+                    
                 }
-                else {
-                    if(slideViewValue.windowCurTab == (tempArray_title.count - 1)) {
+            } else {
+                if(tempArray_title.count > 1) {
+                    if(slideViewValue.windowCurTab != cell_row) {
                         tempArray_title.removeAtIndex(cell_row)
                         slideViewValue.windowStoreUrl.removeAtIndex(cell_row)
                         slideViewValue.scrollPosition.removeAtIndex(cell_row)
+                        if(cell_row < slideViewValue.windowCurTab) {
+                            slideViewValue.windowCurTab -= 1
+                        }
+                        slideViewValue.windowStoreTitle = tempArray_title
+                        NSNotificationCenter.defaultCenter().postNotificationName("updateWindow", object: nil)
                     }
                     else {
-                        tempArray_title.removeAtIndex(cell_row)
-                        slideViewValue.windowStoreUrl.removeAtIndex(cell_row)
-                        slideViewValue.scrollPosition.removeAtIndex(cell_row)
+                        if(slideViewValue.windowCurTab == (tempArray_title.count - 1)) {
+                            tempArray_title.removeAtIndex(cell_row)
+                            slideViewValue.windowStoreUrl.removeAtIndex(cell_row)
+                            slideViewValue.scrollPosition.removeAtIndex(cell_row)
+                        }
+                        else {
+                            tempArray_title.removeAtIndex(cell_row)
+                            slideViewValue.windowStoreUrl.removeAtIndex(cell_row)
+                            slideViewValue.scrollPosition.removeAtIndex(cell_row)
+                        }
+                        if(slideViewValue.windowCurTab != 0) {
+                            slideViewValue.windowCurTab -= 1
+                        }
+                        slideViewValue.windowStoreTitle = tempArray_title
+                        
+                        //reset readActions
+                        slideViewValue.readActions = false
+                        slideViewValue.readRecover = false
+                        slideViewValue.readActionsCheck = false
+                        
+                        sgButton.setImage(UIImage(named: "Read"), forState: UIControlState.Normal)
+                        
+                        //open tabs in background
+                        WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+                        slideViewValue.scrollPositionSwitch = true
                     }
-                    if(slideViewValue.windowCurTab != 0) {
-                        slideViewValue.windowCurTab -= 1
-                    }
-                    slideViewValue.windowStoreTitle = tempArray_title
-                    
-                    //reset readActions
-                    slideViewValue.readActions = false
-                    slideViewValue.readRecover = false
-                    slideViewValue.readActionsCheck = false
-                    
-                    sgButton.setImage(UIImage(named: "Read"), forState: UIControlState.Normal)
-                    
-                    //open tabs in background
-                    WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
-                    slideViewValue.scrollPositionSwitch = true
+                }
+                else if(tempArray_title.count == 1) {
+                    singleTab = true
                 }
             }
-            else if(tempArray_title.count == 1) {
+            if singleTab {
                 slideViewValue.windowStoreUrl[0] = "about:blank"
                 tempArray_title[0] = ""
                 slideViewValue.windowStoreTitle = tempArray_title
@@ -699,6 +711,7 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     view.makeToast("History is empty...", duration: 0.8, position: CGPoint(x: view.frame.size.width-120, y: UIScreen.mainScreen().bounds.height-70)) //alert user
                 }
             }
+            singleTab = false
         }
         else if(mainView == 2) { //"likes" mode
             if(resultSearchController.active) { //while search controller opens in likes mode
