@@ -615,6 +615,8 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //function to delete tabs
     func tabDeleteActions(cell_row: Int) -> Bool {
+        tempIndexes = tempIndexes.unique
+        
         //LOGICs of removing tabs
         if(mainView == 1) { //normal mode
             if(tempArray_title.count > 1) {
@@ -677,7 +679,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         else if(mainView == 0) { //"history" mode
             if(resultSearchController.active) { //while search controller opens in history mode
-                tempIndexes = tempIndexes.unique
                 filteredTableData.removeAtIndex(cell_row)
                 tempArray_url.removeAtIndex(cell_row)
                 tempArray_title.removeAtIndex(tempIndexes[cell_row])
@@ -701,7 +702,6 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         else if(mainView == 2) { //"likes" mode
             if(resultSearchController.active) { //while search controller opens in likes mode
-                tempIndexes = tempIndexes.unique
                 filteredTableData.removeAtIndex(cell_row)
                 tempArray_url.removeAtIndex(cell_row)
                 tempArray_title.removeAtIndex(tempIndexes[cell_row])
