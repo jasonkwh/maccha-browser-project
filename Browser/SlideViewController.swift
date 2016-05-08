@@ -624,7 +624,44 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 if(tempArray_title.count == 1) {
                     singleTab = true
                 } else if(tempArray_title.count > 1) {
-                    
+                    if(slideViewValue.windowCurTab != tempIndexes[cell_row]) {
+                        filteredTableData.removeAtIndex(cell_row)
+                        tempArray_url.removeAtIndex(cell_row)
+                        tempArray_title.removeAtIndex(tempIndexes[cell_row])
+                        slideViewValue.windowStoreUrl.removeAtIndex(tempIndexes[cell_row])
+                        slideViewValue.scrollPosition.removeAtIndex(tempIndexes[cell_row])
+                        if(tempIndexes[cell_row] < slideViewValue.windowCurTab) {
+                            slideViewValue.windowCurTab -= 1
+                        }
+                        tempIndexes.removeAtIndex(cell_row)
+                        slideViewValue.windowStoreTitle = tempArray_title
+                        NSNotificationCenter.defaultCenter().postNotificationName("updateWindow", object: nil)
+                    } else {
+                        filteredTableData.removeAtIndex(cell_row)
+                        tempArray_url.removeAtIndex(cell_row)
+                        tempArray_title.removeAtIndex(tempIndexes[cell_row])
+                        slideViewValue.windowStoreUrl.removeAtIndex(tempIndexes[cell_row])
+                        slideViewValue.scrollPosition.removeAtIndex(tempIndexes[cell_row])
+                        tempIndexes.removeAtIndex(cell_row)
+                        if(slideViewValue.windowCurTab != 0) {
+                            slideViewValue.windowCurTab -= 1
+                        }
+                        slideViewValue.windowStoreTitle = tempArray_title
+                        
+                        //reset readActions
+                        slideViewValue.readActions = false
+                        slideViewValue.readRecover = false
+                        slideViewValue.readActionsCheck = false
+                        
+                        sgButton.setImage(UIImage(named: "Read"), forState: UIControlState.Normal)
+                        
+                        //open tabs in background
+                        WKWebviewFactory.sharedInstance.webView.loadRequest(NSURLRequest(URL: NSURL(string: slideViewValue.windowStoreUrl[slideViewValue.windowCurTab])!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 15))
+                        slideViewValue.scrollPositionSwitch = true
+                    }
+                    if(filteredTableData.count == 0) {
+                        resultSearchController.active = false
+                    }
                 }
             } else {
                 if(tempArray_title.count > 1) {
@@ -639,16 +676,9 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         NSNotificationCenter.defaultCenter().postNotificationName("updateWindow", object: nil)
                     }
                     else {
-                        if(slideViewValue.windowCurTab == (tempArray_title.count - 1)) {
-                            tempArray_title.removeAtIndex(cell_row)
-                            slideViewValue.windowStoreUrl.removeAtIndex(cell_row)
-                            slideViewValue.scrollPosition.removeAtIndex(cell_row)
-                        }
-                        else {
-                            tempArray_title.removeAtIndex(cell_row)
-                            slideViewValue.windowStoreUrl.removeAtIndex(cell_row)
-                            slideViewValue.scrollPosition.removeAtIndex(cell_row)
-                        }
+                        tempArray_title.removeAtIndex(cell_row)
+                        slideViewValue.windowStoreUrl.removeAtIndex(cell_row)
+                        slideViewValue.scrollPosition.removeAtIndex(cell_row)
                         if(slideViewValue.windowCurTab != 0) {
                             slideViewValue.windowCurTab -= 1
                         }
