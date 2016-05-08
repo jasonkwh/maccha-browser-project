@@ -440,7 +440,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     //shake to change toolbar color, phone will vibrate for confirmation
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
-        if motion == .MotionShake {
+        let matches = matchesForRegexInText("iPad", text: UIDevice.currentDevice().modelName) //check iPad?
+        if (motion == .MotionShake) && (matches == []) {
             if(slideViewValue.toolbarStyle < 1) {
                 slideViewValue.toolbarStyle += 1
             }
