@@ -40,7 +40,7 @@ CHECKOUT OPTIONS:
     :commit: 3b41e65c247548b89b328b9345d739bd300190ac
     :git: https://github.com/AgileBits/onepassword-app-extension.git
   AFNetworking:
-    :commit: b7073e4990b93ccdd1f16a5ebbb5443a193b002d
+    :commit: 59d5111895d7ed04905a6dc0342ce842bf0e1975
     :git: https://github.com/AFNetworking/AFNetworking.git
   MGSwipeTableCell:
     :commit: fa0aa7e12095559a9b66d69558d007239753c231
@@ -54,4 +54,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: b849d8f4aab8b1690597ca051432309741ac9df3
 
-COCOAPODS: 1.0.0.rc.2
+COCOAPODS: 1.0.0

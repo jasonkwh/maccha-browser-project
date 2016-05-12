@@ -15,7 +15,7 @@ We used the latest CocoaPods to integrate our projects and third-party libraries
 You can install preview version of CocoaPods with [RubyGems](https://rubygems.org/) using the following command:
 
 ```bash
-$ sudo gem install cocoapods --pre
+$ sudo gem install cocoapods
 ```
 
 Navigate to your directory by cd / mkdir commands, then use the following commands:
