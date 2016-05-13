@@ -12,7 +12,7 @@ Maccha is intended to revolutionize the web browsing experiences on iOS phablets
 
 We used the latest CocoaPods to integrate our projects and third-party libraries. [CocoaPods](https://cocoapods.org/) is a dependency manager for Swift and Objective-C Cocoa projects.
 
-You can install preview version of CocoaPods with [RubyGems](https://rubygems.org/) using the following command:
+You can install CocoaPods with [RubyGems](https://rubygems.org/) by using the following command:
 
 ```bash
 $ sudo gem install cocoapods
