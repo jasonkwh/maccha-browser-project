@@ -442,7 +442,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         let matches = matchesForRegexInText("iPad", text: UIDevice.currentDevice().modelName) //check iPad?
         if (motion == .MotionShake) && (matches == []) {
-            if(slideViewValue.toolbarStyle < 1) {
+            if(slideViewValue.toolbarStyle < 2) {
                 slideViewValue.toolbarStyle += 1
             }
             else {
@@ -470,6 +470,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             urlField.backgroundColor = UIColor(netHex:0x0153A4)
             bar.barTintColor = UIColor(netHex:0x499AE7)
             slideViewValue.windowCurColour = UIColor(netHex:0x499AE7)
+        case 2:
+            //Pink, for Sherry my dear
+            progressView.tintColor = UIColor(netHex:0xd672ac)
+            urlField.backgroundColor = UIColor(netHex:0xd672ac)
+            bar.barTintColor = UIColor(netHex:0xea89be)
+            slideViewValue.windowCurColour = UIColor(netHex:0xea89be)
         default:
             break
         }
@@ -711,7 +717,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
             }
             if(Float(WKWebviewFactory.sharedInstance.webView.estimatedProgress) > 0.1) {
                 //shorten url by replacing http:// and https:// to null
-                let shorten_url = WKWebviewFactory.sharedInstance.webView.URL?.absoluteString.stringByReplacingOccurrencesOfString("https://", withString: "").stringByReplacingOccurrencesOfString("http://", withString: "")
+                let shorten_url = WKWebviewFactory.sharedInstance.webView.URL?.absoluteString!.stringByReplacingOccurrencesOfString("https://", withString: "").stringByReplacingOccurrencesOfString("http://", withString: "")
 
                 //change urlField when the page starts loading
                 //display website title in the url field
@@ -823,7 +829,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
         let url: NSURL = navigationAction.request.URL!
-        let urlString: String = url.absoluteString
+        let urlString: String = url.absoluteString!
         var checkImage: Bool = false
         if (matchesForRegexInText("\\/\\/itunes\\.apple\\.com\\/", text: urlString) != []) {
             UIApplication.sharedApplication().openURL(url)
