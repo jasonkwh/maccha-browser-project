@@ -501,7 +501,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         if(UIScreen.mainScreen().bounds.width == 320.0) { //for iPhone 4s, iPhone 5, iPhone 5s, or iPhone SE
             urlField.frame.size.width = UIScreen.mainScreen().bounds.width * 0.68
         }
-        print(UIScreen.mainScreen().bounds.width)
+        
         urlField.autoresizingMask = UIViewAutoresizing.FlexibleWidth
         urlField.clipsToBounds = true
         let crButton = UIButton(type: UIButtonType.System)
