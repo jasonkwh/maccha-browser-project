@@ -61,8 +61,16 @@ class ModalView: UIView {
             self.contents.userInteractionEnabled = true
             alertPic.image = UIImage(named: "Tea")
             self.version.text = "Maccha " + slideViewValue.version()
-            self.contents.text = "Brewed by Jason Wong, does it taste good?"
-            self.contentView.backgroundColor = UIColor(netHex:0x70BF41)
+            if(slideViewValue.toolbarStyle == 0) {
+                self.contents.text = "Brewed by Jason Wong, does it taste good?"
+                self.contentView.backgroundColor = UIColor(netHex:0x70BF41)
+            } else if (slideViewValue.toolbarStyle == 1) {
+                self.contents.text = "Brewed by Jason Wong, does it taste good?"
+                self.contentView.backgroundColor = UIColor(netHex:0x499AE7)
+            } else if (slideViewValue.toolbarStyle == 2) {
+                self.contents.text = "Little gift to my loving dear, wish you happy everyday~"
+                self.contentView.backgroundColor = UIColor(netHex:0xea89be)
+            }
             slideViewValue.aboutScreen = false
         }
         if(slideViewValue.alertScreen == true) {
