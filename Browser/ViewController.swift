@@ -483,10 +483,25 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
     
     //function which defines the clear button of the urlfield and some characteristics of urlfield
     func definesUrlfield() {
-        //changes scales exclusively for iPhone 6 Plus or iPhone 6s Plus
-        /*if((UIDevice.currentDevice().modelName == "iPhone 6 Plus") || (UIDevice.currentDevice().modelName == "iPhone 6s Plus") || (UIDevice.currentDevice().modelName == "Simulator")) {
-            urlField.frame.size.width = 208
-        }*/
+        /** iPads **/
+        if(UIScreen.mainScreen().bounds.width == 1024.0) {
+            urlField.frame.size.width = UIScreen.mainScreen().bounds.width * 0.21
+        }
+        if(UIScreen.mainScreen().bounds.width == 768.0) {
+            urlField.frame.size.width = UIScreen.mainScreen().bounds.width * 0.28
+        }
+        
+        /** iPhones **/
+        if(UIScreen.mainScreen().bounds.width == 414.0) { //for iPhone 6 Plus, iPhone 6s Plus, or iPhone 7 Plus
+            urlField.frame.size.width = UIScreen.mainScreen().bounds.width * 0.5
+        }
+        if(UIScreen.mainScreen().bounds.width == 375.0) { //for iPhone 6, iPhone 6s, or iPhone 7
+            urlField.frame.size.width = UIScreen.mainScreen().bounds.width * 0.58
+        }
+        if(UIScreen.mainScreen().bounds.width == 320.0) { //for iPhone 4s, iPhone 5, iPhone 5s, or iPhone SE
+            urlField.frame.size.width = UIScreen.mainScreen().bounds.width * 0.68
+        }
+        print(UIScreen.mainScreen().bounds.width)
         urlField.autoresizingMask = UIViewAutoresizing.FlexibleWidth
         urlField.clipsToBounds = true
         let crButton = UIButton(type: UIButtonType.System)

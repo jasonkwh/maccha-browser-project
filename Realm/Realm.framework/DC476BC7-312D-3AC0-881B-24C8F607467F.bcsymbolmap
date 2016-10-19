@@ -591,21 +591,6 @@ __compressed_pair<realm::_impl::DeepChangeChecker &&, std::__1::allocator<realm:
 __libcpp_compressed_pair_imp<realm::_impl::DeepChangeChecker &&, std::__1::allocator<realm::_impl::DeepChangeChecker> &&, 0, 0>
 function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/collection_notifier.cpp:41:16)>
 any_of<std::__1::__wrap_iter<realm::_impl::DeepChangeChecker::RelatedTable *>, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/collection_notifier.cpp:36:27)>
-+[RLMSyncFileManager _baseDirectory]
-___36+[RLMSyncFileManager _baseDirectory]_block_invoke
-+[RLMSyncFileManager _folderPathForString:]
-+[RLMSyncFileManager _folderPathForUserIdentity:]
-+[RLMSyncFileManager fileURLForMetadata]
-+[RLMSyncFileManager fileURLForRawRealmURL:user:]
-+[RLMSyncFileManager removeFilesForUserIdentity:error:]
-__ZZ36+[RLMSyncFileManager _baseDirectory]E15s_baseDirectory
-__ZZ36+[RLMSyncFileManager _baseDirectory]E9onceToken
-___block_descriptor_tmp
-___block_literal_global
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncFileManager.mm
-__36+[RLMSyncFileManager _baseDirectory]_block_invoke
-_dispatch_once
-/Applications/Xcode-8.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/usr/include/dispatch/once.h
 __ZNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev
 __ZN5realm5_impl20ExternalCommitHelper8FdHolderD1Ev
 __ZN12_GLOBAL__N_19notify_fdEii
@@ -788,24 +773,6 @@ basic_iostream
 basic_istream
 print
 core/include/realm/string_data.hpp
-+[RLMSyncCredential credentialWithFacebookToken:]
-+[RLMSyncCredential credentialWithGoogleToken:]
-+[RLMSyncCredential credentialWithICloudToken:]
-+[RLMSyncCredential credentialWithUsername:password:actions:]
-+[RLMSyncCredential credentialWithAccessToken:identity:]
--[RLMSyncCredential initWithCustomToken:provider:userInfo:]
--[RLMSyncCredential token]
--[RLMSyncCredential setToken:]
--[RLMSyncCredential provider]
--[RLMSyncCredential setProvider:]
--[RLMSyncCredential userInfo]
--[RLMSyncCredential setUserInfo:]
--[RLMSyncCredential .cxx_destruct]
-_OBJC_IVAR_$_RLMSyncCredential._token
-_OBJC_IVAR_$_RLMSyncCredential._provider
-_OBJC_IVAR_$_RLMSyncCredential._userInfo
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncCredential.m
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncCredential.h
 __ZN5realm8BasicRowINS_5TableEED1Ev
 __ZN5realm6ObjectC2ENSt3__110shared_ptrINS_5RealmEEERKNS_12ObjectSchemaENS_8BasicRowINS_5TableEEE
 __ZN5realm11SharedGroup8HandoverINS_5QueryEED2Ev
@@ -967,41 +934,41 @@ __copy<std::__1::__wrap_iter<std::__1::pair<unsigned long, unsigned long> *>, st
 operator-<const realm::_impl::ChunkedRangeVector::Chunk *, realm::_impl::ChunkedRangeVector::Chunk *>
 operator-<const std::__1::pair<unsigned long, unsigned long> *, std::__1::pair<unsigned long, unsigned long> *>
 ensure_space
-__ZNSt3__120__shared_ptr_emplaceIN5realm4util15EventLoopSignalINS1_5_impl17WeakRealmNotifier8CallbackEEENS_9allocatorIS7_EEED1Ev
-__ZNSt3__120__shared_ptr_emplaceIN5realm4util15EventLoopSignalINS1_5_impl17WeakRealmNotifier8CallbackEEENS_9allocatorIS7_EEED0Ev
-__ZN5realm4util15EventLoopSignalINS_5_impl17WeakRealmNotifier8CallbackEEC2EOS4_
-__ZZN5realm4util15EventLoopSignalINS_5_impl17WeakRealmNotifier8CallbackEEC1EOS4_ENUlPvE_8__invokeES7_
-__ZZN5realm4util15EventLoopSignalINS_5_impl17WeakRealmNotifier8CallbackEEC1EOS4_ENUlPKvE_8__invokeES8_
-__ZZN5realm4util15EventLoopSignalINS_5_impl17WeakRealmNotifier8CallbackEEC1EOS4_ENUlPKvE0_8__invokeES8_
-__ZN5realm4util15EventLoopSignalINS_5_impl17WeakRealmNotifier8CallbackEED2Ev
-__ZTSNSt3__120__shared_ptr_emplaceIN5realm4util15EventLoopSignalINS1_5_impl17WeakRealmNotifier8CallbackEEENS_9allocatorIS7_EEEE
-__ZTINSt3__120__shared_ptr_emplaceIN5realm4util15EventLoopSignalINS1_5_impl17WeakRealmNotifier8CallbackEEENS_9allocatorIS7_EEEE
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/weak_realm_notifier.cpp
-~EventLoopSignal
-Realm/ObjectStore/src/util/apple/event_loop_signal.hpp
-__invoke
-~RefCountedRunloopCallback
-Realm/ObjectStore/src/impl/weak_realm_notifier.hpp
-~weak_ptr
-fetch_add
-EventLoopSignal
-atomic
-__atomic_base
-weak_ptr
-__on_zero_shared_weak
-~__shared_ptr_emplace
-make_shared<realm::_impl::WeakRealmNotifier::Callback>
-__shared_ptr_emplace<realm::_impl::WeakRealmNotifier::Callback>
-__compressed_pair<std::__1::allocator<realm::util::EventLoopSignal<realm::_impl::WeakRealmNotifier::Callback> > &, realm::_impl::WeakRealmNotifier::Callback &&>
-__libcpp_compressed_pair_imp<std::__1::allocator<realm::util::EventLoopSignal<realm::_impl::WeakRealmNotifier::Callback> > &, realm::_impl::WeakRealmNotifier::Callback &&, 0, 0>
-__shared_weak_count
-notify
-lock
-~WeakRealmNotifier
-WeakRealmNotifier
-make_shared<realm::util::EventLoopSignal<realm::_impl::WeakRealmNotifier::Callback>, realm::_impl::WeakRealmNotifier::Callback>
-weak_ptr<realm::Realm>
-get_id
+__ZN5realm8keychain23KeychainAccessExceptionD1Ev
+__ZN5realm8keychain23KeychainAccessExceptionD0Ev
+__ZN5realm4util5CFPtrIPK10__CFStringED2Ev
+__ZN5realm4util5CFPtrIP14__CFDictionaryED2Ev
+__ZN5realm4util5CFPtrIPK8__CFDataED2Ev
+__ZTSN5realm8keychain23KeychainAccessExceptionE
+__ZTIN5realm8keychain23KeychainAccessExceptionE
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/apple/keychain_helper.cpp
+vector<const char *>
+__construct_at_end<const char *>
+__construct_range_forward<const char *, char *>
+construct<char, const char &>
+__construct<char, const char &>
+distance<const char *>
+__distance<const char *>
+~CFPtr
+core/include/realm/util/cf_ptr.hpp
+construct<char>
+__construct<char>
+~KeychainAccessException
+Realm/ObjectStore/src/impl/apple/keychain_helper.hpp
+metadata_realm_encryption_key
+adoptCF<const __CFData *>
+CFPtr
+KeychainAccessException
+~Optional
+~OptionalStorage
+Optional
+OptionalStorage
+build_search_dictionary
+adoptCF<__CFDictionary *>
+convert_string
+adoptCF<const __CFString *>
+format<int &>
+Realm/ObjectStore/src/util/format.hpp
 __ZN5realm5_impl18CollectionNotifier6HandleIS1_EaSEOS3_
 __ZN5realm4List25OutOfBoundsIndexExceptionD1Ev
 __ZN5realm4List20InvalidatedExceptionC1Ev
@@ -1035,10 +1002,13 @@ __ZTINSt3__120__shared_ptr_emplaceIN5realm5_impl12ListNotifierENS_9allocatorIS3_
 Realm/ObjectStore/src/list.cpp
 ~ListNotifier
 Realm/ObjectStore/src/impl/list_notifier.hpp
+__on_zero_shared_weak
+~__shared_ptr_emplace
 make_shared<std::__1::shared_ptr<realm::LinkView> &, std::__1::shared_ptr<realm::Realm> &>
 __shared_ptr_emplace<std::__1::shared_ptr<realm::LinkView> &, std::__1::shared_ptr<realm::Realm> &>
 __compressed_pair<std::__1::allocator<realm::_impl::ListNotifier> &, std::__1::shared_ptr<realm::LinkView> &, std::__1::shared_ptr<realm::Realm> &>
 __libcpp_compressed_pair_imp<std::__1::allocator<realm::_impl::ListNotifier> &, std::__1::shared_ptr<realm::LinkView> &, std::__1::shared_ptr<realm::Realm> &, 0, 0, 1>
+__shared_weak_count
 ~Handle
 get_child_ref
 get_as_ref
@@ -1065,18 +1035,13 @@ OutOfBoundsIndexException
 out_of_range
 /Applications/Xcode-8.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/stdexcept
 format<unsigned long &, unsigned long &>
-Realm/ObjectStore/src/util/format.hpp
 add_notification_callback
 Handle<realm::_impl::ListNotifier>
 shared_ptr<realm::_impl::ListNotifier>
 make_shared<realm::_impl::ListNotifier, std::__1::shared_ptr<realm::LinkView> &, std::__1::shared_ptr<realm::Realm> &>
 snapshot
-~Optional
 core/include/realm/column_fwd.hpp
-~OptionalStorage
 SortDescriptor
-Optional
-OptionalStorage
 filter
 OptionalStorage<const realm::Query &>
 get_query
@@ -1265,6 +1230,7 @@ swap<const realm::Table *>
 get_table
 core/include/realm/group.hpp
 bind
+fetch_add
 do_get_table
 ~ObjectSchema
 __ZN12_GLOBAL__N_118set_schema_versionERN5realm5GroupEy
@@ -1307,7 +1273,7 @@ __ZN5realm10ColumnBase19adj_acc_insert_rowsEmm
 __ZN5realm10ColumnBase17adj_acc_erase_rowEm
 __ZN5realm10ColumnBase17adj_acc_move_overEmm
 __ZN5realm10ColumnBase17adj_acc_swap_rowsEmm
-__ZN5realm10ColumnBase19adj_acc_subsume_rowEmm
+__ZN5realm10ColumnBase18adj_acc_merge_rowsEmm
 __ZN5realm10ColumnBase24adj_acc_clear_root_tableEv
 __ZN5realm10ColumnBase4markEi
 __ZN5realm10ColumnBase30bump_link_origin_table_versionEv
@@ -1488,7 +1454,7 @@ compare_values
 bump_link_origin_table_version
 mark
 adj_acc_clear_root_table
-adj_acc_subsume_row
+adj_acc_merge_rows
 adj_acc_swap_rows
 adj_acc_move_over
 adj_acc_erase_row
@@ -1608,7 +1574,7 @@ emplace_back<char const (&)[42], const std::__1::basic_string<char> &, const std
 emplace_back<char const (&)[40], const std::__1::basic_string<char> &, const std::__1::basic_string<char> &>
 emplace_back<char const (&)[27], const std::__1::basic_string<char> &>
 needs_migration
-any_of<std::__1::__wrap_iter<const realm::SchemaChange *>, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/object_store.cpp:388:24)>
+any_of<std::__1::__wrap_iter<const realm::SchemaChange *>, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/object_store.cpp:380:24)>
 operator()<const realm::SchemaChange &>
 visit<Visitor>
 end<std::__1::vector<realm::SchemaChange, std::__1::allocator<realm::SchemaChange> > >
@@ -1622,9 +1588,9 @@ set_primary_key_for_object
 get_primary_key_for_object
 get_schema_version
 __ZNSt3__113unordered_mapINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_8weak_ptrIN5realm5_impl16RealmCoordinatorEEENS_4hashIS6_EENS_8equal_toIS6_EENS4_INS_4pairIKS6_SB_EEEEED1Ev
-__ZN5realm25MismatchedConfigExceptionD1Ev
 __ZN5realm11SyncSession8Internal26set_sync_transact_callbackERS0_NSt3__18functionIFvNS_9VersionIDES5_EEE
 __ZN5realm11SyncSession8Internal17set_error_handlerERS0_NSt3__18functionIFviNS3_12basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEENS_16SyncSessionErrorEEEE
+__ZN5realm25MismatchedConfigExceptionD1Ev
 __ZN5realm18RealmFileExceptionD1Ev
 __ZNK5realm5_impl18CollectionNotifier7versionEv
 __ZZN5realm5_impl16RealmCoordinator23clean_up_dead_notifiersEvENK3$_2clINSt3__16vectorINS4_10shared_ptrINS0_18CollectionNotifierEEENS4_9allocatorIS8_EEEEEEDaRT_
@@ -1649,15 +1615,15 @@ __ZN5realm5_impl23CollectionChangeBuilderC2ERKS1_
 __ZN5realm19CollectionChangeSetC2ERKS0_
 __ZNSt3__120__shared_ptr_emplaceIN5realm5_impl16RealmCoordinatorENS_9allocatorIS3_EEED1Ev
 __ZNSt3__120__shared_ptr_emplaceIN5realm5_impl16RealmCoordinatorENS_9allocatorIS3_EEED0Ev
-__ZNSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator9get_realmENS2_5Realm6ConfigEE3$_0NS_9allocatorIS7_EEFvNS2_9VersionIDESA_EED1Ev
-__ZNSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator9get_realmENS2_5Realm6ConfigEE3$_0NS_9allocatorIS7_EEFvNS2_9VersionIDESA_EED0Ev
-__ZNKSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator9get_realmENS2_5Realm6ConfigEE3$_0NS_9allocatorIS7_EEFvNS2_9VersionIDESA_EE7__cloneEv
-__ZNKSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator9get_realmENS2_5Realm6ConfigEE3$_0NS_9allocatorIS7_EEFvNS2_9VersionIDESA_EE7__cloneEPNS0_6__baseISB_EE
-__ZNSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator9get_realmENS2_5Realm6ConfigEE3$_0NS_9allocatorIS7_EEFvNS2_9VersionIDESA_EE7destroyEv
-__ZNSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator9get_realmENS2_5Realm6ConfigEE3$_0NS_9allocatorIS7_EEFvNS2_9VersionIDESA_EE18destroy_deallocateEv
-__ZNSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator9get_realmENS2_5Realm6ConfigEE3$_0NS_9allocatorIS7_EEFvNS2_9VersionIDESA_EEclEOSA_SD_
-__ZNKSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator9get_realmENS2_5Realm6ConfigEE3$_0NS_9allocatorIS7_EEFvNS2_9VersionIDESA_EE6targetERKSt9type_info
-__ZNKSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator9get_realmENS2_5Realm6ConfigEE3$_0NS_9allocatorIS7_EEFvNS2_9VersionIDESA_EE11target_typeEv
+__ZNSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator19create_sync_sessionEvE3$_0NS_9allocatorIS5_EEFvNS2_9VersionIDES8_EED1Ev
+__ZNSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator19create_sync_sessionEvE3$_0NS_9allocatorIS5_EEFvNS2_9VersionIDES8_EED0Ev
+__ZNKSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator19create_sync_sessionEvE3$_0NS_9allocatorIS5_EEFvNS2_9VersionIDES8_EE7__cloneEv
+__ZNKSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator19create_sync_sessionEvE3$_0NS_9allocatorIS5_EEFvNS2_9VersionIDES8_EE7__cloneEPNS0_6__baseIS9_EE
+__ZNSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator19create_sync_sessionEvE3$_0NS_9allocatorIS5_EEFvNS2_9VersionIDES8_EE7destroyEv
+__ZNSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator19create_sync_sessionEvE3$_0NS_9allocatorIS5_EEFvNS2_9VersionIDES8_EE18destroy_deallocateEv
+__ZNSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator19create_sync_sessionEvE3$_0NS_9allocatorIS5_EEFvNS2_9VersionIDES8_EEclEOS8_SB_
+__ZNKSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator19create_sync_sessionEvE3$_0NS_9allocatorIS5_EEFvNS2_9VersionIDES8_EE6targetERKSt9type_info
+__ZNKSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator19create_sync_sessionEvE3$_0NS_9allocatorIS5_EEFvNS2_9VersionIDES8_EE11target_typeEv
 __GLOBAL__sub_I_realm_coordinator.cpp
 __ZL19s_coordinator_mutex
 __ZL23s_coordinators_per_path
@@ -1670,13 +1636,13 @@ __ZTSNSt3__120__shared_ptr_emplaceIZN5realm5Realm17make_shared_realmENS2_6Config
 __ZTINSt3__120__shared_ptr_emplaceIZN5realm5Realm17make_shared_realmENS2_6ConfigEE19make_shared_enablerNS_9allocatorIS4_EEEE
 __ZTSNSt3__120__shared_ptr_emplaceIN5realm5_impl16RealmCoordinatorENS_9allocatorIS3_EEEE
 __ZTINSt3__120__shared_ptr_emplaceIN5realm5_impl16RealmCoordinatorENS_9allocatorIS3_EEEE
-__ZTVNSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator9get_realmENS2_5Realm6ConfigEE3$_0NS_9allocatorIS7_EEFvNS2_9VersionIDESA_EEE
-__ZTSNSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator9get_realmENS2_5Realm6ConfigEE3$_0NS_9allocatorIS7_EEFvNS2_9VersionIDESA_EEE
+__ZTVNSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator19create_sync_sessionEvE3$_0NS_9allocatorIS5_EEFvNS2_9VersionIDES8_EEE
+__ZTSNSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator19create_sync_sessionEvE3$_0NS_9allocatorIS5_EEFvNS2_9VersionIDES8_EEE
 __ZTSNSt3__110__function6__baseIFvN5realm9VersionIDES3_EEE
 __ZTINSt3__110__function6__baseIFvN5realm9VersionIDES3_EEE
-__ZTINSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator9get_realmENS2_5Realm6ConfigEE3$_0NS_9allocatorIS7_EEFvNS2_9VersionIDESA_EEE
-__ZTSZN5realm5_impl16RealmCoordinator9get_realmENS_5Realm6ConfigEE3$_0
-__ZTIZN5realm5_impl16RealmCoordinator9get_realmENS_5Realm6ConfigEE3$_0
+__ZTINSt3__110__function6__funcIZN5realm5_impl16RealmCoordinator19create_sync_sessionEvE3$_0NS_9allocatorIS5_EEFvNS2_9VersionIDES8_EEE
+__ZTSZN5realm5_impl16RealmCoordinator19create_sync_sessionEvE3$_0
+__ZTIZN5realm5_impl16RealmCoordinator19create_sync_sessionEvE3$_0
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp
 _GLOBAL__sub_I_realm_coordinator.cpp
 __cxx_global_var_init.1
@@ -1704,10 +1670,12 @@ __construct<std::__1::shared_ptr<realm::_impl::CollectionNotifier>, std::__1::sh
 __push_back_slow_path<std::__1::shared_ptr<realm::_impl::CollectionNotifier> >
 destroy<std::__1::weak_ptr<realm::_impl::RealmCoordinator> >
 __destroy<std::__1::weak_ptr<realm::_impl::RealmCoordinator> >
+~weak_ptr
 swap<std::__1::weak_ptr<realm::_impl::RealmCoordinator> *>
 __construct_backward<std::__1::weak_ptr<realm::_impl::RealmCoordinator> *>
 construct<std::__1::weak_ptr<realm::_impl::RealmCoordinator>, std::__1::weak_ptr<realm::_impl::RealmCoordinator> >
 __construct<std::__1::weak_ptr<realm::_impl::RealmCoordinator>, std::__1::weak_ptr<realm::_impl::RealmCoordinator> >
+weak_ptr
 __push_back_slow_path<const std::__1::weak_ptr<realm::_impl::RealmCoordinator> &>
 construct<std::__1::weak_ptr<realm::_impl::RealmCoordinator>, const std::__1::weak_ptr<realm::_impl::RealmCoordinator> &>
 __construct<std::__1::weak_ptr<realm::_impl::RealmCoordinator>, const std::__1::weak_ptr<realm::_impl::RealmCoordinator> &>
@@ -1727,18 +1695,24 @@ swap<realm::_impl::WeakRealmNotifier *>
 __construct_backward<realm::_impl::WeakRealmNotifier *>
 construct<realm::_impl::WeakRealmNotifier, realm::_impl::WeakRealmNotifier>
 __construct<realm::_impl::WeakRealmNotifier, realm::_impl::WeakRealmNotifier>
+WeakRealmNotifier
+Realm/ObjectStore/src/impl/weak_realm_notifier.hpp
 __emplace_back_slow_path<std::__1::shared_ptr<realm::Realm> &, bool &>
 construct<realm::_impl::WeakRealmNotifier, std::__1::shared_ptr<realm::Realm> &, bool &>
 __construct<realm::_impl::WeakRealmNotifier, std::__1::shared_ptr<realm::Realm> &, bool &>
+function
+__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:87:55) &, realm::VersionID, realm::VersionID>
+__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:87:55) &, realm::VersionID, realm::VersionID>
+lock
+~
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:87:55) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:87:55)> &>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:87:55) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:87:55)> &, 0, 0>
+_ZZN5realm5_impl16RealmCoordinator19create_sync_sessionEvEN3$_0C1ERKS2_
+_ZZN5realm5_impl16RealmCoordinator19create_sync_sessionEvEN3$_0C2ERKS2_
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:87:55) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:87:55)> &&>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:87:55) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:87:55)> &&, 0, 0>
 shared_ptr<realm::_impl::RealmCoordinator>
 bad_weak_ptr
-function
-__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:106:76) &, realm::VersionID, realm::VersionID>
-__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:106:76) &, realm::VersionID, realm::VersionID>
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:106:76) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:106:76)> &>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:106:76) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:106:76)> &, 0, 0>
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:106:76) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:106:76)> &&>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:106:76) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:106:76)> &&, 0, 0>
 find<std::__1::basic_string<char> >
 ~RealmCoordinator
 make_shared<>
@@ -1808,15 +1782,15 @@ construct<realm::_impl::TransactionChangeInfo>
 __construct<realm::_impl::TransactionChangeInfo>
 swap<realm::_impl::TransactionChangeInfo *>
 __construct_backward<realm::_impl::TransactionChangeInfo *>
-__insertion_sort_incomplete<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:344:20) &, std::__1::shared_ptr<realm::_impl::CollectionNotifier> *>
+__insertion_sort_incomplete<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:397:20) &, std::__1::shared_ptr<realm::_impl::CollectionNotifier> *>
 operator()<std::__1::shared_ptr<realm::_impl::CollectionNotifier> &, std::__1::shared_ptr<realm::_impl::CollectionNotifier> &>
 operator<
 swap<realm::_impl::CollectionNotifier>
-__sort5<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:344:20) &, std::__1::shared_ptr<realm::_impl::CollectionNotifier> *>
-__sort4<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:344:20) &, std::__1::shared_ptr<realm::_impl::CollectionNotifier> *>
-__sort3<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:344:20) &, std::__1::shared_ptr<realm::_impl::CollectionNotifier> *>
-__sort<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:344:20) &, std::__1::shared_ptr<realm::_impl::CollectionNotifier> *>
-__insertion_sort_3<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:344:20) &, std::__1::shared_ptr<realm::_impl::CollectionNotifier> *>
+__sort5<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:397:20) &, std::__1::shared_ptr<realm::_impl::CollectionNotifier> *>
+__sort4<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:397:20) &, std::__1::shared_ptr<realm::_impl::CollectionNotifier> *>
+__sort3<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:397:20) &, std::__1::shared_ptr<realm::_impl::CollectionNotifier> *>
+__sort<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:397:20) &, std::__1::shared_ptr<realm::_impl::CollectionNotifier> *>
+__insertion_sort_3<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:397:20) &, std::__1::shared_ptr<realm::_impl::CollectionNotifier> *>
 __construct_at_end<char *>
 __construct_range_forward<char>
 Config
@@ -1828,16 +1802,19 @@ make_shared<realm::Realm::Config>
 __shared_ptr_emplace<realm::Realm::Config>
 __enable_weak_this<realm::Realm, make_shared_enabler>
 operator=<realm::Realm>
+weak_ptr<realm::Realm>
 shared_ptr<make_shared_enabler>
 __compressed_pair<std::__1::allocator<make_shared_enabler> &, realm::Realm::Config &&>
 __libcpp_compressed_pair_imp<std::__1::allocator<make_shared_enabler> &, realm::Realm::Config &&, 0, 0>
 is_for_current_thread
+get_id
 swap<std::__1::__function::__base<void (std::__1::shared_ptr<realm::Realm>, std::__1::shared_ptr<realm::Realm>, realm::Schema &)> *>
 assign<char *>
 copy<char *, char *>
 __copy<char, char>
 advance<char *>
 __advance<char *>
+set_transaction_callback
 process_available_async
 operator!=<std::__1::shared_ptr<realm::_impl::CollectionNotifier> *>
 advance_to_ready
@@ -1851,8 +1828,8 @@ operator()<std::__1::tuple<const unsigned long &, const unsigned long &, const u
 operator()<realm::_impl::ListChangeInfo>
 terminate<unsigned long long, unsigned long long>
 IncrementalChangeInfo
-sort<std::__1::shared_ptr<realm::_impl::CollectionNotifier>, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:344:20)>
-sort<std::__1::shared_ptr<realm::_impl::CollectionNotifier> *, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:344:20) &>
+sort<std::__1::shared_ptr<realm::_impl::CollectionNotifier>, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:397:20)>
+sort<std::__1::shared_ptr<realm::_impl::CollectionNotifier> *, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:397:20) &>
 open_helper_shared_group
 run_async_notifiers
 ~IncrementalChangeInfo
@@ -1893,21 +1870,18 @@ operator==<const realm::_impl::WeakRealmNotifier *, const realm::_impl::WeakReal
 operator-<const realm::_impl::WeakRealmNotifier *, realm::_impl::WeakRealmNotifier *>
 unregister_realm
 end<std::__1::vector<realm::_impl::WeakRealmNotifier, std::__1::allocator<realm::_impl::WeakRealmNotifier> > >
-remove_if<std::__1::__wrap_iter<realm::_impl::WeakRealmNotifier *>, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:171:30)>
+remove_if<std::__1::__wrap_iter<realm::_impl::WeakRealmNotifier *>, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:219:30)>
 operator()<realm::_impl::WeakRealmNotifier>
 is_for_realm
 expired
 use_count
 __libcpp_relaxed_load<long>
 operator==<realm::_impl::WeakRealmNotifier *, realm::_impl::WeakRealmNotifier *>
-find_if<std::__1::__wrap_iter<realm::_impl::WeakRealmNotifier *>, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:171:30) &>
+find_if<std::__1::__wrap_iter<realm::_impl::WeakRealmNotifier *>, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:219:30) &>
 begin<std::__1::vector<realm::_impl::WeakRealmNotifier, std::__1::allocator<realm::_impl::WeakRealmNotifier> > >
 ~enable_shared_from_this
 update_schema
 get_schema
-set_error_handler
-set_sync_transact_callback
-~MismatchedConfigException
 emplace_back<std::__1::shared_ptr<realm::Realm> &, bool &>
 shared_from_this
 RealmFileException
@@ -1916,18 +1890,25 @@ code
 make_unique<realm::_impl::ExternalCommitHelper, realm::_impl::RealmCoordinator &>
 make_shared_realm
 make_shared<make_shared_enabler, realm::Realm::Config>
-function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:106:76)>
-__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:106:76) &&>
-__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:106:76) &&, 0>
-swap<realm::SyncSession *>
 is_cached_for_current_thread
+~MismatchedConfigException
+set_error_handler
+set_sync_transact_callback
+create_sync_session
+function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:87:55)>
+__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:87:55) &&>
+__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/realm_coordinator.cpp:87:55) &&, 0>
+_ZZN5realm5_impl16RealmCoordinator19create_sync_sessionEvEN3$_0C1EOS2_
+_ZZN5realm5_impl16RealmCoordinator19create_sync_sessionEvEN3$_0C2EOS2_
+swap<realm::SyncSession *>
+get_existing_coordinator
+set_config
 operator!=<char, std::__1::allocator<char> >
 operator==<char, std::__1::allocator<char> >
 equal<std::__1::__wrap_iter<const char *>, std::__1::__wrap_iter<const char *> >
 equal<std::__1::__wrap_iter<const char *>, std::__1::__wrap_iter<const char *>, std::__1::__equal_to<char, char> >
 operator!=<const char *>
 swap<realm::SyncConfig *>
-get_existing_coordinator
 __emplace_unique_key_args<std::__1::basic_string<char>, const std::__1::piecewise_construct_t &, std::__1::tuple<std::__1::basic_string<char> &&>, std::__1::tuple<> >
 __construct_node_hash<const std::__1::piecewise_construct_t &, std::__1::tuple<std::__1::basic_string<char> &&>, std::__1::tuple<> >
 construct<std::__1::pair<const std::__1::basic_string<char>, std::__1::weak_ptr<realm::_impl::RealmCoordinator> >, const std::__1::piecewise_construct_t &, std::__1::tuple<std::__1::basic_string<char> &&>, std::__1::tuple<> >
@@ -2010,7 +1991,6 @@ __ZTIN5realm24CollectionChangeCallback4ImplIZNS_7Results5asyncENSt3__18functionI
 Realm/ObjectStore/src/results.cpp
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/results.cpp
 ~Impl
-~
 ~ResultsNotifier
 Realm/ObjectStore/src/impl/results_notifier.hpp
 ~TableView
@@ -2311,6 +2291,7 @@ ___copy_helper_block_.311
 ___destroy_helper_block_.312
 __ZZ13RLMDynamicSetP13RLMObjectBaseP11RLMPropertyP11objc_objectmENK3$_0clEv
 __GLOBAL__sub_I_RLMAccessor.mm
+___block_descriptor_tmp
 ___block_descriptor_tmp.7
 __ZL18s_generatedClasses
 ___block_descriptor_tmp.83
@@ -2332,6 +2313,7 @@ ___block_descriptor_tmp.127
 ___block_descriptor_tmp.129
 ___block_descriptor_tmp.133
 ___block_descriptor_tmp.141
+___block_literal_global
 ___block_descriptor_tmp.144
 ___block_descriptor_tmp.150
 ___block_literal_global.151
@@ -2540,162 +2522,6 @@ ___Z28RLMReplaceSharedSchemaMethodP10objc_classP15RLMObjectSchema_block_invoke
 RLMReplaceSharedSchemaMethod
 ___Z25RLMReplaceClassNameMethodP10objc_classP8NSString_block_invoke
 RLMReplaceClassNameMethod
-__ZNSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_ED1Ev
-__ZNSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_ED0Ev
-__ZNKSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_E7__cloneEv
-__ZNKSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_E7__cloneEPNS0_6__baseISB_EE
-__ZNSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_E7destroyEv
-__ZNSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_E18destroy_deallocateEv
-__ZNSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_EclEOiOSA_
-__ZNKSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_E6targetERKSt9type_info
-__ZNKSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_E11target_typeEv
-__ZN5realm11SyncSessionD2Ev
-__ZNSt3__120__shared_ptr_pointerIPN5realm11SyncSessionEZNS1_11SyncManager11get_sessionERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKNS1_10SyncConfigEE3$_1NS8_IS2_EEED1Ev
-__ZNSt3__120__shared_ptr_pointerIPN5realm11SyncSessionEZNS1_11SyncManager11get_sessionERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKNS1_10SyncConfigEE3$_1NS8_IS2_EEED0Ev
-__ZNSt3__120__shared_ptr_pointerIPN5realm11SyncSessionEZNS1_11SyncManager11get_sessionERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKNS1_10SyncConfigEE3$_1NS8_IS2_EEE16__on_zero_sharedEv
-__ZNKSt3__120__shared_ptr_pointerIPN5realm11SyncSessionEZNS1_11SyncManager11get_sessionERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKNS1_10SyncConfigEE3$_1NS8_IS2_EEE13__get_deleterERKSt9type_info
-__ZNSt3__120__shared_ptr_pointerIPN5realm11SyncSessionEZNS1_11SyncManager11get_sessionERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKNS1_10SyncConfigEE3$_1NS8_IS2_EEE21__on_zero_shared_weakEv
-__ZNK5realm4util10RootLogger3getEv
-__ZN5realm4util12StderrLoggerD1Ev
-__ZN5realm4util12StderrLoggerD0Ev
-__ZN5realm4util12StderrLogger6do_logENS0_6Logger5LevelENSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE
-__ZThn8_N5realm4util12StderrLoggerD1Ev
-__ZThn8_N5realm4util12StderrLoggerD0Ev
-__ZThn8_N5realm4util12StderrLogger6do_logENS0_6Logger5LevelENSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE
-__ZNSt3__120__shared_ptr_emplaceIN5realm5_impl10SyncClientENS_9allocatorIS3_EEED1Ev
-__ZNSt3__120__shared_ptr_emplaceIN5realm5_impl10SyncClientENS_9allocatorIS3_EEED0Ev
-__ZN5realm5_impl10SyncClientC2ENSt3__110unique_ptrINS_4util6LoggerENS2_14default_deleteIS5_EEEENS2_8functionIFviNS2_12basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEEEENS_4sync6Client9ReconnectEb
-__ZN5realm5_impl10SyncClient11make_clientERNS_4util6LoggerENS_4sync6Client9ReconnectEb
-__ZNSt3__16threadC2IZN5realm5_impl10SyncClientC1ENS_10unique_ptrINS2_4util6LoggerENS_14default_deleteIS7_EEEENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEENS2_4sync6Client9ReconnectEbEUlvE_JEvEEOT_DpOT0_
-__ZNSt3__114__thread_proxyINS_5tupleIJZN5realm5_impl10SyncClientC1ENS_10unique_ptrINS2_4util6LoggerENS_14default_deleteIS7_EEEENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEENS2_4sync6Client9ReconnectEbEUlvE_EEEEEPvSP_
-__ZN5realm5_impl10SyncClientD2Ev
-__ZZN5realm11SyncManager6sharedEvE7manager
-__ZGVZN5realm11SyncManager6sharedEvE7manager
-__ZTVNSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_EE
-__ZNSt3__1L19piecewise_constructE
-__ZTSNSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_EE
-__ZTSNSt3__110__function6__baseIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEE
-__ZTINSt3__110__function6__baseIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEE
-__ZTINSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_EE
-__ZTSZN5realm11SyncManager17set_error_handlerENSt3__18functionIFviNS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEEEEE3$_0
-__ZTIZN5realm11SyncManager17set_error_handlerENSt3__18functionIFviNS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEEEEE3$_0
-__ZTVNSt3__120__shared_ptr_pointerIPN5realm11SyncSessionEZNS1_11SyncManager11get_sessionERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKNS1_10SyncConfigEE3$_1NS8_IS2_EEEE
-__ZTSNSt3__120__shared_ptr_pointerIPN5realm11SyncSessionEZNS1_11SyncManager11get_sessionERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKNS1_10SyncConfigEE3$_1NS8_IS2_EEEE
-__ZTINSt3__120__shared_ptr_pointerIPN5realm11SyncSessionEZNS1_11SyncManager11get_sessionERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKNS1_10SyncConfigEE3$_1NS8_IS2_EEEE
-__ZTSZN5realm11SyncManager11get_sessionERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERKNS_10SyncConfigEE3$_1
-__ZTSN5realm4util12StderrLoggerE
-__ZTSN5realm4util10RootLoggerE
-__ZTSN5realm4util6Logger14LevelThresholdE
-__ZTIN5realm4util6Logger14LevelThresholdE
-__ZTSN5realm4util6LoggerE
-__ZTIN5realm4util6LoggerE
-__ZTIN5realm4util10RootLoggerE
-__ZTIN5realm4util12StderrLoggerE
-__ZTSNSt3__120__shared_ptr_emplaceIN5realm5_impl10SyncClientENS_9allocatorIS3_EEEE
-__ZTINSt3__120__shared_ptr_emplaceIN5realm5_impl10SyncClientENS_9allocatorIS3_EEEE
-Realm/ObjectStore/src/sync_manager.cpp
-~SyncClient
-Realm/ObjectStore/src/impl/sync_client.hpp
-__thread_proxy<std::__1::tuple<(lambda at Realm/ObjectStore/src/impl/sync_client.hpp:40:16)> >
-~tuple
-~__tuple_impl
-~__tuple_leaf
-__thread_execute<(lambda at Realm/ObjectStore/src/impl/sync_client.hpp:40:16)>
-__invoke<(lambda at Realm/ObjectStore/src/impl/sync_client.hpp:40:16)>
-thread<(lambda at Realm/ObjectStore/src/impl/sync_client.hpp:40:16), void>
-tuple<(lambda at Realm/ObjectStore/src/impl/sync_client.hpp:40:16), false>
-__tuple_impl<0, (lambda at Realm/ObjectStore/src/impl/sync_client.hpp:40:16), (lambda at Realm/ObjectStore/src/impl/sync_client.hpp:40:16)>
-__tuple_leaf<(lambda at Realm/ObjectStore/src/impl/sync_client.hpp:40:16), void>
-_ZZN5realm5_impl10SyncClientC1ENSt3__110unique_ptrINS_4util6LoggerENS2_14default_deleteIS5_EEEENS2_8functionIFviNS2_12basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEEEENS_4sync6Client9ReconnectEbENUlvE_C1EOSL_
-_ZZN5realm5_impl10SyncClientC1ENSt3__110unique_ptrINS_4util6LoggerENS2_14default_deleteIS5_EEEENS2_8functionIFviNS2_12basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEEEENS_4sync6Client9ReconnectEbENUlvE_C2EOSL_
-__decay_copy<(lambda at Realm/ObjectStore/src/impl/sync_client.hpp:40:16)>
-make_client
-core/include/realm/sync/client.hpp
-SyncClient
-make_shared<std::__1::unique_ptr<realm::util::Logger, std::__1::default_delete<realm::util::Logger> >, const std::__1::function<void (int, std::__1::basic_string<char>)>, const realm::sync::Client::Reconnect &, const bool &>
-__shared_ptr_emplace<std::__1::unique_ptr<realm::util::Logger, std::__1::default_delete<realm::util::Logger> >, const std::__1::function<void (int, std::__1::basic_string<char>)>, const realm::sync::Client::Reconnect &, const bool &>
-__compressed_pair<std::__1::allocator<realm::_impl::SyncClient> &, std::__1::unique_ptr<realm::util::Logger, std::__1::default_delete<realm::util::Logger> > &&, const std::__1::function<void (int, std::__1::basic_string<char>)> &&, const realm::sync::Client::Reconnect &, const bool &>
-__libcpp_compressed_pair_imp<std::__1::allocator<realm::_impl::SyncClient> &, std::__1::unique_ptr<realm::util::Logger, std::__1::default_delete<realm::util::Logger> > &&, const std::__1::function<void (int, std::__1::basic_string<char>)> &&, const realm::sync::Client::Reconnect &, const bool &, 0, 0, 1, 2, 3>
-_ZThn8_N5realm4util12StderrLogger6do_logENS0_6Logger5LevelENSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE
-core/include/realm/util/logger.hpp
-do_log
-operator<<<char, std::__1::char_traits<char>, std::__1::allocator<char> >
-_ZThn8_N5realm4util12StderrLoggerD0Ev
-~StderrLogger
-_ZThn8_N5realm4util12StderrLoggerD1Ev
-__erase_unique<std::__1::basic_string<char> >
-reset<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::unique_ptr<realm::SyncSession, std::__1::default_delete<realm::SyncSession> > >, void *> **>
-__construct_node_hash<const std::__1::piecewise_construct_t &, std::__1::tuple<const std::__1::basic_string<char> &>, std::__1::tuple<> >
-construct<std::__1::pair<const std::__1::basic_string<char>, std::__1::unique_ptr<realm::SyncSession, std::__1::default_delete<realm::SyncSession> > >, const std::__1::piecewise_construct_t &, std::__1::tuple<const std::__1::basic_string<char> &>, std::__1::tuple<> >
-__construct<std::__1::pair<const std::__1::basic_string<char>, std::__1::unique_ptr<realm::SyncSession, std::__1::default_delete<realm::SyncSession> > >, const std::__1::piecewise_construct_t &, std::__1::tuple<const std::__1::basic_string<char> &>, std::__1::tuple<> >
-pair<const std::__1::basic_string<char> &>
-pair<const std::__1::basic_string<char> &, 0>
-__node_alloc
-destroy<std::__1::pair<const std::__1::basic_string<char>, std::__1::weak_ptr<realm::SyncSession> > >
-__destroy<std::__1::pair<const std::__1::basic_string<char>, std::__1::weak_ptr<realm::SyncSession> > >
-reset<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::weak_ptr<realm::SyncSession> >, void *> **>
-construct<std::__1::pair<const std::__1::basic_string<char>, std::__1::weak_ptr<realm::SyncSession> >, const std::__1::piecewise_construct_t &, std::__1::tuple<const std::__1::basic_string<char> &>, std::__1::tuple<> >
-__construct<std::__1::pair<const std::__1::basic_string<char>, std::__1::weak_ptr<realm::SyncSession> >, const std::__1::piecewise_construct_t &, std::__1::tuple<const std::__1::basic_string<char> &>, std::__1::tuple<> >
-__get_deleter
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp
-~__shared_ptr_pointer
-~SyncSession
-Realm/ObjectStore/src/sync_session.hpp
-~SyncConfig
-Realm/ObjectStore/src/sync_config.hpp
-destroy<std::__1::pair<const std::__1::basic_string<char>, std::__1::unique_ptr<realm::SyncSession, std::__1::default_delete<realm::SyncSession> > > >
-__destroy<std::__1::pair<const std::__1::basic_string<char>, std::__1::unique_ptr<realm::SyncSession, std::__1::default_delete<realm::SyncSession> > > >
-__hash_const_iterator
-__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28) &, int, std::__1::basic_string<char> >
-__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28) &, int, std::__1::basic_string<char> >
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28)> &>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28)> &, 0, 0>
-_ZZN5realm11SyncManager17set_error_handlerENSt3__18functionIFviNS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEEEEEN3$_0C1ERKSB_
-_ZZN5realm11SyncManager17set_error_handlerENSt3__18functionIFviNS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEEEEEN3$_0C2ERKSB_
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28)> &&>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28)> &&, 0, 0>
-swap<std::__1::__function::__base<void (int, std::__1::basic_string<char>)> *>
-create_sync_client
-make_shared<realm::_impl::SyncClient, std::__1::unique_ptr<realm::util::Logger, std::__1::default_delete<realm::util::Logger> >, const std::__1::function<void (int, std::__1::basic_string<char>)>, const realm::sync::Client::Reconnect &, const bool &>
-operator=<realm::util::StderrLogger, std::__1::default_delete<realm::util::StderrLogger> >
-set_level_threshold
-make_unique<realm::util::StderrLogger>
-StderrLogger
-RootLogger
-Logger
-unregister_session
-__count_unique<std::__1::basic_string<char> >
-__emplace_unique_key_args<std::__1::basic_string<char>, const std::__1::piecewise_construct_t &, std::__1::tuple<const std::__1::basic_string<char> &>, std::__1::tuple<> >
-dropped_last_reference_to_session
-path
-get_sync_client
-swap<realm::_impl::SyncClient *>
-get_session
-operator=<realm::SyncSession>
-weak_ptr<realm::SyncSession>
-shared_ptr<realm::SyncSession, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:136:28)>
-__enable_weak_this<realm::SyncSession, realm::SyncSession>
-shared_ptr<realm::SyncSession>
-__shared_ptr_pointer
-SyncConfig
-get_existing_inactive_session_locked
-get_existing_active_session_locked
-get_existing_active_session
-set_client_should_validate_ssl
-set_client_should_reconnect_immediately
-get_sync_login_function
-set_login_function
-operator=<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28)>
-function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28)>
-__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28) &&, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28)> &&>
-__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28) &&, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28)> &&, 0, 0>
-_ZZN5realm11SyncManager17set_error_handlerENSt3__18functionIFviNS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEEEEEN3$_0C1EOSB_
-_ZZN5realm11SyncManager17set_error_handlerENSt3__18functionIFviNS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEEEEEN3$_0C2EOSB_
-set_logger_factory
-set_log_level
-shared
-SyncManager
-Realm/ObjectStore/src/sync_manager.hpp
 __ZL11RLMHashDataPKvm
 __ZL9RLMSysCtlPijPm
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMAnalytics.mm
@@ -2946,164 +2772,17 @@ translateErrors<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc
 RLMEnsureArrayObservationInfo
 make_unique<RLMObservationInfo, RLMClassInfo &, unsigned long, const __unsafe_unretained id &>
 RLMValidateArrayObservationKey
--[RLMSyncWeakSessionHandle sessionIsInErrorState]
--[RLMSyncWeakSessionHandle sessionStillExists]
--[RLMSyncWeakSessionHandle refreshAccessToken:serverURL:]
--[RLMSyncWeakSessionHandle logOut]
--[RLMSyncWeakSessionHandle revive]
--[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]
--[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]
--[RLMSyncWeakSessionHandle .cxx_destruct]
--[RLMSyncWeakSessionHandle .cxx_construct]
--[RLMSyncStrongSessionHandle sessionIsInErrorState]
--[RLMSyncStrongSessionHandle sessionStillExists]
--[RLMSyncStrongSessionHandle refreshAccessToken:serverURL:]
--[RLMSyncStrongSessionHandle logOut]
--[RLMSyncStrongSessionHandle revive]
--[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]
--[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]
--[RLMSyncStrongSessionHandle .cxx_destruct]
--[RLMSyncStrongSessionHandle .cxx_construct]
-+[RLMSyncSessionHandle syncSessionHandleForWeakPointer:]
-+[RLMSyncSessionHandle syncSessionHandleForPointer:]
--[RLMSyncSessionHandle logOut]
--[RLMSyncSessionHandle sessionIsInErrorState]
--[RLMSyncSessionHandle sessionStillExists]
--[RLMSyncSessionHandle refreshAccessToken:serverURL:]
--[RLMSyncSessionHandle revive]
--[RLMSyncSessionHandle waitForUploadCompletionOnQueue:callback:]
--[RLMSyncSessionHandle waitForDownloadCompletionOnQueue:callback:]
-__ZNSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEED1Ev
-__ZNSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEED0Ev
-__ZNKSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEE7__cloneEv
-__ZNKSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEE7__cloneEPNS0_6__baseIS5_EE
-__ZNSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEE7destroyEv
-__ZNSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEE18destroy_deallocateEv
-__ZNSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEEclEv
-__ZNKSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEE6targetERKSt9type_info
-__ZNKSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEE11target_typeEv
-____ZZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]ENK3$_0clEv_block_invoke
-__ZNSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEED1Ev
-__ZNSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEED0Ev
-__ZNKSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEE7__cloneEv
-__ZNKSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEE7__cloneEPNS0_6__baseIS5_EE
-__ZNSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEE7destroyEv
-__ZNSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEE18destroy_deallocateEv
-__ZNSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEEclEv
-__ZNKSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEE6targetERKSt9type_info
-__ZNKSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEE11target_typeEv
-____ZZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]ENK3$_1clEv_block_invoke
-___copy_helper_block_.29
-___destroy_helper_block_.30
-__ZNSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEED1Ev
-__ZNSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEED0Ev
-__ZNKSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEE7__cloneEv
-__ZNKSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEE7__cloneEPNS0_6__baseIS5_EE
-__ZNSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEE7destroyEv
-__ZNSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEE18destroy_deallocateEv
-__ZNSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEEclEv
-__ZNKSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEE6targetERKSt9type_info
-__ZNKSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEE11target_typeEv
-____ZZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]ENK3$_2clEv_block_invoke
-___copy_helper_block_.32
-___destroy_helper_block_.33
-__ZNSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEED1Ev
-__ZNSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEED0Ev
-__ZNKSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEE7__cloneEv
-__ZNKSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEE7__cloneEPNS0_6__baseIS5_EE
-__ZNSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEE7destroyEv
-__ZNSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEE18destroy_deallocateEv
-__ZNSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEEclEv
-__ZNKSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEE6targetERKSt9type_info
-__ZNKSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEE11target_typeEv
-____ZZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]ENK3$_3clEv_block_invoke
-___copy_helper_block_.35
-___destroy_helper_block_.36
-__ZTVNSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEEE
-__ZTSNSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEEE
-__ZTSNSt3__110__function6__baseIFvvEEE
-__ZTINSt3__110__function6__baseIFvvEEE
-__ZTINSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEEE
-__ZTSZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0
-__ZTIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0
-__ZTVNSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEEE
-__ZTSNSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEEE
-__ZTINSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEEE
-___block_descriptor_tmp.31
-__ZTSZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1
-__ZTIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1
-__ZTVNSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEEE
-__ZTSNSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEEE
-__ZTINSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEEE
-___block_descriptor_tmp.34
-__ZTSZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2
-__ZTIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2
-__ZTVNSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEEE
-__ZTSNSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEEE
-__ZTINSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEEE
-___block_descriptor_tmp.37
-__ZTSZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3
-__ZTIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm
-___ZZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]ENK3$_3clEv_block_invoke
-__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40) &>
-__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40) &>
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40)> &>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40)> &, 0, 0>
-_ZZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]EN3$_3C1ERKS_
-_ZZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]EN3$_3C2ERKS_
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40)> &&>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40)> &&, 0, 0>
-___ZZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]ENK3$_2clEv_block_invoke
-__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38) &>
-__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38) &>
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38)> &>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38)> &, 0, 0>
-_ZZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]EN3$_2C1ERKS_
-_ZZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]EN3$_2C2ERKS_
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38)> &&>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38)> &&, 0, 0>
-___ZZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]ENK3$_1clEv_block_invoke
-__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47) &>
-__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47) &>
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47)> &>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47)> &, 0, 0>
-_ZZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]EN3$_1C1ERKS_
-_ZZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]EN3$_1C2ERKS_
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47)> &&>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47)> &&, 0, 0>
-___ZZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]ENK3$_0clEv_block_invoke
-__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45) &>
-__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45) &>
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45)> &>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45)> &, 0, 0>
-_ZZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]EN3$_0C1ERKS_
-_ZZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]EN3$_0C2ERKS_
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45)> &&>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45)> &&, 0, 0>
-function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40)>
-__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40) &&>
-__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40) &&, 0>
-_ZZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]EN3$_3C1EOS_
-_ZZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]EN3$_3C2EOS_
-function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38)>
-__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38) &&>
-__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38) &&, 0>
-_ZZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]EN3$_2C1EOS_
-_ZZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]EN3$_2C2EOS_
-make_optional<std::__1::basic_string<char> >
-some<std::__1::basic_string<char>, std::__1::basic_string<char> >
-some<std::__1::basic_string<char> >
-function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47)>
-__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47) &&>
-__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47) &&, 0>
-_ZZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]EN3$_1C1EOS_
-_ZZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]EN3$_1C2EOS_
-function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45)>
-__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45) &&>
-__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45) &&, 0>
-_ZZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]EN3$_0C1EOS_
-_ZZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]EN3$_0C2EOS_
+-[RLMAuthResponseModel initWithDictionary:requireAccessToken:requireRefreshToken:]
+-[RLMAuthResponseModel accessToken]
+-[RLMAuthResponseModel setAccessToken:]
+-[RLMAuthResponseModel refreshToken]
+-[RLMAuthResponseModel setRefreshToken:]
+-[RLMAuthResponseModel .cxx_destruct]
+_OBJC_IVAR_$_RLMAuthResponseModel._accessToken
+_OBJC_IVAR_$_RLMAuthResponseModel._refreshToken
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMAuthResponseModel.m
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMAuthResponseModel.h
+__ZNSt3__1L19piecewise_constructE
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMClassInfo.mm
 __node_insert_unique
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMClassInfo.hpp
@@ -3116,6 +2795,7 @@ __construct<std::__1::pair<NSString *const, RLMClassInfo>, const std::__1::piece
 pair<NSString *__strong &&, RLMRealm *__strong &, RLMObjectSchema *const __strong &, const realm::ObjectSchema *&&>
 pair<NSString *__strong &&, RLMRealm *__strong &, RLMObjectSchema *const __strong &, const realm::ObjectSchema *&&, 0, 0, 1, 2>
 RLMClassInfo
+__node_alloc
 reset<std::__1::__hash_node<std::__1::__hash_value_type<NSString *, RLMClassInfo>, void *> **>
 find<NSString *>
 swap<RLMClassInfo **>
@@ -3222,71 +2902,6 @@ RLMCollectionSetValueForKey
 operator=<realm::Table>
 RLMCollectionValueForKey
 get_source_ndx
-+[RLMSyncUser all]
--[RLMSyncUser initWithAuthServer:]
-+[RLMSyncUser authenticateWithCredential:authServerURL:onCompletion:]
-+[RLMSyncUser authenticateWithCredential:authServerURL:timeout:onCompletion:]
--[RLMSyncUser logOut]
--[RLMSyncUser sessionForURL:]
--[RLMSyncUser allSessions]
--[RLMSyncUser _enterErrorState]
--[RLMSyncUser _enterActiveState]
--[RLMSyncUser _deregisterSessionWithRealmURL:]
--[RLMSyncUser initWithMetadata:]
--[RLMSyncUser _updatePersistedMetadata]
-+[RLMSyncUser _performLogInForUser:credential:authServerURL:timeout:completionBlock:]
-___85+[RLMSyncUser _performLogInForUser:credential:authServerURL:timeout:completionBlock:]_block_invoke
-___85+[RLMSyncUser _performLogInForUser:credential:authServerURL:timeout:completionBlock:]_block_invoke_2
-___copy_helper_block_.87
-___destroy_helper_block_.88
-___85+[RLMSyncUser _performLogInForUser:credential:authServerURL:timeout:completionBlock:]_block_invoke.115
-___copy_helper_block_.132
-___destroy_helper_block_.133
-+[RLMSyncUser _performLoginForDirectAccessTokenCredential:user:completionBlock:]
--[RLMSyncUser _mergeDataFromDuplicateUser:]
--[RLMSyncUser _bindAllDeferredRealms]
--[RLMSyncUser _bindSessionWithDirectAccessToken:syncConfig:localFileURL:standalone:onCompletion:]
--[RLMSyncUser _bindSessionWithLocalFileURL:syncConfig:standalone:onCompletion:]
-___79-[RLMSyncUser _bindSessionWithLocalFileURL:syncConfig:standalone:onCompletion:]_block_invoke
-___79-[RLMSyncUser _bindSessionWithLocalFileURL:syncConfig:standalone:onCompletion:]_block_invoke.186
-___copy_helper_block_.204
-___destroy_helper_block_.205
--[RLMSyncUser _registerSessionForBindingWithFileURL:syncConfig:standaloneSession:onCompletion:]
--[RLMSyncUser identity]
--[RLMSyncUser setIdentity:]
--[RLMSyncUser authenticationServer]
--[RLMSyncUser setAuthenticationServer:]
--[RLMSyncUser state]
--[RLMSyncUser setState:]
--[RLMSyncUser sessionsStorage]
--[RLMSyncUser setSessionsStorage:]
--[RLMSyncUser loggedOutSessions]
--[RLMSyncUser setLoggedOutSessions:]
--[RLMSyncUser directAccessToken]
--[RLMSyncUser setDirectAccessToken:]
--[RLMSyncUser refreshToken]
--[RLMSyncUser setRefreshToken:]
--[RLMSyncUser .cxx_destruct]
-___block_descriptor_tmp.90
-___block_descriptor_tmp.135
-___block_descriptor_tmp.206
-_OBJC_IVAR_$_RLMSyncUser._identity
-_OBJC_IVAR_$_RLMSyncUser._authenticationServer
-_OBJC_IVAR_$_RLMSyncUser._state
-_OBJC_IVAR_$_RLMSyncUser._sessionsStorage
-_OBJC_IVAR_$_RLMSyncUser._loggedOutSessions
-_OBJC_IVAR_$_RLMSyncUser._directAccessToken
-_OBJC_IVAR_$_RLMSyncUser._refreshToken
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncUser.mm
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncUser_Private.hpp
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncUser.h
-__79-[RLMSyncUser _bindSessionWithLocalFileURL:syncConfig:standalone:onCompletion:]_block_invoke.186
-__79-[RLMSyncUser _bindSessionWithLocalFileURL:syncConfig:standalone:onCompletion:]_block_invoke
-__85+[RLMSyncUser _performLogInForUser:credential:authServerURL:timeout:completionBlock:]_block_invoke.115
-__85+[RLMSyncUser _performLogInForUser:credential:authServerURL:timeout:completionBlock:]_block_invoke_2
-__85+[RLMSyncUser _performLogInForUser:credential:authServerURL:timeout:completionBlock:]_block_invoke
-~SyncUserMetadata
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_metadata.hpp
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMConstants.m
 -[RLMListBase initWithArray:]
 -[RLMListBase valueForKey:]
@@ -3301,16 +2916,6 @@ _OBJC_IVAR_$_RLMListBase.__rlmArray
 _OBJC_IVAR_$_RLMListBase._observationInfo
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMListBase.mm
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMListBase.h
--[RLMAuthResponseModel initWithDictionary:requireAccessToken:requireRefreshToken:]
--[RLMAuthResponseModel accessToken]
--[RLMAuthResponseModel setAccessToken:]
--[RLMAuthResponseModel refreshToken]
--[RLMAuthResponseModel setRefreshToken:]
--[RLMAuthResponseModel .cxx_destruct]
-_OBJC_IVAR_$_RLMAuthResponseModel._accessToken
-_OBJC_IVAR_$_RLMAuthResponseModel._refreshToken
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMAuthResponseModel.m
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMAuthResponseModel.h
 -[RLMMigrationRealm readonly]
 -[RLMMigrationRealm beginWriteTransaction]
 -[RLMMigration initWithRealm:oldRealm:schema:]
@@ -3334,6 +2939,14 @@ _OBJC_IVAR_$_RLMMigration._schema
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMMigration.mm
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMMigration_Private.h
 schema_version
++[RLMNetworkClient session]
++[RLMNetworkClient urlForServer:endpoint:]
++[RLMNetworkClient postRequestToEndpoint:server:JSON:completion:]
++[RLMNetworkClient postRequestToEndpoint:server:JSON:timeout:completion:]
+___73+[RLMNetworkClient postRequestToEndpoint:server:JSON:timeout:completion:]_block_invoke
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMNetworkClient.m
+__73+[RLMNetworkClient postRequestToEndpoint:server:JSON:timeout:completion:]_block_invoke
+NSLocationInRange
 -[RLMObject init]
 -[RLMObject initWithValue:schema:]
 -[RLMObject initWithRealm:schema:]
@@ -3425,33 +3038,6 @@ RLMValidatedValueForProperty
 validatedObjectForProperty
 RLMDynamicCast<NSArray>
 maybeInitObjectSchemaForUnmanaged
-__ZZN5realm19SyncMetadataManagerC1ENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEbNS_4util8OptionalINS1_6vectorIcS6_EEEEENK3$_0clES7_
-__ZN5realm5Realm6ConfigaSEOS1_
-__ZN5realm19SyncMetadataResultsINS_16SyncUserMetadataEEC2ENS_7ResultsENSt3__110shared_ptrINS_5RealmEEENS1_6SchemaE
-Realm/ObjectStore/src/sync_metadata.cpp
-SyncMetadataResults
-Realm/ObjectStore/src/sync_metadata.hpp
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_metadata.cpp
-mark_for_removal
-set_bool
-set_state
-set_string
-user_token
-server_url
-get_optional_string_field
-get_string
-identity
-SyncUserMetadata
-get_bool
-all_users_marked_for_removal
-get_users
-all_unmarked_users
-get_configuration
-SyncMetadataManager
-operator=<std::__1::vector<char, std::__1::allocator<char> >, void>
-operator=<realm::Schema, void>
-core/include/realm/descriptor.hpp
-invalid_argument
 -[RLMObjectSchema initWithClassName:objectClass:properties:]
 -[RLMObjectSchema objectForKeyedSubscript:]
 -[RLMObjectSchema setProperties:]
@@ -5581,6 +5167,9 @@ _ZThn24_NK5realm19ConstantStringValue5cloneEPNSt3__16vectorINS1_10unique_ptrINS_
 _ZThn24_N5realm19ConstantStringValueD0Ev
 ~ConstantStringValue
 _ZThn24_N5realm19ConstantStringValueD1Ev
+make_optional<std::__1::basic_string<char> >
+some<std::__1::basic_string<char>, std::__1::basic_string<char> >
+some<std::__1::basic_string<char> >
 copy<realm::StringData *, realm::StringData *>
 __copy<realm::StringData, realm::StringData>
 make_subexpr<realm::Value<realm::StringData>, const realm::Value<realm::StringData> &>
@@ -6058,6 +5647,7 @@ _ZZ41+[RLMRealm realmWithConfiguration:error:]EN3$_0C2EOS_
 RLMRealmTranslateException
 PermissionDenied
 AccessError
+path
 kind
 RLMAutorelease
 RLMRealmSetSchemaAndAlign
@@ -6073,12 +5663,14 @@ __ZNSt3__120__shared_ptr_emplaceIN5realm10SyncConfigENS_9allocatorIS2_EEED0Ev
 __ZTSNSt3__120__shared_ptr_emplaceIN5realm10SyncConfigENS_9allocatorIS2_EEEE
 __ZTINSt3__120__shared_ptr_emplaceIN5realm10SyncConfigENS_9allocatorIS2_EEEE
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMRealmConfiguration+Sync.mm
+~SyncConfig
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_config.hpp
 make_shared<realm::SyncConfig, realm::SyncConfig>
 make_shared<realm::SyncConfig>
 __shared_ptr_emplace<realm::SyncConfig>
 __compressed_pair<std::__1::allocator<realm::SyncConfig> &, realm::SyncConfig &&>
 __libcpp_compressed_pair_imp<std::__1::allocator<realm::SyncConfig> &, realm::SyncConfig &&, 0, 0>
+SyncConfig
 -[RLMRealmConfiguration config]
 +[RLMRealmConfiguration defaultConfiguration]
 +[RLMRealmConfiguration setDefaultConfiguration:]
@@ -6129,14 +5721,8 @@ _OBJC_IVAR_$_RLMRealmConfiguration._customSchema
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMRealmConfiguration_Private.h
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMRealmConfiguration.h
 assign<const char *>
-__construct_at_end<const char *>
-__construct_range_forward<const char *, char *>
-construct<char, const char &>
-__construct<char, const char &>
 advance<const char *>
 __advance<const char *>
-distance<const char *>
-__distance<const char *>
 RLMNSStringToStdString
 RLMRealmPathForFile
 RLMRealmPathForFileAndBundleIdentifier
@@ -6330,33 +5916,94 @@ RLMRegisterClass
 RLMRegisterClassLocalNames
 operator()<__unsafe_unretained Class>
 make_unique<Class __unsafe_unretained[]>
--[RLMTokenDataModel initWithDictionary:]
--[RLMTokenDataModel identity]
--[RLMTokenDataModel setIdentity:]
--[RLMTokenDataModel appID]
--[RLMTokenDataModel setAppID:]
--[RLMTokenDataModel path]
--[RLMTokenDataModel setPath:]
--[RLMTokenDataModel expires]
--[RLMTokenDataModel setExpires:]
--[RLMTokenDataModel .cxx_destruct]
--[RLMTokenModel initWithDictionary:]
--[RLMTokenModel token]
--[RLMTokenModel setToken:]
--[RLMTokenModel path]
--[RLMTokenModel setPath:]
--[RLMTokenModel tokenData]
--[RLMTokenModel setTokenData:]
--[RLMTokenModel .cxx_destruct]
-_OBJC_IVAR_$_RLMTokenDataModel._identity
-_OBJC_IVAR_$_RLMTokenDataModel._appID
-_OBJC_IVAR_$_RLMTokenDataModel._path
-_OBJC_IVAR_$_RLMTokenDataModel._expires
-_OBJC_IVAR_$_RLMTokenModel._token
-_OBJC_IVAR_$_RLMTokenModel._path
-_OBJC_IVAR_$_RLMTokenModel._tokenData
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMTokenModels.m
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMTokenModels.h
++[RLMSwiftSupport isSwiftClassName:]
++[RLMSwiftSupport demangleClassName:]
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSwiftSupport.m
+-[RLMSyncConfiguration initWithRawConfig:]
+-[RLMSyncConfiguration rawConfiguration]
+-[RLMSyncConfiguration initWithUser:realmURL:]
+-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]
+-[RLMSyncConfiguration user]
+-[RLMSyncConfiguration setUser:]
+-[RLMSyncConfiguration realmURL]
+-[RLMSyncConfiguration setRealmURL:]
+-[RLMSyncConfiguration stopPolicy]
+-[RLMSyncConfiguration setStopPolicy:]
+-[RLMSyncConfiguration customFileURL]
+-[RLMSyncConfiguration setCustomFileURL:]
+-[RLMSyncConfiguration .cxx_destruct]
+-[RLMSyncConfiguration .cxx_construct]
+__ZNSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEED1Ev
+__ZNSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEED0Ev
+__ZNKSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEE7__cloneEv
+__ZNKSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEE7__cloneEPNS0_6__baseISC_EE
+__ZNSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEE7destroyEv
+__ZNSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEE18destroy_deallocateEv
+__ZNSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEEclEOiOS9_OSB_
+__ZNKSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEE6targetERKSt9type_info
+__ZNKSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEE11target_typeEv
+_OBJC_IVAR_$_RLMSyncConfiguration._error_handler
+_OBJC_IVAR_$_RLMSyncConfiguration._user
+_OBJC_IVAR_$_RLMSyncConfiguration._realmURL
+_OBJC_IVAR_$_RLMSyncConfiguration._stopPolicy
+_OBJC_IVAR_$_RLMSyncConfiguration._customFileURL
+__ZTVNSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEEE
+__ZTSNSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEEE
+__ZTSNSt3__110__function6__baseIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEN5realm16SyncSessionErrorEEEE
+__ZTINSt3__110__function6__baseIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEN5realm16SyncSessionErrorEEEE
+__ZTINSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEEE
+__ZTSZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0
+__ZTIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm
+__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30) &, int, std::__1::basic_string<char>, realm::SyncSessionError>
+__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30) &, int, std::__1::basic_string<char>, realm::SyncSessionError>
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30)> &>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30)> &, 0, 0>
+_ZZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]EN3$_0C1ERKS_
+_ZZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]EN3$_0C2ERKS_
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30)> &&>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30)> &&, 0, 0>
+swap<std::__1::__function::__base<void (int, std::__1::basic_string<char>, realm::SyncSessionError)> *>
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration_Private.h
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.h
+operator=<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30)>
+function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30)>
+__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30) &&>
+__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30) &&, 0>
+_ZZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]EN3$_0C1EOS_
+_ZZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]EN3$_0C2EOS_
+isValidRealmURL
++[RLMSyncCredential credentialWithFacebookToken:]
++[RLMSyncCredential credentialWithGoogleToken:]
++[RLMSyncCredential credentialWithICloudToken:]
++[RLMSyncCredential credentialWithUsername:password:actions:]
++[RLMSyncCredential credentialWithAccessToken:identity:]
+-[RLMSyncCredential initWithCustomToken:provider:userInfo:]
+-[RLMSyncCredential token]
+-[RLMSyncCredential setToken:]
+-[RLMSyncCredential provider]
+-[RLMSyncCredential setProvider:]
+-[RLMSyncCredential userInfo]
+-[RLMSyncCredential setUserInfo:]
+-[RLMSyncCredential .cxx_destruct]
+_OBJC_IVAR_$_RLMSyncCredential._token
+_OBJC_IVAR_$_RLMSyncCredential._provider
+_OBJC_IVAR_$_RLMSyncCredential._userInfo
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncCredential.m
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncCredential.h
++[RLMSyncFileManager _baseDirectory]
+___36+[RLMSyncFileManager _baseDirectory]_block_invoke
++[RLMSyncFileManager _folderPathForString:]
++[RLMSyncFileManager _folderPathForUserIdentity:]
++[RLMSyncFileManager fileURLForMetadata]
++[RLMSyncFileManager fileURLForRawRealmURL:user:]
++[RLMSyncFileManager removeFilesForUserIdentity:error:]
+__ZZ36+[RLMSyncFileManager _baseDirectory]E15s_baseDirectory
+__ZZ36+[RLMSyncFileManager _baseDirectory]E9onceToken
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncFileManager.mm
+__36+[RLMSyncFileManager _baseDirectory]_block_invoke
+_dispatch_once
+/Applications/Xcode-8.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/usr/include/dispatch/once.h
 +[RLMSyncManager sharedManager]
 ___31+[RLMSyncManager sharedManager]_block_invoke
 -[RLMSyncManager sessionForSyncConfiguration:]
@@ -6395,6 +6042,7 @@ __ZNK5realm19SyncMetadataResultsINS_16SyncUserMetadataEE3getEm
 -[RLMSyncManager .cxx_destruct]
 -[RLMSyncManager .cxx_construct]
 __ZN12_GLOBAL__N_122CocoaSyncLoggerFactory11make_loggerEN5realm4util6Logger5LevelE
+__ZNK5realm4util10RootLogger3getEv
 __ZN12_GLOBAL__N_115CocoaSyncLoggerD1Ev
 __ZN12_GLOBAL__N_115CocoaSyncLoggerD0Ev
 __ZN12_GLOBAL__N_115CocoaSyncLogger6do_logEN5realm4util6Logger5LevelENSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEE
@@ -6438,6 +6086,12 @@ __ZTIN5realm17SyncLoggerFactoryE
 __ZTIN12_GLOBAL__N_122CocoaSyncLoggerFactoryE
 __ZTVN12_GLOBAL__N_115CocoaSyncLoggerE
 __ZTSN12_GLOBAL__N_115CocoaSyncLoggerE
+__ZTSN5realm4util10RootLoggerE
+__ZTSN5realm4util6Logger14LevelThresholdE
+__ZTIN5realm4util6Logger14LevelThresholdE
+__ZTSN5realm4util6LoggerE
+__ZTIN5realm4util6LoggerE
+__ZTIN5realm4util10RootLoggerE
 __ZTIN12_GLOBAL__N_115CocoaSyncLoggerE
 __ZTVNSt3__110__function6__funcIZ29-[RLMSyncManager initPrivate]E3$_0NS_9allocatorIS2_EEFvRKNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEERKN5realm10SyncConfigEEEE
 __ZTSNSt3__110__function6__funcIZ29-[RLMSyncManager initPrivate]E3$_0NS_9allocatorIS2_EEFvRKNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEERKN5realm10SyncConfigEEEE
@@ -6448,16 +6102,21 @@ __ZTSZ29-[RLMSyncManager initPrivate]E3$_0
 __ZTIZ29-[RLMSyncManager initPrivate]E3$_0
 __ZTVNSt3__110__function6__funcIZ29-[RLMSyncManager initPrivate]E3$_1NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEEEE
 __ZTSNSt3__110__function6__funcIZ29-[RLMSyncManager initPrivate]E3$_1NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEEEE
+__ZTSNSt3__110__function6__baseIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEE
+__ZTINSt3__110__function6__baseIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEE
 __ZTINSt3__110__function6__funcIZ29-[RLMSyncManager initPrivate]E3$_1NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEEEE
 __ZTSZ29-[RLMSyncManager initPrivate]E3$_1
 __ZTIZ29-[RLMSyncManager initPrivate]E3$_1
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncManager.mm
 destroy<realm::SyncUserMetadata>
 __destroy<realm::SyncUserMetadata>
+~SyncUserMetadata
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_metadata.hpp
 swap<realm::SyncUserMetadata *>
 __construct_backward<realm::SyncUserMetadata *>
 construct<realm::SyncUserMetadata, realm::SyncUserMetadata>
 __construct<realm::SyncUserMetadata, realm::SyncUserMetadata>
+SyncUserMetadata
 __emplace_back_slow_path<realm::SyncUserMetadata>
 __call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncManager.mm:101:28) &, int, std::__1::basic_string<char> >
 __invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncManager.mm:101:28) &, int, std::__1::basic_string<char> >
@@ -6469,6 +6128,7 @@ __compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tigh
 __libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncManager.mm:101:28) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncManager.mm:101:28)> &&, 0, 0>
 __call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncManager.mm:111:41) &, const std::__1::basic_string<char> &, const realm::SyncConfig &>
 __invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncManager.mm:111:41) &, const std::__1::basic_string<char> &, const realm::SyncConfig &>
+Realm/ObjectStore/src/sync_config.hpp
 __compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncManager.mm:111:41) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncManager.mm:111:41)> &>
 __libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncManager.mm:111:41) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncManager.mm:111:41)> &, 0, 0>
 _ZZ29-[RLMSyncManager initPrivate]EN3$_0C1ERKS_
@@ -6479,10 +6139,15 @@ _ZThn8_N12_GLOBAL__N_115CocoaSyncLogger6do_logEN5realm4util6Logger5LevelENSt3__1
 _ZThn8_N12_GLOBAL__N_115CocoaSyncLoggerD0Ev
 ~CocoaSyncLogger
 _ZThn8_N12_GLOBAL__N_115CocoaSyncLoggerD1Ev
+do_log
+core/include/realm/util/logger.hpp
 make_logger
 unique_ptr<(anonymous namespace)::CocoaSyncLogger, std::__1::default_delete<(anonymous namespace)::CocoaSyncLogger> >
+set_level_threshold
 make_unique<(anonymous namespace)::CocoaSyncLogger>
 CocoaSyncLogger
+RootLogger
+Logger
 ~SyncMetadataManager
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncManager_Private.hpp
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncManager.h
@@ -6504,16 +6169,6 @@ __libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift
 _ZZ29-[RLMSyncManager initPrivate]EN3$_0C1EOS_
 _ZZ29-[RLMSyncManager initPrivate]EN3$_0C2EOS_
 __31+[RLMSyncManager sharedManager]_block_invoke
-+[RLMNetworkClient session]
-+[RLMNetworkClient urlForServer:endpoint:]
-+[RLMNetworkClient postRequestToEndpoint:server:JSON:completion:]
-+[RLMNetworkClient postRequestToEndpoint:server:JSON:timeout:completion:]
-___73+[RLMNetworkClient postRequestToEndpoint:server:JSON:timeout:completion:]_block_invoke
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMNetworkClient.m
-__73+[RLMNetworkClient postRequestToEndpoint:server:JSON:timeout:completion:]_block_invoke
-NSLocationInRange
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncUtil.mm
-translateStopPolicy
 -[RLMSessionBindingPackage initWithFileURL:syncConfig:standalone:block:]
 -[RLMSessionBindingPackage block]
 -[RLMSessionBindingPackage setBlock:]
@@ -6573,9 +6228,255 @@ _OBJC_IVAR_$_RLMSyncSession._refreshTimer
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSession_Private.h
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSession.h
 __26-[RLMSyncSession _refresh]_block_invoke
-+[RLMSwiftSupport isSwiftClassName:]
-+[RLMSwiftSupport demangleClassName:]
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSwiftSupport.m
+-[RLMSyncWeakSessionHandle sessionIsInErrorState]
+-[RLMSyncWeakSessionHandle sessionStillExists]
+-[RLMSyncWeakSessionHandle refreshAccessToken:serverURL:]
+-[RLMSyncWeakSessionHandle logOut]
+-[RLMSyncWeakSessionHandle revive]
+-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]
+-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]
+-[RLMSyncWeakSessionHandle .cxx_destruct]
+-[RLMSyncWeakSessionHandle .cxx_construct]
+-[RLMSyncStrongSessionHandle sessionIsInErrorState]
+-[RLMSyncStrongSessionHandle sessionStillExists]
+-[RLMSyncStrongSessionHandle refreshAccessToken:serverURL:]
+-[RLMSyncStrongSessionHandle logOut]
+-[RLMSyncStrongSessionHandle revive]
+-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]
+-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]
+-[RLMSyncStrongSessionHandle .cxx_destruct]
+-[RLMSyncStrongSessionHandle .cxx_construct]
++[RLMSyncSessionHandle syncSessionHandleForWeakPointer:]
++[RLMSyncSessionHandle syncSessionHandleForPointer:]
+-[RLMSyncSessionHandle logOut]
+-[RLMSyncSessionHandle sessionIsInErrorState]
+-[RLMSyncSessionHandle sessionStillExists]
+-[RLMSyncSessionHandle refreshAccessToken:serverURL:]
+-[RLMSyncSessionHandle revive]
+-[RLMSyncSessionHandle waitForUploadCompletionOnQueue:callback:]
+-[RLMSyncSessionHandle waitForDownloadCompletionOnQueue:callback:]
+__ZNSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEED1Ev
+__ZNSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEED0Ev
+__ZNKSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEE7__cloneEv
+__ZNKSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEE7__cloneEPNS0_6__baseIS5_EE
+__ZNSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEE7destroyEv
+__ZNSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEE18destroy_deallocateEv
+__ZNSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEEclEv
+__ZNKSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEE6targetERKSt9type_info
+__ZNKSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEE11target_typeEv
+____ZZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]ENK3$_0clEv_block_invoke
+__ZNSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEED1Ev
+__ZNSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEED0Ev
+__ZNKSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEE7__cloneEv
+__ZNKSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEE7__cloneEPNS0_6__baseIS5_EE
+__ZNSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEE7destroyEv
+__ZNSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEE18destroy_deallocateEv
+__ZNSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEEclEv
+__ZNKSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEE6targetERKSt9type_info
+__ZNKSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEE11target_typeEv
+____ZZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]ENK3$_1clEv_block_invoke
+___copy_helper_block_.29
+___destroy_helper_block_.30
+__ZNSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEED1Ev
+__ZNSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEED0Ev
+__ZNKSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEE7__cloneEv
+__ZNKSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEE7__cloneEPNS0_6__baseIS5_EE
+__ZNSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEE7destroyEv
+__ZNSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEE18destroy_deallocateEv
+__ZNSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEEclEv
+__ZNKSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEE6targetERKSt9type_info
+__ZNKSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEE11target_typeEv
+____ZZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]ENK3$_2clEv_block_invoke
+___copy_helper_block_.32
+___destroy_helper_block_.33
+__ZNSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEED1Ev
+__ZNSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEED0Ev
+__ZNKSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEE7__cloneEv
+__ZNKSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEE7__cloneEPNS0_6__baseIS5_EE
+__ZNSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEE7destroyEv
+__ZNSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEE18destroy_deallocateEv
+__ZNSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEEclEv
+__ZNKSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEE6targetERKSt9type_info
+__ZNKSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEE11target_typeEv
+____ZZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]ENK3$_3clEv_block_invoke
+___copy_helper_block_.35
+___destroy_helper_block_.36
+__ZTVNSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEEE
+__ZTSNSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEEE
+__ZTSNSt3__110__function6__baseIFvvEEE
+__ZTINSt3__110__function6__baseIFvvEEE
+__ZTINSt3__110__function6__funcIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0NS_9allocatorIS2_EEFvvEEE
+__ZTSZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0
+__ZTIZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_0
+__ZTVNSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEEE
+__ZTSNSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEEE
+__ZTINSt3__110__function6__funcIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1NS_9allocatorIS2_EEFvvEEE
+___block_descriptor_tmp.31
+__ZTSZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1
+__ZTIZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_1
+__ZTVNSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEEE
+__ZTSNSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEEE
+__ZTINSt3__110__function6__funcIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2NS_9allocatorIS2_EEFvvEEE
+___block_descriptor_tmp.34
+__ZTSZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2
+__ZTIZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]E3$_2
+__ZTVNSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEEE
+__ZTSNSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEEE
+__ZTINSt3__110__function6__funcIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3NS_9allocatorIS2_EEFvvEEE
+___block_descriptor_tmp.37
+__ZTSZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3
+__ZTIZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]E3$_3
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm
+___ZZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]ENK3$_3clEv_block_invoke
+__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40) &>
+__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40) &>
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40)> &>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40)> &, 0, 0>
+_ZZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]EN3$_3C1ERKS_
+_ZZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]EN3$_3C2ERKS_
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40)> &&>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40)> &&, 0, 0>
+___ZZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]ENK3$_2clEv_block_invoke
+__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38) &>
+__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38) &>
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38)> &>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38)> &, 0, 0>
+_ZZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]EN3$_2C1ERKS_
+_ZZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]EN3$_2C2ERKS_
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38)> &&>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38)> &&, 0, 0>
+___ZZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]ENK3$_1clEv_block_invoke
+__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47) &>
+__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47) &>
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47)> &>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47)> &, 0, 0>
+_ZZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]EN3$_1C1ERKS_
+_ZZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]EN3$_1C2ERKS_
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47)> &&>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47)> &&, 0, 0>
+___ZZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]ENK3$_0clEv_block_invoke
+__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45) &>
+__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45) &>
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45)> &>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45)> &, 0, 0>
+_ZZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]EN3$_0C1ERKS_
+_ZZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]EN3$_0C2ERKS_
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45)> &&>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45)> &&, 0, 0>
+operator=<realm::SyncSession>
+weak_ptr<realm::SyncSession>
+function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40)>
+__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40) &&>
+__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:145:40) &&, 0>
+_ZZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]EN3$_3C1EOS_
+_ZZ72-[RLMSyncStrongSessionHandle waitForDownloadCompletionOnQueue:callback:]EN3$_3C2EOS_
+function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38)>
+__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38) &&>
+__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:134:38) &&, 0>
+_ZZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]EN3$_2C1EOS_
+_ZZ70-[RLMSyncStrongSessionHandle waitForUploadCompletionOnQueue:callback:]EN3$_2C2EOS_
+function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47)>
+__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47) &&>
+__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:92:47) &&, 0>
+_ZZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]EN3$_1C1EOS_
+_ZZ70-[RLMSyncWeakSessionHandle waitForDownloadCompletionOnQueue:callback:]EN3$_1C2EOS_
+function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45)>
+__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45) &&>
+__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncSessionHandle.mm:78:45) &&, 0>
+_ZZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]EN3$_0C1EOS_
+_ZZ68-[RLMSyncWeakSessionHandle waitForUploadCompletionOnQueue:callback:]EN3$_0C2EOS_
++[RLMSyncUser all]
+-[RLMSyncUser initWithAuthServer:]
++[RLMSyncUser authenticateWithCredential:authServerURL:onCompletion:]
++[RLMSyncUser authenticateWithCredential:authServerURL:timeout:onCompletion:]
+-[RLMSyncUser logOut]
+-[RLMSyncUser sessionForURL:]
+-[RLMSyncUser allSessions]
+-[RLMSyncUser _enterErrorState]
+-[RLMSyncUser _enterActiveState]
+-[RLMSyncUser _deregisterSessionWithRealmURL:]
+-[RLMSyncUser initWithMetadata:]
+-[RLMSyncUser _updatePersistedMetadata]
++[RLMSyncUser _performLogInForUser:credential:authServerURL:timeout:completionBlock:]
+___85+[RLMSyncUser _performLogInForUser:credential:authServerURL:timeout:completionBlock:]_block_invoke
+___85+[RLMSyncUser _performLogInForUser:credential:authServerURL:timeout:completionBlock:]_block_invoke_2
+___copy_helper_block_.87
+___destroy_helper_block_.88
+___85+[RLMSyncUser _performLogInForUser:credential:authServerURL:timeout:completionBlock:]_block_invoke.115
+___copy_helper_block_.132
+___destroy_helper_block_.133
++[RLMSyncUser _performLoginForDirectAccessTokenCredential:user:completionBlock:]
+-[RLMSyncUser _mergeDataFromDuplicateUser:]
+-[RLMSyncUser _bindAllDeferredRealms]
+-[RLMSyncUser _bindSessionWithDirectAccessToken:syncConfig:localFileURL:standalone:onCompletion:]
+-[RLMSyncUser _bindSessionWithLocalFileURL:syncConfig:standalone:onCompletion:]
+___79-[RLMSyncUser _bindSessionWithLocalFileURL:syncConfig:standalone:onCompletion:]_block_invoke
+___79-[RLMSyncUser _bindSessionWithLocalFileURL:syncConfig:standalone:onCompletion:]_block_invoke.186
+___copy_helper_block_.204
+___destroy_helper_block_.205
+-[RLMSyncUser _registerSessionForBindingWithFileURL:syncConfig:standaloneSession:onCompletion:]
+-[RLMSyncUser identity]
+-[RLMSyncUser setIdentity:]
+-[RLMSyncUser authenticationServer]
+-[RLMSyncUser setAuthenticationServer:]
+-[RLMSyncUser state]
+-[RLMSyncUser setState:]
+-[RLMSyncUser sessionsStorage]
+-[RLMSyncUser setSessionsStorage:]
+-[RLMSyncUser loggedOutSessions]
+-[RLMSyncUser setLoggedOutSessions:]
+-[RLMSyncUser directAccessToken]
+-[RLMSyncUser setDirectAccessToken:]
+-[RLMSyncUser refreshToken]
+-[RLMSyncUser setRefreshToken:]
+-[RLMSyncUser .cxx_destruct]
+___block_descriptor_tmp.90
+___block_descriptor_tmp.135
+___block_descriptor_tmp.206
+_OBJC_IVAR_$_RLMSyncUser._identity
+_OBJC_IVAR_$_RLMSyncUser._authenticationServer
+_OBJC_IVAR_$_RLMSyncUser._state
+_OBJC_IVAR_$_RLMSyncUser._sessionsStorage
+_OBJC_IVAR_$_RLMSyncUser._loggedOutSessions
+_OBJC_IVAR_$_RLMSyncUser._directAccessToken
+_OBJC_IVAR_$_RLMSyncUser._refreshToken
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncUser.mm
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncUser_Private.hpp
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncUser.h
+__79-[RLMSyncUser _bindSessionWithLocalFileURL:syncConfig:standalone:onCompletion:]_block_invoke.186
+__79-[RLMSyncUser _bindSessionWithLocalFileURL:syncConfig:standalone:onCompletion:]_block_invoke
+__85+[RLMSyncUser _performLogInForUser:credential:authServerURL:timeout:completionBlock:]_block_invoke.115
+__85+[RLMSyncUser _performLogInForUser:credential:authServerURL:timeout:completionBlock:]_block_invoke_2
+__85+[RLMSyncUser _performLogInForUser:credential:authServerURL:timeout:completionBlock:]_block_invoke
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncUtil.mm
+translateStopPolicy
+-[RLMTokenDataModel initWithDictionary:]
+-[RLMTokenDataModel identity]
+-[RLMTokenDataModel setIdentity:]
+-[RLMTokenDataModel appID]
+-[RLMTokenDataModel setAppID:]
+-[RLMTokenDataModel path]
+-[RLMTokenDataModel setPath:]
+-[RLMTokenDataModel expires]
+-[RLMTokenDataModel setExpires:]
+-[RLMTokenDataModel .cxx_destruct]
+-[RLMTokenModel initWithDictionary:]
+-[RLMTokenModel token]
+-[RLMTokenModel setToken:]
+-[RLMTokenModel path]
+-[RLMTokenModel setPath:]
+-[RLMTokenModel tokenData]
+-[RLMTokenModel setTokenData:]
+-[RLMTokenModel .cxx_destruct]
+_OBJC_IVAR_$_RLMTokenDataModel._identity
+_OBJC_IVAR_$_RLMTokenDataModel._appID
+_OBJC_IVAR_$_RLMTokenDataModel._path
+_OBJC_IVAR_$_RLMTokenDataModel._expires
+_OBJC_IVAR_$_RLMTokenModel._token
+_OBJC_IVAR_$_RLMTokenModel._path
+_OBJC_IVAR_$_RLMTokenModel._tokenData
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMTokenModels.m
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMTokenModels.h
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMUpdateChecker.mm
 RLMCheckForUpdates
 __ZL12RLMExceptionP8NSStringP12NSDictionary
@@ -6589,9 +6490,11 @@ RLMDefaultDirectoryForBundleIdentifier
 RLMMixedToObjc
 get_binary
 get_timestamp
+get_bool
 get_double
 get_float
 get_int
+get_string
 RLMIsRunningInPlayground
 RLMIsDebuggerAttached
 RLMIsObjectSubclass
@@ -6611,160 +6514,6 @@ nsnumber_is_like_double
 nsnumber_is_like_float
 nsnumber_is_like_integer
 nsnumber_is_like_bool
-__ZN5realm5_impl19sync_session_states21WaitingForAccessTokenD1Ev
-__ZN5realm5_impl19sync_session_states6ActiveD1Ev
-__ZN5realm5_impl19sync_session_states5DyingD1Ev
-__ZN5realm5_impl19sync_session_states8InactiveD1Ev
-__ZN5realm5_impl19sync_session_states5ErrorD1Ev
-__ZN5realm5_impl19sync_session_states21WaitingForAccessTokenD0Ev
-__ZNK5realm5_impl19sync_session_states21WaitingForAccessToken11enter_stateERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
-__ZNK5realm5_impl19sync_session_states21WaitingForAccessToken20refresh_access_tokenERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionERKNS3_12basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEERKNS_4util8OptionalISF_EE
-__ZNK5realm11SyncSession5State20access_token_expiredERNSt3__111unique_lockINS2_5mutexEEERS0_
-__ZNK5realm5_impl19sync_session_states21WaitingForAccessToken23nonsync_transact_notifyERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionEy
-__ZNK5realm11SyncSession5State16revive_if_neededERNSt3__111unique_lockINS2_5mutexEEERS0_
-__ZNK5realm5_impl19sync_session_states21WaitingForAccessToken7log_outERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
-__ZNK5realm5_impl19sync_session_states21WaitingForAccessToken19close_if_connectingERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
-__ZNK5realm5_impl19sync_session_states21WaitingForAccessToken5closeERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
-__ZNK5realm11SyncSession5State11enter_stateERNSt3__111unique_lockINS2_5mutexEEERS0_
-__ZNK5realm11SyncSession5State20refresh_access_tokenERNSt3__111unique_lockINS2_5mutexEEERS0_RKNS2_12basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEERKNS_4util8OptionalISD_EE
-__ZNK5realm11SyncSession5State23nonsync_transact_notifyERNSt3__111unique_lockINS2_5mutexEEERS0_y
-__ZNK5realm11SyncSession5State7log_outERNSt3__111unique_lockINS2_5mutexEEERS0_
-__ZNK5realm11SyncSession5State19close_if_connectingERNSt3__111unique_lockINS2_5mutexEEERS0_
-__ZNK5realm11SyncSession5State5closeERNSt3__111unique_lockINS2_5mutexEEERS0_
-__ZN5realm5_impl19sync_session_states6ActiveD0Ev
-__ZNK5realm5_impl19sync_session_states6Active20refresh_access_tokenERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionERKNS3_12basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEERKNS_4util8OptionalISF_EE
-__ZNK5realm5_impl19sync_session_states6Active20access_token_expiredERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
-__ZNK5realm5_impl19sync_session_states6Active23nonsync_transact_notifyERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionEy
-__ZNK5realm5_impl19sync_session_states6Active7log_outERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
-__ZNK5realm5_impl19sync_session_states6Active5closeERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
-__ZN5realm5_impl19sync_session_states5DyingD0Ev
-__ZNK5realm5_impl19sync_session_states5Dying11enter_stateERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
-__ZNK5realm5_impl19sync_session_states5Dying16revive_if_neededERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
-__ZNK5realm5_impl19sync_session_states5Dying7log_outERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
-__ZNSt3__16threadC2IZNK5realm5_impl19sync_session_states5Dying11enter_stateERNS_11unique_lockINS_5mutexEEERNS2_11SyncSessionEEUlvE_JEvEEOT_DpOT0_
-__ZNSt3__114__thread_proxyINS_5tupleIJZNK5realm5_impl19sync_session_states5Dying11enter_stateERNS_11unique_lockINS_5mutexEEERNS2_11SyncSessionEEUlvE_EEEEEPvSE_
-__ZZNK5realm5_impl19sync_session_states5Dying11enter_stateERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionEENKUlvE_clEv
-__ZN5realm5_impl19sync_session_states8InactiveD0Ev
-__ZNK5realm5_impl19sync_session_states8Inactive11enter_stateERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
-__ZNK5realm5_impl19sync_session_states8Inactive16revive_if_neededERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
-__ZN5realm5_impl19sync_session_states5ErrorD0Ev
-__ZNK5realm5_impl19sync_session_states5Error11enter_stateERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
-__ZNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEED1Ev
-__ZNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEED0Ev
-__ZNKSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEE7__cloneEv
-__ZNKSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEE7__cloneEPNS0_6__baseISC_EE
-__ZNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEE7destroyEv
-__ZNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEE18destroy_deallocateEv
-__ZNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEEclEOiOSB_
-__ZNKSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEE6targetERKSt9type_info
-__ZNKSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEE11target_typeEv
-__ZNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EED1Ev
-__ZNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EED0Ev
-__ZNKSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EE7__cloneEv
-__ZNKSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EE7__cloneEPNS0_6__baseIS8_EE
-__ZNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EE7destroyEv
-__ZNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EE18destroy_deallocateEv
-__ZNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EEclEOS7_SA_
-__ZNKSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EE6targetERKSt9type_info
-__ZNKSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EE11target_typeEv
-__ZNSt3__114__thread_proxyINS_5tupleIJZN5realm11SyncSession26wait_for_upload_completionENS_8functionIFvvEEEE3$_2EEEEEPvS9_
-__ZNSt3__114__thread_proxyINS_5tupleIJZN5realm11SyncSession28wait_for_download_completionENS_8functionIFvvEEEE3$_3EEEEEPvS9_
-__ZGRN5realm11SyncSession5State24waiting_for_access_tokenE_
-__ZGRN5realm11SyncSession5State6activeE_
-__ZGRN5realm11SyncSession5State5dyingE_
-__ZGRN5realm11SyncSession5State8inactiveE_
-__ZGRN5realm11SyncSession5State5errorE_
-__ZTSN5realm5_impl19sync_session_states21WaitingForAccessTokenE
-__ZTSN5realm11SyncSession5StateE
-__ZTIN5realm11SyncSession5StateE
-__ZTIN5realm5_impl19sync_session_states21WaitingForAccessTokenE
-__ZTSN5realm5_impl19sync_session_states6ActiveE
-__ZTIN5realm5_impl19sync_session_states6ActiveE
-__ZTSN5realm5_impl19sync_session_states5DyingE
-__ZTIN5realm5_impl19sync_session_states5DyingE
-__ZTSN5realm5_impl19sync_session_states8InactiveE
-__ZTIN5realm5_impl19sync_session_states8InactiveE
-__ZTSN5realm5_impl19sync_session_states5ErrorE
-__ZTIN5realm5_impl19sync_session_states5ErrorE
-__ZTVNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEEE
-__ZTSNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEEE
-__ZTINSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEEE
-__ZTSZN5realm11SyncSession19create_sync_sessionEvE3$_0
-__ZTIZN5realm11SyncSession19create_sync_sessionEvE3$_0
-__ZTVNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EEE
-__ZTSNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EEE
-__ZTINSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EEE
-__ZTSZN5realm11SyncSession19create_sync_sessionEvE3$_1
-__ZTIZN5realm11SyncSession19create_sync_sessionEvE3$_1
-Realm/ObjectStore/src/sync_session.cpp
-__thread_proxy<std::__1::tuple<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:440:31)> >
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp
-__thread_execute<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:440:31)>
-__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:440:31)>
-__thread_proxy<std::__1::tuple<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:424:31)> >
-__thread_execute<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:424:31)>
-__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:424:31)>
-__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29) &, realm::VersionID, realm::VersionID>
-__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29) &, realm::VersionID, realm::VersionID>
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29)> &>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29)> &, 0, 0>
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29)> &&>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29)> &&, 0, 0>
-__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28) &, int, std::__1::basic_string<char> >
-__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28) &, int, std::__1::basic_string<char> >
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28)> &>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28)> &, 0, 0>
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28)> &&>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28)> &&, 0, 0>
-enter_state
-~Error
-revive_if_needed
-~Inactive
-__thread_proxy<std::__1::tuple<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:205:21)> >
-__thread_execute<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:205:21)>
-__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:205:21)>
-get<0, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:205:21)>
-thread<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:205:21), void>
-tuple<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:205:21), false>
-__tuple_impl<0, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:205:21), (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:205:21)>
-__tuple_leaf<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:205:21), void>
-__decay_copy<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:205:21)>
-log_out
-~Dying
-access_token_expired
-refresh_access_token
-~Active
-close_if_connecting
-~WaitingForAccessToken
-is_inactive
-wait_for_download_completion
-thread<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:440:31), void>
-tuple<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:440:31), false>
-__tuple_impl<0, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:440:31), (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:440:31)>
-__tuple_leaf<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:440:31), void>
-_ZZN5realm11SyncSession28wait_for_download_completionENSt3__18functionIFvvEEEEN3$_3C1EOS5_
-_ZZN5realm11SyncSession28wait_for_download_completionENSt3__18functionIFvvEEEEN3$_3C2EOS5_
-__decay_copy<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:440:31)>
-wait_for_upload_completion
-thread<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:424:31), void>
-tuple<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:424:31), false>
-__tuple_impl<0, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:424:31), (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:424:31)>
-__tuple_leaf<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:424:31), void>
-_ZZN5realm11SyncSession26wait_for_upload_completionENSt3__18functionIFvvEEEEN3$_2C1EOS5_
-_ZZN5realm11SyncSession26wait_for_upload_completionENSt3__18functionIFvvEEEEN3$_2C2EOS5_
-__decay_copy<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:424:31)>
-owns_lock
-advance_state
-create_sync_session
-function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29)>
-__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29) &&>
-__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29) &&, 0>
-function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28)>
-__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28) &&>
-__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28) &&, 0>
-make_unique<realm::sync::Session, realm::sync::Client &, std::__1::basic_string<char> &>
-SyncSession
-enable_shared_from_this
 __ZNSt3__16__sortIRZL7compareRKN5realm12ObjectSchemaES4_RNS_6vectorINS1_12SchemaChangeENS_9allocatorIS6_EEEEE3$_2PS6_EEvT0_SE_T_
 __ZNSt3__17__sort3IRZL7compareRKN5realm12ObjectSchemaES4_RNS_6vectorINS1_12SchemaChangeENS_9allocatorIS6_EEEEE3$_2PS6_EEjT0_SE_SE_T_
 __ZNSt3__17__sort4IRZL7compareRKN5realm12ObjectSchemaES4_RNS_6vectorINS1_12SchemaChangeENS_9allocatorIS6_EEEEE3$_2PS6_EEjT0_SE_SE_SE_T_
@@ -6982,23 +6731,26 @@ destroy<realm::_impl::AnyHandover>
 __destroy<realm::_impl::AnyHandover>
 swap<realm::_impl::AnyHandover *>
 __construct_backward<realm::_impl::AnyHandover *>
-__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:371:57) &>
-__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:371:57) &>
+__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:365:57) &>
+__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:365:57) &>
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:371:57) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:371:57)> &>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:371:57) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:371:57)> &, 0, 0>
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:371:57) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:371:57)> &&>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:371:57) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:371:57)> &&, 0, 0>
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:365:57) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:365:57)> &>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:365:57) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:365:57)> &, 0, 0>
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:365:57) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:365:57)> &&>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:365:57) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:365:57)> &&, 0, 0>
+__get_deleter
 ~Realm
+~__shared_ptr_pointer
 shared_ptr<realm::Realm>
 __enable_weak_this<realm::Realm, realm::Realm>
-__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:346:24) &>
-__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:346:24) &>
+__shared_ptr_pointer
+__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:340:24) &>
+__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:340:24) &>
 Realm
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:346:24) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:346:24)> &>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:346:24) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:346:24)> &, 0, 0>
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:346:24) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:346:24)> &&>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:346:24) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:346:24)> &&, 0, 0>
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:340:24) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:340:24)> &>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:340:24) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:340:24)> &, 0, 0>
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:340:24) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:340:24)> &&>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:340:24) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:340:24)> &&, 0, 0>
 __tree_remove<std::__1::__tree_node_base<void *> *>
 __tree_next<std::__1::__tree_node_base<void *> *>
 __tree_min<std::__1::__tree_node_base<void *> *>
@@ -7036,12 +6788,12 @@ ReadLockInfo
 Group
 init_array_parents
 ArrayString
-__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:174:40) &, int, int>
-__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:174:40) &, int, int>
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:174:40) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:174:40)> &>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:174:40) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:174:40)> &, 0, 0>
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:174:40) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:174:40)> &&>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:174:40) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:174:40)> &&, 0, 0>
+__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:172:40) &, int, int>
+__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:172:40) &, int, int>
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:172:40) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:172:40)> &>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:172:40) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:172:40)> &, 0, 0>
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:172:40) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:172:40)> &&>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:172:40) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:172:40)> &&, 0, 0>
 swap<std::__1::__function::__base<void (int, int)> *>
 Realm/ObjectStore/src/binding_context.hpp
 ~IncorrectThreadException
@@ -7060,7 +6812,7 @@ HandoverPackage
 is_in_transaction
 accept_handover
 operator!=<realm::_impl::AnyHandover *>
-make_scope_exit<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:666:48)>
+make_scope_exit<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:660:48)>
 ScopeExit
 advance_to_version
 is_in_read_transaction
@@ -7068,6 +6820,7 @@ get_config
 file_format_upgraded_from_version
 OptionalStorage<const int &>
 refresh
+notify
 is_closed
 write_copy
 compact
@@ -7084,11 +6837,12 @@ reset_file_if_needed
 read_schema_from_group_if_needed
 set_schema
 get_shared_realm
+begin_read
 add_schema_change_handler
 set_schema_change_notification_handler
-function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:371:57)>
-__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:371:57) &&>
-__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:371:57) &&, 0>
+function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:365:57)>
+__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:365:57) &&>
+__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:365:57) &&, 0>
 translate_file_exception
 format<std::__1::basic_string<char>, std::__1::basic_string<char> &>
 __str_find<char, unsigned long, std::__1::char_traits<char>, 18446744073709551615>
@@ -7096,72 +6850,326 @@ __search<bool (*)(char, char), const char *, const char *>
 format<std::__1::basic_string<char> >
 format<std::__1::basic_string<char>, const char *>
 InvalidEncryptionKeyException
-function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:346:24)>
-__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:346:24) &&>
-__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:346:24) &&, 0>
+function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:340:24)>
+__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:340:24) &&>
+__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:340:24) &&, 0>
 read_group
 open_with_config
 make_unique<realm::SharedGroup, realm::Replication &, realm::SharedGroupOptions &>
-operator=<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:174:40)>
-function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:174:40)>
-__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:174:40) &&>
-__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:174:40) &&, 0>
+operator=<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:172:40)>
+function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:172:40)>
+__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:172:40) &&>
+__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/shared_realm.cpp:172:40) &&, 0>
 operator=<realm::sync::SyncHistory, std::__1::default_delete<realm::sync::SyncHistory> >
 make_unique<realm::Group, const std::__1::basic_string<char> &, const char *, realm::Group::OpenMode>
--[RLMSyncConfiguration initWithRawConfig:]
--[RLMSyncConfiguration rawConfiguration]
--[RLMSyncConfiguration initWithUser:realmURL:]
--[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]
--[RLMSyncConfiguration user]
--[RLMSyncConfiguration setUser:]
--[RLMSyncConfiguration realmURL]
--[RLMSyncConfiguration setRealmURL:]
--[RLMSyncConfiguration stopPolicy]
--[RLMSyncConfiguration setStopPolicy:]
--[RLMSyncConfiguration customFileURL]
--[RLMSyncConfiguration setCustomFileURL:]
--[RLMSyncConfiguration .cxx_destruct]
--[RLMSyncConfiguration .cxx_construct]
-__ZNSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEED1Ev
-__ZNSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEED0Ev
-__ZNKSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEE7__cloneEv
-__ZNKSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEE7__cloneEPNS0_6__baseISC_EE
-__ZNSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEE7destroyEv
-__ZNSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEE18destroy_deallocateEv
-__ZNSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEEclEOiOS9_OSB_
-__ZNKSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEE6targetERKSt9type_info
-__ZNKSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEE11target_typeEv
-_OBJC_IVAR_$_RLMSyncConfiguration._error_handler
-_OBJC_IVAR_$_RLMSyncConfiguration._user
-_OBJC_IVAR_$_RLMSyncConfiguration._realmURL
-_OBJC_IVAR_$_RLMSyncConfiguration._stopPolicy
-_OBJC_IVAR_$_RLMSyncConfiguration._customFileURL
-__ZTVNSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEEE
-__ZTSNSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEEE
-__ZTSNSt3__110__function6__baseIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEN5realm16SyncSessionErrorEEEE
-__ZTINSt3__110__function6__baseIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEN5realm16SyncSessionErrorEEEE
-__ZTINSt3__110__function6__funcIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0NS_9allocatorIS2_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS3_IcEEEEN5realm16SyncSessionErrorEEEE
-__ZTSZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0
-__ZTIZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]E3$_0
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm
-__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30) &, int, std::__1::basic_string<char>, realm::SyncSessionError>
-__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30) &, int, std::__1::basic_string<char>, realm::SyncSessionError>
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30)> &>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30)> &, 0, 0>
-_ZZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]EN3$_0C1ERKS_
-_ZZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]EN3$_0C2ERKS_
-__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30)> &&>
-__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30)> &&, 0, 0>
-swap<std::__1::__function::__base<void (int, std::__1::basic_string<char>, realm::SyncSessionError)> *>
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration_Private.h
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.h
-operator=<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30)>
-function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30)>
-__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30) &&>
-__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/RLMSyncConfiguration.mm:102:30) &&, 0>
-_ZZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]EN3$_0C1EOS_
-_ZZ84-[RLMSyncConfiguration initWithUser:realmURL:customFileURL:stopPolicy:errorHandler:]EN3$_0C2EOS_
-isValidRealmURL
+enable_shared_from_this
+__ZNSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_ED1Ev
+__ZNSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_ED0Ev
+__ZNKSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_E7__cloneEv
+__ZNKSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_E7__cloneEPNS0_6__baseISB_EE
+__ZNSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_E7destroyEv
+__ZNSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_E18destroy_deallocateEv
+__ZNSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_EclEOiOSA_
+__ZNKSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_E6targetERKSt9type_info
+__ZNKSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_E11target_typeEv
+__ZN5realm11SyncSessionD2Ev
+__ZNSt3__120__shared_ptr_pointerIPN5realm11SyncSessionEZNS1_11SyncManager11get_sessionERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKNS1_10SyncConfigEE3$_1NS8_IS2_EEED1Ev
+__ZNSt3__120__shared_ptr_pointerIPN5realm11SyncSessionEZNS1_11SyncManager11get_sessionERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKNS1_10SyncConfigEE3$_1NS8_IS2_EEED0Ev
+__ZNSt3__120__shared_ptr_pointerIPN5realm11SyncSessionEZNS1_11SyncManager11get_sessionERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKNS1_10SyncConfigEE3$_1NS8_IS2_EEE16__on_zero_sharedEv
+__ZNKSt3__120__shared_ptr_pointerIPN5realm11SyncSessionEZNS1_11SyncManager11get_sessionERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKNS1_10SyncConfigEE3$_1NS8_IS2_EEE13__get_deleterERKSt9type_info
+__ZNSt3__120__shared_ptr_pointerIPN5realm11SyncSessionEZNS1_11SyncManager11get_sessionERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKNS1_10SyncConfigEE3$_1NS8_IS2_EEE21__on_zero_shared_weakEv
+__ZN5realm4util12StderrLoggerD1Ev
+__ZN5realm4util12StderrLoggerD0Ev
+__ZN5realm4util12StderrLogger6do_logENS0_6Logger5LevelENSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE
+__ZThn8_N5realm4util12StderrLoggerD1Ev
+__ZThn8_N5realm4util12StderrLoggerD0Ev
+__ZThn8_N5realm4util12StderrLogger6do_logENS0_6Logger5LevelENSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE
+__ZNSt3__120__shared_ptr_emplaceIN5realm5_impl10SyncClientENS_9allocatorIS3_EEED1Ev
+__ZNSt3__120__shared_ptr_emplaceIN5realm5_impl10SyncClientENS_9allocatorIS3_EEED0Ev
+__ZN5realm5_impl10SyncClientC2ENSt3__110unique_ptrINS_4util6LoggerENS2_14default_deleteIS5_EEEENS2_8functionIFviNS2_12basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEEEENS_4sync6Client9ReconnectEb
+__ZN5realm5_impl10SyncClient11make_clientERNS_4util6LoggerENS_4sync6Client9ReconnectEb
+__ZNSt3__16threadC2IZN5realm5_impl10SyncClientC1ENS_10unique_ptrINS2_4util6LoggerENS_14default_deleteIS7_EEEENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEENS2_4sync6Client9ReconnectEbEUlvE_JEvEEOT_DpOT0_
+__ZNSt3__114__thread_proxyINS_5tupleIJZN5realm5_impl10SyncClientC1ENS_10unique_ptrINS2_4util6LoggerENS_14default_deleteIS7_EEEENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEENS2_4sync6Client9ReconnectEbEUlvE_EEEEEPvSP_
+__ZN5realm5_impl10SyncClientD2Ev
+__ZZN5realm11SyncManager6sharedEvE7manager
+__ZGVZN5realm11SyncManager6sharedEvE7manager
+__ZTVNSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_EE
+__ZTSNSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_EE
+__ZTINSt3__110__function6__funcIZN5realm11SyncManager17set_error_handlerENS_8functionIFviNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEEE3$_0NS8_ISD_EESB_EE
+__ZTSZN5realm11SyncManager17set_error_handlerENSt3__18functionIFviNS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEEEEE3$_0
+__ZTIZN5realm11SyncManager17set_error_handlerENSt3__18functionIFviNS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEEEEE3$_0
+__ZTVNSt3__120__shared_ptr_pointerIPN5realm11SyncSessionEZNS1_11SyncManager11get_sessionERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKNS1_10SyncConfigEE3$_1NS8_IS2_EEEE
+__ZTSNSt3__120__shared_ptr_pointerIPN5realm11SyncSessionEZNS1_11SyncManager11get_sessionERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKNS1_10SyncConfigEE3$_1NS8_IS2_EEEE
+__ZTINSt3__120__shared_ptr_pointerIPN5realm11SyncSessionEZNS1_11SyncManager11get_sessionERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKNS1_10SyncConfigEE3$_1NS8_IS2_EEEE
+__ZTSZN5realm11SyncManager11get_sessionERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERKNS_10SyncConfigEE3$_1
+__ZTSN5realm4util12StderrLoggerE
+__ZTIN5realm4util12StderrLoggerE
+__ZTSNSt3__120__shared_ptr_emplaceIN5realm5_impl10SyncClientENS_9allocatorIS3_EEEE
+__ZTINSt3__120__shared_ptr_emplaceIN5realm5_impl10SyncClientENS_9allocatorIS3_EEEE
+Realm/ObjectStore/src/sync_manager.cpp
+~SyncClient
+Realm/ObjectStore/src/impl/sync_client.hpp
+__thread_proxy<std::__1::tuple<(lambda at Realm/ObjectStore/src/impl/sync_client.hpp:40:16)> >
+~tuple
+~__tuple_impl
+~__tuple_leaf
+__thread_execute<(lambda at Realm/ObjectStore/src/impl/sync_client.hpp:40:16)>
+__invoke<(lambda at Realm/ObjectStore/src/impl/sync_client.hpp:40:16)>
+thread<(lambda at Realm/ObjectStore/src/impl/sync_client.hpp:40:16), void>
+tuple<(lambda at Realm/ObjectStore/src/impl/sync_client.hpp:40:16), false>
+__tuple_impl<0, (lambda at Realm/ObjectStore/src/impl/sync_client.hpp:40:16), (lambda at Realm/ObjectStore/src/impl/sync_client.hpp:40:16)>
+__tuple_leaf<(lambda at Realm/ObjectStore/src/impl/sync_client.hpp:40:16), void>
+_ZZN5realm5_impl10SyncClientC1ENSt3__110unique_ptrINS_4util6LoggerENS2_14default_deleteIS5_EEEENS2_8functionIFviNS2_12basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEEEENS_4sync6Client9ReconnectEbENUlvE_C1EOSL_
+_ZZN5realm5_impl10SyncClientC1ENSt3__110unique_ptrINS_4util6LoggerENS2_14default_deleteIS5_EEEENS2_8functionIFviNS2_12basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEEEENS_4sync6Client9ReconnectEbENUlvE_C2EOSL_
+__decay_copy<(lambda at Realm/ObjectStore/src/impl/sync_client.hpp:40:16)>
+make_client
+core/include/realm/sync/client.hpp
+SyncClient
+make_shared<std::__1::unique_ptr<realm::util::Logger, std::__1::default_delete<realm::util::Logger> >, const std::__1::function<void (int, std::__1::basic_string<char>)>, const realm::sync::Client::Reconnect &, const bool &>
+__shared_ptr_emplace<std::__1::unique_ptr<realm::util::Logger, std::__1::default_delete<realm::util::Logger> >, const std::__1::function<void (int, std::__1::basic_string<char>)>, const realm::sync::Client::Reconnect &, const bool &>
+__compressed_pair<std::__1::allocator<realm::_impl::SyncClient> &, std::__1::unique_ptr<realm::util::Logger, std::__1::default_delete<realm::util::Logger> > &&, const std::__1::function<void (int, std::__1::basic_string<char>)> &&, const realm::sync::Client::Reconnect &, const bool &>
+__libcpp_compressed_pair_imp<std::__1::allocator<realm::_impl::SyncClient> &, std::__1::unique_ptr<realm::util::Logger, std::__1::default_delete<realm::util::Logger> > &&, const std::__1::function<void (int, std::__1::basic_string<char>)> &&, const realm::sync::Client::Reconnect &, const bool &, 0, 0, 1, 2, 3>
+_ZThn8_N5realm4util12StderrLogger6do_logENS0_6Logger5LevelENSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE
+operator<<<char, std::__1::char_traits<char>, std::__1::allocator<char> >
+_ZThn8_N5realm4util12StderrLoggerD0Ev
+~StderrLogger
+_ZThn8_N5realm4util12StderrLoggerD1Ev
+__erase_unique<std::__1::basic_string<char> >
+reset<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::unique_ptr<realm::SyncSession, std::__1::default_delete<realm::SyncSession> > >, void *> **>
+__construct_node_hash<const std::__1::piecewise_construct_t &, std::__1::tuple<const std::__1::basic_string<char> &>, std::__1::tuple<> >
+construct<std::__1::pair<const std::__1::basic_string<char>, std::__1::unique_ptr<realm::SyncSession, std::__1::default_delete<realm::SyncSession> > >, const std::__1::piecewise_construct_t &, std::__1::tuple<const std::__1::basic_string<char> &>, std::__1::tuple<> >
+__construct<std::__1::pair<const std::__1::basic_string<char>, std::__1::unique_ptr<realm::SyncSession, std::__1::default_delete<realm::SyncSession> > >, const std::__1::piecewise_construct_t &, std::__1::tuple<const std::__1::basic_string<char> &>, std::__1::tuple<> >
+pair<const std::__1::basic_string<char> &>
+pair<const std::__1::basic_string<char> &, 0>
+destroy<std::__1::pair<const std::__1::basic_string<char>, std::__1::weak_ptr<realm::SyncSession> > >
+__destroy<std::__1::pair<const std::__1::basic_string<char>, std::__1::weak_ptr<realm::SyncSession> > >
+reset<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::weak_ptr<realm::SyncSession> >, void *> **>
+construct<std::__1::pair<const std::__1::basic_string<char>, std::__1::weak_ptr<realm::SyncSession> >, const std::__1::piecewise_construct_t &, std::__1::tuple<const std::__1::basic_string<char> &>, std::__1::tuple<> >
+__construct<std::__1::pair<const std::__1::basic_string<char>, std::__1::weak_ptr<realm::SyncSession> >, const std::__1::piecewise_construct_t &, std::__1::tuple<const std::__1::basic_string<char> &>, std::__1::tuple<> >
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp
+~SyncSession
+Realm/ObjectStore/src/sync_session.hpp
+destroy<std::__1::pair<const std::__1::basic_string<char>, std::__1::unique_ptr<realm::SyncSession, std::__1::default_delete<realm::SyncSession> > > >
+__destroy<std::__1::pair<const std::__1::basic_string<char>, std::__1::unique_ptr<realm::SyncSession, std::__1::default_delete<realm::SyncSession> > > >
+__hash_const_iterator
+__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28) &, int, std::__1::basic_string<char> >
+__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28) &, int, std::__1::basic_string<char> >
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28)> &>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28)> &, 0, 0>
+_ZZN5realm11SyncManager17set_error_handlerENSt3__18functionIFviNS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEEEEEN3$_0C1ERKSB_
+_ZZN5realm11SyncManager17set_error_handlerENSt3__18functionIFviNS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEEEEEN3$_0C2ERKSB_
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28)> &&>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28)> &&, 0, 0>
+swap<std::__1::__function::__base<void (int, std::__1::basic_string<char>)> *>
+create_sync_client
+make_shared<realm::_impl::SyncClient, std::__1::unique_ptr<realm::util::Logger, std::__1::default_delete<realm::util::Logger> >, const std::__1::function<void (int, std::__1::basic_string<char>)>, const realm::sync::Client::Reconnect &, const bool &>
+operator=<realm::util::StderrLogger, std::__1::default_delete<realm::util::StderrLogger> >
+make_unique<realm::util::StderrLogger>
+StderrLogger
+unregister_session
+__count_unique<std::__1::basic_string<char> >
+__emplace_unique_key_args<std::__1::basic_string<char>, const std::__1::piecewise_construct_t &, std::__1::tuple<const std::__1::basic_string<char> &>, std::__1::tuple<> >
+dropped_last_reference_to_session
+get_sync_client
+swap<realm::_impl::SyncClient *>
+get_session
+shared_ptr<realm::SyncSession, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:136:28)>
+__enable_weak_this<realm::SyncSession, realm::SyncSession>
+shared_ptr<realm::SyncSession>
+get_existing_inactive_session_locked
+get_existing_active_session_locked
+get_existing_active_session
+set_client_should_validate_ssl
+set_client_should_reconnect_immediately
+get_sync_login_function
+set_login_function
+operator=<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28)>
+function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28)>
+__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28) &&, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28)> &&>
+__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28) &&, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_manager.cpp:50:28)> &&, 0, 0>
+_ZZN5realm11SyncManager17set_error_handlerENSt3__18functionIFviNS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEEEEEN3$_0C1EOSB_
+_ZZN5realm11SyncManager17set_error_handlerENSt3__18functionIFviNS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEEEEEN3$_0C2EOSB_
+set_logger_factory
+set_log_level
+shared
+SyncManager
+Realm/ObjectStore/src/sync_manager.hpp
+__ZZN5realm19SyncMetadataManagerC1ENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEbNS_4util8OptionalINS1_6vectorIcS6_EEEEENK3$_0clES7_
+__ZN5realm5Realm6ConfigaSEOS1_
+__ZN5realm19SyncMetadataResultsINS_16SyncUserMetadataEEC2ENS_7ResultsENSt3__110shared_ptrINS_5RealmEEENS1_6SchemaE
+Realm/ObjectStore/src/sync_metadata.cpp
+SyncMetadataResults
+Realm/ObjectStore/src/sync_metadata.hpp
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_metadata.cpp
+mark_for_removal
+set_bool
+set_state
+set_string
+user_token
+server_url
+get_optional_string_field
+identity
+all_users_marked_for_removal
+get_users
+all_unmarked_users
+get_configuration
+SyncMetadataManager
+operator=<std::__1::vector<char, std::__1::allocator<char> >, void>
+operator=<realm::Schema, void>
+core/include/realm/descriptor.hpp
+invalid_argument
+__ZN5realm5_impl19sync_session_states21WaitingForAccessTokenD1Ev
+__ZN5realm5_impl19sync_session_states6ActiveD1Ev
+__ZN5realm5_impl19sync_session_states5DyingD1Ev
+__ZN5realm5_impl19sync_session_states8InactiveD1Ev
+__ZN5realm5_impl19sync_session_states5ErrorD1Ev
+__ZN5realm5_impl19sync_session_states21WaitingForAccessTokenD0Ev
+__ZNK5realm5_impl19sync_session_states21WaitingForAccessToken11enter_stateERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
+__ZNK5realm5_impl19sync_session_states21WaitingForAccessToken20refresh_access_tokenERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionERKNS3_12basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEERKNS_4util8OptionalISF_EE
+__ZNK5realm11SyncSession5State20access_token_expiredERNSt3__111unique_lockINS2_5mutexEEERS0_
+__ZNK5realm5_impl19sync_session_states21WaitingForAccessToken23nonsync_transact_notifyERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionEy
+__ZNK5realm11SyncSession5State16revive_if_neededERNSt3__111unique_lockINS2_5mutexEEERS0_
+__ZNK5realm5_impl19sync_session_states21WaitingForAccessToken7log_outERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
+__ZNK5realm5_impl19sync_session_states21WaitingForAccessToken19close_if_connectingERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
+__ZNK5realm5_impl19sync_session_states21WaitingForAccessToken5closeERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
+__ZNK5realm11SyncSession5State11enter_stateERNSt3__111unique_lockINS2_5mutexEEERS0_
+__ZNK5realm11SyncSession5State20refresh_access_tokenERNSt3__111unique_lockINS2_5mutexEEERS0_RKNS2_12basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEERKNS_4util8OptionalISD_EE
+__ZNK5realm11SyncSession5State23nonsync_transact_notifyERNSt3__111unique_lockINS2_5mutexEEERS0_y
+__ZNK5realm11SyncSession5State7log_outERNSt3__111unique_lockINS2_5mutexEEERS0_
+__ZNK5realm11SyncSession5State19close_if_connectingERNSt3__111unique_lockINS2_5mutexEEERS0_
+__ZNK5realm11SyncSession5State5closeERNSt3__111unique_lockINS2_5mutexEEERS0_
+__ZN5realm5_impl19sync_session_states6ActiveD0Ev
+__ZNK5realm5_impl19sync_session_states6Active20refresh_access_tokenERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionERKNS3_12basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEERKNS_4util8OptionalISF_EE
+__ZNK5realm5_impl19sync_session_states6Active20access_token_expiredERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
+__ZNK5realm5_impl19sync_session_states6Active23nonsync_transact_notifyERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionEy
+__ZNK5realm5_impl19sync_session_states6Active7log_outERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
+__ZNK5realm5_impl19sync_session_states6Active5closeERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
+__ZN5realm5_impl19sync_session_states5DyingD0Ev
+__ZNK5realm5_impl19sync_session_states5Dying11enter_stateERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
+__ZNK5realm5_impl19sync_session_states5Dying16revive_if_neededERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
+__ZNK5realm5_impl19sync_session_states5Dying7log_outERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
+__ZNSt3__16threadC2IZNK5realm5_impl19sync_session_states5Dying11enter_stateERNS_11unique_lockINS_5mutexEEERNS2_11SyncSessionEEUlvE_JEvEEOT_DpOT0_
+__ZNSt3__114__thread_proxyINS_5tupleIJZNK5realm5_impl19sync_session_states5Dying11enter_stateERNS_11unique_lockINS_5mutexEEERNS2_11SyncSessionEEUlvE_EEEEEPvSE_
+__ZZNK5realm5_impl19sync_session_states5Dying11enter_stateERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionEENKUlvE_clEv
+__ZN5realm5_impl19sync_session_states8InactiveD0Ev
+__ZNK5realm5_impl19sync_session_states8Inactive11enter_stateERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
+__ZNK5realm5_impl19sync_session_states8Inactive16revive_if_neededERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
+__ZN5realm5_impl19sync_session_states5ErrorD0Ev
+__ZNK5realm5_impl19sync_session_states5Error11enter_stateERNSt3__111unique_lockINS3_5mutexEEERNS_11SyncSessionE
+__ZNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEED1Ev
+__ZNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEED0Ev
+__ZNKSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEE7__cloneEv
+__ZNKSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEE7__cloneEPNS0_6__baseISC_EE
+__ZNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEE7destroyEv
+__ZNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEE18destroy_deallocateEv
+__ZNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEEclEOiOSB_
+__ZNKSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEE6targetERKSt9type_info
+__ZNKSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEE11target_typeEv
+__ZNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EED1Ev
+__ZNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EED0Ev
+__ZNKSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EE7__cloneEv
+__ZNKSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EE7__cloneEPNS0_6__baseIS8_EE
+__ZNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EE7destroyEv
+__ZNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EE18destroy_deallocateEv
+__ZNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EEclEOS7_SA_
+__ZNKSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EE6targetERKSt9type_info
+__ZNKSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EE11target_typeEv
+__ZNSt3__114__thread_proxyINS_5tupleIJZN5realm11SyncSession26wait_for_upload_completionENS_8functionIFvvEEEE3$_2EEEEEPvS9_
+__ZNSt3__114__thread_proxyINS_5tupleIJZN5realm11SyncSession28wait_for_download_completionENS_8functionIFvvEEEE3$_3EEEEEPvS9_
+__ZGRN5realm11SyncSession5State24waiting_for_access_tokenE_
+__ZGRN5realm11SyncSession5State6activeE_
+__ZGRN5realm11SyncSession5State5dyingE_
+__ZGRN5realm11SyncSession5State8inactiveE_
+__ZGRN5realm11SyncSession5State5errorE_
+__ZTSN5realm5_impl19sync_session_states21WaitingForAccessTokenE
+__ZTSN5realm11SyncSession5StateE
+__ZTIN5realm11SyncSession5StateE
+__ZTIN5realm5_impl19sync_session_states21WaitingForAccessTokenE
+__ZTSN5realm5_impl19sync_session_states6ActiveE
+__ZTIN5realm5_impl19sync_session_states6ActiveE
+__ZTSN5realm5_impl19sync_session_states5DyingE
+__ZTIN5realm5_impl19sync_session_states5DyingE
+__ZTSN5realm5_impl19sync_session_states8InactiveE
+__ZTIN5realm5_impl19sync_session_states8InactiveE
+__ZTSN5realm5_impl19sync_session_states5ErrorE
+__ZTIN5realm5_impl19sync_session_states5ErrorE
+__ZTVNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEEE
+__ZTSNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEEE
+__ZTINSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_0NS_9allocatorIS4_EEFviNS_12basic_stringIcNS_11char_traitsIcEENS5_IcEEEEEEE
+__ZTSZN5realm11SyncSession19create_sync_sessionEvE3$_0
+__ZTIZN5realm11SyncSession19create_sync_sessionEvE3$_0
+__ZTVNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EEE
+__ZTSNSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EEE
+__ZTINSt3__110__function6__funcIZN5realm11SyncSession19create_sync_sessionEvE3$_1NS_9allocatorIS4_EEFvNS2_9VersionIDES7_EEE
+__ZTSZN5realm11SyncSession19create_sync_sessionEvE3$_1
+__ZTIZN5realm11SyncSession19create_sync_sessionEvE3$_1
+Realm/ObjectStore/src/sync_session.cpp
+__thread_proxy<std::__1::tuple<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:440:31)> >
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp
+__thread_execute<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:440:31)>
+__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:440:31)>
+__thread_proxy<std::__1::tuple<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:424:31)> >
+__thread_execute<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:424:31)>
+__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:424:31)>
+__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29) &, realm::VersionID, realm::VersionID>
+__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29) &, realm::VersionID, realm::VersionID>
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29)> &>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29)> &, 0, 0>
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29)> &&>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29)> &&, 0, 0>
+__call<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28) &, int, std::__1::basic_string<char> >
+__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28) &, int, std::__1::basic_string<char> >
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28)> &>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28) &, const std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28)> &, 0, 0>
+__compressed_pair<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28)> &&>
+__libcpp_compressed_pair_imp<const (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28) &, std::__1::allocator<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28)> &&, 0, 0>
+enter_state
+~Error
+revive_if_needed
+~Inactive
+__thread_proxy<std::__1::tuple<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:205:21)> >
+__thread_execute<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:205:21)>
+__invoke<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:205:21)>
+get<0, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:205:21)>
+thread<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:205:21), void>
+tuple<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:205:21), false>
+__tuple_impl<0, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:205:21), (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:205:21)>
+__tuple_leaf<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:205:21), void>
+__decay_copy<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:205:21)>
+log_out
+~Dying
+access_token_expired
+refresh_access_token
+~Active
+close_if_connecting
+~WaitingForAccessToken
+is_inactive
+wait_for_download_completion
+thread<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:440:31), void>
+tuple<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:440:31), false>
+__tuple_impl<0, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:440:31), (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:440:31)>
+__tuple_leaf<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:440:31), void>
+_ZZN5realm11SyncSession28wait_for_download_completionENSt3__18functionIFvvEEEEN3$_3C1EOS5_
+_ZZN5realm11SyncSession28wait_for_download_completionENSt3__18functionIFvvEEEEN3$_3C2EOS5_
+__decay_copy<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:440:31)>
+wait_for_upload_completion
+thread<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:424:31), void>
+tuple<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:424:31), false>
+__tuple_impl<0, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:424:31), (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:424:31)>
+__tuple_leaf<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:424:31), void>
+_ZZN5realm11SyncSession26wait_for_upload_completionENSt3__18functionIFvvEEEEN3$_2C1EOS5_
+_ZZN5realm11SyncSession26wait_for_upload_completionENSt3__18functionIFvvEEEEN3$_2C2EOS5_
+__decay_copy<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:424:31)>
+owns_lock
+advance_state
+function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29)>
+__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29) &&>
+__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:351:29) &&, 0>
+function<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28)>
+__compressed_pair<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28) &&>
+__libcpp_compressed_pair_imp<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/sync_session.cpp:286:28) &&, 0>
+make_unique<realm::sync::Session, realm::sync::Client &, std::__1::basic_string<char> &>
+SyncSession
 __ZNK5realm8BasicRowINS_5TableEE18clone_for_handoverERNSt3__110unique_ptrINS_20RowBaseHandoverPatchENS3_14default_deleteIS5_EEEE
 __ZNK5realm5Query18clone_for_handoverERNSt3__110unique_ptrINS_18QueryHandoverPatchENS1_14default_deleteIS3_EEEENS_18ConstSourcePayloadE
 Realm/ObjectStore/src/thread_confined.cpp
@@ -7173,30 +7181,6 @@ Realm/ObjectStore/src/impl/handover.hpp
 row
 /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/list.hpp
 ~AnyThreadConfined
-__ZN5realm8keychain23KeychainAccessExceptionD1Ev
-__ZN5realm8keychain23KeychainAccessExceptionD0Ev
-__ZN5realm4util5CFPtrIPK10__CFStringED2Ev
-__ZN5realm4util5CFPtrIP14__CFDictionaryED2Ev
-__ZN5realm4util5CFPtrIPK8__CFDataED2Ev
-__ZTSN5realm8keychain23KeychainAccessExceptionE
-__ZTIN5realm8keychain23KeychainAccessExceptionE
-/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/apple/keychain_helper.cpp
-vector<const char *>
-~CFPtr
-core/include/realm/util/cf_ptr.hpp
-construct<char>
-__construct<char>
-~KeychainAccessException
-Realm/ObjectStore/src/impl/apple/keychain_helper.hpp
-metadata_realm_encryption_key
-adoptCF<const __CFData *>
-CFPtr
-KeychainAccessException
-build_search_dictionary
-adoptCF<__CFDictionary *>
-convert_string
-adoptCF<const __CFString *>
-format<unsigned long &>
 __ZN5realm11SharedGroup16promote_to_writeINS_5_impl23NullInstructionObserverEEEvPT_
 __ZN5realm11SharedGroup15do_advance_readINS_5_impl23NullInstructionObserverEEEbPT_NS_9VersionIDERNS2_7HistoryE
 __ZN5realm5_impl20ChangesetInputStreamD1Ev
@@ -7683,7 +7667,7 @@ rotate<std::__1::__wrap_iter<realm::BindingContext::ColumnInfo *> >
 __rotate<std::__1::__wrap_iter<realm::BindingContext::ColumnInfo *> >
 begin<std::__1::vector<realm::BindingContext::ColumnInfo, std::__1::allocator<realm::BindingContext::ColumnInfo> > >
 set_link_type
-change_link_targets
+merge_rows
 rotate<std::__1::__wrap_iter<realm::BindingContext::ObserverState *> >
 __rotate<std::__1::__wrap_iter<realm::BindingContext::ObserverState *> >
 swap<realm::BindingContext::ColumnInfo, std::__1::allocator<realm::BindingContext::ColumnInfo> >
@@ -7748,9 +7732,9 @@ begin<std::__1::vector<realm::_impl::CollectionChangeBuilder, std::__1::allocato
 insert_empty_at<std::__1::vector<realm::_impl::CollectionChangeBuilder, std::__1::allocator<realm::_impl::CollectionChangeBuilder> > >
 operator!=<std::__1::__wrap_iter<realm::_impl::ListChangeInfo *>, std::__1::__wrap_iter<realm::_impl::ListChangeInfo *> >
 end<std::__1::vector<realm::_impl::ListChangeInfo, std::__1::allocator<realm::_impl::ListChangeInfo> > >
-remove_if<std::__1::__wrap_iter<realm::_impl::ListChangeInfo *>, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/transact_log_handler.cpp:777:29)>
+remove_if<std::__1::__wrap_iter<realm::_impl::ListChangeInfo *>, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/transact_log_handler.cpp:740:29)>
 operator==<realm::_impl::ListChangeInfo *, realm::_impl::ListChangeInfo *>
-find_if<std::__1::__wrap_iter<realm::_impl::ListChangeInfo *>, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/transact_log_handler.cpp:777:29) &>
+find_if<std::__1::__wrap_iter<realm::_impl::ListChangeInfo *>, (lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/transact_log_handler.cpp:740:29) &>
 begin<std::__1::vector<realm::_impl::ListChangeInfo, std::__1::allocator<realm::_impl::ListChangeInfo> > >
 need_move_info
 LinkViewObserver
@@ -7758,7 +7742,7 @@ TransactLogValidationMixin
 advance_read
 cancel
 ~TransactLogObserver
-TransactLogObserver<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/transact_log_handler.cpp:870:38)>
+TransactLogObserver<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/transact_log_handler.cpp:825:38)>
 operator()<(anonymous namespace)::TransactLogObserver &>
 rollback_and_continue_as_read<(anonymous namespace)::TransactLogObserver>
 operator()<>
@@ -7769,15 +7753,38 @@ rollback_and_continue_as_read<(anonymous namespace)::TransactLogValidator>
 TransactLogValidator
 commit
 commit_and_continue_as_read
-TransactLogObserver<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/transact_log_handler.cpp:854:38)>
+TransactLogObserver<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/transact_log_handler.cpp:809:38)>
 promote_to_write<(anonymous namespace)::TransactLogObserver>
 promote_to_write
 promote_to_write<(anonymous namespace)::TransactLogValidator>
 OptionalStorage<const realm::SchemaMode &>
 begin_without_validation
-TransactLogObserver<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/transact_log_handler.cpp:842:38)>
+TransactLogObserver<(lambda at /Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/transact_log_handler.cpp:797:38)>
 advance_read<(anonymous namespace)::TransactLogObserver>
 advance_read<(anonymous namespace)::TransactLogValidator>
+__ZNSt3__120__shared_ptr_emplaceIN5realm4util15EventLoopSignalINS1_5_impl17WeakRealmNotifier8CallbackEEENS_9allocatorIS7_EEED1Ev
+__ZNSt3__120__shared_ptr_emplaceIN5realm4util15EventLoopSignalINS1_5_impl17WeakRealmNotifier8CallbackEEENS_9allocatorIS7_EEED0Ev
+__ZN5realm4util15EventLoopSignalINS_5_impl17WeakRealmNotifier8CallbackEEC2EOS4_
+__ZZN5realm4util15EventLoopSignalINS_5_impl17WeakRealmNotifier8CallbackEEC1EOS4_ENUlPvE_8__invokeES7_
+__ZZN5realm4util15EventLoopSignalINS_5_impl17WeakRealmNotifier8CallbackEEC1EOS4_ENUlPKvE_8__invokeES8_
+__ZZN5realm4util15EventLoopSignalINS_5_impl17WeakRealmNotifier8CallbackEEC1EOS4_ENUlPKvE0_8__invokeES8_
+__ZN5realm4util15EventLoopSignalINS_5_impl17WeakRealmNotifier8CallbackEED2Ev
+__ZTSNSt3__120__shared_ptr_emplaceIN5realm4util15EventLoopSignalINS1_5_impl17WeakRealmNotifier8CallbackEEENS_9allocatorIS7_EEEE
+__ZTINSt3__120__shared_ptr_emplaceIN5realm4util15EventLoopSignalINS1_5_impl17WeakRealmNotifier8CallbackEEENS_9allocatorIS7_EEEE
+/Users/realm/workspace/Package iOS Swift/tightdb_objc/Realm/ObjectStore/src/impl/weak_realm_notifier.cpp
+~EventLoopSignal
+Realm/ObjectStore/src/util/apple/event_loop_signal.hpp
+__invoke
+~RefCountedRunloopCallback
+EventLoopSignal
+atomic
+__atomic_base
+make_shared<realm::_impl::WeakRealmNotifier::Callback>
+__shared_ptr_emplace<realm::_impl::WeakRealmNotifier::Callback>
+__compressed_pair<std::__1::allocator<realm::util::EventLoopSignal<realm::_impl::WeakRealmNotifier::Callback> > &, realm::_impl::WeakRealmNotifier::Callback &&>
+__libcpp_compressed_pair_imp<std::__1::allocator<realm::util::EventLoopSignal<realm::_impl::WeakRealmNotifier::Callback> > &, realm::_impl::WeakRealmNotifier::Callback &&, 0, 0>
+~WeakRealmNotifier
+make_shared<realm::util::EventLoopSignal<realm::_impl::WeakRealmNotifier::Callback>, realm::_impl::WeakRealmNotifier::Callback>
 __ZN12_GLOBAL__N_1L23g_base64_encoding_charsE
 __ZN12_GLOBAL__N_1L14g_base64_charsE
 __ZN12_GLOBAL__N_19g_counterE
@@ -7900,8 +7907,10 @@ __ZNK12_GLOBAL__N_115TransformerImpl4Side10get_stringEN5realm5_impl17StringBuffe
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE12ELS3_3EvE5mergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEEEvRT_RT0_
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE12ELS3_6EvE5mergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEEEvRT_RT0_
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE12ELS3_7EvE5mergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEEEvRT_RT0_
+__ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE9ELS3_7EvE7DoMergeINS_15TransformerImpl9MajorSideENS6_9MinorSideEE8do_mergeEv
 __ZN12_GLOBAL__N_115TransformerImpl11Transformer25transform_prepended_majorEm
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE9ELS3_9EvE7DoMergeINS_15TransformerImpl9MajorSideENS6_9MinorSideEE8do_mergeEv
+__ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE11ELS3_9EvE7DoMergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEE8do_mergeEv
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE12ELS3_9EvE5mergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEEEvRT_RT0_
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE27ELS3_9EvE7DoMergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEE8do_mergeEv
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE28ELS3_9EvE7DoMergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEE8do_mergeEv
@@ -7909,17 +7918,9 @@ __ZN5realm5_impl14AnyInstruction5visitIZZN12_GLOBAL__N_115TransformerImpl11Trans
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE10ELS3_10EvE5mergeINS_15TransformerImpl9MajorSideENS6_9MinorSideEEEvRT_RT0_
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE10ELS3_10EvE7DoMergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEE8do_mergeEv
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE12ELS3_10EvE5mergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEEEvRT_RT0_
-__ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE11ELS3_11EvE7DoMergeINS_15TransformerImpl9MajorSideENS6_9MinorSideEE8do_mergeEv
+__ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE11ELS3_11EvE5mergeINS_15TransformerImpl9MajorSideENS6_9MinorSideEEEvRT_RT0_
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE11ELS3_11EvE7DoMergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEE8do_mergeEv
-__ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE12ELS3_11EvE7DoMergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEE8do_mergeEv
-__ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE13ELS3_11EvE7DoMergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEE8do_mergeEv
-__ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE15ELS3_11EvE7DoMergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEE8do_mergeEv
-__ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE27ELS3_11EvE7DoMergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEE8do_mergeEv
-__ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE28ELS3_11EvE7DoMergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEE8do_mergeEv
-__ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE29ELS3_11EvE7DoMergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEE8do_mergeEv
-__ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE30ELS3_11EvE7DoMergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEE8do_mergeEv
-__ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE31ELS3_11EvE7DoMergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEE8do_mergeEv
-__ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE32ELS3_11EvE7DoMergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEE8do_mergeEv
+__ZN5realm5_impl14AnyInstruction5visitIZZN12_GLOBAL__N_115TransformerImpl11Transformer18merge_instructionsERNS4_9MajorSideERNS4_9MinorSideEENK3$_0clINS0_5InstrILNS0_9InstrTypeE12EEEEEDaRKT_EUlSI_E_EEvSG_
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE12ELS3_3EvE5mergeINS_15TransformerImpl9MajorSideENS6_9MinorSideEEEvRT_RT0_
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE12ELS3_6EvE5mergeINS_15TransformerImpl9MajorSideENS6_9MinorSideEEEvRT_RT0_
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE12ELS3_7EvE5mergeINS_15TransformerImpl9MajorSideENS6_9MinorSideEEEvRT_RT0_
@@ -7933,7 +7934,7 @@ __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE17ELS3_12EvE5mergeINS_15Transf
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE18ELS3_12EvE5mergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEEEvRT_RT0_
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE20ELS3_12EvE5mergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEEEvRT_RT0_
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE23ELS3_12EvE5mergeINS_15TransformerImpl9MinorSideENS6_9MajorSideEEEvRT_RT0_
-__ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE13ELS3_11EvE7DoMergeINS_15TransformerImpl9MajorSideENS6_9MinorSideEE8do_mergeEv
+__ZN5realm5_impl14AnyInstruction5visitIZZN12_GLOBAL__N_115TransformerImpl11Transformer18merge_instructionsERNS4_9MajorSideERNS4_9MinorSideEENK3$_0clINS0_5InstrILNS0_9InstrTypeE14EEEEEDaRKT_EUlSI_E_EEvSG_
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE14ELS3_12EvE7DoMergeINS_15TransformerImpl9MajorSideENS6_9MinorSideEE8do_mergeEv
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE14ELS3_14EvE7DoMergeINS_15TransformerImpl9MajorSideENS6_9MinorSideEE8do_mergeEv
 __ZN12_GLOBAL__N_19MergeBaseILN5realm5_impl9InstrTypeE14ELS3_14EE12same_payloadEv
@@ -7943,14 +7944,7 @@ __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE17ELS3_12EvE5mergeINS_15Transf
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE18ELS3_12EvE5mergeINS_15TransformerImpl9MajorSideENS6_9MinorSideEEEvRT_RT0_
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE20ELS3_12EvE5mergeINS_15TransformerImpl9MajorSideENS6_9MinorSideEEEvRT_RT0_
 __ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE23ELS3_12EvE5mergeINS_15TransformerImpl9MajorSideENS6_9MinorSideEEEvRT_RT0_
-__ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE27ELS3_11EvE7DoMergeINS_15TransformerImpl9MajorSideENS6_9MinorSideEE8do_mergeEv
-__ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE28ELS3_11EvE7DoMergeINS_15TransformerImpl9MajorSideENS6_9MinorSideEE8do_mergeEv
 __ZN5realm5_impl14AnyInstruction5visitIZZN12_GLOBAL__N_115TransformerImpl11Transformer18merge_instructionsERNS4_9MajorSideERNS4_9MinorSideEENK3$_0clINS0_5InstrILNS0_9InstrTypeE29EEEEEDaRKT_EUlSI_E_EEvSG_
-__ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE29ELS3_11EvE7DoMergeINS_15TransformerImpl9MajorSideENS6_9MinorSideEE8do_mergeEv
-__ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE30ELS3_11EvE7DoMergeINS_15TransformerImpl9MajorSideENS6_9MinorSideEE8do_mergeEv
-__ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE31ELS3_11EvE7DoMergeINS_15TransformerImpl9MajorSideENS6_9MinorSideEE8do_mergeEv
-__ZN5realm5_impl14AnyInstruction5visitIZZN12_GLOBAL__N_115TransformerImpl11Transformer18merge_instructionsERNS4_9MajorSideERNS4_9MinorSideEENK3$_0clINS0_5InstrILNS0_9InstrTypeE32EEEEEDaRKT_EUlSI_E_EEvSG_
-__ZN12_GLOBAL__N_15MergeILN5realm5_impl9InstrTypeE32ELS3_11EvE7DoMergeINS_15TransformerImpl9MajorSideENS6_9MinorSideEE8do_mergeEv
 __ZTVN12_GLOBAL__N_115TransformerImplE
 __ZTSN12_GLOBAL__N_115TransformerImplE
 __ZTSN5realm4sync11TransformerE
