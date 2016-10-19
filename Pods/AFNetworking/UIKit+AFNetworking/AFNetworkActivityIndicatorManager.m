@@ -191,9 +191,8 @@ typedef void (^AFNetworkActivityActionBlock)(BOOL networkActivityIndicatorVisibl
                     [self startCompletionDelayTimer];
                     break;
             }
-            [self didChangeValueForKey:@"currentState"];
         }
-        
+        [self didChangeValueForKey:@"currentState"];
     }
 }
 

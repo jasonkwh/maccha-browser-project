@@ -18,11 +18,7 @@
 
 #import <Realm/RLMArray.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface RLMArray ()
 - (instancetype)initWithObjectClassName:(NSString *)objectClassName;
 - (NSString *)descriptionWithMaxDepth:(NSUInteger)depth;
 @end
-
-NS_ASSUME_NONNULL_END

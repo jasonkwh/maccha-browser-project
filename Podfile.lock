@@ -1,5 +1,5 @@
 PODS:
-  - 1PasswordExtension (1.8.4)
+  - 1PasswordExtension (1.8.2)
   - AFNetworking (3.1.0):
     - AFNetworking/NSURLSession (= 3.1.0)
     - AFNetworking/Reachability (= 3.1.0)
@@ -16,7 +16,7 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - CBZSplashView (1.0.0)
-  - MGSwipeTableCell (1.5.6)
+  - MGSwipeTableCell (1.5.5)
 
 DEPENDENCIES:
   - 1PasswordExtension (from `https://github.com/AgileBits/onepassword-app-extension.git`, branch `master`)
@@ -37,21 +37,21 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   1PasswordExtension:
-    :commit: 1c5c512a31b5c714e06be6d98d56643336f214e8
+    :commit: c04d8ef286ec97e8fa0289d443b4a5b2abca4a84
     :git: https://github.com/AgileBits/onepassword-app-extension.git
   AFNetworking:
-    :commit: dd674a3268ad7214532ee35bd6d403ef876dc832
+    :commit: 2a53b2c3f49275352677dfd46a35b0287ae01458
     :git: https://github.com/AFNetworking/AFNetworking.git
   MGSwipeTableCell:
-    :commit: c2a0d67ebee62fa82142e5b684651078ce18da6d
+    :commit: fa0aa7e12095559a9b66d69558d007239753c231
     :git: https://github.com/MortimerGoro/MGSwipeTableCell.git
 
 SPEC CHECKSUMS:
-  1PasswordExtension: e775a29310c65851e5a6cec1afc349ab4e334e47
+  1PasswordExtension: 303f2b7bbf6dc19ede3090bd6b5987530648d687
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   CBZSplashView: 9ce4cba22024476ff4a97d6433e7347da6376016
-  MGSwipeTableCell: 616700eb0ffd1c611ba909066cb7fd739790a0a7
+  MGSwipeTableCell: bafeb5f351124544c9364ecbdf24c7b06a37d340
 
 PODFILE CHECKSUM: b849d8f4aab8b1690597ca051432309741ac9df3
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.0.1

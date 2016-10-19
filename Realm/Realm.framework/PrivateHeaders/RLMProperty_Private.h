@@ -22,9 +22,8 @@
 
 @class RLMObjectBase;
 
-NS_ASSUME_NONNULL_BEGIN
-
-BOOL RLMPropertyTypeIsNullable(RLMPropertyType propertyType);
+FOUNDATION_EXTERN BOOL RLMPropertyTypeIsNullable(RLMPropertyType propertyType);
+FOUNDATION_EXTERN BOOL RLMPropertyTypeIsNumeric(RLMPropertyType propertyType);
 BOOL RLMPropertyTypeIsComputed(RLMPropertyType propertyType);
 
 // private property interface
@@ -36,18 +35,18 @@ BOOL RLMPropertyTypeIsComputed(RLMPropertyType propertyType);
 
 - (instancetype)initWithName:(NSString *)name
                      indexed:(BOOL)indexed
-      linkPropertyDescriptor:(nullable RLMPropertyDescriptor *)linkPropertyDescriptor
+      linkPropertyDescriptor:(RLMPropertyDescriptor *)linkPropertyDescriptor
                     property:(objc_property_t)property;
 
 - (instancetype)initSwiftPropertyWithName:(NSString *)name
                                   indexed:(BOOL)indexed
-                   linkPropertyDescriptor:(nullable RLMPropertyDescriptor *)linkPropertyDescriptor
+                   linkPropertyDescriptor:(RLMPropertyDescriptor *)linkPropertyDescriptor
                                  property:(objc_property_t)property
                                  instance:(RLMObjectBase *)objectInstance;
 
 - (instancetype)initSwiftListPropertyWithName:(NSString *)name
                                          ivar:(Ivar)ivar
-                              objectClassName:(nullable NSString *)objectClassName;
+                              objectClassName:(NSString *)objectClassName;
 
 - (instancetype)initSwiftOptionalPropertyWithName:(NSString *)name
                                           indexed:(BOOL)indexed
@@ -56,22 +55,23 @@ BOOL RLMPropertyTypeIsComputed(RLMPropertyType propertyType);
 
 - (instancetype)initSwiftLinkingObjectsPropertyWithName:(NSString *)name
                                                    ivar:(Ivar)ivar
-                                        objectClassName:(nullable NSString *)objectClassName
-                                 linkOriginPropertyName:(nullable NSString *)linkOriginPropertyName;
+                                        objectClassName:(NSString *)objectClassName
+                                 linkOriginPropertyName:(NSString *)linkOriginPropertyName;
 
 // private setters
+@property (nonatomic, assign) NSUInteger column;
 @property (nonatomic, readwrite) NSString *name;
 @property (nonatomic, readwrite, assign) RLMPropertyType type;
 @property (nonatomic, readwrite) BOOL indexed;
 @property (nonatomic, readwrite) BOOL optional;
-@property (nonatomic, copy, nullable) NSString *objectClassName;
+@property (nonatomic, copy) NSString *objectClassName;
 
 // private properties
-@property (nonatomic, assign) NSUInteger index;
 @property (nonatomic, assign) char objcType;
 @property (nonatomic, copy) NSString *objcRawType;
 @property (nonatomic, assign) BOOL isPrimary;
 @property (nonatomic, assign) Ivar swiftIvar;
+@property (nonatomic, assign) NSUInteger declarationIndex;
 
 // getter and setter names
 @property (nonatomic, copy) NSString *getterName;
@@ -102,10 +102,9 @@ BOOL RLMPropertyTypeIsComputed(RLMPropertyType propertyType);
  */
 - (instancetype)initWithName:(NSString *)name
                         type:(RLMPropertyType)type
-             objectClassName:(nullable NSString *)objectClassName
-      linkOriginPropertyName:(nullable NSString *)linkOriginPropertyName
+             objectClassName:(NSString *)objectClassName
+      linkOriginPropertyName:(NSString *)linkOriginPropertyName
                      indexed:(BOOL)indexed
                     optional:(BOOL)optional;
 @end
 
-NS_ASSUME_NONNULL_END

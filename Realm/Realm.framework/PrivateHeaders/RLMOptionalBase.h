@@ -19,8 +19,6 @@
 #import <Foundation/Foundation.h>
 #import <Realm/RLMConstants.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @class RLMObjectBase, RLMProperty;
 
 @interface RLMOptionalBase : NSProxy
@@ -31,8 +29,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, unsafe_unretained) RLMProperty *property;
 
-@property (nonatomic, strong, nullable) id underlyingValue;
+@property (nonatomic, strong) id underlyingValue;
 
 @end
-
-NS_ASSUME_NONNULL_END
