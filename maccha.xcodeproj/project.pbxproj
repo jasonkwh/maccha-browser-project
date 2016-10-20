@@ -295,7 +295,6 @@
 				TargetAttributes = {
 					5F8533691A5BB8C800F14347 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = YJ887TEZ7X;
 						LastSwiftMigration = 0810;
 					};
 					5F85337E1A5BB8C900F14347 = {
@@ -578,6 +577,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Realm",
@@ -613,6 +613,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Realm",

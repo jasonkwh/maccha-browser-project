@@ -441,12 +441,12 @@ class SlideViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    func swipeTableCellWillBeginSwiping(cell: MGSwipeTableCell!) {
+    func swipeTableCellWillBeginSwiping(cell: MGSwipeTableCell) {
         slideUpdate = true
         resultSearchController.searchBar.endEditing(true)
     }
     
-    func swipeTableCellWillEndSwiping(cell: MGSwipeTableCell!) {
+    func swipeTableCellWillEndSwiping(cell: MGSwipeTableCell) {
         slideUpdate = false
         if mainView == 1 {
             tempArray_title = slideViewValue.windowStoreTitle
