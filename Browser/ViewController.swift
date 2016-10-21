@@ -493,7 +493,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UISc
         
         /** iPhones **/
         if(UIScreen.mainScreen().bounds.width == 414.0) { //for iPhone 6 Plus, iPhone 6s Plus, or iPhone 7 Plus
-            urlField.frame.size.width = UIScreen.mainScreen().bounds.width * 0.5
+            urlField.frame.size.width = UIScreen.mainScreen().bounds.width * 0.51
         }
         if(UIScreen.mainScreen().bounds.width == 375.0) { //for iPhone 6, iPhone 6s, or iPhone 7
             urlField.frame.size.width = UIScreen.mainScreen().bounds.width * 0.58
